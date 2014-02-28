@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "bookingsync-api"
   spec.version       = BookingSync::API::VERSION
   spec.authors       = ["Sébastien Grosjean"]
-  spec.email         = ["seb@bookingsync.com"]
+  spec.email         = ["dev@bookingsync.com"]
   spec.summary       = %q{Ruby interface for accessing https://www.bookingsync.com}
   spec.description   = %q{This gem allows to interact with the BookingSync API via Ruby objects}
   spec.homepage      = "https://github.com/BookingSync/bookingsync-api"
