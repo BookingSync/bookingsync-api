@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BookingSync/bookingsync-api.png?branch=master)](https://travis-ci.org/BookingSync/bookingsync-api)
+
 # BookingSync::API
 
 This gem allows Ruby developers to programmatically access https://www.bookingsync.com
