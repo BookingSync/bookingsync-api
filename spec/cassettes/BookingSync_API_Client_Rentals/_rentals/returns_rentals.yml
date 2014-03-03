@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rentals
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1393963200'
+      X-Ratelimit-Remaining:
+      - '998'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - "\"ddf4735a349a4822af7cc71fa3cf5869\""
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - a7d144d12012bb2652e2f421b301ea3a
+      X-Runtime:
+      - '0.183894'
+      Date:
+      - Tue, 04 Mar 2014 19:55:10 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\"rentals\":[{\"links\":{\"photos\":[]},\"account_id\":1,\"id\":2,\"name\":\"0
+        est\",\"headline\":{\"en\":\"Super Headline\"},\"summary\":{\"en\":\"Super
+        summary\"},\"description\":{\"en\":\"Complete description\"},\"rental_type\":\"villa\",\"units\":1,\"bedrooms\":null,\"sleeps\":7,\"sleeps_max\":null,\"bathrooms\":3,\"surface\":120,\"bookable_online\":false,\"min_price\":700,\"max_price\":700,\"price_kind\":\"weekly\",\"currency\":\"EUR\",\"rates_public_notes\":{\"en\":null},\"lat\":45.02,\"lng\":6.6,\"city\":\"Nevache\",\"state\":null,\"country\":\"France\",\"contact_name\":\"Contact
+        Fullname\",\"amenities\":[],\"reviews_count\":0,\"reviews_average_rating\":null,\"updated_at\":\"2014-02-11T09:13:20Z\"},{\"links\":{\"photos\":[2]},\"account_id\":1,\"id\":4,\"name\":\"1
+        et\",\"headline\":{\"en\":\"Super Headline\"},\"summary\":{\"en\":\"Super
+        summary\"},\"description\":{\"en\":\"Complete description\"},\"rental_type\":\"villa\",\"units\":1,\"bedrooms\":null,\"sleeps\":7,\"sleeps_max\":null,\"bathrooms\":3,\"surface\":120,\"bookable_online\":false,\"min_price\":700,\"max_price\":700,\"price_kind\":\"weekly\",\"currency\":\"EUR\",\"rates_public_notes\":{\"en\":null},\"lat\":45.02,\"lng\":6.6,\"city\":\"Nevache\",\"state\":null,\"country\":\"France\",\"contact_name\":\"Contact
+        Fullname\",\"amenities\":[],\"reviews_count\":0,\"reviews_average_rating\":null,\"updated_at\":\"2014-02-11T09:13:25Z\"},{\"links\":{\"photos\":[]},\"account_id\":1,\"id\":6,\"name\":\"2
+        officiis\",\"headline\":{\"en\":\"Super Headline\"},\"summary\":{\"en\":\"Super
+        summary\"},\"description\":{\"en\":\"Complete description\"},\"rental_type\":\"villa\",\"units\":1,\"bedrooms\":null,\"sleeps\":7,\"sleeps_max\":null,\"bathrooms\":3,\"surface\":120,\"bookable_online\":false,\"min_price\":700,\"max_price\":700,\"price_kind\":\"weekly\",\"currency\":\"EUR\",\"rates_public_notes\":{\"en\":null},\"lat\":45.02,\"lng\":6.6,\"city\":\"Nevache\",\"state\":null,\"country\":\"France\",\"contact_name\":\"Contact
+        Fullname\",\"amenities\":[],\"reviews_count\":0,\"reviews_average_rating\":null,\"updated_at\":\"2014-02-28T11:00:58Z\"}]}"
+    http_version:
+  recorded_at: Tue, 04 Mar 2014 19:55:10 GMT
+recorded_with: VCR 2.8.0
