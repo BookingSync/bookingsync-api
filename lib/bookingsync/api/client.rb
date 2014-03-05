@@ -29,7 +29,7 @@ module BookingSync::API
     #
     # @return [String] URL to API endpoint
     def api_endpoint
-      "https://#{api_domain}/api/v3"
+      "#{base_url}/api/v3"
     end
 
     protected
@@ -72,13 +72,13 @@ module BookingSync::API
       {builder: middleware, ssl: {verify: verify_ssl?}}
     end
 
-    # Return API domain. Default is www.bookingsync.com
-    # it can be altered via ENV variable API_DOMAIN which
-    # is useful in specs
+    # Return BookingSync base URL. Default is https://www.bookingsync.com
+    # it can be altered via ENV variable BOOKINGSYNC_URL which
+    # is useful in specs when recording vcr cassettes
     #
-    # @return [String] API Domain name
-    def api_domain
-      ENV.fetch "API_DOMAIN", "www.bookingsync.com"
+    # @return [String] Base URL to BookingSync
+    def base_url
+      ENV.fetch "BOOKINGSYNC_URL", "https://www.bookingsync.com"
     end
 
     # Return true if SSL cert should be verified
@@ -88,7 +88,7 @@ module BookingSync::API
     # @return [Boolean] true if SSL needs to be verified
     # false otherwise
     def verify_ssl?
-      ENV["VERIFY_SSL"] == "false" ? false : true
+      ENV["BOOKINGSYNC_VERIFY_SSL"] == "false" ? false : true
     end
   end
 end

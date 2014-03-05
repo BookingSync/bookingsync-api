@@ -54,5 +54,12 @@ describe BookingSync::API::Client do
     it "returns URL to the API" do
       expect(client.api_endpoint).to eql("https://www.bookingsync.com/api/v3")
     end
+
+    context "user specifies base URL via BOOKINGSYNC_URL env" do
+      it "returns custom URL to the API" do
+        ENV["BOOKINGSYNC_URL"] = "https://bookingsync.dev"
+        expect(client.api_endpoint).to eql("https://bookingsync.dev/api/v3")
+      end
+    end
   end
 end

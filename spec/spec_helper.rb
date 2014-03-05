@@ -6,7 +6,7 @@ require 'json'
 
 RSpec.configure do |config|
   config.before do
-    ENV["VERIFY_SSL"] = "false"
+    ENV["BOOKINGSYNC_VERIFY_SSL"] = "false"
   end
   config.include WebMock::API
 end
