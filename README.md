@@ -26,6 +26,7 @@ Gem assumes that you already have OAuth token for an account.
     rentals = api.rentals # => [Sawayer::Resource, Sawayer::Resource]
     rentals.first.name # => "Small apartment"
 
+See our [documentation](http://rubydoc.info/github/BookingSync/bookingsync-api) for more info.
 
 ## Running specs
 
