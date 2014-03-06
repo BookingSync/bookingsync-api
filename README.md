@@ -23,7 +23,7 @@ Or install it yourself as:
 Gem assumes that you already have OAuth token for an account.
 
     api = BookingSync::API.new("OAUTH_TOKEN")
-    rentals = api.rentals # => [Sawayer::Resource, Sawayer::Resource]
+    rentals = api.rentals # => [Sawyer::Resource, Sawyer::Resource]
     rentals.first.name # => "Small apartment"
 
 See our [documentation](http://rubydoc.info/github/BookingSync/bookingsync-api) for more info.
