@@ -6,7 +6,7 @@ module BookingSync::API
       # Returns rentals for the account user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
-      # @return [Array<Sawyer::Resource>] List of rentals.
+      # @return [Array<Sawyer::Resource>] Array of rentals.
       #
       # @example Get the list of rentals for the current account
       #   rentals = @api.rentals
