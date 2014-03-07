@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/bookings
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1394193600'
+      X-Ratelimit-Remaining:
+      - '995'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - "\"435e6e3ac9649b612515cf4bc58d6643\""
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - 8ceb28412ce6b54c63adfeb683e05ad3
+      X-Runtime:
+      - '0.161117'
+      Date:
+      - Fri, 07 Mar 2014 11:28:17 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\"bookings\":[{\"id\":1,\"account_id\":1,\"rental_id\":2,\"start_at\":\"2014-04-28T10:55:13Z\",\"end_at\":\"2014-12-28T10:55:34Z\"},{\"id\":4,\"account_id\":1,\"rental_id\":2,\"start_at\":\"2014-04-28T10:55:13Z\",\"end_at\":\"2014-12-28T10:55:34Z\"}]}"
+    http_version:
+  recorded_at: Fri, 07 Mar 2014 11:28:17 GMT
+recorded_with: VCR 2.8.0
