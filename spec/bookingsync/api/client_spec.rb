@@ -22,6 +22,7 @@ describe BookingSync::API::Client do
   describe "#request" do
     before { VCR.turn_off! }
     it "authenticates the request with OAuth token" do
+      ENV["ACCESS_TOKEN"] = nil
       stub_get("resource")
       client.get("resource")
       assert_requested :get, bs_url("resource"),
@@ -57,10 +58,19 @@ describe BookingSync::API::Client do
         expect(client.get("resource")).to be_nil
       end
     end
+
+    context "user wants to fetch only specific fields" do
+      it "constructs url for filtered fields" do
+        stub_get("resource?fields=name,description")
+        client.get("resource", fields: [:name, :description])
+        assert_requested :get, bs_url("resource?fields=name,description")
+      end
+    end
   end
 
   describe "#api_endpoint" do
     it "returns URL to the API" do
+      ENV["BOOKINGSYNC_URL"] = nil
       expect(client.api_endpoint).to eql("https://www.bookingsync.com/api/v3")
     end
 

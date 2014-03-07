@@ -24,8 +24,8 @@ module BookingSync::API
     #
     # @param path [String] The path, relative to {#api_endpoint}
     # @return [Array<Sawyer::Resource>] Array of resources.
-    def get(path)
-      request :get, path
+    def get(path, options = {})
+      request :get, path, options
     end
 
     # Return API endpoint
@@ -39,11 +39,19 @@ module BookingSync::API
 
     # Make a HTTP request to given path
     #
-    # @param method [Symbol] HTTP verb to use
-    # @param path [String] The path, relative to {#api_endpoint}
+    # @param method [Symbol] HTTP verb to use.
+    # @param path [String] The path, relative to {#api_endpoint}.
+    # @param options [Hash] A customizable set of options.
+    # @option options [Array] fields: List of fields to be fetched.
     # @return [Array<Sawyer::Resource>] Array of resources.
-    def request(method, path)
-      response = agent.call(method, path)
+    def request(method, path, options = {})
+      request_options = {}
+      if options.has_key?(:fields)
+        fields = Array(options[:fields]).join(",")
+        request_options[:query] = {fields: fields}
+      end
+
+      response = agent.call(method, path, nil, request_options)
       case response.status
       # fetch objects from outer hash
       # {rentals => [{rental}, {rental}]}

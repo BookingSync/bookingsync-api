@@ -26,7 +26,9 @@ def test_access_token
 end
 
 def bs_url(path = "")
-  "https://www.bookingsync.com/api/v3/#{path}"
+  # so that it works when running against local BS API
+  url = ENV['BOOKINGSYNC_URL'] || 'https://www.bookingsync.com'
+  "#{url}/api/v3/#{path}"
 end
 
 def stub_get(path, options = {})
