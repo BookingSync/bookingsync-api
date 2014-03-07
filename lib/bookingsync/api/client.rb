@@ -1,6 +1,7 @@
 require "bookingsync/api/middleware/authentication"
 require "bookingsync/api/client/bookings"
 require "bookingsync/api/client/rentals"
+require "bookingsync/api/error"
 
 module BookingSync::API
   class Client
@@ -43,11 +44,12 @@ module BookingSync::API
     # @return [Array<Sawyer::Resource>] Array of resources.
     def request(method, path)
       response = agent.call(method, path)
-      if (200..299).include?(response.status)
-        # fetch objects from outer hash
-        # {rentals => [{rental}, {rental}]}
-        # will return [{rental}, {rental}]
-        response.data.to_hash.values.flatten
+      case response.status
+      # fetch objects from outer hash
+      # {rentals => [{rental}, {rental}]}
+      # will return [{rental}, {rental}]
+      when 200..299; response.data.to_hash.values.flatten
+      when 401; raise Unauthorized.new
       end
     end
 

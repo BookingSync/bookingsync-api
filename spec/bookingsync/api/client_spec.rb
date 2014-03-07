@@ -42,6 +42,15 @@ describe BookingSync::API::Client do
       expect(resources.first.name).to eq("Megan")
     end
 
+    context "client returns 401" do
+      it "raises Unauthorized exception" do
+        stub_get("resource", status: 401)
+        expect {
+          client.get("resource")
+        }.to raise_error(BookingSync::API::Unauthorized)
+      end
+    end
+
     context "status code is outside 200..299 range" do
       it "returns nil" do
         stub_get("resource", status: 404)
