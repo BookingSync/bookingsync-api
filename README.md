@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/BookingSync/bookingsync-api.png?branch=master)](https://travis-ci.org/BookingSync/bookingsync-api)
+[![Code Climate](https://codeclimate.com/github/BookingSync/bookingsync-api.png)](https://codeclimate.com/github/BookingSync/bookingsync-api)
 
 # BookingSync::API
 
