@@ -17,6 +17,21 @@ describe BookingSync::API::Client do
       client.get("resource")
       assert_requested :get, bs_url("resource")
     end
+
+    it "adds query options to the URL" do
+      stub_get("resource?abc=123")
+      client.get("resource", abc: 123)
+      assert_requested :get, bs_url("resource?abc=123")
+    end
+  end
+
+  describe "#post" do
+    before { VCR.turn_off! }
+    it "makes a HTTP POST request with body" do
+      stub_post("resource")
+      client.post("resource", {key: :value})
+      assert_requested :post, bs_url("resource"), body: '{"key":"value"}'
+    end
   end
 
   describe "#request" do

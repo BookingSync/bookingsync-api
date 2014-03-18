@@ -23,9 +23,19 @@ module BookingSync::API
     # Make a HTTP GET request
     #
     # @param path [String] The path, relative to {#api_endpoint}
+    # @param options [Hash] Query params for the request
     # @return [Array<Sawyer::Resource>] Array of resources.
     def get(path, options = {})
-      request :get, path, options
+      request :get, path, query: options
+    end
+
+    # Make a HTTP POST request
+    #
+    # @param path [String] The path, relative to {#api_endpoint}
+    # @param options [Hash] Body params for the request
+    # @return [Array<Sawyer::Resource>]
+    def post(path, options = {})
+      request :post, path, options
     end
 
     # Return API endpoint
@@ -41,14 +51,21 @@ module BookingSync::API
     #
     # @param method [Symbol] HTTP verb to use.
     # @param path [String] The path, relative to {#api_endpoint}.
-    # @param query [Hash] A customizable set of query options.
+    # @param data [Hash] Data to be send in the request's body
+    #   it can include query: key with requests params for GET requests
+    # @param options [Hash] A customizable set of request options.
     # @return [Array<Sawyer::Resource>] Array of resources.
-    def request(method, path, query = {})
-      [:fields, :status].each do |key|
-        query[key] = Array(query[key]).join(",") if query.has_key?(key)
+    def request(method, path, data, options = {})
+      if data.is_a?(Hash)
+        options[:query] = data.delete(:query) || {}
+        [:fields, :status].each do |key|
+          if options[:query].has_key?(key)
+            options[:query][key] = Array(options[:query][key]).join(",")
+          end
+        end
       end
 
-      response = agent.call(method, path, nil, {query: query})
+      response = agent.call(method, path, data, options)
       case response.status
       # fetch objects from outer hash
       # {rentals => [{rental}, {rental}]}

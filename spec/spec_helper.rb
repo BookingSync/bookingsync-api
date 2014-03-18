@@ -38,3 +38,11 @@ def stub_get(path, options = {})
   }.merge(options)
   stub_request(:get, bs_url(path)).to_return(response)
 end
+
+def stub_post(path, options = {})
+  response = {
+    body: {}.to_json,
+    headers: {"Content-Type" => "application/vnd.api+json"}
+  }.merge(options)
+  stub_request(:post, bs_url(path)).to_return(response)
+end
