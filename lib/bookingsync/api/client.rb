@@ -41,17 +41,14 @@ module BookingSync::API
     #
     # @param method [Symbol] HTTP verb to use.
     # @param path [String] The path, relative to {#api_endpoint}.
-    # @param options [Hash] A customizable set of options.
-    # @option options [Array] fields: List of fields to be fetched.
+    # @param query [Hash] A customizable set of query options.
     # @return [Array<Sawyer::Resource>] Array of resources.
-    def request(method, path, options = {})
-      request_options = {}
-      if options.has_key?(:fields)
-        fields = Array(options[:fields]).join(",")
-        request_options[:query] = {fields: fields}
+    def request(method, path, query = {})
+      [:fields, :status].each do |key|
+        query[key] = Array(query[key]).join(",") if query.has_key?(key)
       end
 
-      response = agent.call(method, path, nil, request_options)
+      response = agent.call(method, path, nil, {query: query})
       case response.status
       # fetch objects from outer hash
       # {rentals => [{rental}, {rental}]}

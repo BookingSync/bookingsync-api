@@ -66,6 +66,14 @@ describe BookingSync::API::Client do
         assert_requested :get, bs_url("resource?fields=name,description")
       end
     end
+
+    context "user passes additional query options" do
+      it "constructs url with query options" do
+        stub_get("resource?months=12&status=booked,unavailable")
+        client.get("resource", status: [:booked, :unavailable], months: '12')
+        assert_requested :get, bs_url("resource?months=12&status=booked,unavailable")
+      end
+    end
   end
 
   describe "#api_endpoint" do

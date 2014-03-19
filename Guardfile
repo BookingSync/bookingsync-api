@@ -4,3 +4,7 @@ guard :rspec do
   watch(%r{^lib/bookingsync/api/(.+)\.rb$})         { |m| "spec/bookingsync/api/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
 end
+
+guard 'yard' do
+  watch(%r{lib/.+\.rb})
+end

@@ -9,6 +9,7 @@ group 'test' do
   gem 'guard'
   gem 'guard-rspec'
   gem 'yard'
+  gem 'guard-yard'
 end
 
 gemspec
