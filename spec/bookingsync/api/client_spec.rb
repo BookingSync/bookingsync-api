@@ -32,6 +32,15 @@ describe BookingSync::API::Client do
       client.post("resource", {key: :value})
       assert_requested :post, bs_url("resource"), body: '{"key":"value"}'
     end
+
+    context "on 422 response" do
+      it "raises UnprocessableEntity exception" do
+        stub_post("resource", status: 422)
+        expect {
+          client.post("resource", {key: :value})
+        }.to raise_error(BookingSync::API::UnprocessableEntity)
+      end
+    end
   end
 
   describe "#request" do
@@ -44,11 +53,18 @@ describe BookingSync::API::Client do
         headers: {"Authorization" => "Bearer fake-access-token"}
     end
 
-    it "requests proper content type for JSON API" do
+    it "requests proper accept header for JSON API" do
       stub_get("resource")
       client.get("resource")
       assert_requested :get, bs_url("resource"),
         headers: {"Accept" => "application/vnd.api+json"}
+    end
+
+    it "requests sends data with JSON API content type" do
+      stub_post("resource")
+      client.post("resource")
+      assert_requested :post, bs_url("resource"),
+        headers: {"Content-Type" => "application/vnd.api+json"}
     end
 
     it "returns Array of resources" do

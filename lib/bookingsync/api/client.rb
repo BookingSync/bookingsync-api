@@ -65,13 +65,14 @@ module BookingSync::API
         end
       end
 
-      response = agent.call(method, path, data, options)
+      response = agent.call(method, path, data.to_json, options)
       case response.status
       # fetch objects from outer hash
       # {rentals => [{rental}, {rental}]}
       # will return [{rental}, {rental}]
       when 200..299; response.data.to_hash.values.flatten
       when 401; raise Unauthorized.new
+      when 422; raise UnprocessableEntity.new
       end
     end
 
@@ -80,6 +81,7 @@ module BookingSync::API
     def agent
       @agent ||= Sawyer::Agent.new(api_endpoint, sawyer_options) do |http|
         http.headers[:accept] = MEDIA_TYPE
+        http.headers[:content_type] = MEDIA_TYPE
       end
     end
 

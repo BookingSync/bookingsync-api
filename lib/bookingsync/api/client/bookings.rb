@@ -21,6 +21,15 @@ module BookingSync::API
       def bookings(options = {})
         get :bookings, options
       end
+
+
+      # Create a booking
+      #
+      # @param options [Hash] Booking attributes
+      # @return <Sawyer::Resource> Newly create booking
+      def create_booking(options = {})
+        post(:bookings, bookings: [options]).pop
+      end
     end
   end
 end
