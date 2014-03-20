@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://www.bookingsync.com/api/v3/bookings/50
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1395356400'
+      X-Ratelimit-Remaining:
+      - '998'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      X-Ua-Compatible:
+      - IE=Edge
+      Cache-Control:
+      - no-cache
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - _BookingSync_session=668459316ed31ec8223d60c1a74c44a5; path=/; secure; HttpOnly
+      X-Request-Id:
+      - 6263ead619fc48d469da00e63828c31e
+      X-Runtime:
+      - '0.243444'
+      Date:
+      - Thu, 20 Mar 2014 22:07:49 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Thu, 20 Mar 2014 22:07:49 GMT
+recorded_with: VCR 2.8.0

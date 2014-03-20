@@ -38,6 +38,24 @@ module BookingSync::API
       request :post, path, options
     end
 
+    # Make a HTTP PUT request
+    #
+    # @param path [String] The path, relative to {#api_endpoint}
+    # @param options [Hash] Body params for the request
+    # @return [Array<Sawyer::Resource>]
+    def put(path, options = {})
+      request :put, path, options
+    end
+
+    # Make a HTTP DELETE request
+    #
+    # @param path [String] The path, relative to {#api_endpoint}
+    # @param options [Hash] Body params for the request
+    # @return [Array<Sawyer::Resource>]
+    def delete(path, options = {})
+      request :delete, path, options
+    end
+
     # Return API endpoint
     #
     # @return [String] URL to API endpoint
@@ -67,9 +85,10 @@ module BookingSync::API
 
       response = agent.call(method, path, data.to_json, options)
       case response.status
-      # fetch objects from outer hash
-      # {rentals => [{rental}, {rental}]}
-      # will return [{rental}, {rental}]
+      when 204; [] # update/destroy response
+        # fetch objects from outer hash
+        # {rentals => [{rental}, {rental}]}
+        # will return [{rental}, {rental}]
       when 200..299; response.data.to_hash.values.flatten
       when 401; raise Unauthorized.new
       when 422; raise UnprocessableEntity.new

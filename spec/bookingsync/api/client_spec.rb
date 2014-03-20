@@ -43,6 +43,24 @@ describe BookingSync::API::Client do
     end
   end
 
+  describe "#put" do
+    before { VCR.turn_off! }
+    it "makes a HTTP PUT request with body" do
+      stub_put("resource")
+      client.put("resource", {key: :value})
+      assert_requested :put, bs_url("resource"), body: '{"key":"value"}'
+    end
+  end
+
+  describe "#delete" do
+    before { VCR.turn_off! }
+    it "makes a HTTP DELETE request" do
+      stub_delete("resource")
+      client.delete("resource")
+      assert_requested :delete, bs_url("resource")
+    end
+  end
+
   describe "#request" do
     before { VCR.turn_off! }
     it "authenticates the request with OAuth token" do
@@ -74,7 +92,7 @@ describe BookingSync::API::Client do
       expect(resources.first.name).to eq("Megan")
     end
 
-    context "client returns 401" do
+    context "API returns 401" do
       it "raises Unauthorized exception" do
         stub_get("resource", status: 401)
         expect {
@@ -83,10 +101,17 @@ describe BookingSync::API::Client do
       end
     end
 
-    context "status code is outside 200..299 range" do
+    context "API returns status code outside 200..299 range" do
       it "returns nil" do
         stub_get("resource", status: 404)
         expect(client.get("resource")).to be_nil
+      end
+    end
+
+    context "API returns 204 No Content" do
+      it "returns an empty array" do
+        stub_get("resource", status: 204)
+        expect(client.get("resource")).to eql([])
       end
     end
 

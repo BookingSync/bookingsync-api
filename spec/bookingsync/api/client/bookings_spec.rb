@@ -30,4 +30,34 @@ describe BookingSync::API::Client::Bookings do
       end
     end
   end
+
+  describe ".edit_booking", :vcr do
+    it "updates given booking by ID" do
+      client.edit_booking(50, {adults: 1})
+      assert_requested :put, bs_url("bookings/50"),
+        body: {bookings: [{adults: 1}]}.to_json
+    end
+
+    it "returns an empty array" do
+      VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID') do
+        expect(client.edit_booking(50, {adults: 1})).to eql([])
+      end
+    end
+
+    it "updates given booking by Resource object" do
+      VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID') do
+        resource = double(to_s: "50")
+        client.edit_booking(resource, {adults: 1})
+        assert_requested :put, bs_url("bookings/50"),
+          body: {bookings: [{adults: 1}]}.to_json
+      end
+    end
+  end
+
+  describe ".cancel_booking", :vcr do
+    it "cancels given booking" do
+      client.cancel_booking(50)
+      assert_requested :delete, bs_url("bookings/50")
+    end
+  end
 end
