@@ -15,6 +15,7 @@ module BookingSync::API
       #   are shown, otherwise they are hidden.
       # @option options [Array] status: Array of booking states.
       #   If specyfied bookings with given states are shown.
+      #   Possible statuses: `:booked`, `:unavailable` and `:tentative`
       # @return [Array<Sawyer::Resource>] Array of bookings.
       # @example
       #   @api.bookings(months: 12, states: [:booked, :unavailable], include_canceled: true)
