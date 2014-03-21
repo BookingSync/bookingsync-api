@@ -8,6 +8,33 @@ describe BookingSync::API::Client::Bookings do
       expect(client.bookings).not_to be_nil
       assert_requested :get, bs_url("bookings")
     end
+
+    describe "pagination" do
+      context "with per_page setting" do
+        it "returns limited number of bookings" do
+          bookings = client.bookings(per_page: 2)
+          expect(bookings.size).to eql(2)
+        end
+      end
+
+      context "with a block" do
+        it "yields block with batch of bookings" do
+          sizes = [2, 2, 1]
+          index = 0
+          client.bookings(per_page: 2) do |bookings|
+            expect(bookings.size).to eql(sizes[index])
+            index += 1
+          end
+        end
+      end
+
+      context "with auto_paginate: true" do
+        it "returns all bookings joined from many requests" do
+          bookings = client.bookings(per_page: 2, auto_paginate: true)
+          expect(bookings.size).to eql(5)
+        end
+      end
+    end
   end
 
   describe ".create_booking", :vcr do

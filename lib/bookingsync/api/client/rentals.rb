@@ -13,8 +13,8 @@ module BookingSync::API
       #   rentals.first.name # => "Small apartment"
       # @example Get the list of rentals only with name and description for smaller response
       #   @api.rentals(fields: [:name, :description])
-      def rentals(options = {})
-        get :rentals, options
+      def rentals(options = {}, &block)
+        paginate :rentals, options, &block
       end
     end
   end

@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/bookings?per_page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1395410400'
+      X-Ratelimit-Remaining:
+      - '953'
+      Link:
+      - "<https://www.bookingsync.com/api/v3/bookings.json?page=1&per_page=2>; rel=\"first\",
+        <https://www.bookingsync.com/api/v3/bookings.json?page=2&per_page=2>; rel=\"next\",
+        <https://www.bookingsync.com/api/v3/bookings.json?page=3&per_page=2>; rel=\"last\""
+      X-Total-Pages:
+      - '3'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - "\"25e36b48fa66e5428431111d81877e3f\""
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - 4b262384ef6d6f38de8dcbd0802f838f
+      X-Runtime:
+      - '0.053473'
+      Date:
+      - Fri, 21 Mar 2014 13:48:49 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\"bookings\":[{\"id\":1,\"account_id\":1,\"rental_id\":2,\"start_at\":\"2014-04-28T10:55:13Z\",\"end_at\":\"2014-12-28T10:55:34Z\"},{\"id\":4,\"account_id\":1,\"rental_id\":2,\"start_at\":\"2014-04-28T10:55:13Z\",\"end_at\":\"2014-12-28T10:55:34Z\"}]}"
+    http_version:
+  recorded_at: Fri, 21 Mar 2014 13:48:49 GMT
+recorded_with: VCR 2.8.0

@@ -19,8 +19,13 @@ module BookingSync::API
       # @return [Array<Sawyer::Resource>] Array of bookings.
       # @example
       #   @api.bookings(months: 12, states: [:booked, :unavailable], include_canceled: true)
-      def bookings(options = {})
-        get :bookings, options
+      #
+      # @example Pagination
+      #   @api.bookings(per_page: 10) do |batch|
+      #     # do something with ten bookings
+      #   end
+      def bookings(options = {}, &block)
+        paginate :bookings, options, &block
       end
 
 
