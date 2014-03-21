@@ -27,6 +27,24 @@ Gem assumes that you already have OAuth token for an account.
     rentals = api.rentals # => [Sawyer::Resource, Sawyer::Resource]
     rentals.first.name # => "Small apartment"
 
+### Pagination
+
+All endpoints returning a collection of resources can be paginated. There are three ways to do it.
+
+Specify `:per_page` and `:page` params. It's useful when implementing pagination on your site.
+
+    api.bookings(per_page: 10, page: 1) => [Sawyer::Resource, Sawyer::Resource, ...]
+
+Use pagination with a block.
+
+    api.bookings(per_page: 10) do |batch|
+      # display 10 bookings, will make one HTTP request for each batch
+    end
+
+Fetch all resources (with multiple requests under the hood) and return one big array.
+
+    api.bookings(auto_paginate: true) => [Sawyer::Resource, Sawyer::Resource, ...]
+
 See our [documentation](http://rubydoc.info/github/BookingSync/bookingsync-api) for more info.
 
 ## Running specs

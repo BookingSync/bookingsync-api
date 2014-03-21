@@ -83,19 +83,49 @@ module BookingSync::API
         end
       end
 
-      response = agent.call(method, path, data.to_json, options)
+      @last_response = response = agent.call(method, path, data.to_json, options)
       case response.status
       when 204; [] # update/destroy response
-        # fetch objects from outer hash
-        # {rentals => [{rental}, {rental}]}
-        # will return [{rental}, {rental}]
-      when 200..299; response.data.to_hash.values.flatten
+      when 200..299; json_api_to_array(response.data)
       when 401; raise Unauthorized.new
       when 422; raise UnprocessableEntity.new
       end
     end
 
+    def paginate(path, options = {}, &block)
+      auto_paginate = options.delete(:auto_paginate)
+
+      data = request(:get, path, query: options)
+
+      if (block_given? or auto_paginate) && @last_response.rels[:next]
+        first_request = true
+        loop do
+          if block_given?
+            yield(json_api_to_array(@last_response.data))
+          elsif auto_paginate
+            data.concat(json_api_to_array(@last_response.data)) unless first_request
+            first_request = false
+          end
+          break unless @last_response.rels[:next]
+          @last_response = @last_response.rels[:next].get
+        end
+      end
+
+      data
+    end
+
     private
+
+    # Return collection of resources
+    #
+    # In jsonapi spec every response has format
+    # {resources => [{resource}, {resource}]. This method returns the inner Array
+    # @param data [Sawyer::Resource]  Sawyer resource from response.data
+    # @return [<Sawyer::Resource>] An Array of resources
+    # FIXME: This could have better name
+    def json_api_to_array(data)
+      data.to_hash.values.flatten
+    end
 
     def agent
       @agent ||= Sawyer::Agent.new(api_endpoint, sawyer_options) do |http|
