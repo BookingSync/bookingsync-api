@@ -76,9 +76,9 @@ module BookingSync::API
     def request(method, path, data, options = {})
       if data.is_a?(Hash)
         options[:query] = data.delete(:query) || {}
-        [:fields, :status].each do |key|
-          if options[:query].has_key?(key)
-            options[:query][key] = Array(options[:query][key]).join(",")
+        options[:query].keys.each do |key|
+          if options[:query][key].is_a?(Array)
+            options[:query][key] = options[:query][key].join(",")
           end
         end
       end

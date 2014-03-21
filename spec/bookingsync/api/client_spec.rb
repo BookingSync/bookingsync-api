@@ -121,6 +121,12 @@ describe BookingSync::API::Client do
         client.get("resource", fields: [:name, :description])
         assert_requested :get, bs_url("resource?fields=name,description")
       end
+
+      it "should support single field" do
+        stub_get("resource?fields=name")
+        client.get("resource", fields: :name)
+        assert_requested :get, bs_url("resource?fields=name")
+      end
     end
 
     context "user passes additional query options" do
