@@ -45,7 +45,13 @@ Fetch all resources (with multiple requests under the hood) and return one big a
 
     api.bookings(auto_paginate: true) => [Sawyer::Resource, Sawyer::Resource, ...]
 
-See our [documentation](http://rubydoc.info/github/BookingSync/bookingsync-api) for more info.
+## Gem documentation
+
+See [gem documentation](http://rdoc.info/github/BookingSync/bookingsync-api/master/frames) for more info.
+
+## API documentation
+
+See [API documentation](http://docs.api.bookingsync.com).
 
 ## Running specs
 

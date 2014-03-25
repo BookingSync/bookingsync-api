@@ -24,6 +24,8 @@ module BookingSync::API
       #   @api.bookings(per_page: 10) do |batch|
       #     # do something with ten bookings
       #   end
+      # @see http://docs.api.bookingsync.com/reference/endpoints/bookings/#list-bookings
+      # @see http://docs.api.bookingsync.com/reference/endpoints/bookings/#search-bookings
       def bookings(options = {}, &block)
         paginate :bookings, options, &block
       end

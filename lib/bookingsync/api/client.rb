@@ -1,11 +1,13 @@
 require "bookingsync/api/middleware/authentication"
 require "bookingsync/api/client/bookings"
+require "bookingsync/api/client/inquiries"
 require "bookingsync/api/client/rentals"
 require "bookingsync/api/error"
 
 module BookingSync::API
   class Client
     include BookingSync::API::Client::Bookings
+    include BookingSync::API::Client::Inquiries
     include BookingSync::API::Client::Rentals
 
     MEDIA_TYPE = "application/vnd.api+json"
