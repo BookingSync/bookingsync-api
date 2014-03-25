@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/inquiries
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1395763200'
+      X-Ratelimit-Remaining:
+      - '996'
+      Link:
+      - "<https://www.bookingsync.com/api/v3/inquiries.json?page=1>; rel=\"first\", <https://www.bookingsync.com/api/v3/inquiries.json?page=1>;
+        rel=\"last\""
+      X-Total-Pages:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - "\"5ce3f361e48a5948646c6c51dd86b319\""
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - 966f6c2d18bb20ba61f88d00b869ac42
+      X-Runtime:
+      - '0.173138'
+      Date:
+      - Tue, 25 Mar 2014 15:22:25 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\"inquiries\":[{\"id\":1,\"firstname\":\"John\",\"lastname\":\"Smith\",\"email\":\"john@example.com\",\"country_code\":null,\"phone\":null,\"start_at\":\"2014-03-27T16:00:00Z\",\"end_at\":\"2014-03-28T10:00:00Z\",\"adults\":null,\"children\":null,\"rental_id\":2,\"message\":null,\"created_at\":\"2014-03-25T15:10:28Z\",\"updated_at\":\"2014-03-25T15:10:28Z\"}]}"
+    http_version:
+  recorded_at: Tue, 25 Mar 2014 15:22:25 GMT
+recorded_with: VCR 2.8.0
