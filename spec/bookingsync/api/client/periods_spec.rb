@@ -46,7 +46,7 @@ describe BookingSync::API::Client::Periods do
     it "returns updated period" do
       VCR.use_cassette('BookingSync_API_Client_Periods/_edit_period/updates_given_period_by_ID') do
         period = client.edit_period(6, attributes)
-        expect(period).to be_kind_of(Sawyer::Resource)
+        expect(period).to be_kind_of(BookingSync::API::Resource)
         expect(period.end_at).to eq(Time.parse(attributes[:end_at]))
       end
     end

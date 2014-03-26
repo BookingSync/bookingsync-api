@@ -41,7 +41,7 @@ describe BookingSync::API::Client::Payments do
     it "returns updated payment" do
       VCR.use_cassette('BookingSync_API_Client_Payments/_edit_payment/updates_given_payment_by_ID') do
         payment = api.edit_payment(2, kind: 'cash')
-        expect(payment).to be_kind_of(Sawyer::Resource)
+        expect(payment).to be_kind_of(BookingSync::API::Resource)
         expect(payment.kind).to eq('cash')
       end
     end

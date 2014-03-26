@@ -6,7 +6,7 @@ module BookingSync::API
       # Returns amenities for the account user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
-      # @return [Array<Sawyer::Resource>] Array of amenities.
+      # @return [Array<BookingSync::API::Resource>] Array of amenities.
       #
       # @example Get the list of amenities for the current account
       #   amenities = @api.amenities

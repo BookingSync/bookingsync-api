@@ -44,7 +44,7 @@ describe BookingSync::API::Client::RatesTables do
     it "returns updated rates_table" do
       VCR.use_cassette('BookingSync_API_Client_RatesTables/_edit_rates_table/updates_given_rates_table_by_ID') do
         rates_table = client.edit_rates_table(11, attributes)
-        expect(rates_table).to be_kind_of(Sawyer::Resource)
+        expect(rates_table).to be_kind_of(BookingSync::API::Resource)
         expect(rates_table.name).to eql(attributes[:name])
       end
     end

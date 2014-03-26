@@ -1,7 +1,5 @@
 require "faraday"
-require "sawyer"
 
-require "bookingsync/ext/resource"
 require "bookingsync/api/version"
 require "bookingsync/api/client"
 

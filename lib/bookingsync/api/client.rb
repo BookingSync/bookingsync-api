@@ -17,6 +17,10 @@ require "bookingsync/api/client/reviews"
 require "bookingsync/api/client/seasons"
 require "bookingsync/api/client/special_offers"
 require "bookingsync/api/error"
+require "bookingsync/api/relation"
+require "bookingsync/api/response"
+require "bookingsync/api/resource"
+require "bookingsync/api/serializer"
 
 module BookingSync::API
   class Client
@@ -45,16 +49,25 @@ module BookingSync::API
     # Initialize new Client
     #
     # @param token [String] OAuth token
+    # @param options [Hash]
+    # @option options [String] base_url: Base URL to BookingSync site
     # @return [BookingSync::API::Client] New BookingSync API client
-    def initialize(token)
+    def initialize(token, options = {})
       @token = token
+      @base_url = options[:base_url]
+      @serializer = Serializer.new
+      @conn = Faraday.new(faraday_options)
+      @conn.headers[:accept] = MEDIA_TYPE
+      @conn.headers[:content_type] = MEDIA_TYPE
+      @conn.url_prefix = api_endpoint
+      yield @conn if block_given?
     end
 
     # Make a HTTP GET request
     #
     # @param path [String] The path, relative to {#api_endpoint}
     # @param options [Hash] Query params for the request
-    # @return [Array<Sawyer::Resource>] Array of resources.
+    # @return [Array<BookingSync::API::Resource>] Array of resources.
     def get(path, options = {})
       request :get, path, query: options
     end
@@ -63,7 +76,7 @@ module BookingSync::API
     #
     # @param path [String] The path, relative to {#api_endpoint}
     # @param options [Hash] Body params for the request
-    # @return [Array<Sawyer::Resource>]
+    # @return [Array<BookingSync::API::Resource>]
     def post(path, options = {})
       request :post, path, options
     end
@@ -72,7 +85,7 @@ module BookingSync::API
     #
     # @param path [String] The path, relative to {#api_endpoint}
     # @param options [Hash] Body params for the request
-    # @return [Array<Sawyer::Resource>]
+    # @return [Array<BookingSync::API::Resource>]
     def put(path, options = {})
       request :put, path, options
     end
@@ -81,7 +94,7 @@ module BookingSync::API
     #
     # @param path [String] The path, relative to {#api_endpoint}
     # @param options [Hash] Body params for the request
-    # @return [Array<Sawyer::Resource>]
+    # @return [Array<BookingSync::API::Resource>]
     def delete(path, options = {})
       request :delete, path, options
     end
@@ -90,22 +103,86 @@ module BookingSync::API
     #
     # @return [String] URL to API endpoint
     def api_endpoint
-      "#{base_url}/api/v3"
+      URI.join(base_url, "api/v3").to_s
     end
 
-    protected
+    # Encode an object to a string for the API request.
+    #
+    # @param data [Object] The Hash or Resource that is being sent.
+    # @return [String] Object encoded into JSON string
+    def encode_body(data)
+      @serializer.encode(data)
+    end
 
-    # Make a HTTP request to given path
+    # Decode a String response body to a Resource.
+    #
+    # @param str [String] The String body from the response.
+    # @return [Object] Object resource
+    def decode_body(str)
+      @serializer.decode(str)
+    end
+
+    # Make a HTTP request to a path and returns an Array of Resources
     #
     # @param method [Symbol] HTTP verb to use.
     # @param path [String] The path, relative to {#api_endpoint}.
     # @param data [Hash] Data to be send in the request's body
     #   it can include query: key with requests params for GET requests
     # @param options [Hash] A customizable set of request options.
-    # @return [Array<Sawyer::Resource>] Array of resources.
-    def request(method, path, data, options = {})
-      if data.is_a?(Hash)
-        options[:query] = data.delete(:query) || {}
+    # @return [Array<BookingSync::API::Resource>] Array of resources.
+    def request(method, path, data = nil, options = nil)
+      response = call(method, path, data, options)
+      response.respond_to?(:resources) ? response.resources : response
+    end
+
+    # Make a HTTP GET request to a path with pagination support.
+    #
+    # @param options [Hash]
+    # @option options [Integer] per_page: Number of resources per page
+    # @option options [Integer] page: Number of page to return
+    # @option options [Boolean] auto_paginate: If true, all resources will
+    #   be returned. It makes multiple requestes underneath and joins the results.
+    #
+    # @yieldreturn [Array<BookingSync::API::Resource>] Batch of resources
+    # @return [Array<BookingSync::API::Resource>] Batch of resources
+    def paginate(path, options = {}, &block)
+      auto_paginate = options.delete(:auto_paginate)
+      response = call(:get, path, query: options)
+      data = response.resources.dup
+
+      if (block_given? or auto_paginate) && response.rels[:next]
+        first_request = true
+        loop do
+          if block_given?
+            yield(response.resources)
+          elsif auto_paginate
+            data.concat(response.resources) unless first_request
+            first_request = false
+          end
+          break unless response.rels[:next]
+          response = response.rels[:next].get
+        end
+      end
+
+      data
+    end
+
+    # Make a HTTP request to given path and returns Response object.
+    #
+    # @param method [Symbol] HTTP verb to use.
+    # @param path [String] The path, relative to {#api_endpoint}.
+    # @param data [Hash] Data to be send in the request's body
+    #   it can include query: key with requests params for GET requests
+    # @param options [Hash] A customizable set of request options.
+    # @return [BookingSync::API::Response] A Response object.
+    def call(method, path, data = nil, options = nil)
+      if [:get, :head].include?(method)
+        options = data
+        data = nil
+      end
+      options ||= {}
+
+      if options.has_key?(:query)
         options[:query].keys.each do |key|
           if options[:query][key].is_a?(Array)
             options[:query][key] = options[:query][key].join(",")
@@ -113,56 +190,22 @@ module BookingSync::API
         end
       end
 
-      @last_response = response = agent.call(method, path, data.to_json, options)
-      case response.status
-      when 204; [] # update/destroy response
-      when 200..299; json_api_to_array(response.data)
-      when 401; raise Unauthorized.new
-      when 422; raise UnprocessableEntity.new
-      end
-    end
-
-    def paginate(path, options = {}, &block)
-      auto_paginate = options.delete(:auto_paginate)
-
-      data = request(:get, path, query: options)
-
-      if (block_given? or auto_paginate) && @last_response.rels[:next]
-        first_request = true
-        loop do
-          if block_given?
-            yield(json_api_to_array(@last_response.data))
-          elsif auto_paginate
-            data.concat(json_api_to_array(@last_response.data)) unless first_request
-            first_request = false
-          end
-          break unless @last_response.rels[:next]
-          @last_response = @last_response.rels[:next].get
+      url = expand_url(path, options[:uri])
+      res = @conn.send(method, url) do |req|
+        if data
+          req.body = data.is_a?(String) ? data : encode_body(data)
+        end
+        if params = options[:query]
+          req.params.update params
+        end
+        if headers = options[:headers]
+          req.headers.update headers
         end
       end
-
-      data
+      handle_response(res)
     end
 
     private
-
-    # Return collection of resources
-    #
-    # In jsonapi spec every response has format
-    # {resources => [{resource}, {resource}]. This method returns the inner Array
-    # @param data [Sawyer::Resource]  Sawyer resource from response.data
-    # @return [<Sawyer::Resource>] An Array of resources
-    # FIXME: This could have better name
-    def json_api_to_array(data)
-      data.to_hash.values.flatten
-    end
-
-    def agent
-      @agent ||= Sawyer::Agent.new(api_endpoint, sawyer_options) do |http|
-        http.headers[:accept] = MEDIA_TYPE
-        http.headers[:content_type] = MEDIA_TYPE
-      end
-    end
 
     def middleware
       Faraday::RackBuilder.new do |builder|
@@ -171,21 +214,18 @@ module BookingSync::API
       end
     end
 
-    def sawyer_options
-      {faraday: Faraday.new(faraday_options)}
-    end
-
     def faraday_options
       {builder: middleware, ssl: {verify: verify_ssl?}}
     end
 
     # Return BookingSync base URL. Default is https://www.bookingsync.com
     # it can be altered via ENV variable BOOKINGSYNC_URL which
-    # is useful in specs when recording vcr cassettes
+    # is useful in specs when recording vcr cassettes. In also can be passed
+    # as :base_url option when initializing the Client object
     #
     # @return [String] Base URL to BookingSync
     def base_url
-      ENV.fetch "BOOKINGSYNC_URL", "https://www.bookingsync.com"
+      @base_url || ENV.fetch("BOOKINGSYNC_URL", "https://www.bookingsync.com")
     end
 
     # Return true if SSL cert should be verified
@@ -196,6 +236,33 @@ module BookingSync::API
     # false otherwise
     def verify_ssl?
       ENV["BOOKINGSYNC_VERIFY_SSL"] == "false" ? false : true
+    end
+
+    # Expand an URL template into a full URL
+    #
+    # @param url [String|Addressable::Template] - An URL to be expanded
+    # @param options [Hash] - Variables which will be used to expand
+    # @return [String] - Expanded URL
+    def expand_url(url, options = nil)
+      tpl = url.respond_to?(:expand) ? url : Addressable::Template.new(url.to_s)
+      tpl.expand(options || {}).to_s
+    end
+
+    # Process faraday response.
+    #
+    # @param faraday_response [Faraday::Response] - A response to process
+    # @raise [BookingSync::API::Unauthorized] - On unauthorized user
+    # @raise [BookingSync::API::UnprocessableEntity] - On validations error
+    # @return [BookingSync::API::Response|NilClass]
+    def handle_response(faraday_response)
+      response = Response.new(self, faraday_response)
+      case response.status
+      when 204; nil # destroy/cancel
+      when 200..299; response
+      when 401; raise Unauthorized.new
+      when 422; raise UnprocessableEntity.new
+      else nil
+      end
     end
   end
 end

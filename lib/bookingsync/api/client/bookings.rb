@@ -16,7 +16,7 @@ module BookingSync::API
       # @option options [Array] status: Array of booking states.
       #   If specyfied bookings with given states are shown.
       #   Possible statuses: `:booked`, `:unavailable` and `:tentative`
-      # @return [Array<Sawyer::Resource>] Array of bookings.
+      # @return [Array<BookingSync::API::Resource>] Array of bookings.
       # @example
       #   @api.bookings(months: 12, states: [:booked, :unavailable], include_canceled: true)
       #
@@ -30,21 +30,20 @@ module BookingSync::API
         paginate :bookings, options, &block
       end
 
-
       # Create a booking
       #
       # @param options [Hash] Booking attributes
-      # @return [Sawyer::Resource] Newly create booking
+      # @return [BookingSync::API::Resource] Newly create booking
       def create_booking(options = {})
         post(:bookings, bookings: [options]).pop
       end
 
       # Edit a booking
       #
-      # @param booking [Sawyer::Resource|Integer] Booking or ID of the booking
+      # @param booking [BookingSync::API::Resource|Integer] Booking or ID of the booking
       #   to be updated
       # @param options [Hash] Booking attributes to be updated
-      # @return [Sawyer::Resource] Updated booking on success, exception is raised otherwise
+      # @return [BookingSync::API::Resource] Updated booking on success, exception is raised otherwise
       # @example
       #   booking = @api.bookings.first
       #   @api.edit_booking(booking, { adults: 1 })
@@ -54,7 +53,7 @@ module BookingSync::API
 
       # Cancel a booking
       #
-      # @param booking [Sawyer::Resource|Integer] Booking or ID of the booking
+      # @param booking [BookingSync::API::Resource|Integer] Booking or ID of the booking
       #   to be canceled
       # @return [Array] An empty Array on success, exception is raised otherwise
       def cancel_booking(booking, options = {})

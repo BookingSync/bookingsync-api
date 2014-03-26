@@ -24,7 +24,7 @@ Or install it yourself as:
 Gem assumes that you already have OAuth token for an account.
 
     api = BookingSync::API.new("OAUTH_TOKEN")
-    rentals = api.rentals # => [Sawyer::Resource, Sawyer::Resource]
+    rentals = api.rentals # => [BookingSync::API::Resource, BookingSync::API::Resource]
     rentals.first.name # => "Small apartment"
 
 ### Pagination
@@ -33,7 +33,7 @@ All endpoints returning a collection of resources can be paginated. There are th
 
 Specify `:per_page` and `:page` params. It's useful when implementing pagination on your site.
 
-    api.bookings(per_page: 10, page: 1) => [Sawyer::Resource, Sawyer::Resource, ...]
+    api.bookings(per_page: 10, page: 1) => [BookingSync::API::Resource, BookingSync::API::Resource, ...]
 
 Use pagination with a block.
 
@@ -43,7 +43,7 @@ Use pagination with a block.
 
 Fetch all resources (with multiple requests under the hood) and return one big array.
 
-    api.bookings(auto_paginate: true) => [Sawyer::Resource, Sawyer::Resource, ...]
+    api.bookings(auto_paginate: true) => [BookingSync::API::Resource, BookingSync::API::Resource, ...]
 
 ## Gem documentation
 

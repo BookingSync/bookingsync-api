@@ -68,7 +68,7 @@ describe BookingSync::API::Client::Bookings do
     it "returns updated booking" do
       VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID') do
         booking = client.edit_booking(50, {end_at: "2019-03-25 21:45:00 UTC"})
-        expect(booking).to be_kind_of(Sawyer::Resource)
+        expect(booking).to be_kind_of(BookingSync::API::Resource)
         expect(booking.end_at).to eq(Time.parse("2019-03-25 21:45:00 UTC"))
       end
     end

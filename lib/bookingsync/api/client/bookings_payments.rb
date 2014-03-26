@@ -6,7 +6,7 @@ module BookingSync::API
       # Returns bookings payments for the account user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
-      # @return [Array<Sawyer::Resource>] Array of bookings payments.
+      # @return [Array<BookingSync::API::Resource>] Array of bookings payments.
       #
       # @example Get the list of bookings payments for the current account
       #   bookings_payments = @api.bookings_payments

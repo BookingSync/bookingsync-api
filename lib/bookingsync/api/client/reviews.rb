@@ -6,7 +6,7 @@ module BookingSync::API
       # Returns reviews for the account user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
-      # @return [Array<Sawyer::Resource>] Array of reviews.
+      # @return [Array<BookingSync::API::Resource>] Array of reviews.
       #
       # @example Get the list of reviews for the current account
       #   reviews = @api.reviews
@@ -22,7 +22,7 @@ module BookingSync::API
       #
       # @param booking_id [Integer] ID of the booking
       # @param options [Hash] review attributes
-      # @return <Sawyer::Resource> Newly created review
+      # @return <BookingSync::API::Resource> Newly created review
       def create_review(booking_id, options = {})
         post(:reviews, booking_id: booking_id, reviews: [options]).pop
       end

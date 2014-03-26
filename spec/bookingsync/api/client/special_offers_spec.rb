@@ -12,7 +12,7 @@ describe BookingSync::API::Client::SpecialOffers do
 
   describe ".create_special_offer", :vcr do
     let(:attributes) {
-      { 
+      {
         name: "New special offer",
         start_at: '2014-04-28',
         end_at: '2014-05-28',
@@ -38,7 +38,7 @@ describe BookingSync::API::Client::SpecialOffers do
     let(:attributes) {
       { name: 'Updated special offer' }
     }
-    
+
     it "updates given special_offer by ID" do
       client.edit_special_offer(3, attributes)
       assert_requested :put, bs_url("special_offers/3"),
@@ -48,7 +48,7 @@ describe BookingSync::API::Client::SpecialOffers do
     it "returns updated special_offer" do
       VCR.use_cassette('BookingSync_API_Client_SpecialOffers/_edit_special_offer/updates_given_special_offer_by_ID') do
         special_offer = client.edit_special_offer(3, attributes)
-        expect(special_offer).to be_kind_of(Sawyer::Resource)
+        expect(special_offer).to be_kind_of(BookingSync::API::Resource)
         expect(special_offer.name).to eq(attributes[:name])
       end
     end

@@ -62,34 +62,55 @@ describe BookingSync::API::Client do
   end
 
   describe "#request" do
+    context "on response which responds to :resources" do
+      it "returns an array of resources" do
+        stub_get("resource", body: {resources: [{name: "Megan"}]}.to_json)
+        resources = client.request(:get, "resource")
+        expect(resources).to be_kind_of(Array)
+        expect(resources.first.name).to eq("Megan")
+      end
+    end
+
+    context "on response which doesn't respond to :resources" do
+      it "returns response" do
+        stub_get("resource", status: 204)
+        response = double(BookingSync::API::Response)
+        allow(client).to receive(:call) { response }
+        resources = client.request(:get, "resource")
+        expect(resources).to eql(response)
+      end
+    end
+  end
+
+  describe "#call" do
     before { VCR.turn_off! }
     it "authenticates the request with OAuth token" do
       ENV["ACCESS_TOKEN"] = nil
       stub_get("resource")
-      client.get("resource")
+      client.call(:get, "resource")
       assert_requested :get, bs_url("resource"),
         headers: {"Authorization" => "Bearer fake-access-token"}
     end
 
     it "requests proper accept header for JSON API" do
       stub_get("resource")
-      client.get("resource")
+      client.call(:get, "resource")
       assert_requested :get, bs_url("resource"),
         headers: {"Accept" => "application/vnd.api+json"}
     end
 
     it "requests sends data with JSON API content type" do
       stub_post("resource")
-      client.post("resource")
+      client.call(:post, "resource")
       assert_requested :post, bs_url("resource"),
         headers: {"Content-Type" => "application/vnd.api+json"}
     end
 
-    it "returns Array of resources" do
-      stub_get("resource", body: {resources: [{name: "Megan"}]}.to_json)
-      resources = client.get("resource")
-      expect(resources.size).to eq(1)
-      expect(resources.first.name).to eq("Megan")
+    it "returns an Response object of resources" do
+      attributes = {resources: [{name: "Megan"}]}
+      stub_post("resource", body: attributes.to_json)
+      response = client.call(:post, "resource", attributes)
+      expect(response).to be_kind_of(BookingSync::API::Response)
     end
 
     context "API returns 401" do
@@ -109,9 +130,9 @@ describe BookingSync::API::Client do
     end
 
     context "API returns 204 No Content" do
-      it "returns an empty array" do
+      it "returns nil" do
         stub_get("resource", status: 204)
-        expect(client.get("resource")).to eql([])
+        expect(client.get("resource")).to be_nil
       end
     end
 

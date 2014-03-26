@@ -6,7 +6,7 @@ module BookingSync::API
       # Returns rates rules for the account user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
-      # @return [Array<Sawyer::Resource>] Array of rates rules.
+      # @return [Array<BookingSync::API::Resource>] Array of rates rules.
       #
       # @example Get the list of rates rules for the current account
       #   rates_rules = @api.rates_rules

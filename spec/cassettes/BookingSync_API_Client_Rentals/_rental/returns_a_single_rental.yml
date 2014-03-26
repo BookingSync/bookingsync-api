@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rentals/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1395846000'
+      X-Ratelimit-Remaining:
+      - '997'
+      Link:
+      - "<https://www.bookingsync.com/api/v3/rentals/2.json?page=1>; rel=\"first\", <https://www.bookingsync.com/api/v3/rentals/2.json?page=1>;
+        rel=\"last\""
+      X-Total-Pages:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - "\"1bc671b0952e787b2101a2601173c6d9\""
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - e2367d447d03f800f132da2296cd2424
+      X-Runtime:
+      - '0.186784'
+      Date:
+      - Wed, 26 Mar 2014 14:14:36 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\"rentals\":[{\"links\":{\"photos\":[20]},\"account_id\":1,\"id\":2,\"name\":\"0
+        est\",\"headline\":{\"en\":\"Super Headline\"},\"summary\":{\"en\":\"Super
+        summary\"},\"description\":{\"en\":\"Complete description\"},\"rental_type\":\"villa\",\"units\":1,\"bedrooms\":null,\"sleeps\":7,\"sleeps_max\":null,\"bathrooms\":3,\"surface\":120,\"bookable_online\":false,\"min_price\":700,\"max_price\":700,\"price_kind\":\"weekly\",\"currency\":\"EUR\",\"rates_public_notes\":{\"en\":null},\"lat\":45.02,\"lng\":6.6,\"city\":\"Nevache\",\"state\":null,\"country\":\"France\",\"contact_name\":\"Contact
+        Fullname\",\"amenities\":[],\"reviews_count\":0,\"reviews_average_rating\":null,\"updated_at\":\"2014-03-26T14:14:18Z\"}]}"
+    http_version:
+  recorded_at: Wed, 26 Mar 2014 14:14:36 GMT
+recorded_with: VCR 2.8.0
