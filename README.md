@@ -61,6 +61,14 @@ OR
 
     bundle exec guard
 
+### Recording VCR cassettes
+
+For developing bookingsync-api gem you need OAuth access token. In order to record a cassette,
+you need to run spec with below environment variables.
+
+    ACCESS_TOKEN=abc bundle exec rspec
+
+If you want to change a cassette, you need to delete it first.
 
 ## Contributing
 
