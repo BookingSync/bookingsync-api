@@ -29,9 +29,9 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '956'
       Link:
-      - "<https://www.bookingsync.com/api/v3/bookings.json?page=1&per_page=2>; rel=\"first\",
-        <https://www.bookingsync.com/api/v3/bookings.json?page=2&per_page=2>; rel=\"next\",
-        <https://www.bookingsync.com/api/v3/bookings.json?page=3&per_page=2>; rel=\"last\""
+      - "<https://www.bookingsync.com/api/v3/bookings?page=1&per_page=2>; rel=\"first\",
+        <https://www.bookingsync.com/api/v3/bookings?page=2&per_page=2>; rel=\"next\",
+        <https://www.bookingsync.com/api/v3/bookings?page=3&per_page=2>; rel=\"last\""
       X-Total-Pages:
       - '3'
       Access-Control-Allow-Origin:
@@ -64,7 +64,7 @@ http_interactions:
   recorded_at: Fri, 21 Mar 2014 13:46:19 GMT
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/bookings.json?page=2&per_page=2
+    uri: https://www.bookingsync.com/api/v3/bookings?page=2&per_page=2
     body:
       encoding: US-ASCII
       string: ''
@@ -91,10 +91,10 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '955'
       Link:
-      - "<https://www.bookingsync.com/api/v3/bookings.json?page=1&per_page=2>; rel=\"first\",
-        <https://www.bookingsync.com/api/v3/bookings.json?page=1&per_page=2>; rel=\"prev\",
-        <https://www.bookingsync.com/api/v3/bookings.json?page=3&per_page=2>; rel=\"next\",
-        <https://www.bookingsync.com/api/v3/bookings.json?page=3&per_page=2>; rel=\"last\""
+      - "<https://www.bookingsync.com/api/v3/bookings?page=1&per_page=2>; rel=\"first\",
+        <https://www.bookingsync.com/api/v3/bookings?page=1&per_page=2>; rel=\"prev\",
+        <https://www.bookingsync.com/api/v3/bookings?page=3&per_page=2>; rel=\"next\",
+        <https://www.bookingsync.com/api/v3/bookings?page=3&per_page=2>; rel=\"last\""
       X-Total-Pages:
       - '3'
       Access-Control-Allow-Origin:
@@ -127,7 +127,7 @@ http_interactions:
   recorded_at: Fri, 21 Mar 2014 13:46:19 GMT
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/bookings.json?page=3&per_page=2
+    uri: https://www.bookingsync.com/api/v3/bookings?page=3&per_page=2
     body:
       encoding: US-ASCII
       string: ''
@@ -154,9 +154,9 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '954'
       Link:
-      - "<https://www.bookingsync.com/api/v3/bookings.json?page=1&per_page=2>; rel=\"first\",
-        <https://www.bookingsync.com/api/v3/bookings.json?page=2&per_page=2>; rel=\"prev\",
-        <https://www.bookingsync.com/api/v3/bookings.json?page=3&per_page=2>; rel=\"last\""
+      - "<https://www.bookingsync.com/api/v3/bookings?page=1&per_page=2>; rel=\"first\",
+        <https://www.bookingsync.com/api/v3/bookings?page=2&per_page=2>; rel=\"prev\",
+        <https://www.bookingsync.com/api/v3/bookings?page=3&per_page=2>; rel=\"last\""
       X-Total-Pages:
       - '3'
       Access-Control-Allow-Origin:

@@ -29,7 +29,7 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '996'
       Link:
-      - "<https://www.bookingsync.com/api/v3/inquiries.json?page=1>; rel=\"first\", <https://www.bookingsync.com/api/v3/inquiries.json?page=1>;
+      - "<https://www.bookingsync.com/api/v3/inquiries?page=1>; rel=\"first\", <https://www.bookingsync.com/api/v3/inquiries?page=1>;
         rel=\"last\""
       X-Total-Pages:
       - '1'

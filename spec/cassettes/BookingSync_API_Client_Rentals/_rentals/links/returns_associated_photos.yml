@@ -29,7 +29,7 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '996'
       Link:
-      - <https://bookingsync.dev/api/v3/rentals.json?page=1>; rel="first", <https://bookingsync.dev/api/v3/rentals.json?page=1>;
+      - <https://bookingsync.dev/api/v3/rentals?page=1>; rel="first", <https://bookingsync.dev/api/v3/rentals?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
@@ -117,7 +117,7 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '995'
       Link:
-      - <https://bookingsync.dev/api/v3/photos/1,3,20.json?page=1>; rel="first", <https://bookingsync.dev/api/v3/photos/1,3,20.json?page=1>;
+      - <https://bookingsync.dev/api/v3/photos/1,3,20?page=1>; rel="first", <https://bookingsync.dev/api/v3/photos/1,3,20?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'

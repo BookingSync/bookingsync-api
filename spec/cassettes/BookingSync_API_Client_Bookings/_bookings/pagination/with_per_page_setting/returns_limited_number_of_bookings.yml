@@ -29,9 +29,9 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '953'
       Link:
-      - "<https://www.bookingsync.com/api/v3/bookings.json?page=1&per_page=2>; rel=\"first\",
-        <https://www.bookingsync.com/api/v3/bookings.json?page=2&per_page=2>; rel=\"next\",
-        <https://www.bookingsync.com/api/v3/bookings.json?page=3&per_page=2>; rel=\"last\""
+      - "<https://www.bookingsync.com/api/v3/bookings?page=1&per_page=2>; rel=\"first\",
+        <https://www.bookingsync.com/api/v3/bookings?page=2&per_page=2>; rel=\"next\",
+        <https://www.bookingsync.com/api/v3/bookings?page=3&per_page=2>; rel=\"last\""
       X-Total-Pages:
       - '3'
       Access-Control-Allow-Origin:
