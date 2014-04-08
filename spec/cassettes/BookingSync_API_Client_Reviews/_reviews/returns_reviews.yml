@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://bookingsync.dev/api/v3/reviews
+    uri: https://www.bookingsync.com/api/v3/reviews
     body:
       encoding: US-ASCII
       string: ''
@@ -22,44 +22,62 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Apr 2014 13:34:55 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1396530000'
+      - '1396965600.0'
       X-Ratelimit-Remaining:
-      - '988'
+      - '999'
       Link:
-      - <http://bookingsync.dev/api/v3/reviews.json?page=1>; rel="first", <http://bookingsync.dev/api/v3/reviews.json?page=1>;
+      - <https://www.bookingsync.com/api/v3/reviews?page=1>; rel="first", <https://www.bookingsync.com/api/v3/reviews?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Request-Method:
-      - ! '*'
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
+      - '*'
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"976c90c2bccf739846f845905b690122"'
+      - '"dc276df48dc3d29bff0e2e3d6111d921"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - must-revalidate, private, max-age=0
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       X-Request-Id:
-      - 13353f0b3b1fc9389c39aa861153d2f7
+      - be3e29c08176130cb1195c972359eccf
       X-Runtime:
-      - '0.108934'
-      Date:
-      - Thu, 03 Apr 2014 12:25:10 GMT
-      Connection:
-      - close
+      - '0.237951'
+      X-Rack-Cache:
+      - miss
     body:
-      encoding: US-ASCII
-      string: ! '{"reviews":[{"id":1,"rating":4,"comment":"It was nice","name":"Stefan
-        W.","updated_at":"2014-04-02T08:52:44Z"}]}'
+      encoding: UTF-8
+      string: '{"reviews":[{"id":2,"rating":5,"comment":null,"name":"seb","updated_at":"2013-06-27T19:30:29Z"},{"id":3,"rating":4,"comment":null,"name":"seb","updated_at":"2013-06-27T19:30:37Z"},{"id":4,"rating":4,"comment":null,"name":"seb","updated_at":"2013-06-27T19:53:20Z"},{"id":5,"rating":5,"comment":null,"name":"seb","updated_at":"2013-06-27T20:04:01Z"},{"id":6,"rating":5,"comment":null,"name":"seb","updated_at":"2013-06-27T20:24:08Z"},{"id":7,"rating":5,"comment":"","name":"asdf","updated_at":"2013-08-03T09:34:06Z"},{"id":8,"rating":5,"comment":"juste
+        parfait\r\n","name":"Philippe G.","updated_at":"2013-08-03T10:57:23Z"},{"id":9,"rating":5,"comment":null,"name":"Philippe
+        G.","updated_at":"2013-08-03T11:01:49Z"},{"id":20,"rating":5,"comment":null,"name":"asdf","updated_at":"2013-08-05T19:54:49Z"},{"id":23,"rating":5,"comment":null,"name":"asdf","updated_at":"2013-08-06T09:08:31Z"},{"id":24,"rating":3,"comment":null,"name":"Toni
+        H.","updated_at":"2013-08-06T09:08:41Z"},{"id":25,"rating":4,"comment":null,"name":"Toni
+        H.","updated_at":"2013-08-06T09:09:02Z"},{"id":26,"rating":3,"comment":null,"name":"Toni
+        H.","updated_at":"2013-08-06T10:35:14Z"},{"id":27,"rating":4,"comment":null,"name":"Toni
+        H.","updated_at":"2013-08-06T10:35:14Z"},{"id":51,"rating":4,"comment":"only
+        the best","name":"Travis W.","updated_at":"2013-08-10T14:34:27Z"},{"id":52,"rating":4,"comment":"","name":"Travis
+        W.","updated_at":"2013-08-10T14:35:50Z"},{"id":68,"rating":5,"comment":"Angelo
+        was happy to stay here!","name":"Angelo","updated_at":"2013-08-20T12:54:45Z"},{"id":69,"rating":5,"comment":null,"name":"Angelo","updated_at":"2013-08-20T12:55:32Z"},{"id":175,"rating":5,"comment":null,"name":"Thomas
+        L.","updated_at":"2014-04-01T07:32:12Z"},{"id":176,"rating":5,"comment":null,"name":"Thomas
+        L.","updated_at":"2014-04-01T09:39:30Z"}]}'
     http_version: 
-  recorded_at: Thu, 03 Apr 2014 12:25:10 GMT
+  recorded_at: Tue, 08 Apr 2014 13:34:55 GMT
 recorded_with: VCR 2.9.0

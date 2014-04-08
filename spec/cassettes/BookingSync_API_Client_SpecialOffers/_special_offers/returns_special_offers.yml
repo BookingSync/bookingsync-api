@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://bookingsync.dev/api/v3/special_offers
+    uri: https://www.bookingsync.com/api/v3/special_offers
     body:
       encoding: US-ASCII
       string: ''
@@ -22,44 +22,51 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Apr 2014 13:34:56 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1396609200'
+      - '1396965600.0'
       X-Ratelimit-Remaining:
       - '999'
       Link:
-      - <http://bookingsync.dev/api/v3/special_offers.json?page=1>; rel="first", <http://bookingsync.dev/api/v3/special_offers.json?page=1>;
+      - <https://www.bookingsync.com/api/v3/special_offers?page=1>; rel="first", <https://www.bookingsync.com/api/v3/special_offers?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Access-Control-Request-Method:
-      - ! '*'
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
+      - '*'
       X-Ua-Compatible:
-      - IE=Edge
+      - IE=Edge,chrome=1
       Etag:
-      - ! '"76929473623594e5662d05b594fa862d"'
+      - '"b4a17fdf9fdc788faae2a2df4c961bea"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - must-revalidate, private, max-age=0
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       X-Request-Id:
-      - adbcedc6f84ae09576fbc43fb3bd51e1
+      - 5f5d4d5cfc6778c6f20a50b5c0d995dc
       X-Runtime:
-      - '0.180592'
-      Date:
-      - Fri, 04 Apr 2014 10:51:30 GMT
-      Connection:
-      - close
+      - '0.067435'
+      X-Rack-Cache:
+      - miss
     body:
-      encoding: US-ASCII
-      string: ! '{"special_offers":[{"id":1,"rental_id":2,"name":"Super hot awesome","start_at":"2014-04-21","end_at":"2014-04-30","discount":5},{"id":2,"rental_id":2,"name":"tes
-        1","start_at":"2014-05-01","end_at":"2014-05-29","discount":10}]}'
+      encoding: UTF-8
+      string: '{"special_offers":[]}'
     http_version: 
-  recorded_at: Fri, 04 Apr 2014 10:51:30 GMT
+  recorded_at: Tue, 08 Apr 2014 13:34:56 GMT
 recorded_with: VCR 2.9.0
