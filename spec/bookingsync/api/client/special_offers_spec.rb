@@ -8,13 +8,5 @@ describe BookingSync::API::Client::SpecialOffers do
       expect(client.special_offers).not_to be_nil
       assert_requested :get, bs_url("special_offers")
     end
-
-    context "with specified fields in options" do
-      it "returns rentals with filtered fields" do
-        special_offers = client.special_offers(fields: [:name, :rental_id])
-        expect(special_offers).not_to be_nil
-        assert_requested :get, bs_url("special_offers?fields=name,rental_id")
-      end
-    end
   end
 end
