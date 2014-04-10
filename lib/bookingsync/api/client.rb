@@ -1,6 +1,7 @@
 require "bookingsync/api/middleware/authentication"
 require "bookingsync/api/client/amenities"
 require "bookingsync/api/client/bookings"
+require "bookingsync/api/client/destinations"
 require "bookingsync/api/client/inquiries"
 require "bookingsync/api/client/photos"
 require "bookingsync/api/client/rentals"
@@ -12,6 +13,7 @@ module BookingSync::API
   class Client
     include BookingSync::API::Client::Amenities
     include BookingSync::API::Client::Bookings
+    include BookingSync::API::Client::Destinations
     include BookingSync::API::Client::Inquiries
     include BookingSync::API::Client::Photos
     include BookingSync::API::Client::Rentals
