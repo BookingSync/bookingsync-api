@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rates_tables
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1397476800'
+      X-Ratelimit-Remaining:
+      - '996'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rates_tables?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rates_tables?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"aa678d75950b213013404896ed3e954c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - e11f2952529a026545d6a3bf91de8fdd
+      X-Runtime:
+      - '1.417735'
+      Date:
+      - Mon, 14 Apr 2014 11:50:52 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"rates_tables":[{"id":1,"account_id":2,"name":"Rates Table 1","created_at":"2014-04-10T13:07:56Z","updated_at":"2014-04-10T13:07:57Z"},{"id":3,"account_id":6,"name":"Rates
+        Table 3","created_at":"2014-04-10T13:08:01Z","updated_at":"2014-04-10T13:08:02Z"},{"id":5,"account_id":10,"name":"Rates
+        Table 5","created_at":"2014-04-10T13:08:05Z","updated_at":"2014-04-10T13:08:06Z"},{"id":7,"account_id":14,"name":"Rates
+        Table 7","created_at":"2014-04-10T13:08:11Z","updated_at":"2014-04-10T13:08:12Z"},{"id":9,"account_id":18,"name":"Rates
+        Table 9","created_at":"2014-04-10T13:08:15Z","updated_at":"2014-04-10T13:08:16Z"},{"id":11,"account_id":22,"name":"Rates
+        Table 11","created_at":"2014-04-10T13:08:19Z","updated_at":"2014-04-10T13:08:20Z"},{"id":13,"account_id":26,"name":"Rates
+        Table 13","created_at":"2014-04-10T13:08:24Z","updated_at":"2014-04-10T13:08:25Z"},{"id":15,"account_id":30,"name":"Rates
+        Table 15","created_at":"2014-04-10T13:08:29Z","updated_at":"2014-04-10T13:08:29Z"},{"id":17,"account_id":34,"name":"Rates
+        Table 17","created_at":"2014-04-10T13:08:33Z","updated_at":"2014-04-10T13:08:34Z"},{"id":19,"account_id":38,"name":"Rates
+        Table 19","created_at":"2014-04-10T13:08:37Z","updated_at":"2014-04-10T13:08:38Z"}]}'
+    http_version: 
+  recorded_at: Mon, 14 Apr 2014 11:50:52 GMT
+recorded_with: VCR 2.9.0
