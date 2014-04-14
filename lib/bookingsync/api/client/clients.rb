@@ -17,6 +17,14 @@ module BookingSync::API
       def clients(options = {}, &block)
         paginate :clients, options, &block
       end
+
+      # Create a new client
+      #
+      # @param options [Hash] Client attributes
+      # @return <Sawyer::Resource> Newly created client
+      def create_client(options = {})
+        post(:clients, clients: [options]).pop
+      end
     end
-	end
+  end
 end
