@@ -7,6 +7,7 @@ require "bookingsync/api/client/periods"
 require "bookingsync/api/client/photos"
 require "bookingsync/api/client/rates_tables"
 require "bookingsync/api/client/rentals"
+require "bookingsync/api/client/rental_agreements"
 require "bookingsync/api/client/reviews"
 require "bookingsync/api/client/seasons"
 require "bookingsync/api/client/special_offers"
@@ -22,6 +23,7 @@ module BookingSync::API
     include BookingSync::API::Client::Photos
     include BookingSync::API::Client::RatesTables
     include BookingSync::API::Client::Rentals
+    include BookingSync::API::Client::RentalAgreements
     include BookingSync::API::Client::Reviews
     include BookingSync::API::Client::Seasons
     include BookingSync::API::Client::SpecialOffers
