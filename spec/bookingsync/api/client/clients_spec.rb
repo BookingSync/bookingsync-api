@@ -36,4 +36,18 @@ describe BookingSync::API::Client::Bookings do
       end
     end
   end
+
+  describe ".edit_client", :vcr do
+    it "updates given client by ID" do
+      api.edit_client(2, fullname: "Gary Smith")
+      assert_requested :put, bs_url("clients/2"),
+        body: {clients: [{fullname: "Gary Smith"}]}.to_json
+    end
+
+    it "returns an empty Array" do
+      VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_client/updates_given_client_by_ID') do
+        expect(api.edit_client(2, fullname: "Gary Smith")).to eql([])
+      end
+    end
+  end
 end
