@@ -13,7 +13,7 @@ module BookingSync::API
       #   rates_tables.first.name # => "Rates table 2"
       # @example Get the list of rates tables only with name and account_id for smaller response
       #   @api.rates_tables(fields: [:name, :account_id])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/rates_tables/#list-rates_tables
+      # @see http://docs.api.bookingsync.com/reference/endpoints/rates_tables/#list-rates-tables
       def rates_tables(options = {}, &block)
         paginate :rates_tables, options, &block
       end
