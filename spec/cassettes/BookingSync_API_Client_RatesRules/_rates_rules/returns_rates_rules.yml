@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rates_rules
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1397556000'
+      X-Ratelimit-Remaining:
+      - '997'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rates_rules?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rates_rules?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"68d7d21fe6f4597c2f17117f87016e75"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - f069d85396d3b12bafb4c1cf5d681cb1
+      X-Runtime:
+      - '0.638223'
+      Date:
+      - Tue, 15 Apr 2014 09:24:22 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rates_rules.seasons":"https://www.bookingsync.com/api/v3/seasons/{rates_rules.seasons}"},"rates_rules":[]}'
+    http_version: 
+  recorded_at: Tue, 15 Apr 2014 09:24:22 GMT
+recorded_with: VCR 2.9.0
