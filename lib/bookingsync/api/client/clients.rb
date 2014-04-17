@@ -11,7 +11,7 @@ module BookingSync::API
       # @example Get the list of clients for the current account
       #   clients = @api.clients
       #   clients.first.fullname # => "John Smith"
-      # @example Get the list of clients only with phone and fullname for smaller response
+      # @example Get the list of clients only with fullname and phone for smaller response
       #   @api.clients(fields: [:fullname, :phone])
       # @see http://docs.api.bookingsync.com/reference/endpoints/clients/#list-clients
       def clients(options = {}, &block)
