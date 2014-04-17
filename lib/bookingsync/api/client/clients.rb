@@ -25,6 +25,21 @@ module BookingSync::API
       def create_client(options = {})
         post(:clients, clients: [options]).pop
       end
+
+      # Edit a client
+      #
+      # @param client [Sawyer::Resource|Integer] Client or ID of the client
+      #   to be updated
+      # @param options [Hash] Client attributes to be updated
+      # FIXME: This should return regular Resource object, to be fixed first
+      # on the API side
+      # @return [Array] An empty Array on success, exception is raised otherwise
+      # @example
+      #   client = @api.clients.first
+      #   @api.edit_client(client, {fullname: "Gary Smith"}) => []
+      def edit_client(client, options = {})
+        put "clients/#{client}", clients: [options]
+      end
     end
   end
 end
