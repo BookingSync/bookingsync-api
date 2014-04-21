@@ -60,23 +60,25 @@ describe BookingSync::API::Client::Bookings do
 
   describe ".edit_booking", :vcr do
     it "updates given booking by ID" do
-      client.edit_booking(50, {adults: 1})
+      client.edit_booking(50, {end_at: "2019-03-25 21:45:00 UTC"})
       assert_requested :put, bs_url("bookings/50"),
-        body: {bookings: [{adults: 1}]}.to_json
+        body: {bookings: [{end_at: "2019-03-25 21:45:00 UTC"}]}.to_json
     end
 
-    it "returns an empty array" do
+    it "returns updated booking" do
       VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID') do
-        expect(client.edit_booking(50, {adults: 1})).to eql([])
+        booking = client.edit_booking(50, {end_at: "2019-03-25 21:45:00 UTC"})
+        expect(booking).to be_kind_of(Sawyer::Resource)
+        expect(booking.end_at).to eq(Time.parse("2019-03-25 21:45:00 UTC"))
       end
     end
 
     it "updates given booking by Resource object" do
       VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID') do
         resource = double(to_s: "50")
-        client.edit_booking(resource, {adults: 1})
+        client.edit_booking(resource, {end_at: "2019-03-25 21:45:00 UTC"})
         assert_requested :put, bs_url("bookings/50"),
-          body: {bookings: [{adults: 1}]}.to_json
+          body: {bookings: [{end_at: "2019-03-25 21:45:00 UTC"}]}.to_json
       end
     end
   end
