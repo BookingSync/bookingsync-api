@@ -5,6 +5,7 @@ require "bookingsync/api/client/clients"
 require "bookingsync/api/client/destinations"
 require "bookingsync/api/client/inquiries"
 require "bookingsync/api/client/periods"
+require "bookingsync/api/client/payments"
 require "bookingsync/api/client/photos"
 require "bookingsync/api/client/rates_rules"
 require "bookingsync/api/client/rates_tables"
@@ -23,6 +24,7 @@ module BookingSync::API
     include BookingSync::API::Client::Destinations
     include BookingSync::API::Client::Inquiries
     include BookingSync::API::Client::Periods
+    include BookingSync::API::Client::Payments
     include BookingSync::API::Client::Photos
     include BookingSync::API::Client::RatesRules
     include BookingSync::API::Client::RatesTables

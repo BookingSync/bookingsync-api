@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/payments
+    body:
+      encoding: UTF-8
+      string: "{\"booking_id\":1,\"payments\":[{\"amount\":200,\"kind\":\"cash\"}]}"
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1398171600'
+      X-Ratelimit-Remaining:
+      - '998'
+      Location:
+      - https://www.bookingsync.com/api/v3/payments/133
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - "\"16c1dde0499c08c9bbb1fce33583e670\""
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - _BookingSync_session=6f772ae8b0e4354bd8ed5d1f2220775f; path=/; secure; HttpOnly
+      X-Request-Id:
+      - 9ffe223afec21cd64270726ccb4f757a
+      X-Runtime:
+      - '1.456223'
+      Date:
+      - Tue, 22 Apr 2014 12:00:20 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\"links\":{\"payments.billing_address\":\"https://www.bookingsync.com/api/v3/billing_addresses/{payments.billing_address}\",\"payments.bookings\":\"https://www.bookingsync.com/api/v3/bookings/{payments.bookings}\",\"payments.bookings_payments\":\"https://www.bookingsync.com/api/v3/bookings_payments/{payments.bookings_payments}\"},\"payments\":[{\"links\":{\"billing_address\":null,\"bookings\":[1],\"bookings_payments\":[133]},\"id\":133,\"account_id\":1,\"transaction_id\":null,\"order_id\":null,\"card\":null,\"amount\":200,\"currency\":\"EUR\",\"kind\":\"cash\",\"fullname\":null,\"email\":null,\"locale\":null,\"ip\":null,\"test\":null,\"notes\":null,\"paid_at\":\"2014-04-22T12:00:19Z\",\"created_at\":\"2014-04-22T12:00:19Z\",\"updated_at\":\"2014-04-22T12:00:19Z\",\"rejected_at\":null,\"canceled_at\":null}]}"
+    http_version: 
+  recorded_at: Tue, 22 Apr 2014 12:00:20 GMT
+recorded_with: VCR 2.9.0
