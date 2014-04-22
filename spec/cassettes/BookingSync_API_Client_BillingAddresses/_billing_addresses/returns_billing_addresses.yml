@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/billing_addresses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1398164400'
+      X-Ratelimit-Remaining:
+      - '995'
+      Link:
+      - "<https://www.bookingsync.com/api/v3/billing_addresses?page=1>; rel=\"first\",
+        <https://www.bookingsync.com/api/v3/billing_addresses?page=1>; rel=\"last\""
+      X-Total-Pages:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - "\"b9deb90956d46720a3800c378394958b\""
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - 3efdca7c42e2469d1842480d4eccb920
+      X-Runtime:
+      - '0.368750'
+      Date:
+      - Tue, 22 Apr 2014 10:17:10 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\"billing_addresses\":[]}"
+    http_version: 
+  recorded_at: Tue, 22 Apr 2014 10:17:10 GMT
+recorded_with: VCR 2.9.0
