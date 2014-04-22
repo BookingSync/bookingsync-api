@@ -34,7 +34,7 @@ module BookingSync::API
       # Create a booking
       #
       # @param options [Hash] Booking attributes
-      # @return <Sawyer::Resource> Newly create booking
+      # @return [Sawyer::Resource] Newly create booking
       def create_booking(options = {})
         post(:bookings, bookings: [options]).pop
       end
@@ -44,14 +44,12 @@ module BookingSync::API
       # @param booking [Sawyer::Resource|Integer] Booking or ID of the booking
       #   to be updated
       # @param options [Hash] Booking attributes to be updated
-      # FIXME: This should return regular Resource object, to be fixed first
-      # on the API side
-      # @return [Array] An empty Array on success, exception is raised otherwise
+      # @return [Sawyer::Resource] Updated booking on success, exception is raised otherwise
       # @example
       #   booking = @api.bookings.first
       #   @api.edit_booking(booking, {adults: 1}) => []
       def edit_booking(booking, options = {})
-        put "bookings/#{booking}", bookings: [options]
+        put("bookings/#{booking}", bookings: [options]).pop
       end
 
       # Cancel a booking

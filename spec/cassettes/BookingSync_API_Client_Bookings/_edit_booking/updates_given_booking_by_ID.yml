@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.bookingsync.com/api/v3/bookings/50
     body:
       encoding: UTF-8
-      string: "{\"bookings\":[{\"adults\":1}]}"
+      string: '{"bookings":[{"end_at":"2019-03-25 21:45:00 UTC"}]}'
     headers:
       User-Agent:
       - Faraday v0.9.0
@@ -19,39 +19,43 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 204
-      message: No Content
+      code: 200
+      message: OK
     headers:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1395352800'
+      - '1398106800'
       X-Ratelimit-Remaining:
       - '994'
       Access-Control-Allow-Origin:
-      - "*"
+      - '*'
       Access-Control-Request-Method:
-      - "*"
+      - '*'
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
+      Etag:
+      - '"debe38042667808d7c3c70691861b7b3"'
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=88df7b72b145935f2f668eaeab10d73f; path=/; secure; HttpOnly
+      - _BookingSync_session=4ae5f913d9abed6782c48f843b010579; path=/; secure; HttpOnly
       X-Request-Id:
-      - 9cffd4e20d9a9a791ea3b731982ee735
+      - ce1bf7d742d4f0f18a1342931830bc4b
       X-Runtime:
-      - '1.418879'
+      - '2.227385'
       Date:
-      - Thu, 20 Mar 2014 21:45:42 GMT
+      - Mon, 21 Apr 2014 18:33:54 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: ''
+      string: '{"bookings":[{"id":50,"account_id":1,"rental_id":20,"start_at":"2019-03-20T21:45:00Z","end_at":"2019-03-25T21:45:00Z"}]}'
     http_version:
-  recorded_at: Thu, 20 Mar 2014 21:45:42 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Mon, 21 Apr 2014 18:33:54 GMT
+recorded_with: VCR 2.9.0
