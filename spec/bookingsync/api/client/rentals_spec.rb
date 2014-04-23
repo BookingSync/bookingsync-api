@@ -9,4 +9,48 @@ describe BookingSync::API::Client::Rentals do
       assert_requested :get, bs_url("rentals")
     end
   end
+
+  describe ".create_rental", :vcr do
+    let(:attributes) { {
+      name: "New rental",
+      sleeps: 2
+    } }
+
+    it "creates a new rental" do
+      client.create_rental(attributes)
+      assert_requested :post, bs_url("rentals"),
+        body: { rentals: [attributes] }.to_json
+    end
+
+    it "returns newly created rental" do
+      VCR.use_cassette('BookingSync_API_Client_Rentals/_create_rental/creates_a_new_rental') do
+        rental = client.create_rental(attributes)
+        expect(rental.name).to eql("New rental")
+        expect(rental.sleeps).to eql(2)
+      end
+    end
+  end
+
+  describe ".edit_rental", :vcr do
+    it "updates given rental by ID" do
+      client.edit_rental(2, name: 'Updated Rental name')
+      assert_requested :put, bs_url("rentals/2"),
+        body: { rentals: [{ name: 'Updated Rental name' }] }.to_json
+    end
+
+    it "returns updated rental" do
+      VCR.use_cassette('BookingSync_API_Client_Rentals/_edit_rental/updates_given_rental_by_ID') do
+        rental = client.edit_rental(2, name: 'Updated Rental name')
+        expect(rental).to be_kind_of(Sawyer::Resource)
+        expect(rental.name).to eq('Updated Rental name')
+      end
+    end
+  end
+
+  describe ".cancel_rental", :vcr do
+    it "cancels given rental" do
+      client.cancel_rental(4)
+      assert_requested :delete, bs_url("rentals/4")
+    end
+  end
 end
