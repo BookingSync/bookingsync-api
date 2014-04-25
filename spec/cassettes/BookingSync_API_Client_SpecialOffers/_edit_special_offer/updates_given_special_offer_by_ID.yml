@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/special_offers/3
+    body:
+      encoding: UTF-8
+      string: '{"special_offers":[{"name":"Updated special offer"}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1398430800'
+      X-Ratelimit-Remaining:
+      - '992'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"f111bd4b8967773b0108dc1a81d0769d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - _BookingSync_session=202701ff9f9dbc70fc38d2f9380e7bc7; path=/; secure; HttpOnly
+      X-Request-Id:
+      - ac6a6d673ddfd42e006887140746489d
+      X-Runtime:
+      - '0.043156'
+      Date:
+      - Fri, 25 Apr 2014 12:46:44 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"special_offers":[{"id":3,"rental_id":12,"name":"Updated special offer","start_at":"2014-05-01","end_at":"2014-05-02","discount":4}]}'
+    http_version: 
+  recorded_at: Fri, 25 Apr 2014 12:46:44 GMT
+recorded_with: VCR 2.9.0
