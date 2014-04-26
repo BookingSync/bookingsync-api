@@ -17,6 +17,38 @@ module BookingSync::API
       def special_offers(options = {}, &block)
         paginate :special_offers, options, &block
       end
+
+      # Create a new special_offer
+      #
+      # @param rental_id [Integer] ID of the rental
+      # @param options [Hash] special_offer attributes
+      # @return <Sawyer::Resource> Newly created special offer
+      def create_special_offer(rental_id, options = {})
+        post(:special_offers, rental_id: rental_id, special_offers: [options]).pop
+      end
+
+      # Edit a special_offer
+      #
+      # @param special_offer [Sawyer::Resource|Integer] special offer or 
+      # ID of the special offer to be updated
+      # @param options [Hash] special offer attributes to be updated
+      # @return [Sawyer::Resource] Updated special offer on success,
+      # exception is raised otherwise
+      # @example
+      #   special_offer = @api.special_offers.first
+      #   @api.edit_special_offer(special_offer, {name: "New offer"}) => Sawyer::Resource
+      def edit_special_offer(special_offer, options = {})
+        put("special_offers/#{special_offer}", special_offers: [options]).pop
+      end
+
+      # Delete a special_offer
+      #
+      # @param special_offer [Sawyer::Resource|Integer] special offer or
+      # ID of the special offer to be deleted
+      # @return [Array] An empty Array on success, exception is raised otherwise
+      def delete_special_offer(special_offer, options = {})
+        delete "special_offers/#{special_offer}"
+      end
     end
   end
 end
