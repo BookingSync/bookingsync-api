@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/periods/6
+    body:
+      encoding: UTF-8
+      string: '{"periods":[{"end_at":"2014-07-15"}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1398448800'
+      X-Ratelimit-Remaining:
+      - '998'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"2499775e119775500bdf274a8f1b4e23"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - _BookingSync_session=30a8a347ae446998b12cd5416b4e6cf0; path=/; secure; HttpOnly
+      X-Request-Id:
+      - ad3f5a420ae438c276c7e6d6b56ff0fa
+      X-Runtime:
+      - '0.086501'
+      Date:
+      - Fri, 25 Apr 2014 17:03:17 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"periods":[{"id":6,"season_id":6,"start_at":"2014-04-14","end_at":"2014-07-15","created_at":"2014-04-14T13:19:05Z","updated_at":"2014-04-25T17:03:17Z"}]}'
+    http_version: 
+  recorded_at: Fri, 25 Apr 2014 17:03:17 GMT
+recorded_with: VCR 2.9.0
