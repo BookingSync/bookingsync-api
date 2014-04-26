@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/reviews
+    body:
+      encoding: UTF-8
+      string: '{"booking_id":1,"reviews":[{"comment":"Awesome place","rating":5}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1398423600'
+      X-Ratelimit-Remaining:
+      - '997'
+      Location:
+      - https://www.bookingsync.com/api/v3/reviews/3
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"c9c6c54ccda7eb504ef18ad27dafa70d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - _BookingSync_session=b707ff2476a456565876ff5330743855; path=/; secure; HttpOnly
+      X-Request-Id:
+      - 04bc26104feb03575c89da6af3bae440
+      X-Runtime:
+      - '0.047378'
+      Date:
+      - Fri, 25 Apr 2014 10:25:34 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"reviews":[{"id":3,"rating":5,"comment":"Awesome place","name":"Palma
+        S.","updated_at":"2014-04-25T10:25:34Z"}]}'
+    http_version: 
+  recorded_at: Fri, 25 Apr 2014 10:25:34 GMT
+recorded_with: VCR 2.9.0

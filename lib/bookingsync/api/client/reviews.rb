@@ -17,6 +17,15 @@ module BookingSync::API
       def reviews(options = {}, &block)
         paginate :reviews, options, &block
       end
+
+      # Create a new review
+      #
+      # @param booking_id [Integer] ID of the booking
+      # @param options [Hash] review attributes
+      # @return <Sawyer::Resource> Newly created review
+      def create_review(booking_id, options = {})
+        post(:reviews, booking_id: booking_id, reviews: [options]).pop
+      end
     end
   end
 end
