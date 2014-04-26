@@ -17,6 +17,37 @@ module BookingSync::API
       def seasons(options = {}, &block)
         paginate :seasons, options, &block
       end
+
+      # Create a new season
+      #
+      # @param rates_table_id [Integer] ID of the rates table
+      # @param options [Hash] season attributes
+      # @return <Sawyer::Resource> Newly created season
+      def create_season(rates_table_id, options = {})
+        post(:seasons, rates_table_id: rates_table_id, seasons: [options]).pop
+      end
+
+      # Edit a season
+      #
+      # @param season [Sawyer::Resource|Integer] season or ID of the season
+      # to be updated
+      # @param options [Hash] season attributes to be updated
+      # @return [Sawyer::Resource] Updated season on success, exception is raised otherwise
+      # @example
+      #   season = @api.seasons.first
+      #   @api.edit_season(season, { name: "Some season" }) => Sawyer::Resource
+      def edit_season(season, options = {})
+        put("seasons/#{season}", seasons: [options]).pop
+      end
+
+      # Delete a season
+      #
+      # @param season [Sawyer::Resource|Integer] season or ID of the season
+      # to be deleted
+      # @return [Array] An empty Array on success, exception is raised otherwise
+      def delete_season(season, options = {})
+        delete "seasons/#{season}"
+      end
     end
   end
 end

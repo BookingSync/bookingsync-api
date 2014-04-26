@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/seasons/6
+    body:
+      encoding: UTF-8
+      string: '{"seasons":[{"name":"Updated season"}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1398427200'
+      X-Ratelimit-Remaining:
+      - '982'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"419435fd550ebb9e310597d68e3285fa"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - _BookingSync_session=caff98271c97ce07e91a0001fb4555d4; path=/; secure; HttpOnly
+      X-Request-Id:
+      - 13fd879913a9d766222754b1c5dc4f31
+      X-Runtime:
+      - '0.754643'
+      Date:
+      - Fri, 25 Apr 2014 11:31:51 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"links":{"seasons.rates_rules":"https://www.bookingsync.com/api/v3/rates_rules/{seasons.rates_rules}","seasons.periods":"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"},"seasons":[{"links":{"rates_rules":[],"periods":[6]},"id":6,"rates_table_id":11,"name":"Updated
+        season","ratio":"1.0","minimum_stay":7,"color_ratio":"1.0","created_at":"2014-04-14T13:19:05Z","updated_at":"2014-04-25T11:31:50Z"}]}'
+    http_version: 
+  recorded_at: Fri, 25 Apr 2014 11:31:51 GMT
+recorded_with: VCR 2.9.0
