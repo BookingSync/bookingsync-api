@@ -35,7 +35,7 @@ module BookingSync::API
       # @return [Sawyer::Resource] Updated payment on success, exception is raised otherwise
       # @example
       #   payment = @api.payments.first
-      #   @api.edit_payment(payment, {currency: "EURO"}) => Sawyer::Resource
+      #   @api.edit_payment(payment, { currency: "EURO" })
       def edit_payment(payment, options = {})
         put("payments/#{payment}", payments: [options]).pop
       end

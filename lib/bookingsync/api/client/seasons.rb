@@ -1,6 +1,6 @@
 module BookingSync::API
   class Client
-    module Seasons 
+    module Seasons
       # List seasons
       #
       # Returns seasons for the account user is authenticated with.
@@ -35,7 +35,7 @@ module BookingSync::API
       # @return [Sawyer::Resource] Updated season on success, exception is raised otherwise
       # @example
       #   season = @api.seasons.first
-      #   @api.edit_season(season, { name: "Some season" }) => Sawyer::Resource
+      #   @api.edit_season(season, { name: "Some season" })
       def edit_season(season, options = {})
         put("seasons/#{season}", seasons: [options]).pop
       end

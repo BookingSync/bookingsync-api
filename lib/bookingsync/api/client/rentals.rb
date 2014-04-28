@@ -34,7 +34,7 @@ module BookingSync::API
       # @return [Sawyer::Resource] Updated rental on success, exception is raised otherwise
       # @example
       #   rental = @api.rentals.first
-      #   @api.edit_rental(rental, { sleeps: 3 }) => Sawyer::Resource
+      #   @api.edit_rental(rental, { sleeps: 3 })
       def edit_rental(rental, options = {})
         put("rentals/#{rental}", rentals: [options]).pop
       end

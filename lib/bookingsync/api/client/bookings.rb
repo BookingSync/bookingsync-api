@@ -47,7 +47,7 @@ module BookingSync::API
       # @return [Sawyer::Resource] Updated booking on success, exception is raised otherwise
       # @example
       #   booking = @api.bookings.first
-      #   @api.edit_booking(booking, {adults: 1}) => []
+      #   @api.edit_booking(booking, { adults: 1 })
       def edit_booking(booking, options = {})
         put("bookings/#{booking}", bookings: [options]).pop
       end

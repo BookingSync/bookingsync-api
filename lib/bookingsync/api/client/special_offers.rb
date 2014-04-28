@@ -29,14 +29,14 @@ module BookingSync::API
 
       # Edit a special_offer
       #
-      # @param special_offer [Sawyer::Resource|Integer] special offer or 
+      # @param special_offer [Sawyer::Resource|Integer] special offer or
       # ID of the special offer to be updated
       # @param options [Hash] special offer attributes to be updated
       # @return [Sawyer::Resource] Updated special offer on success,
       # exception is raised otherwise
       # @example
       #   special_offer = @api.special_offers.first
-      #   @api.edit_special_offer(special_offer, {name: "New offer"}) => Sawyer::Resource
+      #   @api.edit_special_offer(special_offer, { name: "New offer" })
       def edit_special_offer(special_offer, options = {})
         put("special_offers/#{special_offer}", special_offers: [options]).pop
       end
