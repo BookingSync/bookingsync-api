@@ -35,7 +35,7 @@ module BookingSync::API
       # exception is raised otherwise
       # @example
       #   rates_table = @api.rates_tables.first
-      #   @api.edit_rates_table(rates_table, { name: "Lorem" }) => Sawyer::Resource
+      #   @api.edit_rates_table(rates_table, { name: "Lorem" })
       def edit_rates_table(rates_table, options = {})
         put("rates_tables/#{rates_table}", rates_tables: [options]).pop
       end

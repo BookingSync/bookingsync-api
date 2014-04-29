@@ -36,7 +36,7 @@ module BookingSync::API
       # exception is raised otherwise
       # @example
       #   period = @api.periods.first
-      #   @api.edit_period(period, { end_at: "2014-04-28" }) => Sawyer::Resource
+      #   @api.edit_period(period, { end_at: "2014-04-28" })
       def edit_period(period, options = {})
         put("periods/#{period}", periods: [options]).pop
       end
