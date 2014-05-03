@@ -17,6 +17,34 @@ module BookingSync::API
       def rental_agreements(options = {}, &block)
         paginate :rental_agreements, options, &block
       end
+
+      # Create a new rental agreement for a booking
+      #
+      # @param booking_id [Integer] ID of the booking
+      # @param options [Hash] rental agreement attributes
+      # @return <Sawyer::Resource> Newly created rental agreement
+      def create_rental_agreement_for_booking(booking_id, options = {})
+        post(:rental_agreements, booking_id: booking_id, 
+             rental_agreements: [options]).pop
+      end
+
+      # Create a new rental agreement for a rental
+      #
+      # @param rental_id [Integer] ID of the rental
+      # @param options [Hash] rental agreement attributes
+      # @return <Sawyer::Resource> Newly created rental agreement
+      def create_rental_agreement_for_rental(rental_id, options = {})
+        post(:rental_agreements, rental_id: rental_id, 
+             rental_agreements: [options]).pop
+      end
+
+      # Create a new rental agreement for an account
+      #
+      # @param options [Hash] rental agreement attributes
+      # @return <Sawyer::Resource> Newly created rental agreement
+      def create_rental_agreement(options = {})
+        post(:rental_agreements, rental_agreements: [options]).pop
+      end
     end
   end
 end
