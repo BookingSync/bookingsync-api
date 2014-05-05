@@ -21,7 +21,7 @@ module BookingSync::API
       # Create a new client
       #
       # @param options [Hash] Client attributes
-      # @return <BookingSync::API::Resource> Newly created client
+      # @return [BookingSync::API::Resource] Newly created client
       def create_client(options = {})
         post(:clients, clients: [options]).pop
       end

@@ -22,7 +22,7 @@ module BookingSync::API
       #
       # @param season_id [Integer] ID of the season
       # @param options [Hash] period attributes
-      # @return <BookingSync::API::Resource> Newly created period
+      # @return [BookingSync::API::Resource] Newly created period
       def create_period(season_id, options = {})
         post(:periods, season_id: season_id, periods: [options]).pop
       end

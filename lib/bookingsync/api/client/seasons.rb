@@ -22,7 +22,7 @@ module BookingSync::API
       #
       # @param rates_table_id [Integer] ID of the rates table
       # @param options [Hash] season attributes
-      # @return <BookingSync::API::Resource> Newly created season
+      # @return [BookingSync::API::Resource] Newly created season
       def create_season(rates_table_id, options = {})
         post(:seasons, rates_table_id: rates_table_id, seasons: [options]).pop
       end

@@ -21,7 +21,7 @@ module BookingSync::API
       # Create a new rates_table
       #
       # @param options [Hash] rates_table attributes
-      # @return <BookingSync::API::Resource> Newly created rates table
+      # @return [BookingSync::API::Resource] Newly created rates table
       def create_rates_table(options = {})
         post(:rates_tables, rates_tables: [options]).pop
       end

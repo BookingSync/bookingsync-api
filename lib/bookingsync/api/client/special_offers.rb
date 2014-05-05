@@ -22,7 +22,7 @@ module BookingSync::API
       #
       # @param rental_id [Integer] ID of the rental
       # @param options [Hash] special_offer attributes
-      # @return <BookingSync::API::Resource> Newly created special offer
+      # @return [BookingSync::API::Resource] Newly created special offer
       def create_special_offer(rental_id, options = {})
         post(:special_offers, rental_id: rental_id, special_offers: [options]).pop
       end
