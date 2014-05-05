@@ -25,9 +25,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1397556000'
+      - '1399327200'
       X-Ratelimit-Remaining:
-      - '997'
+      - '996'
       Link:
       - <https://www.bookingsync.com/api/v3/rates_rules?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rates_rules?page=1>;
         rel="last"
@@ -42,23 +42,23 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"68d7d21fe6f4597c2f17117f87016e75"'
+      - '"fe6c62b3d861528e37782eeb75e83ca6"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       X-Request-Id:
-      - f069d85396d3b12bafb4c1cf5d681cb1
+      - 3ddf4d65541b95731dfc6524df691f9e
       X-Runtime:
-      - '0.638223'
+      - '0.451678'
       Date:
-      - Tue, 15 Apr 2014 09:24:22 GMT
+      - Mon, 05 May 2014 21:25:25 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"links":{"rates_rules.seasons":"https://www.bookingsync.com/api/v3/seasons/{rates_rules.seasons}"},"rates_rules":[]}'
-    http_version: 
-  recorded_at: Tue, 15 Apr 2014 09:24:22 GMT
+      string: '{"links":{"rates_rules.seasons":"https://www.bookingsync.com/api/v3/seasons/{rates_rules.seasons}"},"rates_rules":[{"links":{"seasons":[]},"id":1,"rates_table_id":19,"always_applied":true,"percentage":10,"period_name":null,"kind":"late_booking","variables":{"unit":"days","length":10},"start_at":null,"end_at":null,"created_at":"2014-05-05T21:24:56Z","updated_at":"2014-05-05T21:24:56Z"}]}'
+    http_version:
+  recorded_at: Mon, 05 May 2014 21:25:25 GMT
 recorded_with: VCR 2.9.0

@@ -6,7 +6,7 @@ describe BookingSync::API::Client::Seasons do
 
   describe ".seasons", :vcr do
     it "returns seasons" do
-      expect(client.seasons).not_to be_nil
+      expect(client.seasons).not_to be_empty
       assert_requested :get, bs_url("seasons")
     end
   end

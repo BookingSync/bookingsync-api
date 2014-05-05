@@ -5,7 +5,7 @@ describe BookingSync::API::Client::Amenities do
 
   describe ".amenities", :vcr do
     it "returns amenities" do
-      expect(client.amenities).not_to be_nil
+      expect(client.amenities).not_to be_empty
       assert_requested :get, bs_url("amenities")
     end
   end

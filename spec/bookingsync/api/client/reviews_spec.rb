@@ -5,7 +5,7 @@ describe BookingSync::API::Client::Reviews do
 
   describe ".reviews", :vcr do
     it "returns reviews" do
-      expect(client.reviews).not_to be_nil
+      expect(client.reviews).not_to be_empty
       assert_requested :get, bs_url("reviews")
     end
   end

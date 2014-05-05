@@ -5,7 +5,7 @@ describe BookingSync::API::Client::BillingAddresses do
 
   describe ".billing_addresses", :vcr do
     it "returns billing_addresses" do
-      expect(client.billing_addresses).not_to be_nil
+      expect(client.billing_addresses).not_to be_empty
       assert_requested :get, bs_url("billing_addresses")
     end
   end

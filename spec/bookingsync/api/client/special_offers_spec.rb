@@ -5,7 +5,7 @@ describe BookingSync::API::Client::SpecialOffers do
 
   describe ".special_offers", :vcr do
     it "returns special_offers" do
-      expect(client.special_offers).not_to be_nil
+      expect(client.special_offers).not_to be_empty
       assert_requested :get, bs_url("special_offers")
     end
   end

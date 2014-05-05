@@ -6,7 +6,7 @@ describe BookingSync::API::Client::RatesTables do
 
   describe ".rates_tables", :vcr do
     it "returns rates tables" do
-      expect(client.rates_tables).not_to be_nil
+      expect(client.rates_tables).not_to be_empty
       assert_requested :get, bs_url("rates_tables")
     end
   end

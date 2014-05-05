@@ -8,7 +8,7 @@ describe BookingSync::API::Client::RentalAgreements do
 
   describe ".rental_agreements", :vcr do
     it "returns rental agreements" do
-      expect(client.rental_agreements).not_to be_nil
+      expect(client.rental_agreements).not_to be_empty
       assert_requested :get, bs_url("rental_agreements")
     end
   end

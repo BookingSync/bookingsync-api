@@ -5,7 +5,7 @@ describe BookingSync::API::Client::Payments do
 
   describe ".payments", :vcr do
     it "returns payments" do
-      expect(api.payments).not_to be_nil
+      expect(api.payments).not_to be_empty
       assert_requested :get, bs_url("payments")
     end
   end

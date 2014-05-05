@@ -5,14 +5,14 @@ describe BookingSync::API::Client::Rentals do
 
   describe ".rentals", :vcr do
     it "returns rentals" do
-      expect(client.rentals).not_to be_nil
+      expect(client.rentals).not_to be_empty
       assert_requested :get, bs_url("rentals")
     end
 
     describe "links" do
       it "returns associated photos" do
         rental = client.rentals.first
-        expect(rental.photos).not_to be_nil
+        expect(rental.photos).not_to be_empty
       end
     end
   end

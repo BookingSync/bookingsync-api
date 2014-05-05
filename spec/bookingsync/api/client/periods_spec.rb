@@ -6,7 +6,7 @@ describe BookingSync::API::Client::Periods do
 
   describe ".periods", :vcr do
     it "returns periods" do
-      expect(client.periods).not_to be_nil
+      expect(client.periods).not_to be_empty
       assert_requested :get, bs_url("periods")
     end
   end
