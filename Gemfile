@@ -10,6 +10,7 @@ group 'test' do
   gem 'guard-rspec'
   gem 'yard'
   gem 'ruby_gntp'
+  gem 'pry'
 end
 
 gemspec

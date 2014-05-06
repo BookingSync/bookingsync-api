@@ -3,6 +3,7 @@ require 'bookingsync/api'
 require 'webmock/rspec'
 require 'vcr'
 require 'json'
+require 'pry'
 
 RSpec.configure do |config|
   config.before do

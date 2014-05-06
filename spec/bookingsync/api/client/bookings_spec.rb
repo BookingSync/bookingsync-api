@@ -75,7 +75,7 @@ describe BookingSync::API::Client::Bookings do
 
     it "updates given booking by Resource object" do
       VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID') do
-        resource = double(to_s: "50")
+        resource = BookingSync::API::Resource.new(nil, {id: 50})
         client.edit_booking(resource, {end_at: "2019-03-25 21:45:00 UTC"})
         assert_requested :put, bs_url("bookings/50"),
           body: {bookings: [{end_at: "2019-03-25 21:45:00 UTC"}]}.to_json

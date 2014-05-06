@@ -9,7 +9,8 @@ describe BookingSync::API::Resource do
       {
         name: "foo", width: 700,
         links: links,
-        details: {count: 1}
+        details: {count: 1},
+        id: 10
       },
       {
         :"foo.photos" => "http://foo.com/photos/{foo.photos}",
@@ -67,6 +68,12 @@ describe BookingSync::API::Resource do
       stub_request(:get, "http://foo.com/photos/9,10?fields=description")
         .to_return(body: {photos: [{file: 'a.jpg'}]}.to_json)
       resource.photos(fields: :description)
+    end
+  end
+
+  describe "#to_s" do
+    it "returns resource id" do
+      expect("#{resource}").to eq("10")
     end
   end
 end

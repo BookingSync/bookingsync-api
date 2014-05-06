@@ -50,5 +50,9 @@ module BookingSync::API
         super
       end
     end
+
+    def to_s
+      id.to_s
+    end
   end
 end
