@@ -6,7 +6,7 @@ module BookingSync::API
       # Returns clients for the account user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
-      # @return [Array<Sawyer::Resource>] Array of clients.
+      # @return [Array<BookingSync::API::Resource>] Array of clients.
       #
       # @example Get the list of clients for the current account
       #   clients = @api.clients
@@ -21,17 +21,17 @@ module BookingSync::API
       # Create a new client
       #
       # @param options [Hash] Client attributes
-      # @return <Sawyer::Resource> Newly created client
+      # @return [BookingSync::API::Resource] Newly created client
       def create_client(options = {})
         post(:clients, clients: [options]).pop
       end
 
       # Edit a client
       #
-      # @param client [Sawyer::Resource|Integer] Client or ID of the client
+      # @param client [BookingSync::API::Resource|Integer] Client or ID of the client
       #   to be updated
       # @param options [Hash] Client attributes to be updated
-      # @return [Sawyer::Resource] Updated client on success, exception is raised otherwise
+      # @return [BookingSync::API::Resource] Updated client on success, exception is raised otherwise
       # @example
       #   client = @api.clients.first
       #   @api.edit_client(client, { fullname: "Gary Smith" })

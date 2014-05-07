@@ -5,7 +5,7 @@ describe BookingSync::API::Client::Photos do
 
   describe ".photos", :vcr do
     it "returns photos" do
-      expect(client.photos).not_to be_nil
+      expect(client.photos).not_to be_empty
       assert_requested :get, bs_url("photos")
     end
   end

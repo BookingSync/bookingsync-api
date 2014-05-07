@@ -6,7 +6,7 @@ module BookingSync::API
       # Returns special_offers for the account user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
-      # @return [Array<Sawyer::Resource>] Array of special_offers.
+      # @return [Array<BookingSync::API::Resource>] Array of special_offers.
       #
       # @example Get the list of special_offers for the current account
       #   special_offers = @api.special_offers
@@ -22,17 +22,17 @@ module BookingSync::API
       #
       # @param rental_id [Integer] ID of the rental
       # @param options [Hash] special_offer attributes
-      # @return <Sawyer::Resource> Newly created special offer
+      # @return [BookingSync::API::Resource] Newly created special offer
       def create_special_offer(rental_id, options = {})
         post(:special_offers, rental_id: rental_id, special_offers: [options]).pop
       end
 
       # Edit a special_offer
       #
-      # @param special_offer [Sawyer::Resource|Integer] special offer or
+      # @param special_offer [BookingSync::API::Resource|Integer] special offer or
       # ID of the special offer to be updated
       # @param options [Hash] special offer attributes to be updated
-      # @return [Sawyer::Resource] Updated special offer on success,
+      # @return [BookingSync::API::Resource] Updated special offer on success,
       # exception is raised otherwise
       # @example
       #   special_offer = @api.special_offers.first
@@ -43,7 +43,7 @@ module BookingSync::API
 
       # Delete a special_offer
       #
-      # @param special_offer [Sawyer::Resource|Integer] special offer or
+      # @param special_offer [BookingSync::API::Resource|Integer] special offer or
       # ID of the special offer to be deleted
       # @return [Array] An empty Array on success, exception is raised otherwise
       def delete_special_offer(special_offer, options = {})

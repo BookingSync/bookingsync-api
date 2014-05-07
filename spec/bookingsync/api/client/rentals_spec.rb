@@ -5,8 +5,22 @@ describe BookingSync::API::Client::Rentals do
 
   describe ".rentals", :vcr do
     it "returns rentals" do
-      expect(client.rentals).not_to be_nil
+      expect(client.rentals).not_to be_empty
       assert_requested :get, bs_url("rentals")
+    end
+
+    describe "links" do
+      it "returns associated photos" do
+        rental = client.rentals.first
+        expect(rental.photos).not_to be_empty
+      end
+    end
+  end
+
+  describe ".rental", :vcr do
+    it "returns a single rental" do
+      rental = client.rental(2)
+      expect(rental.name).to eql("0 est")
     end
   end
 
@@ -41,7 +55,7 @@ describe BookingSync::API::Client::Rentals do
     it "returns updated rental" do
       VCR.use_cassette('BookingSync_API_Client_Rentals/_edit_rental/updates_given_rental_by_ID') do
         rental = client.edit_rental(2, name: 'Updated Rental name')
-        expect(rental).to be_kind_of(Sawyer::Resource)
+        expect(rental).to be_kind_of(BookingSync::API::Resource)
         expect(rental.name).to eq('Updated Rental name')
       end
     end

@@ -5,7 +5,7 @@ describe BookingSync::API::Client::Inquiries do
 
   describe ".inquiries", :vcr do
     it "returns inquiries" do
-      expect(client.inquiries).not_to be_nil
+      expect(client.inquiries).not_to be_empty
       assert_requested :get, bs_url("inquiries")
     end
   end

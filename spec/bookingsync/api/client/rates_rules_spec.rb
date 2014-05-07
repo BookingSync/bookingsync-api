@@ -6,7 +6,7 @@ describe BookingSync::API::Client::RatesRules do
 
   describe ".rates_rules", :vcr do
     it "returns rates rules" do
-      expect(client.rates_rules).not_to be_nil
+      expect(client.rates_rules).not_to be_empty
       assert_requested :get, bs_url("rates_rules")
     end
   end

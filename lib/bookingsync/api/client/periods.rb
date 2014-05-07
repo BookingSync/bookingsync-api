@@ -6,7 +6,7 @@ module BookingSync::API
       # Returns periods for the account user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
-      # @return [Array<Sawyer::Resource>] Array of periods.
+      # @return [Array<BookingSync::API::Resource>] Array of periods.
       #
       # @example Get the list of periods for the current account
       #   periods = @api.periods
@@ -22,17 +22,17 @@ module BookingSync::API
       #
       # @param season_id [Integer] ID of the season
       # @param options [Hash] period attributes
-      # @return <Sawyer::Resource> Newly created period
+      # @return [BookingSync::API::Resource] Newly created period
       def create_period(season_id, options = {})
         post(:periods, season_id: season_id, periods: [options]).pop
       end
 
       # Edit a period
       #
-      # @param period [Sawyer::Resource|Integer] period or ID of the period
+      # @param period [BookingSync::API::Resource|Integer] period or ID of the period
       # to be updated
       # @param options [Hash] period attributes to be updated
-      # @return [Sawyer::Resource] Updated period on success,
+      # @return [BookingSync::API::Resource] Updated period on success,
       # exception is raised otherwise
       # @example
       #   period = @api.periods.first
@@ -43,7 +43,7 @@ module BookingSync::API
 
       # Delete a period
       #
-      # @param period [Sawyer::Resource|Integer] period or ID of the period
+      # @param period [BookingSync::API::Resource|Integer] period or ID of the period
       # to be deleted
       # @return [Array] An empty Array on success, exception is raised otherwise
       def delete_period(period, options = {})

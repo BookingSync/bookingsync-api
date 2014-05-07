@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/inquiries
+    uri: https://www.bookingsync.com/api/v3/rates
     body:
       encoding: US-ASCII
       string: ''
@@ -25,12 +25,12 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1395763200'
+      - '1399312800'
       X-Ratelimit-Remaining:
-      - '996'
+      - '997'
       Link:
-      - "<https://www.bookingsync.com/api/v3/inquiries?page=1>; rel=\"first\", <https://www.bookingsync.com/api/v3/inquiries?page=1>;
-        rel=\"last\""
+      - <https://www.bookingsync.com/api/v3/rates?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rates?page=1>;
+        rel="last"
       X-Total-Pages:
       - '1'
       Access-Control-Allow-Origin:
@@ -42,23 +42,23 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - "\"5ce3f361e48a5948646c6c51dd86b319\""
+      - '"2497b7acaaee2cf80147109225197463"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       X-Request-Id:
-      - 966f6c2d18bb20ba61f88d00b869ac42
+      - 4d76f5655c5f427be5cd20815ed9b646
       X-Runtime:
-      - '0.173138'
+      - '0.197010'
       Date:
-      - Tue, 25 Mar 2014 15:22:25 GMT
+      - Mon, 05 May 2014 17:53:51 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: "{\"inquiries\":[{\"id\":1,\"firstname\":\"John\",\"lastname\":\"Smith\",\"email\":\"john@example.com\",\"country_code\":null,\"phone\":null,\"start_at\":\"2014-03-27T16:00:00Z\",\"end_at\":\"2014-03-28T10:00:00Z\",\"adults\":null,\"children\":null,\"rental_id\":2,\"message\":null,\"created_at\":\"2014-03-25T15:10:28Z\",\"updated_at\":\"2014-03-25T15:10:28Z\"}]}"
+      string: '{"rates":[{"id":2,"start_at":"2014-02-11","end_at":"2014-05-10","rental_id":14,"initial_nightly_rate":"100.0","initial_weekly_rate":"700.0","initial_monthly_rate":"3000.0","final_nightly_rate":"100.0","final_weekly_rate":"700.0","final_monthly_rate":"3000.0","minimum_stay":7,"created_at":"2014-04-30T22:57:10Z","updated_at":"2014-04-30T22:57:10Z"}]}'
     http_version:
-  recorded_at: Tue, 25 Mar 2014 15:22:25 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Mon, 05 May 2014 17:53:51 GMT
+recorded_with: VCR 2.9.0

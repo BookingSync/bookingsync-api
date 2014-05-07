@@ -5,7 +5,7 @@ describe BookingSync::API::Client::Bookings do
 
   describe ".bookings", :vcr do
     it "returns bookings" do
-      expect(client.bookings).not_to be_nil
+      expect(client.bookings).not_to be_empty
       assert_requested :get, bs_url("bookings")
     end
 
@@ -68,14 +68,14 @@ describe BookingSync::API::Client::Bookings do
     it "returns updated booking" do
       VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID') do
         booking = client.edit_booking(50, {end_at: "2019-03-25 21:45:00 UTC"})
-        expect(booking).to be_kind_of(Sawyer::Resource)
+        expect(booking).to be_kind_of(BookingSync::API::Resource)
         expect(booking.end_at).to eq(Time.parse("2019-03-25 21:45:00 UTC"))
       end
     end
 
     it "updates given booking by Resource object" do
       VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID') do
-        resource = double(to_s: "50")
+        resource = BookingSync::API::Resource.new(nil, {id: 50})
         client.edit_booking(resource, {end_at: "2019-03-25 21:45:00 UTC"})
         assert_requested :put, bs_url("bookings/50"),
           body: {bookings: [{end_at: "2019-03-25 21:45:00 UTC"}]}.to_json

@@ -1,12 +1,12 @@
 module BookingSync::API
   class Client
-    module BillingAddresses 
+    module BillingAddresses
       # List billing addresses
       #
       # Returns billing addresses for the account user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
-      # @return [Array<Sawyer::Resource>] Array of billing addresses.
+      # @return [Array<BookingSync::API::Resource>] Array of billing addresses.
       #
       # @example Get the list of billing addresses for the current account
       #   billing_addresses = @api.billing_addresses

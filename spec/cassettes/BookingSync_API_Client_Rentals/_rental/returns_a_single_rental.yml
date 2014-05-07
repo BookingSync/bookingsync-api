@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/inquiries
+    uri: https://www.bookingsync.com/api/v3/rentals/2
     body:
       encoding: US-ASCII
       string: ''
@@ -25,11 +25,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1395763200'
+      - '1395846000'
       X-Ratelimit-Remaining:
-      - '996'
+      - '997'
       Link:
-      - "<https://www.bookingsync.com/api/v3/inquiries?page=1>; rel=\"first\", <https://www.bookingsync.com/api/v3/inquiries?page=1>;
+      - "<https://www.bookingsync.com/api/v3/rentals/2?page=1>; rel=\"first\", <https://www.bookingsync.com/api/v3/rentals/2?page=1>;
         rel=\"last\""
       X-Total-Pages:
       - '1'
@@ -42,23 +42,26 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - "\"5ce3f361e48a5948646c6c51dd86b319\""
+      - "\"1bc671b0952e787b2101a2601173c6d9\""
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       X-Request-Id:
-      - 966f6c2d18bb20ba61f88d00b869ac42
+      - e2367d447d03f800f132da2296cd2424
       X-Runtime:
-      - '0.173138'
+      - '0.186784'
       Date:
-      - Tue, 25 Mar 2014 15:22:25 GMT
+      - Wed, 26 Mar 2014 14:14:36 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: "{\"inquiries\":[{\"id\":1,\"firstname\":\"John\",\"lastname\":\"Smith\",\"email\":\"john@example.com\",\"country_code\":null,\"phone\":null,\"start_at\":\"2014-03-27T16:00:00Z\",\"end_at\":\"2014-03-28T10:00:00Z\",\"adults\":null,\"children\":null,\"rental_id\":2,\"message\":null,\"created_at\":\"2014-03-25T15:10:28Z\",\"updated_at\":\"2014-03-25T15:10:28Z\"}]}"
+      string: "{\"rentals\":[{\"links\":{\"photos\":[20]},\"account_id\":1,\"id\":2,\"name\":\"0
+        est\",\"headline\":{\"en\":\"Super Headline\"},\"summary\":{\"en\":\"Super
+        summary\"},\"description\":{\"en\":\"Complete description\"},\"rental_type\":\"villa\",\"units\":1,\"bedrooms\":null,\"sleeps\":7,\"sleeps_max\":null,\"bathrooms\":3,\"surface\":120,\"bookable_online\":false,\"min_price\":700,\"max_price\":700,\"price_kind\":\"weekly\",\"currency\":\"EUR\",\"rates_public_notes\":{\"en\":null},\"lat\":45.02,\"lng\":6.6,\"city\":\"Nevache\",\"state\":null,\"country\":\"France\",\"contact_name\":\"Contact
+        Fullname\",\"amenities\":[],\"reviews_count\":0,\"reviews_average_rating\":null,\"updated_at\":\"2014-03-26T14:14:18Z\"}]}"
     http_version:
-  recorded_at: Tue, 25 Mar 2014 15:22:25 GMT
+  recorded_at: Wed, 26 Mar 2014 14:14:36 GMT
 recorded_with: VCR 2.8.0

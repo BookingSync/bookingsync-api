@@ -6,7 +6,7 @@ describe BookingSync::API::Client::Seasons do
 
   describe ".seasons", :vcr do
     it "returns seasons" do
-      expect(client.seasons).not_to be_nil
+      expect(client.seasons).not_to be_empty
       assert_requested :get, bs_url("seasons")
     end
   end
@@ -46,7 +46,7 @@ describe BookingSync::API::Client::Seasons do
     it "returns updated season" do
       VCR.use_cassette('BookingSync_API_Client_Seasons/_edit_season/updates_given_season_by_ID') do
         season = client.edit_season(6, attributes)
-        expect(season).to be_kind_of(Sawyer::Resource)
+        expect(season).to be_kind_of(BookingSync::API::Resource)
         expect(season.name).to eq(attributes[:name])
       end
     end

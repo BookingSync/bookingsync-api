@@ -30,7 +30,7 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '995'
       Location:
-      - https://www.bookingsync.com/api/v3/inquiries/2.json
+      - https://www.bookingsync.com/api/v3/inquiries/2
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Request-Method:

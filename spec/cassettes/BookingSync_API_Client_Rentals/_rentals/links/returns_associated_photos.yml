@@ -1,0 +1,152 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rentals
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1396900800'
+      X-Ratelimit-Remaining:
+      - '996'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rentals?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rentals?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Request-Method:
+      - '*'
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"eff718a9480ea3d04ce173f75f34c635"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - 1d00480933ae04a67cd55cb57277a3fd
+      X-Runtime:
+      - '2.011714'
+      Date:
+      - Mon, 07 Apr 2014 19:54:59 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rentals.photos":"https://www.bookingsync.com/api/v3/photos/{rentals.photos}"},"rentals":[{"links":{"photos":[1,3,20]},"account_id":1,"id":2,"name":"0
+        est","headline":{"en":"Super Headline"},"summary":{"en":"Super summary"},"description":{"en":"Complete
+        description"},"rental_type":"villa","units":1,"bedrooms":null,"sleeps":7,"sleeps_max":null,"bathrooms":3,"surface":120,"bookable_online":false,"min_price":700,"max_price":700,"price_kind":"weekly","currency":"EUR","rates_public_notes":{"en":null},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country":"France","contact_name":"Contact
+        Fullname","amenities":[],"reviews_count":0,"reviews_average_rating":null,"updated_at":"2014-04-07T14:36:11Z"},{"links":{"photos":[2]},"account_id":1,"id":4,"name":"1
+        et","headline":{"en":"Super Headline"},"summary":{"en":"Super summary"},"description":{"en":"Complete
+        description"},"rental_type":"villa","units":1,"bedrooms":null,"sleeps":7,"sleeps_max":null,"bathrooms":3,"surface":120,"bookable_online":false,"min_price":700,"max_price":700,"price_kind":"weekly","currency":"EUR","rates_public_notes":{"en":null},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country":"France","contact_name":"Contact
+        Fullname","amenities":[],"reviews_count":0,"reviews_average_rating":null,"updated_at":"2014-03-21T13:42:58Z"},{"links":{"photos":[]},"account_id":1,"id":6,"name":"ha
+        ha","headline":{"en":"Super Headline"},"summary":{"en":"Super summary"},"description":{"en":"Complete
+        description"},"rental_type":"villa","units":1,"bedrooms":null,"sleeps":7,"sleeps_max":null,"bathrooms":3,"surface":120,"bookable_online":false,"min_price":700,"max_price":700,"price_kind":"weekly","currency":"EUR","rates_public_notes":{"en":null},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country":"France","contact_name":"Contact
+        Fullname","amenities":[],"reviews_count":0,"reviews_average_rating":null,"updated_at":"2014-03-26T13:06:42Z"},{"links":{"photos":[]},"account_id":1,"id":8,"name":"bla
+        bla","headline":{"en":"Super Headline"},"summary":{"en":"Super summary"},"description":{"en":"Complete
+        description"},"rental_type":"villa","units":1,"bedrooms":null,"sleeps":7,"sleeps_max":null,"bathrooms":3,"surface":120,"bookable_online":false,"min_price":700,"max_price":700,"price_kind":"weekly","currency":"EUR","rates_public_notes":{"en":null},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country":"France","contact_name":"Contact
+        Fullname","amenities":[],"reviews_count":0,"reviews_average_rating":null,"updated_at":"2014-03-26T13:05:05Z"},{"links":{"photos":[]},"account_id":1,"id":10,"name":"4
+        sunt","headline":{"en":"Super Headline"},"summary":{"en":"Super summary"},"description":{"en":"Complete
+        description"},"rental_type":"villa","units":1,"bedrooms":null,"sleeps":7,"sleeps_max":null,"bathrooms":3,"surface":120,"bookable_online":false,"min_price":700,"max_price":700,"price_kind":"weekly","currency":"EUR","rates_public_notes":{"en":null},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country":"France","contact_name":"Contact
+        Fullname","amenities":[],"reviews_count":0,"reviews_average_rating":null,"updated_at":"2014-03-21T13:41:55Z"},{"links":{"photos":[7]},"account_id":1,"id":14,"name":"6
+        aut sed","headline":{"en":"Super Headline"},"summary":{"en":"Super summary"},"description":{"en":"Complete
+        description"},"rental_type":"villa","units":1,"bedrooms":null,"sleeps":7,"sleeps_max":null,"bathrooms":3,"surface":120,"bookable_online":false,"min_price":700,"max_price":700,"price_kind":"weekly","currency":"EUR","rates_public_notes":{"en":null},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country":"France","contact_name":"Contact
+        Fullname","amenities":[],"reviews_count":0,"reviews_average_rating":null,"updated_at":"2014-02-28T10:57:26Z"},{"links":{"photos":[8]},"account_id":1,"id":16,"name":"7
+        exercitationem ea soluta","headline":{"en":"Super Headline"},"summary":{"en":"Super
+        summary"},"description":{"en":"Complete description"},"rental_type":"villa","units":1,"bedrooms":null,"sleeps":7,"sleeps_max":null,"bathrooms":3,"surface":120,"bookable_online":false,"min_price":700,"max_price":700,"price_kind":"weekly","currency":"EUR","rates_public_notes":{"en":null},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country":"France","contact_name":"Contact
+        Fullname","amenities":[],"reviews_count":0,"reviews_average_rating":null,"updated_at":"2014-02-28T10:57:26Z"},{"links":{"photos":[9]},"account_id":1,"id":18,"name":"8
+        dolores","headline":{"en":"Super Headline"},"summary":{"en":"Super summary"},"description":{"en":"Complete
+        description"},"rental_type":"villa","units":1,"bedrooms":null,"sleeps":7,"sleeps_max":null,"bathrooms":3,"surface":120,"bookable_online":false,"min_price":700,"max_price":700,"price_kind":"weekly","currency":"EUR","rates_public_notes":{"en":null},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country":"France","contact_name":"Contact
+        Fullname","amenities":[],"reviews_count":0,"reviews_average_rating":null,"updated_at":"2014-02-28T10:58:36Z"},{"links":{"photos":[10]},"account_id":1,"id":20,"name":"9
+        doloremque sint","headline":{"en":"Super Headline"},"summary":{"en":"Super
+        summary"},"description":{"en":"Complete description"},"rental_type":"villa","units":1,"bedrooms":null,"sleeps":7,"sleeps_max":null,"bathrooms":3,"surface":120,"bookable_online":false,"min_price":700,"max_price":700,"price_kind":"weekly","currency":"EUR","rates_public_notes":{"en":null},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country":"France","contact_name":"Contact
+        Fullname","amenities":[],"reviews_count":0,"reviews_average_rating":null,"updated_at":"2014-03-21T13:41:56Z"}]}'
+    http_version:
+  recorded_at: Mon, 07 Apr 2014 19:54:59 GMT
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/photos/1,3,20
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1396900800'
+      X-Ratelimit-Remaining:
+      - '995'
+      Link:
+      - <https://www.bookingsync.com/api/v3/photos/1,3,20?page=1>; rel="first", <https://www.bookingsync.com/api/v3/photos/1,3,20?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Request-Method:
+      - '*'
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"f0b8bd76067266289563618fdf89e421"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - 3c3d83cb4c2c2f8ed993065ffb4700a8
+      X-Runtime:
+      - '0.177880'
+      Date:
+      - Mon, 07 Apr 2014 19:55:00 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"photos":[{"id":1,"description":{"en":null},"kind":null,"large_url":"http://www.bookingsync.com/files/development/photo/photo/1/large_74bb15ca0b2008ab7237c807ef77a1ed.jpg","normal_url":"http://www.bookingsync.com/files/development/photo/photo/1/normal_74bb15ca0b2008ab7237c807ef77a1ed.jpg","thumb_url":"http://www.bookingsync.com/files/development/photo/photo/1/thumb_74bb15ca0b2008ab7237c807ef77a1ed.jpg","micro_url":"http://www.bookingsync.com/files/development/photo/photo/1/micro_74bb15ca0b2008ab7237c807ef77a1ed.jpg","position":1},{"id":3,"description":{"en":null},"kind":null,"large_url":"http://www.bookingsync.com/files/development/photo/photo/3/large_7a2d73719aeef0d0495bd821e3bc5a83.jpg","normal_url":"http://www.bookingsync.com/files/development/photo/photo/3/normal_7a2d73719aeef0d0495bd821e3bc5a83.jpg","thumb_url":"http://www.bookingsync.com/files/development/photo/photo/3/thumb_7a2d73719aeef0d0495bd821e3bc5a83.jpg","micro_url":"http://www.bookingsync.com/files/development/photo/photo/3/micro_7a2d73719aeef0d0495bd821e3bc5a83.jpg","position":1},{"id":20,"description":{"en":null},"kind":null,"large_url":"http://www.bookingsync.com/files/development/photo/photo/20/large_4db2ca4f3f26eef3a567c4dfd2e3c6eb.jpg","normal_url":"http://www.bookingsync.com/files/development/photo/photo/20/normal_4db2ca4f3f26eef3a567c4dfd2e3c6eb.jpg","thumb_url":"http://www.bookingsync.com/files/development/photo/photo/20/thumb_4db2ca4f3f26eef3a567c4dfd2e3c6eb.jpg","micro_url":"http://www.bookingsync.com/files/development/photo/photo/20/micro_4db2ca4f3f26eef3a567c4dfd2e3c6eb.jpg","position":1}]}'
+    http_version:
+  recorded_at: Mon, 07 Apr 2014 19:55:00 GMT
+recorded_with: VCR 2.9.0

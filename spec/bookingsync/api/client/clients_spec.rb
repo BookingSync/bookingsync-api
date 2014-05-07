@@ -5,7 +5,7 @@ describe BookingSync::API::Client::Bookings do
 
   describe ".clients", :vcr do
     it "returns clients" do
-      expect(api.clients).not_to be_nil
+      expect(api.clients).not_to be_empty
       assert_requested :get, bs_url("clients")
     end
   end
@@ -47,7 +47,7 @@ describe BookingSync::API::Client::Bookings do
     it "returns updated client" do
       VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_client/updates_given_client_by_ID') do
         client = api.edit_client(2, fullname: "Gary Smith")
-        expect(client).to be_kind_of(Sawyer::Resource)
+        expect(client).to be_kind_of(BookingSync::API::Resource)
         expect(client.fullname).to eq("Gary Smith")
       end
     end
