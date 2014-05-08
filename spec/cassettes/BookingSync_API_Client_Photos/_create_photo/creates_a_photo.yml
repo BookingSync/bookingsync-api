@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/rentals/2/photos
+    body:
+      encoding: UTF-8
+      string: '{"photos":[{"description_en":"Funny","kind":"livingroom","photo":"/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsL\nDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/\n2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy\nMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAFABQDASIAAhEBAxEB/8QA\nHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUF\nBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkK\nFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1\ndnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG\nx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEB\nAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAEC\nAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRom\nJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE\nhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU\n1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAoo\nooA//9k=\n","filename":"test.jpg"}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1399568400'
+      X-Ratelimit-Remaining:
+      - '988'
+      Location:
+      - https://www.bookingsync.com/api/v3/photos/26
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Request-Method:
+      - '*'
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"881bb6505cae15a742396c097034cfcb"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - _BookingSync_session=a319bf22174721cd52b98bc1dea954f4; path=/; secure; HttpOnly
+      X-Request-Id:
+      - c69206daae89089f5d59c0e9237d0485
+      X-Runtime:
+      - '1.868464'
+      Date:
+      - Thu, 08 May 2014 16:59:23 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"photos":[{"id":26,"rental_id":2,"description":{"en":"Funny"},"kind":"livingroom","large_url":"http://www.bookingsync.com/files/development/photo/photo/26/large_baf572c8a5a9829e4e5a003786f83242.jpg","normal_url":"http://www.bookingsync.com/files/development/photo/photo/26/normal_baf572c8a5a9829e4e5a003786f83242.jpg","thumb_url":"http://www.bookingsync.com/files/development/photo/photo/26/thumb_baf572c8a5a9829e4e5a003786f83242.jpg","micro_url":"http://www.bookingsync.com/files/development/photo/photo/26/micro_baf572c8a5a9829e4e5a003786f83242.jpg","position":6}]}'
+    http_version:
+  recorded_at: Thu, 08 May 2014 16:59:23 GMT
+recorded_with: VCR 2.9.0
