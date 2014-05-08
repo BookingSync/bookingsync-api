@@ -52,13 +52,13 @@ module BookingSync::API
         put("photos/#{photo}", photos: [options]).pop
       end
 
-      # Destroy a photo
+      # Delete a photo
       #
       # @param photo [BookingSync::API::Resource|Integer] Photo or ID of the
-      #   photo to be removed.
+      #   photo to be deleted.
       # @return [NilClass] Returns nil on success.
       # @see http://docs.api.bookingsync.com/reference/endpoints/photos/#destroy-a-photo
-      def destroy_photo(photo)
+      def delete_photo(photo)
         delete "photos/#{photo}"
       end
 

@@ -43,10 +43,10 @@ module BookingSync::API
 
       # Delete a period
       #
-      # @param period [BookingSync::API::Resource|Integer] period or ID of the period
-      # to be deleted
-      # @return [Array] An empty Array on success, exception is raised otherwise
-      def delete_period(period, options = {})
+      # @param period [BookingSync::API::Resource|Integer] Period or ID
+      #   of the period to be deleted.
+      # @return [NilClass] Returns nil on success.
+      def delete_period(period)
         delete "periods/#{period}"
       end
     end

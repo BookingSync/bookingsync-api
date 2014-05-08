@@ -40,12 +40,12 @@ module BookingSync::API
         put("rates_tables/#{rates_table}", rates_tables: [options]).pop
       end
 
-      # delete a rates_table
+      # Delete a rates_table
       #
-      # @param rates_table [BookingSync::API::Resource|Integer] rates table or
-      # ID of the rates table to be deleteed
-      # @return [Array] An empty Array on success, exception is raised otherwise
-      def delete_rates_table(rates_table, options = {})
+      # @param rates_table [BookingSync::API::Resource|Integer] Rates table or
+      #   ID of the rates table to be deleteed.
+      # @return [NilClass] Returns nil on success
+      def delete_rates_table(rates_table)
         delete "rates_tables/#{rates_table}"
       end
     end

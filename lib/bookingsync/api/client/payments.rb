@@ -42,10 +42,10 @@ module BookingSync::API
 
       # Cancel a payment
       #
-      # @param payment [BookingSync::API::Resource|Integer] payment or ID of the payment
-      # to be canceled
-      # @return [Array] An empty Array on success, exception is raised otherwise
-      def cancel_payment(payment, options = {})
+      # @param payment [BookingSync::API::Resource|Integer] Payment or ID of
+      #   the payment to be canceled.
+      # @return [NilClass] Returns nil on success.
+      def cancel_payment(payment)
         delete "payments/#{payment}"
       end
     end

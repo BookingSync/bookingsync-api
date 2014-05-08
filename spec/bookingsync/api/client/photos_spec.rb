@@ -44,9 +44,9 @@ describe BookingSync::API::Client::Photos do
     end
   end
 
-  describe ".destroy_photo", :vcr do
-    it "destroys given photo" do
-      expect(client.destroy_photo(23)).to be_nil
+  describe ".delete_photo", :vcr do
+    it "delete given photo" do
+      expect(client.delete_photo(23)).to be_nil
     end
   end
 end

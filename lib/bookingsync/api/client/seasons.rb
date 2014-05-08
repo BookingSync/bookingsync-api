@@ -42,10 +42,10 @@ module BookingSync::API
 
       # Delete a season
       #
-      # @param season [BookingSync::API::Resource|Integer] season or ID of the season
-      # to be deleted
-      # @return [Array] An empty Array on success, exception is raised otherwise
-      def delete_season(season, options = {})
+      # @param season [BookingSync::API::Resource|Integer] Season or ID
+      #   of the season to be deleted.
+      # @return [NilClass] Returns nil on success.
+      def delete_season(season)
         delete "seasons/#{season}"
       end
     end

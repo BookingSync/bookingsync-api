@@ -41,16 +41,17 @@ module BookingSync::API
 
       # Cancel a rental
       #
-      # @param rental [BookingSync::API::Resource|Integer] rental or ID of the rental
-      # to be canceled
-      # @return [Array] An empty Array on success, exception is raised otherwise
-      def cancel_rental(rental, options = {})
+      # @param rental [BookingSync::API::Resource|Integer] Rental or ID
+      #   of the rental to be canceled.
+      # @return [NilClass] Returns nil on success.
+      def cancel_rental(rental)
         delete "rentals/#{rental}"
       end
 
       # Get a single rental
       #
-      # @param rental [BookingSync::API::Resource|Integer] Rental or ID of the rental
+      # @param rental [BookingSync::API::Resource|Integer] Rental or ID
+      #   of the rental.
       # @return [BookingSync::API::Resource]
       def rental(rental)
         get("rentals/#{rental}").pop

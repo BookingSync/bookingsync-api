@@ -43,10 +43,10 @@ module BookingSync::API
 
       # Delete a special_offer
       #
-      # @param special_offer [BookingSync::API::Resource|Integer] special offer or
-      # ID of the special offer to be deleted
-      # @return [Array] An empty Array on success, exception is raised otherwise
-      def delete_special_offer(special_offer, options = {})
+      # @param special_offer [BookingSync::API::Resource|Integer] Special offer
+      #   or ID of the special offer to be deleted.
+      # @return [NilClass] Returns nil on success.
+      def delete_special_offer(special_offer)
         delete "special_offers/#{special_offer}"
       end
     end
