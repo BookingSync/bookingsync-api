@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/payments/2
+    body:
+      encoding: UTF-8
+      string: "{\"payments\":[{\"kind\":\"cash\"}]}"
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1398171600'
+      X-Ratelimit-Remaining:
+      - '997'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - "\"b4616121ed3149207705e62094986ecd\""
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - _BookingSync_session=5a33b2e37c873d4547e1c0f685dfd273; path=/; secure; HttpOnly
+      X-Request-Id:
+      - a5f177660679091004a8a088a2d63d97
+      X-Runtime:
+      - '0.075107'
+      Date:
+      - Tue, 22 Apr 2014 12:00:20 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\"links\":{\"payments.billing_address\":\"https://www.bookingsync.com/api/v3/billing_addresses/{payments.billing_address}\",\"payments.bookings\":\"https://www.bookingsync.com/api/v3/bookings/{payments.bookings}\",\"payments.bookings_payments\":\"https://www.bookingsync.com/api/v3/bookings_payments/{payments.bookings_payments}\"},\"payments\":[{\"links\":{\"billing_address\":null,\"bookings\":[5],\"bookings_payments\":[2]},\"id\":2,\"account_id\":1,\"transaction_id\":null,\"order_id\":null,\"card\":null,\"amount\":125200,\"currency\":\"EUR\",\"kind\":\"cash\",\"fullname\":null,\"email\":null,\"locale\":null,\"ip\":null,\"test\":null,\"notes\":null,\"paid_at\":\"2014-04-07T13:18:42Z\",\"created_at\":\"2014-04-14T13:18:42Z\",\"updated_at\":\"2014-04-22T11:23:32Z\",\"rejected_at\":null,\"canceled_at\":null}]}"
+    http_version:
+  recorded_at: Tue, 22 Apr 2014 12:00:20 GMT
+recorded_with: VCR 2.9.0
