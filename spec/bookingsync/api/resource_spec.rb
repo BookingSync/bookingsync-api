@@ -14,7 +14,7 @@ describe BookingSync::API::Resource do
       },
       {
         :"foo.photos" => "http://foo.com/photos/{foo.photos}",
-        :"foo.bars" => "http://foo.com/bars/{foo.bars}"
+        :"foo.category" => "http://foo.com/categories/{foo.category}"
       },
       "foo"
     )
@@ -45,10 +45,22 @@ describe BookingSync::API::Resource do
 
   describe "associations" do
     before { VCR.turn_off! }
-    it "fetches an association based on links" do
-      stub_request(:get, "http://foo.com/photos/9,10")
-        .to_return(body: {photos: [{file: 'a.jpg'}]}.to_json)
-      expect(resource.photos).to eql([{:file => "a.jpg"}])
+
+    context "has_many (ids given as an array)" do
+      it "fetches an association based on links" do
+        stub_request(:get, "http://foo.com/photos/9,10")
+          .to_return(body: {photos: [{file: 'a.jpg'}]}.to_json)
+        expect(resource.photos).to eql([{:file => "a.jpg"}])
+      end
+    end
+
+    context "has_one (id given as a single integer)" do
+      let(:links) { {category: 15} }
+      it "fetches an association based on links" do
+        stub_request(:get, "http://foo.com/categories/15")
+          .to_return(body: {categories: [{name: "Secret one"}]}.to_json)
+        expect(resource.category).to eql([{name: "Secret one"}])
+      end
     end
 
     context "when there are not associated ids" do
