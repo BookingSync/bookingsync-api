@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/bookings_payments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1398164400'
+      X-Ratelimit-Remaining:
+      - '991'
+      Link:
+      - "<https://www.bookingsync.com/api/v3/bookings_payments?page=1>; rel=\"first\",
+        <https://www.bookingsync.com/api/v3/bookings_payments?page=2>; rel=\"next\",
+        <https://www.bookingsync.com/api/v3/bookings_payments?page=2>; rel=\"last\""
+      X-Total-Pages:
+      - '2'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - "\"c03d6b64570c9f6cfdd723c69bd55312\""
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - ba649ff58ee7c5480e13b0a1fc48d147
+      X-Runtime:
+      - '0.601282'
+      Date:
+      - Tue, 22 Apr 2014 10:36:22 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\"bookings_payments\":[{\"id\":2,\"account_id\":1,\"booking_id\":5,\"payment_id\":2,\"amount\":125200,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:42Z\",\"updated_at\":\"2014-04-14T13:18:42Z\"},{\"id\":10,\"account_id\":1,\"booking_id\":11,\"payment_id\":10,\"amount\":47300,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:52Z\",\"updated_at\":\"2014-04-14T13:18:52Z\"},{\"id\":11,\"account_id\":1,\"booking_id\":11,\"payment_id\":11,\"amount\":189200,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:52Z\",\"updated_at\":\"2014-04-14T13:18:52Z\"},{\"id\":12,\"account_id\":1,\"booking_id\":11,\"payment_id\":12,\"amount\":236500,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:52Z\",\"updated_at\":\"2014-04-14T13:18:52Z\"},{\"id\":13,\"account_id\":1,\"booking_id\":12,\"payment_id\":13,\"amount\":118800,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:52Z\",\"updated_at\":\"2014-04-14T13:18:52Z\"},{\"id\":14,\"account_id\":1,\"booking_id\":12,\"payment_id\":14,\"amount\":79200,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:52Z\",\"updated_at\":\"2014-04-14T13:18:52Z\"},{\"id\":18,\"account_id\":1,\"booking_id\":14,\"payment_id\":18,\"amount\":90000,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:53Z\",\"updated_at\":\"2014-04-14T13:18:53Z\"},{\"id\":19,\"account_id\":1,\"booking_id\":15,\"payment_id\":19,\"amount\":117200,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:53Z\",\"updated_at\":\"2014-04-14T13:18:53Z\"},{\"id\":20,\"account_id\":1,\"booking_id\":15,\"payment_id\":20,\"amount\":58600,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:53Z\",\"updated_at\":\"2014-04-14T13:18:53Z\"},{\"id\":21,\"account_id\":1,\"booking_id\":15,\"payment_id\":21,\"amount\":117200,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:53Z\",\"updated_at\":\"2014-04-14T13:18:53Z\"},{\"id\":23,\"account_id\":1,\"booking_id\":17,\"payment_id\":23,\"amount\":6200,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:57Z\",\"updated_at\":\"2014-04-14T13:18:57Z\"},{\"id\":24,\"account_id\":1,\"booking_id\":17,\"payment_id\":24,\"amount\":24800,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:57Z\",\"updated_at\":\"2014-04-14T13:18:57Z\"},{\"id\":28,\"account_id\":1,\"booking_id\":20,\"payment_id\":28,\"amount\":34200,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:58Z\",\"updated_at\":\"2014-04-14T13:18:58Z\"},{\"id\":29,\"account_id\":1,\"booking_id\":20,\"payment_id\":29,\"amount\":45600,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:18:58Z\",\"updated_at\":\"2014-04-14T13:18:58Z\"},{\"id\":30,\"account_id\":1,\"booking_id\":21,\"payment_id\":30,\"amount\":31000,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:02Z\",\"updated_at\":\"2014-04-14T13:19:02Z\"},{\"id\":31,\"account_id\":1,\"booking_id\":21,\"payment_id\":31,\"amount\":31000,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:02Z\",\"updated_at\":\"2014-04-14T13:19:02Z\"},{\"id\":34,\"account_id\":1,\"booking_id\":24,\"payment_id\":34,\"amount\":8400,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:03Z\",\"updated_at\":\"2014-04-14T13:19:03Z\"},{\"id\":35,\"account_id\":1,\"booking_id\":24,\"payment_id\":35,\"amount\":4200,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:03Z\",\"updated_at\":\"2014-04-14T13:19:03Z\"},{\"id\":36,\"account_id\":1,\"booking_id\":25,\"payment_id\":36,\"amount\":15400,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:03Z\",\"updated_at\":\"2014-04-14T13:19:03Z\"},{\"id\":37,\"account_id\":1,\"booking_id\":26,\"payment_id\":37,\"amount\":27200,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:07Z\",\"updated_at\":\"2014-04-14T13:19:07Z\"},{\"id\":38,\"account_id\":1,\"booking_id\":26,\"payment_id\":38,\"amount\":40800,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:07Z\",\"updated_at\":\"2014-04-14T13:19:07Z\"},{\"id\":39,\"account_id\":1,\"booking_id\":26,\"payment_id\":39,\"amount\":68000,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:08Z\",\"updated_at\":\"2014-04-14T13:19:08Z\"},{\"id\":40,\"account_id\":1,\"booking_id\":27,\"payment_id\":40,\"amount\":22300,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:08Z\",\"updated_at\":\"2014-04-14T13:19:08Z\"},{\"id\":41,\"account_id\":1,\"booking_id\":27,\"payment_id\":41,\"amount\":22300,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:08Z\",\"updated_at\":\"2014-04-14T13:19:08Z\"},{\"id\":42,\"account_id\":1,\"booking_id\":27,\"payment_id\":42,\"amount\":178400,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:08Z\",\"updated_at\":\"2014-04-14T13:19:08Z\"},{\"id\":44,\"account_id\":1,\"booking_id\":29,\"payment_id\":44,\"amount\":66300,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:08Z\",\"updated_at\":\"2014-04-14T13:19:08Z\"},{\"id\":45,\"account_id\":1,\"booking_id\":30,\"payment_id\":45,\"amount\":26400,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:08Z\",\"updated_at\":\"2014-04-14T13:19:08Z\"},{\"id\":46,\"account_id\":1,\"booking_id\":30,\"payment_id\":46,\"amount\":26400,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:08Z\",\"updated_at\":\"2014-04-14T13:19:08Z\"},{\"id\":70,\"account_id\":1,\"booking_id\":45,\"payment_id\":70,\"amount\":23000,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:24Z\",\"updated_at\":\"2014-04-14T13:19:24Z\"},{\"id\":71,\"account_id\":1,\"booking_id\":45,\"payment_id\":71,\"amount\":23000,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:24Z\",\"updated_at\":\"2014-04-14T13:19:24Z\"},{\"id\":79,\"account_id\":1,\"booking_id\":50,\"payment_id\":79,\"amount\":25000,\"currency\":\"EUR\",\"created_at\":\"2014-04-14T13:19:29Z\",\"updated_at\":\"2014-04-14T13:19:29Z\"},{\"id\":106,\"account_id\":1,\"booking_id\":71,\"payment_id\":106,\"amount\":100000,\"currency\":\"EUR\",\"created_at\":\"2014-04-22T10:16:17Z\",\"updated_at\":\"2014-04-22T10:16:17Z\"},{\"id\":1,\"account_id\":1,\"booking_id\":2,\"payment_id\":1,\"amount\":33000,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:18:42Z\",\"updated_at\":\"2014-04-14T13:18:42Z\"},{\"id\":8,\"account_id\":1,\"booking_id\":10,\"payment_id\":8,\"amount\":38400,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:18:47Z\",\"updated_at\":\"2014-04-14T13:18:47Z\"},{\"id\":9,\"account_id\":1,\"booking_id\":10,\"payment_id\":9,\"amount\":51200,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:18:47Z\",\"updated_at\":\"2014-04-14T13:18:47Z\"},{\"id\":22,\"account_id\":1,\"booking_id\":16,\"payment_id\":22,\"amount\":18400,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:18:57Z\",\"updated_at\":\"2014-04-14T13:18:57Z\"},{\"id\":25,\"account_id\":1,\"booking_id\":19,\"payment_id\":25,\"amount\":10500,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:18:58Z\",\"updated_at\":\"2014-04-14T13:18:58Z\"},{\"id\":26,\"account_id\":1,\"booking_id\":19,\"payment_id\":26,\"amount\":31500,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:18:58Z\",\"updated_at\":\"2014-04-14T13:18:58Z\"},{\"id\":27,\"account_id\":1,\"booking_id\":19,\"payment_id\":27,\"amount\":63000,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:18:58Z\",\"updated_at\":\"2014-04-14T13:18:58Z\"},{\"id\":43,\"account_id\":1,\"booking_id\":28,\"payment_id\":43,\"amount\":43800,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:19:08Z\",\"updated_at\":\"2014-04-14T13:19:08Z\"},{\"id\":52,\"account_id\":1,\"booking_id\":33,\"payment_id\":52,\"amount\":58400,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:19:13Z\",\"updated_at\":\"2014-04-14T13:19:13Z\"},{\"id\":53,\"account_id\":1,\"booking_id\":33,\"payment_id\":53,\"amount\":29200,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:19:13Z\",\"updated_at\":\"2014-04-14T13:19:13Z\"},{\"id\":54,\"account_id\":1,\"booking_id\":34,\"payment_id\":54,\"amount\":164400,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:19:14Z\",\"updated_at\":\"2014-04-14T13:19:14Z\"},{\"id\":55,\"account_id\":1,\"booking_id\":34,\"payment_id\":55,\"amount\":164400,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:19:14Z\",\"updated_at\":\"2014-04-14T13:19:14Z\"},{\"id\":65,\"account_id\":1,\"booking_id\":41,\"payment_id\":65,\"amount\":79600,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:19:23Z\",\"updated_at\":\"2014-04-14T13:19:23Z\"},{\"id\":66,\"account_id\":1,\"booking_id\":41,\"payment_id\":66,\"amount\":159200,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:19:23Z\",\"updated_at\":\"2014-04-14T13:19:23Z\"},{\"id\":67,\"account_id\":1,\"booking_id\":41,\"payment_id\":67,\"amount\":159200,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:19:23Z\",\"updated_at\":\"2014-04-14T13:19:23Z\"},{\"id\":68,\"account_id\":1,\"booking_id\":42,\"payment_id\":68,\"amount\":132000,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:19:24Z\",\"updated_at\":\"2014-04-14T13:19:24Z\"},{\"id\":72,\"account_id\":1,\"booking_id\":46,\"payment_id\":72,\"amount\":68400,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:19:28Z\",\"updated_at\":\"2014-04-14T13:19:28Z\"},{\"id\":73,\"account_id\":1,\"booking_id\":46,\"payment_id\":73,\"amount\":91200,\"currency\":\"GBP\",\"created_at\":\"2014-04-14T13:19:28Z\",\"updated_at\":\"2014-04-14T13:19:28Z\"}]}"
+    http_version:
+  recorded_at: Tue, 22 Apr 2014 10:36:22 GMT
+recorded_with: VCR 2.9.0

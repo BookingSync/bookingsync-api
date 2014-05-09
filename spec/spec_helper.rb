@@ -13,7 +13,7 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |c|
-  c.cassette_library_dir = "spec/cassettes"
+  c.cassette_library_dir = "spec/fixtures/cassettes"
   c.hook_into :webmock
   c.configure_rspec_metadata!
   c.filter_sensitive_data("<<ACCESS_TOKEN>>") do

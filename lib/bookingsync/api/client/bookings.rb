@@ -53,9 +53,9 @@ module BookingSync::API
 
       # Cancel a booking
       #
-      # @param booking [BookingSync::API::Resource|Integer] Booking or ID of the booking
-      #   to be canceled
-      # @return [Array] An empty Array on success, exception is raised otherwise
+      # @param booking [BookingSync::API::Resource|Integer] Booking or ID of
+      #   the booking to be canceled.
+      # @return [NilClass] Returns nil on success.
       def cancel_booking(booking, options = {})
         delete "bookings/#{booking}"
       end

@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://bookingsync.dev/api/v3/photos/37
+    body:
+      encoding: UTF-8
+      string: '{"photos":[{"file_path":"spec/fixtures/files/test.jpg"}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1399640400'
+      X-Ratelimit-Remaining:
+      - '956'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Request-Method:
+      - '*'
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"fa2396ab07706d75fb2eabf114b05611"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - _BookingSync_session=0c097a8bd41227def9c3094c3fa7dd39; path=/; secure; HttpOnly
+      X-Request-Id:
+      - 52e6a798d206d50f21080e02a7ed83c6
+      X-Runtime:
+      - '0.049991'
+      Date:
+      - Fri, 09 May 2014 12:37:34 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"photos":[{"id":37,"rental_id":2,"description":{"en":"Not funny anymore"},"kind":"livingroom","large_url":"http://bookingsync.dev/files/development/photo/photo/37/large_b0e94d712c4916323d4c7da35635f02e.jpg","normal_url":"http://bookingsync.dev/files/development/photo/photo/37/normal_b0e94d712c4916323d4c7da35635f02e.jpg","thumb_url":"http://bookingsync.dev/files/development/photo/photo/37/thumb_b0e94d712c4916323d4c7da35635f02e.jpg","micro_url":"http://bookingsync.dev/files/development/photo/photo/37/micro_b0e94d712c4916323d4c7da35635f02e.jpg","position":8}]}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 12:37:34 GMT
+recorded_with: VCR 2.9.0
