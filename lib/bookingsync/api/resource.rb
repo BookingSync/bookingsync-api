@@ -41,8 +41,8 @@ module BookingSync::API
     def method_missing(method, *args)
       association_key = :"#{@_resources_key}.#{method}"
       if self[:links] && self[:links].has_key?(method)
-        ids = self[:links][method]
-        return [] if !ids or ids.empty?
+        ids = Array(self[:links][method])
+        return [] if ids.empty?
         options = {uri: {association_key => ids}}
         options.merge!(query: args.first) if args.first.is_a?(Hash)
         @_rels[association_key].get(options).resources
