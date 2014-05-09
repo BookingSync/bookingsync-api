@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://www.bookingsync.com/api/v3/photos/23
+    uri: https://www.bookingsync.com/api/v3/photos/37
     body:
       encoding: UTF-8
       string: '{}'
@@ -25,9 +25,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1399572000'
+      - '1399633200'
       X-Ratelimit-Remaining:
-      - '999'
+      - '987'
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Request-Method:
@@ -40,18 +40,18 @@ http_interactions:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=8c8a9c71e077787d80c0d2db0c6b7ae3; path=/; secure; HttpOnly
+      - _BookingSync_session=35d75b64e1c0bfeb9c64e766021cee70; path=/; secure; HttpOnly
       X-Request-Id:
-      - 7a64f52ac765057575b1a4cf239917c8
+      - c06bf42b2fa618f689bdbcddb05db317
       X-Runtime:
-      - '0.138240'
+      - '0.154167'
       Date:
-      - Thu, 08 May 2014 17:11:48 GMT
+      - Fri, 09 May 2014 10:41:48 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
       string: ''
     http_version:
-  recorded_at: Thu, 08 May 2014 17:11:48 GMT
+  recorded_at: Fri, 09 May 2014 10:41:48 GMT
 recorded_with: VCR 2.9.0

@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bookingsync.dev/api/v3/rentals/2/photos
+    body:
+      encoding: UTF-8
+      string: '{"photos":[{"remote_photo_url":"https://www.ruby-lang.org/images/header-ruby-logo.png","kind":"livingroom"}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1399640400'
+      X-Ratelimit-Remaining:
+      - '961'
+      Location:
+      - https://bookingsync.dev/api/v3/photos/36
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Request-Method:
+      - '*'
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"b2616b56d1659dbc24cc2ff49cf4038a"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - _BookingSync_session=a132dfc7225938f44b9d0ac906e1cd06; path=/; secure; HttpOnly
+      X-Request-Id:
+      - f9c6ee68336f66e828dc7b043727ba8f
+      X-Runtime:
+      - '3.485488'
+      Date:
+      - Fri, 09 May 2014 12:33:09 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"photos":[{"id":36,"rental_id":2,"description":{"en":null},"kind":"livingroom","large_url":"http://bookingsync.dev/files/development/photo/photo/36/large_3b2a5fb7453e698aa5222f863bb8e601.jpg","normal_url":"http://bookingsync.dev/files/development/photo/photo/36/normal_3b2a5fb7453e698aa5222f863bb8e601.jpg","thumb_url":"http://bookingsync.dev/files/development/photo/photo/36/thumb_3b2a5fb7453e698aa5222f863bb8e601.jpg","micro_url":"http://bookingsync.dev/files/development/photo/photo/36/micro_3b2a5fb7453e698aa5222f863bb8e601.jpg","position":7}]}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 12:33:09 GMT
+recorded_with: VCR 2.9.0

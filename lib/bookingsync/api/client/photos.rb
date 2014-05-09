@@ -23,17 +23,21 @@ module BookingSync::API
       # Create a photo
       #
       # @param rental [BookingSync::API::Resource|Integer] Rental object or ID
-      #   for which the photo will be created.
+      #   for which the photo will be created. Image can be provided in three
+      #   was, as a file path, encode string or as an URL.
       # @param options [Hash] Photo's attributes.
-      # @option options [String] file_path: Required file path to the image.
+      # @option options [String] photo_path: Path to the image to be uploaded.
+      # @option options [String] photo: Photo encoded with Base64
+      # @option options [String] remote_photo_url: URL to a remote image which
+      #   will be fetched and then saved
       # @return [BookingSync::API::Resource] Newly created photo.
       # @example Create a photo.
-      #   @api.create_photo(10, file_path: 'rentals/big_one.jpg')
+      #   @api.create_photo(10, photo_path: 'rentals/big_one.jpg')
       # @see http://docs.api.bookingsync.com/reference/endpoints/photos/#create-a-new-photo
       def create_photo(rental, options = {})
-        file_path = options.delete(:file_path)
-        options[:photo] = encode(file_path)
-        options[:filename] = File.basename(file_path)
+        if photo_path = options.delete(:photo_path)
+          options[:photo] ||= encode(photo_path)
+        end
         post("rentals/#{rental}/photos", photos: [options]).pop
       end
 
@@ -45,9 +49,8 @@ module BookingSync::API
       # @return [BookingSync::API::Resource] Updated photo
       # @see http://docs.api.bookingsync.com/reference/endpoints/photos/#update-a-photo
       def edit_photo(photo, options = {})
-        if file_path = options.delete(:file_path)
-          options[:photo] = encode(file_path)
-          options[:filename] = File.basename(file_path)
+        if photo_path = options.delete(:photo_path)
+          options[:photo] ||= encode(photo_path)
         end
         put("photos/#{photo}", photos: [options]).pop
       end

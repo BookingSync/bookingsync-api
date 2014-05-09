@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: put
-    uri: https://www.bookingsync.com/api/v3/photos/23
+    uri: https://bookingsync.dev/api/v3/photos/37
     body:
       encoding: UTF-8
-      string: '{"photos":[{"photo":"/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsL\nDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/\n2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy\nMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAFABQDASIAAhEBAxEB/8QA\nHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUF\nBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkK\nFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1\ndnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG\nx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEB\nAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAEC\nAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRom\nJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE\nhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU\n1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAoo\nooA//9k=\n","filename":"test.jpg"}]}'
+      string: '{"photos":[{"file_path":"spec/fixtures/files/test.jpg"}]}'
     headers:
       User-Agent:
       - Faraday v0.9.0
@@ -25,9 +25,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1399568400'
+      - '1399640400'
       X-Ratelimit-Remaining:
-      - '986'
+      - '956'
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Request-Method:
@@ -37,25 +37,25 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"499e977db2161220256a42239162c846"'
+      - '"fa2396ab07706d75fb2eabf114b05611"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=4dd64a8a3b79f219d3e8d057af5ce163; path=/; secure; HttpOnly
+      - _BookingSync_session=0c097a8bd41227def9c3094c3fa7dd39; path=/; secure; HttpOnly
       X-Request-Id:
-      - a8611ebe0b8bf639cad9370e46f6698a
+      - 52e6a798d206d50f21080e02a7ed83c6
       X-Runtime:
-      - '0.413357'
+      - '0.049991'
       Date:
-      - Thu, 08 May 2014 16:59:24 GMT
+      - Fri, 09 May 2014 12:37:34 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"photos":[{"id":23,"rental_id":2,"description":{"en":"Not funny anymore"},"kind":"livingroom","large_url":"http://www.bookingsync.com/files/development/photo/photo/23/large_8906c9a8a712f8684810635f02068504.jpg","normal_url":"http://www.bookingsync.com/files/development/photo/photo/23/normal_8906c9a8a712f8684810635f02068504.jpg","thumb_url":"http://www.bookingsync.com/files/development/photo/photo/23/thumb_8906c9a8a712f8684810635f02068504.jpg","micro_url":"http://www.bookingsync.com/files/development/photo/photo/23/micro_8906c9a8a712f8684810635f02068504.jpg","position":3}]}'
-    http_version:
-  recorded_at: Thu, 08 May 2014 16:59:24 GMT
+      string: '{"photos":[{"id":37,"rental_id":2,"description":{"en":"Not funny anymore"},"kind":"livingroom","large_url":"http://bookingsync.dev/files/development/photo/photo/37/large_b0e94d712c4916323d4c7da35635f02e.jpg","normal_url":"http://bookingsync.dev/files/development/photo/photo/37/normal_b0e94d712c4916323d4c7da35635f02e.jpg","thumb_url":"http://bookingsync.dev/files/development/photo/photo/37/thumb_b0e94d712c4916323d4c7da35635f02e.jpg","micro_url":"http://bookingsync.dev/files/development/photo/photo/37/micro_b0e94d712c4916323d4c7da35635f02e.jpg","position":8}]}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 12:37:34 GMT
 recorded_with: VCR 2.9.0
