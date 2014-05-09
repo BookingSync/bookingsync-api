@@ -61,9 +61,9 @@ describe BookingSync::API::Client::Rentals do
     end
   end
 
-  describe ".cancel_rental", :vcr do
-    it "cancels given rental" do
-      client.cancel_rental(4)
+  describe ".delete_rental", :vcr do
+    it "deletes given rental" do
+      client.delete_rental(4)
       assert_requested :delete, bs_url("rentals/4")
     end
   end

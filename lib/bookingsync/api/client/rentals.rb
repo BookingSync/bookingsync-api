@@ -39,12 +39,12 @@ module BookingSync::API
         put("rentals/#{rental}", rentals: [options]).pop
       end
 
-      # Cancel a rental
+      # Delete a rental
       #
       # @param rental [BookingSync::API::Resource|Integer] Rental or ID
-      #   of the rental to be canceled.
+      #   of the rental to be deleted.
       # @return [NilClass] Returns nil on success.
-      def cancel_rental(rental)
+      def delete_rental(rental)
         delete "rentals/#{rental}"
       end
 
