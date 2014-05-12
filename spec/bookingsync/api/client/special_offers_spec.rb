@@ -19,16 +19,17 @@ describe BookingSync::API::Client::SpecialOffers do
         discount: 5
       }
     }
+    let(:rental) { BookingSync::API::Resource.new(client, id: 12) }
 
     it "creates a new special_offer" do
-      client.create_special_offer(12, attributes)
-      assert_requested :post, bs_url("special_offers"),
-        body: { rental_id: 12, special_offers: [attributes] }.to_json
+      client.create_special_offer(rental, attributes)
+      assert_requested :post, bs_url("rentals/12/special_offers"),
+        body: {special_offers: [attributes]}.to_json
     end
 
     it "returns newly created special_offer" do
       VCR.use_cassette('BookingSync_API_Client_SpecialOffers/_create_special_offer/creates_a_new_special_offer') do
-        special_offer = client.create_special_offer(12, attributes)
+        special_offer = client.create_special_offer(rental, attributes)
         expect(special_offer.name).to eql(attributes[:name])
       end
     end

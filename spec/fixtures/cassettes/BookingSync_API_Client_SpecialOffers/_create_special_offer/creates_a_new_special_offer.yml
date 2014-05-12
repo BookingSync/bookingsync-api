@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bookingsync.com/api/v3/special_offers
+    uri: https://www.bookingsync.com/api/v3/rentals/12/special_offers
     body:
       encoding: UTF-8
       string: '{"rental_id":12,"special_offers":[{"name":"New special offer","start_at":"2014-04-28","end_at":"2014-05-28","discount":5}]}'
