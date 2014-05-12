@@ -39,19 +39,20 @@ describe BookingSync::API::Client::Bookings do
 
   describe ".create_booking", :vcr do
     let(:attributes) {
-      {start_at: '2014-01-03', end_at: '2014-01-04', rental_id: 20,
+      {start_at: '2014-01-03', end_at: '2014-01-04',
         booked: true}
     }
+    let(:rental) { BookingSync::API::Resource.new(client, id: 20) }
 
     it "creates a booking" do
-      client.create_booking(attributes)
-      assert_requested :post, bs_url("bookings"),
+      client.create_booking(rental, attributes)
+      assert_requested :post, bs_url("rentals/20/bookings"),
         body: {bookings: [attributes]}.to_json
     end
 
     it "returns newly created booking" do
       VCR.use_cassette('BookingSync_API_Client_Bookings/_create_booking/creates_a_booking') do
-        booking = client.create_booking(attributes)
+        booking = client.create_booking(rental, attributes)
         expect(booking.account_id).to eql(1)
         expect(booking.rental_id).to eql(20)
       end
