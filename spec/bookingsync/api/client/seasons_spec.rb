@@ -17,16 +17,17 @@ describe BookingSync::API::Client::Seasons do
       ratio: 0.2,
       minimum_stay: 4
     }}
+    let(:rates_table) { BookingSync::API::Resource.new(client, id: 13) }
 
     it "creates a new season" do
-      client.create_season(13, attributes)
-      assert_requested :post, bs_url("seasons"),
-        body: { rates_table_id: 13, seasons: [attributes] }.to_json
+      client.create_season(rates_table, attributes)
+      assert_requested :post, bs_url("rates_tables/13/seasons"),
+        body: {seasons: [attributes]}.to_json
     end
 
     it "returns newly created season" do
       VCR.use_cassette('BookingSync_API_Client_Seasons/_create_season/creates_a_new_season') do
-        season = client.create_season(13, attributes)
+        season = client.create_season(rates_table, attributes)
         expect(season.name).to eql(attributes[:name])
         expect(season.minimum_stay).to eql(attributes[:minimum_stay])
       end

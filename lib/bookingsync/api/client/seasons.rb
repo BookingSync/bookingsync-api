@@ -20,19 +20,21 @@ module BookingSync::API
 
       # Create a new season
       #
-      # @param rates_table_id [Integer] ID of the rates table
-      # @param options [Hash] season attributes
-      # @return [BookingSync::API::Resource] Newly created season
-      def create_season(rates_table_id, options = {})
-        post(:seasons, rates_table_id: rates_table_id, seasons: [options]).pop
+      # @param rates_table_id [BookingSync::API::Resource|Integer] Rates table
+      #   or ID of the rates table for which a season will be created.
+      # @param options [Hash] Season's attributes.
+      # @return [BookingSync::API::Resource] Newly created season.
+      def create_season(rates_table, options = {})
+        post("rates_tables/#{rates_table}/seasons", seasons: [options]).pop
       end
 
       # Edit a season
       #
-      # @param season [BookingSync::API::Resource|Integer] season or ID of the season
-      # to be updated
-      # @param options [Hash] season attributes to be updated
-      # @return [BookingSync::API::Resource] Updated season on success, exception is raised otherwise
+      # @param season [BookingSync::API::Resource|Integer] Season or ID of
+      #   the season to be updated.
+      # @param options [Hash] Season attributes to be updated.
+      # @return [BookingSync::API::Resource] Updated season on success,
+      #   exception is raised otherwise.
       # @example
       #   season = @api.seasons.first
       #   @api.edit_season(season, { name: "Some season" })
