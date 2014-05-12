@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bookingsync.com/api/v3/periods
+    uri: https://www.bookingsync.com/api/v3/seasons/9/periods
     body:
       encoding: UTF-8
       string: '{"season_id":9,"periods":[{"start_at":"2013-04-10","end_at":"2013-04-22"}]}'

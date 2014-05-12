@@ -20,20 +20,21 @@ module BookingSync::API
 
       # Create a new period
       #
-      # @param season_id [Integer] ID of the season
-      # @param options [Hash] period attributes
-      # @return [BookingSync::API::Resource] Newly created period
-      def create_period(season_id, options = {})
-        post(:periods, season_id: season_id, periods: [options]).pop
+      # @param season [BookingSync::API::Resource|Integer] Season or ID of
+      #   the season for which period will be created.
+      # @param options [Hash] Period's attributes.
+      # @return [BookingSync::API::Resource] Newly created period.
+      def create_period(season, options = {})
+        post("seasons/#{season}/periods", periods: [options]).pop
       end
 
       # Edit a period
       #
-      # @param period [BookingSync::API::Resource|Integer] period or ID of the period
-      # to be updated
-      # @param options [Hash] period attributes to be updated
+      # @param period [BookingSync::API::Resource|Integer] Period or ID of
+      #   the period to be updated.
+      # @param options [Hash] period attributes to be updated.
       # @return [BookingSync::API::Resource] Updated period on success,
-      # exception is raised otherwise
+      #   exception is raised otherwise.
       # @example
       #   period = @api.periods.first
       #   @api.edit_period(period, { end_at: "2014-04-28" })
