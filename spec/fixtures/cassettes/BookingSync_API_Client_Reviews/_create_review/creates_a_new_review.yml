@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bookingsync.com/api/v3/reviews
+    uri: https://www.bookingsync.com/api/v3/bookings/1/reviews
     body:
       encoding: UTF-8
-      string: '{"booking_id":1,"reviews":[{"comment":"Awesome place","rating":5}]}'
+      string: '{"reviews":[{"comment":"Awesome place","rating":5}]}'
     headers:
       User-Agent:
       - Faraday v0.9.0

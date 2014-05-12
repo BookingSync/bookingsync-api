@@ -15,16 +15,17 @@ describe BookingSync::API::Client::Reviews do
       comment: "Awesome place",
       rating: 5
     }}
+    let(:booking) { BookingSync::API::Resource.new(client, id: 1) }
 
     it "creates a new review" do
-      client.create_review(1, attributes)
-      assert_requested :post, bs_url("reviews"),
-        body: { booking_id: 1, reviews: [attributes] }.to_json
+      client.create_review(booking, attributes)
+      assert_requested :post, bs_url("bookings/1/reviews"),
+        body: {reviews: [attributes]}.to_json
     end
 
     it "returns newly created review" do
       VCR.use_cassette('BookingSync_API_Client_Reviews/_create_review/creates_a_new_review') do
-        review = client.create_review(1, attributes)
+        review = client.create_review(booking, attributes)
         expect(review.comment).to eql(attributes[:comment])
         expect(review.rating).to eql(attributes[:rating])
       end
