@@ -3,7 +3,7 @@ module BookingSync::API
     module SpecialOffers
       # List special_offers
       #
-      # Returns special_offers for the account user is authenticated with.
+      # Returns special offers for the account user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
       # @return [Array<BookingSync::API::Resource>] Array of special_offers.
@@ -18,30 +18,31 @@ module BookingSync::API
         paginate :special_offers, options, &block
       end
 
-      # Create a new special_offer
+      # Create a new special offer for a rental
       #
-      # @param rental_id [Integer] ID of the rental
-      # @param options [Hash] special_offer attributes
-      # @return [BookingSync::API::Resource] Newly created special offer
-      def create_special_offer(rental_id, options = {})
-        post(:special_offers, rental_id: rental_id, special_offers: [options]).pop
+      # @param rental [BookingSync::API::Resource|Integer] Rental or ID of the
+      #   rental for which special offer will be created.
+      # @param options [Hash] Special offer's attributes.
+      # @return [BookingSync::API::Resource] Newly created special offer.
+      def create_special_offer(rental, options = {})
+        post("rentals/#{rental}/special_offers", special_offers: [options]).pop
       end
 
-      # Edit a special_offer
+      # Edit a special offer
       #
-      # @param special_offer [BookingSync::API::Resource|Integer] special offer or
-      # ID of the special offer to be updated
-      # @param options [Hash] special offer attributes to be updated
+      # @param special_offer [BookingSync::API::Resource|Integer] Special offer
+      #   or ID of the special offer to be updated.
+      # @param options [Hash] special offer attributes to be updated.
       # @return [BookingSync::API::Resource] Updated special offer on success,
-      # exception is raised otherwise
+      #   exception is raised otherwise.
       # @example
       #   special_offer = @api.special_offers.first
-      #   @api.edit_special_offer(special_offer, { name: "New offer" })
+      #   @api.edit_special_offer(special_offer, {name: "New offer"})
       def edit_special_offer(special_offer, options = {})
         put("special_offers/#{special_offer}", special_offers: [options]).pop
       end
 
-      # Delete a special_offer
+      # Delete a special offer
       #
       # @param special_offer [BookingSync::API::Resource|Integer] Special offer
       #   or ID of the special offer to be deleted.

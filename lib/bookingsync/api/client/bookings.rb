@@ -32,10 +32,12 @@ module BookingSync::API
 
       # Create a booking
       #
-      # @param options [Hash] Booking attributes
-      # @return [BookingSync::API::Resource] Newly create booking
-      def create_booking(options = {})
-        post(:bookings, bookings: [options]).pop
+      # @param rental [BookingSync::API::Resource|Integer] Rental or ID of
+      #   the rental for which booking will be created.
+      # @param options [Hash] Booking attributes.
+      # @return [BookingSync::API::Resource] Newly create booking.
+      def create_booking(rental, options = {})
+        post("rentals/#{rental}/bookings", bookings: [options]).pop
       end
 
       # Edit a booking

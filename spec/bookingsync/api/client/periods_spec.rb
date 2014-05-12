@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe BookingSync::API::Client::Periods do
-
   let(:client) { BookingSync::API::Client.new(test_access_token) }
 
   describe ".periods", :vcr do
@@ -12,20 +11,18 @@ describe BookingSync::API::Client::Periods do
   end
 
   describe ".create_period", :vcr do
-    let(:attributes) { {
-      start_at: "2013-04-10",
-      end_at: "2013-04-22"
-    } }
+    let(:attributes) { {start_at: "2013-04-10", end_at: "2013-04-22"} }
+    let(:season) { BookingSync::API::Resource.new(client, id: 9) }
 
     it "creates a new period" do
-      client.create_period(9, attributes)
-      assert_requested :post, bs_url("periods"),
-        body: { season_id: 9, periods: [attributes] }.to_json
+      client.create_period(season, attributes)
+      assert_requested :post, bs_url("seasons/9/periods"),
+        body: {periods: [attributes]}.to_json
     end
 
     it "returns newly created period" do
       VCR.use_cassette('BookingSync_API_Client_Periods/_create_period/creates_a_new_period') do
-        period = client.create_period(9, attributes)
+        period = client.create_period(season, attributes)
         expect(period.start_at).to eql(Time.parse(attributes[:start_at]))
         expect(period.end_at).to eql(Time.parse(attributes[:end_at]))
       end
@@ -33,9 +30,7 @@ describe BookingSync::API::Client::Periods do
   end
 
   describe ".edit_period", :vcr do
-    let(:attributes) {
-      { end_at: '2014-07-15' }
-    }
+    let(:attributes) { {end_at: '2014-07-15'} }
 
     it "updates given period by ID" do
       client.edit_period(6, attributes)

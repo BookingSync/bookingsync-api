@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bookingsync.com/api/v3/inquiries
+    uri: https://www.bookingsync.com/api/v3/rentals/7/inquiries
     body:
       encoding: UTF-8
       string: "{\"inquiries\":[{\"rental_id\":7,\"start_at\":\"2014-03-25 16:49:59

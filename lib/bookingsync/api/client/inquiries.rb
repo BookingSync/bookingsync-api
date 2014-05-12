@@ -13,10 +13,12 @@ module BookingSync::API
 
       # Create a new inquiry
       #
-      # @param options [Hash] Inquiry attributes
-      # @return [BookingSync::API::Resource] Newly create inquiry
-      def create_inquiry(options = {})
-        post(:inquiries, inquiries: [options]).pop
+      # @param rental [BookingSync::API::Resource] Rental or ID of the rental
+      #   for which an inquiry will be created.
+      # @param options [Hash] Inquiry attributes.
+      # @return [BookingSync::API::Resource] Newly create inquiry.
+      def create_inquiry(rental, options = {})
+        post("rentals/#{rental}/inquiries", inquiries: [options]).pop
       end
     end
   end

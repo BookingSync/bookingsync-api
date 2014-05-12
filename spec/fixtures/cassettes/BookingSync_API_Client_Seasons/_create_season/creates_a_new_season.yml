@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bookingsync.com/api/v3/seasons
+    uri: https://www.bookingsync.com/api/v3/rates_tables/13/seasons
     body:
       encoding: UTF-8
-      string: '{"rates_table_id":13,"seasons":[{"name":"New season","ratio":0.2,"minimum_stay":4}]}'
+      string: '{"seasons":[{"name":"New season","ratio":0.2,"minimum_stay":4}]}'
     headers:
       User-Agent:
       - Faraday v0.9.0

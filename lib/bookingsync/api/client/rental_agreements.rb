@@ -1,9 +1,10 @@
 module BookingSync::API
   class Client
     module RentalAgreements
-      # List rental agreements
+      # List rental agreements.
       #
-      # Returns rental agreements for the rentals of the account user is authenticated with.
+      # Returns rental agreements for the rentals of the account
+      #   user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
       # @return [Array<BookingSync::API::Resource>] Array of rental agreements.
@@ -18,30 +19,32 @@ module BookingSync::API
         paginate :rental_agreements, options, &block
       end
 
-      # Create a new rental agreement for a booking
+      # Create a new rental agreement for a booking.
       #
-      # @param booking_id [Integer] ID of the booking
-      # @param options [Hash] rental agreement attributes
-      # @return [BookingSync::API::Response] Newly created rental agreement
-      def create_rental_agreement_for_booking(booking_id, options = {})
-        post(:rental_agreements, booking_id: booking_id,
-             rental_agreements: [options]).pop
+      # @param booking [BookingSync::API::Resource|Integer] Booking or ID of
+      #   the booking for which rental agreement will be created.
+      # @param options [Hash] Rental agreement's attributes.
+      # @return [BookingSync::API::Resource] Newly created rental agreement.
+      def create_rental_agreement_for_booking(booking, options = {})
+        post("bookings/#{booking}/rental_agreements",
+          rental_agreements: [options]).pop
       end
 
-      # Create a new rental agreement for a rental
+      # Create a new rental agreement for a rental.
       #
-      # @param rental_id [Integer] ID of the rental
-      # @param options [Hash] rental agreement attributes
-      # @return [BookingSync::API::Response] Newly created rental agreement
-      def create_rental_agreement_for_rental(rental_id, options = {})
-        post(:rental_agreements, rental_id: rental_id,
-             rental_agreements: [options]).pop
+      # @param rental [BookingSync::API::Resource|Integer] Rental or ID of
+      #   the rental for which rental agreement will be created.
+      # @param options [Hash] Rental agreement's attributes.
+      # @return [BookingSync::API::Resource] Newly created rental agreement
+      def create_rental_agreement_for_rental(rental, options = {})
+        post("rentals/#{rental}/rental_agreements",
+          rental_agreements: [options]).pop
       end
 
-      # Create a new rental agreement for an account
+      # Create a new rental agreement for an account.
       #
-      # @param options [Hash] rental agreement attributes
-      # @return [BookingSync::API::Response] Newly created rental agreement
+      # @param options [Hash] Rental agreement's attributes.
+      # @return [BookingSync::API::Resource] Newly created rental agreement.
       def create_rental_agreement(options = {})
         post(:rental_agreements, rental_agreements: [options]).pop
       end

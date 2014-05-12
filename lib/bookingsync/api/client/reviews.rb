@@ -20,11 +20,12 @@ module BookingSync::API
 
       # Create a new review
       #
-      # @param booking_id [Integer] ID of the booking
-      # @param options [Hash] review attributes
-      # @return [BookingSync::API::Resource] Newly created review
-      def create_review(booking_id, options = {})
-        post(:reviews, booking_id: booking_id, reviews: [options]).pop
+      # @param booking [BookingSync::API::Resource|Integer] Booking or ID of
+      #   the booking for which a review will be created.
+      # @param options [Hash] Review's attributes.
+      # @return [BookingSync::API::Resource] Newly created review.
+      def create_review(booking, options = {})
+        post("bookings/#{booking}/reviews", reviews: [options]).pop
       end
     end
   end
