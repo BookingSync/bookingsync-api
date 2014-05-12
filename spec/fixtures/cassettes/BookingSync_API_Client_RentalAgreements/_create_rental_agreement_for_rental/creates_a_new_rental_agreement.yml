@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://bookingsync.com/api/v3/rental_agreements
+    uri: https://bookingsync.com/api/v3/rentals/20/rental_agreements
     body:
       encoding: UTF-8
-      string: "{\"rental_id\":20,\"rental_agreements\":[{\"body\":\"Lorem ipsum\"}]}"
+      string: "{\"rental_agreements\":[{\"body\":\"Lorem ipsum\"}]}"
     headers:
       User-Agent:
       - Faraday v0.9.0
