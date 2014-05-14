@@ -172,4 +172,28 @@ describe BookingSync::API::Client do
       end
     end
   end
+
+  describe "logging" do
+    before { VCR.turn_off! }
+    let(:log) { StringIO.new }
+    let(:logger) { Logger.new(log) }
+
+    it "uses logger provided by user" do
+      client = BookingSync::API::Client.new(test_access_token, logger: logger)
+      stub_get("resources", body: {"resources" => [{id: 1}, {id: 2}]}.to_json)
+      client.get("resources")
+      messages = log.rewind && log.read
+      expect(messages).to include("GET https://bookingsync.dev/api/v3/resources")
+    end
+
+    context "BOOKINGSYNC_API_DEBUG env variable set to true" do
+      after { ENV["BOOKINGSYNC_API_DEBUG"] = "false" }
+      it "uses STDOUT as logs output" do
+        ENV["BOOKINGSYNC_API_DEBUG"] = "true"
+        expect(Logger).to receive(:new).with(STDOUT).and_return(logger)
+        stub_get("resources")
+        client.get("resources")
+      end
+    end
+  end
 end

@@ -45,6 +45,26 @@ Fetch all resources (with multiple requests under the hood) and return one big a
 
     api.bookings(auto_paginate: true) => [BookingSync::API::Resource, BookingSync::API::Resource, ...]
 
+### Logging
+
+Sometimes it's useful to see what data bookingsync-api gem sends and what it
+receives from the API. By default, gem doesn't log anything.
+There are two ways to enable logging:
+
+1. Set `BOOKINGSYNC_API_DEBUG` environment variable to `true`, when running
+  gem or your app server in development. This will print all logs to `STDOUT`.
+
+2. Pass your own logger to API client, it can be for example `Rails.logger`.
+
+        api = BookingSync::API.new("OAUTH_TOKEN", logger: Rails.logger)
+
+#### Log levels
+
+`INFO` - Logged are only request method and the URL.
+`DEBUG` - Logged are request and response headers and bodies.
+
+When using `BOOKINGSYNC_API_DEBUG` variable, log level is DEBUG.
+
 ## Gem documentation
 
 See [gem documentation](http://rdoc.info/github/BookingSync/bookingsync-api/master/frames) for more info.
@@ -69,6 +89,16 @@ you need to run spec with below environment variables.
     ACCESS_TOKEN=abc bundle exec rspec
 
 If you want to change a cassette, you need to delete it first.
+
+### Environment variables
+
+There are a few environment variables which comes handy while developing and
+debugging bookingsync-api gem.
+
+* `BOOKINGSYNC_URL` - The url of the website, should be. Default https://www.bookingsync.com
+* `BOOKINGSYNC_VERIFY_SSL` - Verify SSL. Default to true.
+* `BOOKINGSYNC_API_DEBUG` - If true, gem will log all request/responses to STDOUT. Default to false.
+* `ACCESS_TOKEN` - OAuth token.
 
 ## Contributing
 
