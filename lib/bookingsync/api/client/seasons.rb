@@ -20,7 +20,7 @@ module BookingSync::API
 
       # Create a new season
       #
-      # @param rates_table_id [BookingSync::API::Resource|Integer] Rates table
+      # @param rates_table [BookingSync::API::Resource|Integer] Rates table
       #   or ID of the rates table for which a season will be created.
       # @param options [Hash] Season's attributes.
       # @return [BookingSync::API::Resource] Newly created season.
