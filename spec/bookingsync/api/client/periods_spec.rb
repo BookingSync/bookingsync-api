@@ -49,8 +49,8 @@ describe BookingSync::API::Client::Periods do
 
   describe ".delete_period", :vcr do
     it "deletes given period" do
-      client.delete_period(10)
-      assert_requested :delete, bs_url("periods/10")
+      client.delete_period(3)
+      assert_requested :delete, bs_url("periods/3")
     end
   end
 end
