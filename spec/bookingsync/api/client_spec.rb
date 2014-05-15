@@ -122,10 +122,26 @@ describe BookingSync::API::Client do
       end
     end
 
-    context "API returns status code outside 200..299 range" do
-      it "returns nil" do
+    context "API returns 404" do
+      it "raises NotFound exception" do
         stub_get("resource", status: 404)
-        expect(client.get("resource")).to be_nil
+        expect {
+          client.get("resource")
+        }.to raise_error(BookingSync::API::NotFound)
+      end
+    end
+
+    context "API returns unsupported status code outside 200..299 range" do
+      it "raises UnsupportedResponse exception" do
+        stub_get("resource", status: 405, body: "Whoops!",
+          headers: {"content-type"=>"application/vnd.api+json"})
+        expect {
+          client.get("resource")
+        }.to raise_error(BookingSync::API::UnsupportedResponse) { |error|
+          expect(error.status).to eql(405)
+          expect(error.headers).to eq({"content-type"=>"application/vnd.api+json"})
+          expect(error.body).to eq("Whoops!")
+        }
       end
     end
 
@@ -169,6 +185,30 @@ describe BookingSync::API::Client do
       it "returns custom URL to the API" do
         ENV["BOOKINGSYNC_URL"] = "https://bookingsync.dev"
         expect(client.api_endpoint).to eql("https://bookingsync.dev/api/v3")
+      end
+    end
+  end
+
+  describe "logging" do
+    before { VCR.turn_off! }
+    let(:log) { StringIO.new }
+    let(:logger) { Logger.new(log) }
+
+    it "uses logger provided by user" do
+      client = BookingSync::API::Client.new(test_access_token, logger: logger)
+      stub_get("resources", body: {"resources" => [{id: 1}, {id: 2}]}.to_json)
+      client.get("resources")
+      messages = log.rewind && log.read
+      expect(messages).to include("GET https://bookingsync.dev/api/v3/resources")
+    end
+
+    context "BOOKINGSYNC_API_DEBUG env variable set to true" do
+      after { ENV["BOOKINGSYNC_API_DEBUG"] = "false" }
+      it "uses STDOUT as logs output" do
+        ENV["BOOKINGSYNC_API_DEBUG"] = "true"
+        expect(Logger).to receive(:new).with(STDOUT).and_return(logger)
+        stub_get("resources")
+        client.get("resources")
       end
     end
   end

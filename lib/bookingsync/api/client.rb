@@ -1,4 +1,5 @@
 require "bookingsync/api/middleware/authentication"
+require "bookingsync/api/middleware/logger"
 require "bookingsync/api/client/amenities"
 require "bookingsync/api/client/billing_addresses"
 require "bookingsync/api/client/bookings"
@@ -22,6 +23,7 @@ require "bookingsync/api/relation"
 require "bookingsync/api/response"
 require "bookingsync/api/resource"
 require "bookingsync/api/serializer"
+require "logger"
 
 module BookingSync::API
   class Client
@@ -46,16 +48,19 @@ module BookingSync::API
 
     MEDIA_TYPE = "application/vnd.api+json"
 
-    attr_reader :token
+    attr_reader :token, :logger
 
     # Initialize new Client
     #
     # @param token [String] OAuth token
     # @param options [Hash]
     # @option options [String] base_url: Base URL to BookingSync site
+    # @option options [Logger] logger: Logger where headers and body of every
+    #   request and response will be logged.
     # @return [BookingSync::API::Client] New BookingSync API client
     def initialize(token, options = {})
       @token = token
+      @logger = options[:logger] || default_logger
       @base_url = options[:base_url]
       @serializer = Serializer.new
       @conn = Faraday.new(faraday_options)
@@ -212,6 +217,7 @@ module BookingSync::API
     def middleware
       Faraday::RackBuilder.new do |builder|
         builder.use :authentication, token
+        builder.use :logger, logger
         builder.adapter Faraday.default_adapter
       end
     end
@@ -262,9 +268,23 @@ module BookingSync::API
       when 204; nil # destroy/cancel
       when 200..299; response
       when 401; raise Unauthorized.new
+      when 404; raise NotFound.new
       when 422; raise UnprocessableEntity.new
-      else nil
+      else raise UnsupportedResponse.new(response)
       end
+    end
+
+    def debug?
+      ENV["BOOKINGSYNC_API_DEBUG"] == "true"
+    end
+
+    # Return default logger. By default we don't log anywhere.
+    # If we are in debug mode, we log everything to STDOUT.
+    #
+    # @return [Logger] Logger where faraday middleware will log requests and
+    #   responses.
+    def default_logger
+      Logger.new(debug? ? STDOUT : nil)
     end
   end
 end
