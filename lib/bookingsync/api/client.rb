@@ -270,7 +270,7 @@ module BookingSync::API
       when 401; raise Unauthorized.new
       when 404; raise NotFound.new
       when 422; raise UnprocessableEntity.new
-      else nil
+      else raise UnsupportedResponse.new(response)
       end
     end
 

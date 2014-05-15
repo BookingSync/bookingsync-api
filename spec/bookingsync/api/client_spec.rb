@@ -132,9 +132,16 @@ describe BookingSync::API::Client do
     end
 
     context "API returns unsupported status code outside 200..299 range" do
-      it "returns nil" do
-        stub_get("resource", status: 405)
-        expect(client.get("resource")).to be_nil
+      it "raises UnsupportedResponse exception" do
+        stub_get("resource", status: 405, body: "Whoops!",
+          headers: {"content-type"=>"application/vnd.api+json"})
+        expect {
+          client.get("resource")
+        }.to raise_error(BookingSync::API::UnsupportedResponse) { |error|
+          expect(error.status).to eql(405)
+          expect(error.headers).to eq({"content-type"=>"application/vnd.api+json"})
+          expect(error.body).to eq("Whoops!")
+        }
       end
     end
 
