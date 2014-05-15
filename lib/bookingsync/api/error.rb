@@ -3,4 +3,5 @@ module BookingSync::API
   class Error < StandardError; end
   class Unauthorized < Error; end
   class UnprocessableEntity < Error; end
+  class NotFound < Error; end
 end

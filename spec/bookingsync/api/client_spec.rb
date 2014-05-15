@@ -122,9 +122,18 @@ describe BookingSync::API::Client do
       end
     end
 
-    context "API returns status code outside 200..299 range" do
-      it "returns nil" do
+    context "API returns 404" do
+      it "raises NotFound exception" do
         stub_get("resource", status: 404)
+        expect {
+          client.get("resource")
+        }.to raise_error(BookingSync::API::NotFound)
+      end
+    end
+
+    context "API returns unsupported status code outside 200..299 range" do
+      it "returns nil" do
+        stub_get("resource", status: 405)
         expect(client.get("resource")).to be_nil
       end
     end
