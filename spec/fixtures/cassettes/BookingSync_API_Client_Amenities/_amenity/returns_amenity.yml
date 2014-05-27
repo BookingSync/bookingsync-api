@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://bookingsync.dev/api/v3/amenities/2
+    uri: https://www.bookingsync.com/api/v3/amenities/2
     body:
       encoding: US-ASCII
       string: ''
@@ -29,7 +29,7 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '999'
       Link:
-      - <https://bookingsync.dev/api/v3/amenities/2?page=1>; rel="first", <https://bookingsync.dev/api/v3/amenities/2?page=1>;
+      - <https://www.bookingsync.com/api/v3/amenities/2?page=1>; rel="first", <https://www.bookingsync.com/api/v3/amenities/2?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
@@ -59,6 +59,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"amenities":[{"id":2,"title":"tv"}]}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 27 May 2014 14:00:19 GMT
 recorded_with: VCR 2.9.1

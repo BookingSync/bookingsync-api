@@ -182,8 +182,15 @@ describe BookingSync::API::Client do
     end
 
     context "user specifies base URL via BOOKINGSYNC_URL env" do
-      it "returns custom URL to the API" do
+      before do
         ENV["BOOKINGSYNC_URL"] = "https://bookingsync.dev"
+      end
+
+      after do
+        ENV["BOOKINGSYNC_URL"] = nil
+      end
+
+      it "returns custom URL to the API" do
         expect(client.api_endpoint).to eql("https://bookingsync.dev/api/v3")
       end
     end
@@ -199,7 +206,7 @@ describe BookingSync::API::Client do
       stub_get("resources", body: {"resources" => [{id: 1}, {id: 2}]}.to_json)
       client.get("resources")
       messages = log.rewind && log.read
-      expect(messages).to include("GET https://bookingsync.dev/api/v3/resources")
+      expect(messages).to include("GET https://www.bookingsync.com/api/v3/resources")
     end
 
     context "BOOKINGSYNC_API_DEBUG env variable set to true" do

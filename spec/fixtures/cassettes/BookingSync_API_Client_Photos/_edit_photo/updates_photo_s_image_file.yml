@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://bookingsync.dev/api/v3/photos/37
+    uri: https://www.bookingsync.com/api/v3/photos/37
     body:
       encoding: UTF-8
       string: '{"photos":[{"file_path":"spec/fixtures/files/test.jpg"}]}'
