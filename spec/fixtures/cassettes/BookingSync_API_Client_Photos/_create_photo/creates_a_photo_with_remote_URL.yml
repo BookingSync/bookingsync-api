@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://bookingsync.dev/api/v3/rentals/2/photos
+    uri: https://www.bookingsync.com/api/v3/rentals/2/photos
     body:
       encoding: UTF-8
       string: '{"photos":[{"remote_photo_url":"https://www.ruby-lang.org/images/header-ruby-logo.png","kind":"livingroom"}]}'
@@ -29,7 +29,7 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '961'
       Location:
-      - https://bookingsync.dev/api/v3/photos/36
+      - https://www.bookingsync.com/api/v3/photos/36
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Request-Method:

@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: delete
-    uri: https://www.bookingsync.com/api/v3/periods/3
+    method: get
+    uri: https://www.bookingsync.com/api/v3/amenities/2
     body:
-      encoding: UTF-8
-      string: "{}"
+      encoding: US-ASCII
+      string: ''
     headers:
       User-Agent:
       - Faraday v0.9.0
@@ -19,39 +19,46 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 204
-      message: No Content
+      code: 200
+      message: OK
     headers:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1400144400'
+      - '1401202800'
       X-Ratelimit-Remaining:
-      - '997'
+      - '999'
+      Link:
+      - <https://www.bookingsync.com/api/v3/amenities/2?page=1>; rel="first", <https://www.bookingsync.com/api/v3/amenities/2?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Request-Method:
       - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
+      Etag:
+      - '"d38feaf36a065c3a61be13696bdf4db8"'
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
-      Set-Cookie:
-      - _BookingSync_session=c86328e24bb0f5880c4d4ca6500137e7; path=/; secure; HttpOnly
       X-Request-Id:
-      - 3648b9115546a75dabf4df8918934a65
+      - e66e31c259208721eefb8644e8fd01b3
       X-Runtime:
-      - '0.035784'
+      - '0.086610'
       Date:
-      - Thu, 15 May 2014 08:42:39 GMT
+      - Tue, 27 May 2014 14:00:19 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: ''
-    http_version: 
-  recorded_at: Thu, 15 May 2014 08:42:39 GMT
-recorded_with: VCR 2.9.0
+      string: '{"amenities":[{"id":2,"title":"tv"}]}'
+    http_version:
+  recorded_at: Tue, 27 May 2014 14:00:19 GMT
+recorded_with: VCR 2.9.1
