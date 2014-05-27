@@ -192,6 +192,10 @@ module BookingSync::API
       options ||= {}
 
       if options.has_key?(:query)
+        if options[:query].has_key?(:ids)
+          ids = Array(options[:query].delete(:ids)).join(',')
+          path = "#{path}/#{ids}"
+        end
         options[:query].keys.each do |key|
           if options[:query][key].is_a?(Array)
             options[:query][key] = options[:query][key].join(",")

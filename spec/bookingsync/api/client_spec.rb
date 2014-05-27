@@ -166,6 +166,14 @@ describe BookingSync::API::Client do
       end
     end
 
+    context "user wants to fetch only specific ids" do
+      it "constructs url for given ids" do
+        stub_get("resources/1,3,4")
+        client.get("resources", ids: [1, 3, 4])
+        assert_requested :get, bs_url("resources/1,3,4")
+      end
+    end
+
     context "user passes additional query options" do
       it "constructs url with query options" do
         stub_get("resource?months=12&status=booked,unavailable")
