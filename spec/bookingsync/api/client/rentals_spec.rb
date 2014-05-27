@@ -9,6 +9,12 @@ describe BookingSync::API::Client::Rentals do
       assert_requested :get, bs_url("rentals")
     end
 
+    it "returns rentals by ids" do
+      rentals = client.rentals(ids: [26, 28])
+      expect(rentals.size).to eql(2)
+      assert_requested :get, bs_url("rentals/26,28")
+    end
+
     describe "links" do
       it "returns associated photos" do
         rental = client.rentals.first
