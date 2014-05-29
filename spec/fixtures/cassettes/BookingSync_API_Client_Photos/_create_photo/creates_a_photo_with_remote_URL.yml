@@ -57,7 +57,7 @@ http_interactions:
       - close
     body:
       encoding: UTF-8
-      string: '{"photos":[{"id":36,"rental_id":2,"description":{"en":null},"kind":"livingroom","large_url":"http://bookingsync.dev/files/development/photo/photo/36/large_3b2a5fb7453e698aa5222f863bb8e601.jpg","normal_url":"http://bookingsync.dev/files/development/photo/photo/36/normal_3b2a5fb7453e698aa5222f863bb8e601.jpg","thumb_url":"http://bookingsync.dev/files/development/photo/photo/36/thumb_3b2a5fb7453e698aa5222f863bb8e601.jpg","micro_url":"http://bookingsync.dev/files/development/photo/photo/36/micro_3b2a5fb7453e698aa5222f863bb8e601.jpg","position":7}]}'
+      string: '{"photos":[{"id":36,"rental_id":2,"description":{"en":null},"kind":"livingroom","large_url":"https:://www.bookingsync.com/files/development/photo/photo/36/large_3b2a5fb7453e698aa5222f863bb8e601.jpg","normal_url":"https:://www.bookingsync.com/files/development/photo/photo/36/normal_3b2a5fb7453e698aa5222f863bb8e601.jpg","thumb_url":"https:://www.bookingsync.com/files/development/photo/photo/36/thumb_3b2a5fb7453e698aa5222f863bb8e601.jpg","micro_url":"https:://www.bookingsync.com/files/development/photo/photo/36/micro_3b2a5fb7453e698aa5222f863bb8e601.jpg","position":7}]}'
     http_version: 
   recorded_at: Fri, 09 May 2014 12:33:09 GMT
 recorded_with: VCR 2.9.0
