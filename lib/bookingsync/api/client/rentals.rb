@@ -56,6 +56,14 @@ module BookingSync::API
       def rental(rental)
         get("rentals/#{rental}").pop
       end
+
+      # Get meta information about rentals.
+      #
+      # @param rentals [Array] IDs of Rentals, leave empty for all account's rentals
+      # @return [BookingSync::API::Resource]
+      def rentals_meta(rentals = nil)
+        get(["rentals", Array(rentals).join(","), "meta"].compact.join("/")).pop
+      end
     end
   end
 end

@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rentals/meta
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1401375600'
+      X-Ratelimit-Remaining:
+      - '996'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rentals/meta?page=1>; rel="first"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"36171a199e62810a25e7a2e22ed243d1"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - 2a80562ae108eeebc99b1aa0e93e1668
+      X-Runtime:
+      - '0.194290'
+      Date:
+      - Thu, 29 May 2014 14:13:03 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rentals_meta.destinations":"https://www.bookingsync.com/api/v3/destinations/{rentals_meta.destinations}"},"rentals_meta":[{"links":{"destinations":[35,36]},"price_range":{"currency":"EUR","max_price":700,"min_price":null},"rental_types":[{"name":"villa","counter":2}],"destinations":[{"id":35,"name":{"en":"Name-1"},"fullname":{"en":"Name-1"},"permalink":{"en":"name-1"},"aliases":{"en":null}},{"id":36,"name":{"en":"Name-2"},"fullname":{"en":"Name-2"},"permalink":{"en":"name-2"},"aliases":{"en":null}}]}]}'
+    http_version:
+  recorded_at: Thu, 29 May 2014 14:13:04 GMT
+recorded_with: VCR 2.9.1
