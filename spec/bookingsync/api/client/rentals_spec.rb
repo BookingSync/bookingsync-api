@@ -73,4 +73,16 @@ describe BookingSync::API::Client::Rentals do
       assert_requested :delete, bs_url("rentals/4")
     end
   end
+
+  describe ".rentals_meta", :vcr do
+    it "returns meta information about requested rentals" do
+      client.rentals_meta([67, 68])
+      assert_requested :get, bs_url("rentals/67,68/meta")
+    end
+
+    it "returns meta information about all rentals" do
+      client.rentals_meta
+      assert_requested :get, bs_url("rentals/meta")
+    end
+  end
 end
