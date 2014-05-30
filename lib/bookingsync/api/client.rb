@@ -1,6 +1,7 @@
 require "bookingsync/api/middleware/authentication"
 require "bookingsync/api/middleware/logger"
 require "bookingsync/api/client/amenities"
+require "bookingsync/api/client/availabilities"
 require "bookingsync/api/client/billing_addresses"
 require "bookingsync/api/client/bookings"
 require "bookingsync/api/client/bookings_payments"
@@ -29,6 +30,7 @@ require "logger"
 module BookingSync::API
   class Client
     include BookingSync::API::Client::Amenities
+    include BookingSync::API::Client::Availabilities
     include BookingSync::API::Client::BillingAddresses
     include BookingSync::API::Client::Bookings
     include BookingSync::API::Client::BookingsPayments
