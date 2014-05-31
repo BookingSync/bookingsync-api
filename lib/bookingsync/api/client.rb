@@ -29,6 +29,7 @@ require "logger"
 
 module BookingSync::API
   class Client
+    extend Forwardable
     include BookingSync::API::Client::Amenities
     include BookingSync::API::Client::Availabilities
     include BookingSync::API::Client::BillingAddresses
@@ -54,6 +55,8 @@ module BookingSync::API
 
     attr_reader :token, :logger
 
+    def_delegator :@instrumenter, :instrument
+
     # Initialize new Client
     #
     # @param token [String] OAuth token
@@ -61,10 +64,13 @@ module BookingSync::API
     # @option options [String] base_url: Base URL to BookingSync site
     # @option options [Logger] logger: Logger where headers and body of every
     #   request and response will be logged.
+    # @option options [Module] instrumenter: A module that responds to
+    #   instrument, usually ActiveSupport::Notifications.
     # @return [BookingSync::API::Client] New BookingSync API client
     def initialize(token, options = {})
       @token = token
       @logger = options[:logger] || default_logger
+      @instrumenter = options[:instrumenter] || NoopInstrumenter
       @base_url = options[:base_url]
       @serializer = Serializer.new
       @conn = Faraday.new(faraday_options)
@@ -142,8 +148,10 @@ module BookingSync::API
     # @param options [Hash] A customizable set of request options.
     # @return [Array<BookingSync::API::Resource>] Array of resources.
     def request(method, path, data = nil, options = nil)
-      response = call(method, path, data, options)
-      response.respond_to?(:resources) ? response.resources : response
+      instrument("request.bookingsync_api", method: method, path: path) do
+        response = call(method, path, data, options)
+        response.respond_to?(:resources) ? response.resources : response
+      end
     end
 
     # Make a HTTP GET request to a path with pagination support.
@@ -157,25 +165,27 @@ module BookingSync::API
     # @yieldreturn [Array<BookingSync::API::Resource>] Batch of resources
     # @return [Array<BookingSync::API::Resource>] Batch of resources
     def paginate(path, options = {}, &block)
-      auto_paginate = options.delete(:auto_paginate)
-      response = call(:get, path, query: options)
-      data = response.resources.dup
+      instrument("paginate.bookingsync_api", path: path) do
+        auto_paginate = options.delete(:auto_paginate)
+        response = call(:get, path, query: options)
+        data = response.resources.dup
 
-      if (block_given? or auto_paginate) && response.rels[:next]
-        first_request = true
-        loop do
-          if block_given?
-            yield(response.resources)
-          elsif auto_paginate
-            data.concat(response.resources) unless first_request
-            first_request = false
+        if (block_given? or auto_paginate) && response.rels[:next]
+          first_request = true
+          loop do
+            if block_given?
+              yield(response.resources)
+            elsif auto_paginate
+              data.concat(response.resources) unless first_request
+              first_request = false
+            end
+            break unless response.rels[:next]
+            response = response.rels[:next].get
           end
-          break unless response.rels[:next]
-          response = response.rels[:next].get
         end
-      end
 
-      data
+        data
+      end
     end
 
     # Make a HTTP request to given path and returns Response object.
@@ -187,37 +197,39 @@ module BookingSync::API
     # @param options [Hash] A customizable set of request options.
     # @return [BookingSync::API::Response] A Response object.
     def call(method, path, data = nil, options = nil)
-      if [:get, :head].include?(method)
-        options = data
-        data = nil
-      end
-      options ||= {}
-
-      if options.has_key?(:query)
-        if options[:query].has_key?(:ids)
-          ids = Array(options[:query].delete(:ids)).join(',')
-          path = "#{path}/#{ids}"
+      instrument("call.bookingsync_api", method: method, path: path) do
+        if [:get, :head].include?(method)
+          options = data
+          data = nil
         end
-        options[:query].keys.each do |key|
-          if options[:query][key].is_a?(Array)
-            options[:query][key] = options[:query][key].join(",")
+        options ||= {}
+
+        if options.has_key?(:query)
+          if options[:query].has_key?(:ids)
+            ids = Array(options[:query].delete(:ids)).join(',')
+            path = "#{path}/#{ids}"
+          end
+          options[:query].keys.each do |key|
+            if options[:query][key].is_a?(Array)
+              options[:query][key] = options[:query][key].join(",")
+            end
           end
         end
-      end
 
-      url = expand_url(path, options[:uri])
-      res = @conn.send(method, url) do |req|
-        if data
-          req.body = data.is_a?(String) ? data : encode_body(data)
+        url = expand_url(path, options[:uri])
+        res = @conn.send(method, url) do |req|
+          if data
+            req.body = data.is_a?(String) ? data : encode_body(data)
+          end
+          if params = options[:query]
+            req.params.update params
+          end
+          if headers = options[:headers]
+            req.headers.update headers
+          end
         end
-        if params = options[:query]
-          req.params.update params
-        end
-        if headers = options[:headers]
-          req.headers.update headers
-        end
+        handle_response(res)
       end
-      handle_response(res)
     end
 
     private
@@ -293,6 +305,13 @@ module BookingSync::API
     #   responses.
     def default_logger
       Logger.new(debug? ? STDOUT : nil)
+    end
+
+    # Default instrumenter which does nothing.
+    module NoopInstrumenter
+      def self.instrument(name, payload = {})
+        yield payload if block_given?
+      end
     end
   end
 end

@@ -58,6 +58,17 @@ There are two ways to enable logging:
 
         api = BookingSync::API.new("OAUTH_TOKEN", logger: Rails.logger)
 
+### Instrumentation
+
+BookingSync::API exposes instrumentation information that can be consumed
+by various instrumentation libraries. By default it doesn't send the
+information anywhere.
+
+To hook instrumentations into `ActiveSupport::Notifications`, pass the
+module into the API client initializer:
+
+    api = BookingSync::API.new("OAUTH_TOKEN", instrumenter: ActiveSupport::Notifications)
+
 #### Log levels
 
 `INFO` - Logged are only request method and the URL.
