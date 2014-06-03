@@ -28,7 +28,7 @@ module BookingSync::API
     # @return [Object] An Object to set as the value of a Resource key.
     def process_value(value)
       case value
-      when Hash  then self.class.new(@_client, value, @_links)
+      when Hash  then self.class.new(@_client, value)
       when Array then value.map { |v| process_value(v) }
       else value
       end
