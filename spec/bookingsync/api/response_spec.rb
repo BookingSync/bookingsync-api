@@ -8,13 +8,14 @@ describe BookingSync::API::Response do
   let(:links) {
     {:'rentals.photos' => 'https://www.bookingsync.com/api/v3/photos/{rentals.photos}'}
   }
-  let(:rentals) { [
-    {id: 1, name: 'rental 1', photos: [1, 43]},
-    {id: 2, name: 'rental 2'}
-  ] }
-  let(:response) do
-    stubs = Faraday::Adapter::Test::Stubs.new
-    client = BookingSync::API::Client.new(test_access_token,
+  let(:resource_relations) { BookingSync::API::Relation.from_links(client,
+    links) }
+  let(:rentals) do
+    [{id: 1, name: 'rental 1', photos: [1, 43]},
+     {id: 2, name: 'rental 2'}]
+  end
+  let(:client) do
+    BookingSync::API::Client.new(test_access_token,
       base_url: "http://foo.com") do |conn|
       conn.builder.handlers.delete(Faraday::Adapter::NetHttp)
       conn.adapter :test, @stubs do |stub|
@@ -24,6 +25,9 @@ describe BookingSync::API::Response do
         end
       end
     end
+  end
+  let(:response) do
+    stubs = Faraday::Adapter::Test::Stubs.new
     client.call(:get, '/rentals')
   end
 
@@ -39,9 +43,11 @@ describe BookingSync::API::Response do
     end
   end
 
-  describe "#links" do
+  describe "#resource_relations" do
     it "returns links to associated resources" do
-      expect(response.links).to eql(links)
+      href = response.resource_relations[:'rentals.photos'].href
+      expect(href).not_to be_nil
+      expect(href).to eq(resource_relations[:'rentals.photos'].href)
     end
   end
 
@@ -57,10 +63,10 @@ describe BookingSync::API::Response do
     end
   end
 
-  describe "#rels" do
+  describe "#relations" do
     it "returns relations from Link header" do
-      expect(response.rels[:next].href).to eql('/rentals?page=2')
-      expect(response.rels[:last].href).to eql('/rentals?page=19')
+      expect(response.relations[:next].href).to eql('/rentals?page=2')
+      expect(response.relations[:last].href).to eql('/rentals?page=19')
     end
   end
 end

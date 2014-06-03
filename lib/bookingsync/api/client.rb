@@ -170,7 +170,7 @@ module BookingSync::API
         response = call(:get, path, query: options)
         data = response.resources.dup
 
-        if (block_given? or auto_paginate) && response.rels[:next]
+        if (block_given? or auto_paginate) && response.relations[:next]
           first_request = true
           loop do
             if block_given?
@@ -179,8 +179,8 @@ module BookingSync::API
               data.concat(response.resources) unless first_request
               first_request = false
             end
-            break unless response.rels[:next]
-            response = response.rels[:next].get
+            break unless response.relations[:next]
+            response = response.relations[:next].get
           end
         end
 
