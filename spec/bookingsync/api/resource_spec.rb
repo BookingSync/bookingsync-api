@@ -12,10 +12,10 @@ describe BookingSync::API::Resource do
         details: {count: 1},
         id: 10
       },
-      {
+      BookingSync::API::Relation.from_links(client, {
         :"foo.photos" => "http://foo.com/photos/{foo.photos}",
         :"foo.category" => "http://foo.com/categories/{foo.category}"
-      },
+      }),
       "foo"
     )
   }

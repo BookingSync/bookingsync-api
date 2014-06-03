@@ -3,7 +3,7 @@ require "addressable/template"
 module BookingSync::API
   class Response
     SPECIAL_JSONAPI_FIELDS = %w(links linked meta)
-    attr_reader :client, :status, :headers, :data, :rels, :body
+    attr_reader :client, :status, :headers, :data, :relations, :body
 
     # Build a Response after a completed request.
     #
@@ -23,9 +23,9 @@ module BookingSync::API
     #
     # @param hash [Hash] A Hash of resources parsed from JSON.
     # @return [Array] An Array of Resources.
-    def process_data(hash, links)
+    def process_data(hash)
       Array(hash).map do |hash|
-        Resource.new(client, hash, links, resources_key)
+        Resource.new(client, hash, resource_relations, resources_key)
       end
     end
 
@@ -43,23 +43,25 @@ module BookingSync::API
     #
     # @return [Array<BookingSync::API::Resource>]
     def resources
-      @resources ||= process_data(decoded_body[resources_key], links)
+      @resources ||= process_data(decoded_body[resources_key])
     end
 
-    # Return an array of links templates from the response body,
-    # it's the contents of links hash
-    # {'links': {'rentals.photos':'https://www.bookingsync.com/api/v3/photos/{rentals.photos}'}}
+    # Returns a Hash of relations built from given links templates.
+    # These relations are the same for each resource, so we calculate
+    # them once here and pass to every top level resource.
     #
-    # @return [Hash] Hash of links to associated resources
-    def links
-      @links ||= decoded_body[:links]
+    # @return [Hash] Hash of relations to associated resources
+    def resource_relations
+      @resource_relations ||= Relation.from_links(client,
+        decoded_body[:links])
     end
 
-    # Return link relations from 'Link' response header
+    # Return a Hash of relations to other pages built from 'Link'
+    # response header
     #
-    # @return [Array] An array of Relations
-    def rels
-      @rels ||= process_rels
+    # @return [Hash] Hash of relations to first,last,next and prev pages
+    def relations
+      @relations ||= process_rels
     end
 
     private

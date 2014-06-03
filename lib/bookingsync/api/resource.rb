@@ -3,22 +3,21 @@ require "hashie"
 module BookingSync::API
   class Resource < Hash
     include Hashie::Extensions::MethodAccess
-    attr_reader :_client, :_rels, :_links, :_resources_key
+    attr_reader :_client, :_rels, :_resources_key
 
-    # Initialize a Resource with the given links and data.
+    # Initialize a Resource with the given relations and data.
     #
     # @param client [BookingSync::API::Client] The client that made the API request.
     # @param data [Hash] Hash of key/value properties.
-    # @param links [Hash] Hash of link templates for this resource.
+    # @param rels [Hash] Hash of built relations for this resource.
     # @param resources_key [Symbol|String] Key in response body under which
-    def initialize(client, data = {}, links = {}, resources_key = nil)
-      @_links = links
+    def initialize(client, data = {}, rels = {}, resources_key = nil)
       @_client = client
       @_resources_key = resources_key
       data.each do |key, value|
         self[key.to_sym] = process_value(value)
       end
-      @_rels = Relation.from_links(client, links)
+      @_rels = rels
     end
 
     # Process an individual value of this resource. Hashes get exploded
