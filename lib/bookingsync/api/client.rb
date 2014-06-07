@@ -243,7 +243,7 @@ module BookingSync::API
     end
 
     def faraday_options
-      {builder: middleware, ssl: {verify: verify_ssl?}}
+      { builder: middleware, ssl: { verify: verify_ssl? } }
     end
 
     # Return BookingSync base URL. Default is https://www.bookingsync.com
@@ -263,7 +263,7 @@ module BookingSync::API
     # @return [Boolean] true if SSL needs to be verified
     # false otherwise
     def verify_ssl?
-      ENV["BOOKINGSYNC_VERIFY_SSL"] == "false" ? false : true
+      ENV["BOOKINGSYNC_VERIFY_SSL"] != "false"
     end
 
     # Expand an URL template into a full URL
