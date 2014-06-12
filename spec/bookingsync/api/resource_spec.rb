@@ -2,22 +2,22 @@ require 'spec_helper'
 
 describe BookingSync::API::Resource do
   let(:links) { {photos: [9, 10]} }
+  let(:relation) {
+    BookingSync::API::Relation.from_links(client, {
+      :"foo.photos" => "http://foo.com/photos/{foo.photos}",
+      :"foo.category" => "http://foo.com/categories/{foo.category}"
+    })
+  }
+  let(:client) { BookingSync::API::Client.new(test_access_token,
+      base_url: "http://foo.com") }
+  let(:data) { {
+    name: "foo", width: 700,
+    links: links,
+    details: {count: 1},
+    id: 10
+  } }
   let(:resource) {
-    client = BookingSync::API::Client.new(test_access_token,
-      base_url: "http://foo.com")
-    BookingSync::API::Resource.new(client,
-      {
-        name: "foo", width: 700,
-        links: links,
-        details: {count: 1},
-        id: 10
-      },
-      BookingSync::API::Relation.from_links(client, {
-        :"foo.photos" => "http://foo.com/photos/{foo.photos}",
-        :"foo.category" => "http://foo.com/categories/{foo.category}"
-      }),
-      "foo"
-    )
+    BookingSync::API::Resource.new(client, data, relation, "foo")
   }
 
   describe "processing values" do
@@ -80,6 +80,19 @@ describe BookingSync::API::Resource do
       stub_request(:get, "http://foo.com/photos/9,10?fields=description")
         .to_return(body: {photos: [{file: 'a.jpg'}]}.to_json)
       resource.photos(fields: :description)
+    end
+
+    context "when association loaded by eager loading" do
+      let(:data) { {links: links, photos: [{file: 'b.jpg'}]} }
+
+      it "doesn't fetch it again" do
+        resource.photos
+        assert_not_requested :get, "http://foo.com/photos/9,10"
+      end
+
+      it "returns previously loaded data" do
+        expect(resource.photos).to eq([{file: 'b.jpg'}])
+      end
     end
   end
 

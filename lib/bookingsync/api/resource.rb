@@ -38,6 +38,7 @@ module BookingSync::API
     # @param method [Symbol] Name of association
     # @param args [Array] Array of additional arguments
     def method_missing(method, *args)
+      return self[method] if has_key?(method) # eager loaded with :include
       association_key = :"#{@_resources_key}.#{method}"
       if self[:links] && self[:links].has_key?(method)
         ids = Array(self[:links][method])
