@@ -23,6 +23,22 @@ describe BookingSync::API::Client::Rentals do
     end
   end
 
+  describe ".rentals_search", :vcr do
+    it "returns rentals" do
+      expect(client.rentals_search(start_at: "2014-06-20", end_at: "2014-06-25")).not_to be_empty
+      assert_requested :get, bs_url("rentals/search?start_at=2014-06-20&end_at=2014-06-25")
+    end
+
+    context "rentals ids given" do
+      it "makes a search within given rentals" do
+        rentals = client.rentals_search(ids: [323, 354], max_price: 400,
+          start_at: "2014-06-20", end_at: "2014-06-25")
+        expect(rentals.size).to eq(1)
+        assert_requested :get, bs_url("rentals/323,354/search?max_price=400&start_at=2014-06-20&end_at=2014-06-25")
+      end
+    end
+  end
+
   describe ".rental", :vcr do
     it "returns a single rental" do
       rental = client.rental(2)

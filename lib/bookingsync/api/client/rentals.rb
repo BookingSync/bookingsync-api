@@ -18,6 +18,22 @@ module BookingSync::API
         paginate :rentals, options, &block
       end
 
+      # Search rentals
+      #
+      # Returns list of light rentals. Composed of id, initial_price,
+      # final_price and updated_at.
+      #
+      # @param options [Hash] A customizable set of options.
+      # @return [Array<BookingSync::API::Resource>] Array of light rentals.
+      #
+      # @example Search rentals by rental type
+      # villas = @api.rentals_search(rental_type: "villa")
+      def rentals_search(options = {}, &block)
+        ids = Array(options.delete(:ids))
+        path = ["rentals", ids.join(","), "search"].compact.join("/")
+        paginate path, options, &block
+      end
+
       # Create a new rental
       #
       # @param options [Hash] rental attributes
