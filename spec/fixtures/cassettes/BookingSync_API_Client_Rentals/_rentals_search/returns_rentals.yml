@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rentals/search?end_at=2014-06-25&start_at=2014-06-20
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1403028000'
+      X-Ratelimit-Remaining:
+      - '717'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rentals/search?end_at=2014-06-25&page=1&start_at=2014-06-20>;
+        rel="first", <https://www.bookingsync.com/api/v3/rentals/search?end_at=2014-06-25&page=1&start_at=2014-06-20>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"6ed7d26a9782534dad8efc565fa7e1ee"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Request-Id:
+      - cb7f942c7834f550641d3323aed451f6
+      X-Runtime:
+      - '0.093222'
+      Date:
+      - Tue, 17 Jun 2014 17:49:24 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"rentals":[{"id":323,"initial_price":342,"final_price":342,"updated_at":"2014-06-17T08:32:59Z"},{"id":379,"initial_price":385,"final_price":385,"updated_at":"2014-06-17T08:33:00Z"},{"id":386,"initial_price":428,"final_price":428,"updated_at":"2014-06-17T08:33:00Z"},{"id":367,"initial_price":450,"final_price":450,"updated_at":"2014-06-17T08:33:00Z"},{"id":354,"initial_price":571,"final_price":571,"updated_at":"2014-06-17T08:33:00Z"}]}'
+    http_version:
+  recorded_at: Tue, 17 Jun 2014 17:49:24 GMT
+recorded_with: VCR 2.9.0
