@@ -2,7 +2,7 @@ require "addressable/template"
 
 module BookingSync::API
   class Response
-    SPECIAL_JSONAPI_FIELDS = %w(links linked meta)
+    SPECIAL_JSONAPI_FIELDS = [:links, :linked, :meta]
     attr_reader :client, :status, :headers, :data, :relations, :body
 
     # Build a Response after a completed request.
@@ -34,8 +34,8 @@ module BookingSync::API
     #
     # @return [Symbol] Key name in the body hash
     def resources_key
-      decoded_body.keys.delete_if { |k|
-        SPECIAL_JSONAPI_FIELDS.include?(k)
+      decoded_body.keys.delete_if { |key|
+        SPECIAL_JSONAPI_FIELDS.include?(key)
       }.pop
     end
 
@@ -59,9 +59,16 @@ module BookingSync::API
     # Return a Hash of relations to other pages built from 'Link'
     # response header
     #
-    # @return [Hash] Hash of relations to first,last,next and prev pages
+    # @return [Hash] Hash of relations to first, last, next and prev pages
     def relations
       @relations ||= process_rels
+    end
+
+    # Returns a Hash of meta information taken from the response body
+    #
+    # @return [Hash] Meta hash
+    def meta
+      @meta ||= decoded_body[:meta]
     end
 
     private

@@ -20,7 +20,8 @@ describe BookingSync::API::Response do
       conn.builder.handlers.delete(Faraday::Adapter::NetHttp)
       conn.adapter :test, @stubs do |stub|
         stub.get '/rentals' do
-          body = {links: links, rentals: rentals}.to_json
+          body = {links: links, rentals: rentals,
+            meta: {count: 10}}.to_json
           [200, headers, body]
         end
       end
@@ -67,6 +68,12 @@ describe BookingSync::API::Response do
     it "returns relations from Link header" do
       expect(response.relations[:next].href).to eql('/rentals?page=2')
       expect(response.relations[:last].href).to eql('/rentals?page=19')
+    end
+  end
+
+  describe "#meta" do
+    it "returns meta information from response body" do
+      expect(response.meta).to eql(count: 10)
     end
   end
 end
