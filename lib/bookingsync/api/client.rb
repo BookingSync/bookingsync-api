@@ -53,7 +53,7 @@ module BookingSync::API
 
     MEDIA_TYPE = "application/vnd.api+json"
 
-    attr_reader :token, :logger
+    attr_reader :token, :logger, :last_response
 
     def_delegator :@instrumenter, :instrument
 
@@ -283,7 +283,7 @@ module BookingSync::API
     # @raise [BookingSync::API::UnprocessableEntity] - On validations error
     # @return [BookingSync::API::Response|NilClass]
     def handle_response(faraday_response)
-      response = Response.new(self, faraday_response)
+      @last_response = response = Response.new(self, faraday_response)
       case response.status
       when 204; nil # destroy/cancel
       when 200..299; response

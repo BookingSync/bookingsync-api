@@ -45,6 +45,14 @@ Fetch all resources (with multiple requests under the hood) and return one big a
 
     api.bookings(auto_paginate: true) => [BookingSync::API::Resource, BookingSync::API::Resource, ...]
 
+### Meta information
+
+Some endpoints return additional info about resource in meta section. To fetch it you need to
+access last response.
+
+    api.rentals(updated_since: "2014-01-01 15:43:96 UTC") # => [BookingSync::API::Resource,    BookingSync::API::Resource, ...]
+    api.last_response.meta # => {"deleted_rentals_ids" => [1, 3, 4]}
+
 ### Logging
 
 Sometimes it's useful to see what data bookingsync-api gem sends and what it

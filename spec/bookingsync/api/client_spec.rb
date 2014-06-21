@@ -227,4 +227,12 @@ describe BookingSync::API::Client do
       end
     end
   end
+
+  describe "#last_response" do
+    it "returns last response" do
+      stub_get("resources", body: {meta: {count: 10}, resources: []}.to_json)
+      client.get("resources")
+      expect(client.last_response.meta).to eql(count: 10)
+    end
+  end
 end
