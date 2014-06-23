@@ -224,7 +224,20 @@ describe BookingSync::API::Client do
         expect(Logger).to receive(:new).with(STDOUT).and_return(logger)
         stub_get("resources")
         client.get("resources")
+
+        messages = log.rewind && log.read
+        expect(messages).to include("GET https://www.bookingsync.com/api/v3/resources")
       end
+    end
+
+    it "logs X-Request-Id from headers" do
+      client = BookingSync::API::Client.new(test_access_token, logger: logger)
+      stub_get("resources", body: {}.to_json,
+        headers: {'X-Request-Id' => "021bfb82"})
+      client.get("resources")
+
+      messages = log.rewind && log.read
+      expect(messages).to include("Response X-Request-Id: 021bfb82 GET https://www.bookingsync.com/api/v3/resources")
     end
   end
 
