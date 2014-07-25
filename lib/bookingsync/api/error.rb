@@ -1,11 +1,6 @@
 module BookingSync::API
   # Class for rescuing all BS API errors
-  class Error < StandardError; end
-  class Unauthorized < Error; end
-  class UnprocessableEntity < Error; end
-  class NotFound < Error; end
-
-  class UnsupportedResponse < Error
+  class Error < StandardError
     attr_reader :status, :headers, :body
 
     def initialize(response)
@@ -14,11 +9,20 @@ module BookingSync::API
       @body    = response.body
     end
 
-    def message
-      %Q{Received unsupported response from BookingSync API
+    def message(message = self.class)
+      %Q{#{message}
 HTTP status code : #{status}
 Headers          : #{headers}
 Body             : #{body}}
+    end
+  end
+
+  class Unauthorized < Error; end
+  class UnprocessableEntity < Error; end
+  class NotFound < Error; end
+  class UnsupportedResponse < Error
+    def message
+      super("Received unsupported response from BookingSync API")
     end
   end
 end

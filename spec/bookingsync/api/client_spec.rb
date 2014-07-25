@@ -35,10 +35,13 @@ describe BookingSync::API::Client do
 
     context "on 422 response" do
       it "raises UnprocessableEntity exception" do
-        stub_post("resource", status: 422)
+        stub_post("resource", status: 422, body: { errors: { country_code:
+          ["is required"] } }.to_json)
         expect {
-          client.post("resource", {key: :value})
-        }.to raise_error(BookingSync::API::UnprocessableEntity)
+          client.post("resource", { key: :value })
+        }.to raise_error(BookingSync::API::UnprocessableEntity) { |error|
+          expect(error.message).to include '{"errors":{"country_code":["is required"]}}'
+        }
       end
     end
   end
@@ -134,13 +137,14 @@ describe BookingSync::API::Client do
     context "API returns unsupported status code outside 200..299 range" do
       it "raises UnsupportedResponse exception" do
         stub_get("resource", status: 405, body: "Whoops!",
-          headers: {"content-type"=>"application/vnd.api+json"})
+          headers: { "content-type" => "application/vnd.api+json" })
         expect {
           client.get("resource")
         }.to raise_error(BookingSync::API::UnsupportedResponse) { |error|
           expect(error.status).to eql(405)
-          expect(error.headers).to eq({"content-type"=>"application/vnd.api+json"})
+          expect(error.headers).to eq({ "content-type" => "application/vnd.api+json" })
           expect(error.body).to eq("Whoops!")
+          expect(error.message).to include("Received unsupported response from BookingSync API")
         }
       end
     end
