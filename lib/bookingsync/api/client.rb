@@ -76,6 +76,7 @@ module BookingSync::API
       @conn = Faraday.new(faraday_options)
       @conn.headers[:accept] = MEDIA_TYPE
       @conn.headers[:content_type] = MEDIA_TYPE
+      @conn.headers[:user_agent] = user_agent
       @conn.url_prefix = api_endpoint
       yield @conn if block_given?
     end
@@ -305,6 +306,11 @@ module BookingSync::API
     #   responses.
     def default_logger
       Logger.new(debug? ? STDOUT : nil)
+    end
+
+    # Return user agent with gem version, can be logged in API.
+    def user_agent
+      "BookingSync API gem v#{BookingSync::API::VERSION}"
     end
 
     # Default instrumenter which does nothing.

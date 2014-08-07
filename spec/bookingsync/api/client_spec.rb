@@ -116,6 +116,14 @@ describe BookingSync::API::Client do
       expect(response).to be_kind_of(BookingSync::API::Response)
     end
 
+    it "requests with proper User-Agent" do
+      stub_get("resource", body: {}.to_json)
+      response = client.call(:get, "resource")
+      assert_requested :get, bs_url("resource"),
+        headers: {"User-Agent" =>
+          "BookingSync API gem v#{BookingSync::API::VERSION}"}
+    end
+
     context "API returns 401" do
       it "raises Unauthorized exception" do
         stub_get("resource", status: 401)
