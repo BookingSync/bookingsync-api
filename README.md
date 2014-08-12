@@ -51,7 +51,7 @@ Some endpoints return additional info about resource in meta section. To fetch i
 access last response.
 
     api.rentals(updated_since: "2014-01-01 15:43:96 UTC") # => [BookingSync::API::Resource,    BookingSync::API::Resource, ...]
-    api.last_response.meta # => {"deleted_rentals_ids" => [1, 3, 4]}
+    api.last_response.meta # => {"deleted_ids" => [1, 3, 4]}
 
 ### Logging
 
