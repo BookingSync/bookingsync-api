@@ -30,6 +30,15 @@ module BookingSync::API
         paginate :bookings, options, &block
       end
 
+      # Get a single booking
+      #
+      # @param booking [BookingSync::API::Resource|Integer] Booking or ID
+      #   of the booking.
+      # @return [BookingSync::API::Resource]
+      def booking(booking)
+        get("bookings/#{booking}").pop
+      end
+
       # Create a booking
       #
       # @param rental [BookingSync::API::Resource|Integer] Rental or ID of

@@ -34,6 +34,15 @@ module BookingSync::API
         paginate path, options, &block
       end
 
+      # Get a single rental
+      #
+      # @param rental [BookingSync::API::Resource|Integer] Rental or ID
+      #   of the rental.
+      # @return [BookingSync::API::Resource]
+      def rental(rental)
+        get("rentals/#{rental}").pop
+      end
+
       # Create a new rental
       #
       # @param options [Hash] rental attributes
@@ -62,15 +71,6 @@ module BookingSync::API
       # @return [NilClass] Returns nil on success.
       def delete_rental(rental)
         delete "rentals/#{rental}"
-      end
-
-      # Get a single rental
-      #
-      # @param rental [BookingSync::API::Resource|Integer] Rental or ID
-      #   of the rental.
-      # @return [BookingSync::API::Resource]
-      def rental(rental)
-        get("rentals/#{rental}").pop
       end
 
       # Get meta information about rentals.
