@@ -37,6 +37,13 @@ describe BookingSync::API::Client::Bookings do
     end
   end
 
+  describe ".booking", :vcr do
+    it "returns a single booking" do
+      booking = client.booking(20)
+      expect(booking.status).to eq "Booked"
+    end
+  end
+
   describe ".create_booking", :vcr do
     let(:attributes) {
       {start_at: '2014-01-03', end_at: '2014-01-04',
