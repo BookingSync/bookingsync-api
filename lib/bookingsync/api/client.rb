@@ -291,6 +291,7 @@ module BookingSync::API
       when 204; nil # destroy/cancel
       when 200..299; response
       when 401; raise Unauthorized.new(response)
+      when 403; raise Forbidden.new(response)
       when 404; raise NotFound.new(response)
       when 422; raise UnprocessableEntity.new(response)
       else raise UnsupportedResponse.new(response)

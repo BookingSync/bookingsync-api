@@ -18,6 +18,7 @@ Body             : #{body}}
   end
 
   class Unauthorized < Error; end
+  class Forbidden < Error; end
   class UnprocessableEntity < Error; end
   class NotFound < Error; end
   class UnsupportedResponse < Error

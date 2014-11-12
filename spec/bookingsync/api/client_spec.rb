@@ -133,6 +133,15 @@ describe BookingSync::API::Client do
       end
     end
 
+    context "API returns 403" do
+      it "raises Unauthorized exception" do
+        stub_get("resource", status: 403)
+        expect {
+          client.get("resource")
+        }.to raise_error(BookingSync::API::Forbidden)
+      end
+    end
+
     context "API returns 404" do
       it "raises NotFound exception" do
         stub_get("resource", status: 404)
