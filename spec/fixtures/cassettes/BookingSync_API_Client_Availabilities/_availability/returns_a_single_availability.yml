@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/availabilities/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.22
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1423166400'
+      X-Ratelimit-Remaining:
+      - '999'
+      Link:
+      - <https://www.bookingsync.com/api/v3/availabilities/2?page=1>; rel="first", <https://www.bookingsync.com/api/v3/availabilities/2?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"00618251246b208d25945de17b374a01"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=577aa29d-8c3b-43a0-8c7a-9f38b990bc13; path=/; expires=Thu, 12 Feb
+        2015 19:28:31 -0000
+      - ahoy_visitor=ca0da68c-62f3-4caa-ad82-db9646aee325; path=/; expires=Sun, 05
+        Feb 2017 19:28:31 -0000
+      X-Request-Id:
+      - 472298e4-797b-42d5-b4a5-154699198797
+      X-Runtime:
+      - '0.122531'
+      X-Powered-By:
+      - Phusion Passenger 4.0.45
+      Date:
+      - Thu, 05 Feb 2015 19:28:31 GMT
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.45
+    body:
+      encoding: UTF-8
+      string: '{"links":{"availabilities.rental":"https://www.bookingsync.com/api/v3/rentals/{availabilities.rental}"},"availabilities":[{"links":{"rental":2},"id":2,"map":"1111111111111111111111111111111111111111111111111111111111111111111111111111100111111111111111100011111110000000000000011111111000000000000111000111111111111111111111111111111111111111111111111110000000000111111111111111111111111111000000000001111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","start_date":"2015-01-01","updated_at":"2015-01-21T11:44:59Z"}]}'
+    http_version: 
+  recorded_at: Thu, 05 Feb 2015 19:28:31 GMT
+recorded_with: VCR 2.9.2

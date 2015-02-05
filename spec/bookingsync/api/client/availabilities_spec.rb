@@ -9,4 +9,11 @@ describe BookingSync::API::Client::Availabilities do
       assert_requested :get, bs_url("availabilities")
     end
   end
+
+  describe ".availability", :vcr do
+    it "returns a single availability" do
+      availability = client.availability(2)
+      expect(availability.id).to eq 2
+    end
+  end
 end
