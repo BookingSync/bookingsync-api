@@ -15,6 +15,15 @@ module BookingSync::API
       def availabilities(options = {}, &block)
         paginate :availabilities, options, &block
       end
+
+      # Get a single availability
+      #
+      # @param availability [BookingSync::API::Resource|Integer] Availability or ID
+      #   of the availability.
+      # @return [BookingSync::API::Resource]
+      def availability(availability)
+        get("availabilities/#{availability}").pop
+      end
     end
   end
 end
