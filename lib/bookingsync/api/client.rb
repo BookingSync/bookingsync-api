@@ -1,4 +1,3 @@
-require "bookingsync/api/middleware/authentication"
 require "bookingsync/api/middleware/logger"
 require "bookingsync/api/client/amenities"
 require "bookingsync/api/client/availabilities"
@@ -206,6 +205,8 @@ module BookingSync::API
           data = nil
         end
         options ||= {}
+        options[:headers] ||= {}
+        options[:headers]["Authorization"] = "Bearer #{token}"
 
         if options.has_key?(:query)
           if options[:query].has_key?(:ids)
@@ -227,9 +228,7 @@ module BookingSync::API
           if params = options[:query]
             req.params.update params
           end
-          if headers = options[:headers]
-            req.headers.update headers
-          end
+          req.headers.update options[:headers]
         end
         handle_response(res)
       end
@@ -239,7 +238,6 @@ module BookingSync::API
 
     def middleware
       Faraday::RackBuilder.new do |builder|
-        builder.use :authentication, token
         builder.use :logger, logger
         builder.adapter Faraday.default_adapter
       end
