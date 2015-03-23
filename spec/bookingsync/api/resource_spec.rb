@@ -5,7 +5,8 @@ describe BookingSync::API::Resource do
   let(:relation) {
     BookingSync::API::Relation.from_links(client, {
       :"foo.photos" => "http://foo.com/photos/{foo.photos}",
-      :"foo.category" => "http://foo.com/categories/{foo.category}"
+      :"foo.category" => "http://foo.com/categories/{foo.category}",
+      :"foo.article" => "http://foo.com/articles/{foo.taggable.id}"
     })
   }
   let(:client) { BookingSync::API::Client.new(test_access_token,
@@ -60,6 +61,19 @@ describe BookingSync::API::Resource do
         stub_request(:get, "http://foo.com/categories/15")
           .to_return(body: {categories: [{name: "Secret one"}]}.to_json)
         expect(resource.category).to eql([{name: "Secret one"}])
+      end
+    end
+
+    context "polymorphic association" do
+      let(:links) do
+       { taggable: { "type" => "Article", "id" => "15" },
+          other_polymorphable: { "type" => "Other", "id" => "15" },
+          category: 15  }
+      end
+      it "fetches association based on links and type" do
+        stub_request(:get, "http://foo.com/articles/15")
+          .to_return(body: {articles: [{name: "Secret one"}]}.to_json)
+        expect(resource.taggable).to eql([{name: "Secret one"}])
       end
     end
 
