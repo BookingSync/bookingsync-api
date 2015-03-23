@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/bookings_fees
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.23
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 24 Mar 2015 12:47:14 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1427202000'
+      X-Ratelimit-Remaining:
+      - '924'
+      Link:
+      - <https://www.bookingsync.com/api/v3/bookings_fees?page=1>; rel="first", <https://www.bookingsync.com/api/v3/bookings_fees?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"43c938a8782d08886ac529486d4c6524"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=e903b78c-f174-420a-a0e9-5b53bf10a8b9; path=/; expires=Tue, 31 Mar
+        2015 12:47:14 -0000; secure
+      - ahoy_visitor=7b2ab09d-cf8a-41bf-b904-78680ac09589; path=/; expires=Fri, 24
+        Mar 2017 12:47:14 -0000; secure
+      X-Request-Id:
+      - d13d1227-035b-4731-9b70-3f8dfa39bcd0
+      X-Runtime:
+      - '0.497416'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"bookings_fees.rentals_fee":"https://www.bookingsync.com/api/v3/rentals_fees/{bookings_fees.rentals_fee}","bookings_fees.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings_fees.bookings_taxes}"},"bookings_fees":[{"links":{"rentals_fee":74,"bookings_taxes":[]},"id":1044,"name":{"en":"Final
+        Cleaning"},"price":"100.0","required":true,"included_in_price":true,"times_booked":1,"created_at":"2015-03-24T12:15:17Z","updated_at":"2015-03-24T12:15:17Z"}]}'
+    http_version: 
+  recorded_at: Tue, 24 Mar 2015 12:47:14 GMT
+recorded_with: VCR 2.9.3
