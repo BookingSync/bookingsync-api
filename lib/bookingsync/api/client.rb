@@ -3,9 +3,12 @@ require "bookingsync/api/client/amenities"
 require "bookingsync/api/client/availabilities"
 require "bookingsync/api/client/billing_addresses"
 require "bookingsync/api/client/bookings"
+require "bookingsync/api/client/bookings_fees"
 require "bookingsync/api/client/bookings_payments"
+require "bookingsync/api/client/bookings_taxes"
 require "bookingsync/api/client/clients"
 require "bookingsync/api/client/destinations"
+require "bookingsync/api/client/fees"
 require "bookingsync/api/client/inquiries"
 require "bookingsync/api/client/periods"
 require "bookingsync/api/client/payments"
@@ -14,12 +17,14 @@ require "bookingsync/api/client/rates"
 require "bookingsync/api/client/rates_rules"
 require "bookingsync/api/client/rates_tables"
 require "bookingsync/api/client/rentals"
+require "bookingsync/api/client/rentals_fees"
 require "bookingsync/api/client/rentals_amenities"
 require "bookingsync/api/client/rental_agreements"
 require "bookingsync/api/client/reviews"
 require "bookingsync/api/client/seasons"
 require "bookingsync/api/client/special_offers"
 require "bookingsync/api/client/sources"
+require "bookingsync/api/client/taxes"
 require "bookingsync/api/error"
 require "bookingsync/api/relation"
 require "bookingsync/api/response"
@@ -34,9 +39,12 @@ module BookingSync::API
     include BookingSync::API::Client::Availabilities
     include BookingSync::API::Client::BillingAddresses
     include BookingSync::API::Client::Bookings
+    include BookingSync::API::Client::BookingsFees
     include BookingSync::API::Client::BookingsPayments
+    include BookingSync::API::Client::BookingsTaxes
     include BookingSync::API::Client::Clients
     include BookingSync::API::Client::Destinations
+    include BookingSync::API::Client::Fees
     include BookingSync::API::Client::Inquiries
     include BookingSync::API::Client::Periods
     include BookingSync::API::Client::Payments
@@ -45,12 +53,14 @@ module BookingSync::API
     include BookingSync::API::Client::RatesRules
     include BookingSync::API::Client::RatesTables
     include BookingSync::API::Client::Rentals
+    include BookingSync::API::Client::RentalsFees
     include BookingSync::API::Client::RentalsAmenities
     include BookingSync::API::Client::RentalAgreements
     include BookingSync::API::Client::Reviews
     include BookingSync::API::Client::Seasons
     include BookingSync::API::Client::SpecialOffers
     include BookingSync::API::Client::Sources
+    include BookingSync::API::Client::Taxes
 
     MEDIA_TYPE = "application/vnd.api+json"
 

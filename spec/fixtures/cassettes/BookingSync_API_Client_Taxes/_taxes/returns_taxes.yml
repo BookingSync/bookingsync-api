@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/taxes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.23
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 24 Mar 2015 12:21:46 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1427202000'
+      X-Ratelimit-Remaining:
+      - '993'
+      Link:
+      - <https://www.bookingsync.com/api/v3/taxes?page=1>; rel="first", <https://www.bookingsync.com/api/v3/taxes?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '2'
+      Etag:
+      - '"1bd03b90a1b781f1a17944dda4b1ae06"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=4df8884e-f70a-4910-bbb6-1688364fe04e; path=/; expires=Tue, 31 Mar
+        2015 12:21:46 -0000; secure
+      - ahoy_visitor=c44f76f8-8914-4d06-b074-719a3c04012b; path=/; expires=Fri, 24
+        Mar 2017 12:21:46 -0000; secure
+      X-Request-Id:
+      - 0832ae74-dce4-4bd8-b16e-c339117bceb4
+      X-Runtime:
+      - '0.103752'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"taxes.account":"https://www.bookingsync.com/api/v3/accounts/{taxes.account}"},"taxes":[{"links":{"account":4630},"id":20,"percentage":"23.0","created_at":"2015-03-24T12:12:32Z","updated_at":"2015-03-24T12:12:32Z"},{"links":{"account":4630},"id":21,"percentage":"23.0","created_at":"2015-03-24T12:12:43Z","updated_at":"2015-03-24T12:12:43Z"}]}'
+    http_version: 
+  recorded_at: Tue, 24 Mar 2015 12:21:46 GMT
+recorded_with: VCR 2.9.3

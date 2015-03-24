@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rentals_fees
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.23
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 24 Mar 2015 12:21:45 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1427202000'
+      X-Ratelimit-Remaining:
+      - '994'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rentals_fees?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rentals_fees?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"710d100420f325f2511502cfa6919c6b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=64b9a59b-eaaa-4331-be62-d39d955974dc; path=/; expires=Tue, 31 Mar
+        2015 12:21:44 -0000; secure
+      - ahoy_visitor=f27a275b-339b-4f13-8c73-40b38d4d698e; path=/; expires=Fri, 24
+        Mar 2017 12:21:44 -0000; secure
+      X-Request-Id:
+      - 1275ac3c-5e1f-4586-9c4c-f3b3ad2d4c50
+      X-Runtime:
+      - '0.120639'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rentals_fees.fee":"https://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}","rentals_fees.rental":"https://www.bookingsync.com/api/v3/rentals/{rentals_fees.rental}"},"rentals_fees":[{"links":{"fee":38,"rental":7678},"id":74,"always_applied":true,"end_date":null,"maximum_bookable":null,"public":true,"required":true,"start_date":null,"created_at":"2015-03-24T12:14:55Z","updated_at":"2015-03-24T12:14:55Z"}]}'
+    http_version: 
+  recorded_at: Tue, 24 Mar 2015 12:21:45 GMT
+recorded_with: VCR 2.9.3
