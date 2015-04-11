@@ -2,6 +2,10 @@
 
 ## master
 
+## 0.0.25
+
+- Add support for Accounts endpoint
+
 ## 0.0.24
 
 - Add support for fetching a single availability
