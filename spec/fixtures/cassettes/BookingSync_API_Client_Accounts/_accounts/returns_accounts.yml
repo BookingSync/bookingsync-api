@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/accounts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.24
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 11 Apr 2015 23:42:07 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1428796800'
+      X-Ratelimit-Remaining:
+      - '908'
+      Link:
+      - <https://www.bookingsync.com/api/v3/accounts?page=1>; rel="first", <https://www.bookingsync.com/api/v3/accounts?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"dd45670c9daed0df6d3050130202d15b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=337dda1c-8ab7-4c2b-9386-feaf79fde9f5; path=/; expires=Sat, 18 Apr
+        2015 23:42:07 -0000; secure
+      - ahoy_visitor=250b9b9a-c236-429c-8cac-c028ac678e94; path=/; expires=Tue, 11
+        Apr 2017 23:42:07 -0000; secure
+      X-Request-Id:
+      - 7d5a8d35-4968-477f-950c-269fc3a799b1
+      X-Runtime:
+      - '0.100572'
+    body:
+      encoding: UTF-8
+      string: '{"accounts":[{"business_name":"My Villas","created_at":"2009-12-19T17:11:16Z","id":1,"updated_at":"2013-06-28T10:23:07Z","status":"trial","preferences":{"bookings":{"default_arrival_time":16,"default_departure_time":10}},"email":"demo_en@bookingsync.com"}]}'
+    http_version: 
+  recorded_at: Sat, 11 Apr 2015 23:42:07 GMT
+recorded_with: VCR 2.9.0

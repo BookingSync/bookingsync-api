@@ -1,4 +1,5 @@
 require "bookingsync/api/middleware/logger"
+require "bookingsync/api/client/accounts"
 require "bookingsync/api/client/amenities"
 require "bookingsync/api/client/availabilities"
 require "bookingsync/api/client/billing_addresses"
@@ -35,6 +36,7 @@ require "logger"
 module BookingSync::API
   class Client
     extend Forwardable
+    include BookingSync::API::Client::Accounts
     include BookingSync::API::Client::Amenities
     include BookingSync::API::Client::Availabilities
     include BookingSync::API::Client::BillingAddresses
