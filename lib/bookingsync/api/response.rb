@@ -1,5 +1,3 @@
-require "addressable/template"
-
 module BookingSync::API
   class Response
     SPECIAL_JSONAPI_FIELDS = [:links, :linked, :meta]
