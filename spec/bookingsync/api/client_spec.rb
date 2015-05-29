@@ -202,6 +202,15 @@ describe BookingSync::API::Client do
         assert_requested :get, bs_url("resource?months=12&status=booked,unavailable")
       end
     end
+
+    context "http client raises Net::ReadTimeout" do
+      it "catches it and raises RequestError" do
+        stub_request(:any, bs_url("resource?status=booked")).to_raise(Faraday::TimeoutError)
+        expect {
+          client.get("resource", status: :booked)
+        }.to raise_error(BookingSync::API::RequestError)
+      end
+    end
   end
 
   describe "#api_endpoint" do

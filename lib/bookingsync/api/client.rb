@@ -233,16 +233,21 @@ module BookingSync::API
         end
 
         url = expand_url(path, options[:uri])
-        res = @conn.send(method, url) do |req|
-          if data
-            req.body = data.is_a?(String) ? data : encode_body(data)
+
+        begin
+          res = @conn.send(method, url) do |req|
+            if data
+              req.body = data.is_a?(String) ? data : encode_body(data)
+            end
+            if params = options[:query]
+              req.params.update params
+            end
+            req.headers.update options[:headers]
           end
-          if params = options[:query]
-            req.params.update params
-          end
-          req.headers.update options[:headers]
+          handle_response(res)
+        rescue Faraday::TimeoutError => exception
+          raise RequestError.new(method, url, data, exception)
         end
-        handle_response(res)
       end
     end
 
