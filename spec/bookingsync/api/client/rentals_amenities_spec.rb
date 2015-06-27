@@ -28,4 +28,19 @@ describe BookingSync::API::Client::RentalsAmenities do
       assert_requested :get, bs_url("rentals_amenities/1")
     end
   end
+
+  describe ".create_rentals_amenity", :vcr do
+    let(:rental) { BookingSync::API::Resource.new(client, id: 38) }
+
+    it "creates a new rental's amenity" do
+      client.create_rentals_amenity(rental, { amenity_id: 50 })
+      assert_requested :post, bs_url("rentals/38/rentals_amenities"),
+        body: { rentals_amenities: [{ amenity_id: 50 }] }.to_json
+    end
+
+    it "returns newly created rental's amenity" do
+      rentals_amenity = client.create_rentals_amenity(rental, { amenity_id: 51 })
+      expect(rentals_amenity.links.amenity).to eql 51
+    end
+  end
 end

@@ -24,7 +24,7 @@ module BookingSync::API
       #
       # @param rental [BookingSync::API::Resource|Integer] Rental object or ID
       #   for which the photo will be created. Image can be provided in three
-      #   was, as a file path, encode string or as an URL.
+      #   ways, as a file path, encode string or as an URL.
       # @param options [Hash] Photo's attributes.
       # @option options [String] photo_path: Path to the image to be uploaded.
       # @option options [String] photo: Photo encoded with Base64
