@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/rentals/38/rentals_amenities
+    body:
+      encoding: UTF-8
+      string: '{"rentals_amenities":[{"amenity_id":51}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.25
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1435431600'
+      X-Ratelimit-Remaining:
+      - '975'
+      Location:
+      - https://www.bookingsync.com/api/v3/rentals_amenities/5
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - '"2b241bab5594fc4bd2eda9a5fcc84f0e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=a59bc2ce-d0e3-4dec-8559-cb68823b655e; path=/; expires=Sat, 04 Jul
+        2015 18:35:11 -0000
+      - ahoy_visitor=5cfda5da-7916-40d3-aadd-a0e104e1b3a6; path=/; expires=Tue, 27
+        Jun 2017 18:35:11 -0000
+      X-Request-Id:
+      - 2c550fed-f678-4ad8-ba0e-f45ba0d0f079
+      X-Runtime:
+      - '0.039191'
+      Date:
+      - Sat, 27 Jun 2015 18:35:11 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rentals_amenities.amenity":"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}","rentals_amenities.rental":"https://www.bookingsync.com/api/v3/rentals/{rentals_amenities.rental}"},"rentals_amenities":[{"links":{"amenity":51,"rental":38},"id":5,"created_at":"2015-06-27T18:35:11Z","updated_at":"2015-06-27T18:35:11Z"}]}'
+    http_version: 
+  recorded_at: Sat, 27 Jun 2015 18:35:11 GMT
+recorded_with: VCR 2.9.3
