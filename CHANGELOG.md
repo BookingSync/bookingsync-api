@@ -2,6 +2,11 @@
 
 ## master
 
+## 0.0.26
+
+- Add support for creating instant bookings
+- Add support for creatings rentals amenities
+
 ## 0.0.25
 
 - Add support for Accounts endpoint
