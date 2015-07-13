@@ -29,7 +29,7 @@ describe BookingSync::API::Relation do
     let(:client) { double(BookingSync::API::Client) }
 
     it "makes HTTP request using API client" do
-      url_template = Addressable::Template.new("http://example.com/photos/{foo.photos}")
+      url_template = ::Addressable::Template.new("http://example.com/photos/{foo.photos}")
       expect(client).to receive(:call).with(:get, url_template, nil, {})
       relation.call
     end
@@ -37,7 +37,7 @@ describe BookingSync::API::Relation do
 
   describe "#get" do
     it "makes a HTTP GET using call on relation" do
-      url_template = Addressable::Template.new("http://example.com/photos/{foo.photos}")
+      url_template = ::Addressable::Template.new("http://example.com/photos/{foo.photos}")
       expect(relation).to receive(:call).with({fields: [:name, :description], method: :get})
       relation.get(fields: [:name, :description])
     end
@@ -52,7 +52,7 @@ describe BookingSync::API::Relation do
 
   describe "#href_template" do
     it "returns relation's URL template" do
-      url_template = Addressable::Template.new("http://example.com/photos/{foo.photos}")
+      url_template = ::Addressable::Template.new("http://example.com/photos/{foo.photos}")
       expect(relation.href_template).to eq(url_template)
     end
   end

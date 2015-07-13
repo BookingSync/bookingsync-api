@@ -11,6 +11,7 @@ require "bookingsync/api/client/clients"
 require "bookingsync/api/client/destinations"
 require "bookingsync/api/client/fees"
 require "bookingsync/api/client/inquiries"
+require "bookingsync/api/client/instant_bookings"
 require "bookingsync/api/client/periods"
 require "bookingsync/api/client/payments"
 require "bookingsync/api/client/photos"
@@ -32,6 +33,7 @@ require "bookingsync/api/response"
 require "bookingsync/api/resource"
 require "bookingsync/api/serializer"
 require "logger"
+require "addressable/template"
 
 module BookingSync::API
   class Client
@@ -48,6 +50,7 @@ module BookingSync::API
     include BookingSync::API::Client::Destinations
     include BookingSync::API::Client::Fees
     include BookingSync::API::Client::Inquiries
+    include BookingSync::API::Client::InstantBookings
     include BookingSync::API::Client::Periods
     include BookingSync::API::Client::Payments
     include BookingSync::API::Client::Photos
@@ -285,7 +288,7 @@ module BookingSync::API
     # @param options [Hash] - Variables which will be used to expand
     # @return [String] - Expanded URL
     def expand_url(url, options = nil)
-      tpl = url.respond_to?(:expand) ? url : Addressable::Template.new(url.to_s)
+      tpl = url.respond_to?(:expand) ? url : ::Addressable::Template.new(url.to_s)
       tpl.expand(options || {}).to_s
     end
 

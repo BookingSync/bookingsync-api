@@ -1,3 +1,5 @@
+require "addressable/template"
+
 module BookingSync::API
   class Relation
     attr_reader :client, :name, :href_template, :method
@@ -46,7 +48,7 @@ module BookingSync::API
       @client = client
       @name = name.to_sym
       @href = href
-      @href_template = Addressable::Template.new(href.to_s)
+      @href_template = ::Addressable::Template.new(href.to_s)
       @method = (method || :get).to_sym
       @available_methods = Set.new methods || [@method]
     end
