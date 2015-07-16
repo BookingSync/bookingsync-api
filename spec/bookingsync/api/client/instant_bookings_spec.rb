@@ -21,7 +21,8 @@ describe BookingSync::API::Client::InstantBookings do
           "firstname" => "Lazar",
           "email" => "email@example.com",
           "lastname" => "Angelov",
-          "phone_number" => "123-123-123"
+          "phone_number" => "123-123-123",
+          "country_code" => "US"
         }
       }
     end

@@ -6,10 +6,10 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"bookings":[{"rental_id":"1","start_at":"2015-08-01 16:00:00","end_at":"2015-08-11
-        10:00:00","adults":"3","children":"2","final_price":"806.82","currency":"EUR","bookings_fees_attributes":{"0":{"rentals_fee_id":"1","times_booked":"1"},"1":{"rentals_fee_id":"3","times_booked":"1"}},"contact_information_attributes":{"firstname":"Lazar","email":"email@example.com","lastname":"Angelov","phone_number":"123-123-123"}}]}'
+        10:00:00","adults":"3","children":"2","final_price":"806.82","currency":"EUR","bookings_fees_attributes":{"0":{"rentals_fee_id":"1","times_booked":"1"},"1":{"rentals_fee_id":"3","times_booked":"1"}},"contact_information_attributes":{"firstname":"Lazar","email":"email@example.com","lastname":"Angelov","phone_number":"123-123-123","country_code":"US"}}]}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.25
+      - BookingSync API gem v0.0.26
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -32,15 +32,15 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1435928400'
+      - '1437051600'
       X-Ratelimit-Remaining:
       - '999'
       Location:
-      - https://www.bookingsync.com/api/v3/bookings/435
+      - https://www.bookingsync.com/api/v3/bookings/443
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Etag:
-      - '"e0525b23086189fc0bf31000ad430cbc"'
+      - '"9b3c2cac44aca7897875673b4351573c"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -48,21 +48,21 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/
-      - ahoy_visit=98402521-c15f-4128-95da-c2c47241de35; path=/; expires=Fri, 10 Jul
-        2015 12:39:56 -0000
-      - ahoy_visitor=c7fa60d1-c2cb-47da-b95a-b2bc3e82a001; path=/; expires=Mon, 03
-        Jul 2017 12:39:56 -0000
+      - ahoy_visit=cc9e3a70-7937-46c9-8a14-3b4d31fb1f66; path=/; expires=Thu, 23 Jul
+        2015 12:22:28 -0000
+      - ahoy_visitor=b8f91275-2917-4228-bc43-f0eee8d812bf; path=/; expires=Sun, 16
+        Jul 2017 12:22:28 -0000
       X-Request-Id:
-      - fc1d7a8b-2332-4f37-9b5b-7563d9f66b76
+      - 41c24ae5-3424-46be-8249-4bb6e2fbc10f
       X-Runtime:
-      - '1.043527'
+      - '0.779185'
       Date:
-      - Fri, 03 Jul 2015 12:39:57 GMT
+      - Thu, 16 Jul 2015 12:22:28 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"links":{"bookings.account":"https://www.bookingsync.com/api/v3/accounts/{bookings.account}","bookings.rental":"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}","bookings.client":"https://www.bookingsync.com/api/v3/clients/{bookings.client}","bookings.rental_agreement":"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}","bookings.source":"https://www.bookingsync.com/api/v3/sources/{bookings.source}","bookings.bookings_fees":"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}","bookings.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}"},"bookings":[{"links":{"account":1,"rental":1,"client":85,"rental_agreement":null,"source":null,"bookings_fees":[207,208],"bookings_taxes":[474,475,476]},"id":435,"start_at":"2015-08-01T16:00:00Z","end_at":"2015-08-11T10:00:00Z","status":"Booked","updated_at":"2015-07-03T12:39:56Z","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":"217.17","initial_rental_price":"217.17","discount":null,"final_rental_price":"217.17","final_price":"806.82","downpayment":null,"paid_amount":"0.0","currency":"EUR","notes":null,"adults":3,"children":2,"bookings_payments_count":0,"review_requests_count":0,"locked":null,"created_at":"2015-07-03T12:39:56Z","canceled_at":null}]}'
-    http_version: 
-  recorded_at: Fri, 03 Jul 2015 12:39:57 GMT
+      string: '{"links":{"bookings.account":"https://www.bookingsync.com/api/v3/accounts/{bookings.account}","bookings.rental":"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}","bookings.client":"https://www.bookingsync.com/api/v3/clients/{bookings.client}","bookings.rental_agreement":"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}","bookings.source":"https://www.bookingsync.com/api/v3/sources/{bookings.source}","bookings.bookings_fees":"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}","bookings.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}"},"bookings":[{"links":{"account":1,"rental":1,"client":85,"rental_agreement":3,"source":null,"bookings_fees":[221,222],"bookings_taxes":[498,499,500]},"id":443,"start_at":"2015-08-01T16:00:00Z","end_at":"2015-08-11T10:00:00Z","status":"Booked","updated_at":"2015-07-16T12:22:28Z","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":"217.17","initial_rental_price":"217.17","discount":null,"final_rental_price":"217.17","final_price":"806.82","downpayment":null,"paid_amount":"0.0","currency":"EUR","notes":null,"adults":3,"children":2,"bookings_payments_count":0,"review_requests_count":0,"locked":null,"created_at":"2015-07-16T12:22:28Z","canceled_at":null,"expected_checkin_time":null,"expected_checkout_time":null,"owned_by_app":false}]}'
+    http_version:
+  recorded_at: Thu, 16 Jul 2015 12:22:28 GMT
 recorded_with: VCR 2.9.3
