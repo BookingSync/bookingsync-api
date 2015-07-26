@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/bookings/114760?include_canceled=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.26
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 26 Jul 2015 14:41:39 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Reset:
+      - '1437922800'
+      X-Ratelimit-Remaining:
+      - '4991'
+      Link:
+      - <https://www.bookingsync.com/api/v3/bookings/114760?include_canceled=true&page=1>;
+        rel="first", <https://www.bookingsync.com/api/v3/bookings/114760?include_canceled=true&page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"6580e5cc4becab5179a97144480cd2a8"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=4d25535b-4282-48d5-8d0e-e4e0c89ae456; path=/; expires=Sun, 02 Aug
+        2015 14:41:39 -0000; secure
+      - ahoy_visitor=61b23df6-ce60-4fd6-9483-93d2b1b7de52; path=/; expires=Wed, 26
+        Jul 2017 14:41:39 -0000; secure
+      X-Request-Id:
+      - ad1ae3ef-a18e-4c15-a7d0-9f2b322b1e5f
+      X-Runtime:
+      - '0.107455'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"bookings.account":"https://www.bookingsync.com/api/v3/accounts/{bookings.account}","bookings.rental":"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}","bookings.client":"https://www.bookingsync.com/api/v3/clients/{bookings.client}","bookings.rental_agreement":"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}","bookings.source":"https://www.bookingsync.com/api/v3/sources/{bookings.source}","bookings.bookings_fees":"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}","bookings.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}"},"bookings":[{"links":{"account":4516,"rental":7314,"client":61311,"rental_agreement":null,"source":null,"bookings_fees":[],"bookings_taxes":[]},"id":114760,"start_at":"2015-07-19T16:00:00Z","end_at":"2015-07-31T10:00:00Z","status":"Canceled","updated_at":"2015-06-12T12:58:00Z","booked":false,"unavailable":false,"tentative_expires_at":null,"initial_price":"5000.0","initial_rental_price":"5000.0","discount":null,"final_rental_price":"5000.0","final_price":"5000.0","downpayment":null,"paid_amount":"0.0","currency":"EUR","notes":"Birthday
+        celebration","adults":1,"children":null,"bookings_payments_count":0,"review_requests_count":0,"locked":null,"created_at":"2015-03-08T00:31:56Z","canceled_at":"2015-03-12T00:31:56Z","expected_checkin_time":null,"expected_checkout_time":null,"owned_by_app":false}],"meta":{}}'
+    http_version: 
+  recorded_at: Sun, 26 Jul 2015 14:41:40 GMT
+recorded_with: VCR 2.9.3
