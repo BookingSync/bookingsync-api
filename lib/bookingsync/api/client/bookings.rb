@@ -34,9 +34,13 @@ module BookingSync::API
       #
       # @param booking [BookingSync::API::Resource|Integer] Booking or ID
       #   of the booking.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @option options [Boolean] include_canceled: If true canceled bookings
+      #   are shown, otherwise they are hidden.
       # @return [BookingSync::API::Resource]
-      def booking(booking)
-        get("bookings/#{booking}").pop
+      def booking(booking, options = {})
+        get("bookings/#{booking}", options).pop
       end
 
       # Create a booking

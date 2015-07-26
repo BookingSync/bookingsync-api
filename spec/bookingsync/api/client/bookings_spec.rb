@@ -42,6 +42,11 @@ describe BookingSync::API::Client::Bookings do
       booking = client.booking(20)
       expect(booking.status).to eq "Booked"
     end
+
+    it "returns a single canceled booking" do
+      booking = client.booking(114760, { include_canceled: true })
+      expect(booking.status).to eq "Canceled"
+    end
   end
 
   describe ".create_booking", :vcr do
