@@ -2,6 +2,10 @@
 
 ## master
 
+## 0.0.28
+
+- Add missing dependency of `addressable`
+
 ## 0.0.27
 
 - Add support for fetching a single booking with options (needed to fetch canceled bookings)
