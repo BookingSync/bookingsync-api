@@ -1,5 +1,3 @@
-require "addressable/template"
-
 module BookingSync::API
   class Relation
     attr_reader :client, :name, :href_template, :method
