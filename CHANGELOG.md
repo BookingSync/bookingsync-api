@@ -2,28 +2,32 @@
 
 ## master
 
+## 0.0.29
+
+- Add support for Bathrooms and Bedrooms endpoints.
+
 ## 0.0.28
 
-- Add missing dependency of `addressable`
+- Add missing dependency of `addressable`.
 
 ## 0.0.27
 
-- Add support for fetching a single booking with options (needed to fetch canceled bookings)
+- Add support for fetching a single booking with options (needed to fetch canceled bookings).
 
 ## 0.0.26
 
-- Add support for creating instant bookings
-- Add support for creatings rentals amenities
+- Add support for creating instant bookings.
+- Add support for creatings rentals amenities.
 
 ## 0.0.25
 
-- Add support for Accounts endpoint
+- Add support for Accounts endpoint.
 
 ## 0.0.24
 
-- Add support for fetching a single availability
-- Add support for polymorphic associations
-- Add support for Taxes, Fees, BookingsTaxes, BookingsFees and RentalsFees endpoints
+- Add support for fetching a single availability.
+- Add support for polymorphic associations.
+- Add support for Taxes, Fees, BookingsTaxes, BookingsFees and RentalsFees endpoints.
 
 ## 0.0.23
 
@@ -31,4 +35,4 @@
 
 ## 0.0.22
 
-- Handle 403 responses from the API. Raises BookingSync::API::Forbidden
+- Handle 403 responses from the API. Raises BookingSync::API::Forbidden.
