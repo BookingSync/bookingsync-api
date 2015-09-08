@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://www.bookingsync.com/api/v3/bedrooms/944
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.28
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Sep 2015 18:32:06 GMT
+      Connection:
+      - keep-alive
+      Status:
+      - 204 No Content
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441738800'
+      X-Ratelimit-Remaining:
+      - '966'
+      Cache-Control:
+      - no-cache
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=47214c11-207b-400c-a097-62e293ec279c; path=/; expires=Tue, 15 Sep
+        2015 18:32:06 -0000; secure
+      - ahoy_visitor=5ebdb49a-330d-40c9-b1fb-3f927530485c; path=/; expires=Fri, 08
+        Sep 2017 18:32:06 -0000; secure
+      X-Request-Id:
+      - 0b0ef3a9-db71-42a9-96f4-6c809aa48403
+      X-Runtime:
+      - '0.050484'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 08 Sep 2015 18:32:07 GMT
+recorded_with: VCR 2.9.2

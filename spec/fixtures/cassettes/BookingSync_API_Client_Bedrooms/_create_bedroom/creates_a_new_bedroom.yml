@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/rentals/5116/bedrooms
+    body:
+      encoding: UTF-8
+      string: '{"bedrooms":[{"name_en":"New bedroom","sofa_beds_count":2}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.28
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Sep 2015 18:32:00 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441738800'
+      X-Ratelimit-Remaining:
+      - '968'
+      Location:
+      - https://www.bookingsync.com/api/v3/bedrooms/7368
+      Etag:
+      - '"5202ae8ea158342886c8c73b4f9a5688"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=dd282f48-1dce-4c5f-9239-66128775eba0; path=/; expires=Tue, 15 Sep
+        2015 18:31:59 -0000; secure
+      - ahoy_visitor=bc5e403e-b0e3-490f-b47f-916b1bd9f85b; path=/; expires=Fri, 08
+        Sep 2017 18:31:59 -0000; secure
+      X-Request-Id:
+      - b885a767-919a-4060-9a01-3f80b689e2c8
+      X-Runtime:
+      - '0.088645'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"bedrooms.rental":"https://www.bookingsync.com/api/v3/rentals/{bedrooms.rental}"},"bedrooms":[{"links":{"rental":5116},"id":7368,"name":{"en":"New
+        bedroom"},"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":0,"queensize_beds_count":0,"single_beds_count":0,"sofa_beds_count":2,"created_at":"2015-09-08T18:31:59Z","updated_at":"2015-09-08T18:31:59Z"}]}'
+    http_version: 
+  recorded_at: Tue, 08 Sep 2015 18:32:01 GMT
+recorded_with: VCR 2.9.2

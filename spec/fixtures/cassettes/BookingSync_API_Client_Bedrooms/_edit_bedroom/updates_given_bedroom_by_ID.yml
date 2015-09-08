@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/bedrooms/944
+    body:
+      encoding: UTF-8
+      string: '{"bedrooms":[{"name_en":"Updated bedroom"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.28
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Sep 2015 18:32:02 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441738800'
+      X-Ratelimit-Remaining:
+      - '967'
+      Etag:
+      - '"71ea099e0acfa2f393786825ca27e6b9"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=9cddf87b-2fd9-4059-8f23-4a9baae57397; path=/; expires=Tue, 15 Sep
+        2015 18:32:02 -0000; secure
+      - ahoy_visitor=4ef6e17e-327f-454b-9d2e-219356cb45d1; path=/; expires=Fri, 08
+        Sep 2017 18:32:02 -0000; secure
+      X-Request-Id:
+      - 6be78d61-e9ca-4ba6-8f75-030ca02121b5
+      X-Runtime:
+      - '0.096654'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"bedrooms.rental":"https://www.bookingsync.com/api/v3/rentals/{bedrooms.rental}"},"bedrooms":[{"links":{"rental":5116},"id":944,"name":{"en":"Updated
+        bedroom","fr":"Chambre 1"},"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":0,"queensize_beds_count":0,"single_beds_count":0,"sofa_beds_count":0,"created_at":"2015-08-12T22:23:31Z","updated_at":"2015-09-08T18:30:09Z"}]}'
+    http_version: 
+  recorded_at: Tue, 08 Sep 2015 18:32:03 GMT
+recorded_with: VCR 2.9.2

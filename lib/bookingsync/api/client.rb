@@ -3,6 +3,8 @@ require "bookingsync/api/client/accounts"
 require "bookingsync/api/client/amenities"
 require "bookingsync/api/client/availabilities"
 require "bookingsync/api/client/billing_addresses"
+require "bookingsync/api/client/bathrooms"
+require "bookingsync/api/client/bedrooms"
 require "bookingsync/api/client/bookings"
 require "bookingsync/api/client/bookings_fees"
 require "bookingsync/api/client/bookings_payments"
@@ -42,6 +44,8 @@ module BookingSync::API
     include BookingSync::API::Client::Amenities
     include BookingSync::API::Client::Availabilities
     include BookingSync::API::Client::BillingAddresses
+    include BookingSync::API::Client::Bathrooms
+    include BookingSync::API::Client::Bedrooms
     include BookingSync::API::Client::Bookings
     include BookingSync::API::Client::BookingsFees
     include BookingSync::API::Client::BookingsPayments
