@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/rentals/5116/bathrooms
+    body:
+      encoding: UTF-8
+      string: '{"bathrooms":[{"name_en":"New bathroom","wc":true}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.28
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Sep 2015 18:55:45 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441738800'
+      X-Ratelimit-Remaining:
+      - '964'
+      Location:
+      - https://www.bookingsync.com/api/v3/bathrooms/8729
+      Etag:
+      - '"bdd3245a67be587735129a92ce4b48f7"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=2d5cd6c4-5d61-4ac9-9bf0-7e8168d56865; path=/; expires=Tue, 15 Sep
+        2015 18:55:45 -0000; secure
+      - ahoy_visitor=ce5ecb20-0e5f-495b-92d8-69f0fb1a9bed; path=/; expires=Fri, 08
+        Sep 2017 18:55:45 -0000; secure
+      X-Request-Id:
+      - f75f91a9-40f8-44a5-aba7-9ad9016cb9be
+      X-Runtime:
+      - '0.110989'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"bathrooms.rental":"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"},"bathrooms":[{"links":{"rental":5116},"id":8729,"name":{"en":"New
+        bathroom"},"wc":true,"shower":false,"bath":false,"created_at":"2015-09-08T18:55:45Z","updated_at":"2015-09-08T18:55:45Z"}]}'
+    http_version: 
+  recorded_at: Tue, 08 Sep 2015 18:55:46 GMT
+recorded_with: VCR 2.9.2
