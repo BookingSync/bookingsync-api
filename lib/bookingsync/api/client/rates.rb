@@ -18,6 +18,17 @@ module BookingSync::API
       def rates(options = {}, &block)
         paginate :rates, options, &block
       end
+
+      # Get a single rate
+      #
+      # @param rate [BookingSync::API::Resource|Integer] Rate or ID
+      #   of the rate.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def rate(rate, options = {})
+        get("rates/#{rate}", options).pop
+      end
     end
   end
 end

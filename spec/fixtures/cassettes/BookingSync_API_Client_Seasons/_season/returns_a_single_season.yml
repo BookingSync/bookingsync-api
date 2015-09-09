@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/seasons/1803
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 21:09:27 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441836000'
+      X-Ratelimit-Remaining:
+      - '986'
+      Link:
+      - <https://www.bookingsync.com/api/v3/seasons/1803?page=1>; rel="first", <https://www.bookingsync.com/api/v3/seasons/1803?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"e8730bc58fc103ac08f78840527c8287"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=6412148d-2e3b-4698-81d5-7a319e35842a; path=/; expires=Wed, 16 Sep
+        2015 21:09:27 -0000; secure
+      - ahoy_visitor=6302d603-8706-491c-8513-0ff27b087561; path=/; expires=Sat, 09
+        Sep 2017 21:09:27 -0000; secure
+      X-Request-Id:
+      - 45d7ea62-6e0e-4b79-8634-3df9839ac0b3
+      X-Runtime:
+      - '0.097578'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"seasons.rates_table":"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}","seasons.rates_rules":"https://www.bookingsync.com/api/v3/rates_rules/{seasons.rates_rules}","seasons.periods":"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"},"seasons":[{"links":{"rates_table":274,"rates_rules":[],"periods":[4735]},"id":1803,"name":{"en":"High
+        Season"},"ratio_percentage":"89.0","minimum_stay":3,"color_ratio":"1.656","created_at":"2014-08-08T18:29:54Z","updated_at":"2015-01-20T16:31:55Z","color":"#A0D453"}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 21:09:28 GMT
+recorded_with: VCR 2.9.2

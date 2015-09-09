@@ -18,6 +18,17 @@ module BookingSync::API
         paginate :seasons, options, &block
       end
 
+      # Get a single season
+      #
+      # @param season [BookingSync::API::Resource|Integer] Season or ID
+      #   of the season.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def season(season, options = {})
+        get("seasons/#{season}", options).pop
+      end
+
       # Create a new season
       #
       # @param rates_table [BookingSync::API::Resource|Integer] Rates table

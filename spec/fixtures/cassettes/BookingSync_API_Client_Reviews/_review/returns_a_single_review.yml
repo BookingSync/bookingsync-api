@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/reviews/34562
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 21:10:09 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441836000'
+      X-Ratelimit-Remaining:
+      - '984'
+      Link:
+      - <https://www.bookingsync.com/api/v3/reviews/34562?page=1>; rel="first", <https://www.bookingsync.com/api/v3/reviews/34562?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"304dc9f7ded9014a0841c748d9c9948c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=6796c566-1a5d-4b7a-a6ad-a07d71c72eb3; path=/; expires=Wed, 16 Sep
+        2015 21:10:09 -0000; secure
+      - ahoy_visitor=3d63cdd6-bdba-42c5-937d-18492a05ffea; path=/; expires=Sat, 09
+        Sep 2017 21:10:09 -0000; secure
+      X-Request-Id:
+      - 752f6826-b8ed-4fae-b0ef-d0dd38a6f793
+      X-Runtime:
+      - '0.075921'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"reviews.booking":"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}","reviews.rental":"https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"},"reviews":[{"links":{"booking":142616,"rental":5116},"id":34562,"rating":5,"comment":"test
+        test test","name":"Gary S.","created_at":"2015-09-09T21:09:28Z","updated_at":"2015-09-09T21:09:28Z"}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 21:10:10 GMT
+recorded_with: VCR 2.9.2

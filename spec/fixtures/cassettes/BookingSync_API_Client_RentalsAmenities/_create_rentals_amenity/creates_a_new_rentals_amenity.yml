@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/rentals/5116/rentals_amenities
+    body:
+      encoding: UTF-8
+      string: '{"rentals_amenities":[{"amenity_id":44,"details_en":"Details"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 20:46:30 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441832400'
+      X-Ratelimit-Remaining:
+      - '915'
+      Location:
+      - https://www.bookingsync.com/api/v3/rentals_amenities/32833
+      Etag:
+      - '"aba295b26ac136614052adb7f76ac748"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=94177a9f-c500-4713-98dd-07bd972b8ea3; path=/; expires=Wed, 16 Sep
+        2015 20:46:30 -0000; secure
+      - ahoy_visitor=341d4e5e-6646-474e-ba90-44b131b3e711; path=/; expires=Sat, 09
+        Sep 2017 20:46:30 -0000; secure
+      X-Request-Id:
+      - 07e2f4ed-43f5-46ea-b880-9a49153d0e17
+      X-Runtime:
+      - '0.080690'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rentals_amenities.amenity":"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}","rentals_amenities.rental":"https://www.bookingsync.com/api/v3/rentals/{rentals_amenities.rental}"},"rentals_amenities":[{"links":{"amenity":44,"rental":5116},"id":32833,"created_at":"2015-09-09T20:46:30Z","updated_at":"2015-09-09T20:46:30Z","details":{"en":"Details"}}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 20:46:31 GMT
+recorded_with: VCR 2.9.2

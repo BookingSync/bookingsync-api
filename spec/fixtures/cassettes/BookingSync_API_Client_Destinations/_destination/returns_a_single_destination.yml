@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/destinations/7301
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 20:18:52 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441832400'
+      X-Ratelimit-Remaining:
+      - '970'
+      Link:
+      - <https://www.bookingsync.com/api/v3/destinations/7301?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/destinations/7301?page=1>; rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"47249ebadc8b5a23bf610c28b73892d9"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=09a218d5-c4d0-40fb-aad7-9fecc2a44c54; path=/; expires=Wed, 16 Sep
+        2015 20:18:52 -0000; secure
+      - ahoy_visitor=f972ba50-384c-4513-ba1b-685107d8790d; path=/; expires=Sat, 09
+        Sep 2017 20:18:52 -0000; secure
+      X-Request-Id:
+      - 8d1b991c-ef2d-4a36-9e25-5d126e2e6ec8
+      X-Runtime:
+      - '0.091339'
+    body:
+      encoding: UTF-8
+      string: '{"destinations":[{"id":7301,"name":{"en":"Sivota Lefkada"},"fullname":{"en":"Sivota
+        Lefkada, Lefkada (Lefkas), Ionian Islands, Greece, Europe, World","fr":"Sivota
+        Lefkada, Lefkada (Lefkas), Ionian Islands, Greece, Europe, World"},"permalink":{"en":"world/europe/greece/ionian-islands/lefkada-lefkas/sivota-lefkada","fr":"world/europe/greece/ionian-islands/lefkada-lefkas/sivota-lefkada"},"aliases":{"en":"---\n-
+        Syvota\n"},"counter":2}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 20:18:54 GMT
+recorded_with: VCR 2.9.2

@@ -20,6 +20,17 @@ module BookingSync::API
         paginate :photos, options, &block
       end
 
+      # Get a single photo
+      #
+      # @param photo [BookingSync::API::Resource|Integer] Photo or ID
+      #   of the photo.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def photo(photo, options = {})
+        get("photos/#{photo}", options).pop
+      end
+
       # Create a photo
       #
       # @param rental [BookingSync::API::Resource|Integer] Rental object or ID

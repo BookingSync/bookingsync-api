@@ -17,6 +17,17 @@ module BookingSync::API
       def fees(options = {}, &block)
         paginate :fees, options, &block
       end
+
+      # Get a single fee
+      #
+      # @param fee [BookingSync::API::Resource|Integer] Fee or ID
+      #   of the fee.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def fee(fee, options = {})
+        get("fees/#{fee}", options).pop
+      end
     end
   end
 end

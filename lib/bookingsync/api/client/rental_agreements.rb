@@ -19,6 +19,17 @@ module BookingSync::API
         paginate :rental_agreements, options, &block
       end
 
+      # Get a single rental_agreement
+      #
+      # @param rental_agreement [BookingSync::API::Resource|Integer] RentalAgreement or ID
+      #   of the rental_agreement.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def rental_agreement(rental_agreement, options = {})
+        get("rental_agreements/#{rental_agreement}", options).pop
+      end
+
       # Create a new rental agreement for a booking.
       #
       # @param booking [BookingSync::API::Resource|Integer] Booking or ID of

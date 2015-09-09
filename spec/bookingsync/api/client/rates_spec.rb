@@ -9,4 +9,11 @@ describe BookingSync::API::Client::Rates do
       assert_requested :get, bs_url("rates")
     end
   end
+
+  describe ".rate", :vcr do
+    it "returns a single rate" do
+      rate = client.rate(18577)
+      expect(rate.id).to eq 18577
+    end
+  end
 end

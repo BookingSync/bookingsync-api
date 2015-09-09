@@ -10,6 +10,13 @@ describe BookingSync::API::Client::SpecialOffers do
     end
   end
 
+  describe ".special_offer", :vcr do
+    it "returns a single special_offer" do
+      special_offer = client.special_offer(86)
+      expect(special_offer.id).to eq 86
+    end
+  end
+
   describe ".create_special_offer", :vcr do
     let(:attributes) {
       {

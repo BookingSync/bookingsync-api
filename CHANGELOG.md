@@ -2,6 +2,9 @@
 
 ## master
 
+- Add missing CRUD actions to existing endpoints.
+- Remove unused BillingAddresses endpoint.
+
 ## 0.0.29
 
 - Add support for Bathrooms and Bedrooms endpoints.

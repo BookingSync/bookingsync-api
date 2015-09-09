@@ -10,6 +10,13 @@ describe BookingSync::API::Client::Reviews do
     end
   end
 
+  describe ".review", :vcr do
+    it "returns a single review" do
+      review = client.review(34562)
+      expect(review.id).to eq 34562
+    end
+  end
+
   describe ".create_review", :vcr do
     let(:attributes) {{
       comment: "Awesome place",

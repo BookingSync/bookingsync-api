@@ -10,6 +10,13 @@ describe BookingSync::API::Client::Periods do
     end
   end
 
+  describe ".period", :vcr do
+    it "returns a single period" do
+      period = client.period(4737)
+      expect(period.id).to eq 4737
+    end
+  end
+
   describe ".create_period", :vcr do
     let(:attributes) { {start_at: "2013-04-10", end_at: "2013-04-22"} }
     let(:season) { BookingSync::API::Resource.new(client, id: 9) }

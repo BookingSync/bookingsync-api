@@ -18,6 +18,17 @@ module BookingSync::API
         paginate :special_offers, options, &block
       end
 
+      # Get a single special_offer
+      #
+      # @param special_offer [BookingSync::API::Resource|Integer] SpecialOffer or ID
+      #   of the special_offer.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def special_offer(special_offer, options = {})
+        get("special_offers/#{special_offer}", options).pop
+      end
+
       # Create a new special offer for a rental
       #
       # @param rental [BookingSync::API::Resource|Integer] Rental or ID of the

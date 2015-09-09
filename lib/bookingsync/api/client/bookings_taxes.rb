@@ -17,6 +17,17 @@ module BookingSync::API
       def bookings_taxes(options = {}, &block)
         paginate :bookings_taxes, options, &block
       end
+
+      # Get a single bookings tax
+      #
+      # @param bookings_tax [BookingSync::API::Resource|Integer] BookingsTax or ID
+      #   of the bookings tax.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def bookings_tax(bookings_tax, options = {})
+        get("bookings_taxes/#{bookings_tax}", options).pop
+      end
     end
   end
 end

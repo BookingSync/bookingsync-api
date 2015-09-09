@@ -9,4 +9,11 @@ describe BookingSync::API::Client::Destinations do
       assert_requested :get, bs_url("destinations")
     end
   end
+
+  describe ".destination", :vcr do
+    it "returns a single destination" do
+      destination = client.destination(7301)
+      expect(destination.id).to eq 7301
+    end
+  end
 end

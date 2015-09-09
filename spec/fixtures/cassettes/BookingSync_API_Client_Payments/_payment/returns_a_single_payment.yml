@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/payments/71959
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 20:21:29 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441832400'
+      X-Ratelimit-Remaining:
+      - '964'
+      Link:
+      - <https://www.bookingsync.com/api/v3/payments/71959?page=1>; rel="first", <https://www.bookingsync.com/api/v3/payments/71959?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"de3828affd8fd0467ae7f8dd184c9145"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=2ddf3ca7-683d-4c18-9cfd-bd49fca5878d; path=/; expires=Wed, 16 Sep
+        2015 20:21:29 -0000; secure
+      - ahoy_visitor=a92053d0-dd01-4e84-80a3-aac59e828041; path=/; expires=Sat, 09
+        Sep 2017 20:21:29 -0000; secure
+      X-Request-Id:
+      - 1f876fc5-afa6-4e0f-a64b-a8cc3a7126e0
+      X-Runtime:
+      - '0.116286'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"payments.account":"https://www.bookingsync.com/api/v3/accounts/{payments.account}","payments.bookings":"https://www.bookingsync.com/api/v3/bookings/{payments.bookings}","payments.bookings_payments":"https://www.bookingsync.com/api/v3/bookings_payments/{payments.bookings_payments}"},"payments":[{"links":{"account":3837,"bookings":[142616],"bookings_payments":[71982]},"id":71959,"transaction_id":null,"order_id":null,"card":null,"amount_in_cents":100000,"currency":"EUR","kind":"online","fullname":"aa","email":"aa@test.com","address1":null,"address2":null,"zip":null,"city":null,"state":null,"country_code":null,"locale":null,"ip":null,"test":false,"notes":"","paid_at":"2015-09-09T00:00:00Z","created_at":"2015-09-09T19:58:06Z","updated_at":"2015-09-09T19:58:06Z","rejected_at":null,"canceled_at":null}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 20:21:30 GMT
+recorded_with: VCR 2.9.2

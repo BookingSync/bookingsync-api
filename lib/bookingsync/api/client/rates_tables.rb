@@ -18,6 +18,17 @@ module BookingSync::API
         paginate :rates_tables, options, &block
       end
 
+      # Get a single rates_table
+      #
+      # @param rates_table [BookingSync::API::Resource|Integer] RatesTable or ID
+      #   of the rates_table.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def rates_table(rates_table, options = {})
+        get("rates_tables/#{rates_table}", options).pop
+      end
+
       # Create a new rates_table
       #
       # @param options [Hash] rates_table attributes

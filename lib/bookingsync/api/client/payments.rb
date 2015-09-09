@@ -18,6 +18,17 @@ module BookingSync::API
         paginate :payments, options, &block
       end
 
+      # Get a single payment
+      #
+      # @param payment [BookingSync::API::Resource|Integer] Payment or ID
+      #   of the payment.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def payment(payment, options = {})
+        get("payments/#{payment}", options).pop
+      end
+
       # Create a new payment
       #
       # @param booking_id [Integer] ID of the booking

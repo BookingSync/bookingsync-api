@@ -17,6 +17,17 @@ module BookingSync::API
         paginate :bedrooms, options, &block
       end
 
+      # Get a single bedroom
+      #
+      # @param bedroom [BookingSync::API::Resource|Integer] Bedroom or ID
+      #   of the bedroom.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def bedroom(bedroom, options = {})
+        get("bedrooms/#{bedroom}", options).pop
+      end
+
       # Create a new bedroom
       #
       # @param rental [BookingSync::API::Resource|Integer] Rental or ID of

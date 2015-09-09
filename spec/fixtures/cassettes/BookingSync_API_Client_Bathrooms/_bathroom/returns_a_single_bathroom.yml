@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/bathrooms/730
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 19:39:19 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441828800'
+      X-Ratelimit-Remaining:
+      - '973'
+      Link:
+      - <https://www.bookingsync.com/api/v3/bathrooms/730?page=1>; rel="first", <https://www.bookingsync.com/api/v3/bathrooms/730?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"cd45064290e7c035962bb17ea56dbc21"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=cd928190-4021-4b6c-8a5f-164e393caff3; path=/; expires=Wed, 16 Sep
+        2015 19:39:19 -0000; secure
+      - ahoy_visitor=9e1fd6c0-8830-4dd8-8cd4-40f07d2fe7cd; path=/; expires=Sat, 09
+        Sep 2017 19:39:19 -0000; secure
+      X-Request-Id:
+      - 241031bc-ea44-4c1d-8fbe-ccfb3c2ff66a
+      X-Runtime:
+      - '0.086251'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"bathrooms.rental":"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"},"bathrooms":[{"links":{"rental":5116},"id":730,"name":{"en":"Bathroom
+        2","fr":"Salle de bain 2"},"wc":false,"shower":false,"bath":false,"created_at":"2015-08-31T19:52:34Z","updated_at":"2015-08-31T19:52:34Z"}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 19:39:20 GMT
+recorded_with: VCR 2.9.2

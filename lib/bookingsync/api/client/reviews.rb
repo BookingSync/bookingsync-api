@@ -18,6 +18,17 @@ module BookingSync::API
         paginate :reviews, options, &block
       end
 
+      # Get a single review
+      #
+      # @param review [BookingSync::API::Resource|Integer] Review or ID
+      #   of the review.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def review(review, options = {})
+        get("reviews/#{review}", options).pop
+      end
+
       # Create a new review
       #
       # @param booking [BookingSync::API::Resource|Integer] Booking or ID of

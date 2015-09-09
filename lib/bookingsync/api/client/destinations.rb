@@ -17,6 +17,17 @@ module BookingSync::API
       def destinations(options = {}, &block)
         paginate :destinations, options, &block
       end
+
+      # Get a single destination
+      #
+      # @param destination [BookingSync::API::Resource|Integer] Destination or ID
+      #   of the destination.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def destination(destination, options = {})
+        get("destinations/#{destination}", options).pop
+      end
     end
   end
 end

@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/clients
+    body:
+      encoding: UTF-8
+      string: '{"clients":[{"fullname":"John Smith","emails":[{"label":"default","email":"smith@example.com"}],"country_code":"IT","city":"Rome"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 20:12:27 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441832400'
+      X-Ratelimit-Remaining:
+      - '973'
+      Location:
+      - https://www.bookingsync.com/api/v3/clients/77710
+      Etag:
+      - '"315799e6d1eeda96ad5f811e96c8a19f"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=f08f8b2d-017d-4b54-8bbc-415129187985; path=/; expires=Wed, 16 Sep
+        2015 20:12:27 -0000; secure
+      - ahoy_visitor=d3a73869-c4b6-40c7-91de-ba789dba03d5; path=/; expires=Sat, 09
+        Sep 2017 20:12:27 -0000; secure
+      X-Request-Id:
+      - c50332ee-14bf-4083-8864-63250605f403
+      X-Runtime:
+      - '0.055171'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"clients.account":"https://www.bookingsync.com/api/v3/accounts/{clients.account}"},"clients":[{"links":{"account":3837},"id":77710,"addresses":[],"emails":[{"label":"default","email":"smith@example.com"}],"phones":[],"created_at":"2015-09-09T20:12:27Z","updated_at":"2015-09-09T20:12:27Z","fullname":"John
+        Smith","notes":null,"preferred_locale":null,"passport":null}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 20:12:28 GMT
+recorded_with: VCR 2.9.2

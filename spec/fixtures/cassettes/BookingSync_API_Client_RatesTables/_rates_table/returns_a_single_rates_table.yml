@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rates_tables/274
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 20:36:47 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441832400'
+      X-Ratelimit-Remaining:
+      - '932'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rates_tables/274?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/rates_tables/274?page=1>; rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"3cc5c74f278143419a0f3440a771c075"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=be1d08b2-074a-41a8-8365-90dca83a4415; path=/; expires=Wed, 16 Sep
+        2015 20:36:47 -0000; secure
+      - ahoy_visitor=a79b6525-df91-4b73-867b-8512a07f5d6e; path=/; expires=Sat, 09
+        Sep 2017 20:36:47 -0000; secure
+      X-Request-Id:
+      - 1a9f6ed1-02b8-4563-9a41-9ce0452b5fc4
+      X-Runtime:
+      - '0.080432'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rates_tables.account":"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}","rates_tables.seasons":"https://www.bookingsync.com/api/v3/seasons/{rates_tables.seasons}","rates_tables.rates_rules":"https://www.bookingsync.com/api/v3/rates_rules/{rates_tables.rates_rules}","rates_tables.periods":"https://www.bookingsync.com/api/v3/periods/{rates_tables.periods}","rates_tables.rentals":"https://www.bookingsync.com/api/v3/rentals/{rates_tables.rentals}"},"rates_tables":[{"links":{"account":3837,"seasons":[1806,1805,1804,1803,1802],"rates_rules":[13777,252],"periods":[4727,4729,4730,4731,4732,4733,4734,4735,4736,4737,4738,4739],"rentals":[5116,5117]},"id":274,"name":"Saturday","created_at":"2014-08-08T18:29:36Z","updated_at":"2015-09-09T20:36:12Z","shared":true}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 20:36:48 GMT
+recorded_with: VCR 2.9.2

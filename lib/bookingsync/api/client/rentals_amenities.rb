@@ -37,6 +37,29 @@ module BookingSync::API
       def create_rentals_amenity(rental, options = {})
         post("rentals/#{rental}/rentals_amenities", rentals_amenities: [options]).pop
       end
+
+      # Edit a rentals_amenity
+      #
+      # @param rentals_amenity [BookingSync::API::Resource|Integer] RentalsAmenity or ID of
+      #   the rentals_amenity to be updated.
+      # @param options [Hash] rentals_amenity attributes to be updated.
+      # @return [BookingSync::API::Resource] Updated rentals_amenity on success,
+      #   exception is raised otherwise.
+      # @example
+      #   rentals_amenity = @api.rentals_amenities.first
+      #   @api.edit_rentals_amenity(rentals_amenity, { details_en: "Details" })
+      def edit_rentals_amenity(rentals_amenity, options = {})
+        put("rentals_amenities/#{rentals_amenity}", rentals_amenities: [options]).pop
+      end
+
+      # Delete a rentals_amenity
+      #
+      # @param rentals_amenity [BookingSync::API::Resource|Integer] RentalsAmenity or ID
+      #   of the rentals_amenity to be deleted.
+      # @return [NilClass] Returns nil on success.
+      def delete_rentals_amenity(rentals_amenity)
+        delete "rentals_amenities/#{rentals_amenity}"
+      end
     end
   end
 end

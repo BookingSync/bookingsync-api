@@ -17,6 +17,17 @@ module BookingSync::API
         paginate :bathrooms, options, &block
       end
 
+      # Get a single bathroom
+      #
+      # @param bathroom [BookingSync::API::Resource|Integer] Bedroom or ID
+      #   of the bathroom.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def bathroom(bathroom, options = {})
+        get("bathrooms/#{bathroom}", options).pop
+      end
+
       # Create a new bathroom
       #
       # @param rental [BookingSync::API::Resource|Integer] Rental or ID of

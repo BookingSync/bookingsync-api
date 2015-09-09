@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/special_offers/86
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 21:11:39 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441836000'
+      X-Ratelimit-Remaining:
+      - '979'
+      Link:
+      - <https://www.bookingsync.com/api/v3/special_offers/86?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/special_offers/86?page=1>; rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"934e1c4b9a67647ee62971c8273eb180"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=3104e7ff-3a28-49dd-a8de-c3944e27cf3d; path=/; expires=Wed, 16 Sep
+        2015 21:11:39 -0000; secure
+      - ahoy_visitor=39e1cc9b-0d07-4fb6-bc37-8f576f31c6ac; path=/; expires=Sat, 09
+        Sep 2017 21:11:39 -0000; secure
+      X-Request-Id:
+      - d4aa7ad6-1f73-45cb-8206-011b5e6baf24
+      X-Runtime:
+      - '0.104821'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"special_offers.rental":"https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"},"special_offers":[{"links":{"rental":5117},"id":86,"name":{"en":"Super
+        Discount"},"start_date":"2016-01-01","end_date":"2016-01-07","discount":40.0,"created_at":"2014-08-08T21:30:00Z","updated_at":"2014-08-08T21:30:00Z"}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 21:11:40 GMT
+recorded_with: VCR 2.9.2
