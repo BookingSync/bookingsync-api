@@ -24,6 +24,8 @@ require "bookingsync/api/client/rentals"
 require "bookingsync/api/client/rentals_fees"
 require "bookingsync/api/client/rentals_amenities"
 require "bookingsync/api/client/rental_agreements"
+require "bookingsync/api/client/rental_cancelation_policies"
+require "bookingsync/api/client/rental_cancelation_policy_items"
 require "bookingsync/api/client/reviews"
 require "bookingsync/api/client/seasons"
 require "bookingsync/api/client/special_offers"
@@ -65,6 +67,8 @@ module BookingSync::API
     include BookingSync::API::Client::RentalsFees
     include BookingSync::API::Client::RentalsAmenities
     include BookingSync::API::Client::RentalAgreements
+    include BookingSync::API::Client::RentalCancelationPolicies
+    include BookingSync::API::Client::RentalCancelationPolicyItems
     include BookingSync::API::Client::Reviews
     include BookingSync::API::Client::Seasons
     include BookingSync::API::Client::SpecialOffers

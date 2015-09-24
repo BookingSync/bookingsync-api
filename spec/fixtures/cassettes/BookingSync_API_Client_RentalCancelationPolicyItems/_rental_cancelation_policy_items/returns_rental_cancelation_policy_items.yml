@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rental_cancelation_policy_items
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1443110400'
+      X-Ratelimit-Remaining:
+      - '998'
+      Link:
+      - <https://bookingsync.dev/api/v3/rental_cancelation_policy_items?page=1>; rel="first",
+        <https://bookingsync.dev/api/v3/rental_cancelation_policy_items?page=1>; rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '2'
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - '"f53584d748c2c10a0fd445f538bbfc41"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=0cac88d7-dbe3-4c19-8a0f-52fb7907821e; path=/; expires=Thu, 01 Oct
+        2015 15:44:43 -0000
+      - ahoy_visitor=d413b060-d3e8-4880-9d29-2ae2573fcb82; path=/; expires=Sun, 24
+        Sep 2017 15:44:43 -0000
+      X-Request-Id:
+      - bb775035-3649-4b9c-958f-ce65c12b114d
+      X-Runtime:
+      - '0.127527'
+      Date:
+      - Thu, 24 Sep 2015 15:44:43 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rental_cancelation_policy_items.rental_cancelation_policy":"https://bookingsync.dev/api/v3/rental_cancelation_policies/{rental_cancelation_policy_items.rental_cancelation_policy}"},"rental_cancelation_policy_items":[{"links":{"rental_cancelation_policy":1},"id":1,"eligible_days":20,"penalty_percentage":"12.0","created_at":"2015-09-23T11:48:15Z","updated_at":"2015-09-23T11:48:15Z"},{"links":{"rental_cancelation_policy":2},"id":2,"eligible_days":20,"penalty_percentage":"10.0","created_at":"2015-09-23T12:03:46Z","updated_at":"2015-09-23T12:03:46Z"}]}'
+    http_version:
+  recorded_at: Thu, 24 Sep 2015 15:44:43 GMT
+recorded_with: VCR 2.9.3

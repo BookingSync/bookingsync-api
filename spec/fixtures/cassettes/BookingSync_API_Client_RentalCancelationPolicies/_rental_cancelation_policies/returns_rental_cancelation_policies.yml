@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rental_cancelation_policies
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1443110400'
+      X-Ratelimit-Remaining:
+      - '999'
+      Link:
+      - <https://bookingsync.dev/api/v3/rental_cancelation_policies?page=1>; rel="first",
+        <https://bookingsync.dev/api/v3/rental_cancelation_policies?page=1>; rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '2'
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - '"10f5bfc57d70c6a495f13179be8d0091"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=abfa9b9a-9bc2-4184-aa08-3fee33d9b4cc; path=/; expires=Thu, 01 Oct
+        2015 15:44:34 -0000
+      - ahoy_visitor=b8e37dc9-653d-495f-af68-2c2567c9b3ce; path=/; expires=Sun, 24
+        Sep 2017 15:44:34 -0000
+      X-Request-Id:
+      - f1683121-6f49-455d-bdb8-15d4461044b4
+      X-Runtime:
+      - '0.461940'
+      Date:
+      - Thu, 24 Sep 2015 15:44:35 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rental_cancelation_policies.account":"https://bookingsync.dev/api/v3/accounts/{rental_cancelation_policies.policeable.id}","rental_cancelation_policies.rental":"https://bookingsync.dev/api/v3/rentals/{rental_cancelation_policies.policeable.id}","rental_cancelation_policies.rental_cancelation_policy_items":"https://bookingsync.dev/api/v3/rental_cancelation_policy_items/{rental_cancelation_policies.rental_cancelation_policy_items}"},"rental_cancelation_policies":[{"links":{"policeable":{"id":1,"type":"Rental"},"rental_cancelation_policy_items":[1]},"id":1,"body":"```
+        sdf ```","created_at":"2015-09-23T11:48:15Z","updated_at":"2015-09-23T11:48:15Z"},{"links":{"policeable":{"id":1,"type":"Account"},"rental_cancelation_policy_items":[2]},"id":2,"body":"body","created_at":"2015-09-23T12:03:46Z","updated_at":"2015-09-23T12:03:46Z"}]}'
+    http_version:
+  recorded_at: Thu, 24 Sep 2015 15:44:35 GMT
+recorded_with: VCR 2.9.3
