@@ -9,4 +9,11 @@ describe BookingSync::API::Client::BookingsPayments do
       assert_requested :get, bs_url("bookings_payments")
     end
   end
+
+  describe ".bookings_payment", :vcr do
+    it "returns a single bookings_payment" do
+      bookings_payment = client.bookings_payment(71982)
+      expect(bookings_payment.id).to eq 71982
+    end
+  end
 end

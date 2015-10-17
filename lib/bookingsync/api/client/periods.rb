@@ -18,6 +18,17 @@ module BookingSync::API
         paginate :periods, options, &block
       end
 
+      # Get a single period
+      #
+      # @param period [BookingSync::API::Resource|Integer] Period or ID
+      #   of the period.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def period(period, options = {})
+        get("periods/#{period}", options).pop
+      end
+
       # Create a new period
       #
       # @param season [BookingSync::API::Resource|Integer] Season or ID of

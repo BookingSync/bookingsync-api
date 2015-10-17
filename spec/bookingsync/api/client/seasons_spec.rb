@@ -11,6 +11,13 @@ describe BookingSync::API::Client::Seasons do
     end
   end
 
+  describe ".season", :vcr do
+    it "returns a single season" do
+      season = client.season(1803)
+      expect(season.id).to eq 1803
+    end
+  end
+
   describe ".create_season", :vcr do
     let(:attributes) {{
       name: "New season",

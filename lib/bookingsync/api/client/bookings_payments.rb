@@ -17,6 +17,17 @@ module BookingSync::API
       def bookings_payments(options = {}, &block)
         paginate :bookings_payments, options, &block
       end
+
+      # Get a single bookings payment
+      #
+      # @param bookings_payment [BookingSync::API::Resource|Integer] BookingsPayment or ID
+      #   of the bookings payment.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def bookings_payment(bookings_payment, options = {})
+        get("bookings_payments/#{bookings_payment}", options).pop
+      end
     end
   end
 end

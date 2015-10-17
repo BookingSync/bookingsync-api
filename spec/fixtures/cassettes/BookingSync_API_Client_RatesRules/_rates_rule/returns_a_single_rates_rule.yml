@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rates_rules/252
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 20:30:58 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441832400'
+      X-Ratelimit-Remaining:
+      - '941'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rates_rules/252?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/rates_rules/252?page=1>; rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"6d1591039a912f0fababfd535793b2ff"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=eae6883f-1e5d-4a43-a997-56478fba963c; path=/; expires=Wed, 16 Sep
+        2015 20:30:58 -0000; secure
+      - ahoy_visitor=a82d381f-ee60-4af9-b6b7-f0c41c990d5c; path=/; expires=Sat, 09
+        Sep 2017 20:30:58 -0000; secure
+      X-Request-Id:
+      - 4e3c552c-aa3b-4b33-857d-9c1f8ba4c1da
+      X-Runtime:
+      - '0.073746'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rates_rules.rates_table":"https://www.bookingsync.com/api/v3/rates_tables/{rates_rules.rates_table}","rates_rules.seasons":"https://www.bookingsync.com/api/v3/seasons/{rates_rules.seasons}"},"rates_rules":[{"links":{"rates_table":274,"seasons":[]},"id":252,"always_applied":true,"percentage":"-7.0","period_name":"","kind":"stay_at_least","variables":{"days":[],"length":21,"unit":"days"},"start_date":null,"end_date":null,"created_at":"2014-08-08T18:34:37Z","updated_at":"2014-11-17T23:03:40Z"}],"meta":{}}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 20:30:59 GMT
+recorded_with: VCR 2.9.2

@@ -11,6 +11,13 @@ describe BookingSync::API::Client::Photos do
     end
   end
 
+  describe ".photo", :vcr do
+    it "returns a single photo" do
+      photo = client.photo(5793)
+      expect(photo.id).to eq 5793
+    end
+  end
+
   describe ".create_photo", :vcr do
     let(:attributes) do
       {photo_path: "spec/fixtures/files/test.jpg",

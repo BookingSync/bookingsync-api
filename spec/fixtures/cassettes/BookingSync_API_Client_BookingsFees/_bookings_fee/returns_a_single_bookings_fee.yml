@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/bookings_fees/8112
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 21:14:17 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441836000'
+      X-Ratelimit-Remaining:
+      - '971'
+      Link:
+      - <https://www.bookingsync.com/api/v3/bookings_fees/8112?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/bookings_fees/8112?page=1>; rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"11196184ecd06659695c489cde1521d6"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=b22b8731-b6ff-4872-b2e4-e818ec62253e; path=/; expires=Wed, 16 Sep
+        2015 21:14:17 -0000; secure
+      - ahoy_visitor=85dcd0ae-0428-464f-aa4d-ac3135de0c42; path=/; expires=Sat, 09
+        Sep 2017 21:14:17 -0000; secure
+      X-Request-Id:
+      - d1d0b936-a36e-40d2-9c1c-5bb6ee1d54d9
+      X-Runtime:
+      - '0.083536'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"bookings_fees.rentals_fee":"https://www.bookingsync.com/api/v3/rentals_fees/{bookings_fees.rentals_fee}","bookings_fees.booking":"https://www.bookingsync.com/api/v3/bookings/{bookings_fees.booking}","bookings_fees.fee":"https://www.bookingsync.com/api/v3/fees/{bookings_fees.fee}","bookings_fees.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings_fees.bookings_taxes}"},"bookings_fees":[{"links":{"rentals_fee":3306,"booking":142616,"fee":474,"bookings_taxes":[]},"id":8112,"name":{"en":"test
+        fee"},"price":"0.0","required":false,"included_in_price":true,"times_booked":2,"created_at":"2015-09-09T21:13:53Z","updated_at":"2015-09-09T21:13:53Z"}],"meta":{}}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 21:14:18 GMT
+recorded_with: VCR 2.9.2

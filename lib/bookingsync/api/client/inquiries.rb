@@ -11,6 +11,17 @@ module BookingSync::API
         paginate :inquiries, options, &block
       end
 
+      # Get a single inquiry
+      #
+      # @param inquiry [BookingSync::API::Resource|Integer] Inquiry or ID
+      #   of the inquiry.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def inquiry(inquiry, options = {})
+        get("inquiries/#{inquiry}", options).pop
+      end
+
       # Create a new inquiry
       #
       # @param rental [BookingSync::API::Resource] Rental or ID of the rental

@@ -11,6 +11,13 @@ describe BookingSync::API::Client::Bedrooms do
     end
   end
 
+  describe ".bedroom", :vcr do
+    it "returns a single bedroom" do
+      bedroom = client.bedroom(945)
+      expect(bedroom.id).to eq 945
+    end
+  end
+
   describe ".create_bedroom", :vcr do
     let(:attributes) {{
       name_en: "New bedroom",

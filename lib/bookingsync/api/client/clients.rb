@@ -18,6 +18,17 @@ module BookingSync::API
         paginate :clients, options, &block
       end
 
+      # Get a single client
+      #
+      # @param client [BookingSync::API::Resource|Integer] Client or ID
+      #   of the client.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def client(client, options = {})
+        get("clients/#{client}", options).pop
+      end
+
       # Create a new client
       #
       # @param options [Hash] Client attributes

@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/sources/1874
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 21:10:57 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441836000'
+      X-Ratelimit-Remaining:
+      - '981'
+      Link:
+      - <https://www.bookingsync.com/api/v3/sources/1874?page=1>; rel="first", <https://www.bookingsync.com/api/v3/sources/1874?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"4ce8b74edc93740d488e6075723e8ed9"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=363b1b61-78c9-47d9-820c-cd560d9cc776; path=/; expires=Wed, 16 Sep
+        2015 21:10:57 -0000; secure
+      - ahoy_visitor=8a773555-a398-4797-bef2-5447a12e4fe1; path=/; expires=Sat, 09
+        Sep 2017 21:10:57 -0000; secure
+      X-Request-Id:
+      - 9acf76e1-a335-4996-ac68-6c0da4d8ce7b
+      X-Runtime:
+      - '0.078050'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"sources.account":"https://www.bookingsync.com/api/v3/accounts/{sources.account}","sources.bookings":"https://www.bookingsync.com/api/v3/bookings/{sources.bookings}"},"sources":[{"links":{"account":3837,"bookings":[]},"id":1874,"name":"test","created_at":"2015-09-09T21:10:36Z","updated_at":"2015-09-09T21:10:36Z","position":1}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 21:10:58 GMT
+recorded_with: VCR 2.9.2

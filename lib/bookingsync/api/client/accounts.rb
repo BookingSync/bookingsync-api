@@ -15,6 +15,17 @@ module BookingSync::API
       def accounts(options = {}, &block)
         paginate :accounts, options, &block
       end
+
+      # Get a single account
+      #
+      # @param account [BookingSync::API::Resource|Integer] Account or ID
+      #   of the account.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def account(account, options = {})
+        get("accounts/#{account}", options).pop
+      end
     end
   end
 end

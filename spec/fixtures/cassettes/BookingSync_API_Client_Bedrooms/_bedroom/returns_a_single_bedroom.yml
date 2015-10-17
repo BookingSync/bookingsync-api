@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/bedrooms/945
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 19:39:50 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441828800'
+      X-Ratelimit-Remaining:
+      - '972'
+      Link:
+      - <https://www.bookingsync.com/api/v3/bedrooms/945?page=1>; rel="first", <https://www.bookingsync.com/api/v3/bedrooms/945?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"5d3983bdd4a4cb7cf46515c8c0d5a260"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=1b617644-5f33-4c15-be38-07a88d3c322a; path=/; expires=Wed, 16 Sep
+        2015 19:39:50 -0000; secure
+      - ahoy_visitor=909a0306-caa8-4ad1-9881-dbb88ce05153; path=/; expires=Sat, 09
+        Sep 2017 19:39:50 -0000; secure
+      X-Request-Id:
+      - 5cc70bad-f404-4550-93b8-bac83c79c2bf
+      X-Runtime:
+      - '0.076462'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"bedrooms.rental":"https://www.bookingsync.com/api/v3/rentals/{bedrooms.rental}"},"bedrooms":[{"links":{"rental":5116},"id":945,"name":{"en":"Bedroom
+        2","fr":"Chambre 2"},"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":0,"queensize_beds_count":0,"single_beds_count":0,"sofa_beds_count":0,"created_at":"2015-08-12T22:23:31Z","updated_at":"2015-08-12T22:23:31Z"}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 19:39:51 GMT
+recorded_with: VCR 2.9.2

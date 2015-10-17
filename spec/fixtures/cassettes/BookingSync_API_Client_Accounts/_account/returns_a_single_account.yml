@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/accounts/3837
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 19:37:08 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441828800'
+      X-Ratelimit-Remaining:
+      - '997'
+      Link:
+      - <https://www.bookingsync.com/api/v3/accounts/3837?page=1>; rel="first", <https://www.bookingsync.com/api/v3/accounts/3837?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"254fcb1ac913a6c215dd91c8071d681b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=d2f4d16e-e057-4332-a34b-f9ef8b4aa4a9; path=/; expires=Wed, 16 Sep
+        2015 19:37:08 -0000; secure
+      - ahoy_visitor=3469e00e-6a02-48a4-856d-acd2f0f706e1; path=/; expires=Sat, 09
+        Sep 2017 19:37:08 -0000; secure
+      X-Request-Id:
+      - db635b47-df38-434e-96df-640168bd62a0
+      X-Runtime:
+      - '0.070139'
+    body:
+      encoding: UTF-8
+      string: '{"accounts":[{"business_name":"BSA-Website-Test","created_at":"2014-08-08T18:20:53Z","id":3837,"updated_at":"2015-09-09T18:09:40Z","status":"trial","preferences":{"bookings":{"default_arrival_time":16,"default_departure_time":10}},"email":"dev@bookingsync.com"}],"meta":{}}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 19:37:09 GMT
+recorded_with: VCR 2.9.2

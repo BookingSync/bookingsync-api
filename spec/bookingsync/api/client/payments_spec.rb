@@ -10,6 +10,13 @@ describe BookingSync::API::Client::Payments do
     end
   end
 
+  describe ".payment", :vcr do
+    it "returns a single payment" do
+      payment = api.payment(71959)
+      expect(payment.id).to eq 71959
+    end
+  end
+
   describe ".create_payment", :vcr do
     let(:attributes) {{
       amount: 200,

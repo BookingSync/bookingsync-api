@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.0.29
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,43 +22,59 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 20:29:41 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1399327200'
+      - '1441832400'
       X-Ratelimit-Remaining:
-      - '996'
+      - '948'
       Link:
       - <https://www.bookingsync.com/api/v3/rates_rules?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rates_rules?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      X-Total-Count:
+      - '2'
       Etag:
-      - '"fe6c62b3d861528e37782eeb75e83ca6"'
+      - '"94837e570637bb96c6fc15045ec86d19"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=6b4265c9-5ce5-4c04-a15c-2585c425268a; path=/; expires=Wed, 16 Sep
+        2015 20:29:41 -0000; secure
+      - ahoy_visitor=e77e900b-4c8e-4c73-af9b-b66438067b52; path=/; expires=Sat, 09
+        Sep 2017 20:29:41 -0000; secure
       X-Request-Id:
-      - 3ddf4d65541b95731dfc6524df691f9e
+      - 034d9a8e-e26e-430a-8549-194beb2368f0
       X-Runtime:
-      - '0.451678'
-      Date:
-      - Mon, 05 May 2014 21:25:25 GMT
-      Connection:
-      - close
+      - '0.061595'
     body:
       encoding: UTF-8
-      string: '{"links":{"rates_rules.seasons":"https://www.bookingsync.com/api/v3/seasons/{rates_rules.seasons}"},"rates_rules":[{"links":{"seasons":[]},"id":1,"rates_table_id":19,"always_applied":true,"percentage":10,"period_name":null,"kind":"late_booking","variables":{"unit":"days","length":10},"start_at":null,"end_at":null,"created_at":"2014-05-05T21:24:56Z","updated_at":"2014-05-05T21:24:56Z"}]}'
-    http_version:
-  recorded_at: Mon, 05 May 2014 21:25:25 GMT
-recorded_with: VCR 2.9.0
+      string: '{"links":{"rates_rules.rates_table":"https://www.bookingsync.com/api/v3/rates_tables/{rates_rules.rates_table}","rates_rules.seasons":"https://www.bookingsync.com/api/v3/seasons/{rates_rules.seasons}"},"rates_rules":[{"links":{"rates_table":274,"seasons":[1802,1803]},"id":250,"always_applied":false,"percentage":null,"period_name":"","kind":"prevent_if_booked_ahead_of","variables":{"days":[],"length":1,"unit":"years"},"start_date":null,"end_date":null,"created_at":"2014-08-08T18:34:10Z","updated_at":"2014-11-17T23:03:39Z"},{"links":{"rates_table":274,"seasons":[]},"id":252,"always_applied":true,"percentage":"-7.0","period_name":"","kind":"stay_at_least","variables":{"days":[],"length":21,"unit":"days"},"start_date":null,"end_date":null,"created_at":"2014-08-08T18:34:37Z","updated_at":"2014-11-17T23:03:40Z"}],"meta":{}}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 20:29:42 GMT
+recorded_with: VCR 2.9.2

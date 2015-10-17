@@ -11,6 +11,13 @@ describe BookingSync::API::Client::RatesTables do
     end
   end
 
+  describe ".rates_table", :vcr do
+    it "returns a single rates_table" do
+      rates_table = client.rates_table(274)
+      expect(rates_table.id).to eq 274
+    end
+  end
+
   describe ".create_rates_table", :vcr do
     let(:attributes) {
       { name: 'New rate table' }

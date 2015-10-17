@@ -18,6 +18,17 @@ module BookingSync::API
         paginate :sources, options, &block
       end
 
+      # Get a single source
+      #
+      # @param source [BookingSync::API::Resource|Integer] Source or ID
+      #   of the source.
+      # @param options [Hash] A customizable set of query options.
+      # @option options [Array] fields: List of fields to be fetched.
+      # @return [BookingSync::API::Resource]
+      def source(source, options = {})
+        get("sources/#{source}", options).pop
+      end
+
       # Create a new source
       #
       # @param options [Hash] source attributes

@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rental_agreements/6905
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 20:39:06 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441832400'
+      X-Ratelimit-Remaining:
+      - '928'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rental_agreements/6905?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/rental_agreements/6905?page=1>; rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"29c9725e89fd0d39cd8660c5e530cf23"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=c92eb1d4-8ab7-4696-ae43-38300eeeb720; path=/; expires=Wed, 16 Sep
+        2015 20:39:06 -0000; secure
+      - ahoy_visitor=4add8309-6680-4b94-92cd-7b99b8382af9; path=/; expires=Sat, 09
+        Sep 2017 20:39:06 -0000; secure
+      X-Request-Id:
+      - 7b985ea0-774f-4d06-8453-c432382b13c0
+      X-Runtime:
+      - '0.069653'
+    body:
+      encoding: UTF-8
+      string: '{"rental_agreements":[{"id":6905,"body":"test","created_at":"2015-09-09T20:38:42Z","updated_at":"2015-09-09T20:38:42Z"}]}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 20:39:07 GMT
+recorded_with: VCR 2.9.2

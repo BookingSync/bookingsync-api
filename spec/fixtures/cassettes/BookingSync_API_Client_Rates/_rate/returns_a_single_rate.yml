@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rates/18577
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.29
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Sep 2015 20:23:47 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1441832400'
+      X-Ratelimit-Remaining:
+      - '957'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rates/18577?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rates/18577?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      Etag:
+      - '"0e1e2fedffbd2e140d6807bb3a59f5ee"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=def2c3dc-8349-413c-a6b7-7b3dcd68d944; path=/; expires=Wed, 16 Sep
+        2015 20:23:47 -0000; secure
+      - ahoy_visitor=21ab6437-5b97-47f1-b681-542778c0cb1d; path=/; expires=Sat, 09
+        Sep 2017 20:23:47 -0000; secure
+      X-Request-Id:
+      - 53b92be6-f6f5-44c4-b67a-28d21016cf91
+      X-Runtime:
+      - '0.097459'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rates.rental":"https://www.bookingsync.com/api/v3/rentals/{rates.rental}"},"rates":[{"links":{"rental":5117},"id":18577,"currency":"EUR","start_date":"2015-10-10","end_date":"2015-10-31","initial_nightly_rate":"162.51429","initial_weekly_rate":"1137.6","initial_monthly_rate":"4875.42857","final_nightly_rate":"162.51429","final_weekly_rate":"1137.6","final_monthly_rate":"4875.42857","minimum_stay":2,"created_at":"2014-10-29T19:57:52Z","updated_at":"2015-09-09T18:27:04Z"}],"meta":{}}'
+    http_version: 
+  recorded_at: Wed, 09 Sep 2015 20:23:48 GMT
+recorded_with: VCR 2.9.2

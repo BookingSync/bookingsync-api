@@ -11,6 +11,13 @@ describe BookingSync::API::Client::Sources do
     end
   end
 
+  describe ".source", :vcr do
+    it "returns a single source" do
+      source = client.source(1874)
+      expect(source.id).to eq 1874
+    end
+  end
+
   describe ".create_source", :vcr do
     let(:attributes) {
       { name: 'New source' }

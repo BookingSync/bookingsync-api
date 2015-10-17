@@ -10,6 +10,13 @@ describe BookingSync::API::Client::Inquiries do
     end
   end
 
+  describe ".inquiry", :vcr do
+    it "returns a single inquiry" do
+      inquiry = client.inquiry(6087)
+      expect(inquiry.id).to eq 6087
+    end
+  end
+
   describe ".create_inquiry", :vcr do
     let(:attributes) { {
       rental_id: 7,

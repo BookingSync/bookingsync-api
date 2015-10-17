@@ -13,6 +13,13 @@ describe BookingSync::API::Client::RentalAgreements do
     end
   end
 
+  describe ".rental_agreement", :vcr do
+    it "returns a single rental_agreement" do
+      rental_agreement = client.rental_agreement(6905)
+      expect(rental_agreement.id).to eq 6905
+    end
+  end
+
   describe ".create_rental_agreement", :vcr do
     it "creates a new rental agreement" do
       client.create_rental_agreement(attributes)
