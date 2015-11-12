@@ -9,23 +9,31 @@ This gem allows Ruby developers to programmatically access https://www.bookingsy
 
 Add this line to your application's Gemfile:
 
-    gem 'bookingsync-api'
+```ruby
+gem 'bookingsync-api'
+```
 
 And then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install bookingsync-api
+```
+$ gem install bookingsync-api
+```
 
 ## Usage
 
 Gem assumes that you already have OAuth token for an account.
 
-    api = BookingSync::API.new("OAUTH_TOKEN")
-    rentals = api.rentals # => [BookingSync::API::Resource, BookingSync::API::Resource]
-    rentals.first.name # => "Small apartment"
+```ruby
+api = BookingSync::API.new("OAUTH_TOKEN")
+rentals = api.rentals # => [BookingSync::API::Resource, BookingSync::API::Resource]
+rentals.first.name # => "Small apartment"
+```
 
 ### Pagination
 
@@ -33,25 +41,33 @@ All endpoints returning a collection of resources can be paginated. There are th
 
 Specify `:per_page` and `:page` params. It's useful when implementing pagination on your site.
 
-    api.bookings(per_page: 10, page: 1) => [BookingSync::API::Resource, BookingSync::API::Resource, ...]
+```ruby
+api.bookings(per_page: 10, page: 1) => [BookingSync::API::Resource, BookingSync::API::Resource, ...]
+```
 
 Use pagination with a block.
 
-    api.bookings(per_page: 10) do |batch|
-      # display 10 bookings, will make one HTTP request for each batch
-    end
+```ruby
+api.bookings(per_page: 10) do |batch|
+  # display 10 bookings, will make one HTTP request for each batch
+end
+```
 
 Fetch all resources (with multiple requests under the hood) and return one big array.
 
-    api.bookings(auto_paginate: true) => [BookingSync::API::Resource, BookingSync::API::Resource, ...]
+```ruby
+api.bookings(auto_paginate: true) => [BookingSync::API::Resource, BookingSync::API::Resource, ...]
+```
 
 ### Meta information
 
 Some endpoints return additional info about resource in meta section. To fetch it you need to
 access last response.
 
-    api.rentals(updated_since: "2014-01-01 15:43:96 UTC") # => [BookingSync::API::Resource,    BookingSync::API::Resource, ...]
-    api.last_response.meta # => {"deleted_ids" => [1, 3, 4]}
+```ruby
+api.rentals(updated_since: "2014-01-01 15:43:96 UTC") # => [BookingSync::API::Resource,    BookingSync::API::Resource, ...]
+api.last_response.meta # => {"deleted_ids" => [1, 3, 4]}
+```
 
 ### Logging
 
@@ -64,7 +80,9 @@ There are two ways to enable logging:
 
 2. Pass your own logger to API client, it can be for example `Rails.logger`.
 
-        api = BookingSync::API.new("OAUTH_TOKEN", logger: Rails.logger)
+  ```ruby
+  api = BookingSync::API.new("OAUTH_TOKEN", logger: Rails.logger)
+  ```
 
 ### Instrumentation
 
@@ -75,7 +93,9 @@ information anywhere.
 To hook instrumentations into `ActiveSupport::Notifications`, pass the
 module into the API client initializer:
 
-    api = BookingSync::API.new("OAUTH_TOKEN", instrumenter: ActiveSupport::Notifications)
+```ruby
+api = BookingSync::API.new("OAUTH_TOKEN", instrumenter: ActiveSupport::Notifications)
+```
 
 #### Log levels
 
@@ -94,18 +114,24 @@ See [API documentation](http://docs.api.bookingsync.com).
 
 ## Running specs
 
-    bundle exec rspec
+```
+bundle exec rspec
+```
 
 OR
 
-    bundle exec guard
+```
+bundle exec guard
+```
 
 ### Recording VCR cassettes
 
 For developing bookingsync-api gem you need OAuth access token. In order to record a cassette,
 you need to run spec with below environment variables.
 
-    ACCESS_TOKEN=abc bundle exec rspec
+```
+ACCESS_TOKEN=abc bundle exec rspec
+```
 
 If you want to change a cassette, you need to delete it first.
 
