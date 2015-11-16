@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## 0.0.30
 
 - Add missing CRUD actions to existing endpoints.
 - Remove unused BillingAddresses endpoint.
