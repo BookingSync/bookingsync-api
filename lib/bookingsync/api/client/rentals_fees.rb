@@ -28,6 +28,16 @@ module BookingSync::API
       def rentals_fee(rentals_fee, options = {})
         get("rentals_fees/#{rentals_fee}", options).pop
       end
+
+      # Create a new rentals_fee
+      #
+      # @param rental [BookingSync::API::Resource|Integer] Rental or ID of
+      #   the rental for which rentals_fee will be created.
+      # @param options [Hash] RentalsFee's attributes.
+      # @return [BookingSync::API::Resource] Newly created rentals_fee.
+      def create_rentals_fee(rental, options = {})
+        post("rentals/#{rental}/rentals_fees", rentals_fees: [options]).pop
+      end
     end
   end
 end

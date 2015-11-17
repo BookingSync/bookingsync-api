@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/rentals/5116/rentals_fees
+    body:
+      encoding: UTF-8
+      string: '{"rentals_fees":[{"fee_id":659,"maximum_bookable":10,"always_applied":true}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.30
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 17 Nov 2015 17:02:44 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1447783200'
+      X-Ratelimit-Remaining:
+      - '999'
+      Location:
+      - https://www.bookingsync.com/api/v3/rentals_fees/4060
+      Etag:
+      - '"60a033367353e5fa9e12a2a3d2d8e2d6"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=c0f9c5f9-dfa0-4fb3-9625-d40ce6f6572a; path=/; expires=Tue, 24 Nov
+        2015 17:02:44 -0000; secure
+      - ahoy_visitor=6348c1c0-e2b7-4b99-942d-d599d3fc808a; path=/; expires=Fri, 17
+        Nov 2017 17:02:44 -0000; secure
+      X-Request-Id:
+      - bb07b81c-5b52-4589-891a-66b2789471c0
+      X-Runtime:
+      - '0.117708'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rentals_fees.fee":"https://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}","rentals_fees.rental":"https://www.bookingsync.com/api/v3/rentals/{rentals_fees.rental}","rentals_fees.seasons":"https://www.bookingsync.com/api/v3/seasons/{rentals_fees.seasons}"},"rentals_fees":[{"links":{"fee":659,"rental":5116,"seasons":[]},"id":4060,"always_applied":true,"end_date":null,"maximum_bookable":10,"public":false,"required":false,"start_date":null,"created_at":"2015-11-17T17:02:44Z","updated_at":"2015-11-17T17:02:44Z","name":{"en":"New
+        fee"},"rate":"10.0","rate_kind":"fixed","archived_at":null}]}'
+    http_version: 
+  recorded_at: Tue, 17 Nov 2015 17:02:45 GMT
+recorded_with: VCR 2.9.2

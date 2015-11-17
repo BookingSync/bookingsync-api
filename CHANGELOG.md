@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+- Add support for fees and rentals_fees creation.
+
 ## 0.0.30
 
 - Add missing CRUD actions to existing endpoints.
