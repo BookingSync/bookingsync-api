@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## 0.0.31
 
 - Add support for fees and rentals_fees creation.
 
