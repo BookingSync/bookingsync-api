@@ -28,6 +28,14 @@ module BookingSync::API
       def fee(fee, options = {})
         get("fees/#{fee}", options).pop
       end
+
+      # Create a new fee
+      #
+      # @param options [Hash] Fee's attributes.
+      # @return [BookingSync::API::Resource] Newly created fee.
+      def create_fee(options = {})
+        post(:fees, fees: [options]).pop
+      end
     end
   end
 end

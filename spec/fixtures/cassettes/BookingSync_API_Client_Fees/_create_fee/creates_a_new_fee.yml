@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/fees
+    body:
+      encoding: UTF-8
+      string: '{"fees":[{"name_en":"New fee","rate":10,"rate_kind":"fixed","downpayment_percentage":10}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.30
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 17 Nov 2015 16:53:16 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1447779600'
+      X-Ratelimit-Remaining:
+      - '990'
+      Location:
+      - https://www.bookingsync.com/api/v3/fees/659
+      Etag:
+      - '"7973edf46d882d4f7336dba2d03eb135"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=4d235f6e-32ab-4a02-b267-0985996204e7; path=/; expires=Tue, 24 Nov
+        2015 16:53:15 -0000; secure
+      - ahoy_visitor=33d62abe-186a-40aa-ab46-87b5d12e219c; path=/; expires=Fri, 17
+        Nov 2017 16:53:15 -0000; secure
+      X-Request-Id:
+      - 53e8f4b6-16dc-4a8e-9097-6ace3e12719a
+      X-Runtime:
+      - '0.320559'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"fees.account":"https://www.bookingsync.com/api/v3/accounts/{fees.account}"},"fees":[{"links":{"account":3837},"id":659,"name":{"en":"New
+        fee"},"rate":"10.0","rate_kind":"fixed","created_at":"2015-11-17T16:53:15Z","updated_at":"2015-11-17T16:53:15Z","downpayment_percentage":"10.0","kind":"other"}]}'
+    http_version: 
+  recorded_at: Tue, 17 Nov 2015 16:53:17 GMT
+recorded_with: VCR 2.9.2
