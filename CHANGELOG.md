@@ -1,5 +1,8 @@
 # Changelog
 
+## Master
+
+- Rename instant bookings to strict bookings
 - Raise RateLimitExceeded error for 429 response status.
 
 ## 0.0.32
