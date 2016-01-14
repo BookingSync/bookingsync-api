@@ -151,6 +151,15 @@ describe BookingSync::API::Client do
       end
     end
 
+    context "API returns 429" do
+      it "raises RateLimitExceeded exception" do
+        stub_get("resource", status: 429)
+        expect {
+          client.get("resource")
+        }.to raise_error(BookingSync::API::RateLimitExceeded)
+      end
+    end
+
     context "API returns unsupported status code outside 200..299 range" do
       it "raises UnsupportedResponse exception" do
         stub_get("resource", status: 405, body: "Whoops!",

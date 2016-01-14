@@ -21,6 +21,7 @@ Body             : #{body}}
   class Forbidden < Error; end
   class UnprocessableEntity < Error; end
   class NotFound < Error; end
+  class RateLimitExceeded < Error; end
   class UnsupportedResponse < Error
     def message
       super("Received unsupported response from BookingSync API")

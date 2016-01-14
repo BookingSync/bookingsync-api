@@ -311,6 +311,7 @@ module BookingSync::API
       when 403; raise Forbidden.new(response)
       when 404; raise NotFound.new(response)
       when 422; raise UnprocessableEntity.new(response)
+      when 429; raise RateLimitExceeded.new(response)
       else raise UnsupportedResponse.new(response)
       end
     end
