@@ -1,5 +1,7 @@
 # Changelog
 
+- Raise RateLimitExceeded error for 429 response status.
+
 ## 0.0.32
 
 - Add support for preferences_payments endpoint.
