@@ -2,6 +2,8 @@
 
 ## Master
 
+## 0.0.33
+
 - Add support for rental_cancelation_policies and rental_cancelation_policy_items endpoints.
 - Rename instant bookings to strict bookings
 - Raise RateLimitExceeded error for 429 response status.
