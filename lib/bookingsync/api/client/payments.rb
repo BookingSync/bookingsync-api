@@ -13,7 +13,7 @@ module BookingSync::API
       #   payments.first.kind # => "cash"
       # @example Get the list of payments only with kind and currency for smaller response
       #   @api.payments(fields: [:kind, :currency])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/payments/#list-payments
+      # @see http://developers.bookingsync.com/reference/endpoints/payments/#list-payments
       def payments(options = {}, &block)
         paginate :payments, options, &block
       end

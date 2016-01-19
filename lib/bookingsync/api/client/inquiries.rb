@@ -6,7 +6,7 @@ module BookingSync::API
       # Return list of inquiries for current account.
       # @param options [Hash] A customizable set of query options.
       # @return [Array<BookingSync::API::Resource>] Array of inquiries.
-      # @see http://docs.api.bookingsync.com/reference/endpoints/inquiries/#list-inquiries
+      # @see http://developers.bookingsync.com/reference/endpoints/inquiries/#list-inquiries
       def inquiries(options = {}, &block)
         paginate :inquiries, options, &block
       end

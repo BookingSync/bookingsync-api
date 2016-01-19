@@ -13,7 +13,7 @@ module BookingSync::API
       #   bookings_taxes.first.percentage # => 20.0
       # @example Get the list of bookings taxes only with percentage for smaller response
       #   @api.bookings_taxes(fields: [:percentage])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/bookings_taxes/#list-bookings_taxes
+      # @see http://developers.bookingsync.com/reference/endpoints/bookings_taxes/#list-bookings_taxes
       def bookings_taxes(options = {}, &block)
         paginate :bookings_taxes, options, &block
       end

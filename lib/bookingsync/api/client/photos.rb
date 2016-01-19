@@ -15,7 +15,7 @@ module BookingSync::API
       #   photos.first.position # => 1
       # @example Get the list of photos only with medium_url and position for smaller response
       #   @api.photos(fields: [:medium_url, :position])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/photos/#list-photos
+      # @see http://developers.bookingsync.com/reference/endpoints/photos/#list-photos
       def photos(options = {}, &block)
         paginate :photos, options, &block
       end
@@ -44,7 +44,7 @@ module BookingSync::API
       # @return [BookingSync::API::Resource] Newly created photo.
       # @example Create a photo.
       #   @api.create_photo(10, photo_path: 'rentals/big_one.jpg')
-      # @see http://docs.api.bookingsync.com/reference/endpoints/photos/#create-a-new-photo
+      # @see http://developers.bookingsync.com/reference/endpoints/photos/#create-a-new-photo
       def create_photo(rental, options = {})
         if photo_path = options.delete(:photo_path)
           options[:photo] ||= encode(photo_path)
@@ -58,7 +58,7 @@ module BookingSync::API
       #   photo to be updated.
       # @param options [Hash] Photo's attributes.
       # @return [BookingSync::API::Resource] Updated photo
-      # @see http://docs.api.bookingsync.com/reference/endpoints/photos/#update-a-photo
+      # @see http://developers.bookingsync.com/reference/endpoints/photos/#update-a-photo
       def edit_photo(photo, options = {})
         if photo_path = options.delete(:photo_path)
           options[:photo] ||= encode(photo_path)
@@ -71,7 +71,7 @@ module BookingSync::API
       # @param photo [BookingSync::API::Resource|Integer] Photo or ID of the
       #   photo to be deleted.
       # @return [NilClass] Returns nil on success.
-      # @see http://docs.api.bookingsync.com/reference/endpoints/photos/#destroy-a-photo
+      # @see http://developers.bookingsync.com/reference/endpoints/photos/#destroy-a-photo
       def delete_photo(photo)
         delete "photos/#{photo}"
       end

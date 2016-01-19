@@ -13,7 +13,7 @@ module BookingSync::API
       #   bookings_fees.first.times_booked # => 1
       # @example Get the list of bookings fees only with times_booked for smaller response
       #   @api.bookings_fees(fields: [:times_booked])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/bookings_fees/#list-bookings_fees
+      # @see http://developers.bookingsync.com/reference/endpoints/bookings_fees/#list-bookings_fees
       def bookings_fees(options = {}, &block)
         paginate :bookings_fees, options, &block
       end

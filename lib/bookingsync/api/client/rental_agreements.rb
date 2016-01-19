@@ -14,7 +14,7 @@ module BookingSync::API
       #   agreement.first.body # => "My rental agreement"
       # @example Get the list of rental agreements only with body for smaller response
       #   @api.rentals(fields: :body)
-      # @see http://docs.api.bookingsync.com/reference/endpoints/rental_agreements/#list-rental_agreements
+      # @see http://developers.bookingsync.com/reference/endpoints/rental_agreements/#list-rental_agreements
       def rental_agreements(options = {}, &block)
         paginate :rental_agreements, options, &block
       end

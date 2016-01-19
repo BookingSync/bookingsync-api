@@ -13,7 +13,7 @@ module BookingSync::API
       #   periods.first.start_at # => "2014-04-11"
       # @example Get the list of periods only with start_at and end_at for smaller response
       #   @api.periods(fields: [:start_at, :end_at])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/periods/#list-periods
+      # @see http://developers.bookingsync.com/reference/endpoints/periods/#list-periods
       def periods(options = {}, &block)
         paginate :periods, options, &block
       end

@@ -13,7 +13,7 @@ module BookingSync::API
       #   sources.first.name # => "HomeAway.com"
       # @example Get the list of sources only with name and account_id for smaller response
       #   @api.sources(fields: [:name, :account_id])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/sources/#list-sources
+      # @see http://developers.bookingsync.com/reference/endpoints/sources/#list-sources
       def sources(options = {}, &block)
         paginate :sources, options, &block
       end

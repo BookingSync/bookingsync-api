@@ -13,7 +13,7 @@ module BookingSync::API
       #   bookings_payments.first.amount # => 200
       # @example Get the list of bookings payments only with amount and currency for smaller response
       #   @api.bookings_payments(fields: [:amount, :currency])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/bookings_payments/#list-bookings-payments
+      # @see http://developers.bookingsync.com/reference/endpoints/bookings_payments/#list-bookings-payments
       def bookings_payments(options = {}, &block)
         paginate :bookings_payments, options, &block
       end
