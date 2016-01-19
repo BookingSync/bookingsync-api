@@ -13,7 +13,7 @@ module BookingSync::API
       #   clients.first.fullname # => "John Smith"
       # @example Get the list of clients only with fullname and phone for smaller response
       #   @api.clients(fields: [:fullname, :phone])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/clients/#list-clients
+      # @see http://developers.bookingsync.com/reference/endpoints/clients/#list-clients
       def clients(options = {}, &block)
         paginate :clients, options, &block
       end

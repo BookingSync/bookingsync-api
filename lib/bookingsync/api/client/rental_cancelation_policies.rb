@@ -14,7 +14,7 @@ module BookingSync::API
       #   policy.first.body # => "My rental cancelation policy"
       # @example Get the list of rental cancelation policies only with body for smaller response
       #   @api.rental_cancelation_policies(fields: :body)
-      # @see http://docs.api.bookingsync.com/reference/endpoints/rental_cancelation_policies/#list-rental_cancelation_policies
+      # @see http://developers.bookingsync.com/reference/endpoints/rental_cancelation_policies/#list-rental_cancelation_policies
       def rental_cancelation_policies(options = {}, &block)
         paginate :rental_cancelation_policies, options, &block
       end

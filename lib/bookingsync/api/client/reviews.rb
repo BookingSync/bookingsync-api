@@ -13,7 +13,7 @@ module BookingSync::API
       #   reviews.first.name # => "John Smith"
       # @example Get the list of reviews only with name and comment for smaller response
       #   @api.reviews(fields: [:name, :comment])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/reviews/#list-reviews
+      # @see http://developers.bookingsync.com/reference/endpoints/reviews/#list-reviews
       def reviews(options = {}, &block)
         paginate :reviews, options, &block
       end

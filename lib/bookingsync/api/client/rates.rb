@@ -14,7 +14,7 @@ module BookingSync::API
       # @example Get the list of rates only with final rates
       #   for smaller response
       #   @api.rates(fields: %w(final_nightly_rate final_weekely_rate final_monthly_rate))
-      # @see http://docs.api.bookingsync.com/reference/endpoints/rates/#list-rates
+      # @see http://developers.bookingsync.com/reference/endpoints/rates/#list-rates
       def rates(options = {}, &block)
         paginate :rates, options, &block
       end

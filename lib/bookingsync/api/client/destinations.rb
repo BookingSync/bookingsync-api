@@ -13,7 +13,7 @@ module BookingSync::API
       #   destinations.first.fullname # => {"en":"Europe, World"}
       # @example Get the list of destinations only with name and fullname for smaller response
       #   @api.destinations(fields: [:name, :fullname])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/destinations/#list-destinations
+      # @see http://developers.bookingsync.com/reference/endpoints/destinations/#list-destinations
       def destinations(options = {}, &block)
         paginate :destinations, options, &block
       end

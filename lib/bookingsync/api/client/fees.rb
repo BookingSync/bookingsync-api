@@ -13,7 +13,7 @@ module BookingSync::API
       #   fees.first.rate # => 20.0
       # @example Get the list of fees only with name and rate for smaller response
       #   @api.fees(fields: [:name, :rate])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/fees/#list-fees
+      # @see http://developers.bookingsync.com/reference/endpoints/fees/#list-fees
       def fees(options = {}, &block)
         paginate :fees, options, &block
       end

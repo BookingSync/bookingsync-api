@@ -14,7 +14,7 @@ module BookingSync::API
       #   item.first.eligible_days # => 10
       # @example Get the list of rental cancelation policy items only with eligible_days for smaller response
       #   @api.rental_cancelation_policy_items(fields: :eligible_days)
-      # @see http://docs.api.bookingsync.com/reference/endpoints/rental_cancelation_policy_items/#list-rental_cancelation_policy_items
+      # @see http://developers.bookingsync.com/reference/endpoints/rental_cancelation_policy_items/#list-rental_cancelation_policy_items
       def rental_cancelation_policy_items(options = {}, &block)
         paginate :rental_cancelation_policy_items, options, &block
       end

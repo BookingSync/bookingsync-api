@@ -11,7 +11,7 @@ module BookingSync::API
       # @example Get the list of availabilities for the current account
       #   availabilities = @api.availabilities
       #   availabilities.first.start_date # => "2014-05-30"
-      # @see http://docs.api.bookingsync.com/reference/endpoints/availabilities/#list-availabilities
+      # @see http://developers.bookingsync.com/reference/endpoints/availabilities/#list-availabilities
       def availabilities(options = {}, &block)
         paginate :availabilities, options, &block
       end

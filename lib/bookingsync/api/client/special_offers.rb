@@ -13,7 +13,7 @@ module BookingSync::API
       #   special_offers.first.name # => "Spring discount"
       # @example Get the list of special_offers only with name and rental_id for smaller response
       #   @api.special_offers(fields: [:name, :rental_id])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/special_offers/#list-special_offers
+      # @see http://developers.bookingsync.com/reference/endpoints/special_offers/#list-special_offers
       def special_offers(options = {}, &block)
         paginate :special_offers, options, &block
       end

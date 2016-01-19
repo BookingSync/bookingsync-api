@@ -110,7 +110,7 @@ See [gem documentation](http://rdoc.info/github/BookingSync/bookingsync-api/mast
 
 ## API documentation
 
-See [API documentation](http://docs.api.bookingsync.com).
+See [API documentation](http://developers.bookingsync.com).
 
 ## Running specs
 

@@ -13,7 +13,7 @@ module BookingSync::API
       #   seasons.first.name # => "Season 2"
       # @example Get the list of seasons only with name and ratio for smaller response
       #   @api.seasons(fields: [:name, :ratio])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/seasons/#list-seasons
+      # @see http://developers.bookingsync.com/reference/endpoints/seasons/#list-seasons
       def seasons(options = {}, &block)
         paginate :seasons, options, &block
       end

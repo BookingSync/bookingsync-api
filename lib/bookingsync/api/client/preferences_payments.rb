@@ -13,7 +13,7 @@ module BookingSync::API
       #   preferences_payments.first.gateway # => "blue_pay"
       # @example Get the list of preferences payments only with gateway and supported_cardtypes for smaller response
       #   @api.preferences_payments(fields: [:gateway, :supported_cardtypes])
-      # @see http://docs.api.bookingsync.com/reference/endpoints/preferences_payments/#list-preferences-payments
+      # @see http://developers.bookingsync.com/reference/endpoints/preferences_payments/#list-preferences-payments
       def preferences_payments(options = {}, &block)
         paginate :preferences_payments, options, &block
       end

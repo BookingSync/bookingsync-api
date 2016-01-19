@@ -11,7 +11,7 @@ module BookingSync::API
       # @example Get the list of accounts for the current account
       #   accounts = @api.accounts
       #   accounts.first.email # => "user@example.com"
-      # @see http://docs.api.bookingsync.com/reference/endpoints/accounts/#list-accounts
+      # @see http://developers.bookingsync.com/reference/endpoints/accounts/#list-accounts
       def accounts(options = {}, &block)
         paginate :accounts, options, &block
       end
