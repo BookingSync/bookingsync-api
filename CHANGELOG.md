@@ -2,6 +2,8 @@
 
 ## master
 
+- Add support for preferences_general_settings reading and updating.
+
 ## 0.0.34
 
 - Fixed documentation urls

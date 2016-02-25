@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://bookingsync.dev/api/v3/preferences_general_settings/1
+    body:
+      encoding: UTF-8
+      string: '{"preferences_general_settings":[{"selected_locales":["de"]}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.34
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ratelimit-Limit:
+      - '999999999'
+      X-Ratelimit-Reset:
+      - '1456401600'
+      X-Ratelimit-Remaining:
+      - '999999993'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 90077382-397e-4c33-be05-0ffa2cf5b3f9
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Etag:
+      - '"e3db2f1a78163e38b740d0d4c8a3a9c5"'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.029907'
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Thu, 25 Feb 2016 11:24:20 GMT
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=150f64bd-d424-464d-8ead-e3365016c17e; path=/; expires=Thu, 03 Mar
+        2016 11:24:20 -0000
+      - ahoy_visitor=3be0895b-31a9-4663-96ae-52b2bd833103; path=/; expires=Sun, 25
+        Feb 2018 11:24:20 -0000
+      X-Powered-By:
+      - Phusion Passenger 5.0.22
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 5.0.22
+    body:
+      encoding: UTF-8
+      string: '{"links":{"preferences_general_settings.account":"http://bookingsync.dev/api/v3/accounts/{preferences_general_settings.account}"},"preferences_general_settings":[{"links":{"account":1},"id":1,"email":"demo_en@bookingsync.com","default_arrival_time":16,"default_departure_time":10,"selected_locales":["en","de"],"business_name":"Your
+        Business Name","website":"","phone":"","mobile":"","fax":"","address1":"","address2":"","city":"","state":"","zip":"","country":null,"full_address":""}]}'
+    http_version: 
+  recorded_at: Thu, 25 Feb 2016 11:24:20 GMT
+recorded_with: VCR 2.9.2
