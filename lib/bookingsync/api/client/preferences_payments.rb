@@ -20,5 +20,3 @@ module BookingSync::API
     end
   end
 end
-
-
