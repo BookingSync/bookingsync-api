@@ -29,9 +29,9 @@ module BookingSync::API
       # @example Search rentals by rental type
       # villas = @api.rentals_search(rental_type: "villa")
       def rentals_search(options = {}, &block)
-        ids = Array(options.delete(:ids))
-        path = ["rentals", ids.join(","), "search"].compact.join("/")
-        paginate path, options, &block
+        ids = Array(options.delete(:ids)).join(",")
+        options.merge!(id: ids, method: :post)
+        paginate "rentals/search", options, &block
       end
 
       # Get a single rental
@@ -78,7 +78,8 @@ module BookingSync::API
       # @param rentals [Array] IDs of Rentals, leave empty for all account's rentals
       # @return [BookingSync::API::Resource]
       def rentals_meta(rentals = nil)
-        get(["rentals", Array(rentals).join(","), "meta"].compact.join("/")).pop
+        rental_ids = Array(rentals).join(",")
+        post("rentals/meta", id: rental_ids).pop
       end
     end
   end

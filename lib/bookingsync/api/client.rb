@@ -194,7 +194,9 @@ module BookingSync::API
     def paginate(path, options = {}, &block)
       instrument("paginate.bookingsync_api", path: path) do
         auto_paginate = options.delete(:auto_paginate)
-        response = call(:get, path, query: options)
+        method = options.delete(:method) { :get }
+        method_options = method == :get ? { query: options } : options
+        response = call(method, path, method_options)
         data = response.resources.dup
 
         if (block_given? or auto_paginate) && response.relations[:next]
@@ -207,7 +209,7 @@ module BookingSync::API
               first_request = false
             end
             break unless response.relations[:next]
-            response = response.relations[:next].get
+            response = response.relations[:next].call({}, method: method)
           end
         end
 
