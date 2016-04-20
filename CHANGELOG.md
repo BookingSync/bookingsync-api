@@ -2,6 +2,8 @@
 
 ## master
 
+## 0.0.36
+
 - Add support for `booking_comments`.
 
 ## 0.0.35
