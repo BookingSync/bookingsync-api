@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://bookingsync.dev/api/v3/booking_comments
+    body:
+      encoding: UTF-8
+      string: '{"booking_id":1,"booking_comments":[{"content":"Example conent"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.0.35
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1461074400'
+      X-Ratelimit-Remaining:
+      - '984'
+      Location:
+      - http://bookingsync.dev/api/v3/booking_comments/14
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - '"edb232ad4b3b70600d8eb833e5224653"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=e228e349-faa3-4a1f-bd6a-676c34f31321; path=/; expires=Tue, 26 Apr
+        2016 13:53:13 -0000
+      - ahoy_visitor=e72a12e0-df0a-469a-9989-e569f8385c8d; path=/; expires=Thu, 19
+        Apr 2018 13:53:13 -0000
+      X-Request-Id:
+      - 7bebccb7-e580-4324-9e47-3dc7baeb1424
+      X-Runtime:
+      - '0.075471'
+      Date:
+      - Tue, 19 Apr 2016 13:53:13 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"links":{"booking_comments.booking":"http://bookingsync.dev/api/v3/bookings/{booking_comments.booking}"},"booking_comments":[{"links":{"booking":1},"id":14,"content":"Example
+        conent","editable":true,"created_at":"2016-04-19T13:53:13Z","updated_at":"2016-04-19T13:53:13Z"}],"meta":{}}'
+    http_version: 
+  recorded_at: Tue, 19 Apr 2016 13:53:13 GMT
+recorded_with: VCR 3.0.1

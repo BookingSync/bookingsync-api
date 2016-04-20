@@ -5,6 +5,7 @@ require "bookingsync/api/client/availabilities"
 require "bookingsync/api/client/bathrooms"
 require "bookingsync/api/client/bedrooms"
 require "bookingsync/api/client/bookings"
+require "bookingsync/api/client/booking_comments"
 require "bookingsync/api/client/bookings_fees"
 require "bookingsync/api/client/bookings_payments"
 require "bookingsync/api/client/bookings_taxes"
@@ -49,6 +50,7 @@ module BookingSync::API
     include BookingSync::API::Client::Bathrooms
     include BookingSync::API::Client::Bedrooms
     include BookingSync::API::Client::Bookings
+    include BookingSync::API::Client::BookingComments
     include BookingSync::API::Client::BookingsFees
     include BookingSync::API::Client::BookingsPayments
     include BookingSync::API::Client::BookingsTaxes
