@@ -25,17 +25,27 @@ describe BookingSync::API::Client::Rentals do
 
   describe ".rentals_search", :vcr do
     it "returns rentals" do
-      expect(client.rentals_search(start_at: "2014-06-20", end_at: "2014-06-25")).not_to be_empty
-      assert_requested :get, bs_url("rentals/search?start_at=2014-06-20&end_at=2014-06-25")
+      expect(client.rentals_search(start_at: "2016-06-15", end_at: "2016-06-30")).not_to be_empty
+      assert_requested :post, bs_url("rentals/search"),
+        body: { start_at: "2016-06-15", end_at: "2016-06-30" }.to_json
     end
 
     context "rentals ids given" do
       it "makes a search within given rentals" do
-        rentals = client.rentals_search(ids: [323, 354], max_price: 400,
-          start_at: "2014-06-20", end_at: "2014-06-25")
+        rentals = client.rentals_search(ids: [1, 5], start_at: "2016-06-15", end_at: "2016-06-30")
         expect(rentals.size).to eq(1)
-        assert_requested :get, bs_url("rentals/323,354/search?max_price=400&start_at=2014-06-20&end_at=2014-06-25")
+        assert_requested :post, bs_url("rentals/1,5/search"),
+          body: { start_at: "2016-06-15", end_at: "2016-06-30" }.to_json
       end
+    end
+
+    it "performs autopagination using POST" do
+      rentals = client.rentals_search(per_page: 1, auto_paginate: true)
+      expect(rentals.size).to eq(4)
+      assert_requested :post, bs_url("rentals/search"), body: { per_page: 1 }.to_json
+      assert_requested :post, bs_url("rentals/search?page=2&per_page=1")
+      assert_requested :post, bs_url("rentals/search?page=3&per_page=1")
+      assert_requested :post, bs_url("rentals/search?page=4&per_page=1")
     end
   end
 

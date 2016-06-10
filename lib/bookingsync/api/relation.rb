@@ -66,6 +66,19 @@ module BookingSync::API
       call options
     end
 
+    # Make an API request with the curent Relation using POST.
+    #
+    # @param options [Hash] Options to configure the API request.
+    # @option options [Hash] headers: Hash of API headers to set.
+    # @option options [Hash] query: Hash of URL query params to set.
+    # @option options [Symbol] method: Symbol HTTP method.
+    # @return [BookingSync::API::Response] A response
+    def post(options = nil)
+      options ||= {}
+      options[:method] = :post
+      call options
+    end
+
     def href(options = nil)
       return @href if @href_template.nil?
       @href_template.expand(options || {}).to_s
@@ -82,7 +95,11 @@ module BookingSync::API
     # @option options [Symbol] method: Symbol HTTP method.
     # @return [BookingSync::API::Response]
     def call(data = nil, options = nil)
-      m = options && options[:method]
+      if options.to_h.any?
+        m = options[:method]
+      else
+        m = data.to_h.delete(:method)
+      end
       @client.call m || @method, @href_template, data, options || {}
     end
   end

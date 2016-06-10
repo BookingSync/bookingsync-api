@@ -43,6 +43,14 @@ describe BookingSync::API::Relation do
     end
   end
 
+  describe "#post" do
+    it "makes a HTTP POST using call on relation" do
+      url_template = ::Addressable::Template.new("http://example.com/photos/{foo.photos}")
+      expect(relation).to receive(:call).with({fields: [:name, :description], method: :post})
+      relation.post(fields: [:name, :description])
+    end
+  end
+
 
   describe "#name" do
     it "returns relation name" do

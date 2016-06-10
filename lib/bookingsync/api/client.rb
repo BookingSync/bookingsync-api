@@ -183,7 +183,7 @@ module BookingSync::API
       end
     end
 
-    # Make a HTTP GET request to a path with pagination support.
+    # Make a HTTP GET or POST request to a path with pagination support.
     #
     # @param options [Hash]
     # @option options [Integer] per_page: Number of resources per page
@@ -196,7 +196,12 @@ module BookingSync::API
     def paginate(path, options = {}, &block)
       instrument("paginate.bookingsync_api", path: path) do
         auto_paginate = options.delete(:auto_paginate)
-        response = call(:get, path, query: options)
+        request_method =  options.delete(:request_method) || :get
+        if request_method == :get
+          response = call(request_method, path, query: options)
+        else
+          response = call(request_method, path, options)
+        end
         data = response.resources.dup
 
         if (block_given? or auto_paginate) && response.relations[:next]
@@ -209,7 +214,7 @@ module BookingSync::API
               first_request = false
             end
             break unless response.relations[:next]
-            response = response.relations[:next].get
+            response = response.relations[:next].public_send(request_method)
           end
         end
 
