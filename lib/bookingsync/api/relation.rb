@@ -11,11 +11,9 @@ module BookingSync::API
     # @param links [Hash] Hash of relation_name => relation options.
     # @return [Hash] Hash of relation_name => relation elements.
     def self.from_links(client, links)
-      relations = {}
-      links.each do |name, options|
+      links.to_h.each_with_object({}) do |(name, options), relations|
         relations[name] = from_link(client, name, options)
-      end if links
-      relations
+      end
     end
 
     # Build a single Relation from the given options.
@@ -80,9 +78,9 @@ module BookingSync::API
     # @param options [Hash] Params to be included in expanded URL
     # @return [String] expanded URL
 
-    def href(options = nil)
+    def href(options = {})
       return @href if @href_template.nil?
-      @href_template.expand(options || {}).to_s
+      @href_template.expand(options.to_h).to_s
     end
   end
 end
