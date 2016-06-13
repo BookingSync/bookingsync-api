@@ -11,6 +11,7 @@ group 'test' do
   gem 'yard'
   gem 'ruby_gntp'
   gem 'pry'
+  gem 'listen', '~> 3.0.0'
 end
 
 gemspec

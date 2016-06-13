@@ -2,6 +2,8 @@
 
 ## master
 
+- Drop support for Ruby 1.9.3 and Ruby 2.0.x
+
 ## 0.0.36
 
 - Add support for `booking_comments`.
