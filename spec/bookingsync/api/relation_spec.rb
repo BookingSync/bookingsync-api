@@ -25,24 +25,31 @@ describe BookingSync::API::Relation do
     end
   end
 
+  describe "#get" do
+    it "makes a HTTP GET request using call on client" do
+      url_template = ::Addressable::Template.new("http://example.com/photos/{foo.photos}")
+      expect(client).to receive(:call).with(:get, url_template, {fields: [:name, :description]}, {})
+      relation.get(fields: [:name, :description])
+    end
+  end
+
+  describe "#post" do
+    it "makes a HTTP POST request using call on client" do
+      url_template = ::Addressable::Template.new("http://example.com/photos/{foo.photos}")
+      expect(client).to receive(:call).with(:post, url_template, {fields: [:name, :description]}, {})
+      relation.post(fields: [:name, :description])
+    end
+  end
+
   describe "#call" do
     let(:client) { double(BookingSync::API::Client) }
 
     it "makes HTTP request using API client" do
       url_template = ::Addressable::Template.new("http://example.com/photos/{foo.photos}")
-      expect(client).to receive(:call).with(:get, url_template, nil, {})
+      expect(client).to receive(:call).with(:get, url_template, {}, {})
       relation.call
     end
   end
-
-  describe "#get" do
-    it "makes a HTTP GET using call on relation" do
-      url_template = ::Addressable::Template.new("http://example.com/photos/{foo.photos}")
-      expect(relation).to receive(:call).with({fields: [:name, :description], method: :get})
-      relation.get(fields: [:name, :description])
-    end
-  end
-
 
   describe "#name" do
     it "returns relation name" do

@@ -31,7 +31,8 @@ module BookingSync::API
       def rentals_search(options = {}, &block)
         ids = Array(options.delete(:ids))
         path = ["rentals", ids.join(","), "search"].compact.join("/")
-        paginate path, options, &block
+        defaults = { request_method: :post }
+        paginate path, defaults.merge(options), &block
       end
 
       # Get a single rental

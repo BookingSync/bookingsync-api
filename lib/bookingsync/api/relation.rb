@@ -11,11 +11,9 @@ module BookingSync::API
     # @param links [Hash] Hash of relation_name => relation options.
     # @return [Hash] Hash of relation_name => relation elements.
     def self.from_links(client, links)
-      relations = {}
-      links.each do |name, options|
+      links.to_h.each_with_object({}) do |(name, options), relations|
         relations[name] = from_link(client, name, options)
-      end if links
-      relations
+      end
     end
 
     # Build a single Relation from the given options.
@@ -50,7 +48,6 @@ module BookingSync::API
       @href = href
       @href_template = ::Addressable::Template.new(href.to_s)
       @method = (method || :get).to_sym
-      @available_methods = Set.new methods || [@method]
     end
 
     # Make an API request with the curent Relation using GET.
@@ -60,15 +57,19 @@ module BookingSync::API
     # @option options [Hash] query: Hash of URL query params to set.
     # @option options [Symbol] method: Symbol HTTP method.
     # @return [BookingSync::API::Response] A response
-    def get(options = nil)
-      options ||= {}
-      options[:method] = :get
-      call options
+    def get(data = {})
+      call data, method: :get
     end
 
-    def href(options = nil)
-      return @href if @href_template.nil?
-      @href_template.expand(options || {}).to_s
+    # Make an API request with the curent Relation using POST.
+    #
+    # @param options [Hash] Options to configure the API request.
+    # @option options [Hash] headers: Hash of API headers to set.
+    # @option options [Hash] query: Hash of URL query params to set.
+    # @option options [Symbol] method: Symbol HTTP method.
+    # @return [BookingSync::API::Response] A response
+    def post(data = {})
+      call data, method: :post
     end
 
     # Make an API request with the curent Relation.
@@ -81,9 +82,19 @@ module BookingSync::API
     # @option options [Hash] query: Hash of URL query params to set.
     # @option options [Symbol] method: Symbol HTTP method.
     # @return [BookingSync::API::Response]
-    def call(data = nil, options = nil)
-      m = options && options[:method]
-      @client.call m || @method, @href_template, data, options || {}
+    def call(data = {}, options = {})
+      m = options.delete(:method)
+      client.call m || method, href_template, data, options
+    end
+
+    # Return expanded URL
+
+    # @param options [Hash] Params to be included in expanded URL
+    # @return [String] expanded URL
+
+    def href(options = {})
+      return @href if @href_template.nil?
+      @href_template.expand(options.to_h).to_s
     end
   end
 end

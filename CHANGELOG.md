@@ -3,6 +3,8 @@
 ## master
 
 - Drop support for Ruby 1.9.3 and Ruby 2.0.x
+- Add support for pagination with POST method
+- Use POST pagination for `rentals_search` by default
 
 ## 0.0.36
 
