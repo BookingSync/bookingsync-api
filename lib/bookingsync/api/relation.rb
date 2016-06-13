@@ -48,7 +48,6 @@ module BookingSync::API
       @href = href
       @href_template = ::Addressable::Template.new(href.to_s)
       @method = (method || :get).to_sym
-      @available_methods = Set.new methods || [@method]
     end
 
     # Make an API request with the curent Relation using GET.
@@ -59,7 +58,7 @@ module BookingSync::API
     # @option options [Symbol] method: Symbol HTTP method.
     # @return [BookingSync::API::Response] A response
     def get(data = {})
-      client.call :get, href_template, data, {}
+      call data, method: :get
     end
 
     # Make an API request with the curent Relation using POST.
@@ -70,7 +69,22 @@ module BookingSync::API
     # @option options [Symbol] method: Symbol HTTP method.
     # @return [BookingSync::API::Response] A response
     def post(data = {})
-      client.call :post, href_template, data, {}
+      call data, method: :post
+    end
+
+    # Make an API request with the curent Relation.
+    #
+    # @param data [Hash|String] The Optional Hash or Resource body to be sent.
+    #   :get or :head requests can have no body, so this can be the options Hash
+    #   instead.
+    # @param options [Hash] A Hash of option to configure the API request.
+    # @option options [Hash] headers: A Hash of API headers to set.
+    # @option options [Hash] query: Hash of URL query params to set.
+    # @option options [Symbol] method: Symbol HTTP method.
+    # @return [BookingSync::API::Response]
+    def call(data = {}, options = {})
+      m = options.delete(:method)
+      client.call m || method, href_template, data, options
     end
 
     # Return expanded URL

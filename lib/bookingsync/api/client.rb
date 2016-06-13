@@ -214,7 +214,7 @@ module BookingSync::API
               first_request = false
             end
             break unless response.relations[:next]
-            response = response.relations[:next].public_send(request_method)
+            response = response.relations[:next].call({}, method: request_method)
           end
         end
 
@@ -234,7 +234,7 @@ module BookingSync::API
       instrument("call.bookingsync_api", method: method, path: path) do
         if [:get, :head].include?(method)
           options = data
-          data = nil
+          data = {}
         end
         options ||= {}
         options[:headers] ||= {}

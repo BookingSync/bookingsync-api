@@ -41,6 +41,16 @@ describe BookingSync::API::Relation do
     end
   end
 
+  describe "#call" do
+    let(:client) { double(BookingSync::API::Client) }
+
+    it "makes HTTP request using API client" do
+      url_template = ::Addressable::Template.new("http://example.com/photos/{foo.photos}")
+      expect(client).to receive(:call).with(:get, url_template, {}, {})
+      relation.call
+    end
+  end
+
   describe "#name" do
     it "returns relation name" do
       expect(relation.name).to eq(:"foo.photos")
