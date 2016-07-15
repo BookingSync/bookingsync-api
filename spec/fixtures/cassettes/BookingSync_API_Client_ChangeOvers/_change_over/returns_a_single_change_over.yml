@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://bookingsync.dev/api/v3/change_overs/2
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.0
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Total-Pages:
+      - '1'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1468591200'
+      X-Ratelimit-Remaining:
+      - '986'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 6931a445-bd12-4bef-94cf-8ef71d6cfb80
+      Link:
+      - <http://bookingsync.dev/api/v3/change_overs/2?page=1>; rel="first", <http://bookingsync.dev/api/v3/change_overs/2?page=1>;
+        rel="last"
+      X-Per-Page:
+      - '100'
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Etag:
+      - W/"b551a94f7790230fb49c740f92077cda"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Total-Count:
+      - '1'
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.043164'
+      Date:
+      - Fri, 15 Jul 2016 13:45:58 GMT
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=3fa1364f-df8f-4d8b-a843-ff2f9e13fcb8; path=/; expires=Fri, 22 Jul
+        2016 13:45:58 -0000
+      - ahoy_visitor=259d0ce3-2a75-471f-9cc4-46f45dc620c4; path=/; expires=Sun, 15
+        Jul 2018 13:45:58 -0000
+      X-Powered-By:
+      - Phusion Passenger 5.0.27
+      Server:
+      - nginx/1.8.1 + Phusion Passenger 5.0.27
+    body:
+      encoding: UTF-8
+      string: '{"links":{"change_overs.rental":"http://bookingsync.dev/api/v3/rentals/{change_overs.rental}"},"change_overs":[{"links":{"rental":2},"id":2,"map":"CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC","start_date":"2016-07-15","updated_at":"2016-07-15T07:30:45Z"}]}'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 13:45:58 GMT
+recorded_with: VCR 2.9.2

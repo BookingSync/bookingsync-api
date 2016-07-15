@@ -9,6 +9,7 @@ require "bookingsync/api/client/booking_comments"
 require "bookingsync/api/client/bookings_fees"
 require "bookingsync/api/client/bookings_payments"
 require "bookingsync/api/client/bookings_taxes"
+require "bookingsync/api/client/change_overs"
 require "bookingsync/api/client/clients"
 require "bookingsync/api/client/destinations"
 require "bookingsync/api/client/fees"
@@ -54,6 +55,7 @@ module BookingSync::API
     include BookingSync::API::Client::BookingsFees
     include BookingSync::API::Client::BookingsPayments
     include BookingSync::API::Client::BookingsTaxes
+    include BookingSync::API::Client::ChangeOvers
     include BookingSync::API::Client::Clients
     include BookingSync::API::Client::Destinations
     include BookingSync::API::Client::Fees
