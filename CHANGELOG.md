@@ -2,6 +2,8 @@
 
 ## master
 
+- Add support for `change_overs`.
+
 ## 0.1.0
 
 - Drop support for Ruby 1.9.3 and Ruby 2.0.x
