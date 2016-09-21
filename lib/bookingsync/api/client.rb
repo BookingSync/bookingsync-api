@@ -14,6 +14,7 @@ require "bookingsync/api/client/clients"
 require "bookingsync/api/client/destinations"
 require "bookingsync/api/client/fees"
 require "bookingsync/api/client/inquiries"
+require "bookingsync/api/client/nightly_rate_maps"
 require "bookingsync/api/client/strict_bookings"
 require "bookingsync/api/client/periods"
 require "bookingsync/api/client/payments"
@@ -60,6 +61,7 @@ module BookingSync::API
     include BookingSync::API::Client::Destinations
     include BookingSync::API::Client::Fees
     include BookingSync::API::Client::Inquiries
+    include BookingSync::API::Client::NightlyRateMaps
     include BookingSync::API::Client::StrictBookings
     include BookingSync::API::Client::Periods
     include BookingSync::API::Client::Payments

@@ -2,6 +2,8 @@
 
 ## master
 
+- Add support for `nightly_rate_maps`.
+
 ## 0.1.1
 
 - Add support for `change_overs`.
