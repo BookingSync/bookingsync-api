@@ -2,6 +2,8 @@
 
 ## master
 
+## 0.1.2
+
 - Add support for `payment_gateways`.
 - Add support for `nightly_rate_maps`.
 
