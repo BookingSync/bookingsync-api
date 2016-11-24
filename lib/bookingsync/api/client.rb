@@ -87,7 +87,7 @@ module BookingSync::API
 
     MEDIA_TYPE = "application/vnd.api+json"
 
-    attr_reader :token, :logger, :last_response
+    attr_reader :token, :logger, :pagination_first_response, :last_response
 
     def_delegator :@instrumenter, :instrument
 
@@ -208,6 +208,7 @@ module BookingSync::API
         else
           response = call(request_method, path, options)
         end
+        @pagination_first_response = response
         data = response.resources.dup
 
         if (block_given? or auto_paginate) && response.relations[:next]

@@ -278,4 +278,18 @@ describe BookingSync::API::Client do
       expect(client.last_response.meta).to eql(count: 10)
     end
   end
+
+  context "pagination" do
+    before do
+      stub_get("resources", headers: { "Link" => '<resources?page=2>; rel="next"' }, body: {meta: {text: "first request"}, resources: []}.to_json)
+      stub_get("resources?page=2", body: {meta: {text: "second request"}, resources: []}.to_json)
+    end
+
+    describe "#pagination_first_response" do
+      it "returns first response of a paginated call" do
+        client.paginate("resources", auto_paginate: true)
+        expect(client.pagination_first_response.meta).to eql(text: "first request")
+      end
+    end
+  end
 end
