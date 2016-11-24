@@ -67,6 +67,7 @@ access last response.
 ```ruby
 api.rentals(updated_since: "2014-01-01 15:43:96 UTC") # => [BookingSync::API::Resource,    BookingSync::API::Resource, ...]
 api.last_response.meta # => {"deleted_ids" => [1, 3, 4]}
+api.pagination_first_response.meta # => {"deleted_ids" => [1, 3, 4]}
 ```
 
 ### Logging

@@ -2,6 +2,8 @@
 
 ## master
 
+- Expose pagination_first_request to easily retrieve right timestamps for updated since syncs.
+
 ## 0.1.2
 
 - Add support for `payment_gateways`.
