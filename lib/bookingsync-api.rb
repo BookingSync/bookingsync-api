@@ -1,1 +1,1 @@
-require 'bookingsync/api'
+require "bookingsync/api"

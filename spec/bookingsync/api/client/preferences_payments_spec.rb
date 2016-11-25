@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe BookingSync::API::Client::PreferencesPayments do
-
   let(:client) { BookingSync::API::Client.new(test_access_token) }
 
   describe ".preferences_payments", :vcr do

@@ -28,7 +28,7 @@ describe BookingSync::API::Client::RentalAgreements do
     end
 
     it "returns newly created rental agreement" do
-      VCR.use_cassette('BookingSync_API_Client_RentalAgreements/_create_rental_agreement/creates_a_new_rental_agreement') do
+      VCR.use_cassette("BookingSync_API_Client_RentalAgreements/_create_rental_agreement/creates_a_new_rental_agreement") do
         rental_agreement = client.create_rental_agreement(attributes)
         expect(rental_agreement.body).to eql(attributes[:body])
       end
@@ -41,11 +41,11 @@ describe BookingSync::API::Client::RentalAgreements do
     it "creates a new rental agreement" do
       client.create_rental_agreement_for_booking(booking, attributes)
       assert_requested :post, bs_url("bookings/#{booking}/rental_agreements"),
-        body: {rental_agreements: [attributes]}.to_json
+        body: { rental_agreements: [attributes] }.to_json
     end
 
     it "returns newly created rental agreement" do
-      VCR.use_cassette('BookingSync_API_Client_RentalAgreements/_create_rental_agreement_for_booking/creates_a_new_rental_agreement') do
+      VCR.use_cassette("BookingSync_API_Client_RentalAgreements/_create_rental_agreement_for_booking/creates_a_new_rental_agreement") do
         rental_agreement = client.create_rental_agreement_for_booking(booking, attributes)
         expect(rental_agreement.body).to eql(attributes[:body])
       end
@@ -58,11 +58,11 @@ describe BookingSync::API::Client::RentalAgreements do
     it "creates a new rental agreement" do
       client.create_rental_agreement_for_rental(rental, attributes)
       assert_requested :post, bs_url("rentals/20/rental_agreements"),
-        body: {rental_agreements: [attributes]}.to_json
+        body: { rental_agreements: [attributes] }.to_json
     end
 
     it "returns newly created rental agreement" do
-      VCR.use_cassette('BookingSync_API_Client_RentalAgreements/_create_rental_agreement_for_rental/creates_a_new_rental_agreement') do
+      VCR.use_cassette("BookingSync_API_Client_RentalAgreements/_create_rental_agreement_for_rental/creates_a_new_rental_agreement") do
         rental_agreement = client.create_rental_agreement_for_rental(rental, attributes)
         expect(rental_agreement.body).to eql(attributes[:body])
       end

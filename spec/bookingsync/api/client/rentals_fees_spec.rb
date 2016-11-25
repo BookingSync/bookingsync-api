@@ -34,7 +34,7 @@ describe BookingSync::API::Client::RentalsFees do
     end
 
     it "returns newly created rentals_fee" do
-      VCR.use_cassette('BookingSync_API_Client_RentalsFees/_create_rentals_fee/creates_a_new_rentals_fee') do
+      VCR.use_cassette("BookingSync_API_Client_RentalsFees/_create_rentals_fee/creates_a_new_rentals_fee") do
         rentals_fee = client.create_rentals_fee(rental, attributes)
         expect(rentals_fee.links.fee).to eq 659
         expect(rentals_fee.maximum_bookable).to eq 10

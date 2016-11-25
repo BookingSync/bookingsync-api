@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe BookingSync::API::Client::LivingRooms do
-
   let(:client) { BookingSync::API::Client.new(test_access_token) }
 
   describe ".living_rooms", :vcr do
@@ -29,7 +28,7 @@ describe BookingSync::API::Client::LivingRooms do
     end
 
     it "returns newly created living_room" do
-      VCR.use_cassette('BookingSync_API_Client_LivingRooms/_create_living_room/creates_a_new_living_room') do
+      VCR.use_cassette("BookingSync_API_Client_LivingRooms/_create_living_room/creates_a_new_living_room") do
         living_room = client.create_living_room(rental, attributes)
         expect(living_room.sofa_beds_count).to eq(attributes[:sofa_beds_count])
       end
@@ -46,7 +45,7 @@ describe BookingSync::API::Client::LivingRooms do
     end
 
     it "returns updated living_room" do
-      VCR.use_cassette('BookingSync_API_Client_LivingRooms/_edit_living_room/updates_given_living_room_by_ID') do
+      VCR.use_cassette("BookingSync_API_Client_LivingRooms/_edit_living_room/updates_given_living_room_by_ID") do
         living_room = client.edit_living_room(6, attributes)
         expect(living_room).to be_kind_of(BookingSync::API::Resource)
         expect(living_room.sofa_beds_count).to eq(attributes[:sofa_beds_count])

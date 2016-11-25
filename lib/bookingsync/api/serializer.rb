@@ -1,6 +1,6 @@
-require 'date'
-require 'time'
-require 'json'
+require "date"
+require "time"
+require "json"
 
 module BookingSync::API
   class Serializer
@@ -22,7 +22,7 @@ module BookingSync::API
       @dump.call(encode_object(data))
     end
 
-    alias dump encode
+    alias_method :dump, :encode
 
     # Public: Decodes a String into an Object (usually a Hash or Array of
     # Hashes).
@@ -35,7 +35,7 @@ module BookingSync::API
       decode_object(@load.call(data))
     end
 
-    alias load decode
+    alias_method :load, :decode
 
     def encode_object(data)
       case data

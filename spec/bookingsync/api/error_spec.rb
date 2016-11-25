@@ -27,8 +27,8 @@ describe BookingSync::API::Error do
   describe "#headers" do
     it "returns response headers" do
       expect { request }.to raise_error(BookingSync::API::Error) { |exception|
-        expect(exception.headers).to eq({"content-type" =>
-          "application/vnd.api+json"})
+        expect(exception.headers).to eq("content-type" =>
+          "application/vnd.api+json")
       }
     end
   end
@@ -36,7 +36,7 @@ describe BookingSync::API::Error do
   describe "#message" do
     it "returns standard exception message" do
       expect { request }.to raise_error(BookingSync::API::Error) { |exception|
-        expect(exception.message).to eq(%Q{BookingSync::API::UnprocessableEntity
+        expect(exception.message).to eq(%{BookingSync::API::UnprocessableEntity
 HTTP status code : 422
 Headers          : {"content-type"=>"application/vnd.api+json"}
 Body             : {"errors":{"name":["can't be blank"]}}})

@@ -18,7 +18,7 @@ describe BookingSync::API::Client::PreferencesGeneralSettings do
     end
 
     it "returns updated preferences_general_setting" do
-      VCR.use_cassette('BookingSync_API_Client_PreferencesGeneralSettings/_edit_preferences_general_setting/updates_given_preferences_general_setting_by_ID') do
+      VCR.use_cassette("BookingSync_API_Client_PreferencesGeneralSettings/_edit_preferences_general_setting/updates_given_preferences_general_setting_by_ID") do
         setting = api.edit_preferences_general_setting(1, selected_locales: ["de"])
         expect(setting).to be_kind_of(BookingSync::API::Resource)
         expect(setting.selected_locales).to eq ["en", "de"]

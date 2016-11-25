@@ -44,26 +44,26 @@ describe BookingSync::API::Client::Bookings do
     end
 
     it "returns a single canceled booking" do
-      booking = client.booking(114760, { include_canceled: true })
+      booking = client.booking(114760, include_canceled: true)
       expect(booking.status).to eq "Canceled"
     end
   end
 
   describe ".create_booking", :vcr do
     let(:attributes) {
-      {start_at: '2014-01-03', end_at: '2014-01-04',
-        booked: true}
+      { start_at: "2014-01-03", end_at: "2014-01-04",
+        booked: true }
     }
     let(:rental) { BookingSync::API::Resource.new(client, id: 20) }
 
     it "creates a booking" do
       client.create_booking(rental, attributes)
       assert_requested :post, bs_url("rentals/20/bookings"),
-        body: {bookings: [attributes]}.to_json
+        body: { bookings: [attributes] }.to_json
     end
 
     it "returns newly created booking" do
-      VCR.use_cassette('BookingSync_API_Client_Bookings/_create_booking/creates_a_booking') do
+      VCR.use_cassette("BookingSync_API_Client_Bookings/_create_booking/creates_a_booking") do
         booking = client.create_booking(rental, attributes)
         expect(booking.account_id).to eql(1)
         expect(booking.rental_id).to eql(20)
@@ -73,25 +73,25 @@ describe BookingSync::API::Client::Bookings do
 
   describe ".edit_booking", :vcr do
     it "updates given booking by ID" do
-      client.edit_booking(50, {end_at: "2019-03-25 21:45:00 UTC"})
+      client.edit_booking(50, end_at: "2019-03-25 21:45:00 UTC")
       assert_requested :put, bs_url("bookings/50"),
-        body: {bookings: [{end_at: "2019-03-25 21:45:00 UTC"}]}.to_json
+        body: { bookings: [{ end_at: "2019-03-25 21:45:00 UTC" }] }.to_json
     end
 
     it "returns updated booking" do
-      VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID') do
-        booking = client.edit_booking(50, {end_at: "2019-03-25 21:45:00 UTC"})
+      VCR.use_cassette("BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID") do
+        booking = client.edit_booking(50, end_at: "2019-03-25 21:45:00 UTC")
         expect(booking).to be_kind_of(BookingSync::API::Resource)
         expect(booking.end_at).to eq(Time.parse("2019-03-25 21:45:00 UTC"))
       end
     end
 
     it "updates given booking by Resource object" do
-      VCR.use_cassette('BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID') do
-        resource = BookingSync::API::Resource.new(nil, {id: 50})
-        client.edit_booking(resource, {end_at: "2019-03-25 21:45:00 UTC"})
+      VCR.use_cassette("BookingSync_API_Client_Bookings/_edit_booking/updates_given_booking_by_ID") do
+        resource = BookingSync::API::Resource.new(nil, id: 50)
+        client.edit_booking(resource, end_at: "2019-03-25 21:45:00 UTC")
         assert_requested :put, bs_url("bookings/50"),
-          body: {bookings: [{end_at: "2019-03-25 21:45:00 UTC"}]}.to_json
+          body: { bookings: [{ end_at: "2019-03-25 21:45:00 UTC" }] }.to_json
       end
     end
   end

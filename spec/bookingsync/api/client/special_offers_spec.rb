@@ -21,8 +21,8 @@ describe BookingSync::API::Client::SpecialOffers do
     let(:attributes) {
       {
         name: "New special offer",
-        start_at: '2014-04-28',
-        end_at: '2014-05-28',
+        start_at: "2014-04-28",
+        end_at: "2014-05-28",
         discount: 5
       }
     }
@@ -31,11 +31,11 @@ describe BookingSync::API::Client::SpecialOffers do
     it "creates a new special_offer" do
       client.create_special_offer(rental, attributes)
       assert_requested :post, bs_url("rentals/12/special_offers"),
-        body: {special_offers: [attributes]}.to_json
+        body: { special_offers: [attributes] }.to_json
     end
 
     it "returns newly created special_offer" do
-      VCR.use_cassette('BookingSync_API_Client_SpecialOffers/_create_special_offer/creates_a_new_special_offer') do
+      VCR.use_cassette("BookingSync_API_Client_SpecialOffers/_create_special_offer/creates_a_new_special_offer") do
         special_offer = client.create_special_offer(rental, attributes)
         expect(special_offer.name).to eql(attributes[:name])
       end
@@ -44,7 +44,7 @@ describe BookingSync::API::Client::SpecialOffers do
 
   describe ".edit_special_offer", :vcr do
     let(:attributes) {
-      { name: 'Updated special offer' }
+      { name: "Updated special offer" }
     }
 
     it "updates given special_offer by ID" do
@@ -54,7 +54,7 @@ describe BookingSync::API::Client::SpecialOffers do
     end
 
     it "returns updated special_offer" do
-      VCR.use_cassette('BookingSync_API_Client_SpecialOffers/_edit_special_offer/updates_given_special_offer_by_ID') do
+      VCR.use_cassette("BookingSync_API_Client_SpecialOffers/_edit_special_offer/updates_given_special_offer_by_ID") do
         special_offer = client.edit_special_offer(3, attributes)
         expect(special_offer).to be_kind_of(BookingSync::API::Resource)
         expect(special_offer.name).to eq(attributes[:name])
