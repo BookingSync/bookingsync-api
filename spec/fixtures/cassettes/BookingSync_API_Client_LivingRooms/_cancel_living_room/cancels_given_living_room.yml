@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: http://bookingsync.dev/api/v3/living_rooms/6
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.2
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Connection:
+      - keep-alive
+      Status:
+      - 204 No Content
+      Cache-Control:
+      - no-cache
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1480082400'
+      X-Ratelimit-Remaining:
+      - '990'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Updated-Since-Request-Synced-At:
+      - 2016-11-25 13:48:47 UTC
+      X-Request-Id:
+      - f797f8a6-3879-4259-bcf5-731ae63d37e6
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      X-Runtime:
+      - '0.024749'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Fri, 25 Nov 2016 13:48:47 GMT
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=d8c3a1fb-fb77-4e99-a4c5-b827a223ff91; path=/; expires=Fri, 02 Dec
+        2016 13:48:47 -0000
+      - ahoy_visitor=0b3c36f5-5d2e-4ff9-9cf5-07d241f97e2d; path=/; expires=Sun, 25
+        Nov 2018 13:48:47 -0000
+      X-Powered-By:
+      - Phusion Passenger 5.0.27
+      Server:
+      - nginx/1.8.1 + Phusion Passenger 5.0.27
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 25 Nov 2016 13:48:47 GMT
+recorded_with: VCR 2.9.2

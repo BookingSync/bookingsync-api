@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://bookingsync.dev/api/v3/living_rooms/6
+    body:
+      encoding: UTF-8
+      string: '{"living_rooms":[{"sofa_beds_count":3}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.2
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1480082400'
+      X-Ratelimit-Remaining:
+      - '991'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Updated-Since-Request-Synced-At:
+      - 2016-11-25 13:48:38 UTC
+      X-Request-Id:
+      - 33bea71b-ccb7-413d-9ae8-6ac466841e2e
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Etag:
+      - W/"1e4710c9ddd181be72e8664ca96af911"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.031236'
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Fri, 25 Nov 2016 13:48:38 GMT
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=ed602075-5365-44ea-aed6-a3b3b355530f; path=/; expires=Fri, 02 Dec
+        2016 13:48:38 -0000
+      - ahoy_visitor=9e36e958-5ee8-493f-864b-3132e254e94d; path=/; expires=Sun, 25
+        Nov 2018 13:48:38 -0000
+      X-Powered-By:
+      - Phusion Passenger 5.0.27
+      Server:
+      - nginx/1.8.1 + Phusion Passenger 5.0.27
+    body:
+      encoding: UTF-8
+      string: '{"links":{"living_rooms.rental":"http://bookingsync.dev/api/v3/rentals/{living_rooms.rental}"},"living_rooms":[{"links":{"rental":23869},"id":6,"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":1,"queensize_beds_count":0,"single_beds_count":1,"sofa_beds_count":3,"created_at":"2016-11-24T19:39:43Z","updated_at":"2016-11-25T13:48:38Z"}],"meta":{}}'
+    http_version: 
+  recorded_at: Fri, 25 Nov 2016 13:48:38 GMT
+recorded_with: VCR 2.9.2
