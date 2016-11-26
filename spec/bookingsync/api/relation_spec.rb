@@ -1,12 +1,14 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe BookingSync::API::Relation do
   before { VCR.turn_off! }
   let(:client) { BookingSync::API::Client.new(test_access_token,
-    base_url: "http://example.com") }
-  let(:links) { {"foo.photos" => "http://example.com/photos/{foo.photos}"} }
+    base_url: "http://example.com")
+  }
+  let(:links) { { "foo.photos" => "http://example.com/photos/{foo.photos}" } }
   let(:relation) { BookingSync::API::Relation.new(client, :"foo.photos",
-    "http://example.com/photos/{foo.photos}") }
+    "http://example.com/photos/{foo.photos}")
+  }
 
   describe ".from_links" do
     it "returns a hash of relations" do
@@ -28,7 +30,7 @@ describe BookingSync::API::Relation do
   describe "#get" do
     it "makes a HTTP GET request using call on client" do
       url_template = ::Addressable::Template.new("http://example.com/photos/{foo.photos}")
-      expect(client).to receive(:call).with(:get, url_template, {fields: [:name, :description]}, {})
+      expect(client).to receive(:call).with(:get, url_template, { fields: [:name, :description] }, {})
       relation.get(fields: [:name, :description])
     end
   end
@@ -36,7 +38,7 @@ describe BookingSync::API::Relation do
   describe "#post" do
     it "makes a HTTP POST request using call on client" do
       url_template = ::Addressable::Template.new("http://example.com/photos/{foo.photos}")
-      expect(client).to receive(:call).with(:post, url_template, {fields: [:name, :description]}, {})
+      expect(client).to receive(:call).with(:post, url_template, { fields: [:name, :description] }, {})
       relation.post(fields: [:name, :description])
     end
   end

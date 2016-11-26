@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe BookingSync::API::Client::Bathrooms do
-
   let(:client) { BookingSync::API::Client.new(test_access_token) }
 
   describe ".bathrooms", :vcr do
@@ -19,10 +18,12 @@ describe BookingSync::API::Client::Bathrooms do
   end
 
   describe ".create_bathroom", :vcr do
-    let(:attributes) {{
-      name_en: "New bathroom",
-      wc: true
-    }}
+    let(:attributes) do
+      {
+        name_en: "New bathroom",
+        wc: true
+      }
+    end
     let(:rental) { BookingSync::API::Resource.new(client, id: 5116) }
 
     it "creates a new bathroom" do
@@ -32,9 +33,9 @@ describe BookingSync::API::Client::Bathrooms do
     end
 
     it "returns newly created bathroom" do
-      VCR.use_cassette('BookingSync_API_Client_Bathrooms/_create_bathroom/creates_a_new_bathroom') do
+      VCR.use_cassette("BookingSync_API_Client_Bathrooms/_create_bathroom/creates_a_new_bathroom") do
         bathroom = client.create_bathroom(rental, attributes)
-        expect(bathroom.name).to eql({ en: "New bathroom" })
+        expect(bathroom.name).to eql(en: "New bathroom")
         expect(bathroom.wc).to eql(attributes[:wc])
       end
     end
@@ -52,10 +53,10 @@ describe BookingSync::API::Client::Bathrooms do
     end
 
     it "returns updated bathroom" do
-      VCR.use_cassette('BookingSync_API_Client_Bathrooms/_edit_bathroom/updates_given_bathroom_by_ID') do
+      VCR.use_cassette("BookingSync_API_Client_Bathrooms/_edit_bathroom/updates_given_bathroom_by_ID") do
         bathroom = client.edit_bathroom(729, attributes)
         expect(bathroom).to be_kind_of(BookingSync::API::Resource)
-        expect(bathroom.name).to eq({ en: "Updated bathroom", fr: "Salle de bain 1" })
+        expect(bathroom.name).to eq(en: "Updated bathroom", fr: "Salle de bain 1")
       end
     end
   end

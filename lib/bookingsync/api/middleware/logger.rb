@@ -1,4 +1,4 @@
-require 'forwardable'
+require "forwardable"
 
 module BookingSync::API::Middleware
   # Provides logger for request and responses made by API Client.
@@ -20,13 +20,13 @@ module BookingSync::API::Middleware
 
     def call(env)
       info "Request #{env.method.upcase} #{env.url.to_s}"
-      debug('Request headers') { dump_headers env.request_headers }
-      debug('Request body') { dump_body env.body }
+      debug("Request headers") { dump_headers env.request_headers }
+      debug("Request body") { dump_body env.body }
       @app.call(env).tap do |response|
         info "Response X-Request-Id: #{env.response_headers['X-Request-Id']} #{env.method.upcase} #{env.url.to_s}"
-        debug('Response headers') { dump_headers response.env.response_headers }
-        debug('Response status') { response.env.status }
-        debug('Response body') { dump_body response.env.body }
+        debug("Response headers") { dump_headers response.env.response_headers }
+        debug("Response status") { response.env.status }
+        debug("Response body") { dump_body response.env.body }
       end
     end
 

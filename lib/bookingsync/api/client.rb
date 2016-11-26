@@ -213,7 +213,7 @@ module BookingSync::API
         @pagination_first_response = response
         data = response.resources.dup
 
-        if (block_given? or auto_paginate) && response.relations[:next]
+        if (block_given? || auto_paginate) && response.relations[:next]
           first_request = true
           loop do
             if block_given?
@@ -223,7 +223,7 @@ module BookingSync::API
               first_request = false
             end
             break unless response.relations[:next]
-            response = response.relations[:next].call({}, method: request_method)
+            response = response.relations[:next].call({}, { method: request_method })
           end
         end
 
@@ -251,7 +251,7 @@ module BookingSync::API
 
         if options.has_key?(:query)
           if options[:query].has_key?(:ids)
-            ids = Array(options[:query].delete(:ids)).join(',')
+            ids = Array(options[:query].delete(:ids)).join(",")
             path = "#{path}/#{ids}"
           end
           options[:query].keys.each do |key|

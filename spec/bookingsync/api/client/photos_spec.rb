@@ -20,14 +20,14 @@ describe BookingSync::API::Client::Photos do
 
   describe ".create_photo", :vcr do
     let(:attributes) do
-      {photo_path: "spec/fixtures/files/test.jpg",
-        description_en: "Funny", kind: "livingroom"}
+      { photo_path: "spec/fixtures/files/test.jpg",
+        description_en: "Funny", kind: "livingroom" }
     end
 
     it "creates a photo with photo path" do
       photo = client.create_photo(rental, attributes)
       assert_requested :post, bs_url("rentals/2/photos"),
-        body: {photos: [attributes]}.to_json
+        body: { photos: [attributes] }.to_json
       expect(photo.kind).to eq("livingroom")
     end
 
@@ -35,7 +35,7 @@ describe BookingSync::API::Client::Photos do
       encoded = Base64.encode64(File.read("spec/fixtures/files/test.jpg"))
       photo = client.create_photo(rental, photo: encoded, kind: "livingroom")
       assert_requested :post, bs_url("rentals/2/photos"),
-        body: {photos: [photo: encoded, kind: "livingroom"]}.to_json
+        body: { photos: [photo: encoded, kind: "livingroom"] }.to_json
       expect(photo.kind).to eq("livingroom")
     end
 
@@ -44,12 +44,12 @@ describe BookingSync::API::Client::Photos do
       photo = client.create_photo(rental, remote_photo_url: remote_url,
         kind: "livingroom")
       assert_requested :post, bs_url("rentals/2/photos"),
-        body: {photos: [remote_photo_url: remote_url, kind: "livingroom"]}.to_json
+        body: { photos: [remote_photo_url: remote_url, kind: "livingroom"] }.to_json
       expect(photo.kind).to eq("livingroom")
     end
 
     it "returns newly created photo" do
-      VCR.use_cassette('BookingSync_API_Client_Photos/_create_photo/creates_a_photo') do
+      VCR.use_cassette("BookingSync_API_Client_Photos/_create_photo/creates_a_photo") do
         photo = client.create_photo(rental, attributes)
         expect(photo.kind).to eq("livingroom")
         expect(photo.description.en).to eq("Funny")

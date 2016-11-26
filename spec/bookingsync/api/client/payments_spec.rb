@@ -18,19 +18,16 @@ describe BookingSync::API::Client::Payments do
   end
 
   describe ".create_payment", :vcr do
-    let(:attributes) {{
-      amount: 200,
-      kind: 'cash'
-    }}
+    let(:attributes) { { amount: 200, kind: "cash" } }
 
     it "creates a new payment" do
       api.create_payment(1, attributes)
       assert_requested :post, bs_url("payments"),
-        body: { booking_id: 1, payments: [attributes]}.to_json
+        body: { booking_id: 1, payments: [attributes] }.to_json
     end
 
     it "returns newly created payment" do
-      VCR.use_cassette('BookingSync_API_Client_Payments/_create_payment/creates_a_new_payment') do
+      VCR.use_cassette("BookingSync_API_Client_Payments/_create_payment/creates_a_new_payment") do
         payment = api.create_payment(1, attributes)
         expect(payment.amount).to eql(200)
         expect(payment.kind).to eql("cash")
@@ -40,16 +37,16 @@ describe BookingSync::API::Client::Payments do
 
   describe ".edit_payment", :vcr do
     it "updates given payment by ID" do
-      api.edit_payment(2, kind: 'cash')
+      api.edit_payment(2, kind: "cash")
       assert_requested :put, bs_url("payments/2"),
-        body: {payments: [{kind: 'cash'}]}.to_json
+        body: { payments: [{ kind: "cash" }] }.to_json
     end
 
     it "returns updated payment" do
-      VCR.use_cassette('BookingSync_API_Client_Payments/_edit_payment/updates_given_payment_by_ID') do
-        payment = api.edit_payment(2, kind: 'cash')
+      VCR.use_cassette("BookingSync_API_Client_Payments/_edit_payment/updates_given_payment_by_ID") do
+        payment = api.edit_payment(2, kind: "cash")
         expect(payment).to be_kind_of(BookingSync::API::Resource)
-        expect(payment.kind).to eq('cash')
+        expect(payment.kind).to eq("cash")
       end
     end
   end

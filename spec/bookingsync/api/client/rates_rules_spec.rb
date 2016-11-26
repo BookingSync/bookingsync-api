@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe BookingSync::API::Client::RatesRules do
-
   let(:client) { BookingSync::API::Client.new(test_access_token) }
 
   describe ".rates_rules", :vcr do
@@ -37,7 +36,7 @@ describe BookingSync::API::Client::RatesRules do
     end
 
     it "returns newly created rates_rule" do
-      VCR.use_cassette('BookingSync_API_Client_RatesRules/_create_rates_rule/creates_a_new_rates_rule') do
+      VCR.use_cassette("BookingSync_API_Client_RatesRules/_create_rates_rule/creates_a_new_rates_rule") do
         rates_rule = client.create_rates_rule(rates_table, attributes)
         expect(rates_rule.start_date).to eql(Time.parse(attributes[:start_date]))
         expect(rates_rule.end_date).to eql(Time.parse(attributes[:end_date]))
@@ -46,7 +45,7 @@ describe BookingSync::API::Client::RatesRules do
   end
 
   describe ".edit_rates_rule", :vcr do
-    let(:attributes) { { end_date: '2014-07-15' } }
+    let(:attributes) { { end_date: "2014-07-15" } }
 
     it "updates given rates_rule by ID" do
       client.edit_rates_rule(252, attributes)
@@ -55,7 +54,7 @@ describe BookingSync::API::Client::RatesRules do
     end
 
     it "returns updated rates_rule" do
-      VCR.use_cassette('BookingSync_API_Client_RatesRules/_edit_rates_rule/updates_given_rates_rule_by_ID') do
+      VCR.use_cassette("BookingSync_API_Client_RatesRules/_edit_rates_rule/updates_given_rates_rule_by_ID") do
         rates_rule = client.edit_rates_rule(252, attributes)
         expect(rates_rule).to be_kind_of(BookingSync::API::Resource)
         expect(rates_rule.end_date).to eq(Time.parse(attributes[:end_date]))

@@ -34,9 +34,9 @@ describe BookingSync::API::Client::Fees do
     end
 
     it "returns newly created fee" do
-      VCR.use_cassette('BookingSync_API_Client_Fees/_create_fee/creates_a_new_fee') do
+      VCR.use_cassette("BookingSync_API_Client_Fees/_create_fee/creates_a_new_fee") do
         fee = client.create_fee(attributes)
-        expect(fee.name).to eq({ en: "New fee" })
+        expect(fee.name).to eq(en: "New fee")
         expect(fee.rate).to eq "10.0"
         expect(fee.rate_kind).to eq "fixed"
         expect(fee.downpayment_percentage).to eq "10.0"

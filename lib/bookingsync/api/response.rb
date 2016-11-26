@@ -76,9 +76,9 @@ module BookingSync::API
     end
 
     def process_rels
-      links = ( @headers["Link"] || "" ).split(', ').map do |link|
+      links = (@headers["Link"] || "").split(", ").map do |link|
         href, name = link.match(/<(.*?)>; rel="(\w+)"/).captures
-        [name.to_sym, Relation.from_link(@client, name, :href => href)]
+        [name.to_sym, Relation.from_link(@client, name, href: href)]
       end
       Hash[*links.flatten]
     end

@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe BookingSync::API::Client::RatesTables do
-
   let(:client) { BookingSync::API::Client.new(test_access_token) }
 
   describe ".rates_tables", :vcr do
@@ -20,7 +19,7 @@ describe BookingSync::API::Client::RatesTables do
 
   describe ".create_rates_table", :vcr do
     let(:attributes) {
-      { name: 'New rate table' }
+      { name: "New rate table" }
     }
 
     it "creates a new rates_table" do
@@ -30,7 +29,7 @@ describe BookingSync::API::Client::RatesTables do
     end
 
     it "returns newly created rates_table" do
-      VCR.use_cassette('BookingSync_API_Client_RatesTables/_create_rates_table/creates_a_new_rates_table') do
+      VCR.use_cassette("BookingSync_API_Client_RatesTables/_create_rates_table/creates_a_new_rates_table") do
         rates_table = client.create_rates_table(attributes)
         expect(rates_table.name).to eql(attributes[:name])
       end
@@ -39,7 +38,7 @@ describe BookingSync::API::Client::RatesTables do
 
   describe ".edit_rates_table", :vcr do
     let(:attributes) {
-      { name: 'Updated rate table' }
+      { name: "Updated rate table" }
     }
 
     it "updates given rates_table by ID" do
@@ -49,7 +48,7 @@ describe BookingSync::API::Client::RatesTables do
     end
 
     it "returns updated rates_table" do
-      VCR.use_cassette('BookingSync_API_Client_RatesTables/_edit_rates_table/updates_given_rates_table_by_ID') do
+      VCR.use_cassette("BookingSync_API_Client_RatesTables/_edit_rates_table/updates_given_rates_table_by_ID") do
         rates_table = client.edit_rates_table(11, attributes)
         expect(rates_table).to be_kind_of(BookingSync::API::Resource)
         expect(rates_table.name).to eql(attributes[:name])

@@ -27,7 +27,7 @@ describe BookingSync::API::Client::NightlyRateMaps do
     end
 
     it "returns updated nightly_rate_map" do
-      VCR.use_cassette('BookingSync_API_Client_NightlyRateMaps/_edit_nightly_rate_map/updates_given_nightly_rate_map_by_ID') do
+      VCR.use_cassette("BookingSync_API_Client_NightlyRateMaps/_edit_nightly_rate_map/updates_given_nightly_rate_map_by_ID") do
         nightly_rate_map = client.edit_nightly_rate_map(2, attributes)
         expect(nightly_rate_map).to be_kind_of(BookingSync::API::Resource)
         expect(nightly_rate_map.rates_map).to eq attributes[:rates_map]

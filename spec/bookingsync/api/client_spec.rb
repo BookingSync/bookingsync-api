@@ -29,7 +29,7 @@ describe BookingSync::API::Client do
     before { VCR.turn_off! }
     it "makes a HTTP POST request with body" do
       stub_post("resource")
-      client.post("resource", {key: :value})
+      client.post("resource", key: :value)
       assert_requested :post, bs_url("resource"), body: '{"key":"value"}'
     end
 
@@ -38,7 +38,7 @@ describe BookingSync::API::Client do
         stub_post("resource", status: 422, body: { errors: { country_code:
           ["is required"] } }.to_json)
         expect {
-          client.post("resource", { key: :value })
+          client.post("resource", key: :value)
         }.to raise_error(BookingSync::API::UnprocessableEntity) { |error|
           expect(error.message).to include '{"errors":{"country_code":["is required"]}}'
         }
@@ -50,7 +50,7 @@ describe BookingSync::API::Client do
     before { VCR.turn_off! }
     it "makes a HTTP PUT request with body" do
       stub_put("resource")
-      client.put("resource", {key: :value})
+      client.put("resource", key: :value)
       assert_requested :put, bs_url("resource"), body: '{"key":"value"}'
     end
   end
@@ -67,7 +67,7 @@ describe BookingSync::API::Client do
   describe "#request" do
     context "on response which responds to :resources" do
       it "returns an array of resources" do
-        stub_get("resource", body: {resources: [{name: "Megan"}]}.to_json)
+        stub_get("resource", body: { resources: [{ name: "Megan" }] }.to_json)
         resources = client.request(:get, "resource")
         expect(resources).to be_kind_of(Array)
         expect(resources.first.name).to eq("Megan")
@@ -92,25 +92,25 @@ describe BookingSync::API::Client do
       stub_get("resource")
       client.call(:get, "resource")
       assert_requested :get, bs_url("resource"),
-        headers: {"Authorization" => "Bearer fake-access-token"}
+        headers: { "Authorization" => "Bearer fake-access-token" }
     end
 
     it "requests proper accept header for JSON API" do
       stub_get("resource")
       client.call(:get, "resource")
       assert_requested :get, bs_url("resource"),
-        headers: {"Accept" => "application/vnd.api+json"}
+        headers: { "Accept" => "application/vnd.api+json" }
     end
 
     it "requests sends data with JSON API content type" do
       stub_post("resource")
       client.call(:post, "resource")
       assert_requested :post, bs_url("resource"),
-        headers: {"Content-Type" => "application/vnd.api+json"}
+        headers: { "Content-Type" => "application/vnd.api+json" }
     end
 
     it "returns an Response object of resources" do
-      attributes = {resources: [{name: "Megan"}]}
+      attributes = { resources: [{ name: "Megan" }] }
       stub_post("resource", body: attributes.to_json)
       response = client.call(:post, "resource", attributes)
       expect(response).to be_kind_of(BookingSync::API::Response)
@@ -120,8 +120,8 @@ describe BookingSync::API::Client do
       stub_get("resource", body: {}.to_json)
       response = client.call(:get, "resource")
       assert_requested :get, bs_url("resource"),
-        headers: {"User-Agent" =>
-          "BookingSync API gem v#{BookingSync::API::VERSION}"}
+        headers: { "User-Agent" =>
+          "BookingSync API gem v#{BookingSync::API::VERSION}" }
     end
 
     context "API returns 401" do
@@ -168,7 +168,7 @@ describe BookingSync::API::Client do
           client.get("resource")
         }.to raise_error(BookingSync::API::UnsupportedResponse) { |error|
           expect(error.status).to eql(405)
-          expect(error.headers).to eq({ "content-type" => "application/vnd.api+json" })
+          expect(error.headers).to eq("content-type" => "application/vnd.api+json")
           expect(error.body).to eq("Whoops!")
           expect(error.message).to include("Received unsupported response from BookingSync API")
         }
@@ -207,7 +207,7 @@ describe BookingSync::API::Client do
     context "user passes additional query options" do
       it "constructs url with query options" do
         stub_get("resource?months=12&status=booked,unavailable")
-        client.get("resource", status: [:booked, :unavailable], months: '12')
+        client.get("resource", status: [:booked, :unavailable], months: "12")
         assert_requested :get, bs_url("resource?months=12&status=booked,unavailable")
       end
     end
@@ -241,7 +241,7 @@ describe BookingSync::API::Client do
 
     it "uses logger provided by user" do
       client = BookingSync::API::Client.new(test_access_token, logger: logger)
-      stub_get("resources", body: {"resources" => [{id: 1}, {id: 2}]}.to_json)
+      stub_get("resources", body: { "resources" => [{ id: 1 }, { id: 2 }] }.to_json)
       client.get("resources")
       messages = log.rewind && log.read
       expect(messages).to include("GET https://www.bookingsync.com/api/v3/resources")
@@ -263,7 +263,7 @@ describe BookingSync::API::Client do
     it "logs X-Request-Id from headers" do
       client = BookingSync::API::Client.new(test_access_token, logger: logger)
       stub_get("resources", body: {}.to_json,
-        headers: {'X-Request-Id' => "021bfb82"})
+        headers: { "X-Request-Id" => "021bfb82" })
       client.get("resources")
 
       messages = log.rewind && log.read
@@ -273,7 +273,7 @@ describe BookingSync::API::Client do
 
   describe "#last_response" do
     it "returns last response" do
-      stub_get("resources", body: {meta: {count: 10}, resources: []}.to_json)
+      stub_get("resources", body: { meta: { count: 10 }, resources: [] }.to_json)
       client.get("resources")
       expect(client.last_response.meta).to eql(count: 10)
     end
@@ -281,8 +281,8 @@ describe BookingSync::API::Client do
 
   context "pagination" do
     before do
-      stub_get("resources", headers: { "Link" => '<resources?page=2>; rel="next"' }, body: {meta: {text: "first request"}, resources: []}.to_json)
-      stub_get("resources?page=2", body: {meta: {text: "second request"}, resources: []}.to_json)
+      stub_get("resources", headers: { "Link" => '<resources?page=2>; rel="next"' }, body: { meta: { text: "first request" }, resources: [] }.to_json)
+      stub_get("resources?page=2", body: { meta: { text: "second request" }, resources: [] }.to_json)
     end
 
     describe "#pagination_first_response" do

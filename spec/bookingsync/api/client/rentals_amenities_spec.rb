@@ -40,9 +40,9 @@ describe BookingSync::API::Client::RentalsAmenities do
     end
 
     it "returns newly created rentals_amenity" do
-      VCR.use_cassette('BookingSync_API_Client_RentalsAmenities/_create_rentals_amenity/creates_a_new_rentals_amenity') do
+      VCR.use_cassette("BookingSync_API_Client_RentalsAmenities/_create_rentals_amenity/creates_a_new_rentals_amenity") do
         rentals_amenity = client.create_rentals_amenity(rental, attributes)
-        expect(rentals_amenity.details).to eq({ en: "Details" })
+        expect(rentals_amenity.details).to eq(en: "Details")
       end
     end
   end
@@ -57,10 +57,10 @@ describe BookingSync::API::Client::RentalsAmenities do
     end
 
     it "returns updated rentals_amenity" do
-      VCR.use_cassette('BookingSync_API_Client_RentalsAmenities/_edit_rentals_amenity/updates_given_rentals_amenity_by_ID') do
+      VCR.use_cassette("BookingSync_API_Client_RentalsAmenities/_edit_rentals_amenity/updates_given_rentals_amenity_by_ID") do
         rentals_amenity = client.edit_rentals_amenity(6159, attributes)
         expect(rentals_amenity).to be_kind_of(BookingSync::API::Resource)
-        expect(rentals_amenity.details).to eq({ en: "New Details" })
+        expect(rentals_amenity.details).to eq(en: "New Details")
       end
     end
   end

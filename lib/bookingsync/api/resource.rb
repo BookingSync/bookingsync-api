@@ -69,7 +69,7 @@ module BookingSync::API
 
     def extract_resources(ids, association_key, uri_association_key, *args)
       return [] if ids.empty?
-      options = {uri: {uri_association_key => ids}}
+      options = { uri: { uri_association_key => ids } }
       options.merge!(query: args.first) if args.first.is_a?(Hash)
       @_rels[association_key].get(options).resources
     end

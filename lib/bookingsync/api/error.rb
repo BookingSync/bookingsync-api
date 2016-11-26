@@ -10,7 +10,7 @@ module BookingSync::API
     end
 
     def message(message = self.class)
-      %Q{#{message}
+      %{#{message}
 HTTP status code : #{status}
 Headers          : #{headers}
 Body             : #{body}}

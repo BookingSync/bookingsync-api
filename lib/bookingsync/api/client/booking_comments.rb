@@ -41,7 +41,7 @@ module BookingSync::API
       # @api.create_booking_comment(1, content: "Hello!")
       # => {:links=>{:booking=>1}, :id=>8, :content=>"Hello!", :editable=>true, :created_at=>2016-04-18 13:31:40 UTC, :updated_at=>2016-04-18 13:46:06 UTC}
       def create_booking_comment(booking, options = {})
-        post("booking_comments", { booking_id: booking, booking_comments: [options] }).pop
+        post("booking_comments", booking_id: booking, booking_comments: [options]).pop
       end
 
       # Edit a booking_comment
