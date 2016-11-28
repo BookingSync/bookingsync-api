@@ -211,7 +211,8 @@ module BookingSync::API
           response = call(request_method, path, options)
         end
         @pagination_first_response = response
-        data = response.resources.dup
+        data = []
+        data.concat(response.resources)
 
         if (block_given? || auto_paginate) && response.relations[:next]
           first_request = true
