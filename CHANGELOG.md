@@ -2,6 +2,8 @@
 
 ## master
 
+- Drop support for `preferences_payments`
+
 ## 0.1.3
 
 - Expose pagination_first_request to easily retrieve right timestamps for updated since syncs.
