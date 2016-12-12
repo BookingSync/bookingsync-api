@@ -18,7 +18,7 @@ describe BookingSync::API::Response do
   let(:client) do
     BookingSync::API::Client.new(test_access_token,
       base_url: "http://foo.com") do |conn|
-      conn.builder.handlers.delete(Faraday::Adapter::NetHttp)
+      conn.builder.handlers.delete(Faraday::Adapter::NetHttpPersistent)
       conn.adapter :test, @stubs do |stub|
         stub.get "/rentals" do
           body = { links: links, rentals: rentals,
