@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://bookingsync.dev/api/v3/booking_comments
+    uri: https://www.bookingsync.com/api/v3/booking_comments
     body:
       encoding: UTF-8
-      string: '{"booking_id":1,"booking_comments":[{"content":"Example conent"}]}'
+      string: '{"booking_id":817604,"booking_comments":[{"content":"Example content"}]}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.35
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,47 +22,62 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 15:48:45 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 15:48:45 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1461074400'
+      - '1481212800'
       X-Ratelimit-Remaining:
-      - '984'
+      - '965'
+      Link:
+      - <https://www.bookingsync.com/api/v3/booking_comments?booking_comments%5B%5D%5Bcontent%5D=Example+content&booking_id=817604&page=1>;
+        rel="first"
+      X-Per-Page:
+      - '100'
       Location:
-      - http://bookingsync.dev/api/v3/booking_comments/14
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
+      - https://www.bookingsync.com/api/v3/booking_comments/92650
       Etag:
-      - '"edb232ad4b3b70600d8eb833e5224653"'
+      - W/"cff6b15a4c6a3a52158f8ffa83a1cb83"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - ahoy_track=true; path=/
-      - ahoy_visit=e228e349-faa3-4a1f-bd6a-676c34f31321; path=/; expires=Tue, 26 Apr
-        2016 13:53:13 -0000
-      - ahoy_visitor=e72a12e0-df0a-469a-9989-e569f8385c8d; path=/; expires=Thu, 19
-        Apr 2018 13:53:13 -0000
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=115b3814-efe8-414f-a847-fe50630a0072; path=/; expires=Thu, 15 Dec
+        2016 15:48:45 -0000; secure
+      - ahoy_visitor=302673b9-22f0-4d0d-ae14-3eef9769eee9; path=/; expires=Sat, 08
+        Dec 2018 15:48:45 -0000; secure
       X-Request-Id:
-      - 7bebccb7-e580-4324-9e47-3dc7baeb1424
+      - 167cb10a-8086-44dd-b7ae-07d70521f916
       X-Runtime:
-      - '0.075471'
-      Date:
-      - Tue, 19 Apr 2016 13:53:13 GMT
-      Connection:
-      - close
+      - '0.047114'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"booking_comments.booking":"http://bookingsync.dev/api/v3/bookings/{booking_comments.booking}"},"booking_comments":[{"links":{"booking":1},"id":14,"content":"Example
-        conent","editable":true,"created_at":"2016-04-19T13:53:13Z","updated_at":"2016-04-19T13:53:13Z"}],"meta":{}}'
+      string: '{"links":{"booking_comments.account":"https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}","booking_comments.booking":"https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"},"booking_comments":[{"links":{"account":3837,"booking":817604},"id":92650,"content":"Example
+        content","editable":true,"created_at":"2016-12-08T15:48:45Z","updated_at":"2016-12-08T15:48:45Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Tue, 19 Apr 2016 13:53:13 GMT
-recorded_with: VCR 3.0.1
+  recorded_at: Thu, 08 Dec 2016 15:48:45 GMT
+recorded_with: VCR 3.0.3

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://www.bookingsync.com/api/v3/special_offers/4
+    uri: https://www.bookingsync.com/api/v3/special_offers/4653
     body:
       encoding: UTF-8
       string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,36 +22,48 @@ http_interactions:
       code: 204
       message: No Content
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 14:44:50 GMT
+      Connection:
+      - keep-alive
+      Status:
+      - 204 No Content
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 14:44:50 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1398430800'
+      - '1481295600'
       X-Ratelimit-Remaining:
-      - '989'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      X-Ua-Compatible:
-      - IE=Edge
+      - '987'
       Cache-Control:
       - no-cache
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=3d9ce62d1fc73f733d6170dcd816418a; path=/; secure; HttpOnly
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=1b7cc50a-f69c-47b4-8e77-0df38891d01a; path=/; expires=Fri, 16 Dec
+        2016 14:44:50 -0000; secure
+      - ahoy_visitor=105461b1-d0da-4ac0-a091-fce1a69cc75a; path=/; expires=Sun, 09
+        Dec 2018 14:44:50 -0000; secure
       X-Request-Id:
-      - abc5bb865d2701fb9f92323f24158792
+      - 4bd882aa-e02c-4e61-931e-91c281e142bf
       X-Runtime:
-      - '0.109782'
-      Date:
-      - Fri, 25 Apr 2014 12:51:30 GMT
-      Connection:
-      - close
+      - '0.062463'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
       string: ''
-    http_version:
-  recorded_at: Fri, 25 Apr 2014 12:51:30 GMT
-recorded_with: VCR 2.9.0
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 14:44:50 GMT
+recorded_with: VCR 3.0.3

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/bookings/114760?include_canceled=true
+    uri: https://www.bookingsync.com/api/v3/bookings/817798?include_canceled=true
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.26
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 26 Jul 2015 14:41:39 GMT
+      - Thu, 08 Dec 2016 16:30:30 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,30 +34,32 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 16:30:30 UTC
       X-Ratelimit-Limit:
-      - '5000'
+      - '1000'
       X-Ratelimit-Reset:
-      - '1437922800'
+      - '1481216400'
       X-Ratelimit-Remaining:
-      - '4991'
+      - '990'
       Link:
-      - <https://www.bookingsync.com/api/v3/bookings/114760?include_canceled=true&page=1>;
-        rel="first", <https://www.bookingsync.com/api/v3/bookings/114760?include_canceled=true&page=1>;
+      - <https://www.bookingsync.com/api/v3/bookings/817798?include_canceled=true&page=1>;
+        rel="first", <https://www.bookingsync.com/api/v3/bookings/817798?include_canceled=true&page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
       X-Total-Count:
       - '1'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"6580e5cc4becab5179a97144480cd2a8"'
+      - W/"b28659ab106fbe2c6bb8dc53ed18f38f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -65,18 +67,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=4d25535b-4282-48d5-8d0e-e4e0c89ae456; path=/; expires=Sun, 02 Aug
-        2015 14:41:39 -0000; secure
-      - ahoy_visitor=61b23df6-ce60-4fd6-9483-93d2b1b7de52; path=/; expires=Wed, 26
-        Jul 2017 14:41:39 -0000; secure
+      - ahoy_visit=2180a170-6121-452e-81d2-f8080368f67a; path=/; expires=Thu, 15 Dec
+        2016 16:30:30 -0000; secure
+      - ahoy_visitor=8bef9ea4-cedf-4f0b-a6b1-e15649164fb3; path=/; expires=Sat, 08
+        Dec 2018 16:30:30 -0000; secure
       X-Request-Id:
-      - ad1ae3ef-a18e-4c15-a7d0-9f2b322b1e5f
+      - e1f65022-441f-4277-8d40-b706f622b98f
       X-Runtime:
-      - '0.107455'
+      - '0.101153'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"bookings.account":"https://www.bookingsync.com/api/v3/accounts/{bookings.account}","bookings.rental":"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}","bookings.client":"https://www.bookingsync.com/api/v3/clients/{bookings.client}","bookings.rental_agreement":"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}","bookings.source":"https://www.bookingsync.com/api/v3/sources/{bookings.source}","bookings.bookings_fees":"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}","bookings.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}"},"bookings":[{"links":{"account":4516,"rental":7314,"client":61311,"rental_agreement":null,"source":null,"bookings_fees":[],"bookings_taxes":[]},"id":114760,"start_at":"2015-07-19T16:00:00Z","end_at":"2015-07-31T10:00:00Z","status":"Canceled","updated_at":"2015-06-12T12:58:00Z","booked":false,"unavailable":false,"tentative_expires_at":null,"initial_price":"5000.0","initial_rental_price":"5000.0","discount":null,"final_rental_price":"5000.0","final_price":"5000.0","downpayment":null,"paid_amount":"0.0","currency":"EUR","notes":"Birthday
-        celebration","adults":1,"children":null,"bookings_payments_count":0,"review_requests_count":0,"locked":null,"created_at":"2015-03-08T00:31:56Z","canceled_at":"2015-03-12T00:31:56Z","expected_checkin_time":null,"expected_checkout_time":null,"owned_by_app":false}],"meta":{}}'
+      string: '{"links":{"bookings.account":"https://www.bookingsync.com/api/v3/accounts/{bookings.account}","bookings.rental":"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}","bookings.client":"https://www.bookingsync.com/api/v3/clients/{bookings.client}","bookings.rental_agreement":"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}","bookings.source":"https://www.bookingsync.com/api/v3/sources/{bookings.source}","bookings.inquiry":"https://www.bookingsync.com/api/v3/inquiries/{bookings.inquiry}","bookings.booking_comments":"https://www.bookingsync.com/api/v3/booking_comments/{bookings.booking_comments}","bookings.bookings_fees":"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}","bookings.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}","bookings.payments":"https://www.bookingsync.com/api/v3/payments/{bookings.payments}","bookings.bookings_payments":"https://www.bookingsync.com/api/v3/bookings_payments/{bookings.bookings_payments}","bookings.bookings_tags":"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"},"bookings":[{"links":{"account":3837,"rental":5116,"client":null,"rental_agreement":6905,"source":null,"inquiry":null,"booking_comments":[],"bookings_fees":[],"bookings_taxes":[],"payments":[],"bookings_payments":[],"bookings_tags":[]},"id":817798,"start_at":"2017-01-03T00:00:00Z","end_at":"2019-03-25T21:45:00Z","status":"Canceled","updated_at":"2016-12-06T12:55:59Z","reference":"00HJ0M","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":null,"initial_rental_price":null,"channel_price":null,"discount":"","final_rental_price":"0.0","final_price":null,"downpayment":null,"paid_amount":"0.0","currency":"USD","notes":null,"damage_deposit":"0.0","charge_damage_deposit_on_arrival":true,"adults":null,"children":null,"bookings_payments_count":0,"review_requests_count":0,"locked":"doorkeeper/application-17","created_at":"2016-12-06T12:47:11Z","canceled_at":"2016-12-06T12:55:59Z","expected_checkin_time":null,"expected_checkout_time":null,"payment_url":null,"balance_due_at":"2016-12-06T12:47:11Z","payback_to_owner":null,"commission":null,"contract_updated_at":null,"owned_by_app":true}],"meta":{}}'
     http_version: 
-  recorded_at: Sun, 26 Jul 2015 14:41:40 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Thu, 08 Dec 2016 16:30:30 GMT
+recorded_with: VCR 3.0.3

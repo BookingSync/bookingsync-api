@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/payment_gateways/1
+    uri: https://www.bookingsync.com/api/v3/payment_gateways/766
     body:
       encoding: UTF-8
       string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.1.1
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,53 +22,63 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 18:20:23 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 18:20:22 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1473159600'
+      - '1481223600'
       X-Ratelimit-Remaining:
-      - '998'
+      - '985'
       Link:
-      - <http://bookingsync.dev/api/v3/payment_gateways/1?page=1>; rel="first", <http://bookingsync.dev/api/v3/payment_gateways/1?page=1>;
-        rel="last"
+      - <https://www.bookingsync.com/api/v3/payment_gateways/766?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/payment_gateways/766?page=1>; rel="last"
       X-Total-Pages:
       - '1'
       X-Total-Count:
       - '1'
       X-Per-Page:
       - '100'
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
       Etag:
-      - W/"662823924c0a75e10796bdfbaff46e32"
+      - W/"151aad60447b8f2eb513c0ab676d499b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - ahoy_track=true; path=/
-      - ahoy_visit=f730361d-7f2d-48f2-b3bd-577c8190a7b2; path=/; expires=Tue, 13 Sep
-        2016 10:20:00 -0000
-      - ahoy_visitor=66a99fc6-1133-4a4f-be57-a503f7c69cd9; path=/; expires=Thu, 06
-        Sep 2018 10:20:00 -0000
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=98d6e617-2550-4d7c-81c3-60ce9e050444; path=/; expires=Thu, 15 Dec
+        2016 18:20:22 -0000; secure
+      - ahoy_visitor=ec7a0c90-b330-4841-9599-723aa0e5991d; path=/; expires=Sat, 08
+        Dec 2018 18:20:22 -0000; secure
       X-Request-Id:
-      - 9e10748a-5a9e-4b34-9fcf-3e01f1469c5b
+      - 805bbcbf-b042-4b87-a58a-b6cc4fe0bd3a
       X-Runtime:
-      - '0.077369'
-      Date:
-      - Tue, 06 Sep 2016 10:20:00 GMT
-      Connection:
-      - close
+      - '0.031437'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"payment_gateways":[{"id":1,"test":true,"gateway_name":"bogus","credentials":{},"supported_cardtypes":["bogus"],"supported_currencies":["EUR","USD","AUD"],"created_at":"2016-09-05T14:09:15Z","updated_at":"2016-09-05T14:09:15Z"}]}'
-    http_version:
-  recorded_at: Tue, 06 Sep 2016 10:20:00 GMT
-recorded_with: VCR 3.0.0
+      string: '{"links":{"payment_gateways.account":"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"},"payment_gateways":[{"links":{"account":3837},"id":766,"test":true,"gateway_name":"bogus","credentials":{},"supported_cardtypes":["bogus"],"supported_currencies":["USD"],"created_at":"2016-12-06T10:02:22Z","updated_at":"2016-12-06T10:26:36Z"}]}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 18:20:23 GMT
+recorded_with: VCR 3.0.3

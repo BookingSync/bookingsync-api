@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://www.bookingsync.com/api/v3/rates_tables/7
+    uri: https://www.bookingsync.com/api/v3/rates_tables/84094
     body:
       encoding: UTF-8
       string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,36 +22,48 @@ http_interactions:
       code: 204
       message: No Content
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 09:24:28 GMT
+      Connection:
+      - keep-alive
+      Status:
+      - 204 No Content
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 09:24:28 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1398423600'
+      - '1481277600'
       X-Ratelimit-Remaining:
-      - '976'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      X-Ua-Compatible:
-      - IE=Edge
+      - '988'
       Cache-Control:
       - no-cache
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=455233a19d0e99cd76e5441d2a46afc5; path=/; secure; HttpOnly
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=45e5dcdd-e1c2-4622-8824-20f4091329fb; path=/; expires=Fri, 16 Dec
+        2016 09:24:28 -0000; secure
+      - ahoy_visitor=c5108691-1b54-4dd7-9f1d-45f8e210f37c; path=/; expires=Sun, 09
+        Dec 2018 09:24:28 -0000; secure
       X-Request-Id:
-      - fa02857c4289672d13ebd0d76ceb5e0c
+      - 2357a47a-8a6e-45fb-b288-ca13e5e97393
       X-Runtime:
-      - '0.077315'
-      Date:
-      - Fri, 25 Apr 2014 10:44:34 GMT
-      Connection:
-      - close
+      - '0.034360'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
       string: ''
-    http_version:
-  recorded_at: Fri, 25 Apr 2014 10:44:34 GMT
-recorded_with: VCR 2.9.0
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 09:24:28 GMT
+recorded_with: VCR 3.0.3

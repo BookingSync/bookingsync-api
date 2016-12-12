@@ -35,7 +35,7 @@ module BookingSync::API
       # @param options [Hash] payment attributes
       # @return [BookingSync::API::Resource] Newly created payment
       def create_payment(booking_id, options = {})
-        post(:payments, booking_id: booking_id, payments: [options]).pop
+        post("bookings/#{booking_id}/payments", payments: [options]).pop
       end
 
       # Edit a payment

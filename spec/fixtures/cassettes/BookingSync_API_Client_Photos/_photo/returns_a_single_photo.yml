@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/photos/5793
+    uri: https://www.bookingsync.com/api/v3/photos/5775
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.29
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 09 Sep 2015 20:22:52 GMT
+      - Fri, 09 Dec 2016 00:39:28 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,29 +34,31 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 00:39:28 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1441832400'
+      - '1481245200'
       X-Ratelimit-Remaining:
-      - '960'
+      - '988'
       Link:
-      - <https://www.bookingsync.com/api/v3/photos/5793?page=1>; rel="first", <https://www.bookingsync.com/api/v3/photos/5793?page=1>;
+      - <https://www.bookingsync.com/api/v3/photos/5775?page=1>; rel="first", <https://www.bookingsync.com/api/v3/photos/5775?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
       X-Total-Count:
       - '1'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"c35696f1c1211f3bb66c729759174d94"'
+      - W/"7911bef6aff8bcc7b4adba7e272ebd9f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,17 +66,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=14a93957-acaf-4fc1-865a-a187dd8542d8; path=/; expires=Wed, 16 Sep
-        2015 20:22:52 -0000; secure
-      - ahoy_visitor=fb271695-12ce-48dc-b1b6-ec890886a612; path=/; expires=Sat, 09
-        Sep 2017 20:22:52 -0000; secure
+      - ahoy_visit=0d0a090f-5299-42af-beb0-2eb31c7b2abf; path=/; expires=Fri, 16 Dec
+        2016 00:39:28 -0000; secure
+      - ahoy_visitor=7dadb0e8-dae3-4085-9497-2d40e5207e8a; path=/; expires=Sun, 09
+        Dec 2018 00:39:28 -0000; secure
       X-Request-Id:
-      - ef15145c-aee1-4cd6-b47a-98107590a667
+      - 2f00e489-413e-4f53-83e6-283271a8c5af
       X-Runtime:
-      - '0.085202'
+      - '0.057027'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"photos.rental":"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"},"photos":[{"links":{"rental":5117},"id":5793,"description":{},"kind":null,"micro_url":"https://res-5.cloudinary.com/bookingsync/image/upload/c_fill,fl_progressive,g_center,h_32,q_90,w_48/v1418041610/4cb2bb4f8bd14003ad3ef47867367512.jpg","thumb_url":"https://res-5.cloudinary.com/bookingsync/image/upload/c_fill,fl_progressive,g_center,h_64,q_90,w_96/v1418041610/4cb2bb4f8bd14003ad3ef47867367512.jpg","small_url":"https://res-5.cloudinary.com/bookingsync/image/upload/c_fill,fl_progressive,g_center,h_128,q_90,w_192/v1418041610/4cb2bb4f8bd14003ad3ef47867367512.jpg","compact_url":"https://res-5.cloudinary.com/bookingsync/image/upload/c_fill,fl_progressive,g_center,h_256,q_90,w_384/v1418041610/4cb2bb4f8bd14003ad3ef47867367512.jpg","medium_url":"https://res-5.cloudinary.com/bookingsync/image/upload/c_fill,fl_progressive,g_center,h_512,q_90,w_768/v1418041610/4cb2bb4f8bd14003ad3ef47867367512.jpg","large_url":"https://res-5.cloudinary.com/bookingsync/image/upload/c_fill,fl_progressive,g_center,h_800,q_90,w_1200/v1418041610/4cb2bb4f8bd14003ad3ef47867367512.jpg","grande_url":"https://res-5.cloudinary.com/bookingsync/image/upload/c_fill,fl_progressive,g_center,h_1024,q_90,w_1536/v1418041610/4cb2bb4f8bd14003ad3ef47867367512.jpg","giant_url":"https://res-5.cloudinary.com/bookingsync/image/upload/c_fill,fl_progressive,g_center,h_1600,q_90,w_2400/v1418041610/4cb2bb4f8bd14003ad3ef47867367512.jpg","position":10,"created_at":"2014-08-08T19:33:22Z","updated_at":"2014-12-08T12:26:48Z"}]}'
+      string: '{"links":{"photos.account":"https://www.bookingsync.com/api/v3/accounts/{photos.account}","photos.rental":"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"},"photos":[{"links":{"account":3837,"rental":5116},"id":5775,"description":{},"kind":null,"micro_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_32,q_90,w_48/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","thumb_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_64,q_90,w_96/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","small_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_128,q_90,w_192/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","compact_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_256,q_90,w_384/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","medium_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_512,q_90,w_768/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","large_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_800,q_90,w_1200/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","grande_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_1024,q_90,w_1536/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","giant_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_1600,q_90,w_2400/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","position":1,"created_at":"2014-08-08T18:48:54Z","updated_at":"2015-11-09T10:11:50Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Wed, 09 Sep 2015 20:22:53 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 09 Dec 2016 00:39:29 GMT
+recorded_with: VCR 3.0.3

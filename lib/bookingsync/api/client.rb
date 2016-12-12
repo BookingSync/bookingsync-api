@@ -21,7 +21,6 @@ require "bookingsync/api/client/periods"
 require "bookingsync/api/client/payments"
 require "bookingsync/api/client/payment_gateways"
 require "bookingsync/api/client/preferences_general_settings"
-require "bookingsync/api/client/preferences_payments"
 require "bookingsync/api/client/photos"
 require "bookingsync/api/client/rates"
 require "bookingsync/api/client/rates_rules"
@@ -70,7 +69,6 @@ module BookingSync::API
     include BookingSync::API::Client::Payments
     include BookingSync::API::Client::PaymentGateways
     include BookingSync::API::Client::PreferencesGeneralSettings
-    include BookingSync::API::Client::PreferencesPayments
     include BookingSync::API::Client::Photos
     include BookingSync::API::Client::Rates
     include BookingSync::API::Client::RatesRules

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: put
-    uri: http://bookingsync.dev/api/v3/booking_comments/9
+    uri: https://www.bookingsync.com/api/v3/booking_comments/92649
     body:
       encoding: UTF-8
       string: '{"booking_comments":[{"content":"Updated content"}]}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.35
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,45 +22,55 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 15:49:08 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 15:49:08 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1461074400'
+      - '1481212800'
       X-Ratelimit-Remaining:
-      - '982'
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
+      - '962'
       Etag:
-      - '"613bddb49fc447319c814e9b838fb24c"'
+      - W/"3cc55bb4503e6ba2f4208c22cb31a12b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - ahoy_track=true; path=/
-      - ahoy_visit=8431e959-d6cd-4032-92bf-8991e5200a66; path=/; expires=Tue, 26 Apr
-        2016 13:53:13 -0000
-      - ahoy_visitor=0d86cac3-9996-4442-80b3-c491cb7c6d1c; path=/; expires=Thu, 19
-        Apr 2018 13:53:13 -0000
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=186a0e7f-7cb7-4cac-b73d-a9e1ef0a8ccf; path=/; expires=Thu, 15 Dec
+        2016 15:49:08 -0000; secure
+      - ahoy_visitor=4d441334-be0c-4d5c-9a08-918ab3e8325f; path=/; expires=Sat, 08
+        Dec 2018 15:49:08 -0000; secure
       X-Request-Id:
-      - 89b7e784-2c36-4fb4-a0fc-e43076005940
+      - 25d322b5-91cd-4d06-9eb5-a917ef7d5256
       X-Runtime:
-      - '0.073797'
-      Date:
-      - Tue, 19 Apr 2016 13:53:13 GMT
-      Connection:
-      - close
+      - '0.045053'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"booking_comments.booking":"http://bookingsync.dev/api/v3/bookings/{booking_comments.booking}"},"booking_comments":[{"links":{"booking":1},"id":9,"content":"Updated
-        content","editable":true,"created_at":"2016-04-19T12:47:00Z","updated_at":"2016-04-19T12:56:41Z"}],"meta":{}}'
+      string: '{"links":{"booking_comments.account":"https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}","booking_comments.booking":"https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"},"booking_comments":[{"links":{"account":3837,"booking":817604},"id":92649,"content":"Updated
+        content","editable":true,"created_at":"2016-12-08T15:48:45Z","updated_at":"2016-12-08T15:49:07Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Tue, 19 Apr 2016 13:53:13 GMT
-recorded_with: VCR 3.0.1
+  recorded_at: Thu, 08 Dec 2016 15:49:08 GMT
+recorded_with: VCR 3.0.3

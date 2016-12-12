@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bookingsync.com/api/v3/rates_tables/13/seasons
+    uri: https://www.bookingsync.com/api/v3/rates_tables/274/seasons
     body:
       encoding: UTF-8
-      string: '{"seasons":[{"name":"New season","ratio":0.2,"minimum_stay":4}]}'
+      string: '{"seasons":[{"name":"New season","ratio_percentage":0.2,"minimum_stay":4}]}'
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,43 +22,62 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 11:01:00 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 11:01:00 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1398427200'
+      - '1481284800'
       X-Ratelimit-Remaining:
-      - '975'
+      - '999'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rates_tables/274/seasons?page=1&seasons%5B%5D%5Bminimum_stay%5D=4&seasons%5B%5D%5Bname%5D=New+season&seasons%5B%5D%5Bratio_percentage%5D=0.2>;
+        rel="first"
+      X-Per-Page:
+      - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/seasons/24
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      - https://www.bookingsync.com/api/v3/seasons/529835
       Etag:
-      - '"e97fe3f72b721316ab186a11b341b2bf"'
+      - W/"3311a8b753d2268833971604892ea96e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=30931a50bd898ff1c716a481805b93c9; path=/; secure; HttpOnly
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=99385149-d719-49e6-8d72-b6c9dc1de363; path=/; expires=Fri, 16 Dec
+        2016 11:01:00 -0000; secure
+      - ahoy_visitor=b4351814-ecd1-400c-8d53-5f64a2d9bdd2; path=/; expires=Sun, 09
+        Dec 2018 11:01:00 -0000; secure
       X-Request-Id:
-      - 9ab3fb4d8525b8bcd7a09b79322235c3
+      - b1a385a7-6a38-4b32-8ceb-325410776be4
       X-Runtime:
-      - '1.616383'
-      Date:
-      - Fri, 25 Apr 2014 11:41:19 GMT
-      Connection:
-      - close
+      - '0.515979'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"seasons.rates_rules":"https://www.bookingsync.com/api/v3/rates_rules/{seasons.rates_rules}","seasons.periods":"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"},"seasons":[{"links":{"rates_rules":[],"periods":[]},"id":24,"rates_table_id":13,"name":"New
-        season","ratio":"0.2","minimum_stay":4,"color_ratio":"1.0","created_at":"2014-04-25T11:41:19Z","updated_at":"2014-04-25T11:41:19Z"}]}'
-    http_version:
-  recorded_at: Fri, 25 Apr 2014 11:41:19 GMT
-recorded_with: VCR 2.9.0
+      string: '{"links":{"seasons.rates_table":"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}","seasons.rates_rules":"https://www.bookingsync.com/api/v3/rates_rules/{seasons.rates_rules}","seasons.periods":"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"},"seasons":[{"links":{"rates_table":274,"rates_rules":[],"periods":[]},"id":529835,"name":{"en":"New
+        season"},"ratio_percentage":"0.2","minimum_stay":4,"created_at":"2016-12-09T11:01:00Z","updated_at":"2016-12-09T11:01:00Z","color":"#1CAC78","color_ratio":1.0}],"meta":{}}'
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 11:01:00 GMT
+recorded_with: VCR 3.0.3

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: put
-    uri: http://bookingsync.dev/api/v3/preferences_general_settings/1
+    uri: https://www.bookingsync.com/api/v3/preferences_general_settings/3780
     body:
       encoding: UTF-8
       string: '{"preferences_general_settings":[{"selected_locales":["de"]}]}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.34
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,6 +22,10 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 00:39:30 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -30,45 +34,42 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Ratelimit-Limit:
-      - '999999999'
-      X-Ratelimit-Reset:
-      - '1456401600'
-      X-Ratelimit-Remaining:
-      - '999999993'
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
-      X-Request-Id:
-      - 90077382-397e-4c33-be05-0ffa2cf5b3f9
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 00:39:30 UTC
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1481245200'
+      X-Ratelimit-Remaining:
+      - '985'
+      Etag:
+      - W/"17229baf65353b8907ee66432d6725e9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
-      Etag:
-      - '"e3db2f1a78163e38b740d0d4c8a3a9c5"'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Runtime:
-      - '0.029907'
-      X-Content-Type-Options:
-      - nosniff
-      Date:
-      - Thu, 25 Feb 2016 11:24:20 GMT
       Set-Cookie:
-      - ahoy_track=true; path=/
-      - ahoy_visit=150f64bd-d424-464d-8ead-e3365016c17e; path=/; expires=Thu, 03 Mar
-        2016 11:24:20 -0000
-      - ahoy_visitor=3be0895b-31a9-4663-96ae-52b2bd833103; path=/; expires=Sun, 25
-        Feb 2018 11:24:20 -0000
-      X-Powered-By:
-      - Phusion Passenger 5.0.22
-      Server:
-      - nginx/1.8.0 + Phusion Passenger 5.0.22
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=6659c983-3eeb-4ab1-808b-5d9d69fcd852; path=/; expires=Fri, 16 Dec
+        2016 00:39:30 -0000; secure
+      - ahoy_visitor=2afa10a6-a06b-422a-a567-af663ae6d9cd; path=/; expires=Sun, 09
+        Dec 2018 00:39:30 -0000; secure
+      X-Request-Id:
+      - 8bf07cbf-7a2e-4e2e-ae91-301efc424e4a
+      X-Runtime:
+      - '0.059252'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"preferences_general_settings.account":"http://bookingsync.dev/api/v3/accounts/{preferences_general_settings.account}"},"preferences_general_settings":[{"links":{"account":1},"id":1,"email":"demo_en@bookingsync.com","default_arrival_time":16,"default_departure_time":10,"selected_locales":["en","de"],"business_name":"Your
-        Business Name","website":"","phone":"","mobile":"","fax":"","address1":"","address2":"","city":"","state":"","zip":"","country":null,"full_address":""}]}'
+      string: '{"links":{"preferences_general_settings.account":"https://www.bookingsync.com/api/v3/accounts/{preferences_general_settings.account}"},"preferences_general_settings":[{"links":{"account":3837},"id":3780,"email":"dev@bookingsync.com","default_arrival_time":16,"default_departure_time":10,"selected_locales":["en","fr","de"],"business_name":"BSA-Website-Test","website":"","phone":"","mobile":"","fax":"","address1":"","address2":"","city":"","state":"","zip":"","country":null,"full_address":"","default_communication_locale":"en"}]}'
     http_version: 
-  recorded_at: Thu, 25 Feb 2016 11:24:20 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 09 Dec 2016 00:39:30 GMT
+recorded_with: VCR 3.0.3

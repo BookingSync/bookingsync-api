@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://www.bookingsync.com/api/v3/photos/37
+    uri: https://www.bookingsync.com/api/v3/photos/313467
     body:
       encoding: UTF-8
-      string: '{}'
+      string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,36 +22,48 @@ http_interactions:
       code: 204
       message: No Content
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 00:39:49 GMT
+      Connection:
+      - keep-alive
+      Status:
+      - 204 No Content
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 00:39:49 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1399633200'
+      - '1481245200'
       X-Ratelimit-Remaining:
-      - '987'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Request-Method:
-      - '*'
-      X-Ua-Compatible:
-      - IE=Edge
+      - '983'
       Cache-Control:
       - no-cache
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=35d75b64e1c0bfeb9c64e766021cee70; path=/; secure; HttpOnly
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=ff527385-9d0b-4536-8a30-2b3ebb4d6865; path=/; expires=Fri, 16 Dec
+        2016 00:39:49 -0000; secure
+      - ahoy_visitor=738b18cd-a1e2-4a4d-b382-2452f1a0097d; path=/; expires=Sun, 09
+        Dec 2018 00:39:49 -0000; secure
       X-Request-Id:
-      - c06bf42b2fa618f689bdbcddb05db317
+      - fa5af63a-1d99-4102-af6a-aa6c2cfc4b01
       X-Runtime:
-      - '0.154167'
-      Date:
-      - Fri, 09 May 2014 10:41:48 GMT
-      Connection:
-      - close
+      - '0.191160'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
       string: ''
-    http_version:
-  recorded_at: Fri, 09 May 2014 10:41:48 GMT
-recorded_with: VCR 2.9.0
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 00:39:49 GMT
+recorded_with: VCR 3.0.3

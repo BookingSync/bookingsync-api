@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bookingsync.com/api/v3/rentals/2/photos
+    uri: https://www.bookingsync.com/api/v3/rentals/5116/photos
     body:
       encoding: UTF-8
       string: '{"photos":[{"remote_photo_url":"https://www.ruby-lang.org/images/header-ruby-logo.png","kind":"livingroom"}]}'
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,42 +22,61 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 00:27:32 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 00:27:30 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1399640400'
+      - '1481245200'
       X-Ratelimit-Remaining:
-      - '961'
+      - '995'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rentals/5116/photos?page=1&photos%5B%5D%5Bkind%5D=livingroom&photos%5B%5D%5Bremote_photo_url%5D=https%3A%2F%2Fwww.ruby-lang.org%2Fimages%2Fheader-ruby-logo.png>;
+        rel="first"
+      X-Per-Page:
+      - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/photos/36
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Request-Method:
-      - '*'
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      - https://www.bookingsync.com/api/v3/photos/313469
       Etag:
-      - '"b2616b56d1659dbc24cc2ff49cf4038a"'
+      - W/"77b8890a6f1550e0b4f934982e2f9ac4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=a132dfc7225938f44b9d0ac906e1cd06; path=/; secure; HttpOnly
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=e6a17a9a-922d-4453-8f4b-132f91cd4eb2; path=/; expires=Fri, 16 Dec
+        2016 00:27:30 -0000; secure
+      - ahoy_visitor=f3b58392-ec00-47a7-91c7-9fd2ecd9bbbf; path=/; expires=Sun, 09
+        Dec 2018 00:27:30 -0000; secure
       X-Request-Id:
-      - f9c6ee68336f66e828dc7b043727ba8f
+      - 159864d7-7844-46cb-9e3c-9fb91aa9716c
       X-Runtime:
-      - '3.485488'
-      Date:
-      - Fri, 09 May 2014 12:33:09 GMT
-      Connection:
-      - close
+      - '1.427092'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"photos":[{"id":36,"rental_id":2,"description":{"en":null},"kind":"livingroom","large_url":"https:://www.bookingsync.com/files/development/photo/photo/36/large_3b2a5fb7453e698aa5222f863bb8e601.jpg","normal_url":"https:://www.bookingsync.com/files/development/photo/photo/36/normal_3b2a5fb7453e698aa5222f863bb8e601.jpg","thumb_url":"https:://www.bookingsync.com/files/development/photo/photo/36/thumb_3b2a5fb7453e698aa5222f863bb8e601.jpg","micro_url":"https:://www.bookingsync.com/files/development/photo/photo/36/micro_3b2a5fb7453e698aa5222f863bb8e601.jpg","position":7}]}'
+      string: '{"links":{"photos.account":"https://www.bookingsync.com/api/v3/accounts/{photos.account}","photos.rental":"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"},"photos":[{"links":{"account":3837,"rental":5116},"id":313469,"description":{},"kind":"livingroom","micro_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_32,q_90,w_48/v1481243251/header-ruby-logo_3y4_g09mmo.jpg","thumb_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_64,q_90,w_96/v1481243251/header-ruby-logo_3y4_g09mmo.jpg","small_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_128,q_90,w_192/v1481243251/header-ruby-logo_3y4_g09mmo.jpg","compact_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_256,q_90,w_384/v1481243251/header-ruby-logo_3y4_g09mmo.jpg","medium_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_512,q_90,w_768/v1481243251/header-ruby-logo_3y4_g09mmo.jpg","large_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_800,q_90,w_1200/v1481243251/header-ruby-logo_3y4_g09mmo.jpg","grande_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_1024,q_90,w_1536/v1481243251/header-ruby-logo_3y4_g09mmo.jpg","giant_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_1600,q_90,w_2400/v1481243251/header-ruby-logo_3y4_g09mmo.jpg","position":23,"created_at":"2016-12-09T00:27:30Z","updated_at":"2016-12-09T00:27:30Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Fri, 09 May 2014 12:33:09 GMT
-recorded_with: VCR 2.9.0
+  recorded_at: Fri, 09 Dec 2016 00:27:32 GMT
+recorded_with: VCR 3.0.3

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://bookingsync.dev/api/v3/rentals/3/living_rooms
+    uri: https://www.bookingsync.com/api/v3/rentals/5116/living_rooms
     body:
       encoding: UTF-8
       string: '{"living_rooms":[{"sofa_beds_count":2}]}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.1.2
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,6 +22,10 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 18:18:38 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -30,53 +34,49 @@ http_interactions:
       - keep-alive
       Status:
       - 201 Created
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 18:18:38 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1480082400'
+      - '1481223600'
       X-Ratelimit-Remaining:
-      - '992'
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Updated-Since-Request-Synced-At:
-      - 2016-11-25 13:47:29 UTC
-      X-Request-Id:
-      - c96949fe-f3d9-41f1-b607-0fdb45e7de93
+      - '994'
       Link:
-      - <http://bookingsync.dev/api/v3/rentals/3/living_rooms?living_rooms%5B%5D%5Bsofa_beds_count%5D=2&page=1>;
+      - <https://www.bookingsync.com/api/v3/rentals/5116/living_rooms?living_rooms%5B%5D%5Bsofa_beds_count%5D=2&page=1>;
         rel="first"
-      Location:
-      - http://bookingsync.dev/api/v3/living_rooms/9
       X-Per-Page:
       - '100'
+      Location:
+      - https://www.bookingsync.com/api/v3/living_rooms/22325
+      Etag:
+      - W/"903480036a7cd1c3f41cd3c41f9a4a00"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
-      Etag:
-      - W/"60973d632e07083c8b7274694851f70e"
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Runtime:
-      - '0.741512'
-      X-Content-Type-Options:
-      - nosniff
-      Date:
-      - Fri, 25 Nov 2016 13:47:29 GMT
       Set-Cookie:
-      - ahoy_track=true; path=/
-      - ahoy_visit=bf8c2dd6-e0e7-4f3a-af76-e642df82ff39; path=/; expires=Fri, 02 Dec
-        2016 13:47:29 -0000
-      - ahoy_visitor=3511daf4-4049-46c6-97ae-8549628ecb7e; path=/; expires=Sun, 25
-        Nov 2018 13:47:29 -0000
-      X-Powered-By:
-      - Phusion Passenger 5.0.27
-      Server:
-      - nginx/1.8.1 + Phusion Passenger 5.0.27
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=2cc8e1ff-ebd8-492a-a716-4789acf7f0dc; path=/; expires=Thu, 15 Dec
+        2016 18:18:38 -0000; secure
+      - ahoy_visitor=ac1fc0a5-ac0f-4bae-9b36-a027d00ccd18; path=/; expires=Sat, 08
+        Dec 2018 18:18:38 -0000; secure
+      X-Request-Id:
+      - 50a69b62-0f77-4c08-87cb-b116b88c6144
+      X-Runtime:
+      - '0.039913'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"living_rooms.rental":"http://bookingsync.dev/api/v3/rentals/{living_rooms.rental}"},"living_rooms":[{"links":{"rental":3},"id":9,"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":0,"queensize_beds_count":0,"single_beds_count":0,"sofa_beds_count":2,"created_at":"2016-11-25T13:47:29Z","updated_at":"2016-11-25T13:47:29Z"}],"meta":{}}'
+      string: '{"links":{"living_rooms.rental":"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"},"living_rooms":[{"links":{"rental":5116},"id":22325,"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":0,"queensize_beds_count":0,"single_beds_count":0,"sofa_beds_count":2,"created_at":"2016-12-08T18:18:38Z","updated_at":"2016-12-08T18:18:38Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Fri, 25 Nov 2016 13:47:29 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Thu, 08 Dec 2016 18:18:38 GMT
+recorded_with: VCR 3.0.3

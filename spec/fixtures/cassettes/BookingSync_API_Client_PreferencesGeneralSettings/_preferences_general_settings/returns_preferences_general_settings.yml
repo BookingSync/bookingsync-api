@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: http://bookingsync.dev/api/v3/preferences_general_settings
+    uri: https://www.bookingsync.com/api/v3/preferences_general_settings
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.34
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,6 +22,10 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 00:27:34 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -30,52 +34,52 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
-      X-Total-Pages:
-      - '1'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Ratelimit-Limit:
-      - '999999999'
-      X-Ratelimit-Reset:
-      - '1456401600'
-      X-Ratelimit-Remaining:
-      - '999999996'
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
-      X-Request-Id:
-      - 41dec199-098b-443a-aa44-61f926617b83
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 00:27:34 UTC
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1481245200'
+      X-Ratelimit-Remaining:
+      - '993'
       Link:
-      - <http://bookingsync.dev/api/v3/preferences_general_settings?page=1>; rel="first",
-        <http://bookingsync.dev/api/v3/preferences_general_settings?page=1>; rel="last"
+      - <https://www.bookingsync.com/api/v3/preferences_general_settings?page=1>;
+        rel="first", <https://www.bookingsync.com/api/v3/preferences_general_settings?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      X-Per-Page:
+      - '100'
+      Etag:
+      - W/"17229baf65353b8907ee66432d6725e9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
-      Etag:
-      - '"21bed650d44806b60fec55a09ea45ff0"'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Total-Count:
-      - '1'
-      X-Content-Type-Options:
-      - nosniff
-      X-Runtime:
-      - '0.054475'
-      Date:
-      - Thu, 25 Feb 2016 11:20:40 GMT
       Set-Cookie:
-      - ahoy_track=true; path=/
-      - ahoy_visit=8b082a2b-b28e-45ad-bbf5-280e53f4c83b; path=/; expires=Thu, 03 Mar
-        2016 11:20:40 -0000
-      - ahoy_visitor=3e53ffaa-10f1-4b02-b3d6-a80ad1607a56; path=/; expires=Sun, 25
-        Feb 2018 11:20:40 -0000
-      X-Powered-By:
-      - Phusion Passenger 5.0.22
-      Server:
-      - nginx/1.8.0 + Phusion Passenger 5.0.22
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=78650539-5ac1-42a5-9ed7-95915d46fe10; path=/; expires=Fri, 16 Dec
+        2016 00:27:34 -0000; secure
+      - ahoy_visitor=a9709942-658e-403a-a844-47f67be8a6c0; path=/; expires=Sun, 09
+        Dec 2018 00:27:34 -0000; secure
+      X-Request-Id:
+      - 1ab03801-8165-493d-a177-31800d09eacf
+      X-Runtime:
+      - '0.036765'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"preferences_general_settings.account":"http://bookingsync.dev/api/v3/accounts/{preferences_general_settings.account}"},"preferences_general_settings":[{"links":{"account":1},"id":1,"email":"demo_en@bookingsync.com","default_arrival_time":16,"default_departure_time":10,"selected_locales":["de"],"business_name":"Your
-        Business Name","website":"","phone":"","mobile":"","fax":"","address1":"","address2":"","city":"","state":"","zip":"","country":null,"full_address":""}]}'
+      string: '{"links":{"preferences_general_settings.account":"https://www.bookingsync.com/api/v3/accounts/{preferences_general_settings.account}"},"preferences_general_settings":[{"links":{"account":3837},"id":3780,"email":"dev@bookingsync.com","default_arrival_time":16,"default_departure_time":10,"selected_locales":["en","fr","de"],"business_name":"BSA-Website-Test","website":"","phone":"","mobile":"","fax":"","address1":"","address2":"","city":"","state":"","zip":"","country":null,"full_address":"","default_communication_locale":"en"}]}'
     http_version: 
-  recorded_at: Thu, 25 Feb 2016 11:20:40 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 09 Dec 2016 00:27:34 GMT
+recorded_with: VCR 3.0.3

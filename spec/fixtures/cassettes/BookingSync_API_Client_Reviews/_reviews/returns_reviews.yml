@@ -4,11 +4,11 @@ http_interactions:
     method: get
     uri: https://www.bookingsync.com/api/v3/reviews
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 08 Apr 2014 13:34:55 GMT
+      - Fri, 09 Dec 2016 10:58:06 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,50 +34,53 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 10:58:06 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1396965600.0'
+      - '1481281200'
       X-Ratelimit-Remaining:
-      - '999'
+      - '952'
       Link:
       - <https://www.bookingsync.com/api/v3/reviews?page=1>; rel="first", <https://www.bookingsync.com/api/v3/reviews?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Request-Method:
-      - '*'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      X-Total-Count:
+      - '2'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"dc276df48dc3d29bff0e2e3d6111d921"'
+      - W/"78882b0b646a9115005ef7aec0d0d9bf"
       Cache-Control:
-      - must-revalidate, private, max-age=0
+      - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=00c59c9c-7476-4beb-a49e-a97379c6eb50; path=/; expires=Fri, 16 Dec
+        2016 10:58:06 -0000; secure
+      - ahoy_visitor=475277ca-d440-49f6-b153-f0c716b0cbbd; path=/; expires=Sun, 09
+        Dec 2018 10:58:06 -0000; secure
       X-Request-Id:
-      - be3e29c08176130cb1195c972359eccf
+      - 49466e76-6c0b-4998-b8b6-fcb5adda02ab
       X-Runtime:
-      - '0.237951'
-      X-Rack-Cache:
-      - miss
+      - '0.042727'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"reviews":[{"id":2,"rating":5,"comment":null,"name":"seb","updated_at":"2013-06-27T19:30:29Z"},{"id":3,"rating":4,"comment":null,"name":"seb","updated_at":"2013-06-27T19:30:37Z"},{"id":4,"rating":4,"comment":null,"name":"seb","updated_at":"2013-06-27T19:53:20Z"},{"id":5,"rating":5,"comment":null,"name":"seb","updated_at":"2013-06-27T20:04:01Z"},{"id":6,"rating":5,"comment":null,"name":"seb","updated_at":"2013-06-27T20:24:08Z"},{"id":7,"rating":5,"comment":"","name":"asdf","updated_at":"2013-08-03T09:34:06Z"},{"id":8,"rating":5,"comment":"juste
-        parfait\r\n","name":"Philippe G.","updated_at":"2013-08-03T10:57:23Z"},{"id":9,"rating":5,"comment":null,"name":"Philippe
-        G.","updated_at":"2013-08-03T11:01:49Z"},{"id":20,"rating":5,"comment":null,"name":"asdf","updated_at":"2013-08-05T19:54:49Z"},{"id":23,"rating":5,"comment":null,"name":"asdf","updated_at":"2013-08-06T09:08:31Z"},{"id":24,"rating":3,"comment":null,"name":"Toni
-        H.","updated_at":"2013-08-06T09:08:41Z"},{"id":25,"rating":4,"comment":null,"name":"Toni
-        H.","updated_at":"2013-08-06T09:09:02Z"},{"id":26,"rating":3,"comment":null,"name":"Toni
-        H.","updated_at":"2013-08-06T10:35:14Z"},{"id":27,"rating":4,"comment":null,"name":"Toni
-        H.","updated_at":"2013-08-06T10:35:14Z"},{"id":51,"rating":4,"comment":"only
-        the best","name":"Travis W.","updated_at":"2013-08-10T14:34:27Z"},{"id":52,"rating":4,"comment":"","name":"Travis
-        W.","updated_at":"2013-08-10T14:35:50Z"},{"id":68,"rating":5,"comment":"Angelo
-        was happy to stay here!","name":"Angelo","updated_at":"2013-08-20T12:54:45Z"},{"id":69,"rating":5,"comment":null,"name":"Angelo","updated_at":"2013-08-20T12:55:32Z"},{"id":175,"rating":5,"comment":null,"name":"Thomas
-        L.","updated_at":"2014-04-01T07:32:12Z"},{"id":176,"rating":5,"comment":null,"name":"Thomas
-        L.","updated_at":"2014-04-01T09:39:30Z"}]}'
-    http_version:
-  recorded_at: Tue, 08 Apr 2014 13:34:55 GMT
-recorded_with: VCR 2.9.0
+      string: '{"links":{"reviews.booking":"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}","reviews.rental":"https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"},"reviews":[{"links":{"booking":142616,"rental":5116},"id":34562,"rating":5,"comment":"test
+        test test","name":"Gary S.","title":"test test test","created_at":"2015-09-09T21:09:28Z","updated_at":"2015-09-09T21:09:28Z"},{"links":{"booking":819091,"rental":5117},"id":80459,"rating":5,"comment":"Awesome
+        place","name":"Gary S.","title":"Awesome place","created_at":"2016-12-06T16:21:51Z","updated_at":"2016-12-06T16:21:51Z"}]}'
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 10:58:06 GMT
+recorded_with: VCR 3.0.3

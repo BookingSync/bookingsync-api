@@ -6,6 +6,8 @@ describe BookingSync::API::Client::RentalAgreements do
     { body: "Lorem ipsum" }
   }
 
+  before { |ex| @casette_base_path = casette_path(casette_dir, ex.metadata) }
+
   describe ".rental_agreements", :vcr do
     it "returns rental agreements" do
       expect(client.rental_agreements).not_to be_empty
@@ -14,9 +16,13 @@ describe BookingSync::API::Client::RentalAgreements do
   end
 
   describe ".rental_agreement", :vcr do
+    let(:prefetched_rental_agreement_id) {
+      find_resource("#{@casette_base_path}_rental_agreements/returns_rental_agreements.yml", "rental_agreements")[:id]
+    }
+
     it "returns a single rental_agreement" do
-      rental_agreement = client.rental_agreement(6905)
-      expect(rental_agreement.id).to eq 6905
+      rental_agreement = client.rental_agreement(prefetched_rental_agreement_id)
+      expect(rental_agreement.id).to eq prefetched_rental_agreement_id
     end
   end
 
@@ -36,7 +42,9 @@ describe BookingSync::API::Client::RentalAgreements do
   end
 
   describe ".create_rental_agreement_for_booking", :vcr do
-    let(:booking) { BookingSync::API::Resource.new(client, id: 2) }
+    let(:booking) do
+      find_resource("#{casette_dir}/BookingSync_API_Client_Bookings/_booking/returns_a_single_booking.yml", "bookings")
+    end
 
     it "creates a new rental agreement" do
       client.create_rental_agreement_for_booking(booking, attributes)
@@ -53,11 +61,13 @@ describe BookingSync::API::Client::RentalAgreements do
   end
 
   describe ".create_rental_agreement_for_rental", :vcr do
-    let(:rental) { BookingSync::API::Resource.new(client, id: 20) }
+    let(:rental) do
+      find_resource("#{casette_dir}/BookingSync_API_Client_Rentals/_rental/returns_a_single_rental.yml", "rentals")
+    end
 
     it "creates a new rental agreement" do
       client.create_rental_agreement_for_rental(rental, attributes)
-      assert_requested :post, bs_url("rentals/20/rental_agreements"),
+      assert_requested :post, bs_url("rentals/#{rental}/rental_agreements"),
         body: { rental_agreements: [attributes] }.to_json
     end
 

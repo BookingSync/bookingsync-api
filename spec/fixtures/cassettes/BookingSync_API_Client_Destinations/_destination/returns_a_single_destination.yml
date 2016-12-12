@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/destinations/7301
+    uri: https://www.bookingsync.com/api/v3/destinations/99
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.29
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 09 Sep 2015 20:18:52 GMT
+      - Thu, 08 Dec 2016 16:57:15 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,29 +34,31 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 16:57:15 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1441832400'
+      - '1481216400'
       X-Ratelimit-Remaining:
-      - '970'
+      - '975'
       Link:
-      - <https://www.bookingsync.com/api/v3/destinations/7301?page=1>; rel="first",
-        <https://www.bookingsync.com/api/v3/destinations/7301?page=1>; rel="last"
+      - <https://www.bookingsync.com/api/v3/destinations/99?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/destinations/99?page=1>; rel="last"
       X-Total-Pages:
       - '1'
       X-Total-Count:
       - '1'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"47249ebadc8b5a23bf610c28b73892d9"'
+      - W/"aa60a9dd0e7c8c9f39d771c668ce1532"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,20 +66,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=09a218d5-c4d0-40fb-aad7-9fecc2a44c54; path=/; expires=Wed, 16 Sep
-        2015 20:18:52 -0000; secure
-      - ahoy_visitor=f972ba50-384c-4513-ba1b-685107d8790d; path=/; expires=Sat, 09
-        Sep 2017 20:18:52 -0000; secure
+      - ahoy_visit=49369e43-50fe-4968-b272-bb7efc57eb59; path=/; expires=Thu, 15 Dec
+        2016 16:57:15 -0000; secure
+      - ahoy_visitor=c53c3b30-1f40-4296-ae7a-19d2f5aa1c0b; path=/; expires=Sat, 08
+        Dec 2018 16:57:15 -0000; secure
       X-Request-Id:
-      - 8d1b991c-ef2d-4a36-9e25-5d126e2e6ec8
+      - 57b57f3a-0deb-4e5a-841c-06a9fbd81506
       X-Runtime:
-      - '0.091339'
+      - '0.036046'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"destinations":[{"id":7301,"name":{"en":"Sivota Lefkada"},"fullname":{"en":"Sivota
-        Lefkada, Lefkada (Lefkas), Ionian Islands, Greece, Europe, World","fr":"Sivota
-        Lefkada, Lefkada (Lefkas), Ionian Islands, Greece, Europe, World"},"permalink":{"en":"world/europe/greece/ionian-islands/lefkada-lefkas/sivota-lefkada","fr":"world/europe/greece/ionian-islands/lefkada-lefkas/sivota-lefkada"},"aliases":{"en":"---\n-
-        Syvota\n"},"counter":2}]}'
+      string: '{"destinations":[{"id":99,"name":{"en":"World"},"fullname":{"en":"World"},"permalink":{"en":"world"},"aliases":{},"counter":2,"ancestor_ids":[]}],"meta":{}}'
     http_version: 
-  recorded_at: Wed, 09 Sep 2015 20:18:54 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Thu, 08 Dec 2016 16:57:15 GMT
+recorded_with: VCR 3.0.3

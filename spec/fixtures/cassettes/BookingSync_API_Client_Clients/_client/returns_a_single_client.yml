@@ -4,11 +4,11 @@ http_interactions:
     method: get
     uri: https://www.bookingsync.com/api/v3/clients/77703
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.29
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 09 Sep 2015 20:09:05 GMT
+      - Thu, 08 Dec 2016 16:39:18 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,20 +34,20 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 16:39:18 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1441832400'
+      - '1481216400'
       X-Ratelimit-Remaining:
-      - '978'
+      - '980'
       Link:
       - <https://www.bookingsync.com/api/v3/clients/77703?page=1>; rel="first", <https://www.bookingsync.com/api/v3/clients/77703?page=1>;
         rel="last"
@@ -55,8 +55,10 @@ http_interactions:
       - '1'
       X-Total-Count:
       - '1'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"d09581465982553e8120354ea2e078af"'
+      - W/"598d9c72955c191aeccfbdc7272933c3"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,18 +66,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=6da50b57-c531-4ccb-af3e-b943c0255d87; path=/; expires=Wed, 16 Sep
-        2015 20:09:05 -0000; secure
-      - ahoy_visitor=58b9dc3b-d5ca-4241-bcc3-ef13f3b51a9f; path=/; expires=Sat, 09
-        Sep 2017 20:09:05 -0000; secure
+      - ahoy_visit=8e129560-3857-4e73-bc2f-87ca4acff053; path=/; expires=Thu, 15 Dec
+        2016 16:39:18 -0000; secure
+      - ahoy_visitor=504c9e54-7f9c-438f-8222-d7c12d9d50b6; path=/; expires=Sat, 08
+        Dec 2018 16:39:18 -0000; secure
       X-Request-Id:
-      - 57708e6c-c9b6-4e16-b358-f7cc1f422fcf
+      - bf98d798-2d7e-4f18-9dd2-718944d1b3d9
       X-Runtime:
-      - '0.072296'
+      - '0.024367'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"clients.account":"https://www.bookingsync.com/api/v3/accounts/{clients.account}"},"clients":[{"links":{"account":3837},"id":77703,"addresses":[],"emails":[{"label":"default","email":"aa@test.com"}],"phones":[],"created_at":"2015-09-09T19:58:00Z","updated_at":"2015-09-09T20:07:42Z","fullname":"Gary
-        Smith","notes":"","preferred_locale":"","passport":""}]}'
+      string: '{"links":{"clients.account":"https://www.bookingsync.com/api/v3/accounts/{clients.account}"},"clients":[{"links":{"account":3837},"id":77703,"addresses":[],"emails":[{"label":"default","email":"aa@test.com"}],"phones":[],"created_at":"2015-09-09T19:58:00Z","updated_at":"2016-12-06T16:21:13Z","fullname":"Gary
+        Smith","notes":"","preferred_locale":"","passport":"","company":"","vat_number":""}],"meta":{}}'
     http_version: 
-  recorded_at: Wed, 09 Sep 2015 20:09:06 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Thu, 08 Dec 2016 16:39:18 GMT
+recorded_with: VCR 3.0.3

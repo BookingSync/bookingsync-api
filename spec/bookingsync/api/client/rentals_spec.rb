@@ -3,6 +3,8 @@ require "spec_helper"
 describe BookingSync::API::Client::Rentals do
   let(:client) { BookingSync::API::Client.new(test_access_token) }
 
+  before { |ex| @casette_base_path = casette_path(casette_dir, ex.metadata) }
+
   describe ".rentals", :vcr do
     it "returns rentals" do
       expect(client.rentals).not_to be_empty
@@ -10,9 +12,11 @@ describe BookingSync::API::Client::Rentals do
     end
 
     it "returns rentals by ids" do
-      rentals = client.rentals(ids: [26, 28])
+      rental_ids = find_resources("#{@casette_base_path}_rentals/returns_rentals.yml", "rentals").map { |r| r["id"] }[0..1]
+
+      rentals = client.rentals(ids: rental_ids)
       expect(rentals.size).to eql(2)
-      assert_requested :get, bs_url("rentals/26,28")
+      assert_requested :get, bs_url("rentals/#{rental_ids.join(',')}")
     end
 
     describe "links" do
@@ -25,17 +29,21 @@ describe BookingSync::API::Client::Rentals do
 
   describe ".rentals_search", :vcr do
     it "returns rentals" do
-      expect(client.rentals_search(start_at: "2016-06-15", end_at: "2016-06-30")).not_to be_empty
+      expect(client.rentals_search(start_at: "2016-12-15", end_at: "2016-12-22")).not_to be_empty
       assert_requested :post, bs_url("rentals/search"),
-        body: { start_at: "2016-06-15", end_at: "2016-06-30" }.to_json
+        body: { start_at: "2016-12-15", end_at: "2016-12-22" }.to_json
     end
 
     context "rentals ids given" do
+      let(:rental_ids) {
+        find_resources("#{@casette_base_path}_rentals/returns_rentals.yml", "rentals").map { |r| r["id"] }[0..1]
+      }
+
       it "makes a search within given rentals" do
-        rentals = client.rentals_search(ids: [1, 5], start_at: "2016-06-15", end_at: "2016-06-30")
+        rentals = client.rentals_search(ids: rental_ids, start_at: "2016-12-15", end_at: "2016-12-22")
         expect(rentals.size).to eq(1)
-        assert_requested :post, bs_url("rentals/1,5/search"),
-          body: { start_at: "2016-06-15", end_at: "2016-06-30" }.to_json
+        assert_requested :post, bs_url("rentals/#{rental_ids.join(',')}/search"),
+          body: { start_at: "2016-12-15", end_at: "2016-12-22" }.to_json
       end
     end
 
@@ -50,9 +58,13 @@ describe BookingSync::API::Client::Rentals do
   end
 
   describe ".rental", :vcr do
+    let(:prefetched_rental) {
+      find_resource("#{@casette_base_path}_rentals/returns_rentals.yml", "rentals")
+    }
+
     it "returns a single rental" do
-      rental = client.rental(2)
-      expect(rental.name).to eql("0 est")
+      rental = client.rental(prefetched_rental[:id])
+      expect(rental.name).to eql(prefetched_rental[:name])
     end
   end
 
@@ -75,15 +87,19 @@ describe BookingSync::API::Client::Rentals do
   end
 
   describe ".edit_rental", :vcr do
+    let(:created_rental_id) {
+      find_resource("#{casette_dir}/BookingSync_API_Client_Rentals/_create_rental/creates_a_new_rental.yml", "rentals")[:id]
+    }
+
     it "updates given rental by ID" do
-      client.edit_rental(2, name: "Updated Rental name")
-      assert_requested :put, bs_url("rentals/2"),
+      client.edit_rental(created_rental_id, name: "Updated Rental name")
+      assert_requested :put, bs_url("rentals/#{created_rental_id}"),
         body: { rentals: [{ name: "Updated Rental name" }] }.to_json
     end
 
     it "returns updated rental" do
       VCR.use_cassette("BookingSync_API_Client_Rentals/_edit_rental/updates_given_rental_by_ID") do
-        rental = client.edit_rental(2, name: "Updated Rental name")
+        rental = client.edit_rental(created_rental_id, name: "Updated Rental name")
         expect(rental).to be_kind_of(BookingSync::API::Resource)
         expect(rental.name).to eq("Updated Rental name")
       end
@@ -91,16 +107,24 @@ describe BookingSync::API::Client::Rentals do
   end
 
   describe ".delete_rental", :vcr do
+    let(:created_rental_id) {
+      find_resource("#{casette_dir}/BookingSync_API_Client_Rentals/_create_rental/creates_a_new_rental.yml", "rentals")[:id]
+    }
+
     it "deletes given rental" do
-      client.delete_rental(4)
-      assert_requested :delete, bs_url("rentals/4")
+      client.delete_rental(created_rental_id)
+      assert_requested :delete, bs_url("rentals/#{created_rental_id}")
     end
   end
 
   describe ".rentals_meta", :vcr do
+    let(:rental_ids) {
+      find_resources("#{@casette_base_path}_rentals/returns_rentals.yml", "rentals").map { |r| r["id"] }
+    }
+
     it "returns meta information about requested rentals" do
-      client.rentals_meta([67, 68])
-      assert_requested :get, bs_url("rentals/67,68/meta")
+      client.rentals_meta(rental_ids)
+      assert_requested :get, bs_url("rentals/#{rental_ids.join(',')}/meta")
     end
 
     it "returns meta information about all rentals" do

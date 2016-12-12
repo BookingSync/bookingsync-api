@@ -4,11 +4,11 @@ http_interactions:
     method: get
     uri: https://www.bookingsync.com/api/v3/clients
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.29
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 09 Sep 2015 20:09:05 GMT
+      - Thu, 08 Dec 2016 16:38:50 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,29 +34,31 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 16:38:50 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1441832400'
+      - '1481216400'
       X-Ratelimit-Remaining:
-      - '979'
+      - '984'
       Link:
       - <https://www.bookingsync.com/api/v3/clients?page=1>; rel="first", <https://www.bookingsync.com/api/v3/clients?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
       X-Total-Count:
-      - '7'
+      - '4'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"45e2bfc45bfb5c3a203922e86ed61a50"'
+      - W/"a5ca6e30dcda7d24926c07d4fe3f15c2"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,24 +66,23 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=0499799e-9309-45f7-9a07-667e8263be8e; path=/; expires=Wed, 16 Sep
-        2015 20:09:04 -0000; secure
-      - ahoy_visitor=72b6d853-1b72-4fa1-8941-04eda50b6596; path=/; expires=Sat, 09
-        Sep 2017 20:09:04 -0000; secure
+      - ahoy_visit=7e58628c-b3f3-4f75-a245-1924f6399d5b; path=/; expires=Thu, 15 Dec
+        2016 16:38:50 -0000; secure
+      - ahoy_visitor=2849271e-cb71-48b9-86d9-d8d1e51cae5e; path=/; expires=Sat, 08
+        Dec 2018 16:38:50 -0000; secure
       X-Request-Id:
-      - dddd7478-db29-46af-9e7c-bf6b01ca53f4
+      - 31fd1859-1179-466f-9aa6-6a789e240485
       X-Runtime:
-      - '0.070235'
+      - '0.023368'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"clients.account":"https://www.bookingsync.com/api/v3/accounts/{clients.account}"},"clients":[{"links":{"account":3837},"id":77703,"addresses":[],"emails":[{"label":"default","email":"aa@test.com"}],"phones":[],"created_at":"2015-09-09T19:58:00Z","updated_at":"2015-09-09T20:07:42Z","fullname":"Gary
-        Smith","notes":"","preferred_locale":"","passport":""},{"links":{"account":3837},"id":77704,"addresses":[],"emails":[],"phones":[],"created_at":"2015-09-09T20:03:44Z","updated_at":"2015-09-09T20:03:44Z","fullname":"John
-        Smith","notes":null,"preferred_locale":null,"passport":null},{"links":{"account":3837},"id":77705,"addresses":[],"emails":[],"phones":[],"created_at":"2015-09-09T20:04:41Z","updated_at":"2015-09-09T20:04:41Z","fullname":"John
-        Smith","notes":null,"preferred_locale":null,"passport":null},{"links":{"account":3837},"id":77706,"addresses":[],"emails":[],"phones":[],"created_at":"2015-09-09T20:05:08Z","updated_at":"2015-09-09T20:05:08Z","fullname":"John
-        Smith","notes":null,"preferred_locale":null,"passport":null},{"links":{"account":3837},"id":77707,"addresses":[],"emails":[],"phones":[],"created_at":"2015-09-09T20:05:46Z","updated_at":"2015-09-09T20:05:46Z","fullname":"John
-        Smith","notes":null,"preferred_locale":null,"passport":null},{"links":{"account":3837},"id":77708,"addresses":[],"emails":[],"phones":[],"created_at":"2015-09-09T20:06:56Z","updated_at":"2015-09-09T20:06:56Z","fullname":"John
-        Smith","notes":null,"preferred_locale":null,"passport":null},{"links":{"account":3837},"id":77709,"addresses":[],"emails":[],"phones":[],"created_at":"2015-09-09T20:07:40Z","updated_at":"2015-09-09T20:07:40Z","fullname":"John
-        Smith","notes":null,"preferred_locale":null,"passport":null}]}'
+      string: '{"links":{"clients.account":"https://www.bookingsync.com/api/v3/accounts/{clients.account}"},"clients":[{"links":{"account":3837},"id":77703,"addresses":[],"emails":[{"label":"default","email":"aa@test.com"}],"phones":[],"created_at":"2015-09-09T19:58:00Z","updated_at":"2016-12-06T16:21:13Z","fullname":"Gary
+        Smith","notes":"","preferred_locale":"","passport":"","company":"","vat_number":""},{"links":{"account":3837},"id":77704,"addresses":[],"emails":[],"phones":[],"created_at":"2015-09-09T20:03:44Z","updated_at":"2015-09-09T20:03:44Z","fullname":"John
+        Smith","notes":null,"preferred_locale":null,"passport":null,"company":"","vat_number":""},{"links":{"account":3837},"id":77710,"addresses":[],"emails":[{"label":"default","email":"smith@example.com"}],"phones":[],"created_at":"2015-09-09T20:12:27Z","updated_at":"2016-12-07T00:31:20Z","fullname":"John
+        Smith","notes":"","preferred_locale":"","passport":"","company":"","vat_number":""},{"links":{"account":3837},"id":258327,"addresses":[],"emails":[{"label":"default","email":"halldor@example.com"}],"phones":[],"created_at":"2016-12-06T13:03:02Z","updated_at":"2016-12-06T13:07:37Z","fullname":"Eero
+        Ettala","notes":null,"preferred_locale":null,"passport":null,"company":"","vat_number":""}],"meta":{}}'
     http_version: 
-  recorded_at: Wed, 09 Sep 2015 20:09:05 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Thu, 08 Dec 2016 16:38:50 GMT
+recorded_with: VCR 3.0.3

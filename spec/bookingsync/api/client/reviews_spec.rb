@@ -3,6 +3,8 @@ require "spec_helper"
 describe BookingSync::API::Client::Reviews do
   let(:client) { BookingSync::API::Client.new(test_access_token) }
 
+  before { |ex| @casette_base_path = casette_path(casette_dir, ex.metadata) }
+
   describe ".reviews", :vcr do
     it "returns reviews" do
       expect(client.reviews).not_to be_empty
@@ -11,19 +13,23 @@ describe BookingSync::API::Client::Reviews do
   end
 
   describe ".review", :vcr do
+    let(:prefetched_review_id) {
+      find_resource("#{@casette_base_path}_reviews/returns_reviews.yml", "reviews")[:id]
+    }
+
     it "returns a single review" do
-      review = client.review(34562)
-      expect(review.id).to eq 34562
+      review = client.review(prefetched_review_id)
+      expect(review.id).to eq prefetched_review_id
     end
   end
 
   describe ".create_review", :vcr do
     let(:attributes) { { comment: "Awesome place", rating: 5 } }
-    let(:booking) { BookingSync::API::Resource.new(client, id: 1) }
+    let(:booking) { BookingSync::API::Resource.new(client, id: 829184) }
 
     it "creates a new review" do
       client.create_review(booking, attributes)
-      assert_requested :post, bs_url("bookings/1/reviews"),
+      assert_requested :post, bs_url("bookings/#{booking}/reviews"),
         body: { reviews: [attributes] }.to_json
     end
 

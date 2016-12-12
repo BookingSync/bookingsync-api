@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://www.bookingsync.com/api/v3/payments/10
+    uri: https://www.bookingsync.com/api/v3/payments/268621
     body:
       encoding: UTF-8
       string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,36 +22,48 @@ http_interactions:
       code: 204
       message: No Content
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 18:21:25 GMT
+      Connection:
+      - keep-alive
+      Status:
+      - 204 No Content
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 18:21:25 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1398171600'
+      - '1481223600'
       X-Ratelimit-Remaining:
-      - '996'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      X-Ua-Compatible:
-      - IE=Edge
+      - '980'
       Cache-Control:
       - no-cache
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=5b9eae503e5a9650e212a76885b1e8f6; path=/; secure; HttpOnly
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=f76563dc-e114-43e2-b3b4-95aa795ee9dc; path=/; expires=Thu, 15 Dec
+        2016 18:21:25 -0000; secure
+      - ahoy_visitor=201a9927-b870-49a6-824c-4f7a4237c664; path=/; expires=Sat, 08
+        Dec 2018 18:21:25 -0000; secure
       X-Request-Id:
-      - 6a1c787067395078f75d9f9ffabfb569
+      - e5e596db-532f-4fe4-bd8f-12bba47aec31
       X-Runtime:
-      - '0.069542'
-      Date:
-      - Tue, 22 Apr 2014 12:00:20 GMT
-      Connection:
-      - close
+      - '0.100647'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
       string: ''
-    http_version:
-  recorded_at: Tue, 22 Apr 2014 12:00:20 GMT
-recorded_with: VCR 2.9.0
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 18:21:25 GMT
+recorded_with: VCR 3.0.3

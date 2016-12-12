@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: http://bookingsync.dev/api/v3/strict_bookings
+    uri: https://www.bookingsync.com/api/v3/strict_bookings
     body:
       encoding: UTF-8
-      string: '{"bookings":[{"rental_id":"1","start_at":"2016-01-15 16:00:00","end_at":"2016-01-23
-        10:00:00","adults":"3","children":"2","final_price":"2125.42","price_to_pay_now":"2125.42","currency":"EUR","source_id":"1","bookings_fees":[{"rentals_fee_id":"1","times_booked":"1"},{"rentals_fee_id":"3","times_booked":"1"}],"client":{"firstname":"Lazar","email":"email@example.com","lastname":"Angelov","phone_number":"123-123-123","country_code":"US"},"comments":[{"content":"some
+      string: '{"bookings":[{"rental_id":25938,"start_at":"2017-03-15 16:00:00","end_at":"2017-03-22
+        10:00:00","adults":3,"children":2,"final_price":"63","price_to_pay_now":"18.9","currency":"EUR","source_id":"4504","client":{"firstname":"Lazar","email":"email@example.com","lastname":"Angelov","phone_number":"123-123-123","country_code":"US"},"comments":[{"content":"some
         content"}]}]}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.32
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -24,46 +24,61 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 16:06:34 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 16:06:34 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1452600000'
+      - '1481302800'
       X-Ratelimit-Remaining:
-      - '997'
+      - '996'
+      Link:
+      - <https://www.bookingsync.com/api/v3/strict_bookings?bookings%5B%5D%5Badults%5D=3&bookings%5B%5D%5Bchildren%5D=2&bookings%5B%5D%5Bclient%5D%5Bcountry_code%5D=US&bookings%5B%5D%5Bclient%5D%5Bemail%5D=email%40example.com&bookings%5B%5D%5Bclient%5D%5Bfirstname%5D=Lazar&bookings%5B%5D%5Bclient%5D%5Blastname%5D=Angelov&bookings%5B%5D%5Bclient%5D%5Bphone_number%5D=123-123-123&bookings%5B%5D%5Bcomments%5D%5B%5D%5Bcontent%5D=some+content&bookings%5B%5D%5Bcurrency%5D=EUR&bookings%5B%5D%5Bend_at%5D=2017-03-22+10%3A00%3A00&bookings%5B%5D%5Bfinal_price%5D=63&bookings%5B%5D%5Bprice_to_pay_now%5D=18.9&bookings%5B%5D%5Brental_id%5D=25938&bookings%5B%5D%5Bsource_id%5D=4504&bookings%5B%5D%5Bstart_at%5D=2017-03-15+16%3A00%3A00&page=1>;
+        rel="first"
+      X-Per-Page:
+      - '100'
       Location:
-      - http://bookingsync.dev/api/v3/bookings/712
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
+      - https://www.bookingsync.com/api/v3/bookings/829524
       Etag:
-      - '"9b6c760e568781643f084cc43fa9b06b"'
+      - W/"6f06e3fd60b2a45590af73247510b123"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - ahoy_track=true; path=/
-      - ahoy_visit=29565286-40e5-4d35-a22c-fb2c74300363; path=/; expires=Tue, 19 Jan
-        2016 11:24:31 -0000
-      - ahoy_visitor=e3014d71-d2fb-468d-88f9-3bddb16df013; path=/; expires=Fri, 12
-        Jan 2018 11:24:31 -0000
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=1df897b4-abb7-4312-a538-e8aba49fdc64; path=/; expires=Fri, 16 Dec
+        2016 16:06:34 -0000; secure
+      - ahoy_visitor=98c9ac64-6560-4c80-bd81-d22fff26cd73; path=/; expires=Sun, 09
+        Dec 2018 16:06:34 -0000; secure
       X-Request-Id:
-      - d2f95291-b6c1-46ce-badb-2db93d5fa918
+      - 90e88812-d2cc-4c53-b618-c340011ae16a
       X-Runtime:
-      - '0.889861'
-      Date:
-      - Tue, 12 Jan 2016 11:24:32 GMT
-      Connection:
-      - close
+      - '0.778040'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"bookings.account":"http://bookingsync.dev/api/v3/accounts/{bookings.account}","bookings.rental":"http://bookingsync.dev/api/v3/rentals/{bookings.rental}","bookings.client":"http://bookingsync.dev/api/v3/clients/{bookings.client}","bookings.rental_agreement":"http://bookingsync.dev/api/v3/rental_agreements/{bookings.rental_agreement}","bookings.source":"http://bookingsync.dev/api/v3/sources/{bookings.source}","bookings.bookings_fees":"http://bookingsync.dev/api/v3/bookings_fees/{bookings.bookings_fees}","bookings.bookings_taxes":"http://bookingsync.dev/api/v3/bookings_taxes/{bookings.bookings_taxes}","bookings.bookings_tags":"http://bookingsync.dev/api/v3/bookings_tags/{bookings.bookings_tags}"},"bookings":[{"links":{"account":1,"rental":1,"client":85,"rental_agreement":11,"source":1,"bookings_fees":[337,338],"bookings_taxes":[745,746,747,748],"bookings_tags":[]},"id":712,"start_at":"2016-01-15T16:00:00Z","end_at":"2016-01-23T10:00:00Z","status":"Booked","updated_at":"2016-01-12T11:24:32Z","reference":"0000JS","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":"583.2","initial_rental_price":"583.2","discount":null,"final_rental_price":"583.2","final_price":"2125.42","downpayment":null,"paid_amount":"0.0","currency":"EUR","notes":null,"damage_deposit":"0.0","charge_damage_deposit_on_arrival":true,"adults":3,"children":2,"bookings_payments_count":0,"review_requests_count":0,"locked":"doorkeeper/application-2","created_at":"2016-01-12T11:24:32Z","canceled_at":null,"expected_checkin_time":null,"expected_checkout_time":null,"payment_url":"https://www.bookingsync.com/en/mybookings/1/bookings/712/payment","balance_due_at":"2016-01-12T11:24:32Z","owned_by_app":true}]}'
+      string: '{"links":{"bookings.account":"https://www.bookingsync.com/api/v3/accounts/{bookings.account}","bookings.rental":"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}","bookings.client":"https://www.bookingsync.com/api/v3/clients/{bookings.client}","bookings.rental_agreement":"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}","bookings.source":"https://www.bookingsync.com/api/v3/sources/{bookings.source}","bookings.inquiry":"https://www.bookingsync.com/api/v3/inquiries/{bookings.inquiry}","bookings.booking_comments":"https://www.bookingsync.com/api/v3/booking_comments/{bookings.booking_comments}","bookings.bookings_fees":"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}","bookings.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}","bookings.payments":"https://www.bookingsync.com/api/v3/payments/{bookings.payments}","bookings.bookings_payments":"https://www.bookingsync.com/api/v3/bookings_payments/{bookings.bookings_payments}","bookings.bookings_tags":"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"},"bookings":[{"links":{"account":9123,"rental":25938,"client":259309,"rental_agreement":24033,"source":4504,"inquiry":null,"booking_comments":[92966],"bookings_fees":[],"bookings_taxes":[],"payments":[],"bookings_payments":[],"bookings_tags":[]},"id":829524,"start_at":"2017-03-15T16:00:00Z","end_at":"2017-03-22T10:00:00Z","status":"Booked","updated_at":"2016-12-09T16:06:34Z","reference":"00HS2C","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":"63.0","initial_rental_price":"63.0","channel_price":null,"discount":null,"final_rental_price":"63.0","final_price":"63.0","downpayment":"18.9","paid_amount":"0.0","currency":"EUR","notes":null,"damage_deposit":"0.0","charge_damage_deposit_on_arrival":true,"adults":3,"children":2,"bookings_payments_count":0,"review_requests_count":0,"locked":"doorkeeper/application-202","created_at":"2016-12-09T16:06:34Z","canceled_at":null,"expected_checkin_time":null,"expected_checkout_time":null,"payment_url":null,"balance_due_at":"2017-02-13T16:00:00Z","payback_to_owner":null,"commission":null,"contract_updated_at":null,"owned_by_app":true}]}'
     http_version: 
-  recorded_at: Tue, 12 Jan 2016 11:24:32 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Fri, 09 Dec 2016 16:06:34 GMT
+recorded_with: VCR 3.0.3

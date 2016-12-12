@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: put
-    uri: https://www.bookingsync.com/api/v3/sources/4
+    uri: https://www.bookingsync.com/api/v3/sources/4509
     body:
       encoding: UTF-8
-      string: '{"sources":[{"name":"HomeAway.com"}]}'
+      string: '{"sources":[{"name":"test source.com"}]}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.20
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,6 +22,10 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 14:28:40 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -30,40 +34,43 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 14:28:40 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1407834000'
+      - '1481295600'
       X-Ratelimit-Remaining:
-      - '985'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      X-Ua-Compatible:
-      - IE=Edge
+      - '992'
       Etag:
-      - '"a64025ec46c4a7a989b9908f693c4655"'
+      - W/"3859f1e1b1ee3c707a056c439b76bde3"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=0f043d2d78d818d2fe076b2c49de6d81; path=/; secure; HttpOnly
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=c4a59718-1947-4886-93a9-74348b57525b; path=/; expires=Fri, 16 Dec
+        2016 14:28:40 -0000; secure
+      - ahoy_visitor=0debb542-1d10-4f50-b52a-87c4e44ed87a; path=/; expires=Sun, 09
+        Dec 2018 14:28:40 -0000; secure
       X-Request-Id:
-      - 994d008624497efc0687ab76902292ac
+      - 8911aef3-c1fd-4ec3-856d-7850773c4523
       X-Runtime:
-      - '0.067016'
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      Date:
-      - Tue, 12 Aug 2014 08:19:30 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
+      - '0.050053'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"sources.account":"https:\/\/www.bookingsync.com\/api\/v3\/accounts\/{sources.account}"},"sources":[{"links":{"account":1},"id":4,"name":"HomeAway.com","created_at":"2014-08-12T08:15:25Z","updated_at":"2014-08-12T08:19:30Z"}]}'
-    http_version:
-  recorded_at: Tue, 12 Aug 2014 08:19:30 GMT
-recorded_with: VCR 2.9.2
+      string: '{"links":{"sources.account":"https://www.bookingsync.com/api/v3/accounts/{sources.account}","sources.bookings":"https://www.bookingsync.com/api/v3/bookings/{sources.bookings}"},"sources":[{"links":{"account":3837,"bookings":[]},"id":4509,"name":"test
+        source.com","created_at":"2016-12-09T14:27:06Z","updated_at":"2016-12-09T14:28:40Z","position":5}]}'
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 14:28:40 GMT
+recorded_with: VCR 3.0.3

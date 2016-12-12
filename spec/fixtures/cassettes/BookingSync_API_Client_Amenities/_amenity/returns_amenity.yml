@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/amenities/2
+    uri: https://www.bookingsync.com/api/v3/amenities/1
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,43 +22,63 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 15:27:55 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 15:27:55 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1401202800'
+      - '1481212800'
       X-Ratelimit-Remaining:
-      - '999'
+      - '988'
       Link:
-      - <https://www.bookingsync.com/api/v3/amenities/2?page=1>; rel="first", <https://www.bookingsync.com/api/v3/amenities/2?page=1>;
+      - <https://www.bookingsync.com/api/v3/amenities/1?page=1>; rel="first", <https://www.bookingsync.com/api/v3/amenities/1?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      X-Total-Count:
+      - '1'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"d38feaf36a065c3a61be13696bdf4db8"'
+      - W/"0f40e8b30e061e8386bf97a8445f4235"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=b38f4dce-7956-4b53-afb6-ae82b4d74a3f; path=/; expires=Thu, 15 Dec
+        2016 15:27:55 -0000; secure
+      - ahoy_visitor=b3c4a7f3-6f09-469a-9ca6-0485e64b66fb; path=/; expires=Sat, 08
+        Dec 2018 15:27:55 -0000; secure
       X-Request-Id:
-      - e66e31c259208721eefb8644e8fd01b3
+      - 1936d5b0-885c-42a8-bea3-22b68f8109c1
       X-Runtime:
-      - '0.086610'
-      Date:
-      - Tue, 27 May 2014 14:00:19 GMT
-      Connection:
-      - close
+      - '0.044749'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"amenities":[{"id":2,"title":"tv"}]}'
-    http_version:
-  recorded_at: Tue, 27 May 2014 14:00:19 GMT
-recorded_with: VCR 2.9.1
+      string: '{"amenities":[{"id":1,"key":"blender","title":{"en":"Blender","fr":"Mixeur"}}],"meta":{}}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 15:27:55 GMT
+recorded_with: VCR 3.0.3

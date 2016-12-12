@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://bookingsync.dev/api/v3/rental_cancelation_policies/13
+    uri: https://www.bookingsync.com/api/v3/rental_cancelation_policies/16404
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.29
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,52 +22,64 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 09:42:20 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 09:42:20 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1445256000'
+      - '1481277600'
       X-Ratelimit-Remaining:
-      - '997'
+      - '980'
       Link:
-      - <https://bookingsync.dev/api/v3/rental_cancelation_policies/13?page=1>; rel="first",
-        <https://bookingsync.dev/api/v3/rental_cancelation_policies/13?page=1>; rel="last"
+      - <https://www.bookingsync.com/api/v3/rental_cancelation_policies/16404?page=1>;
+        rel="first", <https://www.bookingsync.com/api/v3/rental_cancelation_policies/16404?page=1>;
+        rel="last"
       X-Total-Pages:
       - '1'
       X-Total-Count:
       - '1'
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"26530303f51b8dde408d2c2369fe967f"'
+      - W/"7ce3b7013be883c44c4c1fb3cec35554"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - ahoy_track=true; path=/
-      - ahoy_visit=bab31074-0c50-4443-9e2c-164ef308108a; path=/; expires=Mon, 26 Oct
-        2015 11:42:28 -0000
-      - ahoy_visitor=c61a0ba8-d2f8-4bfc-90ef-de7db5a09b9e; path=/; expires=Thu, 19
-        Oct 2017 11:42:28 -0000
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=4c7838c5-0a44-4c8b-afb3-0c15163d17f4; path=/; expires=Fri, 16 Dec
+        2016 09:42:20 -0000; secure
+      - ahoy_visitor=45af0622-7001-4932-aa02-d7351c59ddf5; path=/; expires=Sun, 09
+        Dec 2018 09:42:20 -0000; secure
       X-Request-Id:
-      - 9813b6d1-1cc3-4e50-b88f-c829ad225742
+      - 545d733b-1233-4def-b334-514a23498f66
       X-Runtime:
-      - '0.131157'
-      Date:
-      - Mon, 19 Oct 2015 11:42:28 GMT
-      Connection:
-      - close
+      - '0.031541'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"rental_cancelation_policies.rental":"https://bookingsync.dev/api/v3/rentals/{rental_cancelation_policies.rental}","rental_cancelation_policies.rental_cancelation_policy_items":"https://bookingsync.dev/api/v3/rental_cancelation_policy_items/{rental_cancelation_policies.rental_cancelation_policy_items}"},"rental_cancelation_policies":[{"links":{"rental":3,"rental_cancelation_policy_items":[13]},"id":13,"body":"```
-        body ``` ","created_at":"2015-09-30T13:09:26Z","updated_at":"2015-09-30T13:09:26Z"}]}'
+      string: '{"links":{"rental_cancelation_policies.rental":"https://www.bookingsync.com/api/v3/rentals/{rental_cancelation_policies.rental}","rental_cancelation_policies.rental_cancelation_policy_items":"https://www.bookingsync.com/api/v3/rental_cancelation_policy_items/{rental_cancelation_policies.rental_cancelation_policy_items}"},"rental_cancelation_policies":[{"links":{"rental":5116,"rental_cancelation_policy_items":[14849]},"id":16404,"body":"```body```","created_at":"2016-12-05T22:37:43Z","updated_at":"2016-12-05T22:37:43Z","body_translations":{"fr":"","en":"```body```"}}]}'
     http_version: 
-  recorded_at: Mon, 19 Oct 2015 11:42:28 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Fri, 09 Dec 2016 09:42:20 GMT
+recorded_with: VCR 3.0.3

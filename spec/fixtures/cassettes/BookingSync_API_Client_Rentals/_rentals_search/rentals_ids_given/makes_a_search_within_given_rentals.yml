@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://bookingsync.dev/api/v3/rentals/1,5/search
+    uri: https://www.bookingsync.com/api/v3/rentals/5116,5117/search
     body:
       encoding: UTF-8
-      string: '{"start_at":"2016-06-15","end_at":"2016-06-30"}'
+      string: '{"start_at":"2016-12-15","end_at":"2016-12-22"}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.36
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,50 +22,64 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 17:20:45 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 17:20:44 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1465574400'
+      - '1481306400'
       X-Ratelimit-Remaining:
-      - '992'
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
+      - '999'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rentals/5116,5117/search?end_at=2016-12-22&page=1&start_at=2016-12-15>;
+        rel="first", <https://www.bookingsync.com/api/v3/rentals/5116,5117/search?end_at=2016-12-22&page=1&start_at=2016-12-15>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      X-Per-Page:
+      - '50'
       Etag:
-      - '"c98c554a9f7cf1fee44953129a5e8df5"'
+      - W/"1a4166232d9b876573f4e03d7927fde1"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - ahoy_track=true; path=/
-      - ahoy_visit=8f1a606c-9274-431c-8253-d12c45b0bc0a; path=/; expires=Fri, 17 Jun
-        2016 15:33:21 -0000
-      - ahoy_visitor=8f727d5f-a25b-4b93-85c6-930a20d22712; path=/; expires=Sun, 10
-        Jun 2018 15:33:21 -0000
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=a6f08847-2f58-4f51-9993-53d7dadab358; path=/; expires=Fri, 16 Dec
+        2016 17:20:44 -0000; secure
+      - ahoy_visitor=6abc4a62-34fe-41bc-a8bb-fb6ac2e2c77f; path=/; expires=Sun, 09
+        Dec 2018 17:20:44 -0000; secure
       X-Request-Id:
-      - 51f0efed-3c73-405c-b9ce-910edee3d546
+      - 2124fe78-b00e-4b9c-863b-fdfacf23031d
       X-Runtime:
-      - '0.324886'
-      Date:
-      - Fri, 10 Jun 2016 15:33:22 GMT
-      Connection:
-      - close
+      - '0.462001'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"rentals.rentals_fees":"http://bookingsync.dev/api/v3/rentals_fees/{rentals.rentals_fees}"},"rentals":[{"links":{"rentals_fees":[6,1,3]},"id":1,"currency":"EUR","initial_price":1094.4,"final_price":3979.69,"updated_at":"2016-06-10T15:32:54Z","taxes":[{"name":{"fr":"VAT
-        fr","en":"VAT"},"percentage":"23.0","amount":"686.49"}],"price_details":{"taxes":[{"name":{"fr":"VAT
-        fr","en":"VAT"},"percentage":"23.0","amount":"228.83","taxable_type":"Rental","taxable_id":1,"tax_id":1,"included":false},{"name":{"fr":"z
-        other FR","en":"other"},"percentage":"10.0","amount":"99.49","taxable_type":"Rental","taxable_id":1,"tax_id":2,"included":true},{"name":{"fr":"VAT
-        fr","en":"VAT"},"percentage":"23.0","amount":"457.66","taxable_type":"Fee","taxable_id":2,"tax_id":1,"included":false},{"name":{"fr":"z
-        other FR","en":"other"},"percentage":"10.0","amount":"198.98","taxable_type":"Fee","taxable_id":2,"tax_id":2,"included":true}],"fees":[{"name":{"fr":"whatever
-        car","en":"Car"},"required":true,"price":"2188.8","quantity":1,"id":2,"rentals_fee_id":1},{"name":{"fr":"","en":"whatever"},"required":true,"price":"10.0","quantity":1,"id":5,"rentals_fee_id":3}]},"price_to_pay_now":3979.69}]}'
+      string: '{"links":{"rentals.rentals_fees":"https://www.bookingsync.com/api/v3/rentals_fees/{rentals.rentals_fees}"},"rentals":[{"links":{"rentals_fees":[]},"id":5116,"currency":"USD","initial_price":70.0,"final_price":70.0,"updated_at":"2016-12-09T14:47:17Z","taxes":[],"price_details":{"taxes":[],"fees":[]},"price_to_pay_now":70.0}]}'
     http_version: 
-  recorded_at: Fri, 10 Jun 2016 15:33:22 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Fri, 09 Dec 2016 17:20:45 GMT
+recorded_with: VCR 3.0.3

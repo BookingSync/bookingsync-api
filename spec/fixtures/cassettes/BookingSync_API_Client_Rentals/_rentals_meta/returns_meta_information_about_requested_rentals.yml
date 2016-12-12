@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/rentals/67,68/meta
+    uri: https://www.bookingsync.com/api/v3/rentals/5116,5117,12216,13275/meta
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,40 +22,69 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 10:29:31 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 10:29:31 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1401375600'
+      - '1481281200'
       X-Ratelimit-Remaining:
-      - '997'
+      - '963'
       Link:
-      - <https://www.bookingsync.com/api/v3/rentals/67,68/meta?page=1>; rel="first"
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      - <https://www.bookingsync.com/api/v3/rentals/5116,5117,12216,13275/meta?page=1>;
+        rel="first", <https://www.bookingsync.com/api/v3/rentals/5116,5117,12216,13275/meta?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      X-Per-Page:
+      - '50'
       Etag:
-      - '"aa58598e981ac89717233f163d47419c"'
+      - W/"45bf67f49f80bb725724e221d248358b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=3dd09738-7715-454f-8e45-615fc40740ad; path=/; expires=Fri, 16 Dec
+        2016 10:29:31 -0000; secure
+      - ahoy_visitor=f15e0594-7cb7-4991-b98b-6a4c5c5e87bb; path=/; expires=Sun, 09
+        Dec 2018 10:29:31 -0000; secure
       X-Request-Id:
-      - 58813ecdd5a29f7ebe74b4d5e92cde4f
+      - 1c269e96-f732-4f18-99e7-937d48c02307
       X-Runtime:
-      - '0.095492'
-      Date:
-      - Thu, 29 May 2014 14:13:03 GMT
-      Connection:
-      - close
+      - '0.207252'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"rentals_meta.destinations":"https://www.bookingsync.com/api/v3/destinations/{rentals_meta.destinations}"},"rentals_meta":[{"links":{"destinations":[35]},"price_range":{"currency":"EUR","max_price":700,"min_price":null},"rental_types":[{"name":"villa","counter":1}],"destinations":[{"id":35,"name":{"en":"Name-1"},"fullname":{"en":"Name-1"},"permalink":{"en":"name-1"},"aliases":{"en":null}}]}]}'
-    http_version:
-  recorded_at: Thu, 29 May 2014 14:13:03 GMT
-recorded_with: VCR 2.9.1
+      string: '{"links":{"rentals_meta.destinations":"https://www.bookingsync.com/api/v3/destinations/{rentals_meta.destinations}"},"rentals_meta":[{"links":{"destinations":[7301]},"price_ranges":[{"currency":"EUR","max_price":"401.85714","min_price":"401.71429"},{"currency":"USD","max_price":"10.0","min_price":"10.0"}],"rental_types":[{"name":"villa","counter":2}],"rentals_tags":[{"id":32,"name":{"en":"expensive"},"color":"rgba(40,207,223,0.73)","logo":"fa-money","counter":1},{"id":65,"name":{"en":"Destination","fr":""},"color":"#0021ff","logo":"fa-globe","counter":1}],"destinations":[{"id":7301,"name":{"en":"Sivota
+        Lefkada"},"fullname":{"en":"Sivota Lefkada, Lefkada (Lefkas), Ionian Islands,
+        Greece, Europe, World","fr":"Sivota Lefkada, Lefkada (Lefkas), Ionian Islands,
+        Greece, Europe, World","de":"Sivota Lefkada, Lefkada (Lefkas), Ionian Islands,
+        Greece, Europe, World"},"permalink":{"en":"world/europe/greece/ionian-islands/lefkada-lefkas/sivota-lefkada","fr":"world/europe/greece/ionian-islands/lefkada-lefkas/sivota-lefkada","de":"world/europe/greece/ionian-islands/lefkada-lefkas/sivota-lefkada"},"aliases":{"en":"---\n-
+        Syvota\n"},"counter":2,"ancestor_ids":[99,101,2918,6817,7160]}]}]}'
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 10:29:31 GMT
+recorded_with: VCR 3.0.3

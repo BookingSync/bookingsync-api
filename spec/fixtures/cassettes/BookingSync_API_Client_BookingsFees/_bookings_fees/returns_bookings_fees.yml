@@ -4,11 +4,11 @@ http_interactions:
     method: get
     uri: https://www.bookingsync.com/api/v3/bookings_fees
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.23
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 24 Mar 2015 12:47:14 GMT
+      - Thu, 08 Dec 2016 15:45:03 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,20 +34,20 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 15:45:03 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1427202000'
+      - '1481212800'
       X-Ratelimit-Remaining:
-      - '924'
+      - '979'
       Link:
       - <https://www.bookingsync.com/api/v3/bookings_fees?page=1>; rel="first", <https://www.bookingsync.com/api/v3/bookings_fees?page=1>;
         rel="last"
@@ -55,8 +55,10 @@ http_interactions:
       - '1'
       X-Total-Count:
       - '1'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"43c938a8782d08886ac529486d4c6524"'
+      - W/"2b70ef6651243389a53281296d67bf2f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,18 +66,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=e903b78c-f174-420a-a0e9-5b53bf10a8b9; path=/; expires=Tue, 31 Mar
-        2015 12:47:14 -0000; secure
-      - ahoy_visitor=7b2ab09d-cf8a-41bf-b904-78680ac09589; path=/; expires=Fri, 24
-        Mar 2017 12:47:14 -0000; secure
+      - ahoy_visit=8497c824-d451-42ef-8bec-ac80d8cf5207; path=/; expires=Thu, 15 Dec
+        2016 15:45:03 -0000; secure
+      - ahoy_visitor=82fe100a-0d87-4cb0-b72b-49fc1a2113a9; path=/; expires=Sat, 08
+        Dec 2018 15:45:03 -0000; secure
       X-Request-Id:
-      - d13d1227-035b-4731-9b70-3f8dfa39bcd0
+      - 55c76fb5-c6b7-4e2b-94de-3f488472ac5a
       X-Runtime:
-      - '0.497416'
+      - '0.054441'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"bookings_fees.rentals_fee":"https://www.bookingsync.com/api/v3/rentals_fees/{bookings_fees.rentals_fee}","bookings_fees.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings_fees.bookings_taxes}"},"bookings_fees":[{"links":{"rentals_fee":74,"bookings_taxes":[]},"id":1044,"name":{"en":"Final
-        Cleaning"},"price":"100.0","required":true,"included_in_price":true,"times_booked":1,"created_at":"2015-03-24T12:15:17Z","updated_at":"2015-03-24T12:15:17Z"}]}'
+      string: '{"links":{"bookings_fees.account":"https://www.bookingsync.com/api/v3/accounts/{bookings_fees.account}","bookings_fees.rentals_fee":"https://www.bookingsync.com/api/v3/rentals_fees/{bookings_fees.rentals_fee}","bookings_fees.booking":"https://www.bookingsync.com/api/v3/bookings/{bookings_fees.booking}","bookings_fees.fee":"https://www.bookingsync.com/api/v3/fees/{bookings_fees.fee}","bookings_fees.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings_fees.bookings_taxes}"},"bookings_fees":[{"links":{"account":3837,"rentals_fee":3306,"booking":142616,"fee":474,"bookings_taxes":[]},"id":8112,"name":{"en":"test
+        fee"},"price":"0.0","required":false,"included_in_price":true,"times_booked":2,"created_at":"2015-09-09T21:13:53Z","updated_at":"2015-09-09T21:13:53Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Tue, 24 Mar 2015 12:47:14 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Thu, 08 Dec 2016 15:45:03 GMT
+recorded_with: VCR 3.0.3
