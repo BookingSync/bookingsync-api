@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: delete
-    uri: http://bookingsync.dev/api/v3/living_rooms/6
+    uri: https://www.bookingsync.com/api/v3/living_rooms/22325
     body:
       encoding: UTF-8
       string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.1.2
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,48 +22,48 @@ http_interactions:
       code: 204
       message: No Content
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 18:21:24 GMT
       Connection:
       - keep-alive
       Status:
       - 204 No Content
-      Cache-Control:
-      - no-cache
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 18:21:24 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1480082400'
+      - '1481223600'
       X-Ratelimit-Remaining:
-      - '990'
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Updated-Since-Request-Synced-At:
-      - 2016-11-25 13:48:47 UTC
-      X-Request-Id:
-      - f797f8a6-3879-4259-bcf5-731ae63d37e6
+      - '982'
+      Cache-Control:
+      - no-cache
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
-      X-Runtime:
-      - '0.024749'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Date:
-      - Fri, 25 Nov 2016 13:48:47 GMT
       Set-Cookie:
-      - ahoy_track=true; path=/
-      - ahoy_visit=d8c3a1fb-fb77-4e99-a4c5-b827a223ff91; path=/; expires=Fri, 02 Dec
-        2016 13:48:47 -0000
-      - ahoy_visitor=0b3c36f5-5d2e-4ff9-9cf5-07d241f97e2d; path=/; expires=Sun, 25
-        Nov 2018 13:48:47 -0000
-      X-Powered-By:
-      - Phusion Passenger 5.0.27
-      Server:
-      - nginx/1.8.1 + Phusion Passenger 5.0.27
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=fba1737e-82cb-4b32-b2e6-06769fd5b2b9; path=/; expires=Thu, 15 Dec
+        2016 18:21:24 -0000; secure
+      - ahoy_visitor=c1f92d9f-385d-4576-a2bb-dccee2b7936a; path=/; expires=Sat, 08
+        Dec 2018 18:21:24 -0000; secure
+      X-Request-Id:
+      - 71b2e625-ccc0-42d1-b71a-a5275a159bf5
+      X-Runtime:
+      - '0.043674'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Nov 2016 13:48:47 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Thu, 08 Dec 2016 18:21:24 GMT
+recorded_with: VCR 3.0.3

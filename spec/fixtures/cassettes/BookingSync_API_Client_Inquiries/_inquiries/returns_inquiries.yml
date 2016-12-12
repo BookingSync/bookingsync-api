@@ -4,11 +4,11 @@ http_interactions:
     method: get
     uri: https://www.bookingsync.com/api/v3/inquiries
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,43 +22,63 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 16:56:42 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 16:56:42 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1395763200'
+      - '1481216400'
       X-Ratelimit-Remaining:
-      - '996'
+      - '976'
       Link:
-      - "<https://www.bookingsync.com/api/v3/inquiries?page=1>; rel=\"first\", <https://www.bookingsync.com/api/v3/inquiries?page=1>;
-        rel=\"last\""
+      - <https://www.bookingsync.com/api/v3/inquiries?page=1>; rel="first", <https://www.bookingsync.com/api/v3/inquiries?page=1>;
+        rel="last"
       X-Total-Pages:
       - '1'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      X-Total-Count:
+      - '2'
+      X-Per-Page:
+      - '100'
       Etag:
-      - "\"5ce3f361e48a5948646c6c51dd86b319\""
+      - W/"4ef004ad7be692d2c7c68729a450ce73"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=c5b83215-6c06-4a9e-bb6e-0348fd90d10b; path=/; expires=Thu, 15 Dec
+        2016 16:56:42 -0000; secure
+      - ahoy_visitor=bfc13440-535b-441a-bf60-47ec7c87f1b6; path=/; expires=Sat, 08
+        Dec 2018 16:56:42 -0000; secure
       X-Request-Id:
-      - 966f6c2d18bb20ba61f88d00b869ac42
+      - b3f8e014-a50a-45c1-bbff-47667394c36a
       X-Runtime:
-      - '0.173138'
-      Date:
-      - Tue, 25 Mar 2014 15:22:25 GMT
-      Connection:
-      - close
+      - '0.072079'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: "{\"inquiries\":[{\"id\":1,\"firstname\":\"John\",\"lastname\":\"Smith\",\"email\":\"john@example.com\",\"country_code\":null,\"phone\":null,\"start_at\":\"2014-03-27T16:00:00Z\",\"end_at\":\"2014-03-28T10:00:00Z\",\"adults\":null,\"children\":null,\"rental_id\":2,\"message\":null,\"created_at\":\"2014-03-25T15:10:28Z\",\"updated_at\":\"2014-03-25T15:10:28Z\"}]}"
-    http_version:
-  recorded_at: Tue, 25 Mar 2014 15:22:25 GMT
-recorded_with: VCR 2.8.0
+      string: '{"links":{"inquiries.rental":"https://www.bookingsync.com/api/v3/rentals/{inquiries.rental}","inquiries.source":"https://www.bookingsync.com/api/v3/sources/{inquiries.source}","inquiries.booking":"https://www.bookingsync.com/api/v3/bookings/{inquiries.booking}"},"inquiries":[{"links":{"rental":5116,"source":null,"booking":null},"id":16072,"firstname":"John","lastname":"Smith","email":"john@example.com","country_code":null,"phone":null,"start_at":"2016-12-06T16:00:00Z","end_at":"2016-12-07T10:00:00Z","adults":null,"children":null,"message":null,"locked":"doorkeeper/application-17","created_at":"2016-12-06T13:21:13Z","updated_at":"2016-12-06T13:21:13Z"},{"links":{"rental":5116,"source":null,"booking":null},"id":16073,"firstname":"John","lastname":"Smith","email":"john@example.com","country_code":null,"phone":null,"start_at":"2016-12-06T16:00:00Z","end_at":"2016-12-07T10:00:00Z","adults":null,"children":null,"message":null,"locked":"doorkeeper/application-17","created_at":"2016-12-06T13:23:26Z","updated_at":"2016-12-06T13:23:26Z"}]}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 16:56:42 GMT
+recorded_with: VCR 3.0.3

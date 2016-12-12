@@ -3,6 +3,8 @@ require "spec_helper"
 describe BookingSync::API::Client::Fees do
   let(:client) { BookingSync::API::Client.new(test_access_token) }
 
+  before { |ex| @casette_base_path = casette_path(casette_dir, ex.metadata) }
+
   describe ".fees", :vcr do
     it "returns fees" do
       expect(client.fees).not_to be_empty
@@ -11,9 +13,13 @@ describe BookingSync::API::Client::Fees do
   end
 
   describe ".fee", :vcr do
+    let(:prefetched_fee_id) {
+      find_resource("#{@casette_base_path}_fees/returns_fees.yml", "fees")[:id]
+    }
+
     it "returns a single fee" do
-      fee = client.fee(474)
-      expect(fee.id).to eq 474
+      fee = client.fee(prefetched_fee_id)
+      expect(fee.id).to eq prefetched_fee_id
     end
   end
 

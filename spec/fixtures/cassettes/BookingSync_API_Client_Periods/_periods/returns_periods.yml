@@ -4,11 +4,11 @@ http_interactions:
     method: get
     uri: https://www.bookingsync.com/api/v3/periods
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,43 +22,63 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 00:27:26 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 00:27:25 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1397228400'
+      - '1481245200'
       X-Ratelimit-Remaining:
-      - '996'
+      - '999'
       Link:
       - <https://www.bookingsync.com/api/v3/periods?page=1>; rel="first", <https://www.bookingsync.com/api/v3/periods?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Access-Control-Request-Method:
-      - ! '*'
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      X-Total-Count:
+      - '1'
+      X-Per-Page:
+      - '100'
       Etag:
-      - ! '"4a494ff511e56a635ef461ff38bfeca2"'
+      - W/"245118ac3ccda72c08c16012976969bb"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=7b06597c-92f6-42dc-adc5-92f4459f9d26; path=/; expires=Fri, 16 Dec
+        2016 00:27:25 -0000; secure
+      - ahoy_visitor=e4f20ac3-e707-4166-bf1e-b45e816458df; path=/; expires=Sun, 09
+        Dec 2018 00:27:25 -0000; secure
       X-Request-Id:
-      - 31c86b3edfdd99c35cf20358a796ab4f
+      - 63cc837a-4104-43ae-a192-f6338ebc1092
       X-Runtime:
-      - '0.747321'
-      Date:
-      - Fri, 11 Apr 2014 14:18:30 GMT
-      Connection:
-      - close
+      - '0.071194'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
-      encoding: US-ASCII
-      string: ! '{"periods":[{"id":1,"season_id":1,"start_at":"2014-04-10","end_at":"2014-07-10","created_at":"2014-04-10T13:07:57Z","updated_at":"2014-04-10T13:07:57Z"},{"id":2,"season_id":2,"start_at":"2014-04-10","end_at":"2014-07-10","created_at":"2014-04-10T13:08:02Z","updated_at":"2014-04-10T13:08:02Z"},{"id":3,"season_id":3,"start_at":"2014-04-10","end_at":"2014-07-10","created_at":"2014-04-10T13:08:06Z","updated_at":"2014-04-10T13:08:06Z"},{"id":4,"season_id":4,"start_at":"2014-04-10","end_at":"2014-07-10","created_at":"2014-04-10T13:08:12Z","updated_at":"2014-04-10T13:08:12Z"},{"id":5,"season_id":5,"start_at":"2014-04-10","end_at":"2014-07-10","created_at":"2014-04-10T13:08:16Z","updated_at":"2014-04-10T13:08:16Z"},{"id":6,"season_id":6,"start_at":"2014-04-10","end_at":"2014-07-10","created_at":"2014-04-10T13:08:20Z","updated_at":"2014-04-10T13:08:20Z"},{"id":7,"season_id":7,"start_at":"2014-04-10","end_at":"2014-07-10","created_at":"2014-04-10T13:08:25Z","updated_at":"2014-04-10T13:08:25Z"},{"id":8,"season_id":8,"start_at":"2014-04-10","end_at":"2014-07-10","created_at":"2014-04-10T13:08:29Z","updated_at":"2014-04-10T13:08:29Z"},{"id":9,"season_id":9,"start_at":"2014-04-10","end_at":"2014-07-10","created_at":"2014-04-10T13:08:34Z","updated_at":"2014-04-10T13:08:34Z"},{"id":10,"season_id":10,"start_at":"2014-04-10","end_at":"2014-07-10","created_at":"2014-04-10T13:08:38Z","updated_at":"2014-04-10T13:08:38Z"}]}'
-    http_version:
-  recorded_at: Fri, 11 Apr 2014 14:18:30 GMT
-recorded_with: VCR 2.9.0
+      encoding: UTF-8
+      string: '{"links":{"periods.season":"https://www.bookingsync.com/api/v3/seasons/{periods.season}","periods.rates_table":"https://www.bookingsync.com/api/v3/rates_tables/{periods.rates_table}"},"periods":[{"links":{"season":1803,"rates_table":274},"id":88197,"start_date":"2016-01-18","end_date":"2017-01-16","created_at":"2015-11-10T10:11:21Z","updated_at":"2015-11-10T10:11:21Z"}],"meta":{}}'
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 00:27:26 GMT
+recorded_with: VCR 3.0.3

@@ -4,11 +4,11 @@ http_interactions:
     method: get
     uri: https://www.bookingsync.com/api/v3/fees/474
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.29
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 09 Sep 2015 21:13:16 GMT
+      - Thu, 08 Dec 2016 16:57:15 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,18 +34,18 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 16:57:15 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1441836000'
+      - '1481216400'
       X-Ratelimit-Remaining:
       - '974'
       Link:
@@ -55,8 +55,10 @@ http_interactions:
       - '1'
       X-Total-Count:
       - '1'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"70d379460c62943346fad5ed20f730b2"'
+      - W/"550b3b088e3055d8b760e759dee10548"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,18 +66,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=7dfd0b20-10ca-49da-94c6-e7af8a7c49c6; path=/; expires=Wed, 16 Sep
-        2015 21:13:16 -0000; secure
-      - ahoy_visitor=4134a363-9027-493d-a702-cd33e52830f3; path=/; expires=Sat, 09
-        Sep 2017 21:13:16 -0000; secure
+      - ahoy_visit=7a69960a-124b-471b-8843-a8f58ce273fd; path=/; expires=Thu, 15 Dec
+        2016 16:57:15 -0000; secure
+      - ahoy_visitor=9f537067-d996-4a9f-9d37-75bcfcf80879; path=/; expires=Sat, 08
+        Dec 2018 16:57:15 -0000; secure
       X-Request-Id:
-      - 0ef203fd-5b8d-4066-a912-9d5faf8e7f7d
+      - bc52784f-55ae-4277-adc3-1ebba55fd9c2
       X-Runtime:
-      - '0.072005'
+      - '0.026345'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
       string: '{"links":{"fees.account":"https://www.bookingsync.com/api/v3/accounts/{fees.account}"},"fees":[{"links":{"account":3837},"id":474,"name":{"en":"test
-        fee"},"rate":"10.0","rate_kind":"fixed","created_at":"2015-09-09T20:23:53Z","updated_at":"2015-09-09T20:23:54Z","downpayment_percentage":"10.0"}]}'
+        fee"},"rate":"10.0","rate_kind":"fixed","created_at":"2015-09-09T20:23:53Z","updated_at":"2015-09-09T20:23:54Z","downpayment_percentage":"10.0","kind":"other"}]}'
     http_version: 
-  recorded_at: Wed, 09 Sep 2015 21:13:17 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Thu, 08 Dec 2016 16:57:15 GMT
+recorded_with: VCR 3.0.3
