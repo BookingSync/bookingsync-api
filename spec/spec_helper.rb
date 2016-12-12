@@ -4,12 +4,14 @@ require "webmock/rspec"
 require "vcr"
 require "json"
 require "pry"
+require "support/vcr_helper.rb"
 
 RSpec.configure do |config|
   config.before do
     ENV["BOOKINGSYNC_VERIFY_SSL"] = "false"
   end
   config.include WebMock::API
+  config.include VcrHelper
 end
 
 VCR.configure do |c|
@@ -62,4 +64,8 @@ def stub_delete(path, options = {})
     headers: { "Content-Type" => "application/vnd.api+json" }
   }.merge(options)
   stub_request(:delete, bs_url(path)).to_return(response)
+end
+
+def casette_dir
+  VCR.configuration.cassette_library_dir
 end
