@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/bookings/20
+    uri: https://www.bookingsync.com/api/v3/bookings/817604
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.20
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,49 +22,63 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 16:30:29 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
-      X-Ua-Compatible:
-      - chrome=1
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 16:30:29 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1410710400'
+      - '1481216400'
       X-Ratelimit-Remaining:
-      - '996'
+      - '991'
       Link:
-      - <https://www.bookingsync.com/api/v3/bookings/20?page=1>; rel="first", <https://www.bookingsync.com/api/v3/bookings/20?page=1>;
-        rel="last"
+      - <https://www.bookingsync.com/api/v3/bookings/817604?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/bookings/817604?page=1>; rel="last"
       X-Total-Pages:
       - '1'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
+      X-Total-Count:
+      - '1'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"90e551291052efcb67155a7388ec2377"'
+      - W/"232a9ae67e51a6d13d04c9ace4ebd051"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=dd76d191-693b-4e1d-90a6-8a4f24412d3e; path=/; expires=Thu, 15 Dec
+        2016 16:30:29 -0000; secure
+      - ahoy_visitor=761af9c7-0d0e-40e9-a7c4-5d1fc0adffcb; path=/; expires=Sat, 08
+        Dec 2018 16:30:29 -0000; secure
       X-Request-Id:
-      - d7277cf4-544a-4324-9bef-7552098e01b2
+      - b728204b-a442-4a2f-97ee-725d97b74384
       X-Runtime:
-      - '0.050735'
-      Date:
-      - Sun, 14 Sep 2014 15:08:06 GMT
-      Connection:
-      - close
+      - '0.074245'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"bookings.account":"http:\/\/www.bookingsync.com\/api\/v3\/accounts\/{bookings.account}","bookings.rental":"http:\/\/www.bookingsync.com\/api\/v3\/rentals\/{bookings.rental}","bookings.client":"http:\/\/www.bookingsync.com\/api\/v3\/clients\/{bookings.client}","bookings.rental_agreement":"http:\/\/www.bookingsync.com\/api\/v3\/rental_agreements\/{bookings.rental_agreement}","bookings.source":"http:\/\/www.bookingsync.com\/api\/v3\/sources\/{bookings.source}"},"bookings":[{"links":{"account":1,"rental":1,"client":15,"rental_agreement":null,"source":null},"id":20,"start_at":"2014-09-14T16:00:00Z","end_at":"2014-09-28T10:00:00Z","status":"Booked","updated_at":"2014-06-12T22:25:02Z","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":"3000.0","discount":null,"final_price":"3000.0","deposit":null,"currency":"USD","notes":"","adults":5,"children":null,"bookings_payments_count":0,"review_requests_count":0,"locked":null,"created_at":"2014-06-12T22:25:02Z","canceled_at":null}],"meta":{}}'
+      string: '{"links":{"bookings.account":"https://www.bookingsync.com/api/v3/accounts/{bookings.account}","bookings.rental":"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}","bookings.client":"https://www.bookingsync.com/api/v3/clients/{bookings.client}","bookings.rental_agreement":"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}","bookings.source":"https://www.bookingsync.com/api/v3/sources/{bookings.source}","bookings.inquiry":"https://www.bookingsync.com/api/v3/inquiries/{bookings.inquiry}","bookings.booking_comments":"https://www.bookingsync.com/api/v3/booking_comments/{bookings.booking_comments}","bookings.bookings_fees":"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}","bookings.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}","bookings.payments":"https://www.bookingsync.com/api/v3/payments/{bookings.payments}","bookings.bookings_payments":"https://www.bookingsync.com/api/v3/bookings_payments/{bookings.bookings_payments}","bookings.bookings_tags":"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"},"bookings":[{"links":{"account":3837,"rental":5117,"client":77710,"rental_agreement":27861,"source":null,"inquiry":null,"booking_comments":[92650,91667,91641],"bookings_fees":[],"bookings_taxes":[],"payments":[268198],"bookings_payments":[268231],"bookings_tags":[]},"id":817604,"start_at":"2017-01-09T16:00:00Z","end_at":"2017-01-14T10:00:00Z","status":"Booked","updated_at":"2016-12-07T00:31:20Z","reference":"00HIV8","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":"1500.0","initial_rental_price":"1500.0","channel_price":null,"discount":"","final_rental_price":"1500.0","final_price":"1500.0","downpayment":"450.0","paid_amount":"2.0","currency":"EUR","notes":"","damage_deposit":"0.0","charge_damage_deposit_on_arrival":true,"adults":8,"children":null,"bookings_payments_count":2,"review_requests_count":0,"locked":null,"created_at":"2016-12-06T11:28:41Z","canceled_at":null,"expected_checkin_time":"16:15","expected_checkout_time":"04:30","payment_url":null,"balance_due_at":"2016-12-10T16:00:00Z","payback_to_owner":null,"commission":null,"contract_updated_at":"2016-12-07T00:31:20Z","owned_by_app":false}],"meta":{}}'
     http_version: 
-  recorded_at: Sun, 14 Sep 2014 15:08:06 GMT
-recorded_with: VCR 2.9.0
+  recorded_at: Thu, 08 Dec 2016 16:30:29 GMT
+recorded_with: VCR 3.0.3

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: put
-    uri: https://www.bookingsync.com/api/v3/bookings/50
+    uri: https://www.bookingsync.com/api/v3/bookings/826549
     body:
       encoding: UTF-8
       string: '{"bookings":[{"end_at":"2019-03-25 21:45:00 UTC"}]}'
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,40 +22,56 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 16:31:04 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 16:31:04 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1398106800'
+      - '1481216400'
       X-Ratelimit-Remaining:
-      - '994'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Request-Method:
-      - '*'
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      - '988'
+      Location:
+      - https://www.bookingsync.com/api/v3/bookings/826549
       Etag:
-      - '"debe38042667808d7c3c70691861b7b3"'
+      - W/"b9d0c070f46ae01983e0eecdefc1067e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=4ae5f913d9abed6782c48f843b010579; path=/; secure; HttpOnly
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=0c581dd7-e051-4df3-8c80-c1e58d6eb42e; path=/; expires=Thu, 15 Dec
+        2016 16:31:04 -0000; secure
+      - ahoy_visitor=c89fef6c-fcc0-42ee-8e5c-4e984fc7f333; path=/; expires=Sat, 08
+        Dec 2018 16:31:04 -0000; secure
       X-Request-Id:
-      - ce1bf7d742d4f0f18a1342931830bc4b
+      - 98c0a0d6-d471-4a50-9aa6-00a094ad73c0
       X-Runtime:
-      - '2.227385'
-      Date:
-      - Mon, 21 Apr 2014 18:33:54 GMT
-      Connection:
-      - close
+      - '0.307528'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"bookings":[{"id":50,"account_id":1,"rental_id":20,"start_at":"2019-03-20T21:45:00Z","end_at":"2019-03-25T21:45:00Z"}]}'
-    http_version:
-  recorded_at: Mon, 21 Apr 2014 18:33:54 GMT
-recorded_with: VCR 2.9.0
+      string: '{"links":{"bookings.account":"https://www.bookingsync.com/api/v3/accounts/{bookings.account}","bookings.rental":"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}","bookings.client":"https://www.bookingsync.com/api/v3/clients/{bookings.client}","bookings.rental_agreement":"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}","bookings.source":"https://www.bookingsync.com/api/v3/sources/{bookings.source}","bookings.inquiry":"https://www.bookingsync.com/api/v3/inquiries/{bookings.inquiry}","bookings.booking_comments":"https://www.bookingsync.com/api/v3/booking_comments/{bookings.booking_comments}","bookings.bookings_fees":"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}","bookings.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}","bookings.payments":"https://www.bookingsync.com/api/v3/payments/{bookings.payments}","bookings.bookings_payments":"https://www.bookingsync.com/api/v3/bookings_payments/{bookings.bookings_payments}","bookings.bookings_tags":"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"},"bookings":[{"links":{"account":3837,"rental":5116,"client":null,"rental_agreement":27862,"source":null,"inquiry":null,"booking_comments":[],"bookings_fees":[],"bookings_taxes":[],"payments":[],"bookings_payments":[],"bookings_tags":[]},"id":826549,"start_at":"2017-01-03T00:00:00Z","end_at":"2019-03-25T21:45:00Z","status":"Booked","updated_at":"2016-12-08T16:31:04Z","reference":"00HPRP","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":null,"initial_rental_price":null,"channel_price":null,"discount":"","final_rental_price":"0.0","final_price":null,"downpayment":null,"paid_amount":"0.0","currency":"USD","notes":null,"damage_deposit":"0.0","charge_damage_deposit_on_arrival":true,"adults":null,"children":null,"bookings_payments_count":0,"review_requests_count":0,"locked":"doorkeeper/application-17","created_at":"2016-12-08T16:30:49Z","canceled_at":null,"expected_checkin_time":null,"expected_checkout_time":null,"payment_url":null,"balance_due_at":"2016-12-08T16:30:49Z","payback_to_owner":null,"commission":null,"contract_updated_at":null,"owned_by_app":true}]}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 16:31:04 GMT
+recorded_with: VCR 3.0.3

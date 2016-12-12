@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: http://bookingsync.dev/api/v3/booking_comments
+    uri: https://www.bookingsync.com/api/v3/booking_comments
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.35
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,58 +22,65 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 15:45:03 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 15:45:03 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1461074400'
+      - '1481212800'
       X-Ratelimit-Remaining:
-      - '987'
+      - '980'
       Link:
-      - <http://bookingsync.dev/api/v3/booking_comments?page=1>; rel="first", <http://bookingsync.dev/api/v3/booking_comments?page=1>;
-        rel="last"
+      - <https://www.bookingsync.com/api/v3/booking_comments?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/booking_comments?page=1>; rel="last"
       X-Total-Pages:
       - '1'
       X-Total-Count:
-      - '7'
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
+      - '2'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"dd19e4d0f0ec353d7161790aa2f379ce"'
+      - W/"7aaa6a7fc0d347c23a079a016bbc3a5b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - ahoy_track=true; path=/
-      - ahoy_visit=a9db08a9-8b77-4546-88ba-aef491e3ed37; path=/; expires=Tue, 26 Apr
-        2016 13:53:12 -0000
-      - ahoy_visitor=ddcd2a96-4b7c-460a-909b-8afccb800909; path=/; expires=Thu, 19
-        Apr 2018 13:53:12 -0000
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=e460d797-175d-4b61-9abf-e2c4a290a6e7; path=/; expires=Thu, 15 Dec
+        2016 15:45:03 -0000; secure
+      - ahoy_visitor=2d7fc5df-3c63-4dbc-a20d-d824b66d06b9; path=/; expires=Sat, 08
+        Dec 2018 15:45:03 -0000; secure
       X-Request-Id:
-      - f48e8a7b-28b8-4006-af55-c33da0880ab7
+      - 6004c000-6288-42e2-bbb1-93ad0290b587
       X-Runtime:
-      - '0.120298'
-      Date:
-      - Tue, 19 Apr 2016 13:53:12 GMT
-      Connection:
-      - close
+      - '0.035583'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"booking_comments.booking":"http://bookingsync.dev/api/v3/bookings/{booking_comments.booking}"},"booking_comments":[{"links":{"booking":10},"id":1,"content":"comment
-        1","editable":true,"created_at":"2016-04-18T12:06:15Z","updated_at":"2016-04-18T12:06:15Z"},{"links":{"booking":10},"id":2,"content":"comment
-        2","editable":true,"created_at":"2016-04-18T12:06:25Z","updated_at":"2016-04-18T12:06:25Z"},{"links":{"booking":1},"id":3,"content":"comment
-        3","editable":true,"created_at":"2016-04-18T12:06:33Z","updated_at":"2016-04-18T12:06:33Z"},{"links":{"booking":1},"id":4,"content":"comment
-        4","editable":true,"created_at":"2016-04-18T12:06:36Z","updated_at":"2016-04-18T12:06:36Z"},{"links":{"booking":1},"id":9,"content":"Updated
-        content","editable":true,"created_at":"2016-04-19T12:47:00Z","updated_at":"2016-04-19T12:56:41Z"},{"links":{"booking":1},"id":11,"content":"Example
-        conent","editable":true,"created_at":"2016-04-19T13:51:39Z","updated_at":"2016-04-19T13:51:39Z"},{"links":{"booking":1},"id":12,"content":"Example
-        conent","editable":true,"created_at":"2016-04-19T13:51:39Z","updated_at":"2016-04-19T13:51:39Z"}],"meta":{}}'
+      string: '{"links":{"booking_comments.account":"https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}","booking_comments.booking":"https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"},"booking_comments":[{"links":{"account":3837,"booking":817604},"id":91641,"content":"comment
+        body","editable":false,"created_at":"2016-12-06T11:44:47Z","updated_at":"2016-12-06T11:44:47Z"},{"links":{"account":3837,"booking":817604},"id":91667,"content":"Example
+        content","editable":true,"created_at":"2016-12-06T12:41:11Z","updated_at":"2016-12-06T12:41:11Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Tue, 19 Apr 2016 13:53:12 GMT
-recorded_with: VCR 3.0.1
+  recorded_at: Thu, 08 Dec 2016 15:45:03 GMT
+recorded_with: VCR 3.0.3

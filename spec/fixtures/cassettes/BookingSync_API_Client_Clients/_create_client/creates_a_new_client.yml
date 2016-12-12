@@ -5,10 +5,10 @@ http_interactions:
     uri: https://www.bookingsync.com/api/v3/clients
     body:
       encoding: UTF-8
-      string: '{"clients":[{"fullname":"John Smith","emails":[{"label":"default","email":"smith@example.com"}],"country_code":"IT","city":"Rome"}]}'
+      string: '{"clients":[{"fullname":"Halldor Helgason","emails":[{"label":"default","email":"halldor@example.com"}],"country_code":"IS","city":"Reykjavik"}]}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.29
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 09 Sep 2015 20:12:27 GMT
+      - Thu, 08 Dec 2016 16:38:51 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,24 +34,29 @@ http_interactions:
       - keep-alive
       Status:
       - 201 Created
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 16:38:51 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1441832400'
+      - '1481216400'
       X-Ratelimit-Remaining:
-      - '973'
+      - '983'
+      Link:
+      - <https://www.bookingsync.com/api/v3/clients?clients%5B%5D%5Bcity%5D=Reykjavik&clients%5B%5D%5Bcountry_code%5D=IS&clients%5B%5D%5Bemails%5D%5B%5D%5Bemail%5D=halldor%40example.com&clients%5B%5D%5Bemails%5D%5B%5D%5Blabel%5D=default&clients%5B%5D%5Bfullname%5D=Halldor+Helgason&page=1>;
+        rel="first"
+      X-Per-Page:
+      - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/clients/77710
+      - https://www.bookingsync.com/api/v3/clients/259654
       Etag:
-      - '"315799e6d1eeda96ad5f811e96c8a19f"'
+      - W/"82ef300dc49e38ec8a6e803772b1ef6c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -59,18 +64,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=f08f8b2d-017d-4b54-8bbc-415129187985; path=/; expires=Wed, 16 Sep
-        2015 20:12:27 -0000; secure
-      - ahoy_visitor=d3a73869-c4b6-40c7-91de-ba789dba03d5; path=/; expires=Sat, 09
-        Sep 2017 20:12:27 -0000; secure
+      - ahoy_visit=5b88ee63-6d7d-4c2c-941b-fcf27d17b710; path=/; expires=Thu, 15 Dec
+        2016 16:38:51 -0000; secure
+      - ahoy_visitor=0df100c6-32e6-49a1-843d-bbb796a77fea; path=/; expires=Sat, 08
+        Dec 2018 16:38:51 -0000; secure
       X-Request-Id:
-      - c50332ee-14bf-4083-8864-63250605f403
+      - b0bd12e4-2bee-46b2-802f-30ba99e869ae
       X-Runtime:
-      - '0.055171'
+      - '0.104883'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"clients.account":"https://www.bookingsync.com/api/v3/accounts/{clients.account}"},"clients":[{"links":{"account":3837},"id":77710,"addresses":[],"emails":[{"label":"default","email":"smith@example.com"}],"phones":[],"created_at":"2015-09-09T20:12:27Z","updated_at":"2015-09-09T20:12:27Z","fullname":"John
-        Smith","notes":null,"preferred_locale":null,"passport":null}]}'
+      string: '{"links":{"clients.account":"https://www.bookingsync.com/api/v3/accounts/{clients.account}"},"clients":[{"links":{"account":3837},"id":259654,"addresses":[],"emails":[{"label":"default","email":"halldor@example.com"}],"phones":[],"created_at":"2016-12-08T16:38:51Z","updated_at":"2016-12-08T16:38:51Z","fullname":"Halldor
+        Helgason","notes":null,"preferred_locale":null,"passport":null,"company":"","vat_number":""}],"meta":{}}'
     http_version: 
-  recorded_at: Wed, 09 Sep 2015 20:12:28 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Thu, 08 Dec 2016 16:38:51 GMT
+recorded_with: VCR 3.0.3

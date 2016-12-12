@@ -4,11 +4,11 @@ http_interactions:
     method: get
     uri: https://www.bookingsync.com/api/v3/bookings_fees/8112
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.29
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 09 Sep 2015 21:14:17 GMT
+      - Thu, 08 Dec 2016 15:47:53 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,20 +34,20 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 15:47:53 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1441836000'
+      - '1481212800'
       X-Ratelimit-Remaining:
-      - '971'
+      - '969'
       Link:
       - <https://www.bookingsync.com/api/v3/bookings_fees/8112?page=1>; rel="first",
         <https://www.bookingsync.com/api/v3/bookings_fees/8112?page=1>; rel="last"
@@ -55,8 +55,10 @@ http_interactions:
       - '1'
       X-Total-Count:
       - '1'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"11196184ecd06659695c489cde1521d6"'
+      - W/"2b70ef6651243389a53281296d67bf2f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,18 +66,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=b22b8731-b6ff-4872-b2e4-e818ec62253e; path=/; expires=Wed, 16 Sep
-        2015 21:14:17 -0000; secure
-      - ahoy_visitor=85dcd0ae-0428-464f-aa4d-ac3135de0c42; path=/; expires=Sat, 09
-        Sep 2017 21:14:17 -0000; secure
+      - ahoy_visit=d60258d4-07a1-4ce8-9ea6-04673a9d9fa1; path=/; expires=Thu, 15 Dec
+        2016 15:47:53 -0000; secure
+      - ahoy_visitor=818080fe-fe3d-4d0c-aad5-4dc9e9a7235f; path=/; expires=Sat, 08
+        Dec 2018 15:47:53 -0000; secure
       X-Request-Id:
-      - d1d0b936-a36e-40d2-9c1c-5bb6ee1d54d9
+      - b0b54911-165c-4b5d-906a-4a55ffdd07ee
       X-Runtime:
-      - '0.083536'
+      - '0.058182'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"bookings_fees.rentals_fee":"https://www.bookingsync.com/api/v3/rentals_fees/{bookings_fees.rentals_fee}","bookings_fees.booking":"https://www.bookingsync.com/api/v3/bookings/{bookings_fees.booking}","bookings_fees.fee":"https://www.bookingsync.com/api/v3/fees/{bookings_fees.fee}","bookings_fees.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings_fees.bookings_taxes}"},"bookings_fees":[{"links":{"rentals_fee":3306,"booking":142616,"fee":474,"bookings_taxes":[]},"id":8112,"name":{"en":"test
+      string: '{"links":{"bookings_fees.account":"https://www.bookingsync.com/api/v3/accounts/{bookings_fees.account}","bookings_fees.rentals_fee":"https://www.bookingsync.com/api/v3/rentals_fees/{bookings_fees.rentals_fee}","bookings_fees.booking":"https://www.bookingsync.com/api/v3/bookings/{bookings_fees.booking}","bookings_fees.fee":"https://www.bookingsync.com/api/v3/fees/{bookings_fees.fee}","bookings_fees.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings_fees.bookings_taxes}"},"bookings_fees":[{"links":{"account":3837,"rentals_fee":3306,"booking":142616,"fee":474,"bookings_taxes":[]},"id":8112,"name":{"en":"test
         fee"},"price":"0.0","required":false,"included_in_price":true,"times_booked":2,"created_at":"2015-09-09T21:13:53Z","updated_at":"2015-09-09T21:13:53Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Wed, 09 Sep 2015 21:14:18 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Thu, 08 Dec 2016 15:47:53 GMT
+recorded_with: VCR 3.0.3

@@ -2,14 +2,16 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/bookings
+    uri: https://www.bookingsync.com/api/v3/bookings?include_canceled=true
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
+      - application/vnd.api+json
+      Content-Type:
       - application/vnd.api+json
       Authorization:
       - Bearer <<ACCESS_TOKEN>>
@@ -20,38 +22,64 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Dec 2016 16:27:01 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 16:27:01 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1394193600'
+      - '1481216400'
       X-Ratelimit-Remaining:
-      - '995'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      - '999'
+      Link:
+      - <https://www.bookingsync.com/api/v3/bookings?include_canceled=true&page=1>;
+        rel="first", <https://www.bookingsync.com/api/v3/bookings?include_canceled=true&page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '5'
+      X-Per-Page:
+      - '100'
       Etag:
-      - "\"435e6e3ac9649b612515cf4bc58d6643\""
+      - W/"e959625475c770fd83a4fca4d3deb1bb"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=ddfb95fa-55e2-4965-ba96-56717d1e1fc4; path=/; expires=Thu, 15 Dec
+        2016 16:27:01 -0000; secure
+      - ahoy_visitor=ea5ef88d-2ee6-4212-af37-40b90015e409; path=/; expires=Sat, 08
+        Dec 2018 16:27:01 -0000; secure
       X-Request-Id:
-      - 8ceb28412ce6b54c63adfeb683e05ad3
+      - 0f335cad-150b-4570-a995-9303ee3c5410
       X-Runtime:
-      - '0.161117'
-      Date:
-      - Fri, 07 Mar 2014 11:28:17 GMT
-      Connection:
-      - close
+      - '0.163065'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: "{\"bookings\":[{\"id\":1,\"account_id\":1,\"rental_id\":2,\"start_at\":\"2014-04-28T10:55:13Z\",\"end_at\":\"2014-12-28T10:55:34Z\"},{\"id\":4,\"account_id\":1,\"rental_id\":2,\"start_at\":\"2014-04-28T10:55:13Z\",\"end_at\":\"2014-12-28T10:55:34Z\"}]}"
-    http_version:
-  recorded_at: Fri, 07 Mar 2014 11:28:17 GMT
-recorded_with: VCR 2.8.0
+      string: '{"links":{"bookings.account":"https://www.bookingsync.com/api/v3/accounts/{bookings.account}","bookings.rental":"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}","bookings.client":"https://www.bookingsync.com/api/v3/clients/{bookings.client}","bookings.rental_agreement":"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}","bookings.source":"https://www.bookingsync.com/api/v3/sources/{bookings.source}","bookings.inquiry":"https://www.bookingsync.com/api/v3/inquiries/{bookings.inquiry}","bookings.booking_comments":"https://www.bookingsync.com/api/v3/booking_comments/{bookings.booking_comments}","bookings.bookings_fees":"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}","bookings.bookings_taxes":"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}","bookings.payments":"https://www.bookingsync.com/api/v3/payments/{bookings.payments}","bookings.bookings_payments":"https://www.bookingsync.com/api/v3/bookings_payments/{bookings.bookings_payments}","bookings.bookings_tags":"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"},"bookings":[{"links":{"account":3837,"rental":5116,"client":null,"rental_agreement":6905,"source":null,"inquiry":null,"booking_comments":[],"bookings_fees":[],"bookings_taxes":[],"payments":[],"bookings_payments":[],"bookings_tags":[]},"id":817798,"start_at":"2017-01-03T00:00:00Z","end_at":"2019-03-25T21:45:00Z","status":"Canceled","updated_at":"2016-12-06T12:55:59Z","reference":"00HJ0M","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":null,"initial_rental_price":null,"channel_price":null,"discount":"","final_rental_price":"0.0","final_price":null,"downpayment":null,"paid_amount":"0.0","currency":"USD","notes":null,"damage_deposit":"0.0","charge_damage_deposit_on_arrival":true,"adults":null,"children":null,"bookings_payments_count":0,"review_requests_count":0,"locked":"doorkeeper/application-17","created_at":"2016-12-06T12:47:11Z","canceled_at":"2016-12-06T12:55:59Z","expected_checkin_time":null,"expected_checkout_time":null,"payment_url":null,"balance_due_at":"2016-12-06T12:47:11Z","payback_to_owner":null,"commission":null,"contract_updated_at":null,"owned_by_app":true},{"links":{"account":3837,"rental":5117,"client":77710,"rental_agreement":27861,"source":null,"inquiry":null,"booking_comments":[92650,91667,91641],"bookings_fees":[],"bookings_taxes":[],"payments":[268198],"bookings_payments":[268231],"bookings_tags":[]},"id":817604,"start_at":"2017-01-09T16:00:00Z","end_at":"2017-01-14T10:00:00Z","status":"Booked","updated_at":"2016-12-07T00:31:20Z","reference":"00HIV8","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":"1500.0","initial_rental_price":"1500.0","channel_price":null,"discount":"","final_rental_price":"1500.0","final_price":"1500.0","downpayment":"450.0","paid_amount":"2.0","currency":"EUR","notes":"","damage_deposit":"0.0","charge_damage_deposit_on_arrival":true,"adults":8,"children":null,"bookings_payments_count":2,"review_requests_count":0,"locked":null,"created_at":"2016-12-06T11:28:41Z","canceled_at":null,"expected_checkin_time":"16:15","expected_checkout_time":"04:30","payment_url":null,"balance_due_at":"2016-12-10T16:00:00Z","payback_to_owner":null,"commission":null,"contract_updated_at":"2016-12-07T00:31:20Z","owned_by_app":false},{"links":{"account":3837,"rental":5117,"client":77703,"rental_agreement":null,"source":null,"inquiry":null,"booking_comments":[],"bookings_fees":[],"bookings_taxes":[],"payments":[],"bookings_payments":[],"bookings_tags":[]},"id":817605,"start_at":"2017-01-15T16:00:00Z","end_at":"2017-01-20T10:00:00Z","status":"Booked","updated_at":"2016-12-06T16:20:47Z","reference":"00HIV9","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":"1000.0","initial_rental_price":"1000.0","channel_price":null,"discount":"","final_rental_price":"1000.0","final_price":"1000.0","downpayment":"0.0","paid_amount":"0.0","currency":"EUR","notes":"","damage_deposit":"0.0","charge_damage_deposit_on_arrival":true,"adults":4,"children":null,"bookings_payments_count":0,"review_requests_count":0,"locked":null,"created_at":"2016-12-06T11:29:17Z","canceled_at":null,"expected_checkin_time":"18:00","expected_checkout_time":"04:30","payment_url":null,"balance_due_at":"2016-12-16T16:00:00Z","payback_to_owner":null,"commission":null,"contract_updated_at":null,"owned_by_app":false},{"links":{"account":3837,"rental":5117,"client":77703,"rental_agreement":null,"source":null,"inquiry":null,"booking_comments":[],"bookings_fees":[],"bookings_taxes":[],"payments":[],"bookings_payments":[],"bookings_tags":[]},"id":817602,"start_at":"2017-02-07T16:00:00Z","end_at":"2017-02-12T10:00:00Z","status":"Booked","updated_at":"2016-12-06T16:20:47Z","reference":"00HIV6","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":"500.0","initial_rental_price":"500.0","channel_price":null,"discount":"","final_rental_price":"500.0","final_price":"500.0","downpayment":"150.0","paid_amount":"0.0","currency":"EUR","notes":"","damage_deposit":"0.0","charge_damage_deposit_on_arrival":true,"adults":2,"children":null,"bookings_payments_count":0,"review_requests_count":0,"locked":null,"created_at":"2016-12-06T11:25:50Z","canceled_at":null,"expected_checkin_time":"17:00","expected_checkout_time":"09:00","payment_url":null,"balance_due_at":"2017-01-08T16:00:00Z","payback_to_owner":null,"commission":null,"contract_updated_at":null,"owned_by_app":false},{"links":{"account":3837,"rental":5117,"client":77710,"rental_agreement":null,"source":null,"inquiry":null,"booking_comments":[],"bookings_fees":[],"bookings_taxes":[],"payments":[],"bookings_payments":[],"bookings_tags":[]},"id":817603,"start_at":"2017-02-13T16:00:00Z","end_at":"2017-02-17T10:00:00Z","status":"Canceled","updated_at":"2016-12-06T11:28:41Z","reference":"00HIV7","booked":true,"unavailable":false,"tentative_expires_at":null,"initial_price":"100.0","initial_rental_price":"100.0","channel_price":null,"discount":"","final_rental_price":"100.0","final_price":"100.0","downpayment":"30.0","paid_amount":"0.0","currency":"EUR","notes":"","damage_deposit":"0.0","charge_damage_deposit_on_arrival":true,"adults":2,"children":null,"bookings_payments_count":0,"review_requests_count":0,"locked":null,"created_at":"2016-12-06T11:27:33Z","canceled_at":"2016-12-06T11:27:34Z","expected_checkin_time":"14:45","expected_checkout_time":"08:00","payment_url":null,"balance_due_at":"2017-01-14T16:00:00Z","payback_to_owner":null,"commission":null,"contract_updated_at":null,"owned_by_app":false}],"meta":{}}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 16:27:01 GMT
+recorded_with: VCR 3.0.3

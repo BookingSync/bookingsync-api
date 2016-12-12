@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://www.bookingsync.com/api/v3/bathrooms/729
+    uri: https://www.bookingsync.com/api/v3/bathrooms/41327
     body:
       encoding: UTF-8
       string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.28
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,25 +25,25 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 08 Sep 2015 18:55:46 GMT
+      - Thu, 08 Dec 2016 15:32:05 GMT
       Connection:
       - keep-alive
       Status:
       - 204 No Content
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 15:32:05 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1441738800'
+      - '1481212800'
       X-Ratelimit-Remaining:
-      - '962'
+      - '982'
       Cache-Control:
       - no-cache
       P3p:
@@ -51,17 +51,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=a0eded4a-7bdb-4e1f-bc72-4772ca219297; path=/; expires=Tue, 15 Sep
-        2015 18:55:46 -0000; secure
-      - ahoy_visitor=1fda0dcb-880b-4831-afcb-8b724396df3a; path=/; expires=Fri, 08
-        Sep 2017 18:55:46 -0000; secure
+      - ahoy_visit=3784ad5d-39ef-4c2f-9bdb-817c6579d936; path=/; expires=Thu, 15 Dec
+        2016 15:32:05 -0000; secure
+      - ahoy_visitor=df43fa5b-83e4-43bb-9b36-76133b269c81; path=/; expires=Sat, 08
+        Dec 2018 15:32:05 -0000; secure
       X-Request-Id:
-      - a1454b77-b31c-419b-8925-0ea3d4411e3c
+      - 46a3ce4a-9523-4c01-893e-82cd35afc4bb
       X-Runtime:
-      - '0.061494'
+      - '0.047934'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 08 Sep 2015 18:55:47 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Thu, 08 Dec 2016 15:32:05 GMT
+recorded_with: VCR 3.0.3

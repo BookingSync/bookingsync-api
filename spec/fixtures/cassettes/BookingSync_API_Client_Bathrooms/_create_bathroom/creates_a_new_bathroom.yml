@@ -5,10 +5,10 @@ http_interactions:
     uri: https://www.bookingsync.com/api/v3/rentals/5116/bathrooms
     body:
       encoding: UTF-8
-      string: '{"bathrooms":[{"name_en":"New bathroom","wc":true}]}'
+      string: '{"bathrooms":[{"name_en":"New bathroom","wc_count":2}]}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.28
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 08 Sep 2015 18:55:45 GMT
+      - Thu, 08 Dec 2016 15:29:03 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,24 +34,29 @@ http_interactions:
       - keep-alive
       Status:
       - 201 Created
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-08 15:29:03 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1441738800'
+      - '1481212800'
       X-Ratelimit-Remaining:
-      - '964'
+      - '984'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rentals/5116/bathrooms?bathrooms%5B%5D%5Bname_en%5D=New+bathroom&bathrooms%5B%5D%5Bwc_count%5D=2&page=1>;
+        rel="first"
+      X-Per-Page:
+      - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/bathrooms/8729
+      - https://www.bookingsync.com/api/v3/bathrooms/41327
       Etag:
-      - '"bdd3245a67be587735129a92ce4b48f7"'
+      - W/"98989f34a32b79498150eb5277df90f1"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -59,18 +64,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=2d5cd6c4-5d61-4ac9-9bf0-7e8168d56865; path=/; expires=Tue, 15 Sep
-        2015 18:55:45 -0000; secure
-      - ahoy_visitor=ce5ecb20-0e5f-495b-92d8-69f0fb1a9bed; path=/; expires=Fri, 08
-        Sep 2017 18:55:45 -0000; secure
+      - ahoy_visit=8184d862-3aea-456a-88f6-b29c400f0365; path=/; expires=Thu, 15 Dec
+        2016 15:29:03 -0000; secure
+      - ahoy_visitor=08ad8084-8a10-4b05-bfc2-4f0164bbccb4; path=/; expires=Sat, 08
+        Dec 2018 15:29:03 -0000; secure
       X-Request-Id:
-      - f75f91a9-40f8-44a5-aba7-9ad9016cb9be
+      - 640091c3-26d4-43f8-b98b-8f6c02f49bbb
       X-Runtime:
-      - '0.110989'
+      - '0.068463'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"bathrooms.rental":"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"},"bathrooms":[{"links":{"rental":5116},"id":8729,"name":{"en":"New
-        bathroom"},"wc":true,"shower":false,"bath":false,"created_at":"2015-09-08T18:55:45Z","updated_at":"2015-09-08T18:55:45Z"}]}'
+      string: '{"links":{"bathrooms.rental":"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"},"bathrooms":[{"links":{"rental":5116},"id":41327,"name":{"en":"New
+        bathroom"},"wc_count":2,"shower_count":0,"bath_count":0,"created_at":"2016-12-08T15:29:03Z","updated_at":"2016-12-08T15:29:03Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Tue, 08 Sep 2015 18:55:46 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Thu, 08 Dec 2016 15:29:03 GMT
+recorded_with: VCR 3.0.3
