@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://www.bookingsync.com/api/v3/seasons/10
+    uri: https://www.bookingsync.com/api/v3/seasons/529835
     body:
       encoding: UTF-8
       string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,36 +22,48 @@ http_interactions:
       code: 204
       message: No Content
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 14:22:36 GMT
+      Connection:
+      - keep-alive
+      Status:
+      - 204 No Content
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 14:22:35 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1398427200'
+      - '1481295600'
       X-Ratelimit-Remaining:
-      - '994'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      X-Ua-Compatible:
-      - IE=Edge
+      - '998'
       Cache-Control:
       - no-cache
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=935814eaeb1aa79391b3aa00b9333f8b; path=/; secure; HttpOnly
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=13545d84-22e8-4548-bb9d-b367b9e71d96; path=/; expires=Fri, 16 Dec
+        2016 14:22:35 -0000; secure
+      - ahoy_visitor=3f414903-b083-4d48-ab56-3af3ab9bc0f5; path=/; expires=Sun, 09
+        Dec 2018 14:22:35 -0000; secure
       X-Request-Id:
-      - 69328fd1b08a442833168a097f687d6a
+      - 91b2d497-7441-42a2-a4a1-e3c014827664
       X-Runtime:
-      - '0.291235'
-      Date:
-      - Fri, 25 Apr 2014 11:18:43 GMT
-      Connection:
-      - close
+      - '0.178783'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
       string: ''
-    http_version:
-  recorded_at: Fri, 25 Apr 2014 11:18:43 GMT
-recorded_with: VCR 2.9.0
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 14:22:36 GMT
+recorded_with: VCR 3.0.3

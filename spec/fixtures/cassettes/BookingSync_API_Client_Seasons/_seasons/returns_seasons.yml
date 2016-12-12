@@ -4,11 +4,11 @@ http_interactions:
     method: get
     uri: https://www.bookingsync.com/api/v3/seasons
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,53 +22,68 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 10:58:51 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 10:58:51 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1397649600'
+      - '1481281200'
       X-Ratelimit-Remaining:
-      - '996'
+      - '949'
       Link:
-      - "<https://www.bookingsync.com/api/v3/seasons?page=1>; rel=\"first\", <https://www.bookingsync.com/api/v3/seasons?page=1>;
-        rel=\"last\""
+      - <https://www.bookingsync.com/api/v3/seasons?page=1>; rel="first", <https://www.bookingsync.com/api/v3/seasons?page=1>;
+        rel="last"
       X-Total-Pages:
       - '1'
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      X-Total-Count:
+      - '5'
+      X-Per-Page:
+      - '100'
       Etag:
-      - "\"316d9fc100a492274816c98efa4ad739\""
+      - W/"1a076617514ea67ef7db19a570c04a05"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=cf42cc66-2191-47db-9e7a-2e516bcd96ac; path=/; expires=Fri, 16 Dec
+        2016 10:58:51 -0000; secure
+      - ahoy_visitor=2d47835f-ab63-4205-b675-08867ab65546; path=/; expires=Sun, 09
+        Dec 2018 10:58:51 -0000; secure
       X-Request-Id:
-      - d5355a60d438f47414396f2cbb57b026
+      - 12c06c36-9175-45d3-9300-52375fefd8bf
       X-Runtime:
-      - '0.234326'
-      Date:
-      - Wed, 16 Apr 2014 11:59:10 GMT
-      Connection:
-      - close
+      - '0.064821'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: "{\"links\":{\"seasons.rates_rules\":\"https://www.bookingsync.com/api/v3/rates_rules/{seasons.rates_rules}\",\"seasons.periods\":\"https://www.bookingsync.com/api/v3/periods/{seasons.periods}\"},\"seasons\":[{\"links\":{\"rates_rules\":[],\"periods\":[1]},\"id\":1,\"rates_table_id\":1,\"name\":\"Season
-        1\",\"ratio\":\"1.0\",\"minimum_stay\":7,\"color_ratio\":\"1.0\",\"created_at\":\"2014-04-14T13:18:39Z\",\"updated_at\":\"2014-04-14T13:18:39Z\"},{\"links\":{\"rates_rules\":[],\"periods\":[2]},\"id\":2,\"rates_table_id\":3,\"name\":\"Season
-        2\",\"ratio\":\"1.0\",\"minimum_stay\":7,\"color_ratio\":\"1.0\",\"created_at\":\"2014-04-14T13:18:44Z\",\"updated_at\":\"2014-04-14T13:18:44Z\"},{\"links\":{\"rates_rules\":[],\"periods\":[3]},\"id\":3,\"rates_table_id\":5,\"name\":\"Season
-        3\",\"ratio\":\"1.0\",\"minimum_stay\":7,\"color_ratio\":\"1.0\",\"created_at\":\"2014-04-14T13:18:50Z\",\"updated_at\":\"2014-04-14T13:18:50Z\"},{\"links\":{\"rates_rules\":[],\"periods\":[4]},\"id\":4,\"rates_table_id\":7,\"name\":\"Season
-        4\",\"ratio\":\"1.0\",\"minimum_stay\":7,\"color_ratio\":\"1.0\",\"created_at\":\"2014-04-14T13:18:55Z\",\"updated_at\":\"2014-04-14T13:18:55Z\"},{\"links\":{\"rates_rules\":[],\"periods\":[5]},\"id\":5,\"rates_table_id\":9,\"name\":\"Season
-        5\",\"ratio\":\"1.0\",\"minimum_stay\":7,\"color_ratio\":\"1.0\",\"created_at\":\"2014-04-14T13:19:00Z\",\"updated_at\":\"2014-04-14T13:19:00Z\"},{\"links\":{\"rates_rules\":[],\"periods\":[6]},\"id\":6,\"rates_table_id\":11,\"name\":\"Season
-        6\",\"ratio\":\"1.0\",\"minimum_stay\":7,\"color_ratio\":\"1.0\",\"created_at\":\"2014-04-14T13:19:05Z\",\"updated_at\":\"2014-04-14T13:19:05Z\"},{\"links\":{\"rates_rules\":[],\"periods\":[7]},\"id\":7,\"rates_table_id\":13,\"name\":\"Season
-        7\",\"ratio\":\"1.0\",\"minimum_stay\":7,\"color_ratio\":\"1.0\",\"created_at\":\"2014-04-14T13:19:10Z\",\"updated_at\":\"2014-04-14T13:19:10Z\"},{\"links\":{\"rates_rules\":[],\"periods\":[8]},\"id\":8,\"rates_table_id\":15,\"name\":\"Season
-        8\",\"ratio\":\"1.0\",\"minimum_stay\":7,\"color_ratio\":\"1.0\",\"created_at\":\"2014-04-14T13:19:15Z\",\"updated_at\":\"2014-04-14T13:19:16Z\"},{\"links\":{\"rates_rules\":[],\"periods\":[9]},\"id\":9,\"rates_table_id\":17,\"name\":\"Season
-        9\",\"ratio\":\"1.0\",\"minimum_stay\":7,\"color_ratio\":\"1.0\",\"created_at\":\"2014-04-14T13:19:21Z\",\"updated_at\":\"2014-04-14T13:19:21Z\"},{\"links\":{\"rates_rules\":[],\"periods\":[10]},\"id\":10,\"rates_table_id\":19,\"name\":\"Season
-        10\",\"ratio\":\"1.0\",\"minimum_stay\":7,\"color_ratio\":\"1.0\",\"created_at\":\"2014-04-14T13:19:26Z\",\"updated_at\":\"2014-04-14T13:19:26Z\"}]}"
-    http_version:
-  recorded_at: Wed, 16 Apr 2014 11:59:10 GMT
-recorded_with: VCR 2.9.0
+      string: '{"links":{"seasons.rates_table":"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}","seasons.rates_rules":"https://www.bookingsync.com/api/v3/rates_rules/{seasons.rates_rules}","seasons.periods":"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"},"seasons":[{"links":{"rates_table":274,"rates_rules":[],"periods":[]},"id":1802,"name":{"en":"Very
+        High Season"},"ratio_percentage":"100.0","minimum_stay":5,"created_at":"2014-08-08T18:29:46Z","updated_at":"2016-12-09T00:39:48Z","color":"#FFB732","color_ratio":1.0},{"links":{"rates_table":274,"rates_rules":[22740],"periods":[88197]},"id":1803,"name":{"en":"High
+        Season"},"ratio_percentage":"89.0","minimum_stay":2,"created_at":"2014-08-08T18:29:54Z","updated_at":"2016-12-06T14:28:05Z","color":"#A0D453","color_ratio":1.0},{"links":{"rates_table":274,"rates_rules":[],"periods":[]},"id":1804,"name":{"en":"Medium
+        Season"},"ratio_percentage":"79.0","minimum_stay":3,"created_at":"2014-08-08T18:30:22Z","updated_at":"2016-07-07T00:37:29Z","color":"#46B1CA","color_ratio":1.0},{"links":{"rates_table":274,"rates_rules":[],"periods":[]},"id":1805,"name":{"en":"Low
+        Season"},"ratio_percentage":"50.0","minimum_stay":2,"created_at":"2014-08-08T18:30:37Z","updated_at":"2016-07-07T00:37:29Z","color":"#FC2847","color_ratio":1.0},{"links":{"rates_table":274,"rates_rules":[],"periods":[]},"id":1806,"name":{"en":"Out
+        Of Season"},"ratio_percentage":"36.0","minimum_stay":2,"created_at":"2014-08-08T18:30:59Z","updated_at":"2016-07-07T01:05:56Z","color":"#5D76CB","color_ratio":1.0}],"meta":{}}'
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 10:58:52 GMT
+recorded_with: VCR 3.0.3

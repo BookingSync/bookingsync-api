@@ -6,19 +6,15 @@ describe BookingSync::API::Client::StrictBookings do
   describe ".create_strict_booking", :vcr do
     let(:params) do
       {
-        "rental_id" => "1",
-        "start_at" => "2016-01-15 16:00:00",
-        "end_at" => "2016-01-23 10:00:00",
-        "adults" => "3",
-        "children" => "2",
-        "final_price" => "2125.42",
-        "price_to_pay_now" => "2125.42",
+        "rental_id" => 25938,
+        "start_at" => "2017-03-15 16:00:00",
+        "end_at" => "2017-03-22 10:00:00",
+        "adults" => 3,
+        "children" => 2,
+        "final_price" => "63",
+        "price_to_pay_now" => "18.9",
         "currency" => "EUR",
-        "source_id" => "1",
-        "bookings_fees" => [
-          { "rentals_fee_id" => "1", "times_booked" => "1" },
-          { "rentals_fee_id" => "3", "times_booked" => "1" }
-        ],
+        "source_id" => "4504",
         "client" => {
           "firstname" => "Lazar",
           "email" => "email@example.com",
@@ -41,8 +37,8 @@ describe BookingSync::API::Client::StrictBookings do
     it "returns newly created booking" do
      VCR.use_cassette("BookingSync_API_Client_StrictBookings/_create_strict_booking/creates_a_booking") do
        booking = client.create_strict_booking(params)
-       expect(booking.start_at).to eql(Time.parse("2016-01-15 16:00:00 UTC"))
-       expect(booking.end_at).to eql(Time.parse("2016-01-23 10:00:00 UTC"))
+       expect(booking.start_at).to eql(Time.parse("2017-03-15 16:00:00 UTC"))
+       expect(booking.end_at).to eql(Time.parse("2017-03-22 10:00:00 UTC"))
      end
    end
   end

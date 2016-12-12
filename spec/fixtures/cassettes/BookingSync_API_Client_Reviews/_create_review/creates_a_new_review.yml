@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bookingsync.com/api/v3/bookings/1/reviews
+    uri: https://www.bookingsync.com/api/v3/bookings/829184/reviews
     body:
       encoding: UTF-8
       string: '{"reviews":[{"comment":"Awesome place","rating":5}]}'
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,43 +22,62 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 10:58:35 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 10:58:35 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1398423600'
+      - '1481281200'
       X-Ratelimit-Remaining:
-      - '997'
+      - '950'
+      Link:
+      - <https://www.bookingsync.com/api/v3/bookings/829184/reviews?page=1&reviews%5B%5D%5Bcomment%5D=Awesome+place&reviews%5B%5D%5Brating%5D=5>;
+        rel="first"
+      X-Per-Page:
+      - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/reviews/3
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      - https://www.bookingsync.com/api/v3/reviews/80477
       Etag:
-      - '"c9c6c54ccda7eb504ef18ad27dafa70d"'
+      - W/"1ba03c2c3a21b5c9d708928694081307"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=b707ff2476a456565876ff5330743855; path=/; secure; HttpOnly
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=13efa8c3-7a50-43f5-8824-a6bf1c61c428; path=/; expires=Fri, 16 Dec
+        2016 10:58:35 -0000; secure
+      - ahoy_visitor=27a728cd-2a42-421c-97c1-329eeb60d207; path=/; expires=Sun, 09
+        Dec 2018 10:58:35 -0000; secure
       X-Request-Id:
-      - 04bc26104feb03575c89da6af3bae440
+      - 9f5cb762-563d-4407-95ef-9b2bde3ce57e
       X-Runtime:
-      - '0.047378'
-      Date:
-      - Fri, 25 Apr 2014 10:25:34 GMT
-      Connection:
-      - close
+      - '0.222197'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"reviews":[{"id":3,"rating":5,"comment":"Awesome place","name":"Palma
-        S.","updated_at":"2014-04-25T10:25:34Z"}]}'
-    http_version:
-  recorded_at: Fri, 25 Apr 2014 10:25:34 GMT
-recorded_with: VCR 2.9.0
+      string: '{"links":{"reviews.booking":"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}","reviews.rental":"https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"},"reviews":[{"links":{"booking":829184,"rental":5116},"id":80477,"rating":5,"comment":"Awesome
+        place","name":"Eero E.","title":"Awesome place","created_at":"2016-12-09T10:58:35Z","updated_at":"2016-12-09T10:58:35Z"}]}'
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 10:58:35 GMT
+recorded_with: VCR 3.0.3
