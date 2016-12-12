@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 18:18:40 GMT
+      - Mon, 12 Dec 2016 11:32:44 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,24 +45,24 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 18:18:40 UTC
+      - 2016-12-12 11:32:44 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481223600'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '991'
+      - '976'
       Link:
       - <https://www.bookingsync.com/api/v3/payments?page=1>; rel="first", <https://www.bookingsync.com/api/v3/payments?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
       X-Total-Count:
-      - '4'
+      - '5'
       X-Per-Page:
       - '100'
       Etag:
-      - W/"54a1073dd71833ed62b1c6b68a94adf6"
+      - W/"681ac84816ed98f0610f62bb5f0d7042"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=24318a15-d0fa-41dc-a820-592be1b84f4f; path=/; expires=Thu, 15 Dec
-        2016 18:18:40 -0000; secure
-      - ahoy_visitor=24182e04-4f4c-4c93-b1cb-420533400f85; path=/; expires=Sat, 08
-        Dec 2018 18:18:40 -0000; secure
+      - ahoy_visit=93524151-6e5e-4cbf-912a-1d6f20a40240; path=/; expires=Mon, 19 Dec
+        2016 11:32:44 -0000; secure
+      - ahoy_visitor=c1314437-defd-4199-af01-196ba7169e85; path=/; expires=Wed, 12
+        Dec 2018 11:32:44 -0000; secure
       X-Request-Id:
-      - 2367a286-9070-40aa-8990-a1ccf79a31f9
+      - d9505b17-40d3-432b-b0de-bdc16b6b3ddf
       X-Runtime:
-      - '0.100393'
+      - '0.118798'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -81,7 +85,8 @@ http_interactions:
       string: '{"links":{"payments.account":"https://www.bookingsync.com/api/v3/accounts/{payments.account}","payments.payment_gateway":"https://www.bookingsync.com/api/v3/payment_gateways/{payments.payment_gateway}","payments.bookings":"https://www.bookingsync.com/api/v3/bookings/{payments.bookings}","payments.bookings_payments":"https://www.bookingsync.com/api/v3/bookings_payments/{payments.bookings_payments}"},"payments":[{"links":{"account":3837,"payment_gateway":766,"bookings":[142616],"bookings_payments":[71982]},"id":71959,"transaction_id":null,"order_id":null,"card":null,"amount_in_cents":100000,"currency":"EUR","kind":"online","fullname":"aa","email":"aa@test.com","address1":null,"address2":null,"zip":null,"city":null,"state":null,"country_code":null,"locale":null,"ip":null,"test":false,"notes":"","paid_at":"2015-09-09T00:00:00Z","created_at":"2015-09-09T19:58:06Z","updated_at":"2015-09-09T19:58:06Z","rejected_at":null,"canceled_at":null,"description":""},{"links":{"account":3837,"payment_gateway":null,"bookings":[817604],"bookings_payments":[268045]},"id":268012,"transaction_id":null,"order_id":null,"card":null,"amount_in_cents":200,"currency":"EUR","kind":"cheque","fullname":"John
         Smith","email":"smith@example.com","address1":null,"address2":null,"zip":null,"city":null,"state":null,"country_code":null,"locale":null,"ip":null,"test":false,"notes":null,"paid_at":"2016-12-06T11:34:05Z","created_at":"2016-12-06T13:55:10Z","updated_at":"2016-12-06T13:59:05Z","rejected_at":null,"canceled_at":"2016-12-06T13:59:05Z","description":""},{"links":{"account":3837,"payment_gateway":null,"bookings":[819091],"bookings_payments":[268146]},"id":268113,"transaction_id":null,"order_id":null,"card":null,"amount_in_cents":80000,"currency":"EUR","kind":"cash","fullname":"Gary
         Smith","email":"aa@test.com","address1":null,"address2":null,"zip":null,"city":null,"state":null,"country_code":null,"locale":null,"ip":null,"test":false,"notes":"","paid_at":"2016-11-30T00:00:00Z","created_at":"2016-12-06T16:21:13Z","updated_at":"2016-12-06T16:21:13Z","rejected_at":null,"canceled_at":null,"description":""},{"links":{"account":3837,"payment_gateway":null,"bookings":[817604],"bookings_payments":[268231]},"id":268198,"transaction_id":null,"order_id":null,"card":null,"amount_in_cents":200,"currency":"EUR","kind":"cash","fullname":"John
-        Smith","email":"smith@example.com","address1":null,"address2":null,"zip":null,"city":null,"state":null,"country_code":null,"locale":null,"ip":null,"test":false,"notes":null,"paid_at":"2016-12-06T11:34:05Z","created_at":"2016-12-07T00:31:20Z","updated_at":"2016-12-07T00:31:20Z","rejected_at":null,"canceled_at":null,"description":""}]}'
+        Smith","email":"smith@example.com","address1":null,"address2":null,"zip":null,"city":null,"state":null,"country_code":null,"locale":null,"ip":null,"test":false,"notes":null,"paid_at":"2016-12-06T11:34:05Z","created_at":"2016-12-07T00:31:20Z","updated_at":"2016-12-07T00:31:20Z","rejected_at":null,"canceled_at":null,"description":""},{"links":{"account":3837,"payment_gateway":null,"bookings":[817604],"bookings_payments":[268654]},"id":268621,"transaction_id":null,"order_id":null,"card":null,"amount_in_cents":200,"currency":"EUR","kind":"cheque","fullname":"John
+        Smith","email":"smith@example.com","address1":null,"address2":null,"zip":null,"city":null,"state":null,"country_code":null,"locale":null,"ip":null,"test":false,"notes":null,"paid_at":"2016-12-06T11:34:05Z","created_at":"2016-12-08T18:19:46Z","updated_at":"2016-12-08T18:21:25Z","rejected_at":null,"canceled_at":"2016-12-08T18:21:25Z","description":""}]}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 18:18:40 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:44 GMT
 recorded_with: VCR 3.0.3

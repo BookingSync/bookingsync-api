@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://www.bookingsync.com/api/v3/clients/259654
+    uri: https://www.bookingsync.com/api/v3/clients/260693
     body:
       encoding: UTF-8
       string: '{"clients":[{"fullname":"Knut Eljassen"}]}'
@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 16:39:19 GMT
+      - Mon, 12 Dec 2016 12:04:31 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,15 +45,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 16:39:19 UTC
+      - 2016-12-12 12:04:31 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481216400'
+      - '1481547600'
       X-Ratelimit-Remaining:
-      - '979'
+      - '994'
       Etag:
-      - W/"8327235d7f90af84639edcaa04192b4c"
+      - W/"12d8b7cae6da7f812ebbb077b312a109"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -57,20 +61,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=81a8df10-ca3a-4816-8caf-4e5c429de33c; path=/; expires=Thu, 15 Dec
-        2016 16:39:19 -0000; secure
-      - ahoy_visitor=3ea450d1-d0f7-48f0-a8fe-bd054e05a044; path=/; expires=Sat, 08
-        Dec 2018 16:39:19 -0000; secure
+      - ahoy_visit=72fce5f8-b1d8-4b3d-be7c-b38dbc9a1ce1; path=/; expires=Mon, 19 Dec
+        2016 12:04:31 -0000; secure
+      - ahoy_visitor=30ef57a2-5d55-499e-89f6-0140f45f03b4; path=/; expires=Wed, 12
+        Dec 2018 12:04:31 -0000; secure
       X-Request-Id:
-      - 0da61217-71ea-49b6-a2ec-e0b9f4c37c8c
+      - 8020ee92-fab7-4477-935c-f1177092fb67
       X-Runtime:
-      - '0.059726'
+      - '0.058079'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"clients.account":"https://www.bookingsync.com/api/v3/accounts/{clients.account}"},"clients":[{"links":{"account":3837},"id":259654,"addresses":[],"emails":[{"label":"default","email":"halldor@example.com"}],"phones":[],"created_at":"2016-12-08T16:38:51Z","updated_at":"2016-12-08T16:39:19Z","fullname":"Knut
+      string: '{"links":{"clients.account":"https://www.bookingsync.com/api/v3/accounts/{clients.account}"},"clients":[{"links":{"account":3837},"id":260693,"addresses":[],"emails":[{"label":"default","email":"halldor@example.com"}],"phones":[],"created_at":"2016-12-12T11:52:10Z","updated_at":"2016-12-12T12:04:31Z","fullname":"Knut
         Eljassen","notes":null,"preferred_locale":null,"passport":null,"company":"","vat_number":""}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 16:39:19 GMT
+  recorded_at: Mon, 12 Dec 2016 12:04:31 GMT
 recorded_with: VCR 3.0.3

@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 10:58:24 GMT
+      - Mon, 12 Dec 2016 11:43:56 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 10:58:24 UTC
+      - 2016-12-12 11:43:56 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481281200'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '951'
+      - '920'
       Link:
       - <https://www.bookingsync.com/api/v3/reviews/34562?page=1>; rel="first", <https://www.bookingsync.com/api/v3/reviews/34562?page=1>;
         rel="last"
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=7672a8e5-7aac-43c3-97f0-1c5c77506817; path=/; expires=Fri, 16 Dec
-        2016 10:58:24 -0000; secure
-      - ahoy_visitor=2d851a14-f95e-4349-8e83-55a423be77bb; path=/; expires=Sun, 09
-        Dec 2018 10:58:24 -0000; secure
+      - ahoy_visit=544f2f42-f7db-4639-971b-47c5a3ae4349; path=/; expires=Mon, 19 Dec
+        2016 11:43:56 -0000; secure
+      - ahoy_visitor=d07183e5-b8ee-4d23-bb63-2212d2abf7bd; path=/; expires=Wed, 12
+        Dec 2018 11:43:56 -0000; secure
       X-Request-Id:
-      - 42a39e45-6594-4ccb-a210-0e841ebef055
+      - 8f632ab9-c618-4b84-8f0e-fd90a9a1f8af
       X-Runtime:
-      - '0.034886'
+      - '0.051063'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -81,5 +85,5 @@ http_interactions:
       string: '{"links":{"reviews.booking":"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}","reviews.rental":"https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"},"reviews":[{"links":{"booking":142616,"rental":5116},"id":34562,"rating":5,"comment":"test
         test test","name":"Gary S.","title":"test test test","created_at":"2015-09-09T21:09:28Z","updated_at":"2015-09-09T21:09:28Z"}]}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 10:58:24 GMT
+  recorded_at: Mon, 12 Dec 2016 11:43:56 GMT
 recorded_with: VCR 3.0.3

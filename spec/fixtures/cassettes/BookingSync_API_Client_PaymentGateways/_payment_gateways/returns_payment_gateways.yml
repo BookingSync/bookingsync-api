@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 18:18:39 GMT
+      - Mon, 12 Dec 2016 11:32:44 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 18:18:39 UTC
+      - 2016-12-12 11:32:44 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481223600'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '992'
+      - '977'
       Link:
       - <https://www.bookingsync.com/api/v3/payment_gateways?page=1>; rel="first",
         <https://www.bookingsync.com/api/v3/payment_gateways?page=1>; rel="last"
@@ -66,19 +70,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=5adf9ebc-ea84-4c61-a508-1e047d542028; path=/; expires=Thu, 15 Dec
-        2016 18:18:39 -0000; secure
-      - ahoy_visitor=71ad0bae-f246-4270-8934-23ba82db318e; path=/; expires=Sat, 08
-        Dec 2018 18:18:39 -0000; secure
+      - ahoy_visit=4a520710-97b3-49ba-9201-3c44bc8040cb; path=/; expires=Mon, 19 Dec
+        2016 11:32:44 -0000; secure
+      - ahoy_visitor=b673be90-e199-4880-bc17-e5abd5f89aaa; path=/; expires=Wed, 12
+        Dec 2018 11:32:44 -0000; secure
       X-Request-Id:
-      - e18dc9f2-cfef-4f1d-b01d-518cb70d7ae6
+      - 4e6ae908-94d5-4952-a4ff-138f76b65b37
       X-Runtime:
-      - '0.024994'
+      - '0.026812'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
       string: '{"links":{"payment_gateways.account":"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"},"payment_gateways":[{"links":{"account":3837},"id":766,"test":true,"gateway_name":"bogus","credentials":{},"supported_cardtypes":["bogus"],"supported_currencies":["USD"],"created_at":"2016-12-06T10:02:22Z","updated_at":"2016-12-06T10:26:36Z"}]}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 18:18:39 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:44 GMT
 recorded_with: VCR 3.0.3

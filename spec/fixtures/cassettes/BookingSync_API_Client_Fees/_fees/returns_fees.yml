@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 16:56:42 GMT
+      - Mon, 12 Dec 2016 11:32:41 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,24 +45,24 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 16:56:42 UTC
+      - 2016-12-12 11:32:41 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481216400'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '977'
+      - '981'
       Link:
       - <https://www.bookingsync.com/api/v3/fees?page=1>; rel="first", <https://www.bookingsync.com/api/v3/fees?page=1>;
         rel="last"
       X-Total-Pages:
       - '1'
       X-Total-Count:
-      - '3'
+      - '4'
       X-Per-Page:
       - '100'
       Etag:
-      - W/"761ad1e522f4c8c5effc4248a05f952b"
+      - W/"32ebcc18d73feaa05ce33c93d2b6d805"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=7de93fd7-2652-4533-a152-6f73ef535f19; path=/; expires=Thu, 15 Dec
-        2016 16:56:42 -0000; secure
-      - ahoy_visitor=01e02011-4b15-46f0-9373-bfd4fe17f09e; path=/; expires=Sat, 08
-        Dec 2018 16:56:42 -0000; secure
+      - ahoy_visit=5fbec4db-8942-4cb0-95c5-33c3968d19ef; path=/; expires=Mon, 19 Dec
+        2016 11:32:41 -0000; secure
+      - ahoy_visitor=bb24fe08-662c-4365-ae6f-af6245747818; path=/; expires=Wed, 12
+        Dec 2018 11:32:41 -0000; secure
       X-Request-Id:
-      - 7f2075dc-23a2-4ace-b793-7a07094dd148
+      - 035db6c2-9966-4b35-89b9-5745e1f7f8fb
       X-Runtime:
-      - '0.028834'
+      - '0.042429'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -81,7 +85,8 @@ http_interactions:
       string: '{"links":{"fees.account":"https://www.bookingsync.com/api/v3/accounts/{fees.account}"},"fees":[{"links":{"account":3837},"id":474,"name":{"en":"test
         fee"},"rate":"10.0","rate_kind":"fixed","created_at":"2015-09-09T20:23:53Z","updated_at":"2015-09-09T20:23:54Z","downpayment_percentage":"10.0","kind":"other"},{"links":{"account":3837},"id":659,"name":{"en":"New
         fee"},"rate":"10.0","rate_kind":"fixed","created_at":"2015-11-17T16:53:15Z","updated_at":"2015-11-17T16:53:16Z","downpayment_percentage":"10.0","kind":"other"},{"links":{"account":3837},"id":2161,"name":{"en":"New
-        fee"},"rate":"10.0","rate_kind":"fixed","created_at":"2016-12-06T13:13:27Z","updated_at":"2016-12-06T13:13:27Z","downpayment_percentage":"10.0","kind":"other"}]}'
+        fee"},"rate":"10.0","rate_kind":"fixed","created_at":"2016-12-06T13:13:27Z","updated_at":"2016-12-06T13:13:27Z","downpayment_percentage":"10.0","kind":"other"},{"links":{"account":3837},"id":2174,"name":{"en":"New
+        fee"},"rate":"10.0","rate_kind":"fixed","created_at":"2016-12-08T16:57:16Z","updated_at":"2016-12-08T16:57:16Z","downpayment_percentage":"10.0","kind":"other"}]}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 16:56:42 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:41 GMT
 recorded_with: VCR 3.0.3

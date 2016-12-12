@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 16:57:15 GMT
+      - Mon, 12 Dec 2016 11:43:49 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 16:57:15 UTC
+      - 2016-12-12 11:43:49 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481216400'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '975'
+      - '938'
       Link:
       - <https://www.bookingsync.com/api/v3/destinations/99?page=1>; rel="first",
         <https://www.bookingsync.com/api/v3/destinations/99?page=1>; rel="last"
@@ -66,19 +70,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=49369e43-50fe-4968-b272-bb7efc57eb59; path=/; expires=Thu, 15 Dec
-        2016 16:57:15 -0000; secure
-      - ahoy_visitor=c53c3b30-1f40-4296-ae7a-19d2f5aa1c0b; path=/; expires=Sat, 08
-        Dec 2018 16:57:15 -0000; secure
+      - ahoy_visit=774355ed-53a0-41b2-883d-653910eebad6; path=/; expires=Mon, 19 Dec
+        2016 11:43:49 -0000; secure
+      - ahoy_visitor=08a12d3b-0053-47e2-ae34-d14f09a3d90f; path=/; expires=Wed, 12
+        Dec 2018 11:43:49 -0000; secure
       X-Request-Id:
-      - 57b57f3a-0deb-4e5a-841c-06a9fbd81506
+      - c889fbfe-9333-401a-baec-caff45d102e3
       X-Runtime:
-      - '0.036046'
+      - '0.037393'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
       string: '{"destinations":[{"id":99,"name":{"en":"World"},"fullname":{"en":"World"},"permalink":{"en":"world"},"aliases":{},"counter":2,"ancestor_ids":[]}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 16:57:15 GMT
+  recorded_at: Mon, 12 Dec 2016 11:43:49 GMT
 recorded_with: VCR 3.0.3

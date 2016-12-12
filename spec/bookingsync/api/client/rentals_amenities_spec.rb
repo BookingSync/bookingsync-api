@@ -36,7 +36,7 @@ describe BookingSync::API::Client::RentalsAmenities do
   end
 
   describe ".create_rentals_amenity", :vcr do
-    let(:attributes) { { amenity_id: 81, details_en: "Details" } }
+    let(:attributes) { { amenity_id: 48, details_en: "Details" } }
     let(:rental) { BookingSync::API::Resource.new(client, id: 5116) }
 
     it "creates a new rentals_amenity" do

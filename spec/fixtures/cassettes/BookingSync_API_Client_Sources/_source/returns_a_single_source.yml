@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 14:26:41 GMT
+      - Mon, 12 Dec 2016 11:43:56 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 14:26:41 UTC
+      - 2016-12-12 11:43:56 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481295600'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '995'
+      - '918'
       Link:
       - <https://www.bookingsync.com/api/v3/sources/1874?page=1>; rel="first", <https://www.bookingsync.com/api/v3/sources/1874?page=1>;
         rel="last"
@@ -66,19 +70,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=0a9e09a3-f1e1-4f86-8cbb-fe2b6bb26690; path=/; expires=Fri, 16 Dec
-        2016 14:26:41 -0000; secure
-      - ahoy_visitor=8f43af0f-b3c4-4695-a839-7350d1f44e73; path=/; expires=Sun, 09
-        Dec 2018 14:26:41 -0000; secure
+      - ahoy_visit=e96d2cc2-07b0-4580-b3e9-134fe037bef0; path=/; expires=Mon, 19 Dec
+        2016 11:43:56 -0000; secure
+      - ahoy_visitor=a1e92e2f-f166-45e2-9e52-17fbd0a537f2; path=/; expires=Wed, 12
+        Dec 2018 11:43:56 -0000; secure
       X-Request-Id:
-      - cd2e3dc5-fb58-4b45-ba09-2c52a3cbd421
+      - b778ed18-144c-431b-97ce-16f349e441ed
       X-Runtime:
-      - '0.045863'
+      - '0.029339'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
       string: '{"links":{"sources.account":"https://www.bookingsync.com/api/v3/accounts/{sources.account}","sources.bookings":"https://www.bookingsync.com/api/v3/bookings/{sources.bookings}"},"sources":[{"links":{"account":3837,"bookings":[829165,142616]},"id":1874,"name":"test","created_at":"2015-09-09T21:10:36Z","updated_at":"2015-09-09T21:10:36Z","position":1}]}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 14:26:41 GMT
+  recorded_at: Mon, 12 Dec 2016 11:43:57 GMT
 recorded_with: VCR 3.0.3

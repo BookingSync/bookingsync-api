@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 10:58:51 GMT
+      - Mon, 12 Dec 2016 11:32:54 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 10:58:51 UTC
+      - 2016-12-12 11:32:54 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481281200'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '949'
+      - '955'
       Link:
       - <https://www.bookingsync.com/api/v3/seasons?page=1>; rel="first", <https://www.bookingsync.com/api/v3/seasons?page=1>;
         rel="last"
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=cf42cc66-2191-47db-9e7a-2e516bcd96ac; path=/; expires=Fri, 16 Dec
-        2016 10:58:51 -0000; secure
-      - ahoy_visitor=2d47835f-ab63-4205-b675-08867ab65546; path=/; expires=Sun, 09
-        Dec 2018 10:58:51 -0000; secure
+      - ahoy_visit=26040792-708d-490c-a2a0-23d91fd2c512; path=/; expires=Mon, 19 Dec
+        2016 11:32:54 -0000; secure
+      - ahoy_visitor=6441f737-5d98-494d-95d3-0783ff1c1540; path=/; expires=Wed, 12
+        Dec 2018 11:32:54 -0000; secure
       X-Request-Id:
-      - 12c06c36-9175-45d3-9300-52375fefd8bf
+      - 5623f85a-4e44-4ad7-bc32-c99cb3e97cbd
       X-Runtime:
-      - '0.064821'
+      - '0.064865'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -85,5 +89,5 @@ http_interactions:
         Season"},"ratio_percentage":"50.0","minimum_stay":2,"created_at":"2014-08-08T18:30:37Z","updated_at":"2016-07-07T00:37:29Z","color":"#FC2847","color_ratio":1.0},{"links":{"rates_table":274,"rates_rules":[],"periods":[]},"id":1806,"name":{"en":"Out
         Of Season"},"ratio_percentage":"36.0","minimum_stay":2,"created_at":"2014-08-08T18:30:59Z","updated_at":"2016-07-07T01:05:56Z","color":"#5D76CB","color_ratio":1.0}],"meta":{}}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 10:58:52 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:54 GMT
 recorded_with: VCR 3.0.3

@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 14:46:56 GMT
+      - Mon, 12 Dec 2016 11:32:55 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 14:46:56 UTC
+      - 2016-12-12 11:32:55 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481295600'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '986'
+      - '952'
       Link:
       - <https://www.bookingsync.com/api/v3/taxes?page=1>; rel="first", <https://www.bookingsync.com/api/v3/taxes?page=1>;
         rel="last"
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=28d30819-8e11-464d-9132-485bbbc496bb; path=/; expires=Fri, 16 Dec
-        2016 14:46:56 -0000; secure
-      - ahoy_visitor=08f07dab-444e-4c1e-bbb8-bf772067d657; path=/; expires=Sun, 09
-        Dec 2018 14:46:56 -0000; secure
+      - ahoy_visit=884ebc53-292a-470d-85ff-e0be753ab927; path=/; expires=Mon, 19 Dec
+        2016 11:32:55 -0000; secure
+      - ahoy_visitor=ce9a96cb-fedc-40fd-bf4c-713ec676af0b; path=/; expires=Wed, 12
+        Dec 2018 11:32:55 -0000; secure
       X-Request-Id:
-      - a2575f7f-08ec-43dc-97dd-a077a60a3462
+      - 4cebd7c9-3615-41eb-8c2c-ea5ae335cdf5
       X-Runtime:
-      - '0.047712'
+      - '0.040572'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -81,5 +85,5 @@ http_interactions:
       string: '{"links":{"taxes.account":"https://www.bookingsync.com/api/v3/accounts/{taxes.account}"},"taxes":[{"links":{"account":3837},"id":168,"percentage":"10.0","created_at":"2015-09-09T20:23:54Z","updated_at":"2016-07-14T12:08:24Z","name":{"en":"test
         tax"}}]}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 14:46:56 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:55 GMT
 recorded_with: VCR 3.0.3

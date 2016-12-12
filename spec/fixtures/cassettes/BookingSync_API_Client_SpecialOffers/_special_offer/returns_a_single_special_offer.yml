@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 14:43:16 GMT
+      - Mon, 12 Dec 2016 11:43:57 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 14:43:16 UTC
+      - 2016-12-12 11:43:57 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481295600'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '990'
+      - '917'
       Link:
       - <https://www.bookingsync.com/api/v3/special_offers/1583?page=1>; rel="first",
         <https://www.bookingsync.com/api/v3/special_offers/1583?page=1>; rel="last"
@@ -66,19 +70,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=9de9821b-f0b5-45e3-aad6-966e14775e89; path=/; expires=Fri, 16 Dec
-        2016 14:43:16 -0000; secure
-      - ahoy_visitor=912c9131-a3dc-4f0d-90c9-173727ec4eb7; path=/; expires=Sun, 09
-        Dec 2018 14:43:16 -0000; secure
+      - ahoy_visit=fb55a543-ad2e-4a47-9025-a759e80b24c5; path=/; expires=Mon, 19 Dec
+        2016 11:43:57 -0000; secure
+      - ahoy_visitor=c367ee4a-bd5a-4055-b172-d8e7ccc516d9; path=/; expires=Wed, 12
+        Dec 2018 11:43:57 -0000; secure
       X-Request-Id:
-      - c9c386dc-5cc1-4f66-8b7b-609a468647c9
+      - 3e8e49b7-a9a6-448a-a0a2-741cfb6a40f0
       X-Runtime:
-      - '0.032633'
+      - '0.035883'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
       string: '{"links":{"special_offers.rental":"https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"},"special_offers":[{"links":{"rental":5117},"id":1583,"name":{"en":"offer"},"start_date":"2016-01-09","end_date":"2020-01-11","discount":10.0,"created_at":"2016-01-09T10:28:25Z","updated_at":"2016-01-09T10:28:25Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 14:43:16 GMT
+  recorded_at: Mon, 12 Dec 2016 11:43:57 GMT
 recorded_with: VCR 3.0.3

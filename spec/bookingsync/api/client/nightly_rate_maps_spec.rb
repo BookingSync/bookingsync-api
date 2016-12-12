@@ -24,7 +24,7 @@ describe BookingSync::API::Client::NightlyRateMaps do
   end
 
   describe ".edit_nightly_rate_map", :vcr do
-    let(:attributes) { { rates_map: (["10"] * 1096).join(","), start_date: "2016-12-07" } }
+    let(:attributes) { { rates_map: (["10"] * 1096).join(","), start_date: "2016-12-11" } }
     let(:prefetched_nightly_rate_map_id) {
       find_resource("#{@casette_base_path}_nightly_rate_maps/returns_nightly_rate_maps.yml", "nightly_rate_maps")[:id]
     }

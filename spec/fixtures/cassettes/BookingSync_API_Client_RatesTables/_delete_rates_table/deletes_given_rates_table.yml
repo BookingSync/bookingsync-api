@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://www.bookingsync.com/api/v3/rates_tables/84094
+    uri: https://www.bookingsync.com/api/v3/rates_tables/85291
     body:
       encoding: UTF-8
       string: "{}"
@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 204
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 09:24:28 GMT
+      - Mon, 12 Dec 2016 12:13:20 GMT
       Connection:
       - keep-alive
       Status:
@@ -37,13 +41,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 09:24:28 UTC
+      - 2016-12-12 12:13:20 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481277600'
+      - '1481547600'
       X-Ratelimit-Remaining:
-      - '988'
+      - '968'
       Cache-Control:
       - no-cache
       P3p:
@@ -51,19 +55,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=45e5dcdd-e1c2-4622-8824-20f4091329fb; path=/; expires=Fri, 16 Dec
-        2016 09:24:28 -0000; secure
-      - ahoy_visitor=c5108691-1b54-4dd7-9f1d-45f8e210f37c; path=/; expires=Sun, 09
-        Dec 2018 09:24:28 -0000; secure
+      - ahoy_visit=71d627ac-79df-449b-8475-59636212e300; path=/; expires=Mon, 19 Dec
+        2016 12:13:20 -0000; secure
+      - ahoy_visitor=bae43f4c-a349-4d73-ac50-7092c258b790; path=/; expires=Wed, 12
+        Dec 2018 12:13:20 -0000; secure
       X-Request-Id:
-      - 2357a47a-8a6e-45fb-b288-ca13e5e97393
+      - 2a7ff506-10de-4b29-be37-ae2ce22a32c2
       X-Runtime:
-      - '0.034360'
+      - '0.029676'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 09:24:28 GMT
+  recorded_at: Mon, 12 Dec 2016 12:13:20 GMT
 recorded_with: VCR 3.0.3

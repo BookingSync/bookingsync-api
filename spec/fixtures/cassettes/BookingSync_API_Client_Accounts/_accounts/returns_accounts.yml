@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 15:17:54 GMT
+      - Mon, 12 Dec 2016 11:32:34 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,11 +45,11 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 15:17:54 UTC
+      - 2016-12-12 11:32:34 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481212800'
+      - '1481544000'
       X-Ratelimit-Remaining:
       - '999'
       Link:
@@ -58,7 +62,7 @@ http_interactions:
       X-Per-Page:
       - '100'
       Etag:
-      - W/"0f4bbdfa4bce7461cf0e58e77b1ad66a"
+      - W/"4d5e3244a9d623edd253cadeb6fc9913"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -66,19 +70,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=08644169-54fe-49ba-850a-3b3550abbf3c; path=/; expires=Thu, 15 Dec
-        2016 15:17:54 -0000; secure
-      - ahoy_visitor=d0d44349-5eb0-4f13-981e-7b7123949be1; path=/; expires=Sat, 08
-        Dec 2018 15:17:54 -0000; secure
+      - ahoy_visit=e7b5a0d5-d29f-433a-a4c6-b67ad298dace; path=/; expires=Mon, 19 Dec
+        2016 11:32:34 -0000; secure
+      - ahoy_visitor=5f84142e-f4f4-4677-aeb0-9a6a266b46a6; path=/; expires=Wed, 12
+        Dec 2018 11:32:34 -0000; secure
       X-Request-Id:
-      - 49ea04a4-91bb-4e3c-bed6-49b3eebed7ca
+      - 6be35e06-f9ff-42ca-b53d-03dfefa45997
       X-Runtime:
-      - '0.028251'
+      - '0.036977'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"accounts":[{"business_name":"BSA-Website-Test","created_at":"2014-08-08T18:20:53Z","id":3837,"updated_at":"2016-12-07T12:35:09Z","status":"trial","preferences":{"bookings":{"default_arrival_time":16,"default_departure_time":10,"default_communication_locale":"en"}},"email":"dev@bookingsync.com","selected_locales":["en","fr","de"],"default_locale":"en","phones":{"phone":"","mobile":"","fax":""},"address1":"","address2":"","city":"","zip":"","state":"","country_code":"","website":""}],"meta":{}}'
+      string: '{"accounts":[{"business_name":"BSA-Website-Test","created_at":"2014-08-08T18:20:53Z","id":3837,"updated_at":"2016-12-09T09:42:19Z","status":"trial","preferences":{"bookings":{"default_arrival_time":16,"default_departure_time":10,"default_communication_locale":"en"}},"email":"dev@bookingsync.com","selected_locales":["en","fr","de"],"default_locale":"en","phones":{"phone":"","mobile":"","fax":""},"address1":"","address2":"","city":"","zip":"","state":"","country_code":"","website":""}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 15:17:54 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:34 GMT
 recorded_with: VCR 3.0.3

@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 201
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 15:48:45 GMT
+      - Mon, 12 Dec 2016 11:52:09 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,22 +45,22 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 15:48:45 UTC
+      - 2016-12-12 11:52:09 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481212800'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '965'
+      - '912'
       Link:
       - <https://www.bookingsync.com/api/v3/booking_comments?booking_comments%5B%5D%5Bcontent%5D=Example+content&booking_id=817604&page=1>;
         rel="first"
       X-Per-Page:
       - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/booking_comments/92650
+      - https://www.bookingsync.com/api/v3/booking_comments/94142
       Etag:
-      - W/"cff6b15a4c6a3a52158f8ffa83a1cb83"
+      - W/"b806f65c27eadd2fb5040380048cea3a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,20 +68,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=115b3814-efe8-414f-a847-fe50630a0072; path=/; expires=Thu, 15 Dec
-        2016 15:48:45 -0000; secure
-      - ahoy_visitor=302673b9-22f0-4d0d-ae14-3eef9769eee9; path=/; expires=Sat, 08
-        Dec 2018 15:48:45 -0000; secure
+      - ahoy_visit=26409e24-ba74-4d79-a44b-31c8f97be46c; path=/; expires=Mon, 19 Dec
+        2016 11:52:09 -0000; secure
+      - ahoy_visitor=49fadf28-83a7-4910-9840-61c05f2d3864; path=/; expires=Wed, 12
+        Dec 2018 11:52:09 -0000; secure
       X-Request-Id:
-      - 167cb10a-8086-44dd-b7ae-07d70521f916
+      - e3abba6f-c5a0-4dce-ad1c-a6172943057b
       X-Runtime:
-      - '0.047114'
+      - '0.089540'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"booking_comments.account":"https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}","booking_comments.booking":"https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"},"booking_comments":[{"links":{"account":3837,"booking":817604},"id":92650,"content":"Example
-        content","editable":true,"created_at":"2016-12-08T15:48:45Z","updated_at":"2016-12-08T15:48:45Z"}],"meta":{}}'
+      string: '{"links":{"booking_comments.account":"https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}","booking_comments.booking":"https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"},"booking_comments":[{"links":{"account":3837,"booking":817604},"id":94142,"content":"Example
+        content","editable":true,"created_at":"2016-12-12T11:52:09Z","updated_at":"2016-12-12T11:52:09Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 15:48:45 GMT
+  recorded_at: Mon, 12 Dec 2016 11:52:09 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://www.bookingsync.com/api/v3/bathrooms/41327
+    uri: https://www.bookingsync.com/api/v3/bathrooms/41394
     body:
       encoding: UTF-8
       string: '{"bathrooms":[{"name_en":"Updated bathroom","name_fr":"Salle de bain
@@ -18,6 +18,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -26,7 +30,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 15:31:00 GMT
+      - Mon, 12 Dec 2016 12:04:29 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -42,15 +46,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 15:31:00 UTC
+      - 2016-12-12 12:04:29 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481212800'
+      - '1481547600'
       X-Ratelimit-Remaining:
-      - '983'
+      - '999'
       Etag:
-      - W/"27e5c83298552dc1faec7e17d1d49e67"
+      - W/"8ed37c087bfa9bc4b10834257b661299"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -58,20 +62,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=3661e42b-95b4-4bf7-9bec-0ce453dea11c; path=/; expires=Thu, 15 Dec
-        2016 15:31:00 -0000; secure
-      - ahoy_visitor=a2c82da9-eac6-463f-a04c-6932fdf47f16; path=/; expires=Sat, 08
-        Dec 2018 15:31:00 -0000; secure
+      - ahoy_visit=884682ba-5608-4b88-ae16-4557ea7f515d; path=/; expires=Mon, 19 Dec
+        2016 12:04:29 -0000; secure
+      - ahoy_visitor=f58410fa-d9aa-47c4-a29f-067544068c5e; path=/; expires=Wed, 12
+        Dec 2018 12:04:29 -0000; secure
       X-Request-Id:
-      - 5db2f7ac-97ea-49cf-a0bd-9955c7a303be
+      - 0c98609e-470a-40a1-ab98-b9ee33e146c2
       X-Runtime:
-      - '0.129676'
+      - '0.072268'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"bathrooms.rental":"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"},"bathrooms":[{"links":{"rental":5116},"id":41327,"name":{"en":"Updated
-        bathroom","fr":"Salle de bain 1"},"wc_count":2,"shower_count":0,"bath_count":0,"created_at":"2016-12-08T15:29:03Z","updated_at":"2016-12-08T15:31:00Z"}],"meta":{}}'
+      string: '{"links":{"bathrooms.rental":"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"},"bathrooms":[{"links":{"rental":5116},"id":41394,"name":{"en":"Updated
+        bathroom","fr":"Salle de bain 1"},"wc_count":2,"shower_count":0,"bath_count":0,"created_at":"2016-12-12T11:52:08Z","updated_at":"2016-12-12T12:04:29Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 15:31:00 GMT
+  recorded_at: Mon, 12 Dec 2016 12:04:29 GMT
 recorded_with: VCR 3.0.3

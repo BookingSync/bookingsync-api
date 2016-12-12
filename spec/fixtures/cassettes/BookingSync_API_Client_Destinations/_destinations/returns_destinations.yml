@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 16:56:41 GMT
+      - Mon, 12 Dec 2016 11:32:41 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 16:56:41 UTC
+      - 2016-12-12 11:32:41 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481216400'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '978'
+      - '982'
       Link:
       - <https://www.bookingsync.com/api/v3/destinations?page=1>; rel="first", <https://www.bookingsync.com/api/v3/destinations?page=1>;
         rel="last"
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=3870913b-9888-4d61-9dc1-073c22e0445e; path=/; expires=Thu, 15 Dec
-        2016 16:56:41 -0000; secure
-      - ahoy_visitor=ba1a7195-0c59-4173-a7f9-0323732dec33; path=/; expires=Sat, 08
-        Dec 2018 16:56:41 -0000; secure
+      - ahoy_visit=2c885945-37d5-4d2c-a39f-407ecd164ce7; path=/; expires=Mon, 19 Dec
+        2016 11:32:41 -0000; secure
+      - ahoy_visitor=b12820bc-b449-4765-b903-02178764bdc0; path=/; expires=Wed, 12
+        Dec 2018 11:32:41 -0000; secure
       X-Request-Id:
-      - c6d3b84d-1984-4ffe-a79b-f1a8cd9ac994
+      - 66622139-0901-4c9f-aafb-af7a5c99e2c4
       X-Runtime:
-      - '0.089161'
+      - '0.052541'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -90,5 +94,5 @@ http_interactions:
         Greece, Europe, World"},"permalink":{"en":"world/europe/greece/ionian-islands/lefkada-lefkas/sivota-lefkada","fr":"world/europe/greece/ionian-islands/lefkada-lefkas/sivota-lefkada","de":"world/europe/greece/ionian-islands/lefkada-lefkas/sivota-lefkada"},"aliases":{"en":"---\n-
         Syvota\n"},"counter":2,"ancestor_ids":[99,101,2918,6817,7160]}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 16:56:41 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:41 GMT
 recorded_with: VCR 3.0.3

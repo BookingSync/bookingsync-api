@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 15:45:02 GMT
+      - Mon, 12 Dec 2016 11:32:35 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 15:45:02 UTC
+      - 2016-12-12 11:32:35 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481212800'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '981'
+      - '995'
       Link:
       - <https://www.bookingsync.com/api/v3/bedrooms?page=1>; rel="first", <https://www.bookingsync.com/api/v3/bedrooms?page=1>;
         rel="last"
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=b043bd9c-8188-4f05-b3f4-13fea93f277d; path=/; expires=Thu, 15 Dec
-        2016 15:45:02 -0000; secure
-      - ahoy_visitor=decd9695-ec26-4092-836a-4ae47bd1fa90; path=/; expires=Sat, 08
-        Dec 2018 15:45:02 -0000; secure
+      - ahoy_visit=3bcc0c65-a79e-47c8-9712-9ceca82b0090; path=/; expires=Mon, 19 Dec
+        2016 11:32:35 -0000; secure
+      - ahoy_visitor=925ff21a-e365-4c43-996f-f4558a78a52c; path=/; expires=Wed, 12
+        Dec 2018 11:32:35 -0000; secure
       X-Request-Id:
-      - 8f99dcee-3396-4a3f-869e-d156f3a52c3a
+      - 1bd2235e-6367-46b5-a6b3-bf002bea0825
       X-Runtime:
-      - '0.042828'
+      - '0.046062'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -86,5 +90,5 @@ http_interactions:
         bedroom"},"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":0,"queensize_beds_count":0,"single_beds_count":0,"sofa_beds_count":0,"created_at":"2015-09-08T18:30:04Z","updated_at":"2015-09-08T18:30:04Z"},{"links":{"rental":5116},"id":7368,"name":{"en":"New
         bedroom"},"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":0,"queensize_beds_count":0,"single_beds_count":0,"sofa_beds_count":2,"created_at":"2015-09-08T18:31:59Z","updated_at":"2015-09-08T18:31:59Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 15:45:02 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:35 GMT
 recorded_with: VCR 3.0.3

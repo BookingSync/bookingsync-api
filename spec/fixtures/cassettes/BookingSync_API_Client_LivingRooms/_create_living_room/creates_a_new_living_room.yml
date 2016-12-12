@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 201
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 18:18:38 GMT
+      - Mon, 12 Dec 2016 11:52:11 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,22 +45,22 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 18:18:38 UTC
+      - 2016-12-12 11:52:11 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481223600'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '994'
+      - '908'
       Link:
       - <https://www.bookingsync.com/api/v3/rentals/5116/living_rooms?living_rooms%5B%5D%5Bsofa_beds_count%5D=2&page=1>;
         rel="first"
       X-Per-Page:
       - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/living_rooms/22325
+      - https://www.bookingsync.com/api/v3/living_rooms/22332
       Etag:
-      - W/"903480036a7cd1c3f41cd3c41f9a4a00"
+      - W/"c5b5b0716ef3d4d8a2534e5b00675d6e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,19 +68,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=2cc8e1ff-ebd8-492a-a716-4789acf7f0dc; path=/; expires=Thu, 15 Dec
-        2016 18:18:38 -0000; secure
-      - ahoy_visitor=ac1fc0a5-ac0f-4bae-9b36-a027d00ccd18; path=/; expires=Sat, 08
-        Dec 2018 18:18:38 -0000; secure
+      - ahoy_visit=e396a8bc-9730-4827-a3cd-faf5fd276978; path=/; expires=Mon, 19 Dec
+        2016 11:52:11 -0000; secure
+      - ahoy_visitor=67fa1349-7618-43d8-8b59-87c5353c1824; path=/; expires=Wed, 12
+        Dec 2018 11:52:11 -0000; secure
       X-Request-Id:
-      - 50a69b62-0f77-4c08-87cb-b116b88c6144
+      - 1f2b5e93-ad45-49ca-b670-65e6553d6afc
       X-Runtime:
-      - '0.039913'
+      - '0.044816'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"living_rooms.rental":"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"},"living_rooms":[{"links":{"rental":5116},"id":22325,"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":0,"queensize_beds_count":0,"single_beds_count":0,"sofa_beds_count":2,"created_at":"2016-12-08T18:18:38Z","updated_at":"2016-12-08T18:18:38Z"}],"meta":{}}'
+      string: '{"links":{"living_rooms.rental":"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"},"living_rooms":[{"links":{"rental":5116},"id":22332,"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":0,"queensize_beds_count":0,"single_beds_count":0,"sofa_beds_count":2,"created_at":"2016-12-12T11:52:11Z","updated_at":"2016-12-12T11:52:11Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 18:18:38 GMT
+  recorded_at: Mon, 12 Dec 2016 11:52:11 GMT
 recorded_with: VCR 3.0.3

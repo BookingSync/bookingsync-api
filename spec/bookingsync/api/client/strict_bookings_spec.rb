@@ -7,8 +7,8 @@ describe BookingSync::API::Client::StrictBookings do
     let(:params) do
       {
         "rental_id" => 25938,
-        "start_at" => "2017-03-15 16:00:00",
-        "end_at" => "2017-03-22 10:00:00",
+        "start_at" => "2017-05-22 16:00:00",
+        "end_at" => "2017-05-29 10:00:00",
         "adults" => 3,
         "children" => 2,
         "final_price" => "63",
@@ -37,8 +37,8 @@ describe BookingSync::API::Client::StrictBookings do
     it "returns newly created booking" do
      VCR.use_cassette("BookingSync_API_Client_StrictBookings/_create_strict_booking/creates_a_booking") do
        booking = client.create_strict_booking(params)
-       expect(booking.start_at).to eql(Time.parse("2017-03-15 16:00:00 UTC"))
-       expect(booking.end_at).to eql(Time.parse("2017-03-22 10:00:00 UTC"))
+       expect(booking.start_at).to eql(Time.parse("2017-05-22 16:00:00 UTC"))
+       expect(booking.end_at).to eql(Time.parse("2017-05-29 10:00:00 UTC"))
      end
    end
   end

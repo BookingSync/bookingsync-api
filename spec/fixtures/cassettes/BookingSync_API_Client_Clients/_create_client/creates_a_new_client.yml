@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 201
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 16:38:51 GMT
+      - Mon, 12 Dec 2016 11:52:10 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,22 +45,22 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 16:38:51 UTC
+      - 2016-12-12 11:52:10 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481216400'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '983'
+      - '910'
       Link:
       - <https://www.bookingsync.com/api/v3/clients?clients%5B%5D%5Bcity%5D=Reykjavik&clients%5B%5D%5Bcountry_code%5D=IS&clients%5B%5D%5Bemails%5D%5B%5D%5Bemail%5D=halldor%40example.com&clients%5B%5D%5Bemails%5D%5B%5D%5Blabel%5D=default&clients%5B%5D%5Bfullname%5D=Halldor+Helgason&page=1>;
         rel="first"
       X-Per-Page:
       - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/clients/259654
+      - https://www.bookingsync.com/api/v3/clients/260693
       Etag:
-      - W/"82ef300dc49e38ec8a6e803772b1ef6c"
+      - W/"877f44b537761ee74aebf3c210a05927"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,20 +68,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=5b88ee63-6d7d-4c2c-941b-fcf27d17b710; path=/; expires=Thu, 15 Dec
-        2016 16:38:51 -0000; secure
-      - ahoy_visitor=0df100c6-32e6-49a1-843d-bbb796a77fea; path=/; expires=Sat, 08
-        Dec 2018 16:38:51 -0000; secure
+      - ahoy_visit=b9cc94f2-ef6e-421c-afeb-66bfc84eb7b6; path=/; expires=Mon, 19 Dec
+        2016 11:52:10 -0000; secure
+      - ahoy_visitor=4d80e6b3-6d19-4471-9816-45101fc9c6b9; path=/; expires=Wed, 12
+        Dec 2018 11:52:10 -0000; secure
       X-Request-Id:
-      - b0bd12e4-2bee-46b2-802f-30ba99e869ae
+      - 4b52e864-aec9-4248-bb93-41776074a521
       X-Runtime:
-      - '0.104883'
+      - '0.060035'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"clients.account":"https://www.bookingsync.com/api/v3/accounts/{clients.account}"},"clients":[{"links":{"account":3837},"id":259654,"addresses":[],"emails":[{"label":"default","email":"halldor@example.com"}],"phones":[],"created_at":"2016-12-08T16:38:51Z","updated_at":"2016-12-08T16:38:51Z","fullname":"Halldor
+      string: '{"links":{"clients.account":"https://www.bookingsync.com/api/v3/accounts/{clients.account}"},"clients":[{"links":{"account":3837},"id":260693,"addresses":[],"emails":[{"label":"default","email":"halldor@example.com"}],"phones":[],"created_at":"2016-12-12T11:52:10Z","updated_at":"2016-12-12T11:52:10Z","fullname":"Halldor
         Helgason","notes":null,"preferred_locale":null,"passport":null,"company":"","vat_number":""}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 16:38:51 GMT
+  recorded_at: Mon, 12 Dec 2016 11:52:10 GMT
 recorded_with: VCR 3.0.3
