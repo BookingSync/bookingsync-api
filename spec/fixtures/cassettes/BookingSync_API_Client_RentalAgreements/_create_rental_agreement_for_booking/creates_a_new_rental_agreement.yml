@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: https://bookingsync.com/api/v3/bookings/2/rental_agreements
+    uri: https://www.bookingsync.com/api/v3/bookings/817604/rental_agreements
     body:
       encoding: UTF-8
-      string: "{\"rental_agreements\":[{\"body\":\"Lorem ipsum\"}]}"
+      string: '{"rental_agreements":[{"body":"Lorem ipsum"}]}'
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -22,42 +22,62 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 09 Dec 2016 09:42:20 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 09:42:19 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1398866400'
+      - '1481277600'
       X-Ratelimit-Remaining:
-      - '992'
+      - '982'
+      Link:
+      - <https://www.bookingsync.com/api/v3/bookings/817604/rental_agreements?page=1&rental_agreements%5B%5D%5Bbody%5D=Lorem+ipsum>;
+        rel="first"
+      X-Per-Page:
+      - '100'
       Location:
-      - https://bookingsync.com/api/v3/rental_agreements/18
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Content-Type:
-      - application/vnd.api+json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
+      - https://www.bookingsync.com/api/v3/rental_agreements/29774
       Etag:
-      - "\"1a10a99e581c6ea038587ddf013060ca\""
+      - W/"d74cfc4b076647d2adcb86f1ff607116"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - _BookingSync_session=a3b0d42098813094f5dfcb3cb3ba8809; path=/; secure; HttpOnly
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=43bb7113-1281-4df3-88c6-7a0ad88023bd; path=/; expires=Fri, 16 Dec
+        2016 09:42:19 -0000; secure
+      - ahoy_visitor=4631d2c4-acb8-47ad-9e4e-4da3f92787f1; path=/; expires=Sun, 09
+        Dec 2018 09:42:19 -0000; secure
       X-Request-Id:
-      - eabe3dff06256bcc210a17e8532eeebf
+      - 1c43288d-2157-44df-9634-d233ef1a1837
       X-Runtime:
-      - '0.052492'
-      Date:
-      - Wed, 30 Apr 2014 13:50:50 GMT
-      Connection:
-      - close
+      - '0.127562'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: "{\"rental_agreements\":[{\"id\":18,\"body\":\"Lorem ipsum\",\"created_at\":\"2014-04-30T13:50:50Z\",\"updated_at\":\"2014-04-30T13:50:50Z\"}]}"
-    http_version:
-  recorded_at: Wed, 30 Apr 2014 13:50:50 GMT
-recorded_with: VCR 2.9.0
+      string: '{"rental_agreements":[{"id":29774,"body":"Lorem ipsum","created_at":"2016-12-09T09:42:19Z","updated_at":"2016-12-09T09:42:19Z","body_translations":{"en":"Lorem
+        ipsum"}}]}'
+    http_version: 
+  recorded_at: Fri, 09 Dec 2016 09:42:20 GMT
+recorded_with: VCR 3.0.3

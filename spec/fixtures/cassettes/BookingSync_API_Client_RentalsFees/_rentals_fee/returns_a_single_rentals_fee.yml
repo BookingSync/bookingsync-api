@@ -4,11 +4,11 @@ http_interactions:
     method: get
     uri: https://www.bookingsync.com/api/v3/rentals_fees/3306
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.29
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 09 Sep 2015 20:51:43 GMT
+      - Fri, 09 Dec 2016 10:07:37 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,20 +34,20 @@ http_interactions:
       - keep-alive
       Status:
       - 200 OK
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 10:07:37 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1441832400'
+      - '1481281200'
       X-Ratelimit-Remaining:
-      - '900'
+      - '992'
       Link:
       - <https://www.bookingsync.com/api/v3/rentals_fees/3306?page=1>; rel="first",
         <https://www.bookingsync.com/api/v3/rentals_fees/3306?page=1>; rel="last"
@@ -55,8 +55,10 @@ http_interactions:
       - '1'
       X-Total-Count:
       - '1'
+      X-Per-Page:
+      - '100'
       Etag:
-      - '"20bf875091c158d9d10ea716afc6f232"'
+      - W/"ff5f50d1f568173066cf5d8bfa1b1481"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,18 +66,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=2498815e-75fe-46bb-bf92-2d24e383b26e; path=/; expires=Wed, 16 Sep
-        2015 20:51:43 -0000; secure
-      - ahoy_visitor=843a55cc-c8bb-4eea-ab90-b7eb825bba4e; path=/; expires=Sat, 09
-        Sep 2017 20:51:43 -0000; secure
+      - ahoy_visit=1254e536-5f56-4080-9537-3220c5bceaf9; path=/; expires=Fri, 16 Dec
+        2016 10:07:37 -0000; secure
+      - ahoy_visitor=18ecec52-49f7-45cf-b67c-b6fc8333ea6d; path=/; expires=Sun, 09
+        Dec 2018 10:07:37 -0000; secure
       X-Request-Id:
-      - f1130800-18f0-46ed-bd2c-7548ea382bce
+      - 9c5e08e4-ff59-4234-bd78-5cf0f77f7ffa
       X-Runtime:
-      - '0.074364'
+      - '0.059316'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
       string: '{"links":{"rentals_fees.fee":"https://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}","rentals_fees.rental":"https://www.bookingsync.com/api/v3/rentals/{rentals_fees.rental}","rentals_fees.seasons":"https://www.bookingsync.com/api/v3/seasons/{rentals_fees.seasons}"},"rentals_fees":[{"links":{"fee":474,"rental":5116,"seasons":[]},"id":3306,"always_applied":true,"end_date":null,"maximum_bookable":2,"public":false,"required":false,"start_date":null,"created_at":"2015-09-09T20:50:47Z","updated_at":"2015-09-09T20:50:47Z","name":{"en":"test
-        fee"},"rate":"10.0","rate_kind":"fixed"}]}'
+        fee"},"rate":"10.0","rate_kind":"fixed","archived_at":null}],"meta":{}}'
     http_version: 
-  recorded_at: Wed, 09 Sep 2015 20:51:44 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 09 Dec 2016 10:07:37 GMT
+recorded_with: VCR 3.0.3

@@ -5,10 +5,10 @@ http_interactions:
     uri: https://www.bookingsync.com/api/v3/rentals/5116/rentals_amenities
     body:
       encoding: UTF-8
-      string: '{"rentals_amenities":[{"amenity_id":44,"details_en":"Details"}]}'
+      string: '{"rentals_amenities":[{"amenity_id":81,"details_en":"Details"}]}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.0.29
+      - BookingSync API gem v0.1.3
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 09 Sep 2015 20:46:30 GMT
+      - Fri, 09 Dec 2016 10:21:35 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -34,24 +34,29 @@ http_interactions:
       - keep-alive
       Status:
       - 201 Created
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2016-12-09 10:21:35 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1441832400'
+      - '1481281200'
       X-Ratelimit-Remaining:
-      - '915'
+      - '983'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rentals/5116/rentals_amenities?page=1&rentals_amenities%5B%5D%5Bamenity_id%5D=81&rentals_amenities%5B%5D%5Bdetails_en%5D=Details>;
+        rel="first"
+      X-Per-Page:
+      - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/rentals_amenities/32833
+      - https://www.bookingsync.com/api/v3/rentals_amenities/211832
       Etag:
-      - '"aba295b26ac136614052adb7f76ac748"'
+      - W/"d3e8b3e1db62afe9730e6cc35968507a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -59,17 +64,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=94177a9f-c500-4713-98dd-07bd972b8ea3; path=/; expires=Wed, 16 Sep
-        2015 20:46:30 -0000; secure
-      - ahoy_visitor=341d4e5e-6646-474e-ba90-44b131b3e711; path=/; expires=Sat, 09
-        Sep 2017 20:46:30 -0000; secure
+      - ahoy_visit=40e01de0-8bff-47ca-8184-8e8b4e2854d5; path=/; expires=Fri, 16 Dec
+        2016 10:21:35 -0000; secure
+      - ahoy_visitor=b7cd9c8c-e4fd-474e-8b50-4c2669a574be; path=/; expires=Sun, 09
+        Dec 2018 10:21:35 -0000; secure
       X-Request-Id:
-      - 07e2f4ed-43f5-46ea-b880-9a49153d0e17
+      - b54d9090-895b-42a2-a06a-7399fc7eecfd
       X-Runtime:
-      - '0.080690'
+      - '0.071910'
+      Strict-Transport-Security:
+      - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"rentals_amenities.amenity":"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}","rentals_amenities.rental":"https://www.bookingsync.com/api/v3/rentals/{rentals_amenities.rental}"},"rentals_amenities":[{"links":{"amenity":44,"rental":5116},"id":32833,"created_at":"2015-09-09T20:46:30Z","updated_at":"2015-09-09T20:46:30Z","details":{"en":"Details"}}]}'
+      string: '{"links":{"rentals_amenities.amenity":"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}","rentals_amenities.rental":"https://www.bookingsync.com/api/v3/rentals/{rentals_amenities.rental}"},"rentals_amenities":[{"links":{"amenity":81,"rental":5116},"id":211832,"created_at":"2016-12-09T10:21:35Z","updated_at":"2016-12-09T10:21:35Z","details":{"en":"Details"}}],"meta":{}}'
     http_version: 
-  recorded_at: Wed, 09 Sep 2015 20:46:31 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 09 Dec 2016 10:21:35 GMT
+recorded_with: VCR 3.0.3
