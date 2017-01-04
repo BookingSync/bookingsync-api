@@ -291,5 +291,21 @@ describe BookingSync::API::Client do
         expect(client.pagination_first_response.meta).to eql(text: "first request")
       end
     end
+
+    describe "with block" do
+      before do
+        stub_get("resources?per_page=50", headers: {}, body: { meta: { text: "first request" }, resources: [{ id: 1 }] }.to_json)
+      end
+
+      context "when there is only one page with results" do
+        it "invokes block" do
+          block = double("block")
+          expect(block).to receive(:do_stuff)
+          client.paginate("resources", per_page: 50) do |batch|
+            block.do_stuff
+          end
+        end
+      end
+    end
   end
 end
