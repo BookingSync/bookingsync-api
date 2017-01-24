@@ -65,6 +65,16 @@ describe BookingSync::API::Client::Rentals do
     it "returns a single rental" do
       rental = client.rental(prefetched_rental[:id])
       expect(rental.name).to eq(prefetched_rental[:name])
+      expect(rental).to_not have_key(:availability)
+    end
+
+    context "with additional query params" do
+      it "returns a single rental with defined params" do
+        rental = client.rental(prefetched_rental[:id], include: [:availability, :change_over])
+        expect(rental.name).to eq(prefetched_rental[:name])
+        expect(rental).to have_key(:availability)
+        expect(rental).to have_key(:change_over)
+      end
     end
   end
 

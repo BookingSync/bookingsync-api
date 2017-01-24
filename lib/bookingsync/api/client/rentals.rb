@@ -40,8 +40,8 @@ module BookingSync::API
       # @param rental [BookingSync::API::Resource|Integer] Rental or ID
       #   of the rental.
       # @return [BookingSync::API::Resource]
-      def rental(rental)
-        get("rentals/#{rental}").pop
+      def rental(rental, options = {})
+        get("rentals/#{rental}", options).pop
       end
 
       # Create a new rental
