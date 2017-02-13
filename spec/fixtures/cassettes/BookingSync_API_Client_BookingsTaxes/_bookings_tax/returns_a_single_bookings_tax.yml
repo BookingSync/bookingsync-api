@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 16:39:17 GMT
+      - Mon, 12 Dec 2016 11:43:48 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 16:39:17 UTC
+      - 2016-12-12 11:43:48 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481216400'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '982'
+      - '941'
       Link:
       - <https://www.bookingsync.com/api/v3/bookings_taxes/8157?page=1>; rel="first",
         <https://www.bookingsync.com/api/v3/bookings_taxes/8157?page=1>; rel="last"
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=a0d3501b-44de-4e26-ac82-c204974c26cb; path=/; expires=Thu, 15 Dec
-        2016 16:39:17 -0000; secure
-      - ahoy_visitor=c5bb0485-8a99-472b-b93f-a0e345ba3202; path=/; expires=Sat, 08
-        Dec 2018 16:39:17 -0000; secure
+      - ahoy_visit=c181c38d-26f9-41f8-9141-35c067c49f86; path=/; expires=Mon, 19 Dec
+        2016 11:43:48 -0000; secure
+      - ahoy_visitor=7e2a8c07-bcbe-4d51-992b-c0afe5daaf2e; path=/; expires=Wed, 12
+        Dec 2018 11:43:48 -0000; secure
       X-Request-Id:
-      - 53e33eea-a9d8-49cd-b77c-b5ab36699fc1
+      - bb767d71-d34c-42aa-aee3-c9af3bf45f40
       X-Runtime:
-      - '0.049999'
+      - '0.074306'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -81,5 +85,5 @@ http_interactions:
       string: '{"links":{"bookings_taxes.account":"https://www.bookingsync.com/api/v3/accounts/{bookings_taxes.account}","bookings_taxes.booking":"https://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}","bookings_taxes.tax":"https://www.bookingsync.com/api/v3/taxes/{bookings_taxes.tax}","bookings_taxes.rental":"https://www.bookingsync.com/api/v3/rentals/{bookings_taxes.taxable.id}","bookings_taxes.fee":"https://www.bookingsync.com/api/v3/fees/{bookings_taxes.taxable.id}"},"bookings_taxes":[{"links":{"account":3837,"booking":142616,"tax":168,"taxable":{"id":5116,"type":"Rental"}},"id":8157,"name":{"en":"test
         tax"},"tax_included_in_price":true,"percentage":"0.0","amount":null}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 16:39:18 GMT
+  recorded_at: Mon, 12 Dec 2016 11:43:48 GMT
 recorded_with: VCR 3.0.3

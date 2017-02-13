@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/rental_agreements/27860
+    uri: https://www.bookingsync.com/api/v3/rental_agreements/29773
     body:
       encoding: UTF-8
       string: "{}"
@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 09:42:19 GMT
+      - Mon, 12 Dec 2016 11:43:53 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,16 +45,16 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 09:42:19 UTC
+      - 2016-12-12 11:43:53 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481277600'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '984'
+      - '926'
       Link:
-      - <https://www.bookingsync.com/api/v3/rental_agreements/27860?page=1>; rel="first",
-        <https://www.bookingsync.com/api/v3/rental_agreements/27860?page=1>; rel="last"
+      - <https://www.bookingsync.com/api/v3/rental_agreements/29773?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/rental_agreements/29773?page=1>; rel="last"
       X-Total-Pages:
       - '1'
       X-Total-Count:
@@ -58,7 +62,7 @@ http_interactions:
       X-Per-Page:
       - '100'
       Etag:
-      - W/"15c9859d91755c920992fd79f1911906"
+      - W/"98d44db516e98b37fb41d7f85f3e7a51"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -66,20 +70,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=a4e47f21-1c13-4ed7-bc3f-b0de91db8373; path=/; expires=Fri, 16 Dec
-        2016 09:42:19 -0000; secure
-      - ahoy_visitor=5a6742f3-ad06-4d75-a25c-bb0ffdb6e640; path=/; expires=Sun, 09
-        Dec 2018 09:42:19 -0000; secure
+      - ahoy_visit=e698471d-1b3a-4bdc-8a31-a711759015dc; path=/; expires=Mon, 19 Dec
+        2016 11:43:53 -0000; secure
+      - ahoy_visitor=6086bdfc-f77e-4e54-bd3f-65fa9ee5d739; path=/; expires=Wed, 12
+        Dec 2018 11:43:53 -0000; secure
       X-Request-Id:
-      - 80850cb2-0f4f-47f6-8c14-128ab4f707c2
+      - c95ab444-e10a-4507-b55e-38fd983d3477
       X-Runtime:
-      - '0.067791'
+      - '0.050548'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"rental_agreements":[{"id":27860,"body":"Lorem ipsum","created_at":"2016-12-06T15:49:17Z","updated_at":"2016-12-06T15:49:17Z","body_translations":{"en":"Lorem
+      string: '{"rental_agreements":[{"id":29773,"body":"Lorem ipsum","created_at":"2016-12-09T09:42:19Z","updated_at":"2016-12-09T09:42:19Z","body_translations":{"en":"Lorem
         ipsum"}}]}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 09:42:19 GMT
+  recorded_at: Mon, 12 Dec 2016 11:43:53 GMT
 recorded_with: VCR 3.0.3

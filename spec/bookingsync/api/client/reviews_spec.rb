@@ -25,7 +25,7 @@ describe BookingSync::API::Client::Reviews do
 
   describe ".create_review", :vcr do
     let(:attributes) { { comment: "Awesome place", rating: 5 } }
-    let(:booking) { BookingSync::API::Resource.new(client, id: 829184) }
+    let(:booking) { BookingSync::API::Resource.new(client, id: 840059) }
 
     it "creates a new review" do
       client.create_review(booking, attributes)

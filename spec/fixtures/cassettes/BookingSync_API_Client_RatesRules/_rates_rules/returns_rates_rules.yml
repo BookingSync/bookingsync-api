@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 09:21:42 GMT
+      - Mon, 12 Dec 2016 11:32:46 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 09:21:42 UTC
+      - 2016-12-12 11:32:46 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481277600'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '999'
+      - '972'
       Link:
       - <https://www.bookingsync.com/api/v3/rates_rules?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rates_rules?page=1>;
         rel="last"
@@ -66,19 +70,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=25238d85-62a3-4679-a5b6-fad264f6830a; path=/; expires=Fri, 16 Dec
-        2016 09:21:42 -0000; secure
-      - ahoy_visitor=939c8023-cc6f-4014-8d58-00f200780d25; path=/; expires=Sun, 09
-        Dec 2018 09:21:42 -0000; secure
+      - ahoy_visit=694f4220-8203-4e09-ac9b-288565bb7b97; path=/; expires=Mon, 19 Dec
+        2016 11:32:46 -0000; secure
+      - ahoy_visitor=07176495-83c6-4d4d-b9e5-3a5b5417ad52; path=/; expires=Wed, 12
+        Dec 2018 11:32:46 -0000; secure
       X-Request-Id:
-      - 99f0ab7d-41cb-4d3b-98ee-4c54813e3936
+      - 409cf897-f8fb-4a5f-bf10-f0c8f59a7a69
       X-Runtime:
-      - '0.039869'
+      - '0.038093'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
       string: '{"links":{"rates_rules.rates_table":"https://www.bookingsync.com/api/v3/rates_tables/{rates_rules.rates_table}","rates_rules.seasons":"https://www.bookingsync.com/api/v3/seasons/{rates_rules.seasons}"},"rates_rules":[{"links":{"rates_table":274,"seasons":[]},"id":252,"always_applied":true,"percentage":"-7.0","period_name":"","kind":"stay_at_least","variables":{"days":[],"length":21,"unit":"days"},"start_date":null,"end_date":"2014-07-15","created_at":"2014-08-08T18:34:37Z","updated_at":"2015-09-09T20:30:59Z"},{"links":{"rates_table":274,"seasons":[]},"id":13777,"always_applied":false,"percentage":"10.0","period_name":null,"kind":"stay_at_least","variables":{"length":1,"unit":"days"},"start_date":"2013-04-10","end_date":"2013-04-22","created_at":"2015-09-09T20:36:12Z","updated_at":"2015-09-09T20:36:12Z"},{"links":{"rates_table":274,"seasons":[1803]},"id":22740,"always_applied":false,"percentage":null,"period_name":null,"kind":"additional_person_fixed_per_night","variables":{"occupation_greater_than":"4"},"start_date":null,"end_date":null,"created_at":"2016-04-14T12:57:14Z","updated_at":"2016-04-14T12:57:28Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 09:21:42 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:46 GMT
 recorded_with: VCR 3.0.3

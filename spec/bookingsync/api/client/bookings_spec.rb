@@ -21,7 +21,7 @@ describe BookingSync::API::Client::Bookings do
 
       context "with a block" do
         it "yields block with batch of bookings" do
-          sizes = [2, 1]
+          sizes = [2, 2]
           index = 0
           client.bookings(per_page: 2) do |bookings|
             expect(bookings.size).to eql(sizes[index])
@@ -33,7 +33,7 @@ describe BookingSync::API::Client::Bookings do
       context "with auto_paginate: true" do
         it "returns all bookings joined from many requests" do
           bookings = client.bookings(per_page: 2, auto_paginate: true)
-          expect(bookings.size).to eql(3)
+          expect(bookings.size).to eql(4)
         end
       end
     end

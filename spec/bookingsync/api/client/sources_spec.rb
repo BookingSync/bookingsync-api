@@ -44,7 +44,7 @@ describe BookingSync::API::Client::Sources do
 
   describe ".edit_source", :vcr do
     let(:attributes) {
-      { name: "test source.com" }
+      { name: "another test source" }
     }
     let(:created_source_id) {
       find_resource("#{@casette_base_path}_create_source/creates_a_new_source.yml", "sources")[:id]

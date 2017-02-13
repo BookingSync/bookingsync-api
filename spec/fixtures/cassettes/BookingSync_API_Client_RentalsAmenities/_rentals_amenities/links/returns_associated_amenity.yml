@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 10:06:57 GMT
+      - Mon, 12 Dec 2016 11:32:50 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 10:06:57 UTC
+      - 2016-12-12 11:32:50 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481281200'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '996'
+      - '963'
       Link:
       - <https://www.bookingsync.com/api/v3/rentals_amenities?page=1>; rel="first",
         <https://www.bookingsync.com/api/v3/rentals_amenities?page=1>; rel="last"
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=1e895f73-2d95-41fa-a297-072a4dd876fe; path=/; expires=Fri, 16 Dec
-        2016 10:06:57 -0000; secure
-      - ahoy_visitor=6e8057bd-ba37-4b57-833a-3298cda1d08f; path=/; expires=Sun, 09
-        Dec 2018 10:06:57 -0000; secure
+      - ahoy_visit=8f20780c-d659-46f1-b165-72147846d7c6; path=/; expires=Mon, 19 Dec
+        2016 11:32:50 -0000; secure
+      - ahoy_visitor=24490c66-14fe-43a7-8354-1ae6de443aa9; path=/; expires=Wed, 12
+        Dec 2018 11:32:50 -0000; secure
       X-Request-Id:
-      - a80eb3bc-9d53-402b-92fb-4caa557e885b
+      - f9d27137-937a-4627-83b6-3aaf7ad15e29
       X-Runtime:
-      - '0.089162'
+      - '0.092057'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -81,7 +85,7 @@ http_interactions:
       string: '{"links":{"rentals_amenities.amenity":"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}","rentals_amenities.rental":"https://www.bookingsync.com/api/v3/rentals/{rentals_amenities.rental}"},"rentals_amenities":[{"links":{"amenity":32,"rental":5116},"id":6128,"created_at":"2014-08-08T18:28:39Z","updated_at":"2014-08-08T18:28:39Z","details":{}},{"links":{"amenity":33,"rental":5116},"id":6129,"created_at":"2014-08-08T18:28:39Z","updated_at":"2014-08-08T18:28:39Z","details":{}},{"links":{"amenity":35,"rental":5116},"id":6130,"created_at":"2014-08-08T18:28:39Z","updated_at":"2014-08-08T18:28:39Z","details":{}},{"links":{"amenity":39,"rental":5116},"id":6131,"created_at":"2014-08-08T18:28:39Z","updated_at":"2014-08-08T18:28:39Z","details":{}},{"links":{"amenity":41,"rental":5116},"id":6132,"created_at":"2014-08-08T18:28:39Z","updated_at":"2014-08-08T18:28:39Z","details":{}},{"links":{"amenity":42,"rental":5116},"id":6133,"created_at":"2014-08-08T18:28:39Z","updated_at":"2014-08-08T18:28:39Z","details":{}},{"links":{"amenity":75,"rental":5116},"id":6134,"created_at":"2014-08-08T18:28:39Z","updated_at":"2014-08-08T18:28:39Z","details":{}},{"links":{"amenity":79,"rental":5116},"id":6135,"created_at":"2014-08-08T18:28:39Z","updated_at":"2014-08-08T18:28:39Z","details":{}},{"links":{"amenity":45,"rental":5116},"id":6136,"created_at":"2014-08-08T18:28:39Z","updated_at":"2014-08-08T18:28:39Z","details":{}},{"links":{"amenity":46,"rental":5116},"id":6137,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":77,"rental":5116},"id":6138,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":50,"rental":5116},"id":6139,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":78,"rental":5116},"id":6140,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":62,"rental":5116},"id":6141,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":73,"rental":5116},"id":6142,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":51,"rental":5116},"id":6143,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":54,"rental":5116},"id":6144,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":74,"rental":5116},"id":6145,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":71,"rental":5116},"id":6146,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":70,"rental":5116},"id":6147,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":65,"rental":5116},"id":6148,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":67,"rental":5116},"id":6149,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":68,"rental":5116},"id":6150,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":56,"rental":5116},"id":6151,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":82,"rental":5116},"id":6152,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":72,"rental":5116},"id":6153,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":63,"rental":5116},"id":6154,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":58,"rental":5116},"id":6155,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":52,"rental":5116},"id":6156,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":85,"rental":5116},"id":6157,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":92,"rental":5116},"id":6158,"created_at":"2014-08-08T18:28:40Z","updated_at":"2014-08-08T18:28:40Z","details":{}},{"links":{"amenity":32,"rental":5117},"id":6159,"created_at":"2014-08-08T19:30:20Z","updated_at":"2015-09-09T20:48:41Z","details":{"en":"New
         Details"}},{"links":{"amenity":33,"rental":5117},"id":6160,"created_at":"2014-08-08T19:30:20Z","updated_at":"2014-08-08T19:30:20Z","details":{}},{"links":{"amenity":39,"rental":5117},"id":6161,"created_at":"2014-08-08T19:30:20Z","updated_at":"2014-08-08T19:30:20Z","details":{}},{"links":{"amenity":41,"rental":5117},"id":6162,"created_at":"2014-08-08T19:30:20Z","updated_at":"2014-08-08T19:30:20Z","details":{}},{"links":{"amenity":42,"rental":5117},"id":6163,"created_at":"2014-08-08T19:30:20Z","updated_at":"2014-08-08T19:30:20Z","details":{}},{"links":{"amenity":76,"rental":5117},"id":6164,"created_at":"2014-08-08T19:30:20Z","updated_at":"2014-08-08T19:30:20Z","details":{}},{"links":{"amenity":75,"rental":5117},"id":6165,"created_at":"2014-08-08T19:30:20Z","updated_at":"2014-08-08T19:30:20Z","details":{}},{"links":{"amenity":79,"rental":5117},"id":6166,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":44,"rental":5117},"id":6167,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":45,"rental":5117},"id":6168,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":46,"rental":5117},"id":6169,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":47,"rental":5117},"id":6170,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":77,"rental":5117},"id":6171,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":50,"rental":5117},"id":6172,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":78,"rental":5117},"id":6173,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":73,"rental":5117},"id":6174,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":51,"rental":5117},"id":6175,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":53,"rental":5117},"id":6176,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":54,"rental":5117},"id":6177,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":74,"rental":5117},"id":6178,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":71,"rental":5117},"id":6179,"created_at":"2014-08-08T19:30:21Z","updated_at":"2014-08-08T19:30:21Z","details":{}},{"links":{"amenity":70,"rental":5117},"id":6180,"created_at":"2014-08-08T19:30:22Z","updated_at":"2014-08-08T19:30:22Z","details":{}},{"links":{"amenity":65,"rental":5117},"id":6181,"created_at":"2014-08-08T19:30:22Z","updated_at":"2014-08-08T19:30:22Z","details":{}},{"links":{"amenity":67,"rental":5117},"id":6182,"created_at":"2014-08-08T19:30:22Z","updated_at":"2014-08-08T19:30:22Z","details":{}},{"links":{"amenity":68,"rental":5117},"id":6183,"created_at":"2014-08-08T19:30:22Z","updated_at":"2014-08-08T19:30:22Z","details":{}},{"links":{"amenity":56,"rental":5117},"id":6184,"created_at":"2014-08-08T19:30:22Z","updated_at":"2014-08-08T19:30:22Z","details":{}},{"links":{"amenity":82,"rental":5117},"id":6185,"created_at":"2014-08-08T19:30:22Z","updated_at":"2014-08-08T19:30:22Z","details":{}},{"links":{"amenity":72,"rental":5117},"id":6186,"created_at":"2014-08-08T19:30:22Z","updated_at":"2014-08-08T19:30:22Z","details":{}},{"links":{"amenity":63,"rental":5117},"id":6187,"created_at":"2014-08-08T19:30:22Z","updated_at":"2014-08-08T19:30:22Z","details":{}},{"links":{"amenity":58,"rental":5117},"id":6188,"created_at":"2014-08-08T19:30:22Z","updated_at":"2014-08-08T19:30:22Z","details":{}},{"links":{"amenity":1,"rental":5117},"id":6189,"created_at":"2014-08-08T19:30:22Z","updated_at":"2014-08-08T19:30:22Z","details":{}}],"meta":{}}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 10:06:57 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:50 GMT
 - request:
     method: get
     uri: https://www.bookingsync.com/api/v3/amenities/32
@@ -99,6 +103,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -107,7 +115,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 10:06:57 GMT
+      - Mon, 12 Dec 2016 11:32:50 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -123,13 +131,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 10:06:57 UTC
+      - 2016-12-12 11:32:50 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481281200'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '995'
+      - '962'
       Link:
       - <https://www.bookingsync.com/api/v3/amenities/32?page=1>; rel="first", <https://www.bookingsync.com/api/v3/amenities/32?page=1>;
         rel="last"
@@ -148,14 +156,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=b22cf10c-07de-45ba-84f5-42fb68a5473b; path=/; expires=Fri, 16 Dec
-        2016 10:06:57 -0000; secure
-      - ahoy_visitor=997e849c-1080-406c-a9de-6c109f64bfc5; path=/; expires=Sun, 09
-        Dec 2018 10:06:57 -0000; secure
+      - ahoy_visit=d312ab74-747d-4925-aa63-77a3587f3368; path=/; expires=Mon, 19 Dec
+        2016 11:32:50 -0000; secure
+      - ahoy_visitor=a0f66e56-348e-470b-8f83-040c6481cbdf; path=/; expires=Wed, 12
+        Dec 2018 11:32:50 -0000; secure
       X-Request-Id:
-      - e085b33a-297d-4f50-87df-155f9539a5c8
+      - 790d7e66-5890-4560-9f71-c6d099602959
       X-Runtime:
-      - '0.028065'
+      - '0.032424'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -165,5 +173,5 @@ http_interactions:
         ZyIsInRpdGxlIjp7ImVuIjoiQWlyIENvbmRpdGlvbmluZyIsImZyIjoiQWly
         IGNvbmRpdGlvbm7DqSJ9fV0sIm1ldGEiOnt9fQ==
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 10:06:57 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:50 GMT
 recorded_with: VCR 3.0.3

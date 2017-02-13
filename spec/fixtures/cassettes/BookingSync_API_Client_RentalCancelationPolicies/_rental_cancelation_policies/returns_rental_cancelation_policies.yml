@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 09:41:15 GMT
+      - Mon, 12 Dec 2016 11:32:48 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 09:41:15 UTC
+      - 2016-12-12 11:32:48 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481277600'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '986'
+      - '968'
       Link:
       - <https://www.bookingsync.com/api/v3/rental_cancelation_policies?page=1>; rel="first",
         <https://www.bookingsync.com/api/v3/rental_cancelation_policies?page=1>; rel="last"
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=70b682e0-1bd8-416d-b5ae-9de48cbe2c6d; path=/; expires=Fri, 16 Dec
-        2016 09:41:15 -0000; secure
-      - ahoy_visitor=30c9ee30-1f97-418b-ab70-f9441edfc5bc; path=/; expires=Sun, 09
-        Dec 2018 09:41:15 -0000; secure
+      - ahoy_visit=d4898b7b-dcca-49e0-b877-3661f92aee7f; path=/; expires=Mon, 19 Dec
+        2016 11:32:48 -0000; secure
+      - ahoy_visitor=0ca3ef23-a20a-4463-8bad-535cc5901313; path=/; expires=Wed, 12
+        Dec 2018 11:32:48 -0000; secure
       X-Request-Id:
-      - 68d34f61-6152-4a54-a48a-f2f9f07118a2
+      - e960d19d-ee40-4cc2-852a-a3f15b6c27f3
       X-Runtime:
-      - '0.053089'
+      - '0.077405'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -86,5 +90,5 @@ http_interactions:
         Ipsum","created_at":"2016-12-07T12:35:09Z","updated_at":"2016-12-07T12:35:09Z","body_translations":{"fr":"","en":"Lorem
         Ipsum","de":""}}]}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 09:41:15 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:48 GMT
 recorded_with: VCR 3.0.3

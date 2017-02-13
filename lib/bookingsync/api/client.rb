@@ -279,7 +279,7 @@ module BookingSync::API
     def middleware
       Faraday::RackBuilder.new do |builder|
         builder.use :logger, logger
-        builder.adapter Faraday.default_adapter
+        builder.adapter :net_http_persistent
       end
     end
 

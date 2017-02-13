@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 16:57:15 GMT
+      - Mon, 12 Dec 2016 11:43:49 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 16:57:15 UTC
+      - 2016-12-12 11:43:49 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481216400'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '974'
+      - '937'
       Link:
       - <https://www.bookingsync.com/api/v3/fees/474?page=1>; rel="first", <https://www.bookingsync.com/api/v3/fees/474?page=1>;
         rel="last"
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=7a69960a-124b-471b-8843-a8f58ce273fd; path=/; expires=Thu, 15 Dec
-        2016 16:57:15 -0000; secure
-      - ahoy_visitor=9f537067-d996-4a9f-9d37-75bcfcf80879; path=/; expires=Sat, 08
-        Dec 2018 16:57:15 -0000; secure
+      - ahoy_visit=77394e4c-b767-49f7-8e35-1339a42cb07e; path=/; expires=Mon, 19 Dec
+        2016 11:43:49 -0000; secure
+      - ahoy_visitor=29607513-1f39-4616-a315-89fa2919b9d3; path=/; expires=Wed, 12
+        Dec 2018 11:43:49 -0000; secure
       X-Request-Id:
-      - bc52784f-55ae-4277-adc3-1ebba55fd9c2
+      - 77acbf29-e6ef-4023-a9b5-3a5497ef016b
       X-Runtime:
-      - '0.026345'
+      - '0.027436'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -81,5 +85,5 @@ http_interactions:
       string: '{"links":{"fees.account":"https://www.bookingsync.com/api/v3/accounts/{fees.account}"},"fees":[{"links":{"account":3837},"id":474,"name":{"en":"test
         fee"},"rate":"10.0","rate_kind":"fixed","created_at":"2015-09-09T20:23:53Z","updated_at":"2015-09-09T20:23:54Z","downpayment_percentage":"10.0","kind":"other"}]}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 16:57:15 GMT
+  recorded_at: Mon, 12 Dec 2016 11:43:49 GMT
 recorded_with: VCR 3.0.3

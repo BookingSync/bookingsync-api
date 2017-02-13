@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 00:39:28 GMT
+      - Mon, 12 Dec 2016 11:43:52 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 00:39:28 UTC
+      - 2016-12-12 11:43:52 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481245200'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '988'
+      - '930'
       Link:
       - <https://www.bookingsync.com/api/v3/photos/5775?page=1>; rel="first", <https://www.bookingsync.com/api/v3/photos/5775?page=1>;
         rel="last"
@@ -66,19 +70,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=0d0a090f-5299-42af-beb0-2eb31c7b2abf; path=/; expires=Fri, 16 Dec
-        2016 00:39:28 -0000; secure
-      - ahoy_visitor=7dadb0e8-dae3-4085-9497-2d40e5207e8a; path=/; expires=Sun, 09
-        Dec 2018 00:39:28 -0000; secure
+      - ahoy_visit=4d9bab81-a9b0-464d-860d-40e961840d8d; path=/; expires=Mon, 19 Dec
+        2016 11:43:52 -0000; secure
+      - ahoy_visitor=df1ec91a-b10a-43f9-bb0d-a00b3be8bd3b; path=/; expires=Wed, 12
+        Dec 2018 11:43:52 -0000; secure
       X-Request-Id:
-      - 2f00e489-413e-4f53-83e6-283271a8c5af
+      - 637d9279-7bad-4d27-9de1-f88d975b76ab
       X-Runtime:
-      - '0.057027'
+      - '0.034606'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
       string: '{"links":{"photos.account":"https://www.bookingsync.com/api/v3/accounts/{photos.account}","photos.rental":"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"},"photos":[{"links":{"account":3837,"rental":5116},"id":5775,"description":{},"kind":null,"micro_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_32,q_90,w_48/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","thumb_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_64,q_90,w_96/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","small_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_128,q_90,w_192/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","compact_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_256,q_90,w_384/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","medium_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_512,q_90,w_768/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","large_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_800,q_90,w_1200/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","grande_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_1024,q_90,w_1536/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","giant_url":"https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_1600,q_90,w_2400/v1418041581/d632f485e815dba0bee126ea4d2b100a.jpg","position":1,"created_at":"2014-08-08T18:48:54Z","updated_at":"2015-11-09T10:11:50Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 00:39:29 GMT
+  recorded_at: Mon, 12 Dec 2016 11:43:52 GMT
 recorded_with: VCR 3.0.3

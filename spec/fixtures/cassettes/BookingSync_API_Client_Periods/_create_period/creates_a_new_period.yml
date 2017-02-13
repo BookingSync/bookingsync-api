@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 201
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 00:36:52 GMT
+      - Mon, 12 Dec 2016 11:52:12 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,22 +45,22 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 00:36:52 UTC
+      - 2016-12-12 11:52:12 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481245200'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '991'
+      - '906'
       Link:
       - <https://www.bookingsync.com/api/v3/seasons/1802/periods?page=1&periods%5B%5D%5Bend_date%5D=2017-04-22&periods%5B%5D%5Bstart_date%5D=2017-04-10>;
         rel="first"
       X-Per-Page:
       - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/periods/581569
+      - https://www.bookingsync.com/api/v3/periods/593339
       Etag:
-      - W/"6856c181ac1ca5c12c519aa500b29803"
+      - W/"87eed8f0b22749f89ff7b6a1222cfa22"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,19 +68,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=0254c563-a1c3-4a6b-a292-17c2da6cd5a0; path=/; expires=Fri, 16 Dec
-        2016 00:36:52 -0000; secure
-      - ahoy_visitor=23cb9a50-6f1a-44fb-8cd9-cd57a474818d; path=/; expires=Sun, 09
-        Dec 2018 00:36:52 -0000; secure
+      - ahoy_visit=aaf38b94-cfc5-415a-9c6c-8014c8a42a83; path=/; expires=Mon, 19 Dec
+        2016 11:52:12 -0000; secure
+      - ahoy_visitor=d6a53a16-f38b-4875-ae6a-9bdca14145df; path=/; expires=Wed, 12
+        Dec 2018 11:52:12 -0000; secure
       X-Request-Id:
-      - de240caa-80eb-4ed6-b686-481d4e800e80
+      - 7da85918-a5a1-4d58-94c8-2de6891e41b7
       X-Runtime:
-      - '0.248613'
+      - '0.211252'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"periods.season":"https://www.bookingsync.com/api/v3/seasons/{periods.season}","periods.rates_table":"https://www.bookingsync.com/api/v3/rates_tables/{periods.rates_table}"},"periods":[{"links":{"season":1802,"rates_table":274},"id":581569,"start_date":"2017-04-10","end_date":"2017-04-22","created_at":"2016-12-09T00:36:52Z","updated_at":"2016-12-09T00:36:52Z"}],"meta":{}}'
+      string: '{"links":{"periods.season":"https://www.bookingsync.com/api/v3/seasons/{periods.season}","periods.rates_table":"https://www.bookingsync.com/api/v3/rates_tables/{periods.rates_table}"},"periods":[{"links":{"season":1802,"rates_table":274},"id":593339,"start_date":"2017-04-10","end_date":"2017-04-22","created_at":"2016-12-12T11:52:12Z","updated_at":"2016-12-12T11:52:12Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 00:36:52 GMT
+  recorded_at: Mon, 12 Dec 2016 11:52:12 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,8 @@
 
 ## master
 
-- Drop support for `preferences_payments`
+- Drop support for `preferences_payments`.
+- Switch from `Net::HTTP` to `Net::HTTP::Persistent`.
 
 ## 0.1.3
 

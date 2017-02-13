@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 201
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 15:48:44 GMT
+      - Mon, 12 Dec 2016 11:52:08 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,22 +45,22 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 15:48:44 UTC
+      - 2016-12-12 11:52:08 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481212800'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '967'
+      - '914'
       Link:
       - <https://www.bookingsync.com/api/v3/rentals/5116/bedrooms?bedrooms%5B%5D%5Bname_en%5D=New+bedroom&bedrooms%5B%5D%5Bsofa_beds_count%5D=2&page=1>;
         rel="first"
       X-Per-Page:
       - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/bedrooms/42626
+      - https://www.bookingsync.com/api/v3/bedrooms/42701
       Etag:
-      - W/"3ffaaf4c0939fabb03a5433136de67ae"
+      - W/"76f9d52cad9e69825b7c330b5a25c514"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,20 +68,20 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=c74ead4e-ab0d-4ad3-944a-a90364a5c712; path=/; expires=Thu, 15 Dec
-        2016 15:48:44 -0000; secure
-      - ahoy_visitor=708ea5d1-9a74-4876-9bc4-732f380cbede; path=/; expires=Sat, 08
-        Dec 2018 15:48:44 -0000; secure
+      - ahoy_visit=ecc8b071-3ff0-4621-8e55-b6878c2ad88e; path=/; expires=Mon, 19 Dec
+        2016 11:52:08 -0000; secure
+      - ahoy_visitor=90e84599-b057-48fe-8ce6-555087536d1c; path=/; expires=Wed, 12
+        Dec 2018 11:52:08 -0000; secure
       X-Request-Id:
-      - 49512002-45c6-433f-af28-a492b21b5d0e
+      - 713ae973-3c75-4ebf-b486-d87a84d73b7e
       X-Runtime:
-      - '0.078931'
+      - '0.128677'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"bedrooms.rental":"https://www.bookingsync.com/api/v3/rentals/{bedrooms.rental}"},"bedrooms":[{"links":{"rental":5116},"id":42626,"name":{"en":"New
-        bedroom"},"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":0,"queensize_beds_count":0,"single_beds_count":0,"sofa_beds_count":2,"created_at":"2016-12-08T15:48:44Z","updated_at":"2016-12-08T15:48:44Z"}],"meta":{}}'
+      string: '{"links":{"bedrooms.rental":"https://www.bookingsync.com/api/v3/rentals/{bedrooms.rental}"},"bedrooms":[{"links":{"rental":5116},"id":42701,"name":{"en":"New
+        bedroom"},"bunk_beds_count":0,"double_beds_count":0,"kingsize_beds_count":0,"queensize_beds_count":0,"single_beds_count":0,"sofa_beds_count":2,"created_at":"2016-12-12T11:52:08Z","updated_at":"2016-12-12T11:52:08Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 15:48:44 GMT
+  recorded_at: Mon, 12 Dec 2016 11:52:08 GMT
 recorded_with: VCR 3.0.3

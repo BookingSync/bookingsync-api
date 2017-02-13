@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 00:27:34 GMT
+      - Mon, 12 Dec 2016 11:32:46 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 00:27:34 UTC
+      - 2016-12-12 11:32:46 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481245200'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '993'
+      - '973'
       Link:
       - <https://www.bookingsync.com/api/v3/preferences_general_settings?page=1>;
         rel="first", <https://www.bookingsync.com/api/v3/preferences_general_settings?page=1>;
@@ -59,7 +63,7 @@ http_interactions:
       X-Per-Page:
       - '100'
       Etag:
-      - W/"17229baf65353b8907ee66432d6725e9"
+      - W/"eb9b51d1eb284526d670fd22614cfea4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -67,19 +71,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=78650539-5ac1-42a5-9ed7-95915d46fe10; path=/; expires=Fri, 16 Dec
-        2016 00:27:34 -0000; secure
-      - ahoy_visitor=a9709942-658e-403a-a844-47f67be8a6c0; path=/; expires=Sun, 09
-        Dec 2018 00:27:34 -0000; secure
+      - ahoy_visit=e2c179d1-2461-4afa-bebc-a2bf04d1ca80; path=/; expires=Mon, 19 Dec
+        2016 11:32:46 -0000; secure
+      - ahoy_visitor=0c5e28e6-2626-44fa-b6d7-53d37512b71c; path=/; expires=Wed, 12
+        Dec 2018 11:32:46 -0000; secure
       X-Request-Id:
-      - 1ab03801-8165-493d-a177-31800d09eacf
+      - 78b179df-02d0-4d72-89cd-7b0267c9ff89
       X-Runtime:
-      - '0.036765'
+      - '0.023158'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"preferences_general_settings.account":"https://www.bookingsync.com/api/v3/accounts/{preferences_general_settings.account}"},"preferences_general_settings":[{"links":{"account":3837},"id":3780,"email":"dev@bookingsync.com","default_arrival_time":16,"default_departure_time":10,"selected_locales":["en","fr","de"],"business_name":"BSA-Website-Test","website":"","phone":"","mobile":"","fax":"","address1":"","address2":"","city":"","state":"","zip":"","country":null,"full_address":"","default_communication_locale":"en"}]}'
+      string: '{"links":{"preferences_general_settings.account":"https://www.bookingsync.com/api/v3/accounts/{preferences_general_settings.account}"},"preferences_general_settings":[{"links":{"account":3837},"id":3780,"email":"dev@bookingsync.com","default_arrival_time":16,"default_departure_time":10,"selected_locales":["en","fr","de"],"business_name":"BSA-Website-Test","website":"","phone":"","mobile":"","fax":"","address1":"","address2":"","city":"","state":"","zip":"","country":null,"country_code":"","full_address":"","default_communication_locale":"en"}]}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 00:27:34 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:46 GMT
 recorded_with: VCR 3.0.3

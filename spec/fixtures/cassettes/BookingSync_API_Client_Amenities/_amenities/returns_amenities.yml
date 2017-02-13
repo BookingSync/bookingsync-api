@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 200
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Dec 2016 15:17:55 GMT
+      - Mon, 12 Dec 2016 11:32:34 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,11 +45,11 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-08 15:17:54 UTC
+      - 2016-12-12 11:32:34 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481212800'
+      - '1481544000'
       X-Ratelimit-Remaining:
       - '998'
       Link:
@@ -66,14 +70,14 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=9d7e6650-92e4-43da-950b-dab0bda462f9; path=/; expires=Thu, 15 Dec
-        2016 15:17:54 -0000; secure
-      - ahoy_visitor=0b4f9f15-4f80-4b8f-8fed-4aa58dab8d9e; path=/; expires=Sat, 08
-        Dec 2018 15:17:54 -0000; secure
+      - ahoy_visit=fa0b759e-d899-4aea-8fd7-320c70b5e63f; path=/; expires=Mon, 19 Dec
+        2016 11:32:34 -0000; secure
+      - ahoy_visitor=6668c713-8121-4767-84d9-2a11b03008d7; path=/; expires=Wed, 12
+        Dec 2018 11:32:34 -0000; secure
       X-Request-Id:
-      - b92d2818-6e3e-4749-aebb-4c126439cfa9
+      - a2b333fe-d873-42ac-af67-6f480c01b530
       X-Runtime:
-      - '0.136548'
+      - '0.126809'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -258,5 +262,5 @@ http_interactions:
         IiwidGl0bGUiOnsiZW4iOiJCb3VsZXMgQ291cnQiLCJmciI6IlRlcnJhaW4g
         ZGUgcMOpdGFucXVlIn19XSwibWV0YSI6e319
     http_version: 
-  recorded_at: Thu, 08 Dec 2016 15:17:55 GMT
+  recorded_at: Mon, 12 Dec 2016 11:32:34 GMT
 recorded_with: VCR 3.0.3

@@ -46,7 +46,7 @@ describe BookingSync::API::Client::Seasons do
 
   describe ".edit_season", :vcr do
     let(:attributes) {
-      { name: "Updated season name" }
+      { name: "Updated season name 2" }
     }
     let(:created_season_id) {
       find_resource("#{@casette_base_path}_create_season/creates_a_new_season.yml", "seasons")[:id]

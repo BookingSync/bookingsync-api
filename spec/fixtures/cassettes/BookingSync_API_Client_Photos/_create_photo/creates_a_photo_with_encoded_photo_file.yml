@@ -17,6 +17,10 @@ http_interactions:
       - Bearer <<ACCESS_TOKEN>>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
   response:
     status:
       code: 201
@@ -25,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Dec 2016 00:27:30 GMT
+      - Mon, 12 Dec 2016 11:52:15 GMT
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Transfer-Encoding:
@@ -41,22 +45,22 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-09 00:27:29 UTC
+      - 2016-12-12 11:52:14 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481245200'
+      - '1481544000'
       X-Ratelimit-Remaining:
-      - '996'
+      - '904'
       Link:
       - <https://www.bookingsync.com/api/v3/rentals/5116/photos?page=1&photos%5B%5D%5Bkind%5D=livingroom&photos%5B%5D%5Bphoto%5D=%2F9j%2F4AAQSkZJRgABAQEAYABgAAD%2F2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsL%0ADBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL%2F%0A2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy%0AMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL%2FwAARCAAFABQDASIAAhEBAxEB%2F8QA%0AHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL%2F8QAtRAAAgEDAwIEAwUF%0ABAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkK%0AFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1%0Adnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG%0Ax8jJytLT1NXW19jZ2uHi4%2BTl5ufo6erx8vP09fb3%2BPn6%2F8QAHwEAAwEBAQEB%0AAQEBAQAAAAAAAAECAwQFBgcICQoL%2F8QAtREAAgECBAQDBAcFBAQAAQJ3AAEC%0AAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRom%0AJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE%0AhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU%0A1dbX2Nna4uPk5ebn6Onq8vP09fb3%2BPn6%2F9oADAMBAAIRAxEAPwD3%2BiiigAoo%0AooA%2F%2F9k%3D%0A>;
         rel="first"
       X-Per-Page:
       - '100'
       Location:
-      - https://www.bookingsync.com/api/v3/photos/313468
+      - https://www.bookingsync.com/api/v3/photos/314251
       Etag:
-      - W/"269966492858fb027ee73588f0aab45e"
+      - W/"8abdf9892f35df1822b438426ff90ec6"
       Cache-Control:
       - max-age=0, private, must-revalidate
       P3p:
@@ -64,19 +68,19 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/; secure
-      - ahoy_visit=83d1025f-178e-46c7-9b92-9146eb49a27d; path=/; expires=Fri, 16 Dec
-        2016 00:27:29 -0000; secure
-      - ahoy_visitor=1264a368-e2ce-44c7-ad41-597180460f31; path=/; expires=Sun, 09
-        Dec 2018 00:27:29 -0000; secure
+      - ahoy_visit=0b70c6be-1d3d-4ebc-aebf-d1479820e71a; path=/; expires=Mon, 19 Dec
+        2016 11:52:14 -0000; secure
+      - ahoy_visitor=93f4d111-c769-4722-b7e6-a9de90c93e94; path=/; expires=Wed, 12
+        Dec 2018 11:52:14 -0000; secure
       X-Request-Id:
-      - 5de01a9c-eefe-4276-b2ba-f3bb88ad866b
+      - 7819236b-a806-401d-bb91-50123cf178b8
       X-Runtime:
-      - '0.996890'
+      - '0.767486'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"links":{"photos.account":"https://www.bookingsync.com/api/v3/accounts/{photos.account}","photos.rental":"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"},"photos":[{"links":{"account":3837,"rental":5116},"id":313468,"description":{},"kind":"livingroom","micro_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_32,q_90,w_48/v1481243249/photo_3y4_dod4ey.jpg","thumb_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_64,q_90,w_96/v1481243249/photo_3y4_dod4ey.jpg","small_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_128,q_90,w_192/v1481243249/photo_3y4_dod4ey.jpg","compact_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_256,q_90,w_384/v1481243249/photo_3y4_dod4ey.jpg","medium_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_512,q_90,w_768/v1481243249/photo_3y4_dod4ey.jpg","large_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_800,q_90,w_1200/v1481243249/photo_3y4_dod4ey.jpg","grande_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_1024,q_90,w_1536/v1481243249/photo_3y4_dod4ey.jpg","giant_url":"https://res-3.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_1600,q_90,w_2400/v1481243249/photo_3y4_dod4ey.jpg","position":21,"created_at":"2016-12-09T00:27:29Z","updated_at":"2016-12-09T00:27:29Z"}],"meta":{}}'
+      string: '{"links":{"photos.account":"https://www.bookingsync.com/api/v3/accounts/{photos.account}","photos.rental":"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"},"photos":[{"links":{"account":3837,"rental":5116},"id":314251,"description":{},"kind":"livingroom","micro_url":"https://res-1.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_32,q_90,w_48/v1481543534/photo_3y4_iesq1n.jpg","thumb_url":"https://res-1.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_64,q_90,w_96/v1481543534/photo_3y4_iesq1n.jpg","small_url":"https://res-1.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_128,q_90,w_192/v1481543534/photo_3y4_iesq1n.jpg","compact_url":"https://res-1.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_256,q_90,w_384/v1481543534/photo_3y4_iesq1n.jpg","medium_url":"https://res-1.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_512,q_90,w_768/v1481543534/photo_3y4_iesq1n.jpg","large_url":"https://res-1.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_800,q_90,w_1200/v1481543534/photo_3y4_iesq1n.jpg","grande_url":"https://res-1.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_1024,q_90,w_1536/v1481543534/photo_3y4_iesq1n.jpg","giant_url":"https://res-1.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_1600,q_90,w_2400/v1481543534/photo_3y4_iesq1n.jpg","position":29,"created_at":"2016-12-12T11:52:14Z","updated_at":"2016-12-12T11:52:14Z"}],"meta":{}}'
     http_version: 
-  recorded_at: Fri, 09 Dec 2016 00:27:30 GMT
+  recorded_at: Mon, 12 Dec 2016 11:52:15 GMT
 recorded_with: VCR 3.0.3
