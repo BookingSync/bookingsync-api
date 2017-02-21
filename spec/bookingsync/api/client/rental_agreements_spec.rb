@@ -36,7 +36,7 @@ describe BookingSync::API::Client::RentalAgreements do
     it "returns newly created rental agreement" do
       VCR.use_cassette("BookingSync_API_Client_RentalAgreements/_create_rental_agreement/creates_a_new_rental_agreement") do
         rental_agreement = client.create_rental_agreement(attributes)
-        expect(rental_agreement.body).to eql(attributes[:body])
+        expect(rental_agreement.body).to eq(attributes[:body])
       end
     end
   end
@@ -55,7 +55,7 @@ describe BookingSync::API::Client::RentalAgreements do
     it "returns newly created rental agreement" do
       VCR.use_cassette("BookingSync_API_Client_RentalAgreements/_create_rental_agreement_for_booking/creates_a_new_rental_agreement") do
         rental_agreement = client.create_rental_agreement_for_booking(booking, attributes)
-        expect(rental_agreement.body).to eql(attributes[:body])
+        expect(rental_agreement.body).to eq(attributes[:body])
       end
     end
   end
@@ -74,7 +74,7 @@ describe BookingSync::API::Client::RentalAgreements do
     it "returns newly created rental agreement" do
       VCR.use_cassette("BookingSync_API_Client_RentalAgreements/_create_rental_agreement_for_rental/creates_a_new_rental_agreement") do
         rental_agreement = client.create_rental_agreement_for_rental(rental, attributes)
-        expect(rental_agreement.body).to eql(attributes[:body])
+        expect(rental_agreement.body).to eq(attributes[:body])
       end
     end
   end

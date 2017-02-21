@@ -45,7 +45,7 @@ describe BookingSync::API::Client::SpecialOffers do
     it "returns newly created special_offer" do
       VCR.use_cassette("BookingSync_API_Client_SpecialOffers/_create_special_offer/creates_a_new_special_offer") do
         special_offer = client.create_special_offer(rental, attributes)
-        expect(special_offer.name).to eql(en: attributes[:name_en])
+        expect(special_offer.name).to eq(en: attributes[:name_en])
       end
     end
   end

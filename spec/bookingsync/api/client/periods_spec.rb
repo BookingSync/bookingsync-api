@@ -38,8 +38,8 @@ describe BookingSync::API::Client::Periods do
     it "returns newly created period" do
       VCR.use_cassette("BookingSync_API_Client_Periods/_create_period/creates_a_new_period") do
         period = client.create_period(season, attributes)
-        expect(period.start_date).to eql(Time.parse(attributes[:start_date]))
-        expect(period.end_date).to eql(Time.parse(attributes[:end_date]))
+        expect(period.start_date).to eq(Time.parse(attributes[:start_date]))
+        expect(period.end_date).to eq(Time.parse(attributes[:end_date]))
       end
     end
   end

@@ -13,7 +13,7 @@ describe BookingSync::API::Relation do
   describe ".from_links" do
     it "returns a hash of relations" do
       relations = BookingSync::API::Relation.from_links(client, links)
-      expect(relations.size).to eql(1)
+      expect(relations.size).to eq(1)
       expect(relations).to be_kind_of(Hash)
       expect(relations["foo.photos"]).to be_kind_of(BookingSync::API::Relation)
     end

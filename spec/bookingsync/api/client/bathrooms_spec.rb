@@ -41,8 +41,8 @@ describe BookingSync::API::Client::Bathrooms do
     it "returns newly created bathroom" do
       VCR.use_cassette("BookingSync_API_Client_Bathrooms/_create_bathroom/creates_a_new_bathroom") do
         bathroom = client.create_bathroom(rental, attributes)
-        expect(bathroom.name).to eql(en: "New bathroom")
-        expect(bathroom.wc_count).to eql(attributes[:wc_count])
+        expect(bathroom.name).to eq(en: "New bathroom")
+        expect(bathroom.wc_count).to eq(attributes[:wc_count])
       end
     end
   end

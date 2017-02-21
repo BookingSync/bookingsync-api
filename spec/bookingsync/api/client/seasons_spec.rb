@@ -38,8 +38,8 @@ describe BookingSync::API::Client::Seasons do
     it "returns newly created season" do
       VCR.use_cassette("BookingSync_API_Client_Seasons/_create_season/creates_a_new_season") do
         season = client.create_season(rates_table, attributes)
-        expect(season.name).to eql(en: attributes[:name])
-        expect(season.minimum_stay).to eql(attributes[:minimum_stay])
+        expect(season.name).to eq(en: attributes[:name])
+        expect(season.minimum_stay).to eq(attributes[:minimum_stay])
       end
     end
   end

@@ -45,8 +45,8 @@ describe BookingSync::API::Client::Inquiries do
     it "returns newly created inquiry" do
       VCR.use_cassette("BookingSync_API_Client_Inquiries/_create_inquiry/creates_a_new_inquiry") do
         inquiry = client.create_inquiry(rental, attributes)
-        expect(inquiry.links.rental).to eql(rental.id)
-        expect(inquiry.firstname).to eql("John")
+        expect(inquiry.links.rental).to eq(rental.id)
+        expect(inquiry.firstname).to eq("John")
       end
     end
   end

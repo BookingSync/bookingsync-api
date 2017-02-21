@@ -44,8 +44,8 @@ describe BookingSync::API::Client::RatesRules do
     it "returns newly created rates_rule" do
       VCR.use_cassette("BookingSync_API_Client_RatesRules/_create_rates_rule/creates_a_new_rates_rule") do
         rates_rule = client.create_rates_rule(rates_table, attributes)
-        expect(rates_rule.start_date).to eql(Time.parse(attributes[:start_date]))
-        expect(rates_rule.end_date).to eql(Time.parse(attributes[:end_date]))
+        expect(rates_rule.start_date).to eq(Time.parse(attributes[:start_date]))
+        expect(rates_rule.end_date).to eq(Time.parse(attributes[:end_date]))
       end
     end
   end

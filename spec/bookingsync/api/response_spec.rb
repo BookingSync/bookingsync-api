@@ -35,13 +35,13 @@ describe BookingSync::API::Response do
 
   describe "#resources_key" do
     it "returns name of the hash key where resources are" do
-      expect(response.resources_key).to eql(:rentals)
+      expect(response.resources_key).to eq(:rentals)
     end
   end
 
   describe "#resources" do
     it "returns an array of resources" do
-      expect(response.resources).to eql(rentals)
+      expect(response.resources).to eq(rentals)
     end
   end
 
@@ -55,26 +55,26 @@ describe BookingSync::API::Response do
 
   describe "#status" do
     it "returns HTTP response status" do
-      expect(response.status).to eql(200)
+      expect(response.status).to eq(200)
     end
   end
 
   describe "#headers" do
     it "returns HTTP response headers" do
-      expect(response.headers).to eql(headers)
+      expect(response.headers).to eq(headers)
     end
   end
 
   describe "#relations" do
     it "returns relations from Link header" do
-      expect(response.relations[:next].href).to eql("/rentals?page=2")
-      expect(response.relations[:last].href).to eql("/rentals?page=19")
+      expect(response.relations[:next].href).to eq("/rentals?page=2")
+      expect(response.relations[:last].href).to eq("/rentals?page=19")
     end
   end
 
   describe "#meta" do
     it "returns meta information from response body" do
-      expect(response.meta).to eql(count: 10)
+      expect(response.meta).to eq(count: 10)
     end
   end
 end

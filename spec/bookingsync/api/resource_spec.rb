@@ -26,17 +26,17 @@ describe BookingSync::API::Resource do
 
   describe "processing values" do
     it "makes data accessible" do
-      expect(resource.name).to eql("foo")
-      expect(resource.width).to eql(700)
+      expect(resource.name).to eq("foo")
+      expect(resource.width).to eq(700)
     end
 
     it "makes nested data accessible" do
-      expect(resource.details.count).to eql(1)
+      expect(resource.details.count).to eq(1)
     end
 
     describe "#_resources_key" do
       it "returns resources_key" do
-        expect(resource._resources_key).to eql("foo")
+        expect(resource._resources_key).to eq("foo")
       end
 
       context "for nested resource" do
@@ -54,7 +54,7 @@ describe BookingSync::API::Resource do
       it "fetches an association based on links" do
         stub_request(:get, "http://foo.com/photos/9,10")
           .to_return(body: { photos: [{ file: "a.jpg" }] }.to_json)
-        expect(resource.photos).to eql([{ file: "a.jpg" }])
+        expect(resource.photos).to eq([{ file: "a.jpg" }])
       end
     end
 
@@ -63,7 +63,7 @@ describe BookingSync::API::Resource do
       it "fetches an association based on links" do
         stub_request(:get, "http://foo.com/categories/15")
           .to_return(body: { categories: [{ name: "Secret one" }] }.to_json)
-        expect(resource.category).to eql([{ name: "Secret one" }])
+        expect(resource.category).to eq([{ name: "Secret one" }])
       end
     end
 
@@ -76,14 +76,14 @@ describe BookingSync::API::Resource do
       it "fetches association based on links and type" do
         stub_request(:get, "http://foo.com/articles/15")
           .to_return(body: { articles: [{ name: "Secret one" }] }.to_json)
-        expect(resource.taggable).to eql([{ name: "Secret one" }])
+        expect(resource.taggable).to eq([{ name: "Secret one" }])
       end
     end
 
     context "when there are not associated ids" do
       let(:links) { { photos: [] } }
       it "returns an empty array" do
-        expect(resource.photos).to eql([])
+        expect(resource.photos).to eq([])
       end
     end
 

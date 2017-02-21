@@ -15,7 +15,7 @@ describe BookingSync::API::Client::Bookings do
       context "with per_page setting" do
         it "returns limited number of bookings" do
           bookings = client.bookings(per_page: 2)
-          expect(bookings.size).to eql(2)
+          expect(bookings.size).to eq(2)
         end
       end
 
@@ -24,7 +24,7 @@ describe BookingSync::API::Client::Bookings do
           sizes = [2, 2]
           index = 0
           client.bookings(per_page: 2) do |bookings|
-            expect(bookings.size).to eql(sizes[index])
+            expect(bookings.size).to eq(sizes[index])
             index += 1
           end
         end
@@ -33,7 +33,7 @@ describe BookingSync::API::Client::Bookings do
       context "with auto_paginate: true" do
         it "returns all bookings joined from many requests" do
           bookings = client.bookings(per_page: 2, auto_paginate: true)
-          expect(bookings.size).to eql(4)
+          expect(bookings.size).to eq(4)
         end
       end
     end
@@ -73,8 +73,8 @@ describe BookingSync::API::Client::Bookings do
     it "returns newly created booking" do
       VCR.use_cassette("BookingSync_API_Client_Bookings/_create_booking/creates_a_booking") do
         booking = client.create_booking(rental, attributes)
-        expect(booking.links.account).to eql(3837)
-        expect(booking.links.rental).to eql(rental.id)
+        expect(booking.links.account).to eq(3837)
+        expect(booking.links.rental).to eq(rental.id)
       end
     end
   end

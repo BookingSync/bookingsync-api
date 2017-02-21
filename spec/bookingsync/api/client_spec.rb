@@ -6,7 +6,7 @@ describe BookingSync::API::Client do
   describe "#new" do
     it "initializes client object with given token" do
       client = BookingSync::API::Client.new("xyz")
-      expect(client.token).to eql("xyz")
+      expect(client.token).to eq("xyz")
     end
   end
 
@@ -80,7 +80,7 @@ describe BookingSync::API::Client do
         response = double(BookingSync::API::Response)
         allow(client).to receive(:call) { response }
         resources = client.request(:get, "resource")
-        expect(resources).to eql(response)
+        expect(resources).to eq(response)
       end
     end
   end
@@ -167,7 +167,7 @@ describe BookingSync::API::Client do
         expect {
           client.get("resource")
         }.to raise_error(BookingSync::API::UnsupportedResponse) { |error|
-          expect(error.status).to eql(405)
+          expect(error.status).to eq(405)
           expect(error.headers).to eq("content-type" => "application/vnd.api+json")
           expect(error.body).to eq("Whoops!")
           expect(error.message).to include("Received unsupported response from BookingSync API")
@@ -216,7 +216,7 @@ describe BookingSync::API::Client do
   describe "#api_endpoint" do
     it "returns URL to the API" do
       ENV["BOOKINGSYNC_URL"] = nil
-      expect(client.api_endpoint).to eql("https://www.bookingsync.com/api/v3")
+      expect(client.api_endpoint).to eq("https://www.bookingsync.com/api/v3")
     end
 
     context "user specifies base URL via BOOKINGSYNC_URL env" do
@@ -229,7 +229,7 @@ describe BookingSync::API::Client do
       end
 
       it "returns custom URL to the API" do
-        expect(client.api_endpoint).to eql("https://bookingsync.dev/api/v3")
+        expect(client.api_endpoint).to eq("https://bookingsync.dev/api/v3")
       end
     end
   end
@@ -275,7 +275,7 @@ describe BookingSync::API::Client do
     it "returns last response" do
       stub_get("resources", body: { meta: { count: 10 }, resources: [] }.to_json)
       client.get("resources")
-      expect(client.last_response.meta).to eql(count: 10)
+      expect(client.last_response.meta).to eq(count: 10)
     end
   end
 
@@ -288,7 +288,7 @@ describe BookingSync::API::Client do
     describe "#pagination_first_response" do
       it "returns first response of a paginated call" do
         client.paginate("resources", auto_paginate: true)
-        expect(client.pagination_first_response.meta).to eql(text: "first request")
+        expect(client.pagination_first_response.meta).to eq(text: "first request")
       end
     end
   end
