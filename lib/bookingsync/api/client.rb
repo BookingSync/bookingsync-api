@@ -201,29 +201,15 @@ module BookingSync::API
     # @return [Array<BookingSync::API::Resource>] Batch of resources
     def paginate(path, options = {}, &block)
       instrument("paginate.bookingsync_api", path: path) do
-        auto_paginate = options.delete(:auto_paginate)
-        request_method =  options.delete(:request_method) || :get
-        if request_method == :get
-          response = call(request_method, path, query: options)
-        else
-          response = call(request_method, path, options)
-        end
-        @pagination_first_response = response
-        data = []
-        data.concat(response.resources)
+        request_settings = {
+          auto_paginate: options.delete(:auto_paginate),
+          request_method: options.delete(:request_method) || :get
+        }
 
-        if (block_given? || auto_paginate) && response.relations[:next]
-          first_request = true
-          loop do
-            if block_given?
-              yield(response.resources)
-            elsif auto_paginate
-              data.concat(response.resources) unless first_request
-              first_request = false
-            end
-            break unless response.relations[:next]
-            response = response.relations[:next].call({}, { method: request_method })
-          end
+        if block_given?
+          data = fetch_with_block(path, options, request_settings, &block)
+        else
+          data = fetch_with_paginate(path, options, request_settings)
         end
 
         data
@@ -360,6 +346,38 @@ module BookingSync::API
       def self.instrument(name, payload = {})
         yield payload if block_given?
       end
+    end
+
+    def fetch_with_paginate(path, options, request_settings, data = [], response = nil)
+      response = initial_call(path, options, request_settings) unless response
+      data.concat(response.resources)
+      if response.relations[:next] && request_settings[:auto_paginate]
+        fetch_with_paginate(path, options, request_settings, data, next_page(response, request_settings))
+      else
+        data
+      end
+    end
+
+    def fetch_with_block(path, options, request_settings, response = nil, &block)
+      response = initial_call(path, options, request_settings) unless response
+      block.call(response.resources)
+      if response.relations[:next]
+        fetch_with_block(path, options, request_settings, next_page(response, request_settings), &block)
+      end
+    end
+
+    def initial_call(path, options, request_settings)
+      request_method = request_settings[:request_method]
+      if request_method == :get
+        response = call(request_method, path, query: options)
+      else
+        response = call(request_method, path, options)
+      end
+      @pagination_first_response = response
+    end
+
+    def next_page(response, request_settings)
+      response.relations[:next].call({}, { method: request_settings[:request_method] })
     end
   end
 end

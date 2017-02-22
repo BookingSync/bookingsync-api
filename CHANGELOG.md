@@ -4,6 +4,7 @@
 
 - Drop support for `preferences_payments`.
 - Switch from `Net::HTTP` to `Net::HTTP::Persistent`.
+- [bugfix] Fix bug when paginate with block didn't invoke it, if only one page of results was returned.
 
 ## 0.1.3
 
