@@ -37,7 +37,7 @@ describe BookingSync::API::Client::Sources do
     it "returns newly created source" do
       VCR.use_cassette("BookingSync_API_Client_Sources/_create_source/creates_a_new_source") do
         source = client.create_source(attributes)
-        expect(source.name).to eql(attributes[:name])
+        expect(source.name).to eq(attributes[:name])
       end
     end
   end
@@ -60,7 +60,7 @@ describe BookingSync::API::Client::Sources do
       VCR.use_cassette("BookingSync_API_Client_Sources/_edit_source/updates_given_source_by_ID") do
         source = client.edit_source(created_source_id, attributes)
         expect(source).to be_kind_of(BookingSync::API::Resource)
-        expect(source.name).to eql(attributes[:name])
+        expect(source.name).to eq(attributes[:name])
       end
     end
   end

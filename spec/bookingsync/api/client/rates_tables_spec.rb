@@ -37,7 +37,7 @@ describe BookingSync::API::Client::RatesTables do
     it "returns newly created rates_table" do
       VCR.use_cassette("BookingSync_API_Client_RatesTables/_create_rates_table/creates_a_new_rates_table") do
         rates_table = client.create_rates_table(attributes)
-        expect(rates_table.name).to eql(attributes[:name])
+        expect(rates_table.name).to eq(attributes[:name])
       end
     end
   end
@@ -60,7 +60,7 @@ describe BookingSync::API::Client::RatesTables do
       VCR.use_cassette("BookingSync_API_Client_RatesTables/_edit_rates_table/updates_given_rates_table_by_ID") do
         rates_table = client.edit_rates_table(created_rates_table_id, attributes)
         expect(rates_table).to be_kind_of(BookingSync::API::Resource)
-        expect(rates_table.name).to eql(attributes[:name])
+        expect(rates_table.name).to eq(attributes[:name])
       end
     end
   end

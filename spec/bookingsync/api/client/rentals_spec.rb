@@ -15,7 +15,7 @@ describe BookingSync::API::Client::Rentals do
       rental_ids = find_resources("#{@casette_base_path}_rentals/returns_rentals.yml", "rentals").map { |r| r["id"] }[0..1]
 
       rentals = client.rentals(ids: rental_ids)
-      expect(rentals.size).to eql(2)
+      expect(rentals.size).to eq(2)
       assert_requested :get, bs_url("rentals/#{rental_ids.join(',')}")
     end
 
@@ -64,7 +64,7 @@ describe BookingSync::API::Client::Rentals do
 
     it "returns a single rental" do
       rental = client.rental(prefetched_rental[:id])
-      expect(rental.name).to eql(prefetched_rental[:name])
+      expect(rental.name).to eq(prefetched_rental[:name])
     end
   end
 
@@ -80,8 +80,8 @@ describe BookingSync::API::Client::Rentals do
     it "returns newly created rental" do
       VCR.use_cassette("BookingSync_API_Client_Rentals/_create_rental/creates_a_new_rental") do
         rental = client.create_rental(attributes)
-        expect(rental.name).to eql("New rental")
-        expect(rental.sleeps).to eql(2)
+        expect(rental.name).to eq("New rental")
+        expect(rental.sleeps).to eq(2)
       end
     end
   end

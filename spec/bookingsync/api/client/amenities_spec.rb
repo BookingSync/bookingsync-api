@@ -19,7 +19,7 @@ describe BookingSync::API::Client::Amenities do
 
     it "returns amenity" do
       amenity = client.amenity(prefetched_amenity[:id])
-      expect(amenity.title).to eql(prefetched_amenity[:title])
+      expect(amenity.title).to eq(prefetched_amenity[:title])
     end
   end
 end

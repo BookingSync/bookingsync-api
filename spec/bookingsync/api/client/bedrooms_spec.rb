@@ -41,8 +41,8 @@ describe BookingSync::API::Client::Bedrooms do
     it "returns newly created bedroom" do
       VCR.use_cassette("BookingSync_API_Client_Bedrooms/_create_bedroom/creates_a_new_bedroom") do
         bedroom = client.create_bedroom(rental, attributes)
-        expect(bedroom.name).to eql(en: "New bedroom")
-        expect(bedroom.sofa_beds_count).to eql(attributes[:sofa_beds_count])
+        expect(bedroom.name).to eq(en: "New bedroom")
+        expect(bedroom.sofa_beds_count).to eq(attributes[:sofa_beds_count])
       end
     end
   end

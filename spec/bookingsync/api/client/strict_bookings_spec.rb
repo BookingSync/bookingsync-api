@@ -37,8 +37,8 @@ describe BookingSync::API::Client::StrictBookings do
     it "returns newly created booking" do
      VCR.use_cassette("BookingSync_API_Client_StrictBookings/_create_strict_booking/creates_a_booking") do
        booking = client.create_strict_booking(params)
-       expect(booking.start_at).to eql(Time.parse("2017-05-22 16:00:00 UTC"))
-       expect(booking.end_at).to eql(Time.parse("2017-05-29 10:00:00 UTC"))
+       expect(booking.start_at).to eq(Time.parse("2017-05-22 16:00:00 UTC"))
+       expect(booking.end_at).to eq(Time.parse("2017-05-29 10:00:00 UTC"))
      end
    end
   end

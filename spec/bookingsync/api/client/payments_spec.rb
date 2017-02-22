@@ -39,8 +39,8 @@ describe BookingSync::API::Client::Payments do
     it "returns newly created payment" do
       VCR.use_cassette("BookingSync_API_Client_Payments/_create_payment/creates_a_new_payment") do
         payment = api.create_payment(booking_id, attributes)
-        expect(payment.amount_in_cents).to eql(200)
-        expect(payment.kind).to eql("cash")
+        expect(payment.amount_in_cents).to eq(200)
+        expect(payment.kind).to eq("cash")
       end
     end
   end
