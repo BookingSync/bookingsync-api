@@ -42,7 +42,6 @@ require "bookingsync/api/response"
 require "bookingsync/api/resource"
 require "bookingsync/api/serializer"
 require "logger"
-require "addressable/template"
 
 module BookingSync::API
   class Client
