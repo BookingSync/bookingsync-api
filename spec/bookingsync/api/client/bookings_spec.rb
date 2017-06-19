@@ -109,13 +109,12 @@ describe BookingSync::API::Client::Bookings do
   end
 
   describe ".cancel_booking", :vcr do
-    let(:created_booking_id) {
-      find_resource("#{@casette_base_path}_create_booking/creates_a_booking.yml", "bookings")[:id]
-    }
+    let(:booking_id_to_be_canceled) { 796 }
 
-    it "cancels given booking" do
-      client.cancel_booking(created_booking_id)
-      assert_requested :delete, bs_url("bookings/#{created_booking_id}")
+    it "cancels given booking and passes options along as bookings payload" do
+      client.cancel_booking(booking_id_to_be_canceled, cancelation_reason: "payment_failed")
+      assert_requested :delete, bs_url("bookings/#{booking_id_to_be_canceled}"),
+        body: { bookings: [{ cancelation_reason: "payment_failed" }] }.to_json
     end
   end
 end

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://www.bookingsync.com/api/v3/bookings/840043
+    uri: https://www.bookingsync.com/api/v3/bookings/796
     body:
       encoding: UTF-8
-      string: "{}"
+      string: '{"bookings":[{"cancelation_reason":"payment_failed"}]}'
     headers:
       User-Agent:
-      - BookingSync API gem v0.1.3
+      - BookingSync API gem v0.1.4
       Accept:
       - application/vnd.api+json
       Content-Type:
@@ -26,14 +26,6 @@ http_interactions:
       code: 204
       message: No Content
     headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 12 Dec 2016 12:13:17 GMT
-      Connection:
-      - keep-alive
-      Status:
-      - 204 No Content
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -41,33 +33,33 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Updated-Since-Request-Synced-At:
-      - 2016-12-12 12:13:16 UTC
+      - 2017-06-21 17:31:45 UTC
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Reset:
-      - '1481547600'
+      - '1498068000'
       X-Ratelimit-Remaining:
-      - '974'
+      - '999'
       Cache-Control:
       - no-cache
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
-      - ahoy_track=true; path=/; secure
-      - ahoy_visit=787c8bd2-11eb-42f0-bd08-d353187a4782; path=/; expires=Mon, 19 Dec
-        2016 12:13:16 -0000; secure
-      - ahoy_visitor=113ed9a0-fc74-4c3c-be2c-5e177a24d93a; path=/; expires=Wed, 12
-        Dec 2018 12:13:16 -0000; secure
+      - ahoy_track=true; path=/
+      - ahoy_visit=3fbaacc4-8804-4d56-b04b-a5c73776f30f; path=/; expires=Wed, 28 Jun
+        2017 17:31:45 -0000
+      - ahoy_visitor=fdfdf051-d834-454d-b972-b7185b40cc22; path=/; expires=Fri, 21
+        Jun 2019 17:31:45 -0000
       X-Request-Id:
-      - 8269520e-314d-42b8-9132-8eed54676b1f
+      - b0d60bfe-47b5-42a7-9561-1c1cae003ce1
       X-Runtime:
-      - '0.167782'
-      Strict-Transport-Security:
-      - max-age=31536000
+      - '6.442512'
+      Connection:
+      - close
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
-  recorded_at: Mon, 12 Dec 2016 12:13:17 GMT
-recorded_with: VCR 3.0.3
+    http_version:
+  recorded_at: Wed, 21 Jun 2017 17:31:50 GMT
+recorded_with: VCR 2.9.3

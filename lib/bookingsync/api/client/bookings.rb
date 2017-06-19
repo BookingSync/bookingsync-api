@@ -70,9 +70,17 @@ module BookingSync::API
       #
       # @param booking [BookingSync::API::Resource|Integer] Booking or ID of
       #   the booking to be canceled.
+      # @param options [Hash] Booking attributes to be updated.
+      #   (For now, only `cancelation_reason` is allowed)
       # @return [NilClass] Returns nil on success.
-      def cancel_booking(booking, options = {})
-        delete "bookings/#{booking}"
+      # @example
+      #   @api.cancel_booking(booking_id)
+      #
+      # @example Providing cancelation_reason
+      #   @api.cancel_booking(booking_id, { cancelation_reason: "payment_failed" })
+      def cancel_booking(booking, options = nil)
+        options = { bookings: [options] } if options
+        delete "bookings/#{booking}", options
       end
     end
   end
