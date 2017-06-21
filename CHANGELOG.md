@@ -2,6 +2,10 @@
 
 ## master
 
+## 0.1.5
+
+- `Bookings#cancel_booking` supports passing attributes in body.
+
 ## 0.1.4
 
 - Drop support for `preferences_payments`.
