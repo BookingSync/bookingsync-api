@@ -2,6 +2,8 @@
 
 ## master
 
+- Add support for `bookings_tags` endpoint.
+
 ## 0.1.5
 
 - `Bookings#cancel_booking` supports passing attributes in body.
