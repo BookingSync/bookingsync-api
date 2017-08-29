@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/bookings_tags
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.5
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 29 Aug 2017 07:05:55 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2017-08-29 07:05:55 UTC
+      X-Ratelimit-Limit:
+      - '10000'
+      X-Ratelimit-Reset:
+      - '1503993600'
+      X-Ratelimit-Remaining:
+      - '9998'
+      Link:
+      - <https://www.bookingsync.com/api/v3/bookings_tags?page=1>; rel="first", <https://www.bookingsync.com/api/v3/bookings_tags?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      X-Per-Page:
+      - '100'
+      Etag:
+      - W/"5323ddfb1a903ebcfe004e9699821c42"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=389c6164-e670-40ba-af29-a1df3e878e0f; path=/; expires=Tue, 05 Sep
+        2017 07:05:55 -0000; secure
+      - ahoy_visitor=7cb890fb-bbff-4dd4-b93a-f2976559a874; path=/; expires=Thu, 29
+        Aug 2019 07:05:55 -0000; secure
+      X-Request-Id:
+      - f4bc3414-60ef-4153-b903-5dd1a653c3aa
+      X-Runtime:
+      - '0.028213'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '{"links":{"bookings_tags.account":"https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"},"bookings_tags":[{"links":{"account":9123},"id":587,"name":{"en":"with
+        pets"},"color":"#6666ff","logo":"fa-group","created_at":"2016-11-29T08:31:16Z","updated_at":"2017-08-29T06:48:09Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/bookings_tags?page=1","last":"https://www.bookingsync.com/api/v3/bookings_tags?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Tue, 29 Aug 2017 07:05:55 GMT
+recorded_with: VCR 3.0.3
