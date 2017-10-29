@@ -99,7 +99,7 @@ module BookingSync::API
       # Remove a bookings_fee
       #
       # @param booking [BookingSync::API::Resource|Integer] Booking or ID of the booking
-      # for which the fee should be removed
+      # for which the bookings fee should be removed
       # @param options [Integer] ID of the bookings_fee to be removed.
       # @return [BookingSync::API::Resource] Booking attributes, remaining bookings fees included
       # @example
