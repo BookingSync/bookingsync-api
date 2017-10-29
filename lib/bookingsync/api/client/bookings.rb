@@ -91,7 +91,7 @@ module BookingSync::API
       # @return [BookingSync::API::Resource] Booking attributes, bookings fees included
       # @example
       #   booking = @api.bookings.first
-      #   @api.add_bookings_fee(booking, { price: 100, times_booked: 2, name_en: "Cleaning Fee" })
+      #   @api.add_bookings_fee(booking, { price: 100, times_booked: 1, name_en: "Cleaning Fee" })
       def add_bookings_fee(booking, options = {})
         patch("bookings/#{booking}/add_bookings_fee", bookings_fees: [options]).pop
       end

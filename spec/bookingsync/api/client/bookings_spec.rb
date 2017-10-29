@@ -129,14 +129,8 @@ describe BookingSync::API::Client::Bookings do
       end
     end
 
-    it "adds bookings_fee" do
-      client.add_bookings_fee(created_booking_id, price: 50, times_booked: 1, name_en: "Airport transfer")
-      assert_requested :patch, bs_url("bookings/#{created_booking_id}/add_bookings_fee"),
-        body: { bookings_fees: [{ price: 50, times_booked: 1, name_en: "Airport transfer" }] }.to_json
-    end
-
     it "returns with bookings_fee" do
-      booking = client.add_bookings_fee(created_booking_id, price: 100, times_booked: 2, name_en: "Cleaning Fee")
+      booking = client.add_bookings_fee(created_booking_id, price: 50, times_booked: 1, name_en: "Airport transfer")
       expect(booking).to be_kind_of(BookingSync::API::Resource)
       expect(booking.bookings_fees).to eq(
         [
@@ -145,12 +139,6 @@ describe BookingSync::API::Client::Bookings do
             created_at: Time.parse("2017-10-29 10:16:57 UTC"), updated_at: Time.parse("2017-10-29 10:16:57 UTC"),
             canceled_at: nil, commission: nil, payback_to_owner: nil, locked: nil,
             name: "Airport transfer"
-          },
-          {
-            id: 194396, booking_id: 840043, rentals_fee_id: nil,
-            times_booked: 2, price: "100.0", created_at: Time.parse("2017-10-29 10:16:19 UTC"),
-            updated_at: Time.parse("2017-10-29 10:16:19 UTC"), canceled_at: nil, commission: nil,
-            payback_to_owner: nil, locked: nil, name: "Cleaning Fee"
           }
         ]
       )
