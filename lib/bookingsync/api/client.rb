@@ -142,6 +142,15 @@ module BookingSync::API
       request :put, path, options
     end
 
+    # Make a HTTP PATCH request
+    #
+    # @param path [String] The path, relative to {#api_endpoint}
+    # @param options [Hash] Body params for the request
+    # @return [Array<BookingSync::API::Resource>]
+    def patch(path, options = {})
+      request :patch, path, options
+    end
+
     # Make a HTTP DELETE request
     #
     # @param path [String] The path, relative to {#api_endpoint}

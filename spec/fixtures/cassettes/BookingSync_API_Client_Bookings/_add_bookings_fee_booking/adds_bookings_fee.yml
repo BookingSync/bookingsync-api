@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://www.bookingsync.com/api/v3/bookings/840043/add_bookings_fee
+    body:
+      encoding: UTF-8
+      string: '{"bookings_fees":[{"price":100,"times_booked":2,"name_en":"foobar"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.5
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 29 Oct 2017 10:16:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2017-10-29 10:16:19 UTC
+      X-Ratelimit-Limit:
+      - '100000'
+      X-Ratelimit-Reset:
+      - '1509274800'
+      X-Ratelimit-Remaining:
+      - '99997'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=011ed58b-49a4-4042-84d7-c430a7f79399; path=/; expires=Sun, 05 Nov
+        2017 10:16:19 -0000; secure
+      - ahoy_visitor=959ccfeb-2691-487c-b5d4-e4d8d5ef063c; path=/; expires=Tue, 29
+        Oct 2019 10:16:19 -0000; secure
+      X-Request-Id:
+      - a8bd65fe-3d0d-4543-9d91-640f56d82c01
+      X-Runtime:
+      - '0.180002'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: ASCII-8BIT
+      string: '{"bookings":[{"id":840043,"start_at":"2017-01-03T00:00:00Z","end_at":"2019-03-25T21:45:00Z","booked":true,"unavailable":false,"tentative_expires_at":null,"rental_id":5116,"client_id":null,"initial_price":"200.0","discount":"","final_price":"200.0","notes":null,"adults":null,"children":null,"account_id":3837,"created_at":"2016-12-12T11:52:09Z","updated_at":"2017-10-29T10:16:20Z","canceled_at":"2016-12-12T12:13:16Z","downpayment":null,"currency":"USD","source_id":null,"damage_deposit":"0.0","reference":"00I06J","bookings_fees":[{"id":194396,"booking_id":840043,"rentals_fee_id":null,"times_booked":2,"price":"100.0","created_at":"2017-10-29T10:16:19Z","updated_at":"2017-10-29T10:16:19Z","canceled_at":null,"commission":null,"payback_to_owner":null,"locked":null,"name":"foobar"}]}]}'
+    http_version: 
+  recorded_at: Sun, 29 Oct 2017 10:16:20 GMT
+recorded_with: VCR 3.0.3
