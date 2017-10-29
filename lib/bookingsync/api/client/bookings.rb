@@ -86,12 +86,12 @@ module BookingSync::API
       # Add a bookings_fee
       #
       # @param booking [BookingSync::API::Resource|Integer] Booking or ID of the booking
-      # for which the fee should be added
+      # for which the bookings fee should be added
       # @param options [Hash] Bookings_fee attributes.
-      # @return [BookingSync::API::Resource] Booking attributes, fees included
+      # @return [BookingSync::API::Resource] Booking attributes, bookings fees included
       # @example
       #   booking = @api.bookings.first
-      #   @api.add_bookings_fee(booking, { price: 100, times_booked: 2 })
+      #   @api.add_bookings_fee(booking, { price: 100, times_booked: 2, name_en: "Cleaning Fee" })
       def add_bookings_fee(booking, options = {})
         patch("bookings/#{booking}/add_bookings_fee", bookings_fees: [options]).pop
       end
@@ -101,7 +101,7 @@ module BookingSync::API
       # @param booking [BookingSync::API::Resource|Integer] Booking or ID of the booking
       # for which the fee should be removed
       # @param options [Integer] ID of the bookings_fee to be removed.
-      # @return [BookingSync::API::Resource] Booking attributes, remaining fees included
+      # @return [BookingSync::API::Resource] Booking attributes, remaining bookings fees included
       # @example
       #   booking = @api.bookings.first
       #   @api.remove_bookings_fee(booking, 1)

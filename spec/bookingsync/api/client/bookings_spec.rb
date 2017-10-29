@@ -124,23 +124,31 @@ describe BookingSync::API::Client::Bookings do
     }
 
     it "adds bookings_fee" do
-      client.add_bookings_fee(created_booking_id, price: 100, times_booked: 2, name_en: "foobar")
+      client.add_bookings_fee(created_booking_id, price: 100, times_booked: 2, name_en: "Cleaning Fee")
       assert_requested :patch, bs_url("bookings/#{created_booking_id}/add_bookings_fee"),
-        body: { bookings_fees: [{ price: 100, times_booked: 2, name_en: "foobar" }] }.to_json
+        body: { bookings_fees: [{ price: 100, times_booked: 2, name_en: "Cleaning Fee" }] }.to_json
     end
 
     it "returns with bookings_fee" do
       VCR.use_cassette("BookingSync_API_Client_Bookings/_add_bookings_fee/adds_bookings_fee") do
-        booking = client.add_bookings_fee(created_booking_id, price: 100, times_booked: 2, name_en: "foobar")
+        booking = client.add_bookings_fee(created_booking_id, price: 100, times_booked: 2, name_en: "Cleaning Fee")
         expect(booking).to be_kind_of(BookingSync::API::Resource)
         expect(booking.bookings_fees).to eq(
-          [{:id=>194398, :booking_id=>840043, :rentals_fee_id=>nil, :times_booked=>2, :price=>"100.0",
-          :created_at=>Time.parse("2017-10-29 10:16:57 UTC"), :updated_at=>Time.parse("2017-10-29 10:16:57 UTC"),
-          :canceled_at=>nil, :commission=>nil, :payback_to_owner=>nil, :locked=>nil,
-          :name=>"foobar"}, {:id=>194396, :booking_id=>840043, :rentals_fee_id=>nil,
-          :times_booked=>2, :price=>"100.0", :created_at=>Time.parse("2017-10-29 10:16:19 UTC"),
-          :updated_at=>Time.parse("2017-10-29 10:16:19 UTC"), :canceled_at=>nil, :commission=>nil,
-          :payback_to_owner=>nil, :locked=>nil, :name=>"foobar"}])
+          [
+            {
+              id: 194398, booking_id: 840043, rentals_fee_id: nil, times_booked: 2, price: "100.0",
+              created_at: Time.parse("2017-10-29 10:16:57 UTC"), updated_at: Time.parse("2017-10-29 10:16:57 UTC"),
+              canceled_at: nil, commission: nil, payback_to_owner: nil, locked: nil,
+              name: "Cleaning Fee"
+            },
+            {
+              id: 194396, booking_id: 840043, rentals_fee_id: nil,
+              times_booked: 2, price: "100.0", created_at: Time.parse("2017-10-29 10:16:19 UTC"),
+              updated_at: Time.parse("2017-10-29 10:16:19 UTC"), canceled_at: nil, commission: nil,
+              payback_to_owner: nil, locked: nil, name: "Cleaning Fee"
+            }
+          ]
+        )
       end
     end
   end
