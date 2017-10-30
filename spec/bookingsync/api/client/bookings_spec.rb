@@ -117,4 +117,42 @@ describe BookingSync::API::Client::Bookings do
         body: { bookings: [{ cancelation_reason: "payment_failed" }] }.to_json
     end
   end
+
+  describe ".add_bookings_fee_booking" do
+    let(:created_booking_id) {
+      find_resource("#{@casette_base_path}_create_booking/creates_a_booking.yml", "bookings")[:id]
+    }
+
+    around do |example|
+      VCR.use_cassette("BookingSync_API_Client_Bookings/_add_bookings_fee/adds_bookings_fee") do
+        example.run
+      end
+    end
+
+    it "returns with bookings_fee" do
+      booking = client.add_bookings_fee(created_booking_id, price: 50, times_booked: 1, name_en: "Airport transfer")
+      expect(booking).to be_kind_of(BookingSync::API::Resource)
+      expect(booking.bookings_fees).to eq(
+        [
+          {
+            id: 194398, booking_id: 840043, rentals_fee_id: nil, times_booked: 1, price: "50.0",
+            created_at: Time.parse("2017-10-29 10:16:57 UTC"), updated_at: Time.parse("2017-10-29 10:16:57 UTC"),
+            canceled_at: nil, commission: nil, payback_to_owner: nil, locked: nil,
+            name: "Airport transfer"
+          }
+        ]
+      )
+    end
+  end
+
+  describe ".remove_bookings_fee", :vcr do
+    let(:booking_id) { 840043 }
+    let(:bookings_fee_id) { 194396 }
+
+    it "removes bookings_fee and returns with booking" do
+      booking = client.remove_bookings_fee(booking_id, bookings_fee_id)
+      expect(booking).to be_kind_of(BookingSync::API::Resource)
+      expect(booking.bookings_fees).to eq([])
+    end
+  end
 end

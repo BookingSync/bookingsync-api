@@ -29,7 +29,7 @@ describe BookingSync::API::Response do
     end
   end
   let(:response) do
-    stubs = Faraday::Adapter::Test::Stubs.new
+    Faraday::Adapter::Test::Stubs.new
     client.call(:get, "/rentals")
   end
 

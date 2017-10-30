@@ -118,7 +118,7 @@ describe BookingSync::API::Client do
 
     it "requests with proper User-Agent" do
       stub_get("resource", body: {}.to_json)
-      response = client.call(:get, "resource")
+      client.call(:get, "resource")
       assert_requested :get, bs_url("resource"),
         headers: { "User-Agent" =>
           "BookingSync API gem v#{BookingSync::API::VERSION}" }

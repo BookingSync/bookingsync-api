@@ -2,6 +2,8 @@
 
 ## master
 
+- Add support for addition and removal of bookings_fees
+
 ## 0.1.5
 
 - `Bookings#cancel_booking` supports passing attributes in body.
