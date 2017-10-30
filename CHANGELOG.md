@@ -2,8 +2,6 @@
 
 ## master
 
-## 0.1.6
-
 - Add support for addition and removal of bookings_fees
 
 ## 0.1.5
