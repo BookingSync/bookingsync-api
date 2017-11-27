@@ -65,7 +65,7 @@ describe BookingSync::API::Client::RentalsContentsOverrides do
       VCR.use_cassette("BookingSync_API_Client_RentalsContentsOverrides/_edit_rentals_contents_override/updates_given_rentals_contents_override_by_ID") do
         rentals_contents_override = client.edit_rentals_contents_override(created_rentals_contents_override_id, attributes)
         expect(rentals_contents_override).to be_kind_of(BookingSync::API::Resource)
-        expect(rentals_contents_override.summary).to eq(en: "new english summary" )
+        expect(rentals_contents_override.summary).to eq(en: "new english summary")
       end
     end
   end
