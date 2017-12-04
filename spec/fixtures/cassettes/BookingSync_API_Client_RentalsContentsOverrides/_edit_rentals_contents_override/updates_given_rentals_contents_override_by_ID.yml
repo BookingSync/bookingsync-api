@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/rentals_contents_overrides/2280
+    body:
+      encoding: UTF-8
+      string: '{"rentals_contents_overrides":[{"summary_en":"new english summary"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.6
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 27 Nov 2017 14:32:36 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2017-11-27 14:32:36 UTC
+      X-Ratelimit-Limit:
+      - '130000'
+      X-Ratelimit-Reset:
+      - '1511794800'
+      X-Ratelimit-Remaining:
+      - '82358'
+      Location:
+      - https://www.bookingsync.com/api/v3/rentals_contents_overrides/2280
+      Etag:
+      - W/"616c177b66ee7b9cff6923a6bff5bf89"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=2693c29b-b408-476e-b7be-5a79d57482bd; path=/; expires=Mon, 04 Dec
+        2017 14:32:36 -0000; secure
+      - ahoy_visitor=de06d60f-b3aa-4063-a646-c446d087f383; path=/; expires=Wed, 27
+        Nov 2019 14:32:36 -0000; secure
+      X-Request-Id:
+      - 1b5007a3-3deb-4717-aba0-26885dd3d3b3
+      X-Runtime:
+      - '0.142591'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rentals_contents_overrides.application":"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}","rentals_contents_overrides.rental":"https://www.bookingsync.com/api/v3/rentals/{rentals_contents_overrides.rental}"},"rentals_contents_overrides":[{"links":{"application":65,"rental":5116},"id":2280,"headline":{},"summary":{"en":"new
+        english summary"},"description":{},"created_at":"2017-11-27T14:27:11Z","updated_at":"2017-11-27T14:32:36Z"}],"meta":{}}'
+    http_version: 
+  recorded_at: Mon, 27 Nov 2017 14:32:36 GMT
+recorded_with: VCR 3.0.3
