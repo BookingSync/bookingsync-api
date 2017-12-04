@@ -5,7 +5,7 @@ describe BookingSync::API::Client::RentalsContentsOverrides do
 
   before { |ex| @casette_base_path = casette_path(casette_dir, ex.metadata) }
 
-  describe ".rentals_contents_overrides", :vcr do
+  describe "#rentals_contents_overrides", :vcr do
     it "returns rentals contents overrides" do
       expect(client.rentals_contents_overrides).not_to be_empty
       assert_requested :get, bs_url("rentals_contents_overrides")
@@ -19,18 +19,19 @@ describe BookingSync::API::Client::RentalsContentsOverrides do
     end
   end
 
-  describe ".rentals_contents_override", :vcr do
+  describe "#rentals_contents_override", :vcr do
     let(:prefetched_rentals_contents_override_id) {
       find_resource("#{@casette_base_path}_rentals_contents_overrides/returns_rentals_contents_overrides.yml", "rentals_contents_overrides")[:id]
     }
 
     it "returns rentals_contents_override" do
-      client.rentals_contents_override(prefetched_rentals_contents_override_id)
+      rentals_contents_override = client.rentals_contents_override(prefetched_rentals_contents_override_id)
+      expect(rentals_contents_override.headline.en).not_to be_empty
       assert_requested :get, bs_url("rentals_contents_overrides/#{prefetched_rentals_contents_override_id}")
     end
   end
 
-  describe ".create_rentals_contents_override", :vcr do
+  describe "#create_rentals_contents_override", :vcr do
     let(:attributes) { { summary_en: "english summary" } }
     let(:application) { BookingSync::API::Resource.new(client, id: 65) }
     let(:rental) { BookingSync::API::Resource.new(client, id: 5116) }
@@ -49,7 +50,7 @@ describe BookingSync::API::Client::RentalsContentsOverrides do
     end
   end
 
-  describe ".edit_rentals_contents_override", :vcr do
+  describe "#edit_rentals_contents_override", :vcr do
     let(:attributes) { { summary_en: "new english summary" } }
     let(:created_rentals_contents_override_id) {
       find_resource("#{@casette_base_path}_create_rentals_contents_override/creates_a_new_rentals_contents_override.yml", "rentals_contents_overrides")[:id]
@@ -70,7 +71,7 @@ describe BookingSync::API::Client::RentalsContentsOverrides do
     end
   end
 
-  describe ".delete_rentals_contents_override", :vcr do
+  describe "#delete_rentals_contents_override", :vcr do
     let(:created_rentals_contents_override_id) {
       find_resource("#{@casette_base_path}_create_rentals_contents_override/creates_a_new_rentals_contents_override.yml", "rentals_contents_overrides")[:id]
     }
