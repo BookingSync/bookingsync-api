@@ -3,6 +3,15 @@
 ## master
 
 - Add support for `bookings_tags` endpoint.
+- Add support for `rentals_contents_overrides` endpoint.
+
+## 0.1.7 - 2017-11-30
+
+- Add workaround to avoid `Net::HTTP::Persistent too many connection resets error`
+
+## 0.1.6 - 2017-10-30
+
+- Add support for addition and removal of bookings_fees
 
 ## 0.1.5
 

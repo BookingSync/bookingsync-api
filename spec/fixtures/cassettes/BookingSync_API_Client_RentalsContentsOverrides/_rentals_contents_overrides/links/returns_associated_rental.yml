@@ -1,0 +1,322 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rentals_contents_overrides
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.6
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 27 Nov 2017 14:11:58 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2017-11-27 14:11:58 UTC
+      X-Ratelimit-Limit:
+      - '100000'
+      X-Ratelimit-Reset:
+      - '1511794800'
+      X-Ratelimit-Remaining:
+      - '91464'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rentals_contents_overrides?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/rentals_contents_overrides?page=1>; rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      X-Per-Page:
+      - '100'
+      Etag:
+      - W/"05b26b2b205fa2025a61d8271161c1fd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=f8777b11-3b4a-4949-ba2e-baef9bf26f46; path=/; expires=Mon, 04 Dec
+        2017 14:11:58 -0000; secure
+      - ahoy_visitor=aa9d2273-3d8b-44f0-a5d8-04da89e05bcb; path=/; expires=Wed, 27
+        Nov 2019 14:11:58 -0000; secure
+      X-Request-Id:
+      - 154884e4-6cd8-459c-9043-b67e58def96c
+      X-Runtime:
+      - '0.050862'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rentals_contents_overrides.application":"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}","rentals_contents_overrides.rental":"https://www.bookingsync.com/api/v3/rentals/{rentals_contents_overrides.rental}"},"rentals_contents_overrides":[{"links":{"application":31,"rental":5117},"id":2279,"headline":{"en":"custom
+        english headline"},"summary":{},"description":{},"created_at":"2017-11-27T13:33:09Z","updated_at":"2017-11-27T13:34:00Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/rentals_contents_overrides?page=1","last":"https://www.bookingsync.com/api/v3/rentals_contents_overrides?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Mon, 27 Nov 2017 14:11:58 GMT
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rentals/5117
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.6
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 27 Nov 2017 14:11:59 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2017-11-27 14:11:58 UTC
+      X-Ratelimit-Limit:
+      - '100000'
+      X-Ratelimit-Reset:
+      - '1511794800'
+      X-Ratelimit-Remaining:
+      - '91455'
+      Link:
+      - <https://www.bookingsync.com/api/v3/rentals/5117?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rentals/5117?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      X-Per-Page:
+      - '50'
+      Etag:
+      - W/"4db70530c8e1bfa51f5a797f8ede53e4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/; secure
+      - ahoy_visit=10a0763e-60a9-4f6e-b000-7f6ab3e281d8; path=/; expires=Mon, 04 Dec
+        2017 14:11:58 -0000; secure
+      - ahoy_visitor=dcaaf6f4-6b7e-46c9-a42d-21858d20fff9; path=/; expires=Wed, 27
+        Nov 2019 14:11:58 -0000; secure
+      X-Request-Id:
+      - 7b618eb5-816e-4315-86e8-2062157f28dc
+      X-Runtime:
+      - '0.294486'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJsaW5rcyI6eyJyZW50YWxzLmFjY291bnQiOiJodHRwczovL3d3dy5ib29r
+        aW5nc3luYy5jb20vYXBpL3YzL2FjY291bnRzL3tyZW50YWxzLmFjY291bnR9
+        IiwicmVudGFscy5hdmFpbGFiaWxpdHkiOiJodHRwczovL3d3dy5ib29raW5n
+        c3luYy5jb20vYXBpL3YzL2F2YWlsYWJpbGl0aWVzL3tyZW50YWxzLmF2YWls
+        YWJpbGl0eX0iLCJyZW50YWxzLmNoYW5nZV9vdmVyIjoiaHR0cHM6Ly93d3cu
+        Ym9va2luZ3N5bmMuY29tL2FwaS92My9jaGFuZ2Vfb3ZlcnMve3JlbnRhbHMu
+        Y2hhbmdlX292ZXJ9IiwicmVudGFscy5kZXN0aW5hdGlvbiI6Imh0dHBzOi8v
+        d3d3LmJvb2tpbmdzeW5jLmNvbS9hcGkvdjMvZGVzdGluYXRpb25zL3tyZW50
+        YWxzLmRlc3RpbmF0aW9ufSIsInJlbnRhbHMucGF5bWVudF9nYXRld2F5Ijoi
+        aHR0cHM6Ly93d3cuYm9va2luZ3N5bmMuY29tL2FwaS92My9wYXltZW50X2dh
+        dGV3YXlzL3tyZW50YWxzLnBheW1lbnRfZ2F0ZXdheX0iLCJyZW50YWxzLnJh
+        dGVzX3RhYmxlIjoiaHR0cHM6Ly93d3cuYm9va2luZ3N5bmMuY29tL2FwaS92
+        My9yYXRlc190YWJsZXMve3JlbnRhbHMucmF0ZXNfdGFibGV9IiwicmVudGFs
+        cy5yZW50YWxfYWdyZWVtZW50IjoiaHR0cHM6Ly93d3cuYm9va2luZ3N5bmMu
+        Y29tL2FwaS92My9yZW50YWxfYWdyZWVtZW50cy97cmVudGFscy5yZW50YWxf
+        YWdyZWVtZW50fSIsInJlbnRhbHMucmVudGFsX2NhbmNlbGF0aW9uX3BvbGlj
+        eSI6Imh0dHBzOi8vd3d3LmJvb2tpbmdzeW5jLmNvbS9hcGkvdjMvcmVudGFs
+        X2NhbmNlbGF0aW9uX3BvbGljaWVzL3tyZW50YWxzLnJlbnRhbF9jYW5jZWxh
+        dGlvbl9wb2xpY3l9IiwicmVudGFscy5uaWdodGx5X3JhdGVfbWFwIjoiaHR0
+        cHM6Ly93d3cuYm9va2luZ3N5bmMuY29tL2FwaS92My9uaWdodGx5X3JhdGVf
+        bWFwcy97cmVudGFscy5uaWdodGx5X3JhdGVfbWFwfSIsInJlbnRhbHMucGhv
+        dG9zIjoiaHR0cHM6Ly93d3cuYm9va2luZ3N5bmMuY29tL2FwaS92My9waG90
+        b3Mve3JlbnRhbHMucGhvdG9zfSIsInJlbnRhbHMucmV2aWV3cyI6Imh0dHBz
+        Oi8vd3d3LmJvb2tpbmdzeW5jLmNvbS9hcGkvdjMvcmV2aWV3cy97cmVudGFs
+        cy5yZXZpZXdzfSIsInJlbnRhbHMuc3BlY2lhbF9vZmZlcnMiOiJodHRwczov
+        L3d3dy5ib29raW5nc3luYy5jb20vYXBpL3YzL3NwZWNpYWxfb2ZmZXJzL3ty
+        ZW50YWxzLnNwZWNpYWxfb2ZmZXJzfSIsInJlbnRhbHMucmF0ZXMiOiJodHRw
+        czovL3d3dy5ib29raW5nc3luYy5jb20vYXBpL3YzL3JhdGVzL3tyZW50YWxz
+        LnJhdGVzfSIsInJlbnRhbHMucmVudGFsc19hbWVuaXRpZXMiOiJodHRwczov
+        L3d3dy5ib29raW5nc3luYy5jb20vYXBpL3YzL3JlbnRhbHNfYW1lbml0aWVz
+        L3tyZW50YWxzLnJlbnRhbHNfYW1lbml0aWVzfSIsInJlbnRhbHMucmVudGFs
+        c19mZWVzIjoiaHR0cHM6Ly93d3cuYm9va2luZ3N5bmMuY29tL2FwaS92My9y
+        ZW50YWxzX2ZlZXMve3JlbnRhbHMucmVudGFsc19mZWVzfSIsInJlbnRhbHMu
+        YmF0aHJvb21zIjoiaHR0cHM6Ly93d3cuYm9va2luZ3N5bmMuY29tL2FwaS92
+        My9iYXRocm9vbXMve3JlbnRhbHMuYmF0aHJvb21zfSIsInJlbnRhbHMuYmVk
+        cm9vbXMiOiJodHRwczovL3d3dy5ib29raW5nc3luYy5jb20vYXBpL3YzL2Jl
+        ZHJvb21zL3tyZW50YWxzLmJlZHJvb21zfSIsInJlbnRhbHMubGl2aW5nX3Jv
+        b21zIjoiaHR0cHM6Ly93d3cuYm9va2luZ3N5bmMuY29tL2FwaS92My9saXZp
+        bmdfcm9vbXMve3JlbnRhbHMubGl2aW5nX3Jvb21zfSIsInJlbnRhbHMucmVu
+        dGFsc190YWdzIjoiaHR0cHM6Ly93d3cuYm9va2luZ3N5bmMuY29tL2FwaS92
+        My9yZW50YWxzX3RhZ3Mve3JlbnRhbHMucmVudGFsc190YWdzfSIsInJlbnRh
+        bHMucmVudGFsX2NvbnRhY3RzIjoiaHR0cHM6Ly93d3cuYm9va2luZ3N5bmMu
+        Y29tL2FwaS92My9yZW50YWxfY29udGFjdHMve3JlbnRhbHMucmVudGFsX2Nv
+        bnRhY3RzfSJ9LCJyZW50YWxzIjpbeyJsaW5rcyI6eyJhY2NvdW50IjozODM3
+        LCJhdmFpbGFiaWxpdHkiOjM0NjgsImJhdGhyb29tcyI6WzczMSw3MzJdLCJi
+        ZWRyb29tcyI6W10sImNoYW5nZV9vdmVyIjozNDY5LCJkZXN0aW5hdGlvbiI6
+        NzMwMSwibGl2aW5nX3Jvb21zIjpbXSwibmlnaHRseV9yYXRlX21hcCI6MzQ2
+        OCwicGF5bWVudF9nYXRld2F5IjpudWxsLCJwaG90b3MiOls1Nzg5LDU3ODQs
+        NTc4NSw1Nzg2LDU3ODcsNTc4OCw1NzkwLDU3OTEsNTc5Miw1NzkzXSwicmF0
+        ZXMiOls3MjIzODIxXSwicmF0ZXNfdGFibGUiOjI3NCwicmVudGFsX2FncmVl
+        bWVudCI6Mjk4NjEsInJlbnRhbF9jYW5jZWxhdGlvbl9wb2xpY3kiOjE2NjY1
+        LCJyZW50YWxfY29udGFjdHMiOlsxMl0sInJlbnRhbHNfYW1lbml0aWVzIjpb
+        NjE2MCw2MTYxLDYxNjIsNjE2Myw2MTY0LDYxNjUsNjE2Niw2MTY3LDYxNjgs
+        NjE2OSw2MTcwLDYxNzEsNjE3Miw2MTczLDYxNzQsNjE3NSw2MTc2LDYxNzcs
+        NjE3OCw2MTc5LDYxODAsNjE4MSw2MTgyLDYxODMsNjE4NCw2MTg1LDYxODYs
+        NjE4Nyw2MTg4LDYxODksNjE1OV0sInJlbnRhbHNfZmVlcyI6W10sInJlbnRh
+        bHNfdGFncyI6WzY1XSwicmV2aWV3cyI6WzgwNDU5XSwic3BlY2lhbF9vZmZl
+        cnMiOlsxNTgzXX0sImlkIjo1MTE3LCJuYW1lIjoiVmlsbGEgQW1vdWRpYSIs
+        ImhlYWRsaW5lIjp7ImVuIjoiY3VzdG9tIGVuZ2xpc2ggaGVhZGxpbmUiLCJm
+        ciI6IlZpbGxhIEFtb3VkaWEgLSBMdXh1ZXVzZSB2aWxsYSBkaXJlY3RlbWVu
+        dCBzdXIgbGEgcGxhZ2UgYXZlY3Bpc2NpbmUgcHJpdsOpZSJ9LCJzdW1tYXJ5
+        Ijp7ImVuIjoiUmlnaHQgb24gdGhlIEJlYWNoIG9mIFNpdm90YSB3aXRoIFBy
+        aXZhdGUgUG9vbCBhbmQgaGlnaCBzdGFuZGFyZCBlcXVpcG1lbnQiLCJmciI6
+        IkRpcmVjdGVtZW50IHN1ciBsYSBwbGFnZSBkZSBTaXZvdGEgYXZlYyBwaXNj
+        aW5lIHByaXbDqWUgZXQgw6lxdWlwZW1lbnRzIGhhdXQgZGUgZ2FtbWUuIn0s
+        ImRlc2NyaXB0aW9uIjp7ImVuIjoiUHJvdmlkaW5nIGV2ZXJ5dGhpbmcgeW91
+        IG5lZWQgYW5kIHNldCBpbiBhIHBlcmZlY3QgbG9jYXRpb24sIFZpbGxhIEFt
+        b3VkaWEgaXMgaWRlYWwgZm9yIGZhbWlsaWVzIHdpdGgga2lkcyBvciB0aG9z
+        ZSB3aG8gd2FudCB0byBoYXZlIGV2ZXJ5dGhpbmcgY2xvc2UgYnkgd2l0aG91
+        dCBoYXZpbmcgdG8gcmVseSBvbiBhIGNhci4gRGVzaWduZWQgd2l0aCBzdHls
+        ZSBhbmQgYnVpbHQgYnkgdGhvc2Ugd2l0aCBleHBlcmllbmNlLCB0aGlzIHZp
+        bGxhIGlzIHRoZSBwZXJmZWN0IHBsYWNlIHRvIGVuam95IHZpZXdpbmcgdGhl
+        IHNtYWxsIGhhcmJvdXIsIHRoZSBzYWlsaW5nIGJvYXRzLCBhbmQgZmlzaGVy
+        bWVuIGVtcHR5aW5nIHRoZWlyIG5ldHMuIFRoZSB2aWxsYSBvZmZlciBob21l
+        IGF1dG9tYXRpb24gaW5zdGFsbGF0aW9uIGFuZCBoaWdoIHN0YW5kYXJkIGVx
+        dWlwbWVudCB3aXRoIGxhc3QtZ2VuZXJhdGlvbiBMQ0QgVFZzIGFuZCBzb3Vu
+        ZCBzeXN0ZW0uXHJcblxyXG5PVVRTSURFIFxyXG5Td2ltbWluZyBwb29sIHdp
+        dGggb3ZlcmZsb3cgYW5kIHNvbGFyIHNob3dlciwgc3RvbmUgdGVycmFjZSB3
+        aXRoIGJlYXV0aWZ1bCB2aWV3IG9mIHRoZSBiZWFjaCBhbmQgdGhlIHZpbGxh
+        Z2Ugb2YgU2l2b3RhLiBTdW1tZXIgZGluaW5nIHJvb20uIExpdmluZyByb29t
+        IGluIHRoZSBtaWRkbGUgb2Ygb2xpdmUgdHJlZXMgYW5kIGRpcmVjdCBhY2Nl
+        c3MgdG8gdGhlIGJlYWNoLlxyXG5cclxuR1JPVU5EIEZMT09SIFxyXG5MaXZp
+        bmcgcm9vbSAoVFYgU2F0ZWxsaXRlLCBXaUZpIGludGVybmV0IGNvbm5lY3Rp
+        b24sLi4uKSBGdWxseSBlcXVpcHBlZCBraXRjaGVuIGFuZCBkaW5pbmcgcm9v
+        bS4gT25lIGJlZHJvb20gd2l0aCBRdWVlbiBzaXplIGJlZCBhbmQgYmF0aHJv
+        b20gd2l0aCBzaG93ZXIuIE9uZSBleHRyYSBXQ1xyXG5cclxuR0FSREVOIEZM
+        T09SIFxyXG5PbmUgYmVkcm9vbSB3aXRoIHR3aW4gYmVkcyBhbmQgYmF0aHJv
+        b20uIFV0aWxpdHkgcm9vbSAod2FzaGluZyBtYWNoaW5lLCBpcm9uLCBpcm9u
+        IGJvYXJkKVxyXG5cclxuTUVaWkFOSU5FIFxyXG5PbmUgYmVkcm9vbSB3aXRo
+        IHR3aW4gYmVkc1xyXG5cclxuVmlzaXQgdGhpcyB3b25kZXJmdWwgdmlsbGEg
+        YnkgeW91cnNlbGYgd2l0aCBvdXIgMzYwIHZpcnR1YWwgdG91ciwgYXZhaWxh
+        YmxlIG9uIG91ciB3ZWJzaXRlOiBWaWxsYXNUaGFsYXNzYSIsImZyIjoiUHJv
+        dmlkaW5nIGV2ZXJ5dGhpbmcgeW91IG5lZWQgYW5kIHNldCBpbiBhIHBlcmZl
+        Y3QgbG9jYXRpb24sIFZpbGxhIEFtb3VkaWEgaXMgaWRlYWwgZm9yIGZhbWls
+        aWVzIHdpdGgga2lkcyBvciB0aG9zZSB3aG8gd2FudCB0byBoYXZlIGV2ZXJ5
+        dGhpbmcgY2xvc2UgYnkgd2l0aG91dCBoYXZpbmcgdG8gcmVseSBvbiBhIGNh
+        ci4gRGVzaWduZWQgd2l0aCBzdHlsZSBhbmQgYnVpbHQgYnkgdGhvc2Ugd2l0
+        aCBleHBlcmllbmNlLCB0aGlzIHZpbGxhIGlzIHRoZSBwZXJmZWN0IHBsYWNl
+        IHRvIGVuam95IHZpZXdpbmcgdGhlIHNtYWxsIGhhcmJvdXIsIHRoZSBzYWls
+        aW5nIGJvYXRzLCBhbmQgZmlzaGVybWVuIGVtcHR5aW5nIHRoZWlyIG5ldHMu
+        IFRoZSB2aWxsYSBvZmZlciBob21lIGF1dG9tYXRpb24gaW5zdGFsbGF0aW9u
+        IGFuZCBoaWdoIHN0YW5kYXJkIGVxdWlwbWVudCB3aXRoIGxhc3QtZ2VuZXJh
+        dGlvbiBMQ0QgVFZzIGFuZCBzb3VuZCBzeXN0ZW0uXHJcblxyXG5PVVRTSURF
+        IFxyXG5Td2ltbWluZyBwb29sIHdpdGggb3ZlcmZsb3cgYW5kIHNvbGFyIHNo
+        b3dlciwgc3RvbmUgdGVycmFjZSB3aXRoIGJlYXV0aWZ1bCB2aWV3IG9mIHRo
+        ZSBiZWFjaCBhbmQgdGhlIHZpbGxhZ2Ugb2YgU2l2b3RhLiBTdW1tZXIgZGlu
+        aW5nIHJvb20uIExpdmluZyByb29tIGluIHRoZSBtaWRkbGUgb2Ygb2xpdmUg
+        dHJlZXMgYW5kIGRpcmVjdCBhY2Nlc3MgdG8gdGhlIGJlYWNoLlxyXG5cclxu
+        R1JPVU5EIEZMT09SIFxyXG5MaXZpbmcgcm9vbSAoVFYgU2F0ZWxsaXRlLCBX
+        aUZpIGludGVybmV0IGNvbm5lY3Rpb24sLi4uKSBGdWxseSBlcXVpcHBlZCBr
+        aXRjaGVuIGFuZCBkaW5pbmcgcm9vbS4gT25lIGJlZHJvb20gd2l0aCBRdWVl
+        biBzaXplIGJlZCBhbmQgYmF0aHJvb20gd2l0aCBzaG93ZXIuIE9uZSBleHRy
+        YSBXQ1xyXG5cclxuR0FSREVOIEZMT09SIFxyXG5PbmUgYmVkcm9vbSB3aXRo
+        IHR3aW4gYmVkcyBhbmQgYmF0aHJvb20uIFV0aWxpdHkgcm9vbSAod2FzaGlu
+        ZyBtYWNoaW5lLCBpcm9uLCBpcm9uIGJvYXJkKVxyXG5cclxuTUVaWkFOSU5F
+        IFxyXG5PbmUgYmVkcm9vbSB3aXRoIHR3aW4gYmVkc1xyXG5cclxuVmlzaXQg
+        dGhpcyB3b25kZXJmdWwgdmlsbGEgYnkgeW91cnNlbGYgd2l0aCBvdXIgMzYw
+        IHZpcnR1YWwgdG91ciwgYXZhaWxhYmxlIG9uIG91ciB3ZWJzaXRlOiBWaWxs
+        YXNUaGFsYXNzYSJ9LCJyZW50YWxfdHlwZSI6InZpbGxhIiwiZG93bnBheW1l
+        bnQiOjMwLCJiZWRyb29tc19jb3VudCI6MCwic2xlZXBzIjo0LCJzbGVlcHNf
+        bWF4Ijo2LCJiYXRocm9vbXNfY291bnQiOjIsInN1cmZhY2UiOjEyMCwic3Vy
+        ZmFjZV91bml0IjoibWV0cmljIiwiYm9va2FibGVfb25saW5lIjpmYWxzZSwi
+        Ym9va2FibGVfb25fcmVxdWVzdCI6dHJ1ZSwibWluX3ByaWNlIjoiMjgxMi4w
+        IiwibWF4X3ByaWNlIjoiMjgxMi4wIiwicHJpY2Vfa2luZCI6IndlZWtseSIs
+        ImN1cnJlbmN5IjoiRVVSIiwicHJpY2VfcHVibGljX25vdGVzIjp7fSwibGF0
+        Ijo0NS4wMTkyMTUsImxuZyI6Ni42MDQ5MDEwMDAwMDAwNCwiY2l0eSI6Ik5l
+        dmFjaGUiLCJzdGF0ZSI6IiIsImNvdW50cnlfY29kZSI6IkZSIiwiY29udGFj
+        dF9uYW1lIjoiU2ViIiwicmV2aWV3c19jb3VudCI6MSwicmV2aWV3c19hdmVy
+        YWdlX3JhdGluZyI6IjUuMCIsInB1Ymxpc2hlZF9hdCI6IjIwMTctMDktMTRU
+        MTc6MTQ6NTdaIiwiY3JlYXRlZF9hdCI6IjIwMTQtMDgtMDhUMTk6Mjg6MTVa
+        IiwidXBkYXRlZF9hdCI6IjIwMTctMTEtMjdUMTM6MzQ6MDBaIiwiYWRkcmVz
+        czEiOiI1dGggYXZlbnVlIiwiYWRkcmVzczIiOiIxMjMiLCJ6aXAiOiIwNTEw
+        MCIsImNoZWNraW5fdGltZSI6MTYsImNoZWNrb3V0X3RpbWUiOjEwLCJpbml0
+        aWFsX3ByaWNlIjpudWxsLCJmaW5hbF9wcmljZSI6bnVsbCwicG9zaXRpb24i
+        OjIsImJhc2VfcmF0ZSI6IjMxNjAuMCIsImJhc2VfcmF0ZV9raW5kIjoid2Vl
+        a2x5IiwiYWJzb2x1dGVfbWluX3ByaWNlIjoiNjAuMCIsIm5vdGVzIjoiIiwi
+        c3Rvcmllc19jb3VudCI6bnVsbCwiZmxvb3IiOiIiLCJkYW1hZ2VfZGVwb3Np
+        dCI6IjAuMCIsIm93bmVyX2Z1bGxuYW1lIjpudWxsLCJvd25lcl9lbWFpbCI6
+        bnVsbCwib3duZXJfbm90ZXMiOm51bGwsImNoZWNraW5fZGV0YWlscyI6e30s
+        ImNoZWNrb3V0X2RldGFpbHMiOnt9LCJiYWxhbmNlX2R1ZSI6MzAsIndlYnNp
+        dGVfdXJsIjp7fSwiY2hhcmdlX2RhbWFnZV9kZXBvc2l0X29uX2Fycml2YWwi
+        OnRydWUsImZ1bGxfYmF0aHJvb21zX2NvdW50IjowLCJzdGFuZGFsb25lX3Rv
+        aWxldHNfY291bnQiOjAsInZyX2JhdGhyb29tc19jb3VudCI6MiwibmlnaHRs
+        eV9yYXRlc19tYW5hZ2VkX2V4dGVybmFsbHkiOmZhbHNlLCJyb3VuZGluZ19r
+        aW5kIjoibm8tcm91bmRpbmciLCJvcmlnaW5hbF9jdXJyZW5jeSI6IkVVUiIs
+        ImV4Y2hhbmdlX3JhdGUiOiIxLjAiLCJwZXJtaXRfbnVtYmVyIjpudWxsLCJh
+        YnNvbHV0ZV9taW5fc3RheSI6Mn1dLCJtZXRhIjp7IkxpbmsiOnsiZmlyc3Qi
+        OiJodHRwczovL3d3dy5ib29raW5nc3luYy5jb20vYXBpL3YzL3JlbnRhbHMv
+        NTExNz9wYWdlPTEiLCJsYXN0IjoiaHR0cHM6Ly93d3cuYm9va2luZ3N5bmMu
+        Y29tL2FwaS92My9yZW50YWxzLzUxMTc/cGFnZT0xIn0sIlgtVG90YWwtUGFn
+        ZXMiOiIxIiwiWC1Ub3RhbC1Db3VudCI6IjEiLCJYLVBlci1QYWdlIjoiNTAi
+        fX0=
+    http_version: 
+  recorded_at: Mon, 27 Nov 2017 14:11:59 GMT
+recorded_with: VCR 3.0.3

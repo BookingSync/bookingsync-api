@@ -32,6 +32,7 @@ require "bookingsync/api/client/rentals_amenities"
 require "bookingsync/api/client/rental_agreements"
 require "bookingsync/api/client/rental_cancelation_policies"
 require "bookingsync/api/client/rental_cancelation_policy_items"
+require "bookingsync/api/client/rentals_contents_overrides"
 require "bookingsync/api/client/reviews"
 require "bookingsync/api/client/seasons"
 require "bookingsync/api/client/special_offers"
@@ -44,6 +45,7 @@ require "bookingsync/api/resource"
 require "bookingsync/api/serializer"
 require "logger"
 require "addressable/template"
+require "net/http/persistent"
 
 module BookingSync::API
   class Client
@@ -81,6 +83,7 @@ module BookingSync::API
     include BookingSync::API::Client::RentalAgreements
     include BookingSync::API::Client::RentalCancelationPolicies
     include BookingSync::API::Client::RentalCancelationPolicyItems
+    include BookingSync::API::Client::RentalsContentsOverrides
     include BookingSync::API::Client::Reviews
     include BookingSync::API::Client::Seasons
     include BookingSync::API::Client::SpecialOffers
@@ -142,6 +145,15 @@ module BookingSync::API
     # @return [Array<BookingSync::API::Resource>]
     def put(path, options = {})
       request :put, path, options
+    end
+
+    # Make a HTTP PATCH request
+    #
+    # @param path [String] The path, relative to {#api_endpoint}
+    # @param options [Hash] Body params for the request
+    # @return [Array<BookingSync::API::Resource>]
+    def patch(path, options = {})
+      request :patch, path, options
     end
 
     # Make a HTTP DELETE request
@@ -266,6 +278,7 @@ module BookingSync::API
 
     def middleware
       Faraday::RackBuilder.new do |builder|
+        builder.use ::Faraday::Request::Retry, max: 1, exceptions: [::Net::HTTP::Persistent::Error]
         builder.use :logger, logger
         builder.adapter :net_http_persistent
       end

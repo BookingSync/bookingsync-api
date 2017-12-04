@@ -30,7 +30,7 @@ describe BookingSync::API::Client::RentalsAmenities do
     }
 
     it "returns rentals_amenity" do
-      amenity = client.rentals_amenity(prefetched_rentals_amenity_id)
+      client.rentals_amenity(prefetched_rentals_amenity_id)
       assert_requested :get, bs_url("rentals_amenities/#{prefetched_rentals_amenity_id}")
     end
   end
