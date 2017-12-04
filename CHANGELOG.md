@@ -2,6 +2,7 @@
 
 ## master
 
+- Add support for `bookings_tags` endpoint.
 - Add support for `rentals_contents_overrides` endpoint.
 
 ## 0.1.7 - 2017-11-30
