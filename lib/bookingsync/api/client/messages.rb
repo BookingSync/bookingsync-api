@@ -29,8 +29,10 @@ module BookingSync::API
       #
       # @param options [Hash] Message's attributes.
       # @return [BookingSync::API::Resource] Newly created message.
-      def create_message(options = {})
-        post(:messages, messages: [options]).pop
+      def create_message(conversation, participant, options = {})
+        post(:messages, messages: [
+          options.merge(conversation_id: conversation.id, participant_id: participant.id)
+        ]).pop
       end
 
       # Edit a message
