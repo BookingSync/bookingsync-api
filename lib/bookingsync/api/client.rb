@@ -38,6 +38,10 @@ require "bookingsync/api/client/seasons"
 require "bookingsync/api/client/special_offers"
 require "bookingsync/api/client/sources"
 require "bookingsync/api/client/taxes"
+require "bookingsync/api/client/attachments"
+require "bookingsync/api/client/conversations"
+require "bookingsync/api/client/messages"
+require "bookingsync/api/client/participants"
 require "bookingsync/api/error"
 require "bookingsync/api/relation"
 require "bookingsync/api/response"
@@ -52,6 +56,7 @@ module BookingSync::API
     extend Forwardable
     include BookingSync::API::Client::Accounts
     include BookingSync::API::Client::Amenities
+    include BookingSync::API::Client::Attachments
     include BookingSync::API::Client::Availabilities
     include BookingSync::API::Client::Bathrooms
     include BookingSync::API::Client::Bedrooms
@@ -62,13 +67,16 @@ module BookingSync::API
     include BookingSync::API::Client::BookingsTags
     include BookingSync::API::Client::BookingsTaxes
     include BookingSync::API::Client::ChangeOvers
+    include BookingSync::API::Client::Conversations
     include BookingSync::API::Client::Clients
     include BookingSync::API::Client::Destinations
     include BookingSync::API::Client::Fees
     include BookingSync::API::Client::Inquiries
     include BookingSync::API::Client::LivingRooms
+    include BookingSync::API::Client::Messages
     include BookingSync::API::Client::NightlyRateMaps
     include BookingSync::API::Client::StrictBookings
+    include BookingSync::API::Client::Participants
     include BookingSync::API::Client::Periods
     include BookingSync::API::Client::Payments
     include BookingSync::API::Client::PaymentGateways
