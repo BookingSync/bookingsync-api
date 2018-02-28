@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/participants/4
+    body:
+      encoding: UTF-8
+      string: '{"participants":[{"read_at":"2018-02-28T13:40:56+01:00"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.8
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"9c8c63a45110c0c5279cb77e54a024c2"
+      Location:
+      - "/api/v3/participants/4"
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=699b208e-ff63-49d7-a5ee-4a0cdd0a1c05; path=/; expires=Wed, 07 Mar
+        2018 12:40:56 -0000
+      - ahoy_visitor=f48d5364-bb2a-45bc-938f-e81afad12ed9; path=/; expires=Fri, 28
+        Feb 2020 12:40:56 -0000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '999'
+      X-Ratelimit-Reset:
+      - '1519822800'
+      X-Request-Id:
+      - 209674a1-1a8e-40e3-ab30-0f8690cf99e0
+      X-Runtime:
+      - '12.877733'
+      X-Updated-Since-Request-Synced-At:
+      - 2018-02-28 12:40:56 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Wed, 28 Feb 2018 12:41:09 GMT
+      Content-Length:
+      - '510'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"participants.conversation":"https://www.bookingsync.com/api/v3/conversations/{participants.conversation}","participants.client":"https://www.bookingsync.com/api/v3/clients/{participants.member.id}","participants.user":"https://www.bookingsync.com/api/v3/users/{participants.member.id}"},"participants":[{"links":{"conversation":1,"member":{"id":1,"type":"Client"}},"created_at":"2018-02-28T12:40:56Z","id":4,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-02-28T12:40:56Z"}],"meta":{}}'
+    http_version:
+  recorded_at: Wed, 28 Feb 2018 12:41:09 GMT
+recorded_with: VCR 4.0.0

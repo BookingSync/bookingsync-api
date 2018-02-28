@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/conversations/6
+    body:
+      encoding: UTF-8
+      string: '{"conversations":[{"closed":true}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.8
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"b309e999b610162ae5d59783eddcf8c5"
+      Location:
+      - "/api/v3/conversations/6"
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=fe289f03-1fa0-4ee9-8e6a-c2148cdd93c8; path=/; expires=Wed, 07 Mar
+        2018 10:24:06 -0000
+      - ahoy_visitor=8d1bde69-b433-4f61-aedc-8fec52cf8813; path=/; expires=Fri, 28
+        Feb 2020 10:24:06 -0000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '999'
+      X-Ratelimit-Reset:
+      - '1519815600'
+      X-Request-Id:
+      - 44ff38ff-77f9-4f99-82f8-8bd38b71a5a7
+      X-Runtime:
+      - '0.359475'
+      X-Updated-Since-Request-Synced-At:
+      - 2018-02-28 10:24:06 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Wed, 28 Feb 2018 10:24:06 GMT
+      Content-Length:
+      - '810'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"conversations.account":"https://www.bookingsync.com/api/v3/accounts/{conversations.account}","conversations.assignee":"https://www.bookingsync.com/api/v3/users/{conversations.assignee}","conversations.bookings":"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}","conversations.inquiries":"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}","conversations.source":"https://www.bookingsync.com/api/v3/sources/{conversations.source}"},"conversations":[{"links":{"account":1,"assignee":null,"bookings":[],"inquiries":[],"source":null},"closed_at":"2018-02-28T10:24:06Z","created_at":"2018-02-28T10:24:06Z","deadline_response_at":null,"id":6,"last_message_at":null,"marked_as_spam_at":null,"subject":"New
+        Question","updated_at":"2018-02-28T10:24:06Z"}],"meta":{}}'
+    http_version:
+  recorded_at: Wed, 28 Feb 2018 10:24:06 GMT
+recorded_with: VCR 4.0.0
