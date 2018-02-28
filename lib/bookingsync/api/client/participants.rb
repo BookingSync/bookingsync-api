@@ -49,7 +49,7 @@ module BookingSync::API
       #   exception is raised otherwise.
       # @example
       #   participant = @api.participants.first
-      #   @api.edit_participant(participant, { read_at: "Fri, 02 Mar 2018 17:06:41 UTC +00:00" })
+      #   @api.edit_participant(participant, { read: true })
       def edit_participant(participant, options = {})
         put("participants/#{participant}", participants: [options]).pop
       end

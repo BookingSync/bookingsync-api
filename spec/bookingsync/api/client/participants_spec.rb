@@ -25,7 +25,7 @@ describe BookingSync::API::Client::Participants do
 
   describe ".create_participant", :vcr do
     let(:attributes) do
-      { read_at: DateTime.now }
+      { read: false }
     end
     let(:conversation) { BookingSync::API::Resource.new(client, id: 1) }
     let(:member) { BookingSync::API::Resource.new(client, id: 1) }
@@ -48,13 +48,14 @@ describe BookingSync::API::Client::Participants do
         participant = client.create_participant(conversation, member, attributes)
         expect(participant[:links][:conversation]).to eq(1)
         expect(participant[:links][:member][:id]).to eq(1)
+        expect(participant.read_at).to be_nil
       end
     end
   end
 
   describe ".edit_participant", :vcr do
     let(:attributes) do
-      { read_at: DateTime.now }
+      { read: true }
     end
     let(:created_participant_id) {
       find_resource("#{@casette_base_path}_create_participant/creates_a_new_participant.yml", "participants")[:id]
@@ -70,7 +71,7 @@ describe BookingSync::API::Client::Participants do
       VCR.use_cassette("BookingSync_API_Client_Participants/_edit_participant/updates_given_participant_by_ID") do
         participant = client.edit_participant(created_participant_id, attributes)
         expect(participant).to be_kind_of(BookingSync::API::Resource)
-        expect(participant.updated_at).to be_truthy
+        expect(participant.read_at).to be_truthy
       end
     end
   end
