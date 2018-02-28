@@ -48,6 +48,8 @@ describe BookingSync::API::Client::Messages do
       VCR.use_cassette("BookingSync_API_Client_Messages/_create_message/creates_a_new_message") do
         message = client.create_message(conversation, participant, attributes)
         expect(message.content).to eq("Message content")
+        expect(message.origin).to eq("homeaway")
+        expect(message.visibility).to eq("all")
       end
     end
   end

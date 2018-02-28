@@ -38,7 +38,6 @@ require "bookingsync/api/client/seasons"
 require "bookingsync/api/client/special_offers"
 require "bookingsync/api/client/sources"
 require "bookingsync/api/client/taxes"
-require "bookingsync/api/client/attachments"
 require "bookingsync/api/client/conversations"
 require "bookingsync/api/client/messages"
 require "bookingsync/api/client/participants"
@@ -56,7 +55,6 @@ module BookingSync::API
     extend Forwardable
     include BookingSync::API::Client::Accounts
     include BookingSync::API::Client::Amenities
-    include BookingSync::API::Client::Attachments
     include BookingSync::API::Client::Availabilities
     include BookingSync::API::Client::Bathrooms
     include BookingSync::API::Client::Bedrooms
