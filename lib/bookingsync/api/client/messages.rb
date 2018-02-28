@@ -27,6 +27,10 @@ module BookingSync::API
 
       # Create a new message
       #
+      # @param conversation [BookingSync::API::Resource|Integer] Conversation object or ID
+      #   for which conversation message will be created.
+      # @param participant [BookingSync::API::Resource|Integer] Participant object or ID
+      #   for which participant message will be created.
       # @param options [Hash] Message's attributes.
       # @return [BookingSync::API::Resource] Newly created message.
       def create_message(conversation, participant, options = {})

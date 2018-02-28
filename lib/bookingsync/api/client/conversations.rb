@@ -42,7 +42,7 @@ module BookingSync::API
       #   exception is raised otherwise.
       # @example
       #   conversation = @api.conversations.first
-      #   @api.edit_conversation(conversation, { subject: "Question" })
+      #   @api.edit_conversation(conversation, { closed: true })
       def edit_conversation(conversation, options = {})
         put("conversations/#{conversation}", conversations: [options]).pop
       end
