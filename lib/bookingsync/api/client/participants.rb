@@ -33,10 +33,10 @@ module BookingSync::API
       #   for which member participant will be created.
       # @param options [Hash] Participant's attributes.
       # @return [BookingSync::API::Resource] Newly created participant.
-      def create_participant(conversation, member, options = {})
+      def create_participant(conversation, member_id:, member_type:, **options)
         post(:participants, participants: [
           options.merge(conversation_id: conversation.id,
-            member_id: member.id, member_type: member.class.name)
+            member_id: member_id, member_type: member_type)
         ]).pop
       end
 
