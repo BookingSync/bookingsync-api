@@ -27,16 +27,10 @@ module BookingSync::API
 
       # Create a new conversation
       #
-      # @param assignee [BookingSync::API::Resource|Integer] User object or ID
-      #   for which assignee conversation will be created.
-      # @param source [BookingSync::API::Resource] Source object or ID
-      #   for which source conversation will be created.
       # @param options [Hash] Conversation's attributes.
       # @return [BookingSync::API::Resource] Newly created conversation.
-      def create_conversation(assignee, source, options = {})
-        post(:conversations, conversations: [
-          options.merge(assignee_id: assignee.id, source_id: source.id)
-        ]).pop
+      def create_conversation(options = {})
+        post(:conversations, conversations: [options]).pop
       end
 
       # Edit a conversation
@@ -49,8 +43,8 @@ module BookingSync::API
       # @example
       #   conversation = @api.conversations.first
       #   @api.edit_conversation(conversation, { closed: true })
-      def edit_conversation(conversation, assignee, options = {})
-        put("conversations/#{conversation}", conversations: [options.merge(assignee_id: assignee.id)]).pop
+      def edit_conversation(conversation, options = {})
+        put("conversations/#{conversation}", conversations: [options]).pop
       end
     end
   end

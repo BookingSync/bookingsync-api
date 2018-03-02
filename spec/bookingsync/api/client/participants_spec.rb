@@ -70,7 +70,7 @@ describe BookingSync::API::Client::Participants do
       VCR.use_cassette("BookingSync_API_Client_Participants/_edit_participant/updates_given_participant_by_ID") do
         participant = client.edit_participant(created_participant_id, attributes)
         expect(participant).to be_kind_of(BookingSync::API::Resource)
-        expect(participant.read_at).to be_truthy
+        expect(participant.read_at.to_s).not_to be_empty
       end
     end
   end
