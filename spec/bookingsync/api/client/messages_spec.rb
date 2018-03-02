@@ -24,29 +24,27 @@ describe BookingSync::API::Client::Messages do
   end
 
   describe ".create_message", :vcr do
+    let(:conversation) { BookingSync::API::Resource.new(client, id: 1) }
+    let(:participant) { BookingSync::API::Resource.new(client, id: 1) }
     let(:attributes) do
       {
         content: "Message content",
         origin: "homeaway",
-        visibility: "all"
+        visibility: "all",
+        conversation_id: conversation.id,
+        participant_id: participant.id
       }
     end
-    let(:conversation) { BookingSync::API::Resource.new(client, id: 1) }
-    let(:participant) { BookingSync::API::Resource.new(client, id: 1) }
 
     it "creates a new message" do
-      client.create_message(conversation, participant, attributes)
+      client.create_message(attributes)
       assert_requested :post, bs_url("messages"),
-        body: {
-          messages: [
-            attributes.merge(conversation_id: conversation.id, participant_id: participant.id)
-          ]
-        }.to_json
+        body: { messages: [attributes] }.to_json
     end
 
     it "returns newly created message" do
       VCR.use_cassette("BookingSync_API_Client_Messages/_create_message/creates_a_new_message") do
-        message = client.create_message(conversation, participant, attributes)
+        message = client.create_message(attributes)
         expect(message.content).to eq("Message content")
         expect(message.origin).to eq("homeaway")
         expect(message.visibility).to eq("all")

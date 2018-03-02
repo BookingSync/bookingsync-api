@@ -24,26 +24,26 @@ describe BookingSync::API::Client::Participants do
   end
 
   describe ".create_participant", :vcr do
-    let(:attributes) do
-      { read: false }
-    end
     let(:conversation) { BookingSync::API::Resource.new(client, id: 1) }
     let(:member) { BookingSync::API::Resource.new(client, id: 1, type: "Client") }
+    let(:attributes) do
+      {
+        read: false,
+        conversation_id: conversation.id,
+        member_id: member.id,
+        member_type: member.type
+      }
+    end
 
     it "creates a new participant" do
-      client.create_participant(conversation, member_id: member.id, member_type: member.type, **attributes)
+      client.create_participant(attributes)
       assert_requested :post, bs_url("participants"),
-        body: {
-          participants: [
-            attributes.merge(conversation_id: conversation.id,
-              member_id: member.id, member_type: member.type)
-          ]
-        }.to_json
+        body: { participants: [attributes] }.to_json
     end
 
     it "returns newly created participant" do
       VCR.use_cassette("BookingSync_API_Client_Participants/_create_participant/creates_a_new_participant") do
-        participant = client.create_participant(conversation, member_id: member.id, member_type: member.type, **attributes)
+        participant = client.create_participant(attributes)
         expect(participant[:links][:conversation]).to eq(conversation.id)
         expect(participant[:links][:member][:id]).to eq(member.id)
         expect(participant[:links][:member][:type]).to eq(member.type)

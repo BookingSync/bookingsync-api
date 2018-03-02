@@ -58,7 +58,7 @@ describe BookingSync::API::Client::Conversations do
     it "updates given conversation by ID" do
       client.edit_conversation(created_conversation_id, attributes)
       assert_requested :put, bs_url("conversations/#{created_conversation_id}"),
-        body: { conversations: [attributes.merge(assignee_id: new_conversation_assignee.id)] }.to_json
+        body: { conversations: [attributes] }.to_json
     end
 
     it "returns updated conversation" do
