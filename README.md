@@ -70,6 +70,19 @@ api.last_response.meta # => {"deleted_ids" => [1, 3, 4]}
 api.pagination_first_response.meta # => {"deleted_ids" => [1, 3, 4]}
 ```
 
+### Adjust headers dynamically
+
+If you need to add custom headers you can use `#with_headers` method. It accepts hash of headers
+that should be added to next request and yields client. It resets headers to default ones at the end
+and returns result of last operation specified inside block.
+
+```ruby
+api.with_headers("x-awesome-header" => "you-bet-i-am") do |adjusted_api_client|
+  adjusted_api_client.rentals
+end
+=> [BookingSync::API::Resource, BookingSync::API::Resource]
+```
+
 ### Logging
 
 Sometimes it's useful to see what data bookingsync-api gem sends and what it

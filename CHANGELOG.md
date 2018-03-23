@@ -1,5 +1,9 @@
 # Changelog
 
+# master
+
+- Enable dynamic override of headers per request.
+
 ## 0.1.8 - 2017-12-05
 
 - Add support for `bookings_tags` endpoint.
