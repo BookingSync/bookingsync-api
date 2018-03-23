@@ -8,7 +8,7 @@ describe BookingSync::API::Client::Conversations do
   describe ".conversations", :vcr do
     it "returns conversations" do
       expect(client.conversations).not_to be_empty
-      assert_requested :get, bs_url("conversations")
+      assert_requested :get, bs_url("inbox/conversations")
     end
   end
 
@@ -32,7 +32,7 @@ describe BookingSync::API::Client::Conversations do
 
     it "creates a new conversation" do
       client.create_conversation(attributes)
-      assert_requested :post, bs_url("conversations"),
+      assert_requested :post, bs_url("inbox/conversations"),
         body: { conversations: [attributes] }.to_json
     end
 
@@ -57,7 +57,7 @@ describe BookingSync::API::Client::Conversations do
 
     it "updates given conversation by ID" do
       client.edit_conversation(created_conversation_id, attributes)
-      assert_requested :put, bs_url("conversations/#{created_conversation_id}"),
+      assert_requested :put, bs_url("inbox/conversations/#{created_conversation_id}"),
         body: { conversations: [attributes] }.to_json
     end
 

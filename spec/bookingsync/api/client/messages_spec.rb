@@ -8,7 +8,7 @@ describe BookingSync::API::Client::Messages do
   describe ".messages", :vcr do
     it "returns messages" do
       expect(client.messages).not_to be_empty
-      assert_requested :get, bs_url("messages")
+      assert_requested :get, bs_url("inbox/messages")
     end
   end
 
@@ -32,13 +32,13 @@ describe BookingSync::API::Client::Messages do
         origin: "homeaway",
         visibility: "all",
         conversation_id: conversation.id,
-        participant_id: participant.id
+        sender_id: participant.id
       }
     end
 
     it "creates a new message" do
       client.create_message(attributes)
-      assert_requested :post, bs_url("messages"),
+      assert_requested :post, bs_url("inbox/messages"),
         body: { messages: [attributes] }.to_json
     end
 
@@ -62,7 +62,7 @@ describe BookingSync::API::Client::Messages do
 
     it "updates given message by ID" do
       client.edit_message(created_message_id, attributes)
-      assert_requested :put, bs_url("messages/#{created_message_id}"),
+      assert_requested :put, bs_url("inbox/messages/#{created_message_id}"),
         body: { messages: [attributes] }.to_json
     end
 

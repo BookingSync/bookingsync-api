@@ -13,7 +13,7 @@ module BookingSync::API
       #   messages.first.content # => "Message content"
       # @see http://developers.bookingsync.com/reference/endpoints/messages/#list-messages
       def messages(options = {}, &block)
-        paginate :messages, options, &block
+        paginate "inbox/messages", options, &block
       end
 
       # Get a single message
@@ -22,7 +22,7 @@ module BookingSync::API
       #   of the message.
       # @return [BookingSync::API::Resource]
       def message(message)
-        get("messages/#{message}").pop
+        get("inbox/messages/#{message}").pop
       end
 
       # Create a new message
@@ -30,7 +30,7 @@ module BookingSync::API
       # @param options [Hash] Message's attributes.
       # @return [BookingSync::API::Resource] Newly created message.
       def create_message(options = {})
-        post(:messages, messages: [options]).pop
+        post("inbox/messages", messages: [options]).pop
       end
 
       # Edit a message
@@ -44,7 +44,7 @@ module BookingSync::API
       #   message = @api.messages.first
       #   @api.edit_message(message, { content: "Updated message content" })
       def edit_message(message, options = {})
-        put("messages/#{message}", messages: [options]).pop
+        put("inbox/messages/#{message}", messages: [options]).pop
       end
     end
   end
