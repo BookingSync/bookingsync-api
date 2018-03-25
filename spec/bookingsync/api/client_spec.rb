@@ -309,7 +309,7 @@ describe BookingSync::API::Client do
     end
   end
 
-  fdescribe "with_headers" do
+  describe "with_headers" do
     it "makes request with modified headers but resets to original headers at the end" do
       stub_get("resource")
       client.with_headers("x-awesome-header" => "you-bet-i-am") do |adjusted_api_client|
