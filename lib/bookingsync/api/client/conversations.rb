@@ -46,6 +46,30 @@ module BookingSync::API
       def edit_conversation(conversation, options = {})
         put("inbox/conversations/#{conversation}", conversations: [options]).pop
       end
+
+      # Connect conversation with booking
+      # @param conversation [BookingSync::API::Resource|Integer] Conversation or ID of
+      #   the conversation to be connected to booking
+      # @param options [Hash] Id of booking to be connected to conversation.
+      # @return [BookingSync::API::Resource] Conversation with updated links on success,
+      #   exception is raised otherwise.
+      # @example
+      #   @api.connect_booking_to_conversation(conversation, { id: 5 })
+      def connect_booking_to_conversation(conversation, options)
+        put("inbox/conversations/#{conversation}/connect_booking", bookings: [options]).pop
+      end
+
+      # Disconnect conversation from booking
+      # @param conversation [BookingSync::API::Resource|Integer] Conversation or ID of
+      #   the conversation connected to booking
+      # @param options [Hash] Id of booking to be disconnected from conversation.
+      # @return [BookingSync::API::Resource] Conversation with updated links on success,
+      #   exception is raised otherwise.
+      # @example
+      #   @api.disconnect_booking_from_conversation(conversation, { id: 5 })
+      def disconnect_booking_from_conversation(conversation, options)
+        put("inbox/conversations/#{conversation}/disconnect_booking", bookings: [options]).pop
+      end
     end
   end
 end

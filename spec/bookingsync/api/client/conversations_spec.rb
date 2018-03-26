@@ -69,4 +69,56 @@ describe BookingSync::API::Client::Conversations do
       end
     end
   end
+
+  describe ".connect_booking_to_conversation", :vcr do
+    let(:booking_to_be_connected) { BookingSync::API::Resource.new(client, id: 40) }
+    let(:prefetched_conversation_id) {
+      find_resource("#{@casette_base_path}_conversations/returns_conversations.yml", "conversations")[:id]
+    }
+    let(:attributes) { { id: booking_to_be_connected.id } }
+
+    it "connects given conversation with booking" do
+      client.connect_booking_to_conversation(prefetched_conversation_id, attributes)
+      assert_requested :put, bs_url("inbox/conversations/#{prefetched_conversation_id}/connect_booking"),
+        body: { bookings: [attributes] }.to_json
+    end
+
+    it "returns conversation with updated links" do
+      casette_path = "BookingSync_API_Client_Conversations/_connect_booking_to_conversation" \
+                     "/connects_given_conversation_with_booking"
+      VCR.use_cassette(casette_path) do
+        initial_conversation = client.conversation(prefetched_conversation_id)
+        expect(initial_conversation[:links][:bookings]).to match_array []
+        conversation = client.connect_booking_to_conversation(prefetched_conversation_id, attributes)
+        expect(conversation).to be_kind_of(BookingSync::API::Resource)
+        expect(conversation[:links][:bookings]).to match_array [booking_to_be_connected.id]
+      end
+    end
+  end
+
+  describe ".disconnect_booking_from_conversation", :vcr do
+    let(:booking_to_be_disconnected) { BookingSync::API::Resource.new(client, id: 40) }
+    let(:prefetched_conversation_id) {
+      find_resource("#{@casette_base_path}_conversations/returns_conversations.yml", "conversations")[:id]
+    }
+    let(:attributes) { { id: booking_to_be_disconnected.id } }
+
+    it "disconnects given conversation from booking" do
+      client.disconnect_booking_from_conversation(prefetched_conversation_id, attributes)
+      assert_requested :put, bs_url("inbox/conversations/#{prefetched_conversation_id}/disconnect_booking"),
+        body: { bookings: [attributes] }.to_json
+    end
+
+    it "returns conversation with updated links" do
+      casette_path = "BookingSync_API_Client_Conversations/_disconnect_booking_from_conversation" \
+                     "/disconnects_given_conversation_from_booking"
+      VCR.use_cassette(casette_path) do
+        initial_conversation = client.conversation(prefetched_conversation_id)
+        expect(initial_conversation[:links][:bookings]).to match_array [booking_to_be_disconnected.id]
+        conversation = client.disconnect_booking_from_conversation(prefetched_conversation_id, attributes)
+        expect(conversation).to be_kind_of(BookingSync::API::Resource)
+        expect(conversation[:links][:bookings]).to match_array []
+      end
+    end
+  end
 end
