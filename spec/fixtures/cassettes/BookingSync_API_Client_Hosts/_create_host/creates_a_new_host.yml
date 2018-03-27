@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/hosts
+    body:
+      encoding: UTF-8
+      string: '{"hosts":[{"email":"host_email@example.com","firstname":"John","lastname":"Doe","user_id":1,"source_id":1}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.8
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"e340da248fbf941958c1d7781350033f"
+      Link:
+      - <https://www.bookingsync.com/api/v3/hosts?hosts%5B%5D%5Bemail%5D=host_email%40example.com&hosts%5B%5D%5Bfirstname%5D=John&hosts%5B%5D%5Blastname%5D=Doe&hosts%5B%5D%5Bsource_id%5D=1&hosts%5B%5D%5Buser_id%5D=1&page=1>;
+        rel="first"
+      Location:
+      - https://www.bookingsync.com/api/v3/hosts/2
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=30351469-2f01-4751-be08-825a65d20ada; path=/; expires=Fri, 30 Mar
+        2018 20:40:36 -0000
+      - ahoy_visitor=4c549e8a-7a0c-4557-a4e6-45752949a1b5; path=/; expires=Mon, 23
+        Mar 2020 20:40:36 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Per-Page:
+      - '100'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '999'
+      X-Ratelimit-Reset:
+      - '1521838800'
+      X-Request-Id:
+      - b6d4076b-88ab-48f2-8552-f2063bd26a20
+      X-Runtime:
+      - '0.223410'
+      X-Updated-Since-Request-Synced-At:
+      - 2018-03-23 20:40:36 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Fri, 23 Mar 2018 20:40:36 GMT
+      Content-Length:
+      - '854'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"hosts.user":"https://www.bookingsync.com/api/v3/users/{hosts.user}","hosts.source":"https://www.bookingsync.com/api/v3/sources/{hosts.source}","hosts.account":"https://www.bookingsync.com/api/v3/accounts/{hosts.account}","hosts.participants":"https://www.bookingsync.com/api/v3/inbox/participants/{hosts.participants}"},"hosts":[{"links":{"account":1,"participants":[],"source":1,"user":1},"id":2,"firstname":"John","lastname":"Doe","email":"host_email@example.com","created_at":"2018-03-23T20:40:36Z","updated_at":"2018-03-23T20:40:36Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/hosts?hosts%5B%5D%5Bemail%5D=host_email%40example.com&hosts%5B%5D%5Bfirstname%5D=John&hosts%5B%5D%5Blastname%5D=Doe&hosts%5B%5D%5Bsource_id%5D=1&hosts%5B%5D%5Buser_id%5D=1&page=1"},"X-Total-Pages":null,"X-Total-Count":null,"X-Per-Page":"100"}}'
+    http_version:
+  recorded_at: Fri, 23 Mar 2018 20:40:36 GMT
+recorded_with: VCR 4.0.0
