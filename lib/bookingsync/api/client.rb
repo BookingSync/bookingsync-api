@@ -282,6 +282,19 @@ module BookingSync::API
       end
     end
 
+    # Yields client with temporarily modified headers.
+    #
+    # @param extra_headers [Hash] Additional headers added to next request.
+    # @yieldreturn [BookingSync::API::Client] Client with modified default headers.
+    # @return [Array<BookingSync::API::Resource>|BookingSync::API::Resource|String|Object] Client response
+    def with_headers(extra_headers = {}, &block)
+      original_headers = @conn.headers.dup
+      @conn.headers.merge!(extra_headers)
+      result = yield self
+      @conn.headers = original_headers
+      result
+    end
+
     private
 
     def middleware

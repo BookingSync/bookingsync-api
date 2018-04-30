@@ -308,4 +308,46 @@ describe BookingSync::API::Client do
       end
     end
   end
+
+  describe "with_headers" do
+    it "makes request with modified headers but resets to original headers at the end" do
+      stub_get("resource")
+      client.with_headers("x-awesome-header" => "you-bet-i-am") do |adjusted_api_client|
+        adjusted_api_client.get("resource")
+      end
+      assert_requested(:get, bs_url("resource")) do |request|
+        request.headers["X-Awesome-Header"] == "you-bet-i-am"
+      end
+
+      client.get("resource")
+      assert_requested(:get, bs_url("resource")) do |request|
+        !request.headers.key?("X-Awesome-Header")
+      end
+    end
+
+    it "properly brings back original headers even if it was overriden" do
+      stub_get("resource")
+      client.with_headers("Content-Type" => "another-content-type") do |adjusted_api_client|
+        adjusted_api_client.get("resource")
+      end
+      assert_requested(:get, bs_url("resource")) do |request|
+        request.headers["Content-Type"] == "another-content-type"
+      end
+
+      client.get("resource")
+      assert_requested(:get, bs_url("resource")) do |request|
+        request.headers["Content-Type"] == BookingSync::API::Client::MEDIA_TYPE
+      end
+    end
+
+    it "returns result of method called on adjusted client" do
+      stub_get("resource", body: { resources: [{ name: "Megan" }] }.to_json)
+      resources = client.with_headers("x-awesome-header" => "you-bet-i-am") do |adjusted_api_client|
+        adjusted_api_client.get("resource")
+      end
+      expect(resources).to be_kind_of(Array)
+      expect(resources.first).to be_a BookingSync::API::Resource
+      expect(resources.first.name).to eq("Megan")
+    end
+  end
 end
