@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://bookingsync.com/api/v3/messages
+    uri: https://www.bookingsync.com/api/v3/inbox/messages
     body:
       encoding: UTF-8
-      string: '{"messages":[{"content":"Message content","origin":"homeaway","visibility":"all","conversation_id":1,"participant_id":1}]}'
+      string: '{"messages":[{"content":"Message content","origin":"homeaway","visibility":"all","conversation_id":1,"sender_id":1}]}'
     headers:
       User-Agent:
       - BookingSync API gem v0.1.8
@@ -31,21 +31,23 @@ http_interactions:
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Etag:
-      - W/"6dcc8c93410f72c294369334c7110986"
+      - W/"97e7006d83ac5159402251bfc3cfca13"
       Link:
-      - <https://bookingsync.com/api/v3/messages?messages%5B%5D%5Bcontent%5D=Message+content&messages%5B%5D%5Bconversation_id%5D=1&messages%5B%5D%5Borigin%5D=homeaway&messages%5B%5D%5Bparticipant_id%5D=1&messages%5B%5D%5Bvisibility%5D=all&page=1>;
+      - <https://www.bookingsync.com/api/v3/inbox/messages?messages%5B%5D%5Bcontent%5D=Message+content&messages%5B%5D%5Bconversation_id%5D=1&messages%5B%5D%5Borigin%5D=homeaway&messages%5B%5D%5Bsender_id%5D=1&messages%5B%5D%5Bvisibility%5D=all&page=1>;
         rel="first"
       Location:
-      - "/api/v3/messages/10"
+      - https://www.bookingsync.com/api/v3/inbox/messages/3
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/
-      - ahoy_visit=7637dceb-b8a7-4ae6-ad2d-d864c7e54d73; path=/; expires=Wed, 07 Mar
-        2018 14:27:08 -0000
-      - ahoy_visitor=1941b513-b7b8-4dcf-bb3c-4059bf0fac53; path=/; expires=Fri, 28
-        Feb 2020 14:27:08 -0000
+      - ahoy_visit=f96c593b-0d25-4d9e-8242-0e38c8f0f228; path=/; expires=Fri, 30 Mar
+        2018 19:40:37 -0000
+      - ahoy_visitor=3490ce08-4cf4-455e-bc01-3dcf49c4c1c6; path=/; expires=Mon, 23
+        Mar 2020 19:40:37 -0000
+      Vary:
+      - Origin
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -57,23 +59,23 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '999'
       X-Ratelimit-Reset:
-      - '1519830000'
+      - '1521835200'
       X-Request-Id:
-      - 7a4f7606-7fc3-46c5-be28-89e8be95e91f
+      - 35f99877-22f6-4a94-afcf-fba82dbc1865
       X-Runtime:
-      - '0.437263'
+      - '0.167693'
       X-Updated-Since-Request-Synced-At:
-      - 2018-02-28 14:27:08 UTC
+      - 2018-03-23 19:40:37 UTC
       X-Xss-Protection:
       - 1; mode=block
       Date:
-      - Wed, 28 Feb 2018 14:27:09 GMT
+      - Fri, 23 Mar 2018 19:40:37 GMT
       Content-Length:
-      - '837'
+      - '871'
     body:
       encoding: UTF-8
-      string: '{"links":{"messages.attachments":"https://bookingsync.com/api/v3/attachments/{messages.attachments}","messages.conversation":"https://bookingsync.com/api/v3/conversations/{messages.conversation}","messages.participant":"https://bookingsync.com/api/v3/participants/{messages.participant}"},"messages":[{"links":{"attachments":[],"conversation":1,"participant":1},"content":"Message
-        content","created_at":"2018-02-28T14:27:09Z","id":10,"origin":"homeaway","updated_at":"2018-02-28T14:27:09Z","visibility":"all"}],"meta":{"Link":{"first":"https://bookingsync.com/api/v3/messages?messages%5B%5D%5Bcontent%5D=Message+content&messages%5B%5D%5Bconversation_id%5D=1&messages%5B%5D%5Borigin%5D=homeaway&messages%5B%5D%5Bparticipant_id%5D=1&messages%5B%5D%5Bvisibility%5D=all&page=1"},"X-Total-Pages":null,"X-Total-Count":null,"X-Per-Page":"100"}}'
-    http_version:
-  recorded_at: Wed, 28 Feb 2018 14:27:09 GMT
+      string: '{"links":{"messages.attachments":"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}","messages.conversation":"https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}","messages.sender":"https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"},"messages":[{"links":{"attachments":[],"conversation":1,"sender":1},"content":"Message
+        content","created_at":"2018-03-23T19:40:37Z","id":3,"origin":"homeaway","sent_at":null,"updated_at":"2018-03-23T19:40:37Z","visibility":"all"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/inbox/messages?messages%5B%5D%5Bcontent%5D=Message+content&messages%5B%5D%5Bconversation_id%5D=1&messages%5B%5D%5Borigin%5D=homeaway&messages%5B%5D%5Bsender_id%5D=1&messages%5B%5D%5Bvisibility%5D=all&page=1"},"X-Total-Pages":null,"X-Total-Count":null,"X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 19:40:37 GMT
 recorded_with: VCR 4.0.0

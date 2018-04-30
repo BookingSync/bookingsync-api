@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://bookingsync.com/api/v3/messages/1
+    uri: https://www.bookingsync.com/api/v3/inbox/messages/1
     body:
       encoding: UTF-8
       string: "{}"
@@ -31,19 +31,21 @@ http_interactions:
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Etag:
-      - W/"d7675f363ca2c27a123a00683fcb0591"
+      - W/"a8e04f16b154912bf50117265a0d5781"
       Link:
-      - <https://bookingsync.com/api/v3/messages/1?page=1>; rel="first", <https://bookingsync.com/api/v3/messages/1?page=1>;
-        rel="last"
+      - <https://www.bookingsync.com/api/v3/inbox/messages/1?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/inbox/messages/1?page=1>; rel="last"
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/
-      - ahoy_visit=e99e9d82-744a-4856-9332-fa2d728c0bba; path=/; expires=Wed, 07 Mar
-        2018 14:27:08 -0000
-      - ahoy_visitor=3abbb689-c1f7-449b-976c-17cc419b7af6; path=/; expires=Fri, 28
-        Feb 2020 14:27:08 -0000
+      - ahoy_visit=6cb01cf5-0040-42da-bebf-3ce479cfdce4; path=/; expires=Fri, 30 Mar
+        2018 19:39:32 -0000
+      - ahoy_visitor=69be76eb-677f-4af9-9d14-660834cf4c8a; path=/; expires=Mon, 23
+        Mar 2020 19:39:32 -0000
+      Vary:
+      - Origin
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -55,27 +57,26 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '999'
       X-Ratelimit-Reset:
-      - '1519830000'
+      - '1521835200'
       X-Request-Id:
-      - d706e90b-57b6-48ce-adfc-a09e8ff92346
+      - 39f5e032-1722-41a5-b470-3416db9501de
       X-Runtime:
-      - '0.251734'
+      - '0.164893'
       X-Total-Count:
       - '1'
       X-Total-Pages:
       - '1'
       X-Updated-Since-Request-Synced-At:
-      - 2018-02-28 14:27:08 UTC
+      - 2018-03-23 19:39:32 UTC
       X-Xss-Protection:
       - 1; mode=block
       Date:
-      - Wed, 28 Feb 2018 14:27:08 GMT
+      - Fri, 23 Mar 2018 19:39:32 GMT
       Content-Length:
-      - '704'
+      - '749'
     body:
       encoding: UTF-8
-      string: '{"links":{"messages.attachments":"https://bookingsync.com/api/v3/attachments/{messages.attachments}","messages.conversation":"https://bookingsync.com/api/v3/conversations/{messages.conversation}","messages.participant":"https://bookingsync.com/api/v3/participants/{messages.participant}"},"messages":[{"links":{"attachments":[],"conversation":1,"participant":1},"content":"Message
-        content","created_at":"2018-02-28T09:46:22Z","id":1,"origin":"homeaway","updated_at":"2018-02-28T09:46:22Z","visibility":"all"}],"meta":{"Link":{"first":"https://bookingsync.com/api/v3/messages/1?page=1","last":"https://bookingsync.com/api/v3/messages/1?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
-    http_version:
-  recorded_at: Wed, 28 Feb 2018 14:27:08 GMT
+      string: '{"links":{"messages.attachments":"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}","messages.conversation":"https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}","messages.sender":"https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"},"messages":[{"links":{"attachments":[],"conversation":1,"sender":1},"content":"hello","created_at":"2018-03-20T13:48:45Z","id":1,"origin":"homeaway","sent_at":null,"updated_at":"2018-03-20T13:48:45Z","visibility":"internal"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/inbox/messages/1?page=1","last":"https://www.bookingsync.com/api/v3/inbox/messages/1?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 19:39:32 GMT
 recorded_with: VCR 4.0.0

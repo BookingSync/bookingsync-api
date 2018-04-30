@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.com/api/v3/participants
+    uri: https://www.bookingsync.com/api/v3/inbox/participants
     body:
       encoding: UTF-8
       string: "{}"
@@ -31,19 +31,21 @@ http_interactions:
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Etag:
-      - W/"805c2a9fa9025624efe08a51f2037ada"
+      - W/"5f58e1faf8b7359422172cbd4c356ff8"
       Link:
-      - <https://www.bookingsync.com/api/v3/participants?page=1>; rel="first", <https://www.bookingsync.com/api/v3/participants?page=1>;
-        rel="last"
+      - <https://www.bookingsync.com/api/v3/inbox/participants?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/inbox/participants?page=1>; rel="last"
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/
-      - ahoy_visit=c9338cf1-1d3f-4898-a19d-6423bc7bb175; path=/; expires=Thu, 08 Mar
-        2018 18:27:04 -0000
-      - ahoy_visitor=578f2787-693f-44e2-aaf8-b6f3983ee72b; path=/; expires=Sun, 01
-        Mar 2020 18:27:04 -0000
+      - ahoy_visit=a9292818-27d1-4aff-b35c-90e69f956954; path=/; expires=Fri, 30 Mar
+        2018 20:01:27 -0000
+      - ahoy_visitor=5fedb07a-0342-4e26-a2f9-95cf277b9621; path=/; expires=Mon, 23
+        Mar 2020 20:01:27 -0000
+      Vary:
+      - Origin
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -55,26 +57,26 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '999'
       X-Ratelimit-Reset:
-      - '1519930800'
+      - '1521838800'
       X-Request-Id:
-      - aec19b6e-a114-4f13-bb37-6c53b42e7d25
+      - 2f11677f-6b1c-4d21-958b-8961a69ead62
       X-Runtime:
-      - '1.304543'
+      - '1.216619'
       X-Total-Count:
-      - '5'
+      - '7'
       X-Total-Pages:
       - '1'
       X-Updated-Since-Request-Synced-At:
-      - 2018-03-01 18:27:04 UTC
+      - 2018-03-23 20:01:27 UTC
       X-Xss-Protection:
       - 1; mode=block
       Date:
-      - Thu, 01 Mar 2018 18:27:04 GMT
+      - Fri, 23 Mar 2018 20:01:28 GMT
       Content-Length:
-      - '1464'
+      - '1822'
     body:
       encoding: UTF-8
-      string: '{"links":{"participants.conversation":"https://www.bookingsync.com/api/v3/conversations/{participants.conversation}","participants.client":"https://www.bookingsync.com/api/v3/clients/{participants.member.id}","participants.user":"https://www.bookingsync.com/api/v3/users/{participants.member.id}"},"participants":[{"links":{"conversation":1,"member":{"id":1,"type":"Client"}},"created_at":"2018-02-28T09:43:20Z","id":1,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-02-28T09:43:20Z"},{"links":{"conversation":1,"member":{"id":1,"type":"Client"}},"created_at":"2018-02-28T09:43:58Z","id":2,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-02-28T09:43:58Z"},{"links":{"conversation":1,"member":{"id":1,"type":"Client"}},"created_at":"2018-02-28T10:43:51Z","id":3,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-02-28T10:43:51Z"},{"links":{"conversation":1,"member":{"id":1,"type":"Client"}},"created_at":"2018-02-28T12:40:56Z","id":4,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-02-28T12:40:56Z"},{"links":{"conversation":1,"member":{"id":1,"type":"Client"}},"created_at":"2018-02-28T15:30:06Z","id":5,"last_message_sent_at":null,"read_at":"2018-02-28T15:30:06Z","updated_at":"2018-02-28T15:30:06Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/participants?page=1","last":"https://www.bookingsync.com/api/v3/participants?page=1"},"X-Total-Pages":"1","X-Total-Count":"5","X-Per-Page":"100"}}'
-    http_version:
-  recorded_at: Thu, 01 Mar 2018 18:27:04 GMT
+      string: '{"links":{"participants.conversation":"https://www.bookingsync.com/api/v3/inbox/conversations/{participants.conversation}","participants.client":"https://www.bookingsync.com/api/v3/clients/{participants.member.id}","participants.host":"https://www.bookingsync.com/api/v3/hosts/{participants.member.id}"},"participants":[{"links":{"conversation":1,"member":{"id":1,"type":"Client"}},"created_at":"2018-03-20T13:46:54Z","id":1,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-03-20T13:46:54Z"},{"links":{"conversation":1,"member":{"id":1,"type":"Host"}},"created_at":"2018-03-22T22:46:37Z","id":2,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-03-22T22:46:37Z"},{"links":{"conversation":1,"member":{"id":1,"type":"Host"}},"created_at":"2018-03-22T22:46:37Z","id":3,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-03-22T22:46:37Z"},{"links":{"conversation":1,"member":{"id":1,"type":"Host"}},"created_at":"2018-03-22T22:46:39Z","id":4,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-03-22T22:46:39Z"},{"links":{"conversation":1,"member":{"id":1,"type":"Host"}},"created_at":"2018-03-22T22:51:41Z","id":5,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-03-22T22:51:41Z"},{"links":{"conversation":1,"member":{"id":1,"type":"Host"}},"created_at":"2018-03-22T22:51:41Z","id":6,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-03-22T22:51:41Z"},{"links":{"conversation":1,"member":{"id":1,"type":"Host"}},"created_at":"2018-03-22T22:51:42Z","id":7,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-03-22T22:51:42Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/inbox/participants?page=1","last":"https://www.bookingsync.com/api/v3/inbox/participants?page=1"},"X-Total-Pages":"1","X-Total-Count":"7","X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 20:01:28 GMT
 recorded_with: VCR 4.0.0

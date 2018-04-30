@@ -1,0 +1,154 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/inbox/conversations/1
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.8
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"8758ac4bda5dd714a32e187117d78f1e"
+      Link:
+      - <https://www.bookingsync.com/api/v3/inbox/conversations/1?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/inbox/conversations/1?page=1>; rel="last"
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=79d0dc0c-e6b8-447a-a952-a7efb18a608c; path=/; expires=Mon, 02 Apr
+        2018 19:28:44 -0000
+      - ahoy_visitor=dfa83bbd-c9cf-44e4-abd5-1d83e151ea21; path=/; expires=Thu, 26
+        Mar 2020 19:28:44 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Per-Page:
+      - '100'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '985'
+      X-Ratelimit-Reset:
+      - '1522094400'
+      X-Request-Id:
+      - 7a3d488e-3986-4ccb-a049-39699b1d7dbf
+      X-Runtime:
+      - '0.078942'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Updated-Since-Request-Synced-At:
+      - 2018-03-26 19:28:44 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 26 Mar 2018 19:28:44 GMT
+      Content-Length:
+      - '989'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"conversations.account":"https://www.bookingsync.com/api/v3/accounts/{conversations.account}","conversations.assignee":"https://www.bookingsync.com/api/v3/users/{conversations.assignee}","conversations.source":"https://www.bookingsync.com/api/v3/sources/{conversations.source}","conversations.bookings":"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}","conversations.inquiries":"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"},"conversations":[{"links":{"account":3,"assignee":null,"bookings":[40],"inquiries":[],"source":null},"closed_at":null,"created_at":"2018-03-25T22:01:11Z","deadline_response_at":null,"id":1,"last_message_at":null,"marked_as_spam_at":null,"subject":"super
+        important convo","updated_at":"2018-03-26T18:21:37Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/inbox/conversations/1?page=1","last":"https://www.bookingsync.com/api/v3/inbox/conversations/1?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version:
+  recorded_at: Mon, 26 Mar 2018 19:28:44 GMT
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/inbox/conversations/1/disconnect_booking
+    body:
+      encoding: UTF-8
+      string: '{"bookings":[{"id":40}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.8
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"4367581ec3eb9a0c83ef1dabe68ccf71"
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=70178634-b500-464d-a26d-ffbf28c65bc3; path=/; expires=Mon, 02 Apr
+        2018 19:28:44 -0000
+      - ahoy_visitor=76b276b5-95aa-4926-ade5-31fa4ff9827c; path=/; expires=Thu, 26
+        Mar 2020 19:28:44 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '984'
+      X-Ratelimit-Reset:
+      - '1522094400'
+      X-Request-Id:
+      - e4695816-37b0-4a48-a0b2-9534c940b21e
+      X-Runtime:
+      - '0.056172'
+      X-Updated-Since-Request-Synced-At:
+      - 2018-03-26 19:28:44 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 26 Mar 2018 19:28:44 GMT
+      Content-Length:
+      - '781'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"conversations.account":"https://www.bookingsync.com/api/v3/accounts/{conversations.account}","conversations.assignee":"https://www.bookingsync.com/api/v3/users/{conversations.assignee}","conversations.source":"https://www.bookingsync.com/api/v3/sources/{conversations.source}","conversations.bookings":"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}","conversations.inquiries":"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"},"conversations":[{"links":{"account":3,"assignee":null,"bookings":[],"inquiries":[],"source":null},"closed_at":null,"created_at":"2018-03-25T22:01:11Z","deadline_response_at":null,"id":1,"last_message_at":null,"marked_as_spam_at":null,"subject":"super
+        important convo","updated_at":"2018-03-26T18:21:37Z"}],"meta":{}}'
+    http_version:
+  recorded_at: Mon, 26 Mar 2018 19:28:44 GMT
+recorded_with: VCR 3.0.3

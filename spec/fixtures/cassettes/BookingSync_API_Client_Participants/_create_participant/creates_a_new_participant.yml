@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bookingsync.com/api/v3/participants
+    uri: https://www.bookingsync.com/api/v3/inbox/participants
     body:
       encoding: UTF-8
       string: '{"participants":[{"read":false,"conversation_id":1,"member_id":1,"member_type":"Client"}]}'
@@ -31,21 +31,23 @@ http_interactions:
       Content-Type:
       - application/vnd.api+json; charset=utf-8
       Etag:
-      - W/"c7c7708f0fa06bea603c5cb96374d012"
+      - W/"9355af117d427f1a3615daeb9c423c8a"
       Link:
-      - <https://www.bookingsync.com/api/v3/participants?page=1&participants%5B%5D%5Bconversation_id%5D=1&participants%5B%5D%5Bmember_id%5D=1&participants%5B%5D%5Bmember_type%5D=Client&participants%5B%5D%5Bread%5D=false>;
+      - <https://www.bookingsync.com/api/v3/inbox/participants?page=1&participants%5B%5D%5Bconversation_id%5D=1&participants%5B%5D%5Bmember_id%5D=1&participants%5B%5D%5Bmember_type%5D=Client&participants%5B%5D%5Bread%5D=false>;
         rel="first"
       Location:
-      - "/api/v3/participants/6"
+      - https://www.bookingsync.com/api/v3/inbox/participants/8
       P3p:
       - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/
-      - ahoy_visit=ac5794fa-16ea-416a-b9a3-79a8a67651f2; path=/; expires=Thu, 08 Mar
-        2018 18:27:05 -0000
-      - ahoy_visitor=7807d2dc-28c8-4fc6-b152-48d11bb52bae; path=/; expires=Sun, 01
-        Mar 2020 18:27:05 -0000
+      - ahoy_visit=8db45433-0a2d-4d52-a666-caab03ca9bf4; path=/; expires=Fri, 30 Mar
+        2018 20:01:29 -0000
+      - ahoy_visitor=2a3cd993-6b39-4d3b-9d7d-a35894dffcc2; path=/; expires=Mon, 23
+        Mar 2020 20:01:29 -0000
+      Vary:
+      - Origin
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -57,22 +59,22 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '999'
       X-Ratelimit-Reset:
-      - '1519930800'
+      - '1521838800'
       X-Request-Id:
-      - 5572f860-7fa6-4f3b-b7f8-b8a81bf080ac
+      - cddf563c-44f7-49b5-ae42-ddec745672fd
       X-Runtime:
-      - '0.385641'
+      - '0.547813'
       X-Updated-Since-Request-Synced-At:
-      - 2018-03-01 18:27:05 UTC
+      - 2018-03-23 20:01:29 UTC
       X-Xss-Protection:
       - 1; mode=block
       Date:
-      - Thu, 01 Mar 2018 18:27:05 GMT
+      - Fri, 23 Mar 2018 20:01:29 GMT
       Content-Length:
-      - '800'
+      - '812'
     body:
       encoding: UTF-8
-      string: '{"links":{"participants.conversation":"https://www.bookingsync.com/api/v3/conversations/{participants.conversation}","participants.client":"https://www.bookingsync.com/api/v3/clients/{participants.member.id}","participants.user":"https://www.bookingsync.com/api/v3/users/{participants.member.id}"},"participants":[{"links":{"conversation":1,"member":{"id":1,"type":"Client"}},"created_at":"2018-03-01T18:27:05Z","id":6,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-03-01T18:27:05Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/participants?page=1&participants%5B%5D%5Bconversation_id%5D=1&participants%5B%5D%5Bmember_id%5D=1&participants%5B%5D%5Bmember_type%5D=Client&participants%5B%5D%5Bread%5D=false"},"X-Total-Pages":null,"X-Total-Count":null,"X-Per-Page":"100"}}'
-    http_version:
-  recorded_at: Thu, 01 Mar 2018 18:27:05 GMT
+      string: '{"links":{"participants.conversation":"https://www.bookingsync.com/api/v3/inbox/conversations/{participants.conversation}","participants.client":"https://www.bookingsync.com/api/v3/clients/{participants.member.id}","participants.host":"https://www.bookingsync.com/api/v3/hosts/{participants.member.id}"},"participants":[{"links":{"conversation":1,"member":{"id":1,"type":"Client"}},"created_at":"2018-03-23T20:01:29Z","id":8,"last_message_sent_at":null,"read_at":null,"updated_at":"2018-03-23T20:01:29Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/inbox/participants?page=1&participants%5B%5D%5Bconversation_id%5D=1&participants%5B%5D%5Bmember_id%5D=1&participants%5B%5D%5Bmember_type%5D=Client&participants%5B%5D%5Bread%5D=false"},"X-Total-Pages":null,"X-Total-Count":null,"X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 20:01:29 GMT
 recorded_with: VCR 4.0.0

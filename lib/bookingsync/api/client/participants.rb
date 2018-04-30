@@ -13,7 +13,7 @@ module BookingSync::API
       #   participants.first.read_at # => "Fri, 02 Mar 2018 17:06:41 UTC +00:00"
       # @see http://developers.bookingsync.com/reference/endpoints/participants/#list-participants
       def participants(options = {}, &block)
-        paginate :participants, options, &block
+        paginate "inbox/participants", options, &block
       end
 
       # Get a single participant
@@ -22,7 +22,7 @@ module BookingSync::API
       #   of the participant.
       # @return [BookingSync::API::Resource]
       def participant(participant)
-        get("participants/#{participant}").pop
+        get("inbox/participants/#{participant}").pop
       end
 
       # Create a new participant
@@ -30,7 +30,7 @@ module BookingSync::API
       # @param options [Hash] Participant's attributes.
       # @return [BookingSync::API::Resource] Newly created participant.
       def create_participant(options)
-        post(:participants, participants: [options]).pop
+        post("inbox/participants", participants: [options]).pop
       end
 
       # Edit a participant
@@ -44,7 +44,7 @@ module BookingSync::API
       #   participant = @api.participants.first
       #   @api.edit_participant(participant, { read: true })
       def edit_participant(participant, options = {})
-        put("participants/#{participant}", participants: [options]).pop
+        put("inbox/participants/#{participant}", participants: [options]).pop
       end
     end
   end

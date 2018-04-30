@@ -8,7 +8,7 @@ describe BookingSync::API::Client::Participants do
   describe ".participants", :vcr do
     it "returns participants" do
       expect(client.participants).not_to be_empty
-      assert_requested :get, bs_url("participants")
+      assert_requested :get, bs_url("inbox/participants")
     end
   end
 
@@ -37,7 +37,7 @@ describe BookingSync::API::Client::Participants do
 
     it "creates a new participant" do
       client.create_participant(attributes)
-      assert_requested :post, bs_url("participants"),
+      assert_requested :post, bs_url("inbox/participants"),
         body: { participants: [attributes] }.to_json
     end
 
@@ -62,7 +62,7 @@ describe BookingSync::API::Client::Participants do
 
     it "updates given participant by ID" do
       client.edit_participant(created_participant_id, attributes)
-      assert_requested :put, bs_url("participants/#{created_participant_id}"),
+      assert_requested :put, bs_url("inbox/participants/#{created_participant_id}"),
         body: { participants: [attributes] }.to_json
     end
 
