@@ -2,7 +2,10 @@
 
 # master
 
+## 0.1.9 - 2018-04-30
+
 - Enable dynamic override of headers per request.
+- Add support for `inbox` endpoints.
 
 ## 0.1.8 - 2017-12-05
 
