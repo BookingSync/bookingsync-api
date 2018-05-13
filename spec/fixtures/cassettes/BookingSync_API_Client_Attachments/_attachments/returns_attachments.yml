@@ -1,0 +1,85 @@
+
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/inbox/attachments
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.9
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"d0f5795bf26e926ec9cef6c45f38a35c"
+      Link:
+      - <https://www.bookingsync.com/api/v3/inbox/attachments?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/inbox/attachments?page=1>; rel="last"
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=0c79f773-ffb7-4faa-8d60-a7fdfbc665b8; path=/; expires=Fri, 18 May
+        2018 15:07:43 -0000
+      - ahoy_visitor=5da3e32b-93a6-407e-85c3-b7e827410da4; path=/; expires=Mon, 11
+        May 2020 15:07:43 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Current-Page:
+      - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Per-Page:
+      - '100'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '999'
+      X-Ratelimit-Reset:
+      - '1526054400'
+      X-Request-Id:
+      - d59a9073-0b8b-49b3-9cb7-c4c94dfbe988
+      X-Runtime:
+      - '0.628088'
+      X-Total-Count:
+      - '10'
+      X-Total-Pages:
+      - '1'
+      X-Updated-Since-Request-Synced-At:
+      - 2018-05-11 15:07:43 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Fri, 11 May 2018 15:07:43 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"links":{"attachments.account":"https://www.bookingsync.com/api/v3/accounts/{attachments.account}","attachments.messages":"https://www.bookingsync.com/api/v3/inbox/messages/{attachments.messages}"},"attachments":[{"links":{"account":1,"messages":[]},"created_at":"2018-05-11T11:55:39Z","file_content_type":"image/jpeg","file_size":635,"id":1,"image_height":5,"image_width":20,"name":"updated_test.jpg","updated_at":"2018-05-11T11:55:39Z","url":"/uploads/file.jpeg"},{"links":{"account":1,"messages":[]},"created_at":"2018-05-11T11:59:05Z","file_content_type":"image/jpeg","file_size":635,"id":2,"image_height":5,"image_width":20,"name":"updated_test.jpg","updated_at":"2018-05-11T11:59:05Z","url":"/uploads/file.jpeg"},{"links":{"account":1,"messages":[]},"created_at":"2018-05-11T13:58:52Z","file_content_type":"image/jpeg","file_size":635,"id":3,"image_height":5,"image_width":20,"name":"test.jpg","updated_at":"2018-05-11T13:58:52Z","url":"/uploads/file.jpeg"},{"links":{"account":1,"messages":[]},"created_at":"2018-05-11T14:12:37Z","file_content_type":"image/png","file_size":5365,"id":4,"image_height":62,"image_width":62,"name":"test.jpg","updated_at":"2018-05-11T14:12:37Z","url":"/uploads/header-ruby-logo.png"},{"links":{"account":1,"messages":[]},"created_at":"2018-05-11T14:17:01Z","file_content_type":"image/jpeg","file_size":635,"id":5,"image_height":5,"image_width":20,"name":"test.jpg","updated_at":"2018-05-11T14:17:01Z","url":"/uploads/file.jpeg"},{"links":{"account":1,"messages":[]},"created_at":"2018-05-11T14:17:02Z","file_content_type":"image/png","file_size":5365,"id":6,"image_height":62,"image_width":62,"name":"test.jpg","updated_at":"2018-05-11T14:17:02Z","url":"/uploads/header-ruby-logo.png"},{"links":{"account":1,"messages":[]},"created_at":"2018-05-11T14:17:02Z","file_content_type":"image/jpeg","file_size":635,"id":7,"image_height":5,"image_width":20,"name":"updated_test.jpg","updated_at":"2018-05-11T14:17:02Z","url":"/uploads/file.jpeg"},{"links":{"account":1,"messages":[]},"created_at":"2018-05-11T14:21:37Z","file_content_type":"image/jpeg","file_size":635,"id":8,"image_height":5,"image_width":20,"name":"test.jpg","updated_at":"2018-05-11T14:21:37Z","url":"/uploads/file.jpeg"},{"links":{"account":1,"messages":[]},"created_at":"2018-05-11T14:21:38Z","file_content_type":"image/png","file_size":5365,"id":9,"image_height":62,"image_width":62,"name":"test.jpg","updated_at":"2018-05-11T14:21:38Z","url":"/uploads/header-ruby-logo.png"},{"links":{"account":1,"messages":[]},"created_at":"2018-05-11T14:21:38Z","file_content_type":"image/jpeg","file_size":635,"id":10,"image_height":5,"image_width":20,"name":"updated_test.jpg","updated_at":"2018-05-11T14:21:38Z","url":"/uploads/file.jpeg"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/inbox/attachments?page=1","last":"https://www.bookingsync.com/api/v3/inbox/attachments?page=1"},"X-Total-Pages":"1","X-Total-Count":"10","X-Per-Page":"100"}}'
+    http_version:
+  recorded_at: Fri, 11 May 2018 15:07:43 GMT
+recorded_with: VCR 4.0.0
