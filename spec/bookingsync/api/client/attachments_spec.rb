@@ -13,6 +13,17 @@ describe BookingSync::API::Client::Attachments do
     end
   end
 
+  describe ".attachment", :vcr do
+    let(:prefetched_attachment_id) {
+      find_resource("#{@casette_base_path}_attachments/returns_attachments.yml", "attachments")[:id]
+    }
+
+    it "returns a single attachment" do
+      attachment = client.attachment(prefetched_attachment_id)
+      expect(attachment.id).to eq prefetched_attachment_id
+    end
+  end
+
   describe ".create_attachment", :vcr do
     let(:attributes) do
       {

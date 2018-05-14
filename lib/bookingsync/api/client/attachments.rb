@@ -3,7 +3,7 @@ module BookingSync::API
     module Attachments
       # List attachments
       #
-      # Returns all attachments supported in BookingSync.
+      # Returns attachments for the account user is authenticated with.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
       # @return [Array<BookingSync::API::Resource>] Array of attachments.
@@ -14,6 +14,15 @@ module BookingSync::API
       # @see http://developers.bookingsync.com/reference/endpoints/attachments/#list-attachments
       def attachments(options = {}, &block)
         paginate "inbox/attachments", options, &block
+      end
+
+      # Get a single attachment
+      #
+      # @param attachment [BookingSync::API::Resource|Integer] Attachment or ID
+      #   of the attachment.
+      # @return [BookingSync::API::Resource]
+      def attachment(attachment)
+        get("inbox/attachments/#{attachment}").pop
       end
 
       # Create a new attachment
