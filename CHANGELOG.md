@@ -2,6 +2,9 @@
 
 # master
 
+## 0.1.10 - 2018-05-17
+- Added support for `attachments`.
+
 ## 0.1.9 - 2018-04-30
 
 - Enable dynamic override of headers per request.
