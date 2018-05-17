@@ -1,6 +1,87 @@
 ---
 http_interactions:
 - request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/inbox/messages/1
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.10
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"715149a0010636aebf4033010785bbfe"
+      Link:
+      - <https://www.bookingsync.com/api/v3/inbox/messages/1?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/inbox/messages/1?page=1>; rel="last"
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=89a85b24-fee9-4413-9937-99c1579aa3f8; path=/; expires=Thu, 24 May
+        2018 18:09:34 -0000
+      - ahoy_visitor=be385529-b9c0-4d62-806b-ff6aab35a353; path=/; expires=Sun, 17
+        May 2020 18:09:34 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Current-Page:
+      - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Per-Page:
+      - '100'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '999'
+      X-Ratelimit-Reset:
+      - '1526583600'
+      X-Request-Id:
+      - 137cdb22-9438-4972-86e7-e6032d16c650
+      X-Runtime:
+      - '0.899569'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Updated-Since-Request-Synced-At:
+      - 2018-05-17 18:09:34 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Thu, 17 May 2018 18:09:34 GMT
+      Content-Length:
+      - '767'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"messages.attachments":"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}","messages.conversation":"https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}","messages.sender":"https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"},"messages":[{"links":{"attachments":[],"conversation":1,"sender":1},"channel":null,"content":"hey","created_at":"2018-05-17T13:50:43Z","id":1,"origin":"homeaway","sent_at":null,"updated_at":"2018-05-17T13:50:43Z","visibility":"external"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/inbox/messages/1?page=1","last":"https://www.bookingsync.com/api/v3/inbox/messages/1?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Thu, 17 May 2018 18:09:34 GMT
+- request:
     method: put
     uri: https://www.bookingsync.com/api/v3/inbox/messages/1/add_attachment
     body:
@@ -37,10 +118,10 @@ http_interactions:
         OUR SAMi OTRo UNRo PUBi IND UNI STA"
       Set-Cookie:
       - ahoy_track=true; path=/
-      - ahoy_visit=17e0f712-2b97-4fba-a0c0-6f9523cfd825; path=/; expires=Thu, 24 May
-        2018 14:12:20 -0000
-      - ahoy_visitor=82702046-a9eb-4009-abb3-c8bc2e657be0; path=/; expires=Sun, 17
-        May 2020 14:12:20 -0000
+      - ahoy_visit=a9eda395-e504-4a18-aab0-b1bc48e399dc; path=/; expires=Thu, 24 May
+        2018 18:09:35 -0000
+      - ahoy_visitor=7f9af0a1-84f4-43ac-a410-55481fdc459f; path=/; expires=Sun, 17
+        May 2020 18:09:35 -0000
       Vary:
       - Origin
       X-Content-Type-Options:
@@ -50,24 +131,105 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '997'
+      - '998'
       X-Ratelimit-Reset:
-      - '1526569200'
+      - '1526583600'
       X-Request-Id:
-      - cdcda4de-5bbc-4e2b-a0fb-f93cb4462b31
+      - f05bb19b-5c55-43e5-af0e-adfd6162024c
       X-Runtime:
-      - '0.077326'
+      - '0.114332'
       X-Updated-Since-Request-Synced-At:
-      - 2018-05-17 14:12:20 UTC
+      - 2018-05-17 18:09:35 UTC
       X-Xss-Protection:
       - 1; mode=block
       Date:
-      - Thu, 17 May 2018 14:12:20 GMT
+      - Thu, 17 May 2018 18:09:35 GMT
       Content-Length:
       - '562'
     body:
       encoding: UTF-8
       string: '{"links":{"messages.attachments":"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}","messages.conversation":"https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}","messages.sender":"https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"},"messages":[{"links":{"attachments":[1],"conversation":1,"sender":1},"channel":null,"content":"hey","created_at":"2018-05-17T13:50:43Z","id":1,"origin":"homeaway","sent_at":null,"updated_at":"2018-05-17T13:50:43Z","visibility":"external"}],"meta":{}}'
     http_version: 
-  recorded_at: Thu, 17 May 2018 14:12:20 GMT
+  recorded_at: Thu, 17 May 2018 18:09:35 GMT
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/inbox/messages/1
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.10
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"eb30674d4fd699b7bcba4ccf5be788c3"
+      Link:
+      - <https://www.bookingsync.com/api/v3/inbox/messages/1?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/inbox/messages/1?page=1>; rel="last"
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=00d6c2aa-89a7-4a6f-b672-7024babafe98; path=/; expires=Thu, 24 May
+        2018 18:09:35 -0000
+      - ahoy_visitor=48ea80b5-718e-4fa8-9d91-61155d646376; path=/; expires=Sun, 17
+        May 2020 18:09:35 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Current-Page:
+      - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Per-Page:
+      - '100'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '997'
+      X-Ratelimit-Reset:
+      - '1526583600'
+      X-Request-Id:
+      - 5db434e0-0407-47b3-9cf2-ad0e8a29ee2d
+      X-Runtime:
+      - '0.069984'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Updated-Since-Request-Synced-At:
+      - 2018-05-17 18:09:35 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Thu, 17 May 2018 18:09:35 GMT
+      Content-Length:
+      - '768'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"messages.attachments":"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}","messages.conversation":"https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}","messages.sender":"https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"},"messages":[{"links":{"attachments":[1],"conversation":1,"sender":1},"channel":null,"content":"hey","created_at":"2018-05-17T13:50:43Z","id":1,"origin":"homeaway","sent_at":null,"updated_at":"2018-05-17T13:50:43Z","visibility":"external"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/inbox/messages/1?page=1","last":"https://www.bookingsync.com/api/v3/inbox/messages/1?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Thu, 17 May 2018 18:09:35 GMT
 recorded_with: VCR 4.0.0

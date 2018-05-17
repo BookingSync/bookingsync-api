@@ -87,5 +87,16 @@ describe BookingSync::API::Client::Messages do
       assert_requested :put, bs_url("inbox/messages/#{prefetched_message_id}/add_attachment"),
         body: { attachments: [attributes] }.to_json
     end
+
+    it "returns message with updated links" do
+      casette_path = "BookingSync_API_Client_Messages/_add_attachment_to_message" \
+                     "/adds_attachment_to_given_message"
+      VCR.use_cassette(casette_path) do
+        expect { client.add_attachment_to_message(prefetched_message_id, attributes) }
+          .to change { client.message(prefetched_message_id)[:links][:attachments] }
+          .from([])
+          .to([attachment_to_be_added.id])
+      end
+    end
   end
 end
