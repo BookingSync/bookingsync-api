@@ -2,6 +2,9 @@
 
 # master
 
+## 0.1.11 - 2018-05-18
+- Added `add_attachment_to_message`.
+
 ## 0.1.10 - 2018-05-17
 - Added support for `attachments`.
 
