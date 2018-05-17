@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/inbox/messages/1/add_attachment
+    body:
+      encoding: UTF-8
+      string: '{"attachments":[{"id":1}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.10
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"1386c92f3d7e77e46e44c41bb6187e94"
+      P3p:
+      - CP="OTI DSP COR CUR ADMo DEVo TAI PSAi PSDi IVAi IVDi CONi HISi TELi OTPi
+        OUR SAMi OTRo UNRo PUBi IND UNI STA"
+      Set-Cookie:
+      - ahoy_track=true; path=/
+      - ahoy_visit=17e0f712-2b97-4fba-a0c0-6f9523cfd825; path=/; expires=Thu, 24 May
+        2018 14:12:20 -0000
+      - ahoy_visitor=82702046-a9eb-4009-abb3-c8bc2e657be0; path=/; expires=Sun, 17
+        May 2020 14:12:20 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '997'
+      X-Ratelimit-Reset:
+      - '1526569200'
+      X-Request-Id:
+      - cdcda4de-5bbc-4e2b-a0fb-f93cb4462b31
+      X-Runtime:
+      - '0.077326'
+      X-Updated-Since-Request-Synced-At:
+      - 2018-05-17 14:12:20 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Thu, 17 May 2018 14:12:20 GMT
+      Content-Length:
+      - '562'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"messages.attachments":"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}","messages.conversation":"https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}","messages.sender":"https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"},"messages":[{"links":{"attachments":[1],"conversation":1,"sender":1},"channel":null,"content":"hey","created_at":"2018-05-17T13:50:43Z","id":1,"origin":"homeaway","sent_at":null,"updated_at":"2018-05-17T13:50:43Z","visibility":"external"}],"meta":{}}'
+    http_version: 
+  recorded_at: Thu, 17 May 2018 14:12:20 GMT
+recorded_with: VCR 4.0.0
