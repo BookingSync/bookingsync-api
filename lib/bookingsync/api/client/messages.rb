@@ -46,6 +46,18 @@ module BookingSync::API
       def edit_message(message, options = {})
         put("inbox/messages/#{message}", messages: [options]).pop
       end
+
+      # Add attachment to message
+      # @param message [BookingSync::API::Resource|Integer] Message or ID of
+      #   the message to which we are adding attachment
+      # @param options [Hash] Id of attachment to be added to message.
+      # @return [BookingSync::API::Resource] Message with updated links on success,
+      #   exception is raised otherwise.
+      # @example
+      #   @api.add_attachment_to_message(message, { id: 5 })
+      def add_attachment_to_message(message, options)
+        put("inbox/messages/#{message}/add_attachment", attachments: [options]).pop
+      end
     end
   end
 end
