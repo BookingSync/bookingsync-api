@@ -2,6 +2,9 @@
 
 # master
 
+## 0.1.12 - 2018-05-25
+- updated Faraday and Net HTTP Persistent gem to remove workaround
+
 ## 0.1.11 - 2018-05-18
 - Added `add_attachment_to_message`.
 
