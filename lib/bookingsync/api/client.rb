@@ -50,7 +50,6 @@ require "bookingsync/api/resource"
 require "bookingsync/api/serializer"
 require "logger"
 require "addressable/template"
-require "net/http/persistent"
 
 module BookingSync::API
   class Client
@@ -301,7 +300,6 @@ module BookingSync::API
 
     def middleware
       Faraday::RackBuilder.new do |builder|
-        builder.use ::Faraday::Request::Retry, max: 1, exceptions: [::Net::HTTP::Persistent::Error]
         builder.use :logger, logger
         builder.adapter :net_http_persistent
       end
