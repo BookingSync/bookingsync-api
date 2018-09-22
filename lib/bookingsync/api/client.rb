@@ -415,5 +415,9 @@ module BookingSync::API
     def next_page(response, request_settings)
       response.relations[:next].call({}, { method: request_settings[:request_method] })
     end
+
+    def reject_blank_values(array)
+      array.reject { |value| value.nil? || value == "" }
+    end
   end
 end
