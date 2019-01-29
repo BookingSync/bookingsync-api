@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/applications/17
+    body:
+      encoding: UTF-8
+      string: '{"applications":[{"default_price_increase":1.1}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.13.4
+      Date:
+      - Tue, 29 Jan 2019 11:33:26 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2019-01-29 11:33:25 UTC
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1548763200'
+      X-Ratelimit-Remaining:
+      - '997'
+      Etag:
+      - W/"fdce7369a2708523045bf15864871fb8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - ahoy_visit=d289e0aa-b815-4afe-905f-793303de635f; path=/; expires=Tue, 05 Feb
+        2019 11:33:25 -0000; secure
+      - ahoy_visitor=c8da2971-4a43-4201-8040-2f63f31db44c; path=/; expires=Fri, 29
+        Jan 2021 11:33:25 -0000; secure
+      X-Request-Id:
+      - 327fe1c5-4f29-4dea-8054-c5d4e9750f36
+      X-Runtime:
+      - '0.863601'
+      Vary:
+      - Origin
+      Strict-Transport-Security:
+      - max-age=15552000
+    body:
+      encoding: UTF-8
+      string: '{"applications":[{"id":17,"name":"BSA Website DEV","default_price_increase":"1.1"}],"meta":{}}'
+    http_version: 
+  recorded_at: Tue, 29 Jan 2019 11:33:26 GMT
+recorded_with: VCR 4.0.0

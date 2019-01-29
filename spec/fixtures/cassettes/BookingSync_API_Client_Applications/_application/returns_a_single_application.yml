@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/applications/17
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.13.4
+      Date:
+      - Mon, 28 Jan 2019 06:51:43 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2019-01-28 06:51:43 UTC
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1548658800'
+      X-Ratelimit-Remaining:
+      - '996'
+      Link:
+      - <https://www.bookingsync.com/api/v3/applications/17?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/applications/17?page=1>; rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      X-Per-Page:
+      - '100'
+      X-Current-Page:
+      - '1'
+      Etag:
+      - W/"12fe43cbe24d70d282ed7485bca60003"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - ahoy_visit=14d915aa-3f24-4021-a1d2-92adf5515150; path=/; expires=Mon, 04 Feb
+        2019 06:51:43 -0000; secure
+      - ahoy_visitor=d5632d8c-8edb-45e8-a3d3-3c023e08b041; path=/; expires=Thu, 28
+        Jan 2021 06:51:43 -0000; secure
+      X-Request-Id:
+      - 15522b34-dbb2-4f31-a007-16ee518c1046
+      X-Runtime:
+      - '0.039903'
+      Vary:
+      - Origin
+      Strict-Transport-Security:
+      - max-age=15552000
+    body:
+      encoding: UTF-8
+      string: '{"applications":[{"id":17,"name":"BSA Website DEV","default_price_increase":"0.0"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/applications/17?page=1","last":"https://www.bookingsync.com/api/v3/applications/17?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Mon, 28 Jan 2019 06:51:43 GMT
+recorded_with: VCR 4.0.0
