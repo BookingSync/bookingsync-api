@@ -37,7 +37,7 @@ module BookingSync::API
       #   @api.edit_application(application, { default_price_increase: 3 })
       def edit_application(application, options = {})
         put("applications/#{application}", applications: [options]).pop
-      end    
+      end
     end
   end
 end
