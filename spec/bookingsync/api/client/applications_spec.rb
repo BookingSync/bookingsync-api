@@ -38,6 +38,7 @@ describe BookingSync::API::Client::Applications do
     it "returns updated application" do
       application = client.edit_application(prefetched_application_id, default_price_increase: default_price_increase)
       expect(application).to be_kind_of(BookingSync::API::Resource)
+      expect(application.default_price_increase).to eq(default_price_increase.to_s)
     end
   end
 end
