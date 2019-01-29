@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/applications
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.13.4
+      Date:
+      - Mon, 28 Jan 2019 06:51:00 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2019-01-28 06:51:00 UTC
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Reset:
+      - '1548658800'
+      X-Ratelimit-Remaining:
+      - '997'
+      Link:
+      - <https://www.bookingsync.com/api/v3/applications?page=1>; rel="first", <https://www.bookingsync.com/api/v3/applications?page=1>;
+        rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '7'
+      X-Per-Page:
+      - '100'
+      X-Current-Page:
+      - '1'
+      Etag:
+      - W/"42e01960a6efc9143f7fbb79e6c3d8cf"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - ahoy_visit=161d7a18-614d-4097-b3e7-02442ce63677; path=/; expires=Mon, 04 Feb
+        2019 06:51:00 -0000; secure
+      - ahoy_visitor=964715b9-e8cc-473b-b7f3-24a7dec755ad; path=/; expires=Thu, 28
+        Jan 2021 06:51:00 -0000; secure
+      X-Request-Id:
+      - a8968162-e761-4743-8fae-fdef93a90f38
+      X-Runtime:
+      - '0.074883'
+      Vary:
+      - Origin
+      Strict-Transport-Security:
+      - max-age=15552000
+    body:
+      encoding: UTF-8
+      string: '{"applications":[{"id":17,"name":"BSA Website DEV","default_price_increase":"0.0"},{"id":65,"name":"Airbnb","default_price_increase":"0.0"},{"id":95,"name":"bsa-secure","default_price_increase":"0.0"},{"id":453,"name":"bsa-booking-staging","default_price_increase":"0.0"},{"id":455,"name":"airConnect","default_price_increase":"0.0"},{"id":560,"name":"Admin
+        UI","default_price_increase":"0.0"},{"id":609,"name":"Channel Manager","default_price_increase":"0.0"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/applications?page=1","last":"https://www.bookingsync.com/api/v3/applications?page=1"},"X-Total-Pages":"1","X-Total-Count":"7","X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Mon, 28 Jan 2019 06:51:00 GMT
+recorded_with: VCR 4.0.0
