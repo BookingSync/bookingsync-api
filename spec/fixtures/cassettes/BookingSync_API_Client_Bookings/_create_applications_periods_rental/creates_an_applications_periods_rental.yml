@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bookingsync.test/api/v3/applications_periods_rentals
+    body:
+      encoding: UTF-8
+      string: '{"applications_periods_rental":{"rental_id":1,"application_id":9,"start_date":"2017-01-03","end_date":"2017-01-04","price_increase":15}}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"d7c57adb81c25bce892b4917f77a619d"
+      Location:
+      - https://bookingsync.test/api/v3/applications_periods_rentals/4
+      Set-Cookie:
+      - ahoy_visit=40090208-8d23-4ef8-873d-c02ff7a572cc; path=/; expires=Tue, 19 Feb
+        2019 17:50:06 -0000
+      - ahoy_visitor=14cb23fe-cc3f-44b5-94d7-f8b51bdbf89b; path=/; expires=Fri, 12
+        Feb 2021 17:50:06 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '996'
+      X-Ratelimit-Reset:
+      - '1549994400'
+      X-Request-Id:
+      - 7dbcc649-fd9c-48a3-9678-5b16badb3e1a
+      X-Runtime:
+      - '0.246783'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-02-12 17:50:06 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 12 Feb 2019 17:50:07 GMT
+      Content-Length:
+      - '127'
+    body:
+      encoding: UTF-8
+      string: '{"applications_periods_rentals":[{"id":4,"price_increase":"15.0","start_date":"2017-01-03","end_date":"2017-01-04"}],"meta":{}}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 17:50:07 GMT
+recorded_with: VCR 4.0.0

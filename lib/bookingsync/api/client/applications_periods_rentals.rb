@@ -16,6 +16,14 @@ module BookingSync::API
         paginate :applications_periods_rentals, options, &block
       end
 
+      # Create a applications_periods_rental
+      #
+      # @param options [Hash] applications_periods_rental attributes.
+      # @return [BookingSync::API::Resource] Newly create applications_periods_rental.
+      def create_applications_periods_rental(options = {})
+        post("applications_periods_rentals", applications_periods_rental: options).pop
+      end
+
       # Get a single applications_periods_rental
       #
       # @param applications_periods_rental [BookingSync::API::Resource|Integer] applications_periods_rental or ID
