@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://bookingsync.test/api/v3/applications_periods_rentals/2
+    body:
+      encoding: UTF-8
+      string: '{"applications_periods_rental":{"price_increase":3.1}}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"e87338e07e338f7f4b22e391d698502d"
+      Set-Cookie:
+      - ahoy_visit=25bf2c5f-1f76-4e5c-a07d-117ebd659e00; path=/; expires=Tue, 19 Feb
+        2019 13:33:29 -0000
+      - ahoy_visitor=80a0b13c-a5bf-45b4-8a55-317d7b5229c5; path=/; expires=Fri, 12
+        Feb 2021 13:33:29 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '991'
+      X-Ratelimit-Reset:
+      - '1549980000'
+      X-Request-Id:
+      - 040aa18d-5034-4286-8613-fcc9009a23d7
+      X-Runtime:
+      - '0.622521'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-02-12 13:33:29 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 12 Feb 2019 13:33:30 GMT
+      Content-Length:
+      - '126'
+    body:
+      encoding: UTF-8
+      string: '{"applications_periods_rentals":[{"id":2,"price_increase":"3.1","start_date":"2019-01-01","end_date":"2100-01-01"}],"meta":{}}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 13:33:30 GMT
+recorded_with: VCR 4.0.0

@@ -2,6 +2,7 @@ require "bookingsync/api/middleware/logger"
 require "bookingsync/api/client/accounts"
 require "bookingsync/api/client/amenities"
 require "bookingsync/api/client/applications"
+require "bookingsync/api/client/applications_periods_rentals"
 require "bookingsync/api/client/attachments"
 require "bookingsync/api/client/availabilities"
 require "bookingsync/api/client/bathrooms"
@@ -58,6 +59,7 @@ module BookingSync::API
     include BookingSync::API::Client::Accounts
     include BookingSync::API::Client::Amenities
     include BookingSync::API::Client::Applications
+    include BookingSync::API::Client::ApplicationsPeriodsRentals
     include BookingSync::API::Client::Attachments
     include BookingSync::API::Client::Availabilities
     include BookingSync::API::Client::Bathrooms

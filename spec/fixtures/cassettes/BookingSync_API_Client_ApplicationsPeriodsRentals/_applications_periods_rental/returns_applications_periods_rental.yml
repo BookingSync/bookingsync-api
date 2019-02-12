@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://bookingsync.test/api/v3/applications_periods_rentals/2
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"4f16e1fadf19018a8e568c8eccace925"
+      Link:
+      - <https://bookingsync.test/api/v3/applications_periods_rentals/2?page=1>; rel="first",
+        <https://bookingsync.test/api/v3/applications_periods_rentals/2?page=1>; rel="last"
+      Set-Cookie:
+      - ahoy_visit=2d8fdbfb-1554-4133-9dee-7595b92d0d3b; path=/; expires=Tue, 19 Feb
+        2019 13:17:09 -0000
+      - ahoy_visitor=01bc6be4-c17c-4b78-aa7d-7697333689a3; path=/; expires=Fri, 12
+        Feb 2021 13:17:09 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Current-Page:
+      - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Per-Page:
+      - '100'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '997'
+      X-Ratelimit-Reset:
+      - '1549980000'
+      X-Request-Id:
+      - a8cd0926-d3c9-4c84-bf54-3812d4ad9529
+      X-Runtime:
+      - '0.377347'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-02-12 13:17:09 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 12 Feb 2019 13:17:09 GMT
+      Content-Length:
+      - '353'
+    body:
+      encoding: UTF-8
+      string: '{"applications_periods_rentals":[{"id":2,"price_increase":"15.0","start_date":"2019-01-01","end_date":"2100-01-01"}],"meta":{"Link":{"first":"https://bookingsync.test/api/v3/applications_periods_rentals/2?page=1","last":"https://bookingsync.test/api/v3/applications_periods_rentals/2?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 13:17:09 GMT
+recorded_with: VCR 4.0.0
