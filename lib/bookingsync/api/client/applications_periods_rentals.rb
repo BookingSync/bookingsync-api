@@ -11,7 +11,6 @@ module BookingSync::API
       # @example Get the list of applications_periods_rentals for the current account
       #   applications_periods_rentals = @api.applications_periods_rentals
       #   applications_periods_rentals.first.title # => "Internet"
-      # @see http://developers.bookingsync.com/reference/endpoints/applications_periods_rentals/#list-applications_periods_rentals
       def applications_periods_rentals(options = {}, &block)
         paginate :applications_periods_rentals, options, &block
       end
@@ -19,7 +18,7 @@ module BookingSync::API
       # Create a applications_periods_rental
       #
       # @param options [Hash] applications_periods_rental attributes.
-      # @return [BookingSync::API::Resource] Newly create applications_periods_rental.
+      # @return [BookingSync::API::Resource] Newly created applications_periods_rental.
       def create_applications_periods_rental(options = {})
         post("applications_periods_rentals", applications_periods_rental: options).pop
       end
@@ -29,7 +28,6 @@ module BookingSync::API
       # @param applications_periods_rental [BookingSync::API::Resource|Integer] applications_periods_rental or ID
       #   of the applications_periods_rental.
       # @return [BookingSync::API::Resource]
-      # @see http://developers.bookingsync.com/reference/endpoints/applications_periods_rentals/#get-a-single-applications-periods-rental
       def applications_periods_rental(applications_periods_rental)
         get("applications_periods_rentals/#{applications_periods_rental}").pop
       end
