@@ -53,7 +53,7 @@ module BookingSync::API
       #   exception is raised otherwise.
       # @example
       #   booking_comment = @api.booking_comments.first
-      #   @api.edit_booking_comment(8, {conent: "New conent"})
+      #   @api.edit_booking_comment(8, {content: "New content"})
       # => {:links=>{:booking=>1}, :id=>8, :content=>"New content", :editable=>true, :created_at=>2016-04-18 13:31:40 UTC, :updated_at=>2016-04-18 13:46:06 UTC}
       def edit_booking_comment(booking_comment, options = {})
         put("booking_comments/#{booking_comment}", booking_comments: [options]).pop
