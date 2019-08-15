@@ -2,8 +2,10 @@ language: ruby
 rvm:
   - "2.1"
   - "2.2"
+  - "2.4.4"
+  - "2.5.1"
 before_install:
   - gem install bundler -v 1.12.5
 script:
-  - bundle exec rake style:rubocop:without_auto_correct 
+  - bundle exec rake style:rubocop:without_auto_correct
   - bundle exec rake spec
