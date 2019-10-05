@@ -1,0 +1,166 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.test/api/v3/rental_urls
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"7c8aa051de8288e54fe0909f1b295531"
+      Link:
+      - <https://www.bookingsync.test/api/v3/rental_urls?page=1>; rel="first", <https://www.bookingsync.test/api/v3/rental_urls?page=1>;
+        rel="last"
+      Set-Cookie:
+      - ahoy_visit=00a81267-5cda-432d-8ec9-3f690aa4d1e7; path=/; expires=Sat, 12 Oct
+        2019 20:24:01 -0000
+      - ahoy_visitor=1e49482b-c239-4770-800e-52925ebcdde2; path=/; expires=Tue, 05
+        Oct 2021 20:24:01 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Current-Page:
+      - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Per-Page:
+      - '100'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '998'
+      X-Ratelimit-Reset:
+      - '1570309200'
+      X-Request-Id:
+      - f93a22cc-a5d9-415c-aa72-0f1f415f6919
+      X-Runtime:
+      - '0.338754'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-10-05 20:24:01 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Sat, 05 Oct 2019 20:24:01 GMT
+      Content-Length:
+      - '552'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rental_urls.rental":"https://www.bookingsync.test/api/v3/rentals/{rental_urls.rental}"},"rental_urls":[{"links":{"rental":1},"id":"a6e9b7a2-0fb9-42dc-8bf6-4bfa0b1aae25","label":"HomeAway","url":"test.com","lock":{"record":"","attributes":{}},"canceled_at":null,"created_at":"2019-10-05T20:23:21Z","updated_at":"2019-10-05T20:23:21Z"}],"meta":{"Link":{"first":"https://www.bookingsync.test/api/v3/rental_urls?page=1","last":"https://www.bookingsync.test/api/v3/rental_urls?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Sat, 05 Oct 2019 20:24:01 GMT
+- request:
+    method: get
+    uri: https://www.bookingsync.test/api/v3/rentals/1
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"18b30f17fc2645d39067742442947f7d"
+      Link:
+      - <https://www.bookingsync.test/api/v3/rentals/1?page=1>; rel="first", <https://www.bookingsync.test/api/v3/rentals/1?page=1>;
+        rel="last"
+      Set-Cookie:
+      - ahoy_visit=b98fe6d0-14b5-4686-8c2f-108db2706e5a; path=/; expires=Sat, 12 Oct
+        2019 20:24:02 -0000
+      - ahoy_visitor=827549c2-c039-4814-9e2e-967828cc29d6; path=/; expires=Tue, 05
+        Oct 2021 20:24:02 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Current-Page:
+      - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Per-Page:
+      - '50'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '997'
+      X-Ratelimit-Reset:
+      - '1570309200'
+      X-Request-Id:
+      - 3ee9171d-a992-4ef8-a0fe-eed7476b9040
+      X-Runtime:
+      - '0.217933'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-10-05 20:24:02 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Sat, 05 Oct 2019 20:24:02 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rentals.account":"http://bookingsync.test/api/v3/accounts/{rentals.account}","rentals.availability":"http://bookingsync.test/api/v3/availabilities/{rentals.availability}","rentals.change_over":"http://bookingsync.test/api/v3/change_overs/{rentals.change_over}","rentals.destination":"http://bookingsync.test/api/v3/destinations/{rentals.destination}","rentals.rates_table":"http://bookingsync.test/api/v3/rates_tables/{rentals.rates_table}","rentals.rental_agreement":"http://bookingsync.test/api/v3/rental_agreements/{rentals.rental_agreement}","rentals.rental_cancelation_policy":"http://bookingsync.test/api/v3/rental_cancelation_policies/{rentals.rental_cancelation_policy}","rentals.nightly_rate_map":"http://bookingsync.test/api/v3/nightly_rate_maps/{rentals.nightly_rate_map}","rentals.photos":"http://bookingsync.test/api/v3/photos/{rentals.photos}","rentals.reviews":"http://bookingsync.test/api/v3/reviews/{rentals.reviews}","rentals.special_offers":"http://bookingsync.test/api/v3/special_offers/{rentals.special_offers}","rentals.rates":"http://bookingsync.test/api/v3/rates/{rentals.rates}","rentals.rentals_amenities":"http://bookingsync.test/api/v3/rentals_amenities/{rentals.rentals_amenities}","rentals.rentals_fees":"http://bookingsync.test/api/v3/rentals_fees/{rentals.rentals_fees}","rentals.bathrooms":"http://bookingsync.test/api/v3/bathrooms/{rentals.bathrooms}","rentals.bedrooms":"http://bookingsync.test/api/v3/bedrooms/{rentals.bedrooms}","rentals.living_rooms":"http://bookingsync.test/api/v3/living_rooms/{rentals.living_rooms}","rentals.rentals_tags":"http://bookingsync.test/api/v3/rentals_tags/{rentals.rentals_tags}","rentals.rental_contacts":"http://bookingsync.test/api/v3/rental_contacts/{rentals.rental_contacts}","rentals.videos":"http://bookingsync.test/api/v3/videos/{rentals.videos}"},"rentals":[{"links":{"account":1,"availability":1,"bathrooms":[1],"bedrooms":[],"change_over":1,"destination":85,"living_rooms":[],"nightly_rate_map":1,"photos":[1],"rates":[1,2,3],"rates_table":1,"rental_agreement":1,"rental_cancelation_policy":2,"rental_contacts":[],"rentals_amenities":[1,2,3],"rentals_fees":[],"rentals_tags":[],"reviews":[1,2,3,4,5,6,7,8,9,10,11,12,13],"special_offers":[1],"videos":[]},"id":1,"name":"Farmhouse
+        Badminton","headline":{"en":"Farmhouse Badminton Surfing"},"summary":{"en":"Ipsum
+        consequatur voluptas beatae laudantium quo libero architecto."},"description":{"en":"Eum
+        quia quo repellat natus aut consequatur est. Ipsum rerum qui consequatur aut
+        laudantium placeat quod. Architecto aut dolorem amet quibusdam.Velit impedit
+        dolores saepe aut aut hic amet. Cumque perferendis et est repellat rerum id
+        occaecati. Autem dolorem quam porro corrupti laudantium in quia.Ut nihil blanditiis
+        impedit sint non. Natus est sit non est laudantium. Non quis quia non et.
+        Vel accusamus temporibus ducimus rerum unde est sapiente qui."},"rental_type":"villa","downpayment":30,"bedrooms_count":0,"sleeps":7,"sleeps_max":null,"bathrooms_count":1,"surface":120,"surface_unit":"metric","bookable_online":false,"bookable_on_request":true,"instantly_bookable":false,"min_price":"45.0","max_price":"500.0","currency":"EUR","price_public_notes":{"en":"Public
+        notes in english"},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country_code":"FR","contact_name":null,"reviews_count":13,"reviews_average_rating":"4.5","published_at":"2019-10-04T16:27:30Z","created_at":"2019-10-04T16:26:11Z","updated_at":"2019-10-04T16:27:39Z","address1":null,"address2":null,"zip":null,"checkin_time":16,"checkin_end_time":null,"checkout_time":10,"initial_price":null,"final_price":null,"position":1,"base_rate":"500.0","base_rate_kind":"weekly","absolute_min_price":"0.0","notes":null,"stories_count":null,"floor":"","damage_deposit":"35.5","owner_fullname":null,"owner_email":null,"owner_notes":null,"checkin_details":{},"checkout_details":{},"balance_due":30,"website_url":{},"charge_damage_deposit_on_arrival":true,"full_bathrooms_count":0,"standalone_toilets_count":0,"vr_bathrooms_count":1,"nightly_rates_managed_externally":false,"rounding_kind":"no-rounding","original_currency":"EUR","exchange_rate":"1.0","permit_number":null,"absolute_min_stay":7,"space":{},"guests_access":{},"guests_interaction":{},"guests_interaction_kind":null,"public_notes":{},"neighborhood_overview":{},"neighborhood_transit":{},"residency_category":null,"content_requirements_met":false,"certifications":{},"canceled_at":null}],"meta":{"Link":{"first":"https://www.bookingsync.test/api/v3/rentals/1?page=1","last":"https://www.bookingsync.test/api/v3/rentals/1?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"50"}}'
+    http_version: 
+  recorded_at: Sat, 05 Oct 2019 20:24:02 GMT
+recorded_with: VCR 5.0.0

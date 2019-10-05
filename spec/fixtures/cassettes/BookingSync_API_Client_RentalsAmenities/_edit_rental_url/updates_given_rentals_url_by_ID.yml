@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.test/api/v3/rental_urls/9185bcf8-3cc5-4f1d-9ec6-e6b69049ae8e
+    body:
+      encoding: UTF-8
+      string: '{"rental_urls":{"url":"new_url.com"}}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"2de3956cf7d8d2b907bd0874431a7f12"
+      Set-Cookie:
+      - ahoy_visit=67620388-67f4-4822-baef-756523e60ecc; path=/; expires=Sat, 12 Oct
+        2019 21:04:03 -0000
+      - ahoy_visitor=2707f05a-24e0-452d-a3b3-b3772973a2fb; path=/; expires=Tue, 05
+        Oct 2021 21:04:03 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '996'
+      X-Ratelimit-Reset:
+      - '1570312800'
+      X-Request-Id:
+      - c444bedb-29de-49d3-a435-f751324c19ef
+      X-Runtime:
+      - '0.235368'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-10-05 21:04:03 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Sat, 05 Oct 2019 21:04:03 GMT
+      Content-Length:
+      - '383'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rental_urls.rental":"https://www.bookingsync.test/api/v3/rentals/{rental_urls.rental}"},"rental_urls":[{"links":{"rental":1},"id":"9185bcf8-3cc5-4f1d-9ec6-e6b69049ae8e","label":"HomeAway","url":"new_url.com","lock":{"record":"doorkeeper/application-9","attributes":{}},"canceled_at":null,"created_at":"2019-10-05T20:58:12Z","updated_at":"2019-10-05T21:04:03Z"}],"meta":{}}'
+    http_version: 
+  recorded_at: Sat, 05 Oct 2019 21:04:03 GMT
+recorded_with: VCR 5.0.0

@@ -37,6 +37,7 @@ require "bookingsync/api/client/rental_agreements"
 require "bookingsync/api/client/rental_cancelation_policies"
 require "bookingsync/api/client/rental_cancelation_policy_items"
 require "bookingsync/api/client/rentals_contents_overrides"
+require "bookingsync/api/client/rental_urls"
 require "bookingsync/api/client/reviews"
 require "bookingsync/api/client/seasons"
 require "bookingsync/api/client/special_offers"
@@ -97,6 +98,7 @@ module BookingSync::API
     include BookingSync::API::Client::RentalCancelationPolicies
     include BookingSync::API::Client::RentalCancelationPolicyItems
     include BookingSync::API::Client::RentalsContentsOverrides
+    include BookingSync::API::Client::RentalUrls
     include BookingSync::API::Client::Reviews
     include BookingSync::API::Client::Seasons
     include BookingSync::API::Client::SpecialOffers
@@ -320,7 +322,7 @@ module BookingSync::API
     #
     # @return [String] Base URL to BookingSync
     def base_url
-      @base_url || ENV.fetch("BOOKINGSYNC_URL", "https://www.bookingsync.com")
+      @base_url || ENV.fetch("BOOKINGSYNC_URL", "https://www.bookingsync.test")
     end
 
     # Return true if SSL cert should be verified
