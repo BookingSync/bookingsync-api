@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/contacts/2
+    body:
+      encoding: UTF-8
+      string: '{"contacts":[{"firstname":"Knut","lastname":"Eljassen"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.13
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"65a82e4d429ffacd6752e17c87d81f27"
+      Set-Cookie:
+      - ahoy_visit=b8acefd7-a469-4351-9ceb-89fac8da1226; path=/; expires=Tue, 15 Oct
+        2019 12:26:20 -0000
+      - ahoy_visitor=77f7d972-8119-411c-bf19-23751447c1e0; path=/; expires=Fri, 08
+        Oct 2021 12:26:20 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '987'
+      X-Ratelimit-Reset:
+      - '1570539600'
+      X-Request-Id:
+      - ac24a74d-2082-444b-97d8-b86117a24125
+      X-Runtime:
+      - '0.092898'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-10-08 12:26:20 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 08 Oct 2019 12:26:20 GMT
+      Content-Length:
+      - '643'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"contacts.account":"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"},"contacts":[{"links":{"account":1},"id":2,"fullname":"Knut
+        Eljassen","spoken_languages":["en"],"email":"halldor@example.com","phones":[{"label":"default","number":"123456789"}],"website":"http://www.demo.com","private_notes":null,"address1":"Demo
+        address","address2":null,"city":"Reykjavik","state":"Demo","zip":"33209","country_code":"IS","firstname":"Knut","lastname":"Eljassen","gender":"male","created_at":"2019-10-08T12:23:10Z","updated_at":"2019-10-08T12:26:20Z","canceled_at":null,"forget_me_at":null,"processing_restricted_at":null}],"meta":{}}'
+    http_version: 
+  recorded_at: Tue, 08 Oct 2019 12:26:20 GMT
+recorded_with: VCR 5.0.0
