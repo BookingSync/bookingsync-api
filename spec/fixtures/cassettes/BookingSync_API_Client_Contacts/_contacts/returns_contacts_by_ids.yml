@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://bookingsync.test/api/v3/contacts/1
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.13
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"0eca489f8874ba9dde96f615bd9fb9b7"
+      Link:
+      - <http://bookingsync.test/api/v3/contacts/1?page=1>; rel="first", <http://bookingsync.test/api/v3/contacts/1?page=1>;
+        rel="last"
+      Set-Cookie:
+      - ahoy_visit=db3ad9fb-3ff1-4a63-befa-f8c567d68070; path=/; expires=Tue, 15 Oct
+        2019 12:12:34 -0000
+      - ahoy_visitor=98b81e55-7220-4020-881a-8853b7c3ef87; path=/; expires=Fri, 08
+        Oct 2021 12:12:34 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Current-Page:
+      - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Per-Page:
+      - '100'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '994'
+      X-Ratelimit-Reset:
+      - '1570539600'
+      X-Request-Id:
+      - 1446ac7b-b6e4-4e6f-be72-0b4879c340d7
+      X-Runtime:
+      - '0.085136'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-10-08 12:12:34 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 08 Oct 2019 12:12:34 GMT
+      Content-Length:
+      - '828'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJsaW5rcyI6eyJjb250YWN0cy5hY2NvdW50IjoiaHR0cDovL2Jvb2tpbmdz
+        eW5jLnRlc3QvYXBpL3YzL2FjY291bnRzL3tjb250YWN0cy5hY2NvdW50fSJ9
+        LCJjb250YWN0cyI6W3sibGlua3MiOnsiYWNjb3VudCI6MX0sImlkIjoxLCJm
+        dWxsbmFtZSI6IkpvaG4gRG9lIiwic3Bva2VuX2xhbmd1YWdlcyI6WyJlbiIs
+        ImVzIl0sImVtYWlsIjoiYWRyaWFuQGJvb2tpbmdzeW5jLmNvbSIsInBob25l
+        cyI6W3sibGFiZWwiOiJkZW1vIiwibnVtYmVyIjoiMTIzNDU2Nzg5In1dLCJ3
+        ZWJzaXRlIjoiaHR0cDovL3d3LmJvb2tpbmdzeW5jLmNvbSIsInByaXZhdGVf
+        bm90ZXMiOm51bGwsImFkZHJlc3MxIjoiZGVtbyBhZGRyZXNzIiwiYWRkcmVz
+        czIiOm51bGwsImNpdHkiOiJOw6l2YWNoZSIsInN0YXRlIjoiU3RhdGUiLCJ6
+        aXAiOiIzMzIwOSIsImNvdW50cnlfY29kZSI6IkZSIiwiZmlyc3RuYW1lIjoi
+        Sm9obiIsImxhc3RuYW1lIjoiRG9lIiwiZ2VuZGVyIjoibWFsZSIsImNyZWF0
+        ZWRfYXQiOiIyMDE5LTEwLTA4VDEyOjA2OjQ5WiIsInVwZGF0ZWRfYXQiOiIy
+        MDE5LTEwLTA4VDEyOjA2OjQ5WiIsImNhbmNlbGVkX2F0IjpudWxsLCJmb3Jn
+        ZXRfbWVfYXQiOm51bGwsInByb2Nlc3NpbmdfcmVzdHJpY3RlZF9hdCI6bnVs
+        bH1dLCJtZXRhIjp7IkxpbmsiOnsiZmlyc3QiOiJodHRwOi8vYm9va2luZ3N5
+        bmMudGVzdC9hcGkvdjMvY29udGFjdHMvMT9wYWdlPTEiLCJsYXN0IjoiaHR0
+        cDovL2Jvb2tpbmdzeW5jLnRlc3QvYXBpL3YzL2NvbnRhY3RzLzE/cGFnZT0x
+        In0sIlgtVG90YWwtUGFnZXMiOiIxIiwiWC1Ub3RhbC1Db3VudCI6IjEiLCJY
+        LVBlci1QYWdlIjoiMTAwIn19
+    http_version: 
+  recorded_at: Tue, 08 Oct 2019 12:12:34 GMT
+recorded_with: VCR 5.0.0
