@@ -53,6 +53,10 @@ module BookingSync::API
         put("rental_urls/#{rental_url}", rental_urls: options).pop
       end
 
+      def cancel_rental_url(rental_url)
+        delete "rental_urls/#{rental_url}"
+      end
+
       private
 
       def base_64_encode(file_path)

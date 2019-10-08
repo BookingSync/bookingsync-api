@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://www.bookingsync.test/api/v3/rental_urls/33878e9a-4c09-4f02-a340-6c3c099e66ad
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - ahoy_visit=4304281b-8ba2-471f-977f-699854495c54; path=/; expires=Tue, 15 Oct
+        2019 15:12:18 -0000
+      - ahoy_visitor=6b0d2fdf-038f-4bfe-8d9b-0152e57344f1; path=/; expires=Fri, 08
+        Oct 2021 15:12:18 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '996'
+      X-Ratelimit-Reset:
+      - '1570550400'
+      X-Request-Id:
+      - 113886b2-30d6-4835-a24b-b6e2333136a7
+      X-Runtime:
+      - '0.113546'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-10-08 15:12:18 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 08 Oct 2019 15:12:18 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 08 Oct 2019 15:12:18 GMT
+recorded_with: VCR 4.0.0

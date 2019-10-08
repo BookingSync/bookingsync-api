@@ -69,4 +69,15 @@ describe BookingSync::API::Client::RentalUrls do
       end
     end
   end
+
+  describe ".cancel_rental_url", :vcr do
+    let(:created_rental_url_id) {
+      find_resource("#{@casette_base_path}_create_rental_url/creates_a_new_rental_url.yml", "rental_urls")[:id]
+    }
+
+    it "cancels given rental_url" do
+      client.cancel_rental_url(created_rental_url_id)
+      assert_requested :delete, bs_url("rental_urls/#{created_rental_url_id}")
+    end
+  end
 end
