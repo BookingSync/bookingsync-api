@@ -89,4 +89,15 @@ describe BookingSync::API::Client::Contacts do
       end
     end
   end
+
+  describe ".delete_contact", :vcr do
+    let(:created_contact_id) {
+      find_resource("#{casette_dir}/BookingSync_API_Client_Contacts/_create_contact/creates_a_new_contact.yml", "contacts")[:id]
+    }
+
+    it "deletes given contact" do
+      api.delete_contact(created_contact_id)
+      assert_requested :delete, bs_url("contacts/#{created_contact_id}")
+    end
+  end
 end
