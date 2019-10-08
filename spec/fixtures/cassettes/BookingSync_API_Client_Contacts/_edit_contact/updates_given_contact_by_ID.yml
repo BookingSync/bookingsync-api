@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: http://bookingsync.test/api/v3/contacts/2
+    uri: https://www.bookingsync.com/api/v3/contacts/2
     body:
       encoding: UTF-8
       string: '{"contacts":[{"firstname":"Knut","lastname":"Eljassen"}]}'
@@ -63,7 +63,7 @@ http_interactions:
       - '643'
     body:
       encoding: UTF-8
-      string: '{"links":{"contacts.account":"http://bookingsync.test/api/v3/accounts/{contacts.account}"},"contacts":[{"links":{"account":1},"id":2,"fullname":"Knut
+      string: '{"links":{"contacts.account":"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"},"contacts":[{"links":{"account":1},"id":2,"fullname":"Knut
         Eljassen","spoken_languages":["en"],"email":"halldor@example.com","phones":[{"label":"default","number":"123456789"}],"website":"http://www.demo.com","private_notes":null,"address1":"Demo
         address","address2":null,"city":"Reykjavik","state":"Demo","zip":"33209","country_code":"IS","firstname":"Knut","lastname":"Eljassen","gender":"male","created_at":"2019-10-08T12:23:10Z","updated_at":"2019-10-08T12:26:20Z","canceled_at":null,"forget_me_at":null,"processing_restricted_at":null}],"meta":{}}'
     http_version: 

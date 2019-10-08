@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://bookingsync.test/api/v3/contacts/1
+    uri: https://www.bookingsync.com/api/v3/contacts/1
     body:
       encoding: UTF-8
       string: "{}"
@@ -33,7 +33,7 @@ http_interactions:
       Etag:
       - W/"0eca489f8874ba9dde96f615bd9fb9b7"
       Link:
-      - <http://bookingsync.test/api/v3/contacts/1?page=1>; rel="first", <http://bookingsync.test/api/v3/contacts/1?page=1>;
+      - <https://www.bookingsync.com/api/v3/contacts/1?page=1>; rel="first", <https://www.bookingsync.com/api/v3/contacts/1?page=1>;
         rel="last"
       Set-Cookie:
       - ahoy_visit=d3bfd0f3-14b2-4404-b948-19285c06f6c7; path=/; expires=Tue, 15 Oct
@@ -94,6 +94,6 @@ http_interactions:
         cDovL2Jvb2tpbmdzeW5jLnRlc3QvYXBpL3YzL2NvbnRhY3RzLzE/cGFnZT0x
         In0sIlgtVG90YWwtUGFnZXMiOiIxIiwiWC1Ub3RhbC1Db3VudCI6IjEiLCJY
         LVBlci1QYWdlIjoiMTAwIn19
-    http_version: 
+    http_version:
   recorded_at: Tue, 08 Oct 2019 12:20:37 GMT
 recorded_with: VCR 5.0.0

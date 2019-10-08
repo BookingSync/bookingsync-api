@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://bookingsync.test/api/v3/contacts
+    uri: https://www.bookingsync.com/api/v3/contacts
     body:
       encoding: UTF-8
       string: "{}"
@@ -33,7 +33,7 @@ http_interactions:
       Etag:
       - W/"6d40a9df44cbfd4f6e31af938c30f15e"
       Link:
-      - <http://bookingsync.test/api/v3/contacts?page=1>; rel="first", <http://bookingsync.test/api/v3/contacts?page=1>;
+      - <https://www.bookingsync.com/api/v3/contacts?page=1>; rel="first", <https://www.bookingsync.com/api/v3/contacts?page=1>;
         rel="last"
       Set-Cookie:
       - ahoy_visit=21d8d4cf-735b-4d60-a916-f5da7890620d; path=/; expires=Tue, 15 Oct

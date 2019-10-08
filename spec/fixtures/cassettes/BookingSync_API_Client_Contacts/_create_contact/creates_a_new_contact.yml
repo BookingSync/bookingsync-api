@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://bookingsync.test/api/v3/contacts
+    uri: https://www.bookingsync.com/api/v3/contacts
     body:
       encoding: UTF-8
       string: '{"contacts":[{"firstname":"John","lastname":"Doe","email":"halldor@example.com","website":"http://www.demo.com","address1":"Demo
@@ -34,7 +34,7 @@ http_interactions:
       Etag:
       - W/"109d9e77fc462040fed610a1804f174b"
       Location:
-      - http://bookingsync.test/api/v3/contacts/2
+      - https://www.bookingsync.com/api/v3/contacts/2
       Set-Cookie:
       - ahoy_visit=927716d7-6aed-44ba-a636-cb1edfae464c; path=/; expires=Tue, 15 Oct
         2019 12:23:10 -0000
@@ -66,7 +66,7 @@ http_interactions:
       - '633'
     body:
       encoding: UTF-8
-      string: '{"links":{"contacts.account":"http://bookingsync.test/api/v3/accounts/{contacts.account}"},"contacts":[{"links":{"account":1},"id":2,"fullname":"John
+      string: '{"links":{"contacts.account":"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"},"contacts":[{"links":{"account":1},"id":2,"fullname":"John
         Doe","spoken_languages":["en"],"email":"halldor@example.com","phones":[{"label":"default","number":"123456789"}],"website":"http://www.demo.com","private_notes":null,"address1":"Demo
         address","address2":null,"city":"Reykjavik","state":"Demo","zip":"33209","country_code":"IS","firstname":"John","lastname":"Doe","gender":"male","created_at":"2019-10-08T12:23:10Z","updated_at":"2019-10-08T12:23:10Z","canceled_at":null,"forget_me_at":null,"processing_restricted_at":null}],"meta":{}}'
     http_version: 

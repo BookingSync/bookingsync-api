@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: http://bookingsync.test/api/v3/contacts/2
+    uri: https://www.bookingsync.com/api/v3/contacts/2
     body:
       encoding: UTF-8
       string: "{}"
