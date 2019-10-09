@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/rental_contacts/5
+    body:
+      encoding: UTF-8
+      string: '{"rental_contacts":[{"kind":"manager"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.14
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.16.1
+      Date:
+      - Wed, 09 Oct 2019 09:25:03 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Updated-Since-Request-Synced-At:
+      - 2019-10-09 09:25:03 UTC
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - Bearer realm="Doorkeeper", error="invalid_token", error_description="The access
+        token is invalid"
+      Set-Cookie:
+      - ahoy_visit=fb2e0175-f454-4150-8b32-d518b1f596a4; path=/; expires=Wed, 16 Oct
+        2019 09:25:03 -0000; secure
+      - ahoy_visitor=b77418b8-2072-4c6f-878f-2ec3bf46e817; path=/; expires=Sat, 09
+        Oct 2021 09:25:03 -0000; secure
+      X-Request-Id:
+      - 88be885b-e5cb-4dd1-8c9a-6ab5691cbc18
+      X-Runtime:
+      - '0.006597'
+      Vary:
+      - Origin
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"code":"unauthorized"}]}'
+    http_version: 
+  recorded_at: Wed, 09 Oct 2019 09:25:03 GMT
+recorded_with: VCR 5.0.0

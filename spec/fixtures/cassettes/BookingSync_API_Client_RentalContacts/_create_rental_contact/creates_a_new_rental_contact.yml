@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/rentals/1/rental_contacts
+    body:
+      encoding: UTF-8
+      string: '{"rental_contacts":[{"contact_id":1,"kind":"owner","roles":["invoices"]}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.13
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"cf44606bb98753397b9d1fddd806eee3"
+      Location:
+      - https://www.bookingsync.com/api/v3/rental_contacts/5
+      Set-Cookie:
+      - ahoy_visit=7c4d208f-8772-42a7-8e27-d77ef19bef9b; path=/; expires=Wed, 16 Oct
+        2019 08:57:49 -0000
+      - ahoy_visitor=a8c486c8-82cf-4570-8f8c-92eac543f850; path=/; expires=Sat, 09
+        Oct 2021 08:57:49 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '959'
+      X-Ratelimit-Reset:
+      - '1570611600'
+      X-Request-Id:
+      - 6fb54d02-c166-48cd-8eed-503342e6acb6
+      X-Runtime:
+      - '0.109476'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-10-09 08:57:49 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Wed, 09 Oct 2019 08:57:49 GMT
+      Content-Length:
+      - '395'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rental_contacts.rental":"https://www.bookingsync.com/api/v3/rentals/{rental_contacts.rental}","rental_contacts.contact":"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"},"rental_contacts":[{"links":{"contact":1,"rental":1},"id":5,"kind":"owner","roles":["invoices"],"created_at":"2019-10-09T08:57:49Z","updated_at":"2019-10-09T08:57:49Z","canceled_at":null}],"meta":{}}'
+    http_version:
+  recorded_at: Wed, 09 Oct 2019 08:57:49 GMT
+recorded_with: VCR 5.0.0
