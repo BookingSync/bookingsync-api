@@ -58,6 +58,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Wed, 09 Oct 2019 09:00:31 GMT
 recorded_with: VCR 5.0.0

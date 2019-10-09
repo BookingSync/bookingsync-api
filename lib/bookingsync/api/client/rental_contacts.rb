@@ -8,7 +8,7 @@ module BookingSync::API
       # @option options [Array] fields: List of fields to be fetched.
       # @return [Array<BookingSync::API::Resource>] Array of rental_contacts.
       #
-      # @example Get the list of contacts for the current account
+      # @example Get the list of rental_contacts for the current account
       #   rental_contacts = @api.rental_contacts
       #   rental_contacts.first.contact.title # => "Internet"
       # @see http://developers.bookingsync.com/reference/endpoints/rental_contacts/#list-rentals-contacts
