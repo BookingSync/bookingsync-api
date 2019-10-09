@@ -2,6 +2,9 @@
 
 # master
 
+## 0.1.14 - 2019-10-09
+- Add supports for `rental_contacts` endpoint.
+
 ## 0.1.13 - 2019-10-08
 - Add supports for `contacts` endpoint.
 
