@@ -5,6 +5,9 @@
 ## 1.0.0 - 2019-10-08
 - No longer supports Ruby 2.1, 2.2
 
+## 0.1.13 - 2019-10-08
+- Add supports for `contacts` endpoint.
+
 ## 0.1.12 - 2018-05-25
 - updated Faraday and Net HTTP Persistent gem to remove workaround
 
