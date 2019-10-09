@@ -3,7 +3,7 @@ module BookingSync::API
     module RentalContacts
       # List rental_contacts
       #
-      # Returns all contacts related to rentals for the current account.
+      # Returns all rantal_contacts related to rentals for the current account.
       # @param options [Hash] A customizable set of options.
       # @option options [Array] fields: List of fields to be fetched.
       # @return [Array<BookingSync::API::Resource>] Array of rental_contacts.
