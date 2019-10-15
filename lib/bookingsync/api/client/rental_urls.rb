@@ -10,7 +10,7 @@ module BookingSync::API
       #
       # @example Get the list of rental_urls for the current account
       #   rental_urls = @api.rental_urls
-      #   rental_urls.first.name # => "test.jpg"
+      #   rental_urls.first.label # => "HomeAway"
       # @see http://developers.bookingsync.com/reference/endpoints/rental_urls/#list-rental_urls
       def rental_urls(options = {}, &block)
         paginate :rental_urls, options, &block
@@ -45,7 +45,7 @@ module BookingSync::API
       #   exception is raised otherwise.
       # @example
       #   rental_url = @api.rental_urls.first
-      #   @api.edit_rental_url(rental_url, { name: "test.jpg" })
+      #   @api.edit_rental_url(rental_url, { label: "Airbnb" })
       def edit_rental_url(rental_url, options = {})
         if file_path = options.delete(:file_path)
           options[:file] ||= base_64_encode(file_path)
