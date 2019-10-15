@@ -322,7 +322,7 @@ module BookingSync::API
     #
     # @return [String] Base URL to BookingSync
     def base_url
-      @base_url || ENV.fetch("BOOKINGSYNC_URL", "https://www.bookingsync.test")
+      @base_url || ENV.fetch("BOOKINGSYNC_URL", "https://www.bookingsync.com")
     end
 
     # Return true if SSL cert should be verified

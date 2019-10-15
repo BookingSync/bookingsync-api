@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bookingsync.test/api/v3/rentals/1/rental_urls
+    uri: https://www.bookingsync.com/api/v3/rentals/1/rental_urls
     body:
       encoding: UTF-8
       string: '{"rental_urls":{"url":"test_test.com","label":"HomeAway","locked":"true"}}'
@@ -33,7 +33,7 @@ http_interactions:
       Etag:
       - W/"8f7cd36f61943dce0009b0abcddfab58"
       Location:
-      - https://www.bookingsync.test/api/v3/rental_urls/7c3d1561-36a1-41e7-92f5-97f99e7c5439
+      - https://www.bookingsync.com/api/v3/rental_urls/7c3d1561-36a1-41e7-92f5-97f99e7c5439
       Set-Cookie:
       - ahoy_visit=86f3390d-d229-4839-84cf-47f0d84981c3; path=/; expires=Sat, 12 Oct
         2019 20:58:20 -0000
@@ -65,7 +65,7 @@ http_interactions:
       - '385'
     body:
       encoding: UTF-8
-      string: '{"links":{"rental_urls.rental":"https://www.bookingsync.test/api/v3/rentals/{rental_urls.rental}"},"rental_urls":[{"links":{"rental":1},"id":"7c3d1561-36a1-41e7-92f5-97f99e7c5439","label":"HomeAway","url":"test_test.com","lock":{"record":"doorkeeper/application-9","attributes":{}},"canceled_at":null,"created_at":"2019-10-05T20:58:20Z","updated_at":"2019-10-05T20:58:20Z"}],"meta":{}}'
+      string: '{"links":{"rental_urls.rental":"https://www.bookingsync.com/api/v3/rentals/{rental_urls.rental}"},"rental_urls":[{"links":{"rental":1},"id":"7c3d1561-36a1-41e7-92f5-97f99e7c5439","label":"HomeAway","url":"test_test.com","lock":{"record":"doorkeeper/application-9","attributes":{}},"canceled_at":null,"created_at":"2019-10-05T20:58:20Z","updated_at":"2019-10-05T20:58:20Z"}],"meta":{}}'
     http_version: 
   recorded_at: Sat, 05 Oct 2019 20:58:20 GMT
 recorded_with: VCR 5.0.0

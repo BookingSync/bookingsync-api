@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.bookingsync.test/api/v3/rental_urls
+    uri: https://www.bookingsync.com/api/v3/rental_urls
     body:
       encoding: UTF-8
       string: "{}"
@@ -33,7 +33,7 @@ http_interactions:
       Etag:
       - W/"7c8aa051de8288e54fe0909f1b295531"
       Link:
-      - <https://www.bookingsync.test/api/v3/rental_urls?page=1>; rel="first", <https://www.bookingsync.test/api/v3/rental_urls?page=1>;
+      - <https://www.bookingsync.com/api/v3/rental_urls?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rental_urls?page=1>;
         rel="last"
       Set-Cookie:
       - ahoy_visit=00a81267-5cda-432d-8ec9-3f690aa4d1e7; path=/; expires=Sat, 12 Oct
@@ -74,12 +74,12 @@ http_interactions:
       - '552'
     body:
       encoding: UTF-8
-      string: '{"links":{"rental_urls.rental":"https://www.bookingsync.test/api/v3/rentals/{rental_urls.rental}"},"rental_urls":[{"links":{"rental":1},"id":"a6e9b7a2-0fb9-42dc-8bf6-4bfa0b1aae25","label":"HomeAway","url":"test.com","lock":{"record":"","attributes":{}},"canceled_at":null,"created_at":"2019-10-05T20:23:21Z","updated_at":"2019-10-05T20:23:21Z"}],"meta":{"Link":{"first":"https://www.bookingsync.test/api/v3/rental_urls?page=1","last":"https://www.bookingsync.test/api/v3/rental_urls?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+      string: '{"links":{"rental_urls.rental":"https://www.bookingsync.com/api/v3/rentals/{rental_urls.rental}"},"rental_urls":[{"links":{"rental":1},"id":"a6e9b7a2-0fb9-42dc-8bf6-4bfa0b1aae25","label":"HomeAway","url":"test.com","lock":{"record":"","attributes":{}},"canceled_at":null,"created_at":"2019-10-05T20:23:21Z","updated_at":"2019-10-05T20:23:21Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/rental_urls?page=1","last":"https://www.bookingsync.com/api/v3/rental_urls?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
     http_version: 
   recorded_at: Sat, 05 Oct 2019 20:24:01 GMT
 - request:
     method: get
-    uri: https://www.bookingsync.test/api/v3/rentals/1
+    uri: https://www.bookingsync.com/api/v3/rentals/1
     body:
       encoding: UTF-8
       string: "{}"
@@ -110,7 +110,7 @@ http_interactions:
       Etag:
       - W/"18b30f17fc2645d39067742442947f7d"
       Link:
-      - <https://www.bookingsync.test/api/v3/rentals/1?page=1>; rel="first", <https://www.bookingsync.test/api/v3/rentals/1?page=1>;
+      - <https://www.bookingsync.com/api/v3/rentals/1?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rentals/1?page=1>;
         rel="last"
       Set-Cookie:
       - ahoy_visit=b98fe6d0-14b5-4686-8c2f-108db2706e5a; path=/; expires=Sat, 12 Oct
@@ -160,7 +160,7 @@ http_interactions:
         occaecati. Autem dolorem quam porro corrupti laudantium in quia.Ut nihil blanditiis
         impedit sint non. Natus est sit non est laudantium. Non quis quia non et.
         Vel accusamus temporibus ducimus rerum unde est sapiente qui."},"rental_type":"villa","downpayment":30,"bedrooms_count":0,"sleeps":7,"sleeps_max":null,"bathrooms_count":1,"surface":120,"surface_unit":"metric","bookable_online":false,"bookable_on_request":true,"instantly_bookable":false,"min_price":"45.0","max_price":"500.0","currency":"EUR","price_public_notes":{"en":"Public
-        notes in english"},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country_code":"FR","contact_name":null,"reviews_count":13,"reviews_average_rating":"4.5","published_at":"2019-10-04T16:27:30Z","created_at":"2019-10-04T16:26:11Z","updated_at":"2019-10-04T16:27:39Z","address1":null,"address2":null,"zip":null,"checkin_time":16,"checkin_end_time":null,"checkout_time":10,"initial_price":null,"final_price":null,"position":1,"base_rate":"500.0","base_rate_kind":"weekly","absolute_min_price":"0.0","notes":null,"stories_count":null,"floor":"","damage_deposit":"35.5","owner_fullname":null,"owner_email":null,"owner_notes":null,"checkin_details":{},"checkout_details":{},"balance_due":30,"website_url":{},"charge_damage_deposit_on_arrival":true,"full_bathrooms_count":0,"standalone_toilets_count":0,"vr_bathrooms_count":1,"nightly_rates_managed_externally":false,"rounding_kind":"no-rounding","original_currency":"EUR","exchange_rate":"1.0","permit_number":null,"absolute_min_stay":7,"space":{},"guests_access":{},"guests_interaction":{},"guests_interaction_kind":null,"public_notes":{},"neighborhood_overview":{},"neighborhood_transit":{},"residency_category":null,"content_requirements_met":false,"certifications":{},"canceled_at":null}],"meta":{"Link":{"first":"https://www.bookingsync.test/api/v3/rentals/1?page=1","last":"https://www.bookingsync.test/api/v3/rentals/1?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"50"}}'
+        notes in english"},"lat":45.02,"lng":6.6,"city":"Nevache","state":null,"country_code":"FR","contact_name":null,"reviews_count":13,"reviews_average_rating":"4.5","published_at":"2019-10-04T16:27:30Z","created_at":"2019-10-04T16:26:11Z","updated_at":"2019-10-04T16:27:39Z","address1":null,"address2":null,"zip":null,"checkin_time":16,"checkin_end_time":null,"checkout_time":10,"initial_price":null,"final_price":null,"position":1,"base_rate":"500.0","base_rate_kind":"weekly","absolute_min_price":"0.0","notes":null,"stories_count":null,"floor":"","damage_deposit":"35.5","owner_fullname":null,"owner_email":null,"owner_notes":null,"checkin_details":{},"checkout_details":{},"balance_due":30,"website_url":{},"charge_damage_deposit_on_arrival":true,"full_bathrooms_count":0,"standalone_toilets_count":0,"vr_bathrooms_count":1,"nightly_rates_managed_externally":false,"rounding_kind":"no-rounding","original_currency":"EUR","exchange_rate":"1.0","permit_number":null,"absolute_min_stay":7,"space":{},"guests_access":{},"guests_interaction":{},"guests_interaction_kind":null,"public_notes":{},"neighborhood_overview":{},"neighborhood_transit":{},"residency_category":null,"content_requirements_met":false,"certifications":{},"canceled_at":null}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/rentals/1?page=1","last":"https://www.bookingsync.com/api/v3/rentals/1?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"50"}}'
     http_version: 
   recorded_at: Sat, 05 Oct 2019 20:24:02 GMT
 recorded_with: VCR 5.0.0

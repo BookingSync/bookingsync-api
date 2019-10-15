@@ -9,6 +9,7 @@ require "support/vcr_helper.rb"
 RSpec.configure do |config|
   config.before do
     ENV["BOOKINGSYNC_VERIFY_SSL"] = "false"
+    ENV["ACCESS_TOKEN"] = "1299f398a03f92fe68b70835c38d41422d5e2a699e52b1cd43ac89a176de4ce3"
   end
   config.include WebMock::API
   config.include VcrHelper
