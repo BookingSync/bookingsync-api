@@ -15,6 +15,7 @@ require "bookingsync/api/client/bookings_tags"
 require "bookingsync/api/client/bookings_taxes"
 require "bookingsync/api/client/change_overs"
 require "bookingsync/api/client/clients"
+require "bookingsync/api/client/contacts"
 require "bookingsync/api/client/destinations"
 require "bookingsync/api/client/fees"
 require "bookingsync/api/client/hosts"
@@ -74,6 +75,7 @@ module BookingSync::API
     include BookingSync::API::Client::ChangeOvers
     include BookingSync::API::Client::Conversations
     include BookingSync::API::Client::Clients
+    include BookingSync::API::Client::Contacts
     include BookingSync::API::Client::Destinations
     include BookingSync::API::Client::Fees
     include BookingSync::API::Client::Hosts

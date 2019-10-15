@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/contacts
+    body:
+      encoding: UTF-8
+      string: '{"contacts":[{"firstname":"John","lastname":"Doe","email":"halldor@example.com","website":"http://www.demo.com","address1":"Demo
+        address","gender":"male","phones":[{"label":"default","number":"123456789"}],"country_code":"IS","city":"Reykjavik","zip":"33209","state":"Demo","spoken_languages":["en"]}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.13
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"109d9e77fc462040fed610a1804f174b"
+      Location:
+      - https://www.bookingsync.com/api/v3/contacts/2
+      Set-Cookie:
+      - ahoy_visit=927716d7-6aed-44ba-a636-cb1edfae464c; path=/; expires=Tue, 15 Oct
+        2019 12:23:10 -0000
+      - ahoy_visitor=aa6a9b4c-f97d-44c5-adde-376832ea98f3; path=/; expires=Fri, 08
+        Oct 2021 12:23:10 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '990'
+      X-Ratelimit-Reset:
+      - '1570539600'
+      X-Request-Id:
+      - 17912562-0f48-4ef3-9cf5-ec3e289dfda4
+      X-Runtime:
+      - '0.288931'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-10-08 12:23:10 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 08 Oct 2019 12:23:10 GMT
+      Content-Length:
+      - '633'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"contacts.account":"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"},"contacts":[{"links":{"account":1},"id":2,"fullname":"John
+        Doe","spoken_languages":["en"],"email":"halldor@example.com","phones":[{"label":"default","number":"123456789"}],"website":"http://www.demo.com","private_notes":null,"address1":"Demo
+        address","address2":null,"city":"Reykjavik","state":"Demo","zip":"33209","country_code":"IS","firstname":"John","lastname":"Doe","gender":"male","created_at":"2019-10-08T12:23:10Z","updated_at":"2019-10-08T12:23:10Z","canceled_at":null,"forget_me_at":null,"processing_restricted_at":null}],"meta":{}}'
+    http_version: 
+  recorded_at: Tue, 08 Oct 2019 12:23:10 GMT
+recorded_with: VCR 5.0.0
