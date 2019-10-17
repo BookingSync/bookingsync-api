@@ -5,7 +5,7 @@ describe BookingSync::API::Client::RentalUrls do
 
   before { |ex| @casette_base_path = casette_path(casette_dir, ex.metadata) }
 
-  describe ".rental_urls", :vcr do
+  describe "#rental_urls", :vcr do
     it "returns rental urls" do
       expect(client.rental_urls).not_to be_empty
       assert_requested :get, bs_url("rental_urls")
@@ -19,7 +19,7 @@ describe BookingSync::API::Client::RentalUrls do
     end
   end
 
-  describe ".rental_url", :vcr do
+  describe "#rental_url", :vcr do
     let(:prefetched_rental_url) {
       find_resource("#{@casette_base_path}_rental_urls/returns_rental_urls.yml", "rental_urls")[:id]
     }
@@ -30,7 +30,7 @@ describe BookingSync::API::Client::RentalUrls do
     end
   end
 
-  describe ".create_rental_url", :vcr do
+  describe "#create_rental_url", :vcr do
     let(:attributes) { { url: "test_test.com", label: "HomeAway", locked: "true" } }
     let(:rental) { BookingSync::API::Resource.new(client, id: 1) }
 
@@ -49,7 +49,7 @@ describe BookingSync::API::Client::RentalUrls do
     end
   end
 
-  describe ".edit_rental_url", :vcr do
+  describe "#edit_rental_url", :vcr do
     let(:attributes) { { url: "new_url.com" } }
     let(:created_rental_url) {
       find_resource("#{@casette_base_path}_create_rental_url/creates_a_new_rental_url.yml", "rental_urls")[:id]
@@ -70,7 +70,7 @@ describe BookingSync::API::Client::RentalUrls do
     end
   end
 
-  describe ".cancel_rental_url", :vcr do
+  describe "#cancel_rental_url", :vcr do
     let(:created_rental_url_id) {
       find_resource("#{@casette_base_path}_create_rental_url/creates_a_new_rental_url.yml", "rental_urls")[:id]
     }

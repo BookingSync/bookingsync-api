@@ -53,6 +53,11 @@ module BookingSync::API
         put("rental_urls/#{rental_url}", rental_urls: options).pop
       end
 
+      # Cancel a RentalUrl
+      #
+      # @param rental_url [BookingSync::API::Resource|Integer] RentalUrl or ID
+      #   of the rental_url to be canceled.
+      # @return [NilClass] Returns nil on success.
       def cancel_rental_url(rental_url)
         delete "rental_urls/#{rental_url}"
       end
