@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/rental_urls
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"7c8aa051de8288e54fe0909f1b295531"
+      Link:
+      - <https://www.bookingsync.com/api/v3/rental_urls?page=1>; rel="first", <https://www.bookingsync.com/api/v3/rental_urls?page=1>;
+        rel="last"
+      Set-Cookie:
+      - ahoy_visit=36ff77de-880d-422a-b5b2-31f81a741141; path=/; expires=Sat, 12 Oct
+        2019 20:23:39 -0000
+      - ahoy_visitor=bb0a998b-c693-4277-b7b1-1b8023e42bea; path=/; expires=Tue, 05
+        Oct 2021 20:23:39 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Current-Page:
+      - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Per-Page:
+      - '100'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '999'
+      X-Ratelimit-Reset:
+      - '1570309200'
+      X-Request-Id:
+      - 0a023299-f121-477c-80fb-9ffe55d6cf4b
+      X-Runtime:
+      - '0.353069'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-10-05 20:23:39 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Sat, 05 Oct 2019 20:23:39 GMT
+      Content-Length:
+      - '552'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rental_urls.rental":"https://www.bookingsync.com/api/v3/rentals/{rental_urls.rental}"},"rental_urls":[{"links":{"rental":1},"id":"a6e9b7a2-0fb9-42dc-8bf6-4bfa0b1aae25","label":"HomeAway","url":"test.com","lock":{"record":"","attributes":{}},"canceled_at":null,"created_at":"2019-10-05T20:23:21Z","updated_at":"2019-10-05T20:23:21Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/rental_urls?page=1","last":"https://www.bookingsync.com/api/v3/rental_urls?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version: 
+  recorded_at: Sat, 05 Oct 2019 20:23:39 GMT
+recorded_with: VCR 5.0.0

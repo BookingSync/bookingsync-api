@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/rentals/1/rental_urls
+    body:
+      encoding: UTF-8
+      string: '{"rental_urls":{"url":"test_test.com","label":"HomeAway","locked":"true"}}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.12
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"75b65c06b7d92e5e2da7f519254c4652"
+      Location:
+      - https://www.bookingsync.com/api/v3/rental_urls/33878e9a-4c09-4f02-a340-6c3c099e66ad
+      Set-Cookie:
+      - ahoy_visit=b4ef2473-41f9-49a1-876e-973c617d4a0a; path=/; expires=Tue, 15 Oct
+        2019 15:12:14 -0000
+      - ahoy_visitor=18b4c1fa-fe28-4d61-8410-ff28cec55dcc; path=/; expires=Fri, 08
+        Oct 2021 15:12:14 -0000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '997'
+      X-Ratelimit-Reset:
+      - '1570550400'
+      X-Request-Id:
+      - dc9e47d6-c6a6-461c-a794-168fd62879d4
+      X-Runtime:
+      - '0.169877'
+      X-Updated-Since-Request-Synced-At:
+      - 2019-10-08 15:12:14 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 08 Oct 2019 15:12:14 GMT
+      Content-Length:
+      - '385'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"rental_urls.rental":"https://www.bookingsync.com/api/v3/rentals/{rental_urls.rental}"},"rental_urls":[{"links":{"rental":1},"id":"33878e9a-4c09-4f02-a340-6c3c099e66ad","label":"HomeAway","url":"test_test.com","lock":{"record":"doorkeeper/application-9","attributes":{}},"canceled_at":null,"created_at":"2019-10-08T15:12:14Z","updated_at":"2019-10-08T15:12:14Z"}],"meta":{}}'
+    http_version: 
+  recorded_at: Tue, 08 Oct 2019 15:12:14 GMT
+recorded_with: VCR 4.0.0
