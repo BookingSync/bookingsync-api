@@ -133,46 +133,46 @@ module BookingSync::API
     # Make a HTTP GET request
     #
     # @param path [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Query params for the request
+    # @param payload [Hash] Query params for the request
     # @return [Array<BookingSync::API::Resource>] Array of resources.
-    def get(path, options = {})
-      request :get, path, query: options
+    def get(path, payload = {})
+      request :get, path, query: payload
     end
 
     # Make a HTTP POST request
     #
     # @param path [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Body params for the request
+    # @param payload [Hash] Body params for the request
     # @return [Array<BookingSync::API::Resource>]
-    def post(path, options = {})
-      request :post, path, options
+    def post(path, payload = {})
+      request :post, path, payload
     end
 
     # Make a HTTP PUT request
     #
     # @param path [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Body params for the request
+    # @param payload [Hash] Body params for the request
     # @return [Array<BookingSync::API::Resource>]
-    def put(path, options = {})
-      request :put, path, options
+    def put(path, payload = {})
+      request :put, path, payload
     end
 
     # Make a HTTP PATCH request
     #
     # @param path [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Body params for the request
+    # @param payload [Hash] Body params for the request
     # @return [Array<BookingSync::API::Resource>]
-    def patch(path, options = {})
-      request :patch, path, options
+    def patch(path, payload = {})
+      request :patch, path, payload
     end
 
     # Make a HTTP DELETE request
     #
     # @param path [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Body params for the request
+    # @param payload [Hash] Body params for the request
     # @return [Array<BookingSync::API::Resource>]
-    def delete(path, options = {})
-      request :delete, path, options
+    def delete(path, payload = {})
+      request :delete, path, payload
     end
 
     # Return API endpoint
@@ -202,13 +202,13 @@ module BookingSync::API
     #
     # @param method [Symbol] HTTP verb to use.
     # @param path [String] The path, relative to {#api_endpoint}.
-    # @param data [Hash] Data to be send in the request's body
+    # @param payload [Hash] payload to be send in the request's body
     #   it can include query: key with requests params for GET requests
     # @param options [Hash] A customizable set of request options.
     # @return [Array<BookingSync::API::Resource>] Array of resources.
-    def request(method, path, data = nil, options = nil)
+    def request(method, path, payload = nil, options = nil)
       instrument("request.bookingsync_api", method: method, path: path) do
-        response = call(method, path, data, options)
+        response = call(method, path, payload, options)
         response.respond_to?(:resources) ? response.resources : response
       end
     end
@@ -244,15 +244,15 @@ module BookingSync::API
     #
     # @param method [Symbol] HTTP verb to use.
     # @param path [String] The path, relative to {#api_endpoint}.
-    # @param data [Hash] Data to be send in the request's body
+    # @param payload [Hash] payload to be send in the request's body
     #   it can include query: key with requests params for GET requests
     # @param options [Hash] A customizable set of request options.
     # @return [BookingSync::API::Response] A Response object.
-    def call(method, path, data = nil, options = nil)
+    def call(method, path, payload = nil, options = nil)
       instrument("call.bookingsync_api", method: method, path: path) do
         if [:get, :head].include?(method)
-          options = data
-          data = {}
+          options = payload
+          payload = {}
         end
         options ||= {}
         options[:headers] ||= {}
@@ -272,13 +272,15 @@ module BookingSync::API
 
         url = expand_url(path, options[:uri])
         res = @conn.send(method, url) do |req|
-          if data
-            req.body = data.is_a?(String) ? data : encode_body(data)
+          if payload
+            req.body = payload.is_a?(String) ? payload : encode_body(payload)
           end
           if params = options[:query]
             req.params.update params
           end
           req.headers.update options[:headers]
+          p options
+          # req.options.timeout = options[:timeout] if options[:timeout]
         end
         handle_response(res)
       end
@@ -308,7 +310,11 @@ module BookingSync::API
     end
 
     def faraday_options
-      { builder: middleware, ssl: { verify: verify_ssl? } }
+      { 
+        builder: middleware, 
+        ssl: { verify: verify_ssl? }, 
+        request: { timeout: BookingSync::API.configuration.timeout } 
+      }
     end
 
     # Return BookingSync base URL. Default is https://www.bookingsync.com
