@@ -5,7 +5,6 @@ require "bookingsync/api/configuration"
 
 module BookingSync
   module API
-    # configure {}
     # Return new API Client
     #
     # @param token [String] OAuth token
