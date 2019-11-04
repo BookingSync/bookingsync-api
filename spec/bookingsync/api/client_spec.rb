@@ -3,6 +3,25 @@ require "spec_helper"
 describe BookingSync::API::Client do
   let(:client) { BookingSync::API::Client.new(test_access_token) }
 
+  describe "options" do
+    let(:client) { BookingSync::API::Client.new(test_access_token, options) }
+
+    context "faraday_options" do
+      let(:options) do 
+        { 
+          faraday_options: 
+          { 
+            request: { timeout: 1 } 
+          } 
+        }
+      end
+
+      it "sets timeout" do
+        expect(client.instance_variable_get("@conn").options[:timeout]).to eq 1
+      end
+    end
+  end
+
   describe "#new" do
     it "initializes client object with given token" do
       client = BookingSync::API::Client.new("xyz")

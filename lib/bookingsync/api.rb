@@ -1,7 +1,6 @@
 require "faraday"
 require "bookingsync/api/version"
 require "bookingsync/api/client"
-require "bookingsync/api/configuration"
 
 module BookingSync
   module API

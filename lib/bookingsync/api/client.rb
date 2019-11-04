@@ -122,7 +122,7 @@ module BookingSync::API
       @instrumenter = options[:instrumenter] || NoopInstrumenter
       @base_url = options[:base_url]
       @serializer = Serializer.new
-      @conn = Faraday.new(faraday_options)
+      @conn = Faraday.new(faraday_options(options))
       @conn.headers[:accept] = MEDIA_TYPE
       @conn.headers[:content_type] = MEDIA_TYPE
       @conn.headers[:user_agent] = user_agent
@@ -307,12 +307,11 @@ module BookingSync::API
       end
     end
 
-    def faraday_options
+    def faraday_options(options)
       { 
         builder: middleware, 
-        ssl: { verify: verify_ssl? }, 
-        request: { timeout: BookingSync::API.configuration.timeout } 
-      }
+        ssl: { verify: verify_ssl? }
+      }.merge(options.fetch(:faraday_options, {}))
     end
 
     # Return BookingSync base URL. Default is https://www.bookingsync.com
