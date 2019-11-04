@@ -308,8 +308,8 @@ module BookingSync::API
     end
 
     def faraday_options(options)
-      { 
-        builder: middleware, 
+      {
+        builder: middleware,
         ssl: { verify: verify_ssl? }
       }.merge(options.fetch(:faraday_options, {}))
     end

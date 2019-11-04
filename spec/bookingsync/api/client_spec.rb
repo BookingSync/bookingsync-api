@@ -7,12 +7,12 @@ describe BookingSync::API::Client do
     let(:client) { BookingSync::API::Client.new(test_access_token, options) }
 
     context "faraday_options" do
-      let(:options) do 
-        { 
-          faraday_options: 
-          { 
-            request: { timeout: 1 } 
-          } 
+      let(:options) do
+        {
+          faraday_options:
+          {
+            request: { timeout: 1 }
+          }
         }
       end
 
