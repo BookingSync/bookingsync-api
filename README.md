@@ -35,6 +35,23 @@ rentals = api.rentals # => [BookingSync::API::Resource, BookingSync::API::Resour
 rentals.first.name # => "Small apartment"
 ```
 
+## Options
+
+### Faraday options
+
+can be used to add any options supported by a faraday request https://www.rubydoc.info/gems/faraday/Faraday/Request
+
+for example 
+```ruby
+options = {
+  faraday_options: {
+    request: { timeout: 5 }
+  }
+}
+
+api = BookingSync::API.new("OAUTH_TOKEN", options)
+```
+
 ### Pagination
 
 All endpoints returning a collection of resources can be paginated. There are three ways to do it.

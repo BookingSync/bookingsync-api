@@ -2,6 +2,9 @@
 
 # master
 
+## 0.1.11.1 - 2019-11-20
+- Added faraday_options to client. Can be used to modify faraday connection.
+
 ## 0.1.11 - 2018-05-18
 - Added `add_attachment_to_message`.
 
