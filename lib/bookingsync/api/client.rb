@@ -18,6 +18,7 @@ require "bookingsync/api/client/clients"
 require "bookingsync/api/client/contacts"
 require "bookingsync/api/client/destinations"
 require "bookingsync/api/client/fees"
+require "bookingsync/api/client/host_reviews"
 require "bookingsync/api/client/hosts"
 require "bookingsync/api/client/inquiries"
 require "bookingsync/api/client/living_rooms"
@@ -39,6 +40,7 @@ require "bookingsync/api/client/rental_cancelation_policies"
 require "bookingsync/api/client/rental_cancelation_policy_items"
 require "bookingsync/api/client/rentals_contents_overrides"
 require "bookingsync/api/client/rental_urls"
+require "bookingsync/api/client/review_replies"
 require "bookingsync/api/client/reviews"
 require "bookingsync/api/client/seasons"
 require "bookingsync/api/client/special_offers"
@@ -79,6 +81,7 @@ module BookingSync::API
     include BookingSync::API::Client::Destinations
     include BookingSync::API::Client::Fees
     include BookingSync::API::Client::Hosts
+    include BookingSync::API::Client::HostReviews
     include BookingSync::API::Client::Inquiries
     include BookingSync::API::Client::LivingRooms
     include BookingSync::API::Client::Messages
@@ -101,6 +104,7 @@ module BookingSync::API
     include BookingSync::API::Client::RentalCancelationPolicyItems
     include BookingSync::API::Client::RentalsContentsOverrides
     include BookingSync::API::Client::RentalUrls
+    include BookingSync::API::Client::ReviewReplies
     include BookingSync::API::Client::Reviews
     include BookingSync::API::Client::Seasons
     include BookingSync::API::Client::SpecialOffers

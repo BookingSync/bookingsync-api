@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://bookingsync.test/api/v3/applications_periods_rentals/2
+    uri: https://www.bookingsync.com/api/v3/applications_periods_rentals/2
     body:
       encoding: UTF-8
       string: '{"applications_periods_rental":{"price_increase":3.1}}'
@@ -64,6 +64,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"applications_periods_rentals":[{"id":2,"price_increase":"3.1","start_date":"2019-01-01","end_date":"2100-01-01"}],"meta":{}}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 12 Feb 2019 13:33:30 GMT
 recorded_with: VCR 4.0.0

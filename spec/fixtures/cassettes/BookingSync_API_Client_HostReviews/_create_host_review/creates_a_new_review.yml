@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/bookings/96/host_reviews
+    body:
+      encoding: UTF-8
+      string: '{"host_reviews":[{"comment":"Awesome place"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.14
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"99c0dc15535216c13becaafad6690a52"
+      Location:
+      - https://www.bookingsync.com/api/v3/host_reviews/04356dc9-1349-4e05-b818-09ccdac8d5dd
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - ahoy_visit=8ed25629-921d-46b2-b1fe-ec0da7fba3c4; path=/; expires=Mon, 29 Mar
+        2021 15:23:27 GMT
+      - ahoy_visitor=e334b828-8484-48d6-8eaf-0b24076fb483; path=/; expires=Wed, 22
+        Mar 2023 15:23:27 GMT
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '998'
+      X-Ratelimit-Reset:
+      - '1616428800'
+      X-Request-Id:
+      - e89eb4aa-0586-4733-80b0-5c1d9757095a
+      X-Runtime:
+      - '0.958102'
+      X-Updated-Since-Request-Synced-At:
+      - 2021-03-22 15:23:27 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 22 Mar 2021 15:23:27 GMT
+      Content-Length:
+      - '882'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"host_reviews.source":"https://www.bookingsync.com/api/v3/sources/{host_reviews.source}","host_reviews.booking":"https://www.bookingsync.com/api/v3/bookings/{host_reviews.booking}","host_reviews.rental":"https://www.bookingsync.com/api/v3/rentals/{host_reviews.rental}","host_reviews.account":"https://www.bookingsync.com/api/v3/accounts/{host_reviews.account}","host_reviews.reply":"https://www.bookingsync.com/api/v3/review_replies/{host_reviews.reply}"},"host_reviews":[{"links":{"account":1,"booking":96,"rental":1,"reply":null,"source":null},"id":"04356dc9-1349-4e05-b818-09ccdac8d5dd","comment":"Awesome
+        place","created_at":"2021-03-22T15:23:27Z","updated_at":"2021-03-22T15:23:27Z","shareable":true,"private_comment":null,"criteria":{"cleanliness":null,"communication":null,"respect_house_rules":null},"submitted_at":null,"is_guest_recommended":null,"expires_at":null}],"meta":{}}'
+    http_version:
+  recorded_at: Mon, 22 Mar 2021 15:23:27 GMT
+recorded_with: VCR 3.0.3

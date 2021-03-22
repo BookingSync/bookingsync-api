@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://bookingsync.test/api/v3/applications_periods_rentals/2
+    uri: https://www.bookingsync.com/api/v3/applications_periods_rentals/2
     body:
       encoding: UTF-8
       string: "{}"
@@ -33,8 +33,8 @@ http_interactions:
       Etag:
       - W/"4f16e1fadf19018a8e568c8eccace925"
       Link:
-      - <https://bookingsync.test/api/v3/applications_periods_rentals/2?page=1>; rel="first",
-        <https://bookingsync.test/api/v3/applications_periods_rentals/2?page=1>; rel="last"
+      - <https://www.bookingsync.com/api/v3/applications_periods_rentals/2?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/applications_periods_rentals/2?page=1>; rel="last"
       Set-Cookie:
       - ahoy_visit=2d8fdbfb-1554-4133-9dee-7595b92d0d3b; path=/; expires=Tue, 19 Feb
         2019 13:17:09 -0000
@@ -74,7 +74,7 @@ http_interactions:
       - '353'
     body:
       encoding: UTF-8
-      string: '{"applications_periods_rentals":[{"id":2,"price_increase":"15.0","start_date":"2019-01-01","end_date":"2100-01-01"}],"meta":{"Link":{"first":"https://bookingsync.test/api/v3/applications_periods_rentals/2?page=1","last":"https://bookingsync.test/api/v3/applications_periods_rentals/2?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
-    http_version: 
+      string: '{"applications_periods_rentals":[{"id":2,"price_increase":"15.0","start_date":"2019-01-01","end_date":"2100-01-01"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/applications_periods_rentals/2?page=1","last":"https://www.bookingsync.com/api/v3/applications_periods_rentals/2?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version:
   recorded_at: Tue, 12 Feb 2019 13:17:09 GMT
 recorded_with: VCR 4.0.0
