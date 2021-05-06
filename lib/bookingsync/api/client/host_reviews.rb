@@ -49,7 +49,6 @@ module BookingSync::API
         post("bookings/#{booking}/host_reviews", host_reviews: [options]).pop
       end
 
-
       # Edit a draft host review
       #
       # @param host review [BookingSync::API::Resource|String] Host Review or ID of
