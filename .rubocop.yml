@@ -1,0 +1,2 @@
+inherit_gem:
+  bookingsync-stylecheck: config/rubocop.yml
