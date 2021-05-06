@@ -111,12 +111,12 @@ describe BookingSync::API::Client::HostReviews do
         host_review = client.submit_draft_host_review(created_host_review_id, attributes)
         expect(host_review).to be_kind_of(BookingSync::API::Resource)
         expect(
-          host_review.slice(:comment, :submitted_at, :is_guest_recommended)
-        ).to eq(
-          comment: "Woops, not great after all, he emptied the fridge",
-          submitted_at: Time.parse("2021-06-06T12:00:00Z"),
-          is_guest_recommended: false
-        )
+          host_review.values_at(:comment, :submitted_at, :is_guest_recommended)
+        ).to eq([
+          "Woops, not great after all, he emptied the fridge",
+          Time.parse("2021-06-06T12:00:00Z"),
+          false
+        ])
       end
     end
   end
