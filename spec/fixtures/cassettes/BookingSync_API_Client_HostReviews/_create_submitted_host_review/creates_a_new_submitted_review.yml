@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/bookings/227/host_reviews
+    body:
+      encoding: UTF-8
+      string: '{"host_reviews":[{"comment":"Awesome guest","submitted_at":"2020-06-06T12:00:00Z","expires_at":"2020-06-07T12:00:00Z","is_guest_recommended":true,"shareable":false}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.14
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"2a71b157a34b2fff2b095f47bb99c424"
+      Location:
+      - https://www.bookingsync.com/api/v3/host_reviews/2bea6b06-1b8b-43ba-bc07-78e2839365e7
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - ahoy_visit=685be437-1007-4bc1-90a8-157a6867cf99; path=/; expires=Thu, 13 May
+        2021 10:52:56 GMT
+      - ahoy_visitor=f91f0dd5-28b2-4d48-a9b9-9b6aa9422462; path=/; expires=Sat, 06
+        May 2023 10:52:56 GMT
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '995'
+      X-Ratelimit-Reset:
+      - '1620298800'
+      X-Request-Id:
+      - dd586402-4be7-4d7a-be44-8b5b97353803
+      X-Runtime:
+      - '0.466577'
+      X-Updated-Since-Request-Synced-At:
+      - 2021-05-06 10:52:56 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Thu, 06 May 2021 10:52:56 GMT
+      Content-Length:
+      - '920'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"host_reviews.source":"https://www.bookingsync.com/api/v3/sources/{host_reviews.source}","host_reviews.booking":"https://www.bookingsync.com/api/v3/bookings/{host_reviews.booking}","host_reviews.rental":"https://www.bookingsync.com/api/v3/rentals/{host_reviews.rental}","host_reviews.account":"https://www.bookingsync.com/api/v3/accounts/{host_reviews.account}","host_reviews.reply":"https://www.bookingsync.com/api/v3/review_replies/{host_reviews.reply}"},"host_reviews":[{"links":{"account":1,"booking":227,"rental":1,"reply":null,"source":null},"id":"2bea6b06-1b8b-43ba-bc07-78e2839365e7","comment":"Awesome
+        guest","created_at":"2021-05-06T10:52:56Z","updated_at":"2021-05-06T10:52:56Z","shareable":false,"private_comment":null,"criteria":{"cleanliness":null,"communication":null,"respect_house_rules":null},"submitted_at":"2020-06-06T12:00:00Z","is_guest_recommended":true,"expires_at":"2020-06-07T12:00:00Z"}],"meta":{}}'
+    http_version:
+  recorded_at: Thu, 06 May 2021 10:52:56 GMT
+recorded_with: VCR 3.0.3

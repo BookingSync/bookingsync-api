@@ -29,17 +29,28 @@ module BookingSync::API
         get("host_reviews/#{host_review}", options).pop
       end
 
-      # Create a new host review
+      # Create a new non-submitted host review
       #
       # @param booking [BookingSync::API::Resource|Integer] Booking or ID of
       #   the booking for which a host review will be created.
       # @param options [Hash] Host Review's attributes.
       # @return [BookingSync::API::Resource] Newly created host review.
-      def create_host_review(booking, options = {})
+      def create_draft_host_review(booking, options = {})
+        post("bookings/#{booking}/host_reviews/draft", host_reviews: [options]).pop
+      end
+
+      # Create a new submitted host review
+      #
+      # @param booking [BookingSync::API::Resource|Integer] Booking or ID of
+      #   the booking for which a host review will be created.
+      # @param options [Hash] Host Review's attributes.
+      # @return [BookingSync::API::Resource] Newly created host review.
+      def create_submitted_host_review(booking, options = {})
         post("bookings/#{booking}/host_reviews", host_reviews: [options]).pop
       end
 
-      # Edit a host review
+
+      # Edit a draft host review
       #
       # @param host review [BookingSync::API::Resource|String] Host Review or ID of
       #   the host review to be updated.
@@ -49,8 +60,22 @@ module BookingSync::API
       # @example
       #   host_review = @api.host_reviews.first
       #   @api.edit_host_review(host, { comment: "Thanks for being such a great guest!", submitted_at: "20201-03-22T12:00:00Z" })
-      def edit_host_review(host_review, options = {})
-        put("host_reviews/#{host_review}", host_reviews: [options]).pop
+      def edit_draft_host_review(host_review, options = {})
+        put("host_reviews/draft/#{host_review}", host_reviews: [options]).pop
+      end
+
+      # Submit a draft host review
+      #
+      # @param host review [BookingSync::API::Resource|String] Host Review or ID of
+      #   the host review to be updated.
+      # @param options [Hash] Host review attributes to be updated.
+      # @return [BookingSync::API::Resource] Updated host review on success,
+      #   exception is raised otherwise.
+      # @example
+      #   host_review = @api.host_reviews.first
+      #   @api.edit_host_review(host, { comment: "Thanks for being such a great guest!", submitted_at: "20201-03-22T12:00:00Z" })
+      def submit_draft_host_review(host_review, options = {})
+        put("host_reviews/draft/#{host_review}/submit", host_reviews: [options]).pop
       end
     end
   end

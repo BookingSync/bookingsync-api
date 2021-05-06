@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/host_reviews/draft/c571047a-0055-448a-8651-56461fbf30e2/submit
+    body:
+      encoding: UTF-8
+      string: '{"host_reviews":[{"comment":"Woops, not great after all, he emptied
+        the fridge","submitted_at":"2021-06-06T12:00:00Z","is_guest_recommended":false}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.14
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"1cba4be802f03f3278c2dbb595411e4b"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - ahoy_visit=f8cd74ec-c485-46b7-9400-a5bf571ed0de; path=/; expires=Thu, 13 May
+        2021 10:55:38 GMT
+      - ahoy_visitor=14c6ee55-dbae-4dd5-8363-7fd7fef9fb1d; path=/; expires=Sat, 06
+        May 2023 10:55:38 GMT
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '988'
+      X-Ratelimit-Reset:
+      - '1620298800'
+      X-Request-Id:
+      - d2e25319-8415-4aa2-be15-ce1c4a84e699
+      X-Runtime:
+      - '0.381850'
+      X-Updated-Since-Request-Synced-At:
+      - 2021-05-06 10:55:38 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Thu, 06 May 2021 10:55:39 GMT
+      Content-Length:
+      - '957'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"host_reviews.source":"https://www.bookingsync.com/api/v3/sources/{host_reviews.source}","host_reviews.booking":"https://www.bookingsync.com/api/v3/bookings/{host_reviews.booking}","host_reviews.rental":"https://www.bookingsync.com/api/v3/rentals/{host_reviews.rental}","host_reviews.account":"https://www.bookingsync.com/api/v3/accounts/{host_reviews.account}","host_reviews.reply":"https://www.bookingsync.com/api/v3/review_replies/{host_reviews.reply}"},"host_reviews":[{"links":{"account":1,"booking":228,"rental":1,"reply":null,"source":null},"id":"c571047a-0055-448a-8651-56461fbf30e2","comment":"Woops,
+        not great after all, he emptied the fridge","created_at":"2021-05-06T10:55:37Z","updated_at":"2021-05-06T10:55:38Z","shareable":false,"private_comment":null,"criteria":{"cleanliness":null,"communication":null,"respect_house_rules":null},"submitted_at":"2021-06-06T12:00:00Z","is_guest_recommended":false,"expires_at":"2045-06-07T12:00:00Z"}],"meta":{}}'
+    http_version:
+  recorded_at: Thu, 06 May 2021 10:55:39 GMT
+recorded_with: VCR 3.0.3
