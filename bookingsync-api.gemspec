@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "faraday", ">= 0.15.2"
-  spec.add_dependency "net-http-persistent", "~> 3"
+  spec.add_dependency "net-http-persistent", [">= 4.0.1", "< 5.0"]
   spec.add_dependency "hashie"
   spec.add_dependency "addressable"
   spec.add_development_dependency "bundler"
