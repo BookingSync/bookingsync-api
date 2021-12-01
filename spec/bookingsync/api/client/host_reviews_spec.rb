@@ -48,10 +48,17 @@ describe BookingSync::API::Client::HostReviews do
         submitted_at: "2020-06-06T12:00:00Z",
         expires_at: "2020-06-07T12:00:00Z",
         is_guest_recommended: true,
-        shareable: false
+        shareable: false,
+        source_id: source_id,
+        criteria: {
+          cleanliness: { rating: 5 },
+          respect_house_rules: { rating: 4 },
+          communication: { rating: 5 }
+        }
       }
     end
-    let(:booking) { BookingSync::API::Resource.new(client, id: 227) }
+    let(:booking) { BookingSync::API::Resource.new(client, id: 3) }
+    let(:source_id) { 2 }
 
     it "creates a new submitted review" do
       client.create_submitted_host_review(booking, attributes)
@@ -117,6 +124,26 @@ describe BookingSync::API::Client::HostReviews do
           Time.parse("2021-06-06T12:00:00Z"),
           false
         ])
+      end
+    end
+  end
+
+  describe ".dismiss_host_review", :vcr do
+    let(:attributes) { { dismissed_at: "2021-12-01T16:00:00Z" } }
+    let(:created_host_review_id) do
+      find_resource("#{@casette_base_path}_create_submitted_host_review/creates_a_new_submitted_review.yml", "host_reviews")[:id]
+    end
+
+    it "dismisses host review" do
+      client.dismiss_host_review(created_host_review_id, attributes)
+      assert_requested :put, bs_url("host_reviews/#{created_host_review_id}/dismiss"),
+        body: { host_reviews: [attributes] }.to_json
+    end
+
+    it "returns dismissed review" do
+      VCR.use_cassette("BookingSync_API_Client_HostReviews/_dismiss_host_review/dismisses_host_review") do
+        host_review = client.dismiss_host_review(created_host_review_id, attributes)
+        expect(host_review.dismissed_at).to eq(Time.parse(attributes[:dismissed_at]))
       end
     end
   end

@@ -58,7 +58,7 @@ module BookingSync::API
       #   exception is raised otherwise.
       # @example
       #   host_review = @api.host_reviews.first
-      #   @api.edit_host_review(host, { comment: "Thanks for being such a great guest!", submitted_at: "20201-03-22T12:00:00Z" })
+      #   @api.edit_host_review(host_review, { comment: "Thanks for being such a great guest!", submitted_at: "20201-03-22T12:00:00Z" })
       def edit_draft_host_review(host_review, options = {})
         put("host_reviews/draft/#{host_review}", host_reviews: [options]).pop
       end
@@ -72,9 +72,23 @@ module BookingSync::API
       #   exception is raised otherwise.
       # @example
       #   host_review = @api.host_reviews.first
-      #   @api.edit_host_review(host, { comment: "Thanks for being such a great guest!", submitted_at: "20201-03-22T12:00:00Z" })
+      #   @api.edit_host_review(host_review, { comment: "Thanks for being such a great guest!", submitted_at: "20201-03-22T12:00:00Z" })
       def submit_draft_host_review(host_review, options = {})
         put("host_reviews/draft/#{host_review}/submit", host_reviews: [options]).pop
+      end
+
+      # Dismiss a host review
+      #
+      # @param host review [BookingSync::API::Resource|String] Host Review or ID of
+      #   the host review to be dismissed.
+      # @param options [Hash] Host review dismissal attributes.
+      # @return [BookingSync::API::Resource] Dismissed host review on success,
+      #   exception is raised otherwise.
+      # @example
+      #   host_review = @api.host_reviews.first
+      #   @api.dismiss_host_review(host_review, { dismissed_at: "20201-03-22T12:00:00Z" })
+      def dismiss_host_review(host_review, options = {})
+        put("host_reviews/#{host_review}/dismiss", host_reviews: [options]).pop
       end
     end
   end
