@@ -2,6 +2,9 @@
 
 # master
 
+## 0.2.0 - 2022-01-10
+- upgrade net-http-persistent to be ruby 3 ready
+
 ## 0.1.14 - 2019-10-15
 - Add supports for `rental_urls` endpoint.
 
