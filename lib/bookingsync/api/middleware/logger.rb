@@ -18,16 +18,17 @@ module BookingSync::API::Middleware
 
     def_delegators :@logger, :debug, :info, :warn, :error, :fatal
 
-    def call(env)
+    def on_request(env)
       info "Request #{env.method.upcase} #{env.url.to_s}"
       debug("Request headers") { dump_headers env.request_headers }
       debug("Request body") { dump_body env.body }
-      @app.call(env).tap do |response|
-        info "Response X-Request-Id: #{env.response_headers['X-Request-Id']} #{env.method.upcase} #{env.url.to_s}"
-        debug("Response headers") { dump_headers response.env.response_headers }
-        debug("Response status") { response.env.status }
-        debug("Response body") { dump_body response.env.body }
-      end
+    end
+
+    def on_complete(env)
+      info "Response X-Request-Id: #{env.response_headers['X-Request-Id']} #{env.method.upcase} #{env.url.to_s}"
+      debug("Response headers") { dump_headers env.response_headers }
+      debug("Response status") { env.status }
+      debug("Response body") { dump_body env.body }
     end
 
     private
