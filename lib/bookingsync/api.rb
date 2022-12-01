@@ -1,4 +1,5 @@
 require "faraday"
+require "faraday/net_http_persistent"
 require "bookingsync/api/version"
 require "bookingsync/api/client"
 
