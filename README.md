@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/BookingSync/bookingsync-api/actions/workflows/ci.yml/badge.svg)](https://github.com/BookingSync/bookingsync-api/actions/workflows/ci.yml)
+[![Build Status](https://github.com/BookingSync/bookingsync-api/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/BookingSync/bookingsync-api/actions/workflows/ci.yml)
 [![Code Climate](https://codeclimate.com/github/BookingSync/bookingsync-api.png)](https://codeclimate.com/github/BookingSync/bookingsync-api)
 
 # BookingSync::API
