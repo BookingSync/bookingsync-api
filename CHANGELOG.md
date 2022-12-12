@@ -2,6 +2,8 @@
 
 # master
 
+## 1.0.0
+
 - Drop support for ruby prior to 2.7
 - Add support for ruby 3.0 and 3.1
 - Update and lock faraday at `~> 2`
