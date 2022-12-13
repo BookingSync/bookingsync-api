@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "faraday", ">= 2.0"
-  spec.add_dependency "faraday-net_http_persistent", '>= 2.0.2'
+  spec.add_dependency "faraday", "~> 2"
+  spec.add_dependency "faraday-net_http_persistent", ">= 2.0.2"
   spec.add_dependency "net-http-persistent", [">= 4.0.1", "< 5.0"]
   spec.add_dependency "hashie"
   spec.add_dependency "addressable"

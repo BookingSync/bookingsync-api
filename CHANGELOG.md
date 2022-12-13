@@ -2,6 +2,12 @@
 
 # master
 
+## 1.0.0
+
+- Drop support for ruby prior to 2.7
+- Add support for ruby 3.0 and 3.1
+- Update and lock faraday at `~> 2`
+
 ## 0.2.0 - 2022-01-10
 - upgrade net-http-persistent to be ruby 3 ready
 

@@ -133,10 +133,7 @@ module BookingSync::API
       @instrumenter = options[:instrumenter] || NoopInstrumenter
       @base_url = options[:base_url]
       @serializer = Serializer.new
-      @conn = Faraday.new(**faraday_options) do |f|
-        f.use :logger, logger
-        f.adapter :net_http_persistent
-      end
+      @conn = build_connection
       @conn.headers[:accept] = MEDIA_TYPE
       @conn.headers[:content_type] = MEDIA_TYPE
       @conn.headers[:user_agent] = user_agent
@@ -312,6 +309,13 @@ module BookingSync::API
     end
 
     private
+
+    def build_connection
+      Faraday.new(**faraday_options) do |f|
+        f.use :logger, logger
+        f.adapter :net_http_persistent
+      end
+    end
 
     def faraday_options
       { ssl: { verify: verify_ssl? } }
