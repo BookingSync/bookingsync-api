@@ -2,6 +2,10 @@
 
 # master
 
+- Add support for `host_reviews` endpoint.
+- Add support for `review_replies` endpoint.
+- Add support for `dismiss_review` action.
+
 ## 1.0.0
 
 - Drop support for ruby prior to 2.7

@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.bookingsync.com/api/v3/reviews/13/dismiss
+    body:
+      encoding: UTF-8
+      string: '{"reviews":[{"dismissed_at":"2021-12-01T16:00:00Z"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.14
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"1ad821139e4a32c074ae0cf2dff5b4a6"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - ahoy_visit=378bd304-8f87-4e0b-a13e-bde8fa719f82; path=/; expires=Wed, 08 Dec
+        2021 13:14:01 GMT
+      - ahoy_visitor=4f5abdac-4aa7-4958-9616-1e88bf469b20; path=/; expires=Fri, 01
+        Dec 2023 13:14:01 GMT
+      Vary:
+      - Accept, Origin
+      X-Bullet-Console-Text:
+      - '["user: zolw\nUSE eager loading detected\n  Period => [:season]\n  Add to
+        your query: .includes([:season])\nCall stack\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/models/period.rb:22:in
+        `minimum_stay''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/models/rental.rb:854:in
+        `filter_map''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/models/rental.rb:854:in
+        `absolute_min_stay''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/serializers/api/v3/base_serializer.rb:122:in
+        `block in attributes''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:9:in
+        `block (2 levels) in instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:8:in
+        `block in instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:7:in
+        `instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/serializers/api/v3/base_serializer.rb:185:in
+        `instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/serializers/api/v3/base_serializer.rb:121:in
+        `attributes''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/serializers/api/v3/base_serializer.rb:116:in
+        `block in serializable_object''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:9:in
+        `block (2 levels) in instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:8:in
+        `block in instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:7:in
+        `instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/serializers/api/v3/base_serializer.rb:185:in
+        `instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/serializers/api/v3/base_serializer.rb:115:in
+        `serializable_object''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/active_model_serializer.rb:12:in
+        `block in serializable_object''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/active_model_serializer.rb:12:in
+        `map''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/active_model_serializer.rb:12:in
+        `serializable_object''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/bookingsync/prometheus/api_v3_derived_serializer.rb:22:in
+        `serialize''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/bookingsync/prometheus/api_v3_derived_serializer.rb:5:in
+        `serialize''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:9:in
+        `block (2 levels) in instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:8:in
+        `block in instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:7:in
+        `instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/prometheus/retryable_publisher.rb:19:in
+        `block in publish''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/retryable.rb:8:in
+        `perform''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/prometheus/retryable_publisher.rb:18:in
+        `publish''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/prometheus/event_bus_to_prometheus_publisher.rb:59:in
+        `publish''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/prometheus/event_bus_to_prometheus_publisher.rb:30:in
+        `block in publish_for_top_level_resource''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/prometheus/event_bus_to_prometheus_publisher.rb:26:in
+        `each''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/prometheus/event_bus_to_prometheus_publisher.rb:26:in
+        `publish_for_top_level_resource''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/prometheus/event_bus_to_prometheus_publisher.rb:18:in
+        `block in call''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:9:in
+        `block (2 levels) in instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:8:in
+        `block in instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/instrumentation.rb:7:in
+        `instrument''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/prometheus/event_bus_to_prometheus_publisher.rb:11:in
+        `call''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/services/stateless_service.rb:16:in
+        `call''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/events.rb:118:in
+        `block in <main>''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/models/concern/eventable.rb:38:in
+        `block (2 levels) in <module:Eventable>''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/lib/operation/composite.rb:115:in
+        `block in <class:Composite>''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/lib/operation/composite.rb:243:in
+        `call_monad''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/lib/operation/composite.rb:179:in
+        `call''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/app/controllers/api/v3/reviews_controller.rb:21:in
+        `dismiss''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/action_controller_instrumentation_patch.rb:25:in
+        `block in process_action''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/config/initializers/action_controller_instrumentation_patch.rb:24:in
+        `process_action''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/lib/rack/idempotency.rb:32:in
+        `call''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/lib/rack/utf8_validator.rb:14:in
+        `call''\n  /Users/zolw/Documents/Coding/bookingsync/BookingSync/lib/rack/catch_parse_errors.rb:9:in
+        `call''\n\n"]'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '997'
+      X-Ratelimit-Reset:
+      - '1638367200'
+      X-Request-Id:
+      - 8d3bacea-34bd-4fef-87f0-06782a2102cc
+      X-Runtime:
+      - '1.205115'
+      X-Updated-Since-Request-Synced-At:
+      - 2021-12-01 13:14:01 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Wed, 01 Dec 2021 13:14:02 GMT
+      Content-Length:
+      - '991'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"reviews.source":"https://www.bookingsync.com/api/v3/sources/{reviews.source}","reviews.reply":"https://www.bookingsync.com/api/v3/review_replies/{reviews.reply}","reviews.booking":"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}","reviews.rental":"https://www.bookingsync.com/api/v3/rentals/{reviews.rental}","reviews.account":"https://www.bookingsync.com/api/v3/accounts/{reviews.account}"},"reviews":[{"links":{"account":1,"booking":3,"rental":1,"reply":null,"source":null},"id":13,"rating":5,"comment":"Awesome
+        place","name":"Full N.","title":"Awesome place","country_code":null,"created_at":"2021-12-01T13:08:47Z","updated_at":"2021-12-01T13:14:01Z","rating_accurate":"5.0","shareable":true,"private_comment":null,"dismissed_at":"2021-12-01T16:00:00Z","dismissed_by":null,"dismissal_reason":null,"criteria":{"cleanliness":null,"checkin":null,"communication":null,"location":null,"facilities":null,"comfort":null,"staff":null,"value_for_money":null,"accuracy":null}}],"meta":{}}'
+    http_version:
+  recorded_at: Wed, 01 Dec 2021 13:14:02 GMT
+recorded_with: VCR 3.0.3

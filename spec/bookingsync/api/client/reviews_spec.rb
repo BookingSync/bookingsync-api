@@ -25,7 +25,7 @@ describe BookingSync::API::Client::Reviews do
 
   describe ".create_review", :vcr do
     let(:attributes) { { comment: "Awesome place", rating: 5 } }
-    let(:booking) { BookingSync::API::Resource.new(client, id: 840059) }
+    let(:booking) { BookingSync::API::Resource.new(client, id: 3) }
 
     it "creates a new review" do
       client.create_review(booking, attributes)
@@ -38,6 +38,26 @@ describe BookingSync::API::Client::Reviews do
         review = client.create_review(booking, attributes)
         expect(review.comment).to eq(attributes[:comment])
         expect(review.rating).to eq(attributes[:rating])
+      end
+    end
+  end
+
+  describe ".dismiss_review", :vcr do
+    let(:attributes) { { dismissed_at: "2021-12-01T16:00:00Z" } }
+    let(:created_review_id) do
+      find_resource("#{@casette_base_path}_create_review/creates_a_new_review.yml", "reviews")[:id]
+    end
+
+    it "dismisses review" do
+      client.dismiss_review(created_review_id, attributes)
+      assert_requested :put, bs_url("reviews/#{created_review_id}/dismiss"),
+        body: { reviews: [attributes] }.to_json
+    end
+
+    it "returns dismissed review" do
+      VCR.use_cassette("BookingSync_API_Client_Reviews/_dismiss_review/dismisses_review") do
+        review = client.dismiss_review(created_review_id, attributes)
+        expect(review.dismissed_at).to eq(Time.parse(attributes[:dismissed_at]))
       end
     end
   end

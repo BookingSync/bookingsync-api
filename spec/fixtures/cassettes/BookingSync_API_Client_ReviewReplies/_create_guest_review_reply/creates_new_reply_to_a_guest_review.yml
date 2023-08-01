@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bookingsync.com/api/v3/reviews/34/reply
+    body:
+      encoding: UTF-8
+      string: '{"review_replies":[{"message":"Merci!"}]}'
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.14
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"34d31e0437945ca36780e5cde7fff74b"
+      Location:
+      - https://www.bookingsync.com/api/v3/review_replies/96f9e3f1-ed2a-4c8c-8e2f-1d3e1d0c8356
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - ahoy_visit=c10ad674-1a94-43d4-8d42-196ef7cd5590; path=/; expires=Mon, 29 Mar
+        2021 15:51:07 GMT
+      - ahoy_visitor=35fdbda6-bae9-4181-a60c-fb9672d9cafe; path=/; expires=Wed, 22
+        Mar 2023 15:51:07 GMT
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '990'
+      X-Ratelimit-Reset:
+      - '1616428800'
+      X-Request-Id:
+      - 81c82884-63e3-4791-b4f5-fc09ef2c2ea5
+      X-Runtime:
+      - '0.361858'
+      X-Updated-Since-Request-Synced-At:
+      - 2021-03-22 15:51:07 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 22 Mar 2021 15:51:08 GMT
+      Content-Length:
+      - '451'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"review_replies.guest_review":"https://www.bookingsync.com/api/v3/reviews/{review_replies.guest_review}","review_replies.host_review":"https://www.bookingsync.com/api/v3/host_reviews/{review_replies.host_review}"},"review_replies":[{"links":{"guest_review":34,"host_review":null},"id":"96f9e3f1-ed2a-4c8c-8e2f-1d3e1d0c8356","message":"Merci!","submitted_at":null,"created_at":"2021-03-22T15:51:07Z","updated_at":"2021-03-22T15:51:07Z"}],"meta":{}}'
+    http_version:
+  recorded_at: Mon, 22 Mar 2021 15:51:08 GMT
+recorded_with: VCR 3.0.3

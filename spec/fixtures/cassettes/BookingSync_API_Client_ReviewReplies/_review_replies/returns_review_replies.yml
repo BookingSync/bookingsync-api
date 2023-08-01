@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/review_replies
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v0.1.14
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Etag:
+      - W/"b4b12d5155c2e714bbf620d07a0cbdab"
+      Link:
+      - <https://www.bookingsync.com/api/v3/review_replies?page=1>; rel="first", <https://www.bookingsync.com/api/v3/review_replies?page=1>;
+        rel="last"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Set-Cookie:
+      - ahoy_visit=0ba59b6d-1626-43fd-9321-205b37b48220; path=/; expires=Mon, 29 Mar
+        2021 15:46:48 GMT
+      - ahoy_visitor=8c7dff55-a4d7-4618-9cd0-94365dbd8927; path=/; expires=Wed, 22
+        Mar 2023 15:46:48 GMT
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Current-Page:
+      - '1'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Per-Page:
+      - '100'
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '992'
+      X-Ratelimit-Reset:
+      - '1616428800'
+      X-Request-Id:
+      - 617c7b7b-dfd7-4e07-8731-5c21df1497fa
+      X-Runtime:
+      - '0.193850'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Updated-Since-Request-Synced-At:
+      - 2021-03-22 15:46:48 UTC
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 22 Mar 2021 15:46:48 GMT
+      Content-Length:
+      - '682'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"review_replies.guest_review":"https://www.bookingsync.com/api/v3/reviews/{review_replies.guest_review}","review_replies.host_review":"https://www.bookingsync.com/api/v3/host_reviews/{review_replies.host_review}"},"review_replies":[{"links":{"guest_review":null,"host_review":"04356dc9-1349-4e05-b818-09ccdac8d5dd"},"id":"3c844ef6-7ef9-4718-82b5-20ec043423c7","message":"Thanks!","submitted_at":null,"created_at":"2021-03-22T15:46:42Z","updated_at":"2021-03-22T15:46:42Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/review_replies?page=1","last":"https://www.bookingsync.com/api/v3/review_replies?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+    http_version:
+  recorded_at: Mon, 22 Mar 2021 15:46:48 GMT
+recorded_with: VCR 3.0.3

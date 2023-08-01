@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://bookingsync.test/api/v3/applications_periods_rentals
+    uri: https://www.bookingsync.com/api/v3/applications_periods_rentals
     body:
       encoding: UTF-8
       string: '{"applications_periods_rental":{"rental_id":1,"application_id":9,"start_date":"2017-01-03","end_date":"2017-01-04","price_increase":15}}'
@@ -33,7 +33,7 @@ http_interactions:
       Etag:
       - W/"329930caf43d53b1d9585178f1d749c2"
       Location:
-      - https://bookingsync.test/api/v3/applications_periods_rentals/3
+      - https://www.bookingsync.com/api/v3/applications_periods_rentals/3
       Set-Cookie:
       - ahoy_visit=4cb740ce-99ee-48b1-9999-5f87d415f164; path=/; expires=Tue, 19 Feb
         2019 17:47:53 -0000
@@ -66,6 +66,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"applications_periods_rentals":[{"id":3,"price_increase":"15.0","start_date":"2017-01-03","end_date":"2017-01-04"}],"meta":{}}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 12 Feb 2019 17:47:54 GMT
 recorded_with: VCR 4.0.0

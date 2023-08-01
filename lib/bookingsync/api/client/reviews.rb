@@ -38,6 +38,16 @@ module BookingSync::API
       def create_review(booking, options = {})
         post("bookings/#{booking}/reviews", reviews: [options]).pop
       end
+
+      # Dismiss a review
+      #
+      # @param booking [BookingSync::API::Resource|Integer] Review or ID of
+      #   the review which you want to dismiss.
+      # @param options [Hash] Review's dismissal attributes.
+      # @return [BookingSync::API::Resource] Dismissed review.
+      def dismiss_review(review, options = {})
+        put("reviews/#{review}/dismiss", reviews: [options]).pop
+      end
     end
   end
 end
