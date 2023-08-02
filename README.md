@@ -120,7 +120,7 @@ When using `BOOKINGSYNC_API_DEBUG` variable, log level is DEBUG.
 
 ## Gem documentation
 
-See [gem documentation](http://rdoc.info/github/BookingSync/bookingsync-api/master/frames) for more info.
+See [gem documentation](https://www.rubydoc.info/gems/bookingsync-api/) for more info.
 
 ## API documentation
 
