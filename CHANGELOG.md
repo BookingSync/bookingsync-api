@@ -2,6 +2,8 @@
 
 # master
 
+## 1.1.0
+
 - Add support for `host_reviews` endpoint.
 - Add support for `review_replies` endpoint.
 - Add support for `dismiss_review` action.
