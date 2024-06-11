@@ -80,4 +80,13 @@ describe BookingSync::API::Client::RentalUrls do
       assert_requested :delete, bs_url("rental_urls/#{created_rental_url_id}")
     end
   end
+
+  describe "#restore_rental_url", :vcr do
+    let(:rental_url_id) { "e3511ab6-0976-44a7-befe-3e1e08d6f924" }
+
+    it "restores given rental_url" do
+      client.restore_rental_url(rental_url_id)
+      assert_requested :put, bs_url("rental_urls/#{rental_url_id}/restore")
+    end
+  end
 end
