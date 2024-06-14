@@ -62,6 +62,16 @@ module BookingSync::API
         delete "rental_urls/#{rental_url}"
       end
 
+      # Restore a RentalUrl
+      #
+      # @param rental_url [BookingSync::API::Resource|Integer] RentalUrl or ID
+      #   of the rental_url to be canceled.
+      # @return [BookingSync::API::Resource] Restored rental_url on success,
+      #   exception is raised otherwise.
+      def restore_rental_url(rental_url)
+        put("rental_urls/#{rental_url}/restore").pop
+      end
+
       private
 
       def base_64_encode(file_path)
