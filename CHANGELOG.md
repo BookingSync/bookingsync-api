@@ -2,6 +2,10 @@
 
 # master
 
+## 1.2.0
+
+- Add support for `restore` action for `rental_urls`.
+
 ## 1.1.0
 
 - Add support for `host_reviews` endpoint.
