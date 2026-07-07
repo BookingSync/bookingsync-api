@@ -2,6 +2,8 @@
 
 # master
 
+## 1.3.0
+
 - Add support for `reservations_requests` endpoint.
 
 ## 1.2.0
