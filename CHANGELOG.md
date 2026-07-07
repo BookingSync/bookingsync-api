@@ -2,6 +2,8 @@
 
 # master
 
+- Add support for `reservations_requests` endpoint.
+
 ## 1.2.0
 
 - Add support for `restore` action for `rental_urls`.
