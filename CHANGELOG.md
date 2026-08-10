@@ -2,6 +2,10 @@
 
 # master
 
+- Fix the request root key for `create_reservation_request` and
+  `patch_reservation_request`. Core expects `reservations_requests`;
+  sending `requests` returns `400 Bad Request`.
+
 ## 1.3.0
 
 - Add support for `reservations_requests` endpoint.

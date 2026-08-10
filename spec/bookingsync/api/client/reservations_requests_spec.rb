@@ -54,7 +54,7 @@ describe BookingSync::API::Client::ReservationsRequests do
     it "creates a new reservations request" do
       client.create_reservation_request(attributes)
       assert_requested :post, bs_url("reservations/requests"),
-        body: { requests: [attributes] }.to_json
+        body: { reservations_requests: [attributes] }.to_json
     end
 
     it "returns newly created reservations request" do
@@ -74,7 +74,7 @@ describe BookingSync::API::Client::ReservationsRequests do
     it "updates given reservations request by ID" do
       client.patch_reservation_request(created_reservations_request_id, expires_at: "2026-07-01T12:00:00Z")
       assert_requested :patch, bs_url("reservations/requests/#{created_reservations_request_id}"),
-        body: { requests: [{ expires_at: "2026-07-01T12:00:00Z" }] }.to_json
+        body: { reservations_requests: [{ expires_at: "2026-07-01T12:00:00Z" }] }.to_json
     end
 
     it "returns updated reservations request" do

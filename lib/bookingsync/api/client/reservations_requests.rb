@@ -28,7 +28,7 @@ module BookingSync::API
       # @param options [Hash] Reservations request attributes.
       # @return [BookingSync::API::Resource] Newly created reservations request.
       def create_reservation_request(options = {})
-        post("reservations/requests", requests: [options]).pop
+        post("reservations/requests", reservations_requests: [options]).pop
       end
 
       # Edit a reservations request
@@ -39,7 +39,7 @@ module BookingSync::API
       # @return [BookingSync::API::Resource] Updated reservations request on success,
       #   exception is raised otherwise.
       def patch_reservation_request(id, options = {})
-        patch("reservations/requests/#{id}", requests: [options]).pop
+        patch("reservations/requests/#{id}", reservations_requests: [options]).pop
       end
 
       # Delete a reservations request
