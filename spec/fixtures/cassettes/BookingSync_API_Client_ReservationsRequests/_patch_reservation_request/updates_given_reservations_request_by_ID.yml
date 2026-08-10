@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.bookingsync.com/api/v3/reservations/requests/60
     body:
       encoding: UTF-8
-      string: '{"requests":[{"expires_at":"2026-07-01T12:00:00Z"}]}'
+      string: '{"reservations_requests":[{"expires_at":"2026-07-01T12:00:00Z"}]}'
     headers:
       User-Agent:
       - BookingSync API gem v1.2.0

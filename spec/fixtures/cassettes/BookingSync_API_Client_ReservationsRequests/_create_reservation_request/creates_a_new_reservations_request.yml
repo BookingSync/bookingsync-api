@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.bookingsync.com/api/v3/reservations/requests
     body:
       encoding: UTF-8
-      string: '{"requests":[{"conversation_id":123,"rental_id":456,"client_id":789,"booking_id":101,"expires_at":"2026-06-25T12:00:00Z","booking_payload":{"start_date":"2026-07-01","end_date":"2026-07-08","adults":2,"children":0,"final_price":"950.00","currency":"EUR"}}]}'
+      string: '{"reservations_requests":[{"conversation_id":123,"rental_id":456,"client_id":789,"booking_id":101,"expires_at":"2026-06-25T12:00:00Z","booking_payload":{"start_date":"2026-07-01","end_date":"2026-07-08","adults":2,"children":0,"final_price":"950.00","currency":"EUR"}}]}'
     headers:
       User-Agent:
       - BookingSync API gem v1.2.0
