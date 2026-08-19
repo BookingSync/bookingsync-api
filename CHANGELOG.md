@@ -2,6 +2,9 @@
 
 # master
 
+- Add support for `reservations_offers` endpoint (Core's Reservations::Offer
+  V3 API), a sibling to `reservations_requests`.
+
 ## 1.3.1
 
 - Fix the request root key for `create_reservation_request` and

@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://www.bookingsync.com/api/v3/reservations/offers/7
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v1.3.1
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Updated-Since-Request-Synced-At:
+      - 2026-08-13 09:44:43 UTC
+      X-Ratelimit-Limit:
+      - '1000000'
+      X-Ratelimit-Reset:
+      - '1786615200'
+      X-Ratelimit-Remaining:
+      - '999973'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4b862da5-b81b-4df9-a29e-7289292bf33b
+      X-Runtime:
+      - '0.077552'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.03, sql.active_record;dur=44.82,
+        instantiation.active_record;dur=0.66, cache_increment.active_support;dur=1.30,
+        start_transaction.active_record;dur=0.01, transaction.active_record;dur=52.09,
+        attributes.base_serializer;dur=0.08, associations.base_serializer;dur=0.03,
+        _links_templates.base_serializer;dur=0.14, _links.base_serializer;dur=0.05,
+        serializable_object.base_serializer;dur=0.37, prometheus.respond.Bookingsync::Prometheus::V3BookingResponder;dur=3.39,
+        publishing_with_prometheus;dur=24.50, has_errors?.api_responder;dur=0.09,
+        render.base_controller;dur=0.51, default_render.api_responder;dur=0.59, api_behavior.api_responder;dur=0.07,
+        process_action.action_controller;dur=75.02
+      Vary:
+      - Origin
+      X-Miniprofiler-Original-Cache-Control:
+      - no-cache
+      X-Miniprofiler-Ids:
+      - akb3m70t5njp1w3i4mi3,3qqyvc8bqh0dusg2yirg,vj7tn2e0iwgmustd17z8,18hsstf7dalhz1hf4a7d,ra82uxje18ygexj4ebq7,ucv0vs4vz1ai6ytk030,ycdu6o3yi0jc7rfaqxei,wbeca207fohukg0y7doh,a4li770cewkr5mdzcntt,w79m5h3hjpl2gu7vmyr2,su93n1eqsd9p8jw1gjt7,mghevmsym2u5r5hjcg4l,cnueo2x7jxovu7yxrzu1,583icg9w65zmv9p0owlv,xjifh57wefx9sadw8dsk,9r1cbvaxy660so0rosec,ii0cu8whbp05k4seu0g9,51upjlzc2fiiomb3px3a,rb4n8ibdesq5vpgi5qls,pqzqqi27j140pnsmzjnx
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/; httponly; samesite=lax
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 13 Aug 2026 09:44:43 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bookingsync.com/api/v3/reservations/offers/1
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - BookingSync API gem v1.3.1
+      Accept:
+      - application/vnd.api+json
+      Content-Type:
+      - application/vnd.api+json
+      Authorization:
+      - Bearer <<ACCESS_TOKEN>>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Updated-Since-Request-Synced-At:
+      - 2026-08-13 09:44:42 UTC
+      X-Ratelimit-Limit:
+      - '1000000'
+      X-Ratelimit-Reset:
+      - '1786615200'
+      X-Ratelimit-Remaining:
+      - '999976'
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Link:
+      - <https://www.bookingsync.com/api/v3/reservations/offers/1?page=1>; rel="first",
+        <https://www.bookingsync.com/api/v3/reservations/offers/1?page=1>; rel="last"
+      X-Total-Pages:
+      - '1'
+      X-Total-Count:
+      - '1'
+      X-Per-Page:
+      - '100'
+      X-Current-Page:
+      - '1'
+      Etag:
+      - W/"b3defe4f924af6ef0183d667749907a1"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 2809e70a-4322-4b7a-b56c-5f900fcd083c
+      X-Runtime:
+      - '0.025915'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.02, sql.active_record;dur=13.95,
+        instantiation.active_record;dur=0.76, cache_increment.active_support;dur=0.48,
+        Api::V3::UpdatedSinceSearch.results;dur=0.22, Api::V3::Concerns::SmartEagerLoadable/with_dynamic_includes;dur=0.14,
+        Api::V3::UpdatedSinceSearch.meta;dur=0.03, render.base_controller;dur=3.22,
+        default_render.api_responder;dur=0.47, attributes.base_serializer;dur=0.09,
+        associations.base_serializer;dur=0.03, _links_templates.base_serializer;dur=0.14,
+        _links.base_serializer;dur=0.05, serializable_object.base_serializer;dur=0.37,
+        display.api_responder;dur=2.83, api_behavior.api_responder;dur=2.86, process_action.action_controller;dur=23.61
+      Vary:
+      - Origin
+      X-Miniprofiler-Original-Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Miniprofiler-Ids:
+      - 18hsstf7dalhz1hf4a7d,ra82uxje18ygexj4ebq7,ucv0vs4vz1ai6ytk030,ycdu6o3yi0jc7rfaqxei,wbeca207fohukg0y7doh,a4li770cewkr5mdzcntt,w79m5h3hjpl2gu7vmyr2,su93n1eqsd9p8jw1gjt7,mghevmsym2u5r5hjcg4l,cnueo2x7jxovu7yxrzu1,583icg9w65zmv9p0owlv,xjifh57wefx9sadw8dsk,9r1cbvaxy660so0rosec,ii0cu8whbp05k4seu0g9,51upjlzc2fiiomb3px3a,rb4n8ibdesq5vpgi5qls,pqzqqi27j140pnsmzjnx,ti8eyk58ij432etthju4,ve10ya82r6clzqh9i3if,qh5surbc19l3vghlvjfl
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/; httponly; samesite=lax
+      Content-Length:
+      - '1035'
+    body:
+      encoding: UTF-8
+      string: '{"links":{"offers.account":"https://www.bookingsync.com/api/v3/accounts/{offers.account}","offers.application":"https://www.bookingsync.com/api/v3/applications/{offers.application}","offers.booking":"https://www.bookingsync.com/api/v3/bookings/{offers.booking}","offers.client":"https://www.bookingsync.com/api/v3/clients/{offers.client}","offers.rental":"https://www.bookingsync.com/api/v3/rentals/{offers.rental}"},"offers":[{"links":{"account":1,"application":1,"booking":null,"client":1,"rental":1},"adults":2,"canceled_at":null,"children":0,"created_at":"2026-08-13T09:19:56Z","created_by_id":1,"created_by_type":"Doorkeeper::Application","currency":"EUR","end_date":"2026-10-08","expires_at":"2026-09-01T12:00:00Z","id":1,"start_date":"2026-10-01","status":"pending","total_amount_cents":99000,"updated_at":"2026-08-13T09:20:10Z"}],"meta":{"Link":{"first":"https://www.bookingsync.com/api/v3/reservations/offers/1?page=1","last":"https://www.bookingsync.com/api/v3/reservations/offers/1?page=1"},"X-Total-Pages":"1","X-Total-Count":"1","X-Per-Page":"100"}}'
+  recorded_at: Thu, 13 Aug 2026 09:44:42 GMT
+recorded_with: VCR 6.4.0
