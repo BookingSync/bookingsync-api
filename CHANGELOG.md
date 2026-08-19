@@ -2,6 +2,8 @@
 
 # master
 
+## 1.4.0
+
 - Add support for `reservations_offers` endpoint (Core's Reservations::Offer
   V3 API), a sibling to `reservations_requests`.
 
